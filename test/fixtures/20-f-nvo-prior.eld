@@ -1,0 +1,1 @@
+(:accn "0001171843-17-000780" :form "20-F" :filed "2017-02-09" :report "2016-12-31" :doc "f20f_020917.htm" :cik 353278 :url "https://www.sec.gov/Archives/edgar/data/353278/000117184317000780/f20f_020917.htm" :ticker "NVO")

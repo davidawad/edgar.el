@@ -1,0 +1,1 @@
+(:accn "0001552781-18-000244" :form "11-K" :filed "2018-06-27" :report "2017-12-31" :doc "e18247_ko-11ktccc.htm" :cik 21344 :url "https://www.sec.gov/Archives/edgar/data/21344/000155278118000244/e18247_ko-11ktccc.htm" :ticker "KO")

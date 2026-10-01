@@ -1,0 +1,1 @@
+(:accn "0001193125-13-364182" :form "10-Q" :filed "2013-09-11" :report "2013-08-03" :doc "d569889d10q.htm" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000119312513364182/d569889d10q.htm" :ticker "GME")

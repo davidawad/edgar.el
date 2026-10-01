@@ -20,21 +20,29 @@ is not (`"1"` in a 10-Q).
 
 ## Form coverage
 
-Expect tests replay a recorded real filing of each type offline
-(`test/fixtures/`, snapshots in `test/expect/`):
+EDGAR has hundreds of form types; these are the main periodic, current,
+ownership and offering ones, not all of them. Each is tested against a
+recorded real filing of the latest vintage AND the oldest one in the SEC's
+`recent` window (layouts drift, e.g. 2013 10-Qs), offline, three ways:
+structure snapshots (`test/expect/`), verbatim golden strings pinned to
+specific sections (`test/golden/`, which must appear in that section and in no
+other, and every parsed section must have some), and hand-checked facts
+(`test/golden-facts.eld`).
 
 | Form | Sections | Notes |
 |---|---|---|
 | 10-K, 10-K/A | Part-qualified items | 10-K/A shows only the Items it amends |
 | 10-Q | `I.1`-`I.4`, `II.1`-`II.6` | |
 | 8-K | `2.02`, `9.01` ... | dotted items |
-| 20-F | Part-qualified items | table-of-contents residue keys possible (known rough edge) |
+| 20-F | Part-qualified items | heading-only table-of-contents residue is dropped |
 | S-1 | `II.13`-`II.17` | Part I is the prospectus, no Items |
-| Schedule 13G | `1`-`10` | |
+| Schedule 13G | `1`-`10` | legacy `SC 13G`/`SC 13G/A` text filings: little or no Item structure |
 | 40-F, 6-K, DEF 14A, 11-K, 4, 13F-HR, 144 | none | whole text via `edgar-text` |
 
 ## Tests
 
     eask run script check                 # lint + all tests + coverage + compile
     eask run script expect-update         # re-snapshot after an INTENDED change; review `git diff test/expect/`
-    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-fixtures.el   # record missing fixtures (network)
+    eask run script golden-update         # regenerate golden strings; review `git diff test/golden/`
+    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-fixtures.el   # record missing latest fixtures (network)
+    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-prior.el      # record the older twin of each (network)

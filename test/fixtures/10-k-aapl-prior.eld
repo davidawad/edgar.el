@@ -1,0 +1,1 @@
+(:accn "0001193125-15-356351" :form "10-K" :filed "2015-10-28" :report "2015-09-26" :doc "d17062d10k.htm" :cik 320193 :url "https://www.sec.gov/Archives/edgar/data/320193/000119312515356351/d17062d10k.htm" :ticker "AAPL")

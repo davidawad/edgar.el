@@ -1,0 +1,1 @@
+(:accn "0000906304-14-000252" :form "SC 13G/A" :filed "2014-01-28" :report "" :doc "gme1.txt" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000090630414000252/gme1.txt" :ticker "GME")

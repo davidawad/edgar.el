@@ -1,0 +1,1 @@
+(:accn "0001193125-13-401630" :form "6-K" :filed "2013-10-17" :report "2013-10-17" :doc "d613814d6k.htm" :cik 1046179 :url "https://www.sec.gov/Archives/edgar/data/1046179/000119312513401630/d613814d6k.htm" :ticker "TSM")

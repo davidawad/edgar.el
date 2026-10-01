@@ -1,0 +1,23 @@
+;; Hand-checked facts: (SLUG SECTION-KEY-OR-nil "verbatim string").
+;; nil key = anywhere in the filing.  Each must sit in that section only, so
+;; use the full heading, not a word that other sections also contain.
+(("10-k-aapl" "I.1" "Item 1. Business")
+ ("10-k-aapl" "I.1A" "Item 1A. Risk Factors")
+ ("10-k-aapl" "II.7" "Item 7. Management’s Discussion and Analysis")
+ ("10-k-aapl" "II.9A" "Item 9A. Controls and Procedures")
+ ("10-k-aapl-prior" "I.1A" "Item 1A. Risk Factors")
+ ("10-k-aapl-prior" "II.8" "Item 8. Financial Statements and Supplementary Data")
+ ("10-ka-tsla" "III.11" "ITEM 11. EXECUTIVE COMPENSATION")
+ ("10-ka-tsla-prior" "III.10" "ITEM 10. DIRECTORS, EXECUTIVE OFFICERS AND CORPORATE GOVERNANCE")
+ ("10-q-gme" "I.2" "ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS")
+ ("10-q-gme" "II.1" "ITEM 1. LEGAL PROCEEDINGS")
+ ("10-q-gme-prior" "II.1A" "ITEM 1A. Risk Factors")
+ ("8-k-aapl" "2.02" "Item 2.02 Results of Operations and Financial Condition")
+ ("8-k-aapl" "9.01" "Item 9.01 Financial Statements and Exhibits")
+ ("4-aapl" nil "47,645")
+ ("4-aapl" nil "Restricted Stock Unit")
+ ("144-aapl" nil "Apple")
+ ("13f-hr-brk-b" nil "Berkshire Hathaway")
+ ("schedule-13g-gme" "1" "Item 1. (a) Name of issuer: GameStop Corp.")
+ ("20-f-nvo" "I.5" "ITEM 5 OPERATING AND FINANCIAL REVIEW AND PROSPECTS")
+ ("s-1-rivn" "II.14" "Item 14. Indemnification of Directors and Officers"))

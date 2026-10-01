@@ -1,0 +1,1 @@
+(:accn "0001445305-14-002042" :form "DEF 14A" :filed "2014-05-09" :report "2014-02-01" :doc "gamestop2014proxystatement.htm" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000144530514002042/gamestop2014proxystatement.htm" :ticker "GME")

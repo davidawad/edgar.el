@@ -125,32 +125,42 @@ window (about 1000 filings)."
 (defconst edgar--part-re
   (concat
    "^[ \t ]*\\(?:PART\\|Part\\)[ \t ]+\\(IV\\|I\\{1,3\\}\\)"
-   "\\(?:[ \t ]*$\\|[ \t ]*[.:—–-].\\{0,60\\}$\\)")
+   "\\(?:[ \t ]*$"
+   "\\|[ \t ]*[.:—–\u0096\u0097-].\\{0,60\\}$"
+   "\\|[ \t ]+[A-Z][A-Za-z ,&'’ -]\\{0,60\\}$\\)")
   "Match a Part heading line; group 1 is the Roman numeral.
-Cross-references like \"Part I, Item 1A\" do not match.")
+A bare title after the numeral (\"PART I  FINANCIAL INFORMATION\") counts;
+cross-references like \"Part I, Item 1A\" do not.")
 
 (defconst edgar--item-re
   (concat
    "^[ \t ]*\\(?:Item\\|ITEM\\)[ \t ]+"
    "\\([0-9]+\\(?:\\.[0-9]+\\)?[A-C]?\\)"
-   "\\(?:[.:]\\|[ \t ]*[—–-]\\|[ \t ]+[A-Z]\\|[ \t ]*$\\)")
+   "\\(?:[.:]\\|[ \t ]*[—–\u0096\u0097-]\\|[ \t ]+[A-Z]\\|[ \t ]*$\\)")
   "Match an Item heading line; group 1 is the item number, e.g. 1A or 2.02.
 Matched case-sensitively: a wrapped cross-reference such as \"Item 1A of
 this report\" starts with lowercase and is not a heading.")
 
 (defconst edgar--roman '(("I" . 1) ("II" . 2) ("III" . 3) ("IV" . 4)))
 
-(defun edgar--matches (re text)
-  "Return (LINE-START . LABEL) for each match of RE in TEXT, in order."
+(defun edgar--matches (re text &optional reject)
+  "Return (LINE-START . LABEL) for each match of RE in TEXT, in order.
+Lines that also match the regexp REJECT are skipped."
   (with-temp-buffer
     (insert text)
     (goto-char (point-min))
     (let ((case-fold-search nil)
           out)
       (while (re-search-forward re nil t)
-        (push (cons
-               (line-beginning-position) (upcase (match-string 1)))
-              out))
+        (unless (and reject
+                     (string-match-p
+                      reject
+                      (buffer-substring
+                       (line-beginning-position)
+                       (line-end-position))))
+          (push (cons
+                 (line-beginning-position) (upcase (match-string 1)))
+                out)))
       (nreverse out))))
 
 (defun edgar--runs (marks)
@@ -204,7 +214,9 @@ filing has Parts: \"I.2\" and \"II.2\" are different sections of a 10-Q.
 Forms without Item headings give nil.  The table of contents repeats every
 heading with no body, so for each key the occurrence with the longest body
 wins."
-  (let* ((parts (edgar--runs (edgar--matches edgar--part-re text)))
+  (let* ((parts
+          (edgar--runs
+           (edgar--matches edgar--part-re text "\\bItems?\\b")))
          (items
           (edgar--runs
            (mapcar
@@ -227,7 +239,38 @@ wins."
           (puthash key body best))))
     (let (out)
       (maphash (lambda (k v) (push (cons k v) out)) best)
-      (sort out (lambda (a b) (edgar--key< (car a) (car b)))))))
+      (edgar--drop-residue
+       (sort out (lambda (a b) (edgar--key< (car a) (car b))))))))
+
+(defun edgar--heading-only-p (body)
+  "Non-nil if BODY is a lone heading line with no sentence after it.
+That is what a table-of-contents entry leaves behind."
+  (let
+      ((rest
+        (replace-regexp-in-string
+         "\\`[ \t\n\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?"
+         ""
+         body)))
+    (and (= 1
+            (length
+             (seq-remove #'string-blank-p (split-string body "\n"))))
+         (not (string-match-p "[.!?]" rest)))))
+
+(defun edgar--drop-residue (secs)
+  "Remove from SECS the heading-only entries that duplicate another Part's item.
+A 20-F table of contents without Part headings, for instance, leaves a
+bare \"I.13\" next to the real \"II.13\"."
+  (seq-remove
+   (lambda (e)
+     (and (edgar--heading-only-p (cdr e))
+          (seq-some
+           (lambda (o)
+             (and (not (eq o e))
+                  (equal
+                   (cdr (edgar--split-key (car o)))
+                   (cdr (edgar--split-key (car e))))))
+           secs)))
+   secs))
 
 (defun edgar-section (filing item)
   "Text of ITEM from FILING, e.g. \"1A\", \"7\", \"2.02\" or \"II.1\".
