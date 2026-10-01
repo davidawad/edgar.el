@@ -21,11 +21,21 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
 - Source is `src/edgar.el`; tests are ERT in `test/edgar-test.el`. Almost all
   tests are hermetic (SEC transport stubbed, a fake filing in HTML); the one
   network test needs `XBRL_LIVE=1`. Set `xbrl-user-agent` to a real name +
-  email first (SEC requires it; stay under 10 req/s). Coverage is ~79%.
-- `edgar-sections` picks, per Item, the occurrence with the longest body
-  because the table of contents repeats every heading with no body. Verified
-  against Apple's FY2025 and Microsoft's FY2026 10-Ks; check a third filer
-  before changing it.
+  email first (SEC requires it; stay under 10 req/s). Coverage is ~85%.
+- Expect tests (`test/edgar-expect-test.el`): one per recorded real filing in
+  `test/fixtures/` (14 form types), compared against reviewed snapshots in
+  `test/expect/`. After an INTENDED parser change run `eask run script
+  expect-update` and READ `git diff test/expect/` -- never promote blindly.
+  New form type: add it to `tools/record-fixtures.el` and the invariants table
+  in the test, record, update, review. Fixtures are public SEC documents.
+- `edgar-sections` keys are Part-qualified (`II.1A`) because 10-Qs reuse Item
+  numbers across Parts. Per key the occurrence with the longest body wins (the
+  table of contents repeats every heading with no body); consecutive repeats
+  of one heading are page running headers and are collapsed. Headings are
+  matched case-sensitively and must be followed by punctuation or a capital,
+  so a wrapped cross-reference ("Item 1A of this report") is not a heading.
+  Known rough edge: foreign-issuer 20-Fs (Novo Nordisk fixture) yield a few
+  table-of-contents residue keys (`I.13`, `III.1`).
 - Git-source cohort deps in `Eask` are pinned to commit SHAs; `xbrl` comes
   from the private repo github.com/davidawad/xbrl.el.
 - Zero references to the owner's dotfiles are allowed here -- the repo must

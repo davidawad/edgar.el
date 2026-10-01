@@ -1,0 +1,1 @@
+(:accn "0000353278-26-000012" :form "20-F" :filed "2026-02-04" :report "2025-12-31" :doc "nvo-20251231.htm" :cik 353278 :url "https://www.sec.gov/Archives/edgar/data/353278/000035327826000012/nvo-20251231.htm" :ticker "NVO")

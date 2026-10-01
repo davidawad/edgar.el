@@ -122,48 +122,66 @@ window (about 1000 filings)."
           (shr-insert-document dom)))
       (buffer-substring-no-properties (point-min) (point-max)))))
 
-(defconst edgar--item-re "^[ \t]*Item[ \t ]+\\([0-9]+[A-C]?\\)\\.")
+(defconst edgar--part-re
+  (concat
+   "^[ \t ]*\\(?:PART\\|Part\\)[ \t ]+\\(IV\\|I\\{1,3\\}\\)"
+   "\\(?:[ \t ]*$\\|[ \t ]*[.:—–-].\\{0,60\\}$\\)")
+  "Match a Part heading line; group 1 is the Roman numeral.
+Cross-references like \"Part I, Item 1A\" do not match.")
 
-(defun edgar-sections (text)
-  "Alist of (ITEM . BODY) from filing TEXT, e.g. (\"1A\" . \"Risk Factors...\").
-The table of contents repeats every Item heading with no body, so for each
-Item the occurrence with the longest body wins."
-  (let (marks
-        best)
-    (with-temp-buffer
-      (insert text)
-      (goto-char (point-min))
-      (while (re-search-forward edgar--item-re nil t)
+(defconst edgar--item-re
+  (concat
+   "^[ \t ]*\\(?:Item\\|ITEM\\)[ \t ]+"
+   "\\([0-9]+\\(?:\\.[0-9]+\\)?[A-C]?\\)"
+   "\\(?:[.:]\\|[ \t ]*[—–-]\\|[ \t ]+[A-Z]\\|[ \t ]*$\\)")
+  "Match an Item heading line; group 1 is the item number, e.g. 1A or 2.02.
+Matched case-sensitively: a wrapped cross-reference such as \"Item 1A of
+this report\" starts with lowercase and is not a heading.")
+
+(defconst edgar--roman '(("I" . 1) ("II" . 2) ("III" . 3) ("IV" . 4)))
+
+(defun edgar--matches (re text)
+  "Return (LINE-START . LABEL) for each match of RE in TEXT, in order."
+  (with-temp-buffer
+    (insert text)
+    (goto-char (point-min))
+    (let ((case-fold-search nil)
+          out)
+      (while (re-search-forward re nil t)
         (push (cons
-               (upcase (match-string 1)) (line-beginning-position))
-              marks))
-      (setq marks (nreverse marks))
-      (cl-loop
-       for
-       (m . rest)
-       on
-       marks
-       for
-       end
-       =
-       (if rest
-           (cdar rest)
-         (point-max))
-       for
-       body
-       =
-       (buffer-substring-no-properties (cdr m) end)
-       for
-       old
-       =
-       (assoc (car m) best)
-       when
-       (or (null old) (> (length body) (length (cdr old))))
-       do
-       (setq best
-             (cons
-              (cons (car m) body) (assoc-delete-all (car m) best)))))
-    (sort best (lambda (a b) (edgar--item< (car a) (car b))))))
+               (line-beginning-position) (upcase (match-string 1)))
+              out))
+      (nreverse out))))
+
+(defun edgar--runs (marks)
+  "Keep only the first of consecutive entries that share a label.
+MARKS is a list of (POSITION . LABEL).  Some filers repeat a running
+header such as \"PART I\" or \"Item 1\" on every page;
+those must not split the section they sit inside."
+  (let (out)
+    (dolist (m marks)
+      (unless (equal (cdr m) (cdr (car out)))
+        (push m out)))
+    (nreverse out)))
+
+(defun edgar--part-at (parts pos)
+  "Roman numeral of the last Part heading in PARTS before POS, or nil."
+  (cdr
+   (car (last (seq-take-while (lambda (p) (< (car p) pos)) parts)))))
+
+(defun edgar--key (item part)
+  "Section key for ITEM within PART: \"II.1A\", or just \"1A\" with no PART."
+  (if part
+      (concat part "." item)
+    item))
+
+(defun edgar--split-key (key)
+  "Return (PART-NUMBER . ITEM) for KEY; PART-NUMBER is 0 when KEY has no Part."
+  (if (string-match "\\`\\(IV\\|I\\{1,3\\}\\)\\.\\(.+\\)\\'" key)
+      (cons
+       (cdr (assoc (match-string 1 key) edgar--roman))
+       (match-string 2 key))
+    (cons 0 key)))
 
 (defun edgar--item< (a b)
   "Return non-nil if Item label A precedes B, numerically then by letter."
@@ -171,9 +189,74 @@ Item the occurrence with the longest body wins."
         (nb (string-to-number b)))
     (or (< na nb) (and (= na nb) (string< a b)))))
 
+(defun edgar--key< (a b)
+  "Return non-nil if section key A precedes B (by Part, then by Item)."
+  (let ((ka (edgar--split-key a))
+        (kb (edgar--split-key b)))
+    (or (< (car ka) (car kb))
+        (and (= (car ka) (car kb))
+             (edgar--item< (cdr ka) (cdr kb))))))
+
+(defun edgar-sections (text)
+  "Alist of (KEY . BODY) for the Items in filing TEXT, in filing order.
+KEY is the item number (\"1A\", \"2.02\"), prefixed with the Part when the
+filing has Parts: \"I.2\" and \"II.2\" are different sections of a 10-Q.
+Forms without Item headings give nil.  The table of contents repeats every
+heading with no body, so for each key the occurrence with the longest body
+wins."
+  (let* ((parts (edgar--runs (edgar--matches edgar--part-re text)))
+         (items
+          (edgar--runs
+           (mapcar
+            (lambda (it)
+              (cons
+               (car it)
+               (edgar--key (cdr it) (edgar--part-at parts (car it)))))
+            (edgar--matches edgar--item-re text))))
+         (bounds (sort (mapcar #'car (append parts items)) #'<))
+         (best (make-hash-table :test 'equal)))
+    (dolist (it items)
+      (let* ((start (car it))
+             (end
+              (or (seq-find (lambda (b) (> b start)) bounds)
+                  (1+ (length text))))
+             (key (cdr it))
+             (body (substring text (1- start) (1- end)))
+             (old (gethash key best)))
+        (when (or (null old) (> (length body) (length old)))
+          (puthash key body best))))
+    (let (out)
+      (maphash (lambda (k v) (push (cons k v) out)) best)
+      (sort out (lambda (a b) (edgar--key< (car a) (car b)))))))
+
 (defun edgar-section (filing item)
-  "Text of ITEM (e.g. \"1A\", \"7\") from FILING."
-  (cdr (assoc (upcase item) (edgar-sections (edgar-text filing)))))
+  "Text of ITEM from FILING, e.g. \"1A\", \"7\", \"2.02\" or \"II.1\".
+A bare ITEM that exists in several Parts (10-Q Item 2) signals an error
+listing the Part-qualified keys; unknown ITEM returns nil."
+  (let* ((secs (edgar-sections (edgar-text filing)))
+         (want (upcase item))
+         (exact (assoc want secs)))
+    (if exact
+        (cdr exact)
+      (let ((hits
+             (seq-filter
+              (lambda (s)
+                (string-match-p
+                 (concat
+                  "\\`\\(?:IV\\|I\\{1,3\\}\\)\\."
+                  (regexp-quote want)
+                  "\\'")
+                 (car s)))
+              secs)))
+        (cond
+         ((null hits)
+          nil)
+         ((null (cdr hits))
+          (cdr (car hits)))
+         (t
+          (user-error "Item %s is ambiguous; use one of %s"
+                      want
+                      (mapconcat #'car hits ", "))))))))
 
 ;;;; Interactive
 

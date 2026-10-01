@@ -1,0 +1,16 @@
+(:form "10-Q" :text-bucket 17 :text-head
+       "gme-20260801 UNITED STATES SECURITIES AND EXCHANGE COMMISSIO"
+       :sections
+       (("I.1" 16 "ITEM 1. FINANCIAL STATEMENTS GAMESTOP CORP. CONDEN")
+	("I.2" 15 "ITEM 2. MANAGEMENT'S DISCUSSION AND ANALYSIS OF FI")
+	("I.3" 8 "ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES A")
+	("I.4" 10 "ITEM 4. CONTROLS AND PROCEDURES Evaluation of Disc")
+	("II.1" 7 "ITEM 1. LEGAL PROCEEDINGS The matters described in")
+	("II.1A" 9
+	 "ITEM 1A. RISK FACTORS In addition to the other inf")
+	("II.2" 8 "ITEM 2. UNREGISTERED SALES OF EQUITY SECURITIES AN")
+	("II.3" 5 "Item 3. Defaults Upon Senior Securities 36")
+	("II.4" 5 "ITEM 4. MINE SAFETY DISCLOSURES Not applicable.")
+	("II.5" 8 "ITEM 5. OTHER INFORMATION Security Trading Plans o")
+	("II.6" 11
+	 "ITEM 6. EXHIBITS Exhibit Description Previously Fi")))

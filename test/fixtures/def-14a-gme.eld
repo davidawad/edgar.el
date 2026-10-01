@@ -1,0 +1,1 @@
+(:accn "0001193125-26-235130" :form "DEF 14A" :filed "2026-05-22" :report "2026-07-07" :doc "d937376ddef14a.htm" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000119312526235130/d937376ddef14a.htm" :ticker "GME")

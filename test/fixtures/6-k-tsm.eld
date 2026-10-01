@@ -1,0 +1,1 @@
+(:accn "0001046179-26-000660" :form "6-K" :filed "2026-09-24" :report "2026-08-31" :doc "tsm-monthend6kx20260924.htm" :cik 1046179 :url "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000660/tsm-monthend6kx20260924.htm" :ticker "TSM")

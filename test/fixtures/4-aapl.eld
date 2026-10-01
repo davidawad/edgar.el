@@ -1,0 +1,1 @@
+(:accn "0001140361-26-038028" :form "4" :filed "2026-09-29" :report "2026-09-27" :doc "xslF345X06/form4.xml" :cik 320193 :url "https://www.sec.gov/Archives/edgar/data/320193/000114036126038028/xslF345X06/form4.xml" :ticker "AAPL")

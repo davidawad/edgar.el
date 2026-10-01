@@ -1,0 +1,1 @@
+(:accn "0001326380-26-000055" :form "10-Q" :filed "2026-09-09" :report "2026-08-01" :doc "gme-20260801.htm" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000132638026000055/gme-20260801.htm" :ticker "GME")

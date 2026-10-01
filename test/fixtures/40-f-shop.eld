@@ -1,0 +1,1 @@
+(:accn "0001594805-24-000007" :form "40-F" :filed "2024-02-13" :report "2023-12-31" :doc "shop-20231231.htm" :cik 1594805 :url "https://www.sec.gov/Archives/edgar/data/1594805/000159480524000007/shop-20231231.htm" :ticker "SHOP")

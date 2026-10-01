@@ -1,0 +1,1 @@
+(:accn "0001193125-21-289903" :form "S-1" :filed "2021-10-01" :report "" :doc "d157488ds1.htm" :cik 1874178 :url "https://www.sec.gov/Archives/edgar/data/1874178/000119312521289903/d157488ds1.htm" :ticker "RIVN")

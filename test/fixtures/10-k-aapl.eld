@@ -1,0 +1,1 @@
+(:accn "0000320193-25-000079" :form "10-K" :filed "2025-10-31" :report "2025-09-27" :doc "aapl-20250927.htm" :cik 320193 :url "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm" :ticker "AAPL")

@@ -1,0 +1,1 @@
+(:accn "0001104659-26-053166" :form "10-K/A" :filed "2026-04-30" :report "2025-12-31" :doc "tm2611837d1_10ka.htm" :cik 1318605 :url "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm" :ticker "TSLA")

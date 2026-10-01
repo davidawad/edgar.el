@@ -56,6 +56,71 @@
     (should (string-match-p "phones" (cdr (assoc "1" s))))
     (should (string-match-p "risks galore" (cdr (assoc "1A" s))))))
 
+(defconst edgar-test--10q
+  (concat
+   "PART I\nFINANCIAL INFORMATION\nItem 1. Financial Statements\n"
+   "balance sheet and many other statements here\n"
+   "Item 2. Management's Discussion\nsales rose a lot this quarter\n"
+   "see Item 1A of this report for risks\n"
+   "PART II\nOTHER INFORMATION\nItem 1. Legal Proceedings\nnone\n"
+   "Item 2. Unregistered Sales\nnone sold\n"))
+
+(ert-deftest edgar-sections-qualify-by-part ()
+  (let ((s (edgar-sections edgar-test--10q)))
+    (should (equal (mapcar #'car s) '("I.1" "I.2" "II.1" "II.2")))
+    (should (string-match-p "balance sheet" (cdr (assoc "I.1" s))))
+    (should
+     (string-match-p "Legal Proceedings" (cdr (assoc "II.1" s))))
+    ;; Part II heading ends Part I Item 2; a wrapped cross-reference does not.
+    (should (string-match-p "see Item 1A" (cdr (assoc "I.2" s))))
+    (should-not
+     (string-match-p "OTHER INFORMATION" (cdr (assoc "I.2" s))))))
+
+(ert-deftest edgar-sections-ignore-repeated-page-headers ()
+  (let ((s
+         (edgar-sections
+          (concat
+           "PART I\nItem 1. Financial Statements\npage one text\n"
+           "PART I\nItem 1. Financial Statements\npage two text\n"
+           "Item 2. MD&A\nanalysis\n"))))
+    (should (equal (mapcar #'car s) '("I.1" "I.2")))
+    (should (string-match-p "page one" (cdr (assoc "I.1" s))))
+    (should (string-match-p "page two" (cdr (assoc "I.1" s))))))
+
+(ert-deftest edgar-sections-dotted-8k-items ()
+  (let
+      ((s
+        (edgar-sections
+         "Item 2.02 Results of Operations\nrevenue\nItem 9.01 Exhibits\n(d) list\n")))
+    (should (equal (mapcar #'car s) '("2.02" "9.01")))))
+
+(ert-deftest edgar-sections-none-without-items ()
+  (should-not
+   (edgar-sections "SCHEDULE 13G\nNo item headings here at all.\n")))
+
+(ert-deftest edgar-section-resolves-bare-and-ambiguous ()
+  (cl-letf (((symbol-function 'edgar-text)
+             (lambda (_) edgar-test--10q)))
+    (should
+     (string-match-p "balance sheet" (edgar-section nil "I.1")))
+    (should (string-match-p "Legal" (edgar-section nil "ii.1")))
+    (should-error (edgar-section nil "1") :type 'user-error)
+    (should-not (edgar-section nil "9"))))
+
+(ert-deftest edgar-section-bare-unique ()
+  (cl-letf
+      (((symbol-function 'edgar-text)
+        (lambda (_)
+          "PART II\nItem 7. MD&A\ntext\nPART III\nItem 10. Directors\nx\n")))
+    (should (string-match-p "MD&A" (edgar-section nil "7")))
+    (should (string-match-p "Directors" (edgar-section nil "10")))))
+
+(ert-deftest edgar-key-ordering ()
+  (should (edgar--key< "I.2" "II.1"))
+  (should (edgar--key< "II.1" "II.1A"))
+  (should (edgar--key< "2.02" "9.01"))
+  (should-not (edgar--key< "III.1" "II.9")))
+
 (ert-deftest edgar-item-ordering ()
   (should (edgar--item< "1" "1A"))
   (should (edgar--item< "1A" "2"))
