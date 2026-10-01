@@ -30,19 +30,25 @@
 
 (defun edgar--fetch (url)
   "Return the body of URL as a decoded string."
-  (let ((url-request-extra-headers `(("User-Agent" . ,xbrl-user-agent)))
+  (let ((url-request-extra-headers
+         `(("User-Agent" . ,xbrl-user-agent)))
         (buf (url-retrieve-synchronously url t t 60)))
-    (unless buf (error "EDGAR: no response from %s" url))
+    (unless buf
+      (error "EDGAR: no response from %s" url))
     (with-current-buffer buf
       (unwind-protect
           (progn
             (goto-char (point-min))
             (unless (looking-at "HTTP/[0-9.]+ 200")
-              (error "EDGAR: %s -> %s" url
-                     (buffer-substring (point) (line-end-position))))
+              (error
+               "EDGAR: %s -> %s"
+               url
+               (buffer-substring (point) (line-end-position))))
             (re-search-forward "\r?\n\r?\n")
             (decode-coding-string
-             (buffer-substring-no-properties (point) (point-max)) 'utf-8))
+             (buffer-substring-no-properties
+              (point) (point-max))
+             'utf-8))
         (kill-buffer buf)))))
 
 ;;;; Filing lists
@@ -53,19 +59,45 @@ Each has :accn :form :filed :report :doc :cik :url.  FORM, if given,
 filters on exact form type, e.g. \"10-K\".  Covers the SEC's `recent'
 window (about 1000 filings)."
   (let* ((cik (xbrl-cik ticker))
-         (sub (xbrl--get (format "https://data.sec.gov/submissions/%s.json" cik)))
+         (sub
+          (xbrl--get
+           (format "https://data.sec.gov/submissions/%s.json" cik)))
          (r (plist-get (plist-get sub :filings) :recent))
          (n (string-to-number (substring cik 3))))
-    (cl-loop for accn in (plist-get r :accessionNumber)
-             for frm in (plist-get r :form)
-             for filed in (plist-get r :filingDate)
-             for rep in (plist-get r :reportDate)
-             for doc in (plist-get r :primaryDocument)
-             when (or (null form) (equal frm form))
-             collect (list :accn accn :form frm :filed filed :report rep
-                           :doc doc :cik n
-                           :url (format "https://www.sec.gov/Archives/edgar/data/%d/%s/%s"
-                                        n (replace-regexp-in-string "-" "" accn) doc)))))
+    (cl-loop
+     for
+     accn
+     in
+     (plist-get r :accessionNumber)
+     for
+     frm
+     in
+     (plist-get r :form)
+     for
+     filed
+     in
+     (plist-get r :filingDate)
+     for
+     rep
+     in
+     (plist-get r :reportDate)
+     for
+     doc
+     in
+     (plist-get r :primaryDocument)
+     when
+     (or (null form) (equal frm form))
+     collect
+     (list
+      :accn accn
+      :form frm
+      :filed filed
+      :report rep
+      :doc doc
+      :cik n
+      :url
+      (format "https://www.sec.gov/Archives/edgar/data/%d/%s/%s"
+              n (replace-regexp-in-string "-" "" accn) doc)))))
 
 (defun edgar-latest (ticker form)
   "Newest FORM filing for TICKER, or nil."
@@ -84,7 +116,9 @@ window (about 1000 filings)."
       (insert html)
       (let ((dom (libxml-parse-html-region (point-min) (point-max))))
         (erase-buffer)
-        (let ((shr-inhibit-images t) (shr-use-fonts nil) (shr-width 100))
+        (let ((shr-inhibit-images t)
+              (shr-use-fonts nil)
+              (shr-width 100))
           (shr-insert-document dom)))
       (buffer-substring-no-properties (point-min) (point-max)))))
 
@@ -94,26 +128,48 @@ window (about 1000 filings)."
   "Alist of (ITEM . BODY) from filing TEXT, e.g. (\"1A\" . \"Risk Factors...\").
 The table of contents repeats every Item heading with no body, so for each
 Item the occurrence with the longest body wins."
-  (let (marks best)
+  (let (marks
+        best)
     (with-temp-buffer
       (insert text)
       (goto-char (point-min))
       (while (re-search-forward edgar--item-re nil t)
-        (push (cons (upcase (match-string 1)) (line-beginning-position)) marks))
+        (push (cons
+               (upcase (match-string 1)) (line-beginning-position))
+              marks))
       (setq marks (nreverse marks))
-      (cl-loop for (m . rest) on marks
-               for end = (if rest (cdar rest) (point-max))
-               for body = (buffer-substring-no-properties (cdr m) end)
-               for old = (assoc (car m) best)
-               when (or (null old) (> (length body) (length (cdr old))))
-               do (setq best (cons (cons (car m) body) (assoc-delete-all (car m) best)))))
+      (cl-loop
+       for
+       (m . rest)
+       on
+       marks
+       for
+       end
+       =
+       (if rest
+           (cdar rest)
+         (point-max))
+       for
+       body
+       =
+       (buffer-substring-no-properties (cdr m) end)
+       for
+       old
+       =
+       (assoc (car m) best)
+       when
+       (or (null old) (> (length body) (length (cdr old))))
+       do
+       (setq best
+             (cons
+              (cons (car m) body) (assoc-delete-all (car m) best)))))
     (sort best (lambda (a b) (edgar--item< (car a) (car b))))))
 
 (defun edgar--item< (a b)
   "Return non-nil if Item label A precedes B, numerically then by letter."
-  (let ((na (string-to-number a)) (nb (string-to-number b)))
-    (or (< na nb)
-        (and (= na nb) (string< a b)))))
+  (let ((na (string-to-number a))
+        (nb (string-to-number b)))
+    (or (< na nb) (and (= na nb) (string< a b)))))
 
 (defun edgar-section (filing item)
   "Text of ITEM (e.g. \"1A\", \"7\") from FILING."
@@ -123,9 +179,12 @@ Item the occurrence with the longest body wins."
 
 (defvar-local edgar--filing nil)
 
-(define-derived-mode edgar-list-mode tabulated-list-mode "EDGAR"
-  "Browse EDGAR filings.  RET opens the filing at point."
-  (define-key edgar-list-mode-map (kbd "RET") #'edgar-list-open))
+(define-derived-mode
+ edgar-list-mode
+ tabulated-list-mode
+ "EDGAR"
+ "Browse EDGAR filings.  RET opens the filing at point."
+ (define-key edgar-list-mode-map (kbd "RET") #'edgar-list-open))
 
 (defun edgar-list-open ()
   "Open the filing at point."
@@ -135,24 +194,40 @@ Item the occurrence with the longest body wins."
 ;;;###autoload
 (defun edgar-list (ticker &optional form)
   "List TICKER's filings (optionally only FORM) in a browsable buffer."
-  (interactive (list (xbrl--read-ticker)
-                     (let ((f (read-string "Form (blank = all): "))) (unless (string-empty-p f) f))))
+  (interactive (list
+                (xbrl--read-ticker)
+                (let ((f (read-string "Form (blank = all): ")))
+                  (unless (string-empty-p f)
+                    f))))
   (let ((rows (edgar-filings ticker form)))
-    (with-current-buffer (get-buffer-create (format "*edgar: %s*" (upcase ticker)))
+    (with-current-buffer (get-buffer-create
+                          (format "*edgar: %s*" (upcase ticker)))
       (edgar-list-mode)
-      (setq tabulated-list-format [("Filed" 12 t) ("Form" 8 t) ("Period" 12 t) ("Accession" 22 t)]
+      (setq tabulated-list-format
+            [("Filed" 12 t)
+             ("Form" 8 t)
+             ("Period" 12 t)
+             ("Accession" 22 t)]
             tabulated-list-entries
-            (mapcar (lambda (f)
-                      (list f (vector (plist-get f :filed) (plist-get f :form)
-                                      (or (plist-get f :report) "") (plist-get f :accn))))
-                    rows))
+            (mapcar
+             (lambda (f)
+               (list
+                f
+                (vector
+                 (plist-get f :filed)
+                 (plist-get f :form)
+                 (or (plist-get f :report) "")
+                 (plist-get f :accn))))
+             rows))
       (tabulated-list-init-header)
       (tabulated-list-print)
       (pop-to-buffer (current-buffer)))))
 
 (defun edgar-open (filing)
   "Render FILING in a read-only buffer."
-  (let ((buf (get-buffer-create (format "*edgar: %s*" (plist-get filing :accn)))))
+  (let ((buf
+         (get-buffer-create
+          (format "*edgar: %s*" (plist-get filing :accn)))))
     (with-current-buffer buf
       (let ((inhibit-read-only t))
         (erase-buffer)
@@ -165,8 +240,14 @@ Item the occurrence with the longest body wins."
 ;;;###autoload
 (defun edgar-read (ticker form)
   "Open the latest FORM filing for TICKER."
-  (interactive (list (xbrl--read-ticker) (completing-read "Form: " '("10-K" "10-Q" "8-K" "DEF 14A") nil nil "10-K")))
-  (edgar-open (or (edgar-latest ticker form) (user-error "No %s for %s" form ticker))))
+  (interactive (list
+                (xbrl--read-ticker)
+                (completing-read
+                 "Form: " '("10-K" "10-Q" "8-K" "DEF 14A")
+                 nil nil "10-K")))
+  (edgar-open
+   (or (edgar-latest ticker form)
+       (user-error "No %s for %s" form ticker))))
 
 (provide 'edgar)
 ;;; edgar.el ends here
