@@ -57,10 +57,12 @@ part of the normal check.
 ## Current state (L2 today)
 
 L2: 10-K, 10-Q, 8-K, 20-F, S-1 (Part II), SCHEDULE 13G (HTML era) = 12.0% of filings.
-L1 only: 40-F, 6-K, DEF 14A, 11-K, 4, 13F-HR, 144, SC 13G = 41.0% of filings (Forms 4
-and 144 alone are 35%). Together 14 of 245 base forms and 53.0% of filings by volume.
-Each has one latest and one oldest-in-window recorded filing, from a single filer.
-Nothing here is XML-aware yet, so Forms 4/144/13F are readable but not queryable.
+L1 registry coverage: 40-F, 6-K, DEF 14A, 11-K, 4, 13F-HR, 144, SC 13G = 41.0% of
+filings (Forms 4 and 144 alone are 35%). Together 14 of 245 base forms and 53.0% of
+filings by volume. Forms 3/4/5 now have typed accessors in `edgar-ownership.el`; the
+offline suite checks the Apple Form 4 XML, buy/sale/option-exercise transaction
+scenarios, Form 4/A naming, holdings, footnotes, 10b5-1, signatures, and X0306/X0609
+schema handling. Forms 144/13F remain readable but are not queryable through typed APIs.
 
 ## Gaps that are not about a specific form
 
