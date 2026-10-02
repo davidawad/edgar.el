@@ -26,6 +26,14 @@
                        edgar-ownership-test--directory))
     (libxml-parse-xml-region (point-min) (point-max))))
 
+(defun edgar-ownership-test--golden (slug)
+  "Read field golden values for ownership fixture SLUG."
+  (with-temp-buffer
+    (insert-file-contents
+     (expand-file-name (concat "golden-fields/" slug ".eld")
+                       edgar-ownership-test--directory))
+    (read (current-buffer))))
+
 (defun edgar-ownership-test--transaction (form code)
   "Return a small offline ownership XML tree for FORM and transaction CODE."
   (edgar-ownership-test--xml
@@ -52,31 +60,33 @@
         (tree (edgar-ownership-test--fixture "4-aapl")))
     (cl-letf (((symbol-function 'edgar-xml) (lambda (_filing) tree)))
       (should
-       (equal (edgar-ownership-issuer filing)
-              '(:cik "0000320193" :name "Apple Inc." :ticker "AAPL")))
-      (let ((owner (car (edgar-ownership-reporting-owners filing))))
-        (should (equal (plist-get owner :name) "Khan Sabih"))
-        (should (equal (plist-get owner :officer-title) "COO"))
-        (should (plist-get owner :is-officer))
-        (should-not (plist-get owner :is-director)))
-      (let ((rows (edgar-form4-transactions filing)))
-        (should (= (length rows) 2))
-        (dolist (row rows)
-          (should (eq (plist-get row :kind) 'derivative))
-          (should (equal (plist-get row :code) "A"))
-          (should (equal (plist-get row :shares) "47645"))
-          (should (equal (plist-get row :price) "0.00"))
-          (should (equal (plist-get row :acquired-disposed) "A"))
-          (should (equal (plist-get row :shares-owned-following) "47645"))
-          (should (equal (plist-get row :direct-indirect) "D"))
-          (should (equal (length (plist-get row :footnotes)) 2)))
-        (should (string-match-p "Each restricted stock unit"
-                                (car (plist-get (car rows) :footnotes)))))
-      (should-not (edgar-ownership-10b5-1-p filing))
-      (should
-       (equal (car (edgar-ownership-signatures filing))
-              '(:name "/s/ Sam Whittington, Attorney-in-Fact for Sabih Khan"
-                :date "2026-09-29"))))))
+       (equal
+        (list
+         :issuer (edgar-ownership-issuer filing)
+         :owner
+         (let ((owner (car (edgar-ownership-reporting-owners filing))))
+           (list :name (plist-get owner :name)
+                 :officer-title (plist-get owner :officer-title)
+                 :is-officer (plist-get owner :is-officer)
+                 :is-director (plist-get owner :is-director)))
+         :transactions
+         (mapcar
+          (lambda (row)
+            (list :kind (plist-get row :kind)
+                  :code (plist-get row :code)
+                  :shares (plist-get row :shares)
+                  :price (plist-get row :price)
+                  :acquired-disposed (plist-get row :acquired-disposed)
+                  :shares-owned-following
+                  (plist-get row :shares-owned-following)
+                  :direct-indirect (plist-get row :direct-indirect)
+                  :footnote-count (length (plist-get row :footnotes))))
+          (edgar-form4-transactions filing))
+         :footnote-head
+         (car (plist-get (car (edgar-form4-transactions filing)) :footnotes))
+         :10b5-1 (edgar-ownership-10b5-1-p filing)
+         :signature (car (edgar-ownership-signatures filing)))
+        (edgar-ownership-test--golden "4-aapl"))))))
 
 (ert-deftest edgar-ownership-transaction-golden-codes ()
   "Keep representative buy, sale, and option-exercise transaction values."
