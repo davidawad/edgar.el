@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission>
+  <schemaVersion>X0708</schemaVersion>
+  <submissionType>D/A</submissionType>
+  <testOrLive>LIVE</testOrLive>
+  <primaryIssuer>
+    <cik>0002078362</cik>
+    <entityName>Sample Fund, L.P.</entityName>
+  </primaryIssuer>
+  <offeringData>
+    <federalExemptionsExclusions>
+      <item>06b</item>
+      <item>3C.7</item>
+    </federalExemptionsExclusions>
+    <offeringSalesAmounts>
+      <totalOfferingAmount>Indefinite</totalOfferingAmount>
+      <totalAmountSold>1000000</totalAmountSold>
+      <totalRemaining>Indefinite</totalRemaining>
+    </offeringSalesAmounts>
+    <investors>
+      <hasNonAccreditedInvestors>false</hasNonAccreditedInvestors>
+      <totalNumberAlreadyInvested>3</totalNumberAlreadyInvested>
+    </investors>
+    <salesCommissionsFindersFees>
+      <salesCommissions><dollarAmount>0</dollarAmount></salesCommissions>
+      <findersFees><dollarAmount>0</dollarAmount></findersFees>
+    </salesCommissionsFindersFees>
+  </offeringData>
+</edgarSubmission>
