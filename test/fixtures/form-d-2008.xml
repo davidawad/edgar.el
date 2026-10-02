@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission>
+  <schemaVersion>X0708</schemaVersion>
+  <submissionType>D</submissionType>
+  <testOrLive>LIVE</testOrLive>
+  <primaryIssuer>
+    <cik>0001388987</cik>
+    <entityName>RETICLE PARTNERS GROWTH LLC</entityName>
+  </primaryIssuer>
+  <offeringData>
+    <federalExemptionsExclusions><item>06</item></federalExemptionsExclusions>
+    <offeringSalesAmounts>
+      <totalOfferingAmount>1000000</totalOfferingAmount>
+      <totalAmountSold>100000</totalAmountSold>
+      <totalRemaining>900000</totalRemaining>
+    </offeringSalesAmounts>
+    <investors>
+      <hasNonAccreditedInvestors>false</hasNonAccreditedInvestors>
+      <totalNumberAlreadyInvested>1</totalNumberAlreadyInvested>
+    </investors>
+  </offeringData>
+</edgarSubmission>

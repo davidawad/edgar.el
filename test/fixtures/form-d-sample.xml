@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission>
+  <schemaVersion>X0708</schemaVersion>
+  <submissionType>D</submissionType>
+  <testOrLive>LIVE</testOrLive>
+  <primaryIssuer>
+    <cik>0002033975</cik>
+    <entityName>Sample Issuer, Inc.</entityName>
+  </primaryIssuer>
+  <offeringData>
+    <federalExemptionsExclusions>
+      <item>06b</item>
+      <item>06c</item>
+    </federalExemptionsExclusions>
+    <offeringSalesAmounts>
+      <totalOfferingAmount>Indefinite</totalOfferingAmount>
+      <totalAmountSold>250000</totalAmountSold>
+      <totalRemaining>Indefinite</totalRemaining>
+    </offeringSalesAmounts>
+    <investors>
+      <hasNonAccreditedInvestors>true</hasNonAccreditedInvestors>
+      <numberNonAccreditedInvestors>2</numberNonAccreditedInvestors>
+      <totalNumberAlreadyInvested>12</totalNumberAlreadyInvested>
+    </investors>
+    <salesCommissionsFindersFees>
+      <salesCommissions><dollarAmount>12500</dollarAmount></salesCommissions>
+      <findersFees><dollarAmount>2500</dollarAmount></findersFees>
+    </salesCommissionsFindersFees>
+  </offeringData>
+</edgarSubmission>
