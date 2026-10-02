@@ -15,7 +15,9 @@
 (files "src/*.el")
 
 (script "test"
-        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/form-coverage-test.el test/edgar-xml-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el")
+        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/form-coverage-test.el test/edgar-xml-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el")
+(script "record-fixtures"
+        "eask emacs --batch -L tools -l tools/record-fixtures.el -f edgar-record-fixtures-run")
 (script "coverage"
         "eask emacs --batch -l tools/form-coverage-check.el")
 (script "coverage-network"
