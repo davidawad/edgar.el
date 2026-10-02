@@ -32,6 +32,12 @@ point to the filing's `.txt` submission.
 date values remain strings so the source precision is preserved; transaction
 rows include their kind, ownership codes, and resolved footnote text.
 
+`edgar-schedules.el` provides `edgar-schedule-13d-g-cover-page` for structured
+Schedule 13D/G XML and `edgar-schedule-13d-purpose-of-transaction` for 13D Item
+4. Values retain their source strings. Legacy `SC 13D`/`SC 13G` filings remain
+available through `edgar-schedule-13d-g-legacy-sections` and the generic
+`edgar-section` API.
+
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history
 pages whose date range overlaps the request.

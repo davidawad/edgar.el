@@ -5,6 +5,8 @@
 (require 'ert)
 (require 'cl-lib)
 (require 'edgar-ownership)
+(require 'edgar-schedules)
+(require 'edgar-fixtures)
 
 (defconst edgar-ownership-test--directory
   (file-name-directory (or load-file-name buffer-file-name))
@@ -145,6 +147,91 @@
       (should (equal (edgar-ownership--text
                       (edgar-ownership--child tree 'schemaVersion))
                      "X0306")))))
+
+(defun edgar-ownership-test--schedule-xml (form)
+  "Return a compact Schedule 13D/G XML tree for FORM."
+  (edgar-ownership-test--xml
+   (if (string-match-p "13G" form)
+       (concat
+        "<edgarSubmission xmlns='http://www.sec.gov/edgar/schedule13g'>"
+        "<formData><coverPageHeader><issuerInfo>"
+        "<issuerCik>0000000001</issuerCik><issuerName>Example Corp</issuerName>"
+        "<issuerCusip>123456789</issuerCusip><issuerCusip>987654321</issuerCusip>"
+        "</issuerInfo></coverPageHeader>"
+        "<coverPageHeaderReportingPersonDetails><reportingCik>0000000002</reportingCik>"
+        "<reportingPersonName>Example Fund</reportingPersonName>"
+        "<reportingPersonBeneficiallyOwnedNumberOfShares><soleVotingPower>10</soleVotingPower>"
+        "<sharedVotingPower>20</sharedVotingPower><soleDispositivePower>10</soleDispositivePower>"
+        "<sharedDispositivePower>20</sharedDispositivePower>"
+        "</reportingPersonBeneficiallyOwnedNumberOfShares>"
+        "<reportingPersonBeneficiallyOwnedAggregateNumberOfShares>30</reportingPersonBeneficiallyOwnedAggregateNumberOfShares>"
+        "<classPercent>5.5</classPercent><typeOfReportingPerson>IA</typeOfReportingPerson>"
+        "</coverPageHeaderReportingPersonDetails><items><item4>"
+        "<amountBeneficiallyOwned>30</amountBeneficiallyOwned><classPercent>5.5</classPercent>"
+        "</item4></items></formData></edgarSubmission>")
+     (concat
+      "<edgarSubmission xmlns='http://www.sec.gov/edgar/schedule13d'>"
+      "<formData><coverPageHeader><issuerInfo>"
+      "<issuerCIK>0000000001</issuerCIK><issuerName>Example Corp</issuerName>"
+      "<issuerCUSIP>123456789</issuerCUSIP></issuerInfo></coverPageHeader>"
+      "<reportingPersons><reportingPersonInfo><reportingPersonCIK>0000000002</reportingPersonCIK>"
+      "<reportingPersonName>Example Fund</reportingPersonName><soleVotingPower>10</soleVotingPower>"
+      "<sharedVotingPower>20</sharedVotingPower><soleDispositivePower>10</soleDispositivePower>"
+      "<sharedDispositivePower>20</sharedDispositivePower><aggregateAmountOwned>30</aggregateAmountOwned>"
+      "<percentOfClass>5.5</percentOfClass><typeOfReportingPerson>IA</typeOfReportingPerson>"
+      "</reportingPersonInfo></reportingPersons><items1To7><item4>"
+      "<transactionPurpose>Seeking board representation.</transactionPurpose>"
+      "</item4></items1To7></formData></edgarSubmission>"))))
+
+(ert-deftest edgar-schedule-13g-cover-page-and-amendment-golden ()
+  "Extract Schedule 13G cover values, including amendment forms."
+  (let* ((filing '(:form "SCHEDULE 13G/A"))
+         (tree (edgar-ownership-test--schedule-xml (plist-get filing :form))))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_filing) tree)))
+      (let* ((cover (edgar-schedule-13d-g-cover-page filing))
+             (issuer (plist-get cover :issuer))
+             (person (car (plist-get cover :reporting-persons))))
+        (should (edgar-schedules-structured-p filing))
+        (should (equal (plist-get issuer :cik) "0000000001"))
+        (should (equal (plist-get issuer :cusips)
+                       '("123456789" "987654321")))
+        (should (equal (plist-get person :name) "Example Fund"))
+        (should (equal (plist-get person :shares) "30"))
+        (should (equal (plist-get person :percent-of-class) "5.5"))
+        (should (equal (plist-get person :type-of-reporting-person) "IA"))
+        (should (equal (plist-get person :item-4-amount) "30"))
+        (should (equal (plist-get person :item-4-percent) "5.5"))))))
+
+(ert-deftest edgar-schedule-13d-purpose-xml-and-legacy ()
+  "Read XML Item 4 purpose and reuse section parsing for legacy text."
+  (let* ((xml-filing '(:form "SCHEDULE 13D/A"))
+         (xml-tree (edgar-ownership-test--schedule-xml
+                    (plist-get xml-filing :form))))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_filing) xml-tree)))
+      (should (equal (edgar-schedule-13d-purpose-of-transaction xml-filing)
+                     "Seeking board representation."))))
+  (let ((legacy '(:form "SC 13D/A")))
+    (cl-letf (((symbol-function 'edgar-section)
+               (lambda (_filing item)
+                 (and (equal item "4") "Legacy purpose section"))))
+      (should (equal (edgar-schedule-13d-purpose-of-transaction legacy)
+                     "Legacy purpose section")))))
+
+(ert-deftest edgar-schedule-13g-legacy-fixture-remains-text-readable ()
+  "Keep the recorded SC 13G/A text fixture available through legacy sections."
+  (let* ((filing (edgar-fixtures-filing "sc-13ga-gme"))
+         (text (edgar-fixtures-text "sc-13ga-gme")))
+    (should (equal (plist-get filing :form) "SC 13G/A"))
+    (should (string-match-p "CUSIP No. 36467W109" text))
+    (should-not (edgar-schedules-structured-p filing))
+    (should-not (edgar-schedule-13d-g-cover-page filing))
+    (cl-letf (((symbol-function 'edgar-text) (lambda (_) "legacy body"))
+              ((symbol-function 'edgar-sections)
+               (lambda (text)
+                 (should (equal text "legacy body"))
+                 '(("4" . "ownership narrative")))))
+      (should (equal (edgar-schedule-13d-g-legacy-sections filing)
+                     '(("4" . "ownership narrative")))))))
 
 (provide 'edgar-ownership-test)
 ;;; edgar-ownership-test.el ends here
