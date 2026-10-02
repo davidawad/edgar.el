@@ -20,6 +20,12 @@ is not (`"1"` in a 10-Q).
 
 ## Form coverage
 
+`edgar-forms.el` is the single-source registry for all 245 base forms in the
+2026 Q2 SEC index. Every row is L0 and records its family, backend, empty
+section/field metadata, Q2 volume, and notes. `edgar-form-info` accepts
+amendment names such as `"10-K/A"`; `edgar-forms-by-family` returns the rows
+for a family. The registry tests validate the offline index snapshot.
+
 EDGAR has hundreds of form types; these are the main periodic, current,
 ownership and offering ones, not all of them. Each is tested against a
 recorded real filing of the latest vintage AND the oldest one in the SEC's
