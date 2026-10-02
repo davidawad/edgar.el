@@ -6,9 +6,20 @@ that goal. Data: SEC full-index `form.idx`, 2026 Q2 (`tools/form-survey.sh`),
 
 The machine-readable source of truth is `src/edgar-forms.el`. Its 245 base
 form rows were seeded from the index snapshot in `test/form-survey-2026-q2.txt`;
-`test/edgar-forms-test.el` checks that snapshot and the family counts below.
+`eask run script coverage` checks every snapshot form and volume against the
+registry, validates the artifacts required by each L1/L2 row, and prints the
+form-by-level-and-volume matrix. It runs offline inside `eask run script check`.
+Primary artifacts follow the registered backend: HTML uses `.htm.gz` or `.htm`,
+XML uses `.xml` or `.xml.gz`, and text uses `.txt` or `.txt.gz`.
 Run `EDGAR_UA="Name email" tools/form-survey.sh` to refresh the snapshot and
 registry when updating the measured quarter.
+
+The opt-in `EDGAR_UA="Name email" eask run script coverage-network` fetches
+the latest completed quarter's SEC `form.idx`, rejects unregistered forms by
+name, and reports registered forms that are new relative to the committed Q2
+snapshot. Override its target with `EDGAR_COVERAGE_YEAR` and
+`EDGAR_COVERAGE_QUARTER` (for example, `2026` and `3`). Network access is never
+part of the normal check.
 
 - 342 distinct form types, 245 once amendments (`/A`) are folded into their base form.
 - Volume is extremely concentrated: top 10 base forms = 76% of filings, top 30 = 92%,
@@ -22,8 +33,8 @@ registry when updating the measured quarter.
 | Level | Meaning | Required of |
 |---|---|---|
 | L0 | Form is in the registry (name, family, backend, volume) | every base form |
-| L1 | `edgar-text` reads it, one recorded fixture, expect snapshot | every base form |
-| L2 | Narrative forms: sections extracted + golden strings. XML forms: typed accessors + golden values | families below, by volume |
+| L1 | `edgar-text` reads it, one recorded fixture and expect snapshot | every base form |
+| L2 | L1 plus golden strings for narrative forms or typed accessors + golden values for XML forms | families below, by volume |
 
 ## Families (Q2 2026 volume; family rules are a first-pass grouping)
 
