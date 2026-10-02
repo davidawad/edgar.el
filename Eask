@@ -15,9 +15,9 @@
 (files "src/*.el")
 
 (script "test"
-        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/edgar-xml-test.el test/edgar-docs-test.el test/edgar-http-test.el")
+        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/edgar-xml-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el")
 (script "check"
-        "eask lint package && eask lint checkdoc && eask lint regexps && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/edgar-xml-test.el test/edgar-docs-test.el test/edgar-http-test.el && eask compile src/edgar.el src/edgar-forms.el src/edgar-xml.el src/edgar-docs.el src/edgar-http.el")
+        "eask lint package && eask lint checkdoc && eask lint regexps && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/edgar-xml-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el && eask compile src/edgar.el src/edgar-forms.el src/edgar-xml.el src/edgar-docs.el src/edgar-http.el src/edgar-index.el")
 (script "expect-update"
         "EDGAR_EXPECT_UPDATE=1 eask test ert test/edgar-expect-test.el")
 (script "golden-update" "eask emacs --script tools/make-golden.el")

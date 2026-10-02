@@ -98,8 +98,13 @@
                 (search-forward "\n\n" nil t))
       (error "EDGAR HTTP: missing response body"))
     (let ((body (buffer-substring-no-properties (point) (point-max))))
-      (when (equal
-             (cdr (assoc-string "Content-Encoding" headers t)) "gzip")
+      (when (or (equal
+                 (cdr
+                  (assoc-string "Content-Encoding" headers t))
+                 "gzip")
+                (and (> (length body) 1)
+                     (= (aref body 0) #x1f)
+                     (= (aref body 1) #x8b)))
         (with-temp-buffer
           (set-buffer-multibyte nil)
           (insert body)

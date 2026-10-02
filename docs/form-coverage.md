@@ -53,10 +53,10 @@ Nothing here is XML-aware yet, so Forms 4/144/13F are readable but not queryable
 
 ## Gaps that are not about a specific form
 
-Whole-library capabilities a general-purpose utility needs, tracked as beads:
-raw-XML backend, multi-document filings (exhibits), enumerating filings across
-all filers (not just by ticker), a cache and rate limiter, history past the SEC's
-~1000-filing `recent` window, amendment handling, legacy text-only filings,
-inline-XBRL facts (in xbrl.el), and testing each form on more than one filer.
+Implemented whole-library capabilities: raw-XML access, multi-document filings
+(exhibits), quarterly/daily enumeration across all filers, and a cache plus rate
+limiter.  Remaining gaps tracked as beads: history past the SEC's ~1000-filing
+`recent` window, amendment handling, legacy text-only filings, inline-XBRL facts
+(in xbrl.el), and testing each form on more than one filer.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).
