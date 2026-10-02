@@ -62,20 +62,13 @@ codes select custom fields or heading catalogs.
 
 ## Form coverage
 
-`edgar-forms.el` is the single-source registry for all 245 base forms in the
-2026 Q2 SEC index. Every row is L0 and records its family, backend, empty
-section/field metadata, Q2 volume, and notes. `edgar-form-info` accepts
-amendment names such as `"10-K/A"`; `edgar-forms-by-family` returns the rows
-for a family. The registry tests validate the offline index snapshot.
-
-EDGAR has hundreds of form types; these are the main periodic, current,
-ownership and offering ones, not all of them. Each is tested against a
-recorded real filing of the latest vintage AND the oldest one in the SEC's
-`recent` window (layouts drift, e.g. 2013 10-Qs), offline, three ways:
-structure snapshots (`test/expect/`), verbatim golden strings pinned to
-specific sections (`test/golden/`, which must appear in that section and in no
-other, and every parsed section must have some), and hand-checked facts
-(`test/golden-facts.eld`).
+`edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.
+Cataloging a form does not imply its filing body is parsed: the level records
+what this package currently supports for each form. See the generated
+[per-form coverage table](docs/form-coverage.md#per-form-registry) for the
+current registry state. `edgar-form-info` accepts amendment names such as
+`"10-K/A"`; `edgar-forms-by-family` returns the rows for a family. The offline
+coverage gate checks registry metadata and recorded fixture artifacts.
 
 | Form | Sections | Notes |
 |---|---|---|

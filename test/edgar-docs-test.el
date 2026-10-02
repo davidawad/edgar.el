@@ -2,6 +2,12 @@
 
 (require 'ert)
 (require 'edgar-docs)
+(require 'edgar-form-docs)
+
+(ert-deftest edgar-form-docs-table-matches-registry ()
+  (should (= (length (edgar-form-docs--rows)) 245))
+  (should (string-match-p "| `10-K` |" (edgar-form-docs--table)))
+  (should-not (edgar-form-docs-check)))
 
 (defconst edgar-docs-test--filing
   '(:accn
