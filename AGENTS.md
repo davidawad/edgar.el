@@ -10,7 +10,11 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
 
 ## For agents
 
-- Read `README.md` first.
+- Read `README.md` first, then `docs/form-coverage.md` (measured scope: 245
+  base forms, volumes, families, coverage levels L0/L1/L2).
+- Work is tracked with `br` in `.beads/` (prefix `edgar`; epic
+  `edgar-form-coverage-w00`). `br ready --json` for what is unblocked; commit
+  code and `.beads/` changes together after `br sync --flush-only`.
 - Tooling is the `swe-project-plugin-pack-elisp` cohort, declared in `Eask`
   (install once: `eask install-deps --dev`; needs `eask-cli` from brew).
   One command runs every gate: `eask run script check` (package-lint,
