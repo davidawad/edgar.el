@@ -1,6 +1,7 @@
 ;;; edgar-test.el --- tests for edgar.el -*- lexical-binding: t; -*-
 
 (require 'ert)
+(require 'json)
 
 ;; Coverage (undercover.el, pack-mandated).  Must run before the source loads.
 (setq load-prefer-newer t)
@@ -8,6 +9,18 @@
   (undercover "src/*.el" (:report-format 'text) (:send-report nil)))
 
 (require 'edgar)
+
+(defconst edgar-test--dir
+  (file-name-directory (or load-file-name buffer-file-name))
+  "Directory containing the EDGAR tests.")
+
+(defun edgar-test--fixture-json (name)
+  "Return recorded JSON fixture NAME as a plist."
+  (with-temp-buffer
+    (let ((auto-compression-mode t))
+      (insert-file-contents
+       (expand-file-name (concat "fixtures/" name) edgar-test--dir)))
+    (json-parse-buffer :object-type 'plist :array-type 'list)))
 
 (defconst edgar-test--submissions
   '(:filings
@@ -139,6 +152,149 @@
        (equal
         (plist-get (car k) :url)
         "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm")))))
+
+(ert-deftest edgar-filings-loads-recorded-history ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        (history
+         (edgar-test--fixture-json "submissions-aapl-001.json.gz"))
+        requests)
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (cond
+                  ((string-suffix-p "/CIK0000320193.json" url)
+                   recent)
+                  ((string-suffix-p
+                    "/CIK0000320193-submissions-001.json" url)
+                   history)
+                  (t
+                   (error "Unexpected URL: %s" url))))))
+      (let ((filings
+             (edgar-filings "AAPL" "10-K" :since "2014-01-01")))
+        (should (= (length requests) 2))
+        (should (equal (plist-get (car filings) :filed) "2025-10-31"))
+        (should
+         (equal
+          (plist-get
+           (cl-find-if
+            (lambda (filing)
+              (equal (plist-get filing :filed) "2014-10-27"))
+            filings)
+           :form)
+          "10-K"))))))
+
+(ert-deftest edgar-filings-unbounded-stays-recent-only ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        requests)
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (if (string-suffix-p "/CIK0000320193.json" url)
+                     recent
+                   (error
+                    "Unbounded call fetched history: %s" url)))))
+      (let ((filings (edgar-filings "AAPL" "10-K")))
+        (should (= (length requests) 1))
+        (should-not
+         (cl-find-if
+          (lambda (filing)
+            (equal (plist-get filing :filed) "2014-10-27"))
+          filings))))))
+
+(ert-deftest edgar-filings-date-bounds-are-inclusive ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        (history
+         (edgar-test--fixture-json "submissions-aapl-001.json.gz")))
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (if (string-suffix-p "-submissions-001.json" url)
+                     history
+                   recent))))
+      (let ((filings
+             (edgar-filings
+              "AAPL"
+              "10-K"
+              :since "2013-10-30"
+              :until "2014-10-27")))
+        (should
+         (equal
+          (mapcar
+           (lambda (filing) (plist-get filing :filed)) filings)
+          '("2014-10-27" "2013-10-30")))))))
+
+(ert-deftest edgar-filings-skips-history-before-since ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        requests)
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (if (string-suffix-p "/CIK0000320193.json" url)
+                     recent
+                   (error "History page should not be fetched")))))
+      (edgar-filings "AAPL" "10-K" :since "2016-01-01")
+      (should (= (length requests) 1)))))
+
+(ert-deftest edgar-filings-fetches-only-overlapping-history-pages ()
+  (let* ((submissions (copy-tree edgar-test--submissions))
+         (history
+          '(:accessionNumber
+            ("0000320193-14-000001")
+            :form ("10-K")
+            :filingDate ("2014-10-27")
+            :reportDate ("2014-09-27")
+            :primaryDocument ("aapl-20140927.htm")))
+         requests)
+    (plist-put
+     (plist-get submissions :filings)
+     :files
+     '((:name
+        "older.json"
+        :filingFrom "1994-01-01"
+        :filingTo "2009-12-31")
+       (:name
+        "matching.json"
+        :filingFrom "2010-01-01"
+        :filingTo "2015-12-31")))
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (cond
+                  ((string-suffix-p "/CIK0000320193.json" url)
+                   submissions)
+                  ((string-suffix-p "/matching.json" url)
+                   history)
+                  (t
+                   (error "Non-overlapping page fetched: %s" url))))))
+      (let ((filings
+             (edgar-filings
+              "AAPL"
+              "10-K"
+              :since "2014-01-01"
+              :until "2014-12-31")))
+        (should (= (length requests) 2))
+        (should
+         (equal
+          (mapcar
+           (lambda (filing) (plist-get filing :filed)) filings)
+          '("2014-10-27")))))))
+
+(ert-deftest edgar-unique-filings-deduplicates-accessions ()
+  (let ((a '(:accn "a" :filed "2025-01-01"))
+        (b '(:accn "b" :filed "2024-01-01"))
+        (duplicate '(:accn "a" :filed "2023-01-01")))
+    (should
+     (equal
+      (edgar--unique-filings (list a b duplicate)) (list a b)))))
 
 (ert-deftest edgar-latest-is-newest ()
   (edgar-test--with-sec

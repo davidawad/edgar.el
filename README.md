@@ -4,12 +4,17 @@ Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
 
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
+    (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
     (edgar-documents filing)                    ; list filing documents
     (edgar-exhibit filing "EX-99.1")            ; exhibit as plain text
+
+With no date bounds, `edgar-filings` returns only the SEC's recent filings.
+Supplying an inclusive `:since` or `:until` bound lazily merges only history
+pages whose date range overlaps the request.
 
 ## Sections
 
