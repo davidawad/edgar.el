@@ -32,6 +32,7 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   expect-update` and READ `git diff test/expect/` -- never promote blindly.
   New form type: add it to `tools/record-fixtures.el` and the invariants table
   in the test, record, update, review. Fixtures are public SEC documents.
+- `edgar-docs.el` provides `edgar-documents` and `edgar-exhibit`; it uses the SEC directory `index.json` and returns exhibit text through `edgar-text`. Directory JSON does not supply exhibit labels/descriptions, so type labels are inferred from filenames and descriptions are filenames.
 - `edgar-sections` keys are Part-qualified (`II.1A`) because 10-Qs reuse Item
   numbers across Parts. Per key the occurrence with the longest body wins (the
   table of contents repeats every heading with no body); consecutive repeats
@@ -41,6 +42,27 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   Heading-only entries that duplicate another Part's item (20-F table of
   contents residue) are dropped by `edgar--drop-residue`. Some filers render
   an em dash as U+0097; the Part/Item patterns accept it.
+- `src/edgar-xml.el` provides `edgar-xml` for raw XML primary documents and
+  XSL-rendered XML documents (the XSL path segment is removed before fetch).
+  Non-XML primary documents return nil. `edgar-xml-project` converts the
+  libxml tree to an alist with namespace prefixes removed from element names;
+  it preserves repeated elements and document order without form-specific
+  interpretation. Recorded XML fixtures sit beside their HTML fixtures and
+  are tested offline in `test/edgar-xml-test.el`.
+- `src/edgar-http.el` owns the shared synchronous HTTP contract: globally
+  throttle uncached requests to `edgar-http-requests-per-second` (default 10),
+  retry 429/5xx with backoff and `Retry-After`, send gzip acceptance, and cache
+  successful `/Archives/edgar/data/` documents by URL in the configurable
+  `edgar-http-cache-directory`. Metadata/index endpoints are never cached.
+  `edgar--fetch` delegates to `edgar-http-get`; `xbrl--get` can adopt the same
+  function later by calling `(edgar-http-get url xbrl-user-agent)`.
+- `src/edgar-http.el` owns the shared synchronous HTTP contract: globally
+  throttle uncached requests to `edgar-http-requests-per-second` (default 10),
+  retry 429/5xx with backoff and `Retry-After`, send gzip acceptance, and cache
+  successful `/Archives/edgar/data/` documents by URL in the configurable
+  `edgar-http-cache-directory`. Metadata/index endpoints are never cached.
+  `edgar--fetch` delegates to `edgar-http-get`; `xbrl--get` can adopt the same
+  function later by calling `(edgar-http-get url xbrl-user-agent)`.
 - Golden tests (`test/edgar-golden-test.el`, data in `test/golden/*.eld` and
   hand-written `test/golden-facts.eld`): verbatim strings pinned to sections,
   each must occur in its section only, and every parsed section must have
@@ -49,6 +71,11 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   (disabling Part detection) failed 10 tests, so they do catch drift. Keep
   normalization in `edgar-fixtures-norm` cheap -- a `[[:space:]]` class made
   generation hang on 3MB filings.
+- Form coverage registry (`src/edgar-forms.el`) is the single source for the
+  245 base forms in `test/form-survey-2026-q2.txt`. `edgar-form-info` resolves
+  `/A` amendments and errors on unknown names; `edgar-forms-by-family` returns
+  matching rows. Keep its offline tests and the family summary in
+  `docs/form-coverage.md` in sync.
 - Git-source cohort deps in `Eask` are pinned to commit SHAs; `xbrl` comes
   from the private repo github.com/davidawad/xbrl.el.
 - Zero references to the owner's dotfiles are allowed here -- the repo must

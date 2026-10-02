@@ -4,10 +4,17 @@ Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
 
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
+    (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
+    (edgar-documents filing)                    ; list filing documents
+    (edgar-exhibit filing "EX-99.1")            ; exhibit as plain text
+
+With no date bounds, `edgar-filings` returns only the SEC's recent filings.
+Supplying an inclusive `:since` or `:until` bound lazily merges only history
+pages whose date range overlaps the request.
 
 ## Sections
 
@@ -19,6 +26,12 @@ number (`1A`, `2.02`), prefixed with the Part when the filing has Parts, so a
 is not (`"1"` in a 10-Q).
 
 ## Form coverage
+
+`edgar-forms.el` is the single-source registry for all 245 base forms in the
+2026 Q2 SEC index. Every row is L0 and records its family, backend, empty
+section/field metadata, Q2 volume, and notes. `edgar-form-info` accepts
+amendment names such as `"10-K/A"`; `edgar-forms-by-family` returns the rows
+for a family. The registry tests validate the offline index snapshot.
 
 EDGAR has hundreds of form types; these are the main periodic, current,
 ownership and offering ones, not all of them. Each is tested against a

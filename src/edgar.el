@@ -21,6 +21,8 @@
 ;;; Code:
 
 (require 'xbrl)
+(require 'edgar-forms)
+(require 'edgar-http)
 (require 'shr)
 (require 'dom)
 (require 'cl-lib)
@@ -30,74 +32,109 @@
 
 (defun edgar--fetch (url)
   "Return the body of URL as a decoded string."
-  (let ((url-request-extra-headers
-         `(("User-Agent" . ,xbrl-user-agent)))
-        (buf (url-retrieve-synchronously url t t 60)))
-    (unless buf
-      (error "EDGAR: no response from %s" url))
-    (with-current-buffer buf
-      (unwind-protect
-          (progn
-            (goto-char (point-min))
-            (unless (looking-at "HTTP/[0-9.]+ 200")
-              (error
-               "EDGAR: %s -> %s"
-               url
-               (buffer-substring (point) (line-end-position))))
-            (re-search-forward "\r?\n\r?\n")
-            (decode-coding-string
-             (buffer-substring-no-properties
-              (point) (point-max))
-             'utf-8))
-        (kill-buffer buf)))))
+  (edgar-http-get url xbrl-user-agent))
 
 ;;;; Filing lists
 
-(defun edgar-filings (ticker &optional form)
-  "Recent filings for TICKER as plists, newest first.
+(defun edgar--date-in-range-p (date since until)
+  "Return non-nil when DATE is between SINCE and UNTIL, inclusive."
+  (and date
+       (or (null since) (not (string< date since)))
+       (or (null until) (not (string< until date)))))
+
+(defun edgar--page-in-range-p (page since until)
+  "Return non-nil when PAGE may contain filings between SINCE and UNTIL."
+  (let ((from (plist-get page :filingFrom))
+        (to (plist-get page :filingTo)))
+    (and (or (null since) (null to) (not (string< to since)))
+         (or (null until) (null from) (not (string< until from))))))
+
+(defun edgar--filings-from-table (table cik form since until)
+  "Convert column-oriented TABLE to filing plists for CIK.
+Limit results to FORM and the inclusive SINCE and UNTIL filing dates."
+  (cl-loop
+   for
+   accn
+   in
+   (plist-get table :accessionNumber)
+   for
+   frm
+   in
+   (plist-get table :form)
+   for
+   filed
+   in
+   (plist-get table :filingDate)
+   for
+   rep
+   in
+   (plist-get table :reportDate)
+   for
+   doc
+   in
+   (plist-get table :primaryDocument)
+   when
+   (and (or (null form) (equal frm form))
+        (edgar--date-in-range-p filed since until))
+   collect
+   (list
+    :accn accn
+    :form frm
+    :filed filed
+    :report rep
+    :doc doc
+    :cik cik
+    :url
+    (format "https://www.sec.gov/Archives/edgar/data/%d/%s/%s"
+            cik (replace-regexp-in-string "-" "" accn) doc))))
+
+(defun edgar--unique-filings (filings)
+  "Return FILINGS without duplicate accession numbers, preserving order."
+  (let ((seen (make-hash-table :test #'equal))
+        unique)
+    (dolist (filing filings (nreverse unique))
+      (let ((accn (plist-get filing :accn)))
+        (unless (gethash accn seen)
+          (puthash accn t seen)
+          (push filing unique))))))
+
+(cl-defun
+ edgar-filings (ticker &optional form &key since until)
+ "Filings for TICKER as plists, newest first.
 Each has :accn :form :filed :report :doc :cik :url.  FORM, if given,
-filters on exact form type, e.g. \"10-K\".  Covers the SEC's `recent'
-window (about 1000 filings)."
-  (let* ((cik (xbrl-cik ticker))
-         (sub
-          (xbrl--get
-           (format "https://data.sec.gov/submissions/%s.json" cik)))
-         (r (plist-get (plist-get sub :filings) :recent))
-         (n (string-to-number (substring cik 3))))
-    (cl-loop
-     for
-     accn
-     in
-     (plist-get r :accessionNumber)
-     for
-     frm
-     in
-     (plist-get r :form)
-     for
-     filed
-     in
-     (plist-get r :filingDate)
-     for
-     rep
-     in
-     (plist-get r :reportDate)
-     for
-     doc
-     in
-     (plist-get r :primaryDocument)
-     when
-     (or (null form) (equal frm form))
-     collect
-     (list
-      :accn accn
-      :form frm
-      :filed filed
-      :report rep
-      :doc doc
-      :cik n
-      :url
-      (format "https://www.sec.gov/Archives/edgar/data/%d/%s/%s"
-              n (replace-regexp-in-string "-" "" accn) doc)))))
+filters on exact form type, e.g. \"10-K\".  SINCE and UNTIL are inclusive
+filing-date bounds in YYYY-MM-DD form.  Historical submissions pages are
+fetched only when their date range overlaps a supplied bound.  With neither
+bound, return the SEC's recent filings only."
+ (when (and since until (string< until since))
+   (user-error "SINCE must not be later than UNTIL"))
+ (let* ((cik (xbrl-cik ticker))
+        (submissions-url "https://data.sec.gov/submissions/")
+        (sub (xbrl--get (format "%s%s.json" submissions-url cik)))
+        (filings (plist-get sub :filings))
+        (recent (plist-get filings :recent))
+        (n (string-to-number (substring cik 3)))
+        (pages
+         (when (or since until)
+           (sort (cl-remove-if-not
+                  (lambda (page)
+                    (edgar--page-in-range-p page since until))
+                  (copy-sequence (plist-get filings :files)))
+                 (lambda (a b)
+                   (string<
+                    (or (plist-get b :filingTo) "")
+                    (or (plist-get a :filingTo) ""))))))
+        (result
+         (edgar--filings-from-table recent n form since until)))
+   (dolist (page pages)
+     (setq result
+           (nconc
+            result
+            (edgar--filings-from-table
+             (xbrl--get
+              (concat submissions-url (plist-get page :name)))
+             n form since until))))
+   (edgar--unique-filings result)))
 
 (defun edgar-latest (ticker form)
   "Newest FORM filing for TICKER, or nil."
