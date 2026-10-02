@@ -22,6 +22,7 @@
 
 (require 'xbrl)
 (require 'edgar-forms)
+(require 'edgar-http)
 (require 'shr)
 (require 'dom)
 (require 'cl-lib)
@@ -31,26 +32,7 @@
 
 (defun edgar--fetch (url)
   "Return the body of URL as a decoded string."
-  (let ((url-request-extra-headers
-         `(("User-Agent" . ,xbrl-user-agent)))
-        (buf (url-retrieve-synchronously url t t 60)))
-    (unless buf
-      (error "EDGAR: no response from %s" url))
-    (with-current-buffer buf
-      (unwind-protect
-          (progn
-            (goto-char (point-min))
-            (unless (looking-at "HTTP/[0-9.]+ 200")
-              (error
-               "EDGAR: %s -> %s"
-               url
-               (buffer-substring (point) (line-end-position))))
-            (re-search-forward "\r?\n\r?\n")
-            (decode-coding-string
-             (buffer-substring-no-properties
-              (point) (point-max))
-             'utf-8))
-        (kill-buffer buf)))))
+  (edgar-http-get url xbrl-user-agent))
 
 ;;;; Filing lists
 
