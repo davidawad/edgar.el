@@ -13,6 +13,7 @@ Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
     (edgar-exhibit filing "EX-99.1")            ; exhibit as plain text
     (edgar-index-filings 2026 2 "10-K")         ; every filer, including /A
     (edgar-daily-index-filings "2026-09-30" "4")
+    (edgar-form4-transactions (edgar-latest "AAPL" "4"))
 
 `edgar-index-filings` reads a quarterly SEC form index; the daily variant reads
 one filing day's index.  Results are newest first and add `:company` to the
@@ -20,6 +21,16 @@ usual filing plist.  A base-form filter includes its `/A` amendments, while an
 explicit `/A` filter selects amendments only.  Because form indexes identify
 complete submissions rather than primary documents, their `:doc` and `:url`
 point to the filing's `.txt` submission.
+
+`edgar-ownership.el` provides typed plists for Forms 3, 4, and 5:
+`edgar-ownership-issuer`, `edgar-ownership-reporting-owners`,
+`edgar-ownership-transactions`, `edgar-ownership-holdings`,
+`edgar-ownership-footnotes`, `edgar-ownership-10b5-1-p`, and
+`edgar-ownership-signatures`. Form-specific helpers
+`edgar-form3-holdings`, `edgar-form4-transactions`, and
+`edgar-form5-holdings` return nil for unrelated form types. Share, price, and
+date values remain strings so the source precision is preserved; transaction
+rows include their kind, ownership codes, and resolved footnote text.
 
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history
