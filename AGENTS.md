@@ -41,6 +41,13 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   Heading-only entries that duplicate another Part's item (20-F table of
   contents residue) are dropped by `edgar--drop-residue`. Some filers render
   an em dash as U+0097; the Part/Item patterns accept it.
+- `src/edgar-http.el` owns the shared synchronous HTTP contract: globally
+  throttle uncached requests to `edgar-http-requests-per-second` (default 10),
+  retry 429/5xx with backoff and `Retry-After`, send gzip acceptance, and cache
+  successful `/Archives/edgar/data/` documents by URL in the configurable
+  `edgar-http-cache-directory`. Metadata/index endpoints are never cached.
+  `edgar--fetch` delegates to `edgar-http-get`; `xbrl--get` can adopt the same
+  function later by calling `(edgar-http-get url xbrl-user-agent)`.
 - Golden tests (`test/edgar-golden-test.el`, data in `test/golden/*.eld` and
   hand-written `test/golden-facts.eld`): verbatim strings pinned to sections,
   each must occur in its section only, and every parsed section must have
