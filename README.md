@@ -11,6 +11,15 @@ Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
     (edgar-documents filing)                    ; list filing documents
     (edgar-exhibit filing "EX-99.1")            ; exhibit as plain text
+    (edgar-index-filings 2026 2 "10-K")         ; every filer, including /A
+    (edgar-daily-index-filings "2026-09-30" "4")
+
+`edgar-index-filings` reads a quarterly SEC form index; the daily variant reads
+one filing day's index.  Results are newest first and add `:company` to the
+usual filing plist.  A base-form filter includes its `/A` amendments, while an
+explicit `/A` filter selects amendments only.  Because form indexes identify
+complete submissions rather than primary documents, their `:doc` and `:url`
+point to the filing's `.txt` submission.
 
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history

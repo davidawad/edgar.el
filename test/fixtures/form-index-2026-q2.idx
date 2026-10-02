@@ -1,0 +1,16 @@
+Description:           Master Index of EDGAR Dissemination Feed by Form Type
+Last Data Received:    June 30, 2026
+Comments:              webmaster@sec.gov
+Anonymous FTP:         ftp://ftp.sec.gov/edgar/
+
+
+
+
+Form Type   Company Name                                                  CIK         Date Filed  File Name
+---------------------------------------------------------------------------------------------------------------------------------------------
+10-K             21Shares Polkadot ETF                                         2054247     2026-06-29  edgar/data/2054247/0001213900-26-073214.txt
+10-K             8X8 INC /DE/                                                  1023731     2026-05-22  edgar/data/1023731/0001023731-26-000041.txt
+10-K/A           374Water Inc.                                                 933972      2026-04-30  edgar/data/933972/0001654954-26-004179.txt
+10-K/A           ABUNDIA GLOBAL IMPACT GROUP, INC.                             1156041     2026-05-13  edgar/data/1156041/0001493152-26-022630.txt
+4                't Hart Cees                                                  1983327     2026-05-21  edgar/data/1983327/0001628280-26-037475.txt
+D                &Affiliates Capital LLC                                       2124638     2026-05-08  edgar/data/2124638/0002124638-26-000001.txt

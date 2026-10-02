@@ -56,6 +56,11 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   `edgar-http-cache-directory`. Metadata/index endpoints are never cached.
   `edgar--fetch` delegates to `edgar-http-get`; `xbrl--get` can adopt the same
   function later by calling `(edgar-http-get url xbrl-user-agent)`.
+- `src/edgar-index.el` parses SEC quarterly `form.gz` and daily `form.*.idx`
+  indexes with their actual 17/62/12/12 fixed-width columns.  It returns the
+  existing filing-plist shape plus `:company`; index `:doc`/`:url` values are
+  complete-submission `.txt` files because the index omits primary documents.
+  Base-form filters include `/A`; explicit `/A` filters are exact.
 - `src/edgar-http.el` owns the shared synchronous HTTP contract: globally
   throttle uncached requests to `edgar-http-requests-per-second` (default 10),
   retry 429/5xx with backoff and `Retry-After`, send gzip acceptance, and cache

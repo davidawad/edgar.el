@@ -23,6 +23,7 @@
 (require 'xbrl)
 (require 'edgar-forms)
 (require 'edgar-http)
+(require 'edgar-index)
 (require 'shr)
 (require 'dom)
 (require 'cl-lib)

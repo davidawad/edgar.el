@@ -121,5 +121,19 @@
         (edgar-http-get "https://example.invalid/gzip")
         "compressed filing")))))
 
+(ert-deftest edgar-http-decompresses-gzip-file-without-header ()
+  (let ((edgar-http--last-request-time nil)
+        (payload
+         (base64-decode-string
+          "H4sIAAAAAAAC/0vOzy0oSi0uTk1RSMvMycxLBwAV67rDEQAAAA==")))
+    (cl-letf (((symbol-function 'url-retrieve-synchronously)
+               (lambda (&rest _)
+                 (edgar-http-test--response 200 payload))))
+      (should
+       (equal
+        (edgar-http-get
+         "https://example.invalid/form.gz")
+        "compressed filing")))))
+
 (provide 'edgar-http-test)
 ;;; edgar-http-test.el ends here
