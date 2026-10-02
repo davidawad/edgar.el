@@ -41,6 +41,13 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   Heading-only entries that duplicate another Part's item (20-F table of
   contents residue) are dropped by `edgar--drop-residue`. Some filers render
   an em dash as U+0097; the Part/Item patterns accept it.
+- `src/edgar-xml.el` provides `edgar-xml` for raw XML primary documents and
+  XSL-rendered XML documents (the XSL path segment is removed before fetch).
+  Non-XML primary documents return nil. `edgar-xml-project` converts the
+  libxml tree to an alist with namespace prefixes removed from element names;
+  it preserves repeated elements and document order without form-specific
+  interpretation. Recorded XML fixtures sit beside their HTML fixtures and
+  are tested offline in `test/edgar-xml-test.el`.
 - Golden tests (`test/edgar-golden-test.el`, data in `test/golden/*.eld` and
   hand-written `test/golden-facts.eld`): verbatim strings pinned to sections,
   each must occur in its section only, and every parsed section must have
