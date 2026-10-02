@@ -61,7 +61,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `11-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "11-K")` |
 | `13F-HR` | G4 13F holdings | xml | L0 | `(edgar-form-info "13F-HR")` |
 | `13F-NT` | G4 13F holdings | xml | L0 | `(edgar-form-info "13F-NT")` |
-| `144` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "144")` |
+| `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
 | `15-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-12G")` |
 | `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |
 | `15F-12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12B")` |
@@ -149,7 +149,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "CORRESP")` |
 | `CT ORDER` | G10 Investment-company registration | html | L0 | `(edgar-form-info "CT ORDER")` |
-| `D` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "D")` |
+| `D` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
 | `DEF 14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14A")` |
 | `DEF 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14C")` |
 | `DEFA14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFA14A")` |
