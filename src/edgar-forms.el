@@ -184,8 +184,10 @@
      (list
       :family "G2 Notice of sale / Reg D"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(issuer-name seller-name securities-class-title units-to-be-sold
+        aggregate-market-value approximate-sale-date broker-name)
       :volume 19526
       :notes nil)
      table)
@@ -1064,8 +1066,11 @@
      (list
       :family "G2 Notice of sale / Reg D"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(issuer-name federal-exemptions total-offering-amount total-amount-sold
+        total-remaining investor-count non-accredited-investor-count
+        sales-commissions finders-fees)
       :volume 16851
       :notes nil)
      table)

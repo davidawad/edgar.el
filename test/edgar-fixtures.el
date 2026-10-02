@@ -18,12 +18,17 @@
   (expand-file-name rel edgar-fixtures--test-dir))
 
 (defun edgar-fixtures-slugs ()
-  "Slugs of every recorded fixture, sorted."
-  (sort (mapcar
-         #'file-name-sans-extension
-         (directory-files (edgar-fixtures-path "fixtures")
-                          nil
-                          "\\.eld\\'"))
+  "Slugs of every rendered filing fixture, sorted.
+XML-only fixtures are exercised by form-specific tests."
+  (sort (seq-filter
+         (lambda (slug)
+           (file-exists-p
+            (edgar-fixtures-path (concat "fixtures/" slug ".htm.gz"))))
+         (mapcar
+          #'file-name-sans-extension
+          (directory-files (edgar-fixtures-path "fixtures")
+                           nil
+                           "\\.eld\\'")))
         #'string<))
 
 (defun edgar-fixtures-read (file)

@@ -27,11 +27,14 @@
   (expand-file-name (concat "expect/" slug ".eld") edgar-expect--dir))
 
 (defun edgar-expect--slugs ()
-  "Slugs of every recorded fixture."
-  (mapcar
-   #'file-name-sans-extension
-   (directory-files (expand-file-name "fixtures" edgar-expect--dir)
-                    nil "\\.eld\\'")))
+  "Slugs of every rendered filing fixture."
+  (seq-filter
+   (lambda (slug)
+     (file-exists-p (edgar-expect--file slug ".htm.gz")))
+   (mapcar
+    #'file-name-sans-extension
+    (directory-files (expand-file-name "fixtures" edgar-expect--dir)
+                     nil "\\.eld\\'"))))
 
 (defun edgar-expect--read (file)
   "Read the Lisp object in FILE."

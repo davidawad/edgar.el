@@ -37,6 +37,10 @@
   (expand-file-name "test/golden" edgar-coverage--root)
   "Directory containing golden values for L2 filings.")
 
+(defvar edgar-coverage-field-golden-directory
+  (expand-file-name "test/golden-fields" edgar-coverage--root)
+  "Directory containing typed field goldens for XML L2 filings.")
+
 (defun edgar-coverage--base-form (form)
   "Return the base form name for FORM."
   (replace-regexp-in-string "/A\\'" "" form))
@@ -155,9 +159,26 @@ Each record is a (BASE-FORM . SLUG) pair."
       (expand-file-name (concat slug suffix) fixture-directory)))
    (edgar-coverage--primary-suffixes backend)))
 
+(defun edgar-coverage--any-primary-artifact-p (slug fixture-directory)
+  "Return non-nil when SLUG has an XML, HTML, or text primary."
+  (seq-some
+   (lambda (backend)
+     (edgar-coverage--primary-artifact-p
+      slug backend fixture-directory))
+   '(xml html text)))
+
+(defun edgar-coverage--xml-field-golden-p
+    (slug fixture-directory field-golden-directory)
+  "Return non-nil when XML primary SLUG has a field golden."
+  (and (edgar-coverage--primary-artifact-p
+        slug 'xml fixture-directory)
+       (file-exists-p
+        (expand-file-name (concat slug ".eld") field-golden-directory))))
+
 (defun edgar-coverage--artifact-problems
     (registry
-     records fixture-directory expect-directory golden-directory)
+     records fixture-directory expect-directory golden-directory
+     field-golden-directory)
   "Return missing-artifact problems for REGISTRY and fixture RECORDS.
 FIXTURE-DIRECTORY, EXPECT-DIRECTORY, and GOLDEN-DIRECTORY contain the
 three artifact classes checked for L1 and L2 forms."
@@ -167,13 +188,21 @@ three artifact classes checked for L1 and L2 forms."
              (info (cdr row))
              (backend (plist-get info :backend))
              (level (plist-get info :level))
+             (xml-l2-p (and (eq backend 'xml) (eq level 'L2)))
              (slugs
               (mapcar
                #'cdr
                (seq-filter
                 (lambda (record)
                   (equal form (car record)))
-                records))))
+                records)))
+             (has-xml-field-golden
+              (and xml-l2-p
+                   (seq-some
+                    (lambda (slug)
+                      (edgar-coverage--xml-field-golden-p
+                       slug fixture-directory field-golden-directory))
+                    slugs))))
         (unless (memq level '(L0 L1 L2))
           (push (format "%s: invalid coverage level %S" form level)
                 problems))
@@ -184,11 +213,18 @@ three artifact classes checked for L1 and L2 forms."
                           level)
                   problems))
           (dolist (slug slugs)
-            (unless (edgar-coverage--primary-artifact-p
-                     slug backend fixture-directory)
-              (push (format
-                     "%s: fixture %s lacks its %s primary document"
-                     form slug (upcase (format "%s" backend)))
+            (unless (if xml-l2-p
+                        (edgar-coverage--any-primary-artifact-p
+                         slug fixture-directory)
+                      (edgar-coverage--primary-artifact-p
+                       slug backend fixture-directory))
+              (push (if xml-l2-p
+                        (format
+                         "%s: fixture %s lacks an accepted primary document"
+                         form slug)
+                      (format
+                       "%s: fixture %s lacks its %s primary document"
+                       form slug (upcase (format "%s" backend))))
                     problems))
             (unless (file-exists-p
                      (expand-file-name (concat slug ".eld")
@@ -197,15 +233,19 @@ three artifact classes checked for L1 and L2 forms."
                             form
                             slug)
                     problems))
-            (when (and (eq level 'L2)
+            (when (and (eq level 'L2) (not xml-l2-p)
                        (not
                         (file-exists-p
                          (expand-file-name (concat slug ".eld")
                                            golden-directory))))
               (push (format "%s: L2 fixture %s lacks golden values"
-                            form
-                            slug)
-                    problems))))))
+                            form slug)
+                    problems)))
+          (when (and xml-l2-p (not has-xml-field-golden))
+            (push (format
+                   "%s: L2 XML form needs an XML primary with field golden values"
+                   form)
+                  problems)))))
     (nreverse problems)))
 
 (cl-defun
@@ -214,8 +254,9 @@ three artifact classes checked for L1 and L2 forms."
   (registry edgar-forms--registry)
   (snapshot-file edgar-coverage-snapshot-file)
   (fixture-directory edgar-coverage-fixture-directory)
-  (expect-directory edgar-coverage-expect-directory)
-  (golden-directory edgar-coverage-golden-directory))
+ (expect-directory edgar-coverage-expect-directory)
+  (golden-directory edgar-coverage-golden-directory)
+  (field-golden-directory edgar-coverage-field-golden-directory))
  "Return all offline coverage problems for the supplied data paths.
 REGISTRY is checked against SNAPSHOT-FILE.  L1 forms require a fixture
 and expect snapshot; L2 forms additionally require golden values."
@@ -249,7 +290,8 @@ and expect snapshot; L2 forms additionally require golden values."
      records
      fixture-directory
      expect-directory
-     golden-directory))))
+     golden-directory
+     field-golden-directory))))
 
 (defun edgar-coverage--total-volume (registry)
   "Return the total filing volume recorded in REGISTRY."

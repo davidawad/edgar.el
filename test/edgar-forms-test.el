@@ -70,12 +70,12 @@
             (error-message-string error-data)))))
     (should (string-match-p "NOT-A-REAL-FORM" message))))
 
-(ert-deftest edgar-forms-rows-have-valid-l0-metadata ()
-  "Every registry row has a valid backend, L0 level, and Q2 volume."
+(ert-deftest edgar-forms-rows-have-valid-coverage-metadata ()
+  "Every registry row has a valid backend, level, and Q2 volume."
   (maphash
    (lambda (_form info)
      (should (memq (plist-get info :backend) '(html xml text)))
-     (should (eq (plist-get info :level) 'L0))
+     (should (memq (plist-get info :level) '(L0 L1 L2)))
      (should (numberp (plist-get info :volume))))
    edgar-forms--registry))
 
