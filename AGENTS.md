@@ -32,6 +32,7 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   expect-update` and READ `git diff test/expect/` -- never promote blindly.
   New form type: add it to `tools/record-fixtures.el` and the invariants table
   in the test, record, update, review. Fixtures are public SEC documents.
+- `edgar-docs.el` provides `edgar-documents` and `edgar-exhibit`; it uses the SEC directory `index.json` and returns exhibit text through `edgar-text`. Directory JSON does not supply exhibit labels/descriptions, so type labels are inferred from filenames and descriptions are filenames.
 - `edgar-sections` keys are Part-qualified (`II.1A`) because 10-Qs reuse Item
   numbers across Parts. Per key the occurrence with the longest body wins (the
   table of contents repeats every heading with no body); consecutive repeats

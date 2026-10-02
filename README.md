@@ -8,6 +8,8 @@ Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
+    (edgar-documents filing)                    ; list filing documents
+    (edgar-exhibit filing "EX-99.1")            ; exhibit as plain text
 
 ## Sections
 
