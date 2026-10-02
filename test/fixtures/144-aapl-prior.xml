@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Focused schema excerpt reconstructed from the recorded 2023 SEC rendering. -->
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ownership">
+  <headerData><submissionType>144</submissionType></headerData>
+  <formData>
+    <issuerInfo>
+      <issuerCik>0000320193</issuerCik>
+      <issuerName>Apple Inc.</issuerName>
+      <nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold>Luca Maestri</nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold>
+    </issuerInfo>
+    <securitiesInformation>
+      <securitiesClassTitle>Common</securitiesClassTitle>
+      <brokerOrMarketmakerDetails><name>Goldman Sachs &amp; Co. LLC</name></brokerOrMarketmakerDetails>
+      <noOfUnitsSold>200</noOfUnitsSold>
+      <aggregateMarketValue>32932</aggregateMarketValue>
+      <approxSaleDate>04/06/2023</approxSaleDate>
+    </securitiesInformation>
+  </formData>
+</edgarSubmission>

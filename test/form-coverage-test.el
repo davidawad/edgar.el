@@ -154,6 +154,57 @@
              (string-match-p "XML primary document" messages))))
       (delete-directory root t))))
 
+(ert-deftest edgar-form-coverage-xml-l2-requires-field-golden ()
+  "An XML L2 fixture uses the typed field-golden directory."
+  (let* ((root (make-temp-file "edgar-coverage-xml-l2-" t))
+         (fixtures (expand-file-name "fixtures" root))
+         (expects (expand-file-name "expect" root))
+         (goldens (expand-file-name "golden" root))
+         (field-goldens (expand-file-name "golden-fields" root))
+         (snapshot (expand-file-name "snapshot.txt" root))
+         (primary (expand-file-name "test.xml" fixtures))
+         (golden (expand-file-name "test.eld" field-goldens)))
+    (unwind-protect
+        (progn
+          (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test.eld" fixtures) "(:form \"TEST-FORM\")\n")
+          (edgar-form-coverage-test--write primary "<fixture/>")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test.eld" expects) "(:ok t)\n")
+          (edgar-form-coverage-test--write golden "(:fields (value))\n")
+          ;; Historical secondary fixtures may retain their rendered form.
+          (edgar-form-coverage-test--write
+           (expand-file-name "test-prior.eld" fixtures)
+           "(:form \"TEST-FORM\")\n")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test-prior.htm.gz" fixtures) "rendered")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test-prior.eld" expects) "(:ok t)\n")
+          (should-not
+           (edgar-coverage-problems
+            :registry
+            (edgar-form-coverage-test--registry 'L2 'xml)
+            :snapshot-file snapshot
+            :fixture-directory fixtures
+            :expect-directory expects
+            :golden-directory goldens
+            :field-golden-directory field-goldens))
+          (delete-file golden)
+          (let ((messages
+                 (edgar-form-coverage-test--messages
+                  (edgar-coverage-problems
+                   :registry
+                   (edgar-form-coverage-test--registry 'L2 'xml)
+                   :snapshot-file snapshot
+                   :fixture-directory fixtures
+                   :expect-directory expects
+                   :golden-directory goldens
+                   :field-golden-directory field-goldens))))
+            (should (string-match-p "TEST-FORM" messages))
+            (should (string-match-p "golden values" messages))))
+      (delete-directory root t))))
+
 (ert-deftest edgar-form-coverage-golden-removal-names-l2-form ()
   "Removing L2 golden values fails with the form name."
   (let* ((root (make-temp-file "edgar-coverage-golden-" t))

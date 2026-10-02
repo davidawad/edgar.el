@@ -72,7 +72,12 @@ PATH is a list of unqualified element-name symbols."
 
 (defun edgar-offerings--xml-root (filing form-path forms)
   "Return FILING's XML root when its value at FORM-PATH is in FORMS."
-  (let ((tree (edgar-xml filing)))
+  (let* ((document (edgar-xml filing))
+         ;; libxml may wrap a document containing a leading comment in TOP.
+         (tree (if (eq (edgar-xml--local-name (car-safe document)) 'top)
+                   (car (edgar-offerings--children-named document
+                                                        'edgarSubmission))
+                 document)))
     (when (and (consp tree)
                (eq (edgar-xml--local-name (car tree)) 'edgarSubmission)
                (member (edgar-offerings--value tree form-path) forms))

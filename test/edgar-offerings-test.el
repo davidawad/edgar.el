@@ -76,7 +76,18 @@
     (should
      (equal
       (edgar-offerings-test--form-144-fields value)
-      (edgar-offerings-test--golden "form-144-aapl")))))
+      (edgar-offerings-test--golden "144-aapl")))))
+
+(ert-deftest edgar-form-144-parses-older-filing-vintage ()
+  "Typed accessors retain values from the older recorded Form 144 layout."
+  (let ((value
+         (edgar-offerings-test--read-fields
+          "144-aapl-prior" "144" #'edgar-form-144)))
+    (should (edgar-form-144-p value))
+    (should
+     (equal
+      (edgar-offerings-test--form-144-fields value)
+      (edgar-offerings-test--golden "144-aapl-prior")))))
 
 (ert-deftest edgar-form-d-accessors-match-golden-values ()
   "Typed Form D accessors preserve amounts and return integer counts."
