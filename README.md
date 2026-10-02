@@ -34,6 +34,32 @@ number (`1A`, `2.02`), prefixed with the Part when the filing has Parts, so a
 (`"7"` for a 10-K's MD&A) and signals an error listing the candidates when it
 is not (`"1"` in a 10-Q).
 
+Named sections also work through `(edgar-section filing "Risk Factors")`,
+which resolves an Item title or a standalone uppercase heading. For direct
+access to the document structure, use the generic tree API:
+
+    (let* ((filing (edgar-latest "AAPL" "10-K"))
+           (tree (edgar-document-structure filing)))
+      (edgar-structure-headings tree) ; names, levels, paths, and section bodies
+      (edgar-structure-section tree '("Part I" "Risk Factors"))
+      (edgar-structure-paragraphs tree)
+      (edgar-structure-nodes tree "ix:nonfraction"))
+
+HTML, XML, and plain-text submissions use one tree representation. Element
+names, attributes, child order, and text nodes are kept; individual form codes
+do not select custom fields. `edgar-structure-section` accepts a visible
+heading name or a full heading/tag path. Duplicate names signal an ambiguity
+error that a path resolves. `edgar-structure-nodes-at-path` addresses nested
+element paths, `edgar-structure-nodes` returns elements with a given tag, and
+`edgar-structure-paragraphs` returns `p` elements or plain-text paragraphs.
+
+`edgar-structure-headings` discovers HTML `h1`-`h6` and titled `section`
+elements. `edgar-section` additionally resolves existing Item headings and
+standalone uppercase heading lines in rendered text. Unmarked headings in
+tables or other filing-specific markup are not inferred automatically; their
+source nodes and text remain available through the generic tree API. No form
+codes select custom fields or heading catalogs.
+
 ## Form coverage
 
 `edgar-forms.el` is the single-source registry for all 245 base forms in the

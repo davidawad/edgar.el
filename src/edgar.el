@@ -27,7 +27,12 @@
 (require 'shr)
 (require 'dom)
 (require 'cl-lib)
+(require 'subr-x)
 (require 'url)
+
+(declare-function edgar-xml "edgar-xml" (filing))
+(defvar edgar--part-re)
+(defvar edgar--item-re)
 
 ;;;; Transport
 
@@ -159,6 +164,369 @@ bound, return the SEC's recent filings only."
               (shr-width 100))
           (shr-insert-document dom)))
       (buffer-substring-no-properties (point-min) (point-max)))))
+
+(defun edgar--structure-node (node)
+  "Convert libxml NODE to a uniform plist tree without discarding data."
+  (cond
+   ((stringp node)
+    (list :type 'text :text node))
+   ((and (consp node) (symbolp (car node)))
+    (let* ((attributes (and (listp (cadr node)) (cadr node)))
+           (children
+            (if (or attributes
+                    (null (cadr node)))
+                (cddr node)
+              (cdr node))))
+      (list
+       :type 'element
+       :name (downcase (symbol-name (car node)))
+       :attributes attributes
+       :children (mapcar #'edgar--structure-node children))))
+   (t
+    (list :type 'value :value node))))
+
+(defun edgar-document-structure (filing)
+  "Return FILING as a generic, ordered document tree.
+The root plist has :format and :children.  Each element has :name,
+:attributes, and ordered :children; text is retained in leaf plists.  HTML,
+XML, and text submissions use the same representation, so callers can inspect
+any element or paragraph without form-specific projections."
+  (let ((url (plist-get filing :url)))
+    (cond
+     ((and (stringp url)
+           (string-match-p "\\.xml\\(?:\\?\\|\\'\\)" url))
+      (require 'edgar-xml)
+      (let ((tree (edgar-xml filing)))
+        (list
+         :type 'document
+         :format 'xml
+         :children (and tree (list (edgar--structure-node tree))))))
+     ((and (stringp url)
+           (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+      (let* ((text (edgar--fetch url))
+             (paragraphs
+              (seq-remove
+               #'string-empty-p
+               (mapcar
+                #'string-trim
+                (split-string text
+                              "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
+        (list
+         :type 'document
+         :format 'text
+         :text text
+         :children
+         (mapcar
+          (lambda (p) (list :type 'paragraph :text p)) paragraphs))))
+     (t
+      (let ((html (edgar-html filing)))
+        (with-temp-buffer
+          (insert html)
+          (list
+           :type 'document
+           :format 'html
+           :children
+           (list
+            (edgar--structure-node
+             (libxml-parse-html-region
+              (point-min) (point-max)))))))))))
+
+(defun edgar-structure-text (node)
+  "Return all text below NODE in document order."
+  (pcase (plist-get node :type)
+    ((or 'text 'paragraph) (plist-get node :text))
+    ('document
+     (or (plist-get node :text)
+         (mapconcat #'edgar-structure-text (plist-get node :children)
+                    "")))
+    ('element
+     (mapconcat #'edgar-structure-text (plist-get node :children) ""))
+    (_ "")))
+
+(defun edgar-structure-nodes (tree name)
+  "Return all elements named NAME in TREE, in document order.
+NAME is a tag or XML element name, compared without regard to case."
+  (let ((wanted
+         (if (symbolp name)
+             (symbol-name name)
+           name))
+        out)
+    (cl-labels
+     ((walk
+       (node)
+       (when (and (eq (plist-get node :type) 'element)
+                  (equal
+                   (downcase (plist-get node :name))
+                   (downcase wanted)))
+         (push node out))
+       (dolist (child (plist-get node :children))
+         (walk child))))
+     (walk tree))
+    (nreverse out)))
+
+(defun edgar-structure-nodes-at-path (tree path)
+  "Return elements at PATH in TREE.
+PATH is a list of tag names from an element below the document root."
+  (let (out)
+    (cl-labels
+     ((walk
+       (nodes rest)
+       (when rest
+         (dolist (node nodes)
+           (when (and (eq (plist-get node :type) 'element)
+                      (equal
+                       (downcase (plist-get node :name))
+                       (downcase
+                        (if (symbolp (car rest))
+                            (symbol-name (car rest))
+                          (car rest)))))
+             (if (cdr rest)
+                 (walk (plist-get node :children) (cdr rest))
+               (push node out)))))))
+     (walk (plist-get tree :children) path))
+    (nreverse out)))
+
+(defun edgar-structure-paragraphs (tree)
+  "Return paragraph text in TREE, in document order.
+HTML/XML p elements are used when present; plain-text submissions already
+contain paragraph nodes."
+  (let ((paragraphs (edgar-structure-nodes tree "p")))
+    (if paragraphs
+        (mapcar #'edgar-structure-text paragraphs)
+      (let (out)
+        (cl-labels
+         ((walk
+           (node)
+           (when (eq (plist-get node :type) 'paragraph)
+             (push (plist-get node :text) out))
+           (dolist (child (plist-get node :children))
+             (walk child))))
+         (walk tree))
+        (nreverse out)))))
+
+(defun edgar--structure-heading-level (node)
+  "Return NODE's semantic heading level, or nil."
+  (let ((name (plist-get node :name)))
+    (cond
+     ((and (eq (plist-get node :type) 'element)
+           (string-match "\\`h\\([1-6]\\)\\'" name))
+      (string-to-number (match-string 1 name)))
+     ((and (equal name "section")
+           (assoc 'title (plist-get node :attributes)))
+      1))))
+
+(defun edgar--structure-body-after (siblings level)
+  "Text in SIBLINGS following a heading at LEVEL, up to the next peer."
+  (let ((done nil)
+        chunks)
+    (cl-labels
+     ((collect
+       (node)
+       (unless done
+         (let ((node-level (edgar--structure-heading-level node))
+               (type (plist-get node :type)))
+           (if (and node-level (<= node-level level))
+               (setq done t)
+             (if (memq type '(text paragraph))
+                 (push (plist-get node :text) chunks)
+               (dolist (child (plist-get node :children))
+                 (collect child))))))))
+     (dolist (sibling siblings)
+       (collect sibling)))
+    (mapconcat #'identity (nreverse chunks) "\n")))
+
+(defun edgar--structure-heading-walk (node siblings out)
+  "Add headings from NODE and descendants to OUT, preserving source order.
+SIBLINGS are NODE's sibling nodes; OUT is the accumulator."
+  (when (eq (plist-get node :type) 'element)
+    (let ((level (edgar--structure-heading-level node)))
+      (when level
+        (setcar
+         out
+         (cons
+          (list
+           :name
+           (or (cdr (assoc 'title (plist-get node :attributes)))
+               (string-trim (edgar-structure-text node)))
+           :level level
+           :node node
+           :body
+           (if (equal (plist-get node :name) "section")
+               (edgar-structure-text node)
+             (edgar--structure-body-after
+              (cdr (memq node siblings)) level)))
+          (car out))))))
+  (dolist (child (plist-get node :children))
+    (edgar--structure-heading-walk
+     child (plist-get node :children) out)))
+
+(defun edgar-structure-headings (tree)
+  "Return semantic headings in TREE as plists with :name, :level, :node, :body.
+HTML h1-h6 and elements whose local name is `section' with a title
+attribute are recognized generically, independent of SEC form type."
+  (let ((out (list nil))
+        stack)
+    (dolist (node (plist-get tree :children))
+      (edgar--structure-heading-walk
+       node (plist-get tree :children) out))
+    (mapcar
+     (lambda (heading)
+       (let ((level (plist-get heading :level)))
+         (while (and stack (>= (caar stack) level))
+           (pop stack))
+         (push (cons level heading) stack)
+         (plist-put
+          heading
+          :path
+          (mapcar
+           (lambda (entry)
+             (plist-get (cdr entry) :name))
+           (reverse stack)))
+         heading))
+     (nreverse (car out)))))
+
+(defun edgar-structure-section (tree name)
+  "Return the unique named section or element NAME from TREE.
+HTML semantic headings are matched by visible name; XML/text structure names
+are matched as element names.  NAME may be a full path.  Return a plist with
+:name, :node, and :body.
+Signal `user-error' if multiple matches exist; return nil if absent."
+  (let* ((path-p (listp name))
+         (wanted-path
+          (and path-p
+               (mapcar
+                (lambda (part)
+                  (downcase
+                   (string-trim
+                    (if (symbolp part)
+                        (symbol-name part)
+                      part))))
+                name)))
+         (wanted-name
+          (and (not path-p) (downcase (string-trim name))))
+         (headings (edgar-structure-headings tree))
+         (heading-hits
+          (seq-filter
+           (lambda (heading)
+             (if path-p
+                 (equal
+                  wanted-path
+                  (mapcar
+                   (lambda (part)
+                     (downcase (string-trim part)))
+                   (plist-get heading :path)))
+               (equal
+                wanted-name
+                (downcase (string-trim (plist-get heading :name))))))
+           headings))
+         (nodes
+          (if path-p
+              (edgar-structure-nodes-at-path tree name)
+            (edgar-structure-nodes tree name)))
+         (node-hits
+          (mapcar
+           (lambda (node)
+             (list
+              :name (plist-get node :name)
+              :level 0
+              :node node
+              :path
+              (or wanted-path (list wanted-name))
+              :body (edgar-structure-text node)))
+           nodes))
+         (hits (append heading-hits node-hits)))
+    (pcase hits
+      (`() nil)
+      (`(,hit) hit)
+      (_ (user-error "Section %s is ambiguous" name)))))
+
+(defun edgar-named-sections (text)
+  "Return generic all-caps section headings found in TEXT.
+Each result is a plist with :name, :path, :body, and :position.  This
+form-agnostic fallback recognizes standalone uppercase heading lines; callers
+needing every source node should use `edgar-document-structure'."
+  (let ((case-fold-search nil)
+        marks)
+    (with-temp-buffer
+      (insert text)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (let* ((start (line-beginning-position))
+               (line
+                (string-trim
+                 (buffer-substring-no-properties
+                  start (line-end-position))))
+               (before-blank
+                (or (= start (point-min))
+                    (save-excursion
+                      (forward-line -1)
+                      (string-blank-p
+                       (buffer-substring-no-properties
+                        (line-beginning-position)
+                        (line-end-position))))))
+               (after-blank
+                (save-excursion
+                  (forward-line 1)
+                  (or (eobp)
+                      (string-blank-p
+                       (buffer-substring-no-properties
+                        (line-beginning-position)
+                        (line-end-position))))))
+               (named-p
+                (and (<= 3 (length line) 100)
+                     (string-match-p "[A-Z]" line)
+                     (not (string-match-p "[a-z]" line))
+                     (not
+                      (string-match-p
+                       "\\`\\(?:ITEM\\|PART\\)\\_>" line))
+                     (or before-blank after-blank)))
+               (boundary-p
+                (or named-p
+                    (save-excursion
+                      (goto-char start)
+                      (or (looking-at edgar--item-re)
+                          (looking-at edgar--part-re))))))
+          (when boundary-p
+            (push (cons start (and named-p line)) marks)))
+        (forward-line 1)))
+    (setq marks (nreverse marks))
+    (cl-loop
+     for
+     mark
+     in
+     marks
+     for
+     next
+     =
+     (cadr (member mark marks))
+     for
+     start
+     =
+     (car mark)
+     for
+     end
+     =
+     (or (car next) (1+ (length text)))
+     for
+     name
+     =
+     (cdr mark)
+     when
+     name
+     collect
+     (list
+      :name name
+      :path (list name)
+      :position start
+      :body (substring text (1- start) (1- end))))))
+
+(defun edgar--item-title (body)
+  "Return the printed title from an Item-section BODY, or nil."
+  (when
+      (string-match
+       "^[ \t ]*\\(?:Item\\|ITEM\\)[ \t ]+[0-9]+\\(?:\\.[0-9]+\\)?[A-C]?\\(?:[.:][ \t ]*\\|[ \t ]+\\)\\(.+?\\)[ \t ]*$"
+       body)
+    (string-trim (match-string 1 body))))
 
 (defconst edgar--part-re
   (concat
@@ -311,33 +679,83 @@ bare \"I.13\" next to the real \"II.13\"."
    secs))
 
 (defun edgar-section (filing item)
-  "Text of ITEM from FILING, e.g. \"1A\", \"7\", \"2.02\" or \"II.1\".
-A bare ITEM that exists in several Parts (10-Q Item 2) signals an error
-listing the Part-qualified keys; unknown ITEM returns nil."
-  (let* ((secs (edgar-sections (edgar-text filing)))
-         (want (upcase item))
-         (exact (assoc want secs)))
-    (if exact
-        (cdr exact)
-      (let ((hits
-             (seq-filter
-              (lambda (s)
-                (string-match-p
-                 (concat
-                  "\\`\\(?:IV\\|I\\{1,3\\}\\)\\."
-                  (regexp-quote want)
-                  "\\'")
-                 (car s)))
-              secs)))
-        (cond
-         ((null hits)
-          nil)
-         ((null (cdr hits))
-          (cdr (car hits)))
-         (t
-          (user-error "Item %s is ambiguous; use one of %s"
-                      want
-                      (mapconcat #'car hits ", "))))))))
+  "Text of ITEM or named section from FILING.
+Numeric Item keys such as \"1A\", \"7\", \"2.02\" and \"II.1\" retain
+their existing behavior.  A named Item title or generic heading is also
+accepted.  Ambiguous Item numbers or headings signal `user-error'; absent
+names return nil.  ITEM may be a list path to disambiguate a structural
+section.  For arbitrary data elements, use `edgar-document-structure' and
+`edgar-structure-section'."
+  (let ((url (plist-get filing :url)))
+    (if (and (stringp url)
+             (or (consp item)
+                 (string-match-p "\\.xml\\(?:\\?\\|\\'\\)" url)))
+        (let ((section
+               (edgar-structure-section
+                (edgar-document-structure filing) item)))
+          (and section (plist-get section :body)))
+      (let* ((text (edgar-text filing))
+             (secs (edgar-sections text))
+             (want (upcase item))
+             (exact (assoc want secs)))
+        (if exact
+            (cdr exact)
+          (let ((hits
+                 (seq-filter
+                  (lambda (s)
+                    (string-match-p
+                     (concat
+                      "\\`\\(?:IV\\|I\\{1,3\\}\\)\\."
+                      (regexp-quote want)
+                      "\\'")
+                     (car s)))
+                  secs)))
+            (cond
+             ((null hits)
+              (let ((item-hits
+                     (seq-filter
+                      (lambda (section)
+                        (let ((title
+                               (edgar--item-title (cdr section))))
+                          (and title
+                               (string-equal
+                                (string-trim item) title))))
+                      secs))
+                    (named-hits
+                     (seq-filter
+                      (lambda (section)
+                        (string-equal
+                         (string-trim item)
+                         (plist-get section :name)))
+                      (edgar-named-sections text))))
+                (cond
+                 ((cdr item-hits)
+                  (user-error
+                   "Section %s is ambiguous; use an Item key"
+                   item))
+                 (item-hits
+                  (cdr (car item-hits)))
+                 (named-hits
+                  (plist-get
+                   (car
+                    (sort named-hits
+                          (lambda (a b)
+                            (> (length (plist-get a :body))
+                               (length (plist-get b :body))))))
+                   :body))
+                 ((not (stringp (plist-get filing :url)))
+                  nil)
+                 (t
+                  (let ((section
+                         (edgar-structure-section
+                          (edgar-document-structure filing) item)))
+                    (and section (plist-get section :body)))))))
+             ((null (cdr hits))
+              (cdr (car hits)))
+             (t
+              (user-error "Item %s is ambiguous; use one of %s"
+                          want
+                          (mapconcat #'car hits ", "))))))))))
 
 ;;;; Interactive
 

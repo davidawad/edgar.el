@@ -308,7 +308,123 @@
     (let ((f (edgar-latest "AAPL" "10-K")))
       (should (string-match-p "phones" (edgar-text f)))
       (should (string-match-p "risks galore" (edgar-section f "1a")))
+      (should
+       (string-match-p
+        "risks galore" (edgar-section f "Risk Factors")))
       (should-not (edgar-section f "99")))))
+
+(ert-deftest
+    edgar-document-structure-preserves-html-sections-and-paragraphs
+    ()
+  (let* ((html
+          (concat
+           "<html><body><section title='Financials'>"
+           "<h2>Risk Factors</h2><p>Risks include liquidity.</p>"
+           "<h3>Mitigation</h3><p>We monitor cash.</p>"
+           "<h2>Cash</h2><p>Cash balance is stable.</p>"
+           "</section></body></html>"))
+         (filing '(:url "https://example.invalid/report.htm")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let* ((tree (edgar-document-structure filing))
+             (section (edgar-structure-section tree "Risk Factors")))
+        (should (eq (plist-get tree :format) 'html))
+        (should
+         (equal
+          (plist-get section :path) '("Financials" "Risk Factors")))
+        (should
+         (string-match-p
+          "Risks include liquidity" (plist-get section :body)))
+        (should
+         (equal
+          (plist-get
+           (edgar-structure-section
+            tree '("Financials" "Risk Factors"))
+           :body)
+          (plist-get section :body)))
+        (should
+         (string-match-p "Mitigation" (plist-get section :body)))
+        (should-not
+         (string-match-p "Cash balance" (plist-get section :body)))
+        (should
+         (equal
+          (edgar-structure-paragraphs tree)
+          '("Risks include liquidity."
+            "We monitor cash."
+            "Cash balance is stable.")))))))
+
+(ert-deftest edgar-document-structure-supports-xml-and-plain-text ()
+  (let ((xml-filing '(:url "https://example.invalid/report.xml"))
+        (text-filing '(:url "https://example.invalid/complete.txt")))
+    (cl-letf
+        (((symbol-function 'edgar--fetch)
+          (lambda (url)
+            (if (string-suffix-p ".xml" url)
+                "<report><RiskFactors><p>Risk data</p></RiskFactors></report>"
+              "First paragraph.\n\nSecond paragraph."))))
+      (let* ((xml (edgar-document-structure xml-filing))
+             (risk (edgar-structure-section xml "RiskFactors"))
+             (text (edgar-document-structure text-filing)))
+        (should (eq (plist-get xml :format) 'xml))
+        (should (equal (plist-get risk :body) "Risk data"))
+        (should
+         (equal
+          (plist-get
+           (edgar-structure-section xml '("report" "RiskFactors"))
+           :body)
+          "Risk data"))
+        (should
+         (equal (edgar-section xml-filing "RiskFactors") "Risk data"))
+        (should
+         (equal (edgar-structure-paragraphs xml) '("Risk data")))
+        (should (eq (plist-get text :format) 'text))
+        (should-not (edgar-structure-headings text))
+        (should
+         (equal
+          (edgar-structure-paragraphs text)
+          '("First paragraph." "Second paragraph.")))
+        (should
+         (equal
+          (edgar-structure-text text)
+          "First paragraph.\n\nSecond paragraph."))))))
+
+(ert-deftest
+    edgar-named-sections-recognizes-generic-uppercase-headings
+    ()
+  (let*
+      ((sections
+        (edgar-named-sections
+         "OVERVIEW\nA complete opening paragraph.\n\nRISK FACTORS\nSpecific risks follow.\nItem 1. Detail\nmore."))
+       (overview (car sections))
+       (risk (cadr sections)))
+    (should
+     (equal
+      (mapcar
+       (lambda (section) (plist-get section :name)) sections)
+      '("OVERVIEW" "RISK FACTORS")))
+    (should
+     (string-match-p "opening paragraph" (plist-get overview :body)))
+    (should (string-match-p "Specific risks" (plist-get risk :body)))
+    (should-not (string-match-p "Item 1" (plist-get risk :body)))))
+
+(ert-deftest
+    edgar-structure-section-requires-path-for-duplicate-headings
+    ()
+  (let*
+      ((html
+        "<html><body><h2>Notes</h2><p>First.</p><h2>Notes</h2><p>Second.</p></body></html>")
+       (tree
+        (with-temp-buffer
+          (insert html)
+          (list
+           :type 'document
+           :format 'html
+           :children
+           (list
+            (edgar--structure-node
+             (libxml-parse-html-region (point-min) (point-max))))))))
+    (should-error
+     (edgar-structure-section tree "Notes")
+     :type 'user-error)))
 
 (ert-deftest edgar-open-renders-buffer ()
   (edgar-test--with-sec
