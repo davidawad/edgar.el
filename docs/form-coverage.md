@@ -4,6 +4,12 @@ Goal: `edgar.el` reads every base EDGAR form type. This is the measured size of
 that goal. Data: SEC full-index `form.idx`, 2026 Q2 (`tools/form-survey.sh`),
 353,293 filings.
 
+The machine-readable source of truth is `src/edgar-forms.el`. Its 245 base
+form rows were seeded from the index snapshot in `test/form-survey-2026-q2.txt`;
+`test/edgar-forms-test.el` checks that snapshot and the family counts below.
+Run `EDGAR_UA="Name email" tools/form-survey.sh` to refresh the snapshot and
+registry when updating the measured quarter.
+
 - 342 distinct form types, 245 once amendments (`/A`) are folded into their base form.
 - Volume is extremely concentrated: top 10 base forms = 76% of filings, top 30 = 92%,
   top 75 = 98.5%. 56 base forms had 5 or fewer filings that quarter; 17 had one.

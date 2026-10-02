@@ -1,0 +1,342 @@
+ 103084 4
+  49609 424B2
+  19324 144
+  18300 8-K
+  14055 NPORT-P
+  11064 3
+  10680 D
+   9307 13F-HR
+   8726 SCHEDULE 13G
+   7554 6-K
+   7282 SCHEDULE 13G/A
+   6592 497K
+   6481 FWP
+   6171 D/A
+   5473 10-Q
+   4175 497
+   3042 DEFA14A
+   2782 10-D
+   2694 DEF 14A
+   2607 424B3
+   2372 ABS-EE
+   2352 485BPOS
+   2190 497J
+   2116 SCHEDULE 13D/A
+   1985 13F-NT
+   1879 ARS
+   1800 497VPU
+   1687 40-APP/A
+   1546 425
+   1517 4/A
+   1286 485BXT
+   1165 EFFECT
+   1002 SD
+    968 424B5
+    960 N-MFP3
+    912 497VPI
+    850 S-8
+    837 24F-2NT
+    824 N-CSRS
+    750 11-K
+    687 CORRESP
+    675 1-U
+    628 X-17A-5
+    626 N-VPFS
+    621 10-K
+    607 S-8 POS
+    572 SCHEDULE 13D
+    531 C-AR
+    528 20-F
+    524 N-CSR
+    511 485APOS
+    505 ABS-15G
+    489 N-VP
+    486 25-NSE
+    480 PRE 14A
+    464 UPLOAD
+    458 8-A12B
+    444 N-CEN
+    442 S-1/A
+    440 CERT
+    438 3/A
+    416 40-17G
+    416 1-K
+    373 10-K/A
+    364 8-K/A
+    357 S-3ASR
+    352 NPORT-P/A
+    338 DFAN14A
+    324 NT 10-Q
+    318 13F-HR/A
+    308 POS AM
+    295 MA-I/A
+    286 1-Z
+    282 S-6
+    276 S-1
+    268 C/A
+    247 S-3
+    246 F-6EF
+    237 N-VP/A
+    232 C
+    229 487
+    222 40-APP
+    202 144/A
+    187 SC TO-I/A
+    187 NT 10-K
+    178 DRS/A
+    170 424B4
+    167 N-23C3A
+    165 DRS
+    163 C-U
+    162 1/A
+    149 SC TO-I
+    147 S-4/A
+    135 POS EX
+    135 F-1/A
+    134 40-17F2
+    116 5
+    114 SC TO-T/A
+    104 NT 20-F
+    103 N-2/A
+    102 15-12G
+    100 F-6 POS
+     95 RW
+     95 497AD
+     93 MA-I
+     92 PX14A6G
+     89 DEF 14C
+     89 C-TR
+     86 6-K/A
+     83 486BPOS
+     80 S-4
+     80 F-1
+     77 F-3
+     75 424H
+     69 424B7
+     68 N-PX
+     67 DEFM14A
+     66 253G2
+     65 APP NTC
+     63 PRE 14C
+     63 APP ORDR
+     61 S-3/A
+     59 SEC STAFF ACTIO
+     56 20-F/A
+     53 QUALIF
+     53 F-X
+     53 10-Q/A
+     53 1-A/A
+     52 DEFC14A
+     52 424B8
+     51 SC 14D9/A
+     51 S-6/A
+     50 SC TO-C
+     50 POS AMI
+     50 MA/A
+     49 N-CSR/A
+     48 AW
+     47 POSASR
+     47 DEFR14A
+     47 APP WD
+     47 1-A
+     46 N-2
+     46 15-15D
+     45 X-17A-5/A
+     45 N-CEN/A
+     44 PRER14A
+     43 PREC14A
+     42 IRANNOTICE
+     42 305B2
+     41 F-4/A
+     40 TA-1/A
+     40 F-6
+     39 SC 13E3/A
+     39 PREM14A
+     38 TA-2
+     38 1-A POS
+     36 S-1MEF
+     36 8-A12B/A
+     33 SUPPL
+     33 SBSE-A/A
+     33 N-MFP3/A
+     33 ATS-N/UA
+     32 F-3/A
+     31 25
+     30 N-23C-2
+     30 F-10POS
+     28 SC14D9C
+     28 40-17F1
+     28 18-K/A
+     27 N-30B-2
+     26 SC TO-T
+     26 REVOKED
+     26 PRRN14A
+     26 N-VPFS/A
+     25 N-8A
+     25 MA-A
+     25 F-3ASR
+     25 CB
+     24 ABS-15G/A
+     23 N-14
+     23 DSTRBRPT
+     23 13F-NT/A
+     22 ATS-N/MA
+     22 10-D/A
+     22 10-12G
+     21 CB/A
+     20 F-4
+     19 SC 13D/A
+     18 N-8F NTC
+     18 C-AR/A
+     18 486APOS
+     18 40-F
+     18 40-17G/A
+     18 10-12G/A
+     18 1-SA
+     17 C-W
+     16 NT 11-K
+     16 DEL AM
+     16 40-6B/A
+     15 8-A12G
+     13 SC 14D9
+     13 APP WDG
+     13 40-24B2
+     12 NT N-CEN
+     12 N-4/A
+     12 F-10
+     12 18-K
+     12 10-12B/A
+     11 NT-NCSR
+     11 CT ORDER
+     10 TA-2/A
+     10 N-8F/A
+     10 N-8F ORDR
+     10 N-8F
+     10 DFRN14A
+     10 424I
+      9 NT NPORT-P
+      9 N-2ASR
+      9 CFPORTAL/A
+      9 ABS-EE/A
+      8 SC 13E3
+      8 S-B
+      8 S-11/A
+      8 NRSRO-UPD
+      8 N-1A/A
+      8 N-14 8C/A
+      8 G-FIN/A
+      8 486BXT
+      7 NT-NCEN
+      7 NT 10-Q/A
+      7 NT 10-K/A
+      7 N-CSRS/A
+      7 N-14/A
+      7 N-14 8C
+      7 40-33
+      6 SC14D1F/A
+      6 SC 14F1
+      6 S-11
+      6 5/A
+      6 424H/A
+      6 253G1
+      6 1-K/A
+      5 S-3DPOS
+      5 QRTLYRPT
+      5 N-6/A
+      5 N-1A
+      5 MA
+      5 40-F/A
+      5 11-K/A
+      5 10-12B
+      5 1-A-W
+      4 TA-1
+      4 S-3MEF
+      4 POS 8C
+      4 N-54A
+      4 F-6/A
+      4 DRSLTR
+      4 DOS
+      4 DEFM14C
+      4 C-TR-W
+      4 ATS-N/CA
+      4 ARS/A
+      4 8-K12B
+      4 424B1
+      4 40FR12B/A
+      4 25-NSE/A
+      4 20FR12B/A
+      4 20FR12B
+      3 SF-3
+      3 SD/A
+      3 PRER14C
+      3 PREM14C
+      3 N-PX/A
+      3 N-8A/A
+      3 N-54C
+      3 N-4
+      3 F-1MEF
+      3 DOS/A
+      3 ADV-H-T
+      3 40FR12B
+      3 15F-12B
+      2 TA-W
+      2 SP 15D2
+      2 SF-3/A
+      2 SF-1/A
+      2 SF-1
+      2 SEC STAFF LETTE
+      2 SC14D1F
+      2 SC 14N
+      2 SBSE/A
+      2 S-B/A
+      2 PREN14A
+      2 N-30D
+      2 MSD/A
+      2 MA-W
+      2 F-10/A
+      2 DEFR14C
+      2 C-AR-W
+      2 ANNLRPT/A
+      2 ANNLRPT
+      2 6B NTC
+      2 497VPSUB
+      2 40-8F-2/A
+      2 40-17F1/A
+      2 25/A
+      2 24F-2NT/A
+      2 10-KT
+      2 1-A-W/A
+      1 SBSE-C
+      1 SBSE
+      1 S-3D
+      1 NTFNCSR
+      1 NRSRO-CE/A
+      1 N-6F/A
+      1 N-6F
+      1 N-2MEF
+      1 N-23C3B
+      1 N-23C3A/A
+      1 N-23C-2/A
+      1 N-2 POSASR
+      1 F-X/A
+      1 F-N
+      1 F-3MEF
+      1 F-10EF
+      1 DSTRBRPT/A
+      1 DOSLTR
+      1 DEFA14C
+      1 CFPORTAL-W
+      1 ATS-N/OFA
+      1 ATS-N
+      1 6B ORDR
+      1 40FR12G/A
+      1 40FR12G
+      1 40-6B
+      1 40-33/A
+      1 20FR12G/A
+      1 20FR12G
+      1 15F-12G
+      1 15-12G/A
+      1 10-KT/A
+      1 1-U/A
+      1 1

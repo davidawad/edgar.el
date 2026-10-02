@@ -21,6 +21,7 @@
 ;;; Code:
 
 (require 'xbrl)
+(require 'edgar-forms)
 (require 'shr)
 (require 'dom)
 (require 'cl-lib)

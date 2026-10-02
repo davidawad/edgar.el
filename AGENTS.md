@@ -49,6 +49,11 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   (disabling Part detection) failed 10 tests, so they do catch drift. Keep
   normalization in `edgar-fixtures-norm` cheap -- a `[[:space:]]` class made
   generation hang on 3MB filings.
+- Form coverage registry (`src/edgar-forms.el`) is the single source for the
+  245 base forms in `test/form-survey-2026-q2.txt`. `edgar-form-info` resolves
+  `/A` amendments and errors on unknown names; `edgar-forms-by-family` returns
+  matching rows. Keep its offline tests and the family summary in
+  `docs/form-coverage.md` in sync.
 - Git-source cohort deps in `Eask` are pinned to commit SHAs; `xbrl` comes
   from the private repo github.com/davidawad/xbrl.el.
 - Zero references to the owner's dotfiles are allowed here -- the repo must
