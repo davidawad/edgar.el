@@ -22,6 +22,11 @@ Foreign issuer exhibit access:
 Additional G7 samples for generic filing-text and document-tree coverage
 (Q2 2026):
 
+- `index-10-12b-2026-q2.htm.gz` — 10-12B, Vylor Inc. ([accession 0001193125-26-288697](https://www.sec.gov/Archives/edgar/data/2128626/000119312526288697/ctva_form_10-12b.htm); 2026-06-29).
+- `index-10-12g-2026-q2.htm.gz` — 10-12G, Margaree Acquisition Corp. ([accession 0001213900-26-058540](https://www.sec.gov/Archives/edgar/data/2129664/000121390026058540/ea0291152-1012g_margaree.htm); 2026-05-18).
+- `index-20fr12b-2026-q2.htm.gz` — 20FR12B, Wise Group plc ([accession 0001193125-26-151439](https://www.sec.gov/Archives/edgar/data/2099039/000119312526151439/d19735d20fr12b.htm); 2026-04-10).
+- `index-20fr12g-2026-q2.htm.gz` — 20FR12G, ChdgAI Commodities Ltd ([accession 0001493152-26-019982](https://www.sec.gov/Archives/edgar/data/2130998/000149315226019982/form20-fr12g.htm); 2026-04-30).
+- `index-40fr12g-2026-q2.htm.gz` — 40FR12G, Nuran Wireless Inc. ([accession 0001753926-26-001026](https://www.sec.gov/Archives/edgar/data/1680637/000175392626001026/g085768_40f.htm); 2026-06-18).
 - `index-aw-2026-q2.htm.gz` — AW, EA Series Trust ([accession 9999999995-26-001604](https://www.sec.gov/Archives/edgar/data/1592900/999999999526001604/raubbrocketfaw.htm); 2026-04-15).
 - `index-effect-2026-q2.xml` — EFFECT, Park Ha Biological Technology Co., Ltd. ([accession 9999999995-26-001916](https://www.sec.gov/Archives/edgar/data/1986247/999999999526001916/primary_doc.xml); 2026-06-08). The SEC primary is raw XML and is registered with the XML backend.
 - `index-f-10-2026-q2.htm.gz` — F-10, BCE Inc. ([accession 0001193125-26-140726](https://www.sec.gov/Archives/edgar/data/718940/000119312526140726/d131188df10.htm); 2026-04-03).

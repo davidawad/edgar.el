@@ -53,8 +53,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `1-SA` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `1-U` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `1-Z` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
-| `10-12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12B")` |
-| `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
+| `10-12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `10-12G` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `10-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `10-KT` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
@@ -69,8 +69,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `15F-12G` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `18-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `20-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `20FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12B")` |
-| `20FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12G")` |
+| `20FR12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `20FR12G` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `24F-2NT` | G10 Investment-company registration | xml | L1 | `(edgar-text filing)` |
 | `25` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `25-NSE` | G9 Periodic & event narrative | xml | L1 | `(edgar-text filing)` |
@@ -89,7 +89,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40-APP` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `40FR12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `40FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12G")` |
+| `40FR12G` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `424B2` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
@@ -317,6 +317,11 @@ for the current declared level. Level labels are claims about implemented
 support; fixture coverage is separately checked by `eask run script coverage`.
 Do not infer that all forms are parsed from the fact that all 245 appear in the
 catalog.
+
+All 58 G7 forms now have at least generic L1 coverage, accounting for all
+66,922 filings in the Q2 snapshot. The five remaining Exchange Act registration
+forms—10-12B, 10-12G, 20FR12B, 20FR12G, and 40FR12G—use recorded primary
+documents, metadata, and text expectations through the shared APIs.
 
 G12 has all 26 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I, TA-2,
 ATS-N and its four variants, CFPORTAL and CFPORTAL-W, MA/MA-A/MA-W,

@@ -102,7 +102,9 @@
 ;; Per-form facts that must hold whatever the snapshot says: a banner phrase
 ;; the rendered text must contain, and section keys that must be found.
 (defconst edgar-expect--invariants
-  '(("10-K" "annual report" ("I.1" "I.1A" "II.7" "II.8"))
+  '(("10-12B" "general form for registration of securities" nil)
+    ("10-12G" "general form for registration of securities" nil)
+    ("10-K" "annual report" ("I.1" "I.1A" "II.7" "II.8"))
     ("10-K/A" "amendment" nil)
     ("10-Q" "quarterly report" ("I.1" "I.2"))
     ("10-D" "asset backed issuer" nil)
@@ -228,6 +230,9 @@
     ("SC14D1F" "schedule 14d" nil)
     ("25" "walmart inc" nil)
     ("40FR12B" "nuran wireless" nil)
+    ("20FR12B" "form 20-f" nil)
+    ("20FR12G" "form 20-f" nil)
+    ("40FR12G" "form 40-f" nil)
     ("DEFA14A" "pra group, inc." nil)
     ("425" "pursuant to rule 425" nil)
     ("DEFA14C" "notice of internet availability" nil)
@@ -357,6 +362,11 @@
        '(("index-424h-2026-q2" . html)
          ("index-424i-2026-q2" . html)
          ("index-8-a12g-2026-q2" . html)
+         ("index-10-12b-2026-q2" . html)
+         ("index-10-12g-2026-q2" . html)
+         ("index-20fr12b-2026-q2" . html)
+         ("index-20fr12g-2026-q2" . html)
+         ("index-40fr12g-2026-q2" . html)
          ("index-aw-2026-q2" . html)
          ("index-effect-2026-q2" . xml)
          ("index-dos-2026-q2" . xml)

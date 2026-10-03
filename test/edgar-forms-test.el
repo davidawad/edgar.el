@@ -213,6 +213,11 @@
       (plist-get info :sections-or-fields)
       '(generic-named-sections)))))
 
+(ert-deftest edgar-forms-g7-residual-registrations-have-generic-coverage ()
+  "Remaining Exchange Act registration forms have recorded generic coverage."
+  (dolist (form '("10-12B" "10-12G" "20FR12B" "20FR12G" "40FR12G"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
+
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
   "G11 records all but the unavailable Form 1 primary document."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
