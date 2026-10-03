@@ -161,18 +161,28 @@
             :url "https://example.test/original"))
          (amendment
           (edgar-expect--read (edgar-expect--file "10-ka-tsla" ".eld")))
+         (newer-amendment
+          (copy-sequence amendment))
          (amendment-html (edgar-expect--html "10-ka-tsla"))
          (original-html
           "<html><body><p>Item 1. Business</p><p>Original business text.</p></body></html>"))
     (setf (plist-get amendment :amends) (plist-get original :accn))
+    (setf (plist-get newer-amendment :accn) "0001318605-26-060001"
+          (plist-get newer-amendment :filed) "2026-05-30"
+          (plist-get newer-amendment :amends) (plist-get original :accn)
+          (plist-get newer-amendment :url) "https://example.test/newer-amendment")
     (cl-letf (((symbol-function 'edgar-filings)
                (lambda (_ticker form &rest _bounds)
-                 (if (equal form "10-K/A") (list amendment) (list original))))
+                 (if (equal form "10-K/A")
+                     (list newer-amendment amendment)
+                   (list original))))
               ((symbol-function 'edgar--fetch)
                (lambda (url)
-                 (if (equal url (plist-get amendment :url))
-                     amendment-html
-                   original-html)))
+                 (cond
+                  ((equal url (plist-get amendment :url)) amendment-html)
+                  ((equal url (plist-get newer-amendment :url))
+                   "<html><body>Cover page only.</body></html>")
+                  (t original-html))))
               ((symbol-function 'edgar--fetch-xml)
                (lambda (&rest _) (error "Unexpected XML fetch"))))
       (should (string-match-p
