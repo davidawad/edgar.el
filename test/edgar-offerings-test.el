@@ -54,6 +54,48 @@
                  (edgar-offerings-test--fixture slug))))
       (funcall parse filing))))
 
+(ert-deftest
+    edgar-g11-required-forms-have-sec-fixtures-and-expectations
+    ()
+  "Every named G11 form has an SEC fixture and reviewed expectation."
+  (dolist (case
+           '(("C" "c-airthium" ".xml")
+             ("C-AR" "c-ar-qnetic" ".xml")
+             ("C-U" "c-u-same-same" ".xml")
+             ("C-TR" "c-tr-pegasus" ".xml")
+             ("1-A" "1-a-newport" ".xml")
+             ("1-K" "1-k-firstvitals" ".xml")
+             ("1-U" "1-u-masterworks-vault18" ".htm.gz")
+             ("1-SA" "1-sa-fig-publishing" ".htm.gz")
+             ("1-Z" "1-z-masterworks-289" ".xml")))
+    (let* ((form (nth 0 case))
+           (slug (nth 1 case))
+           (extension (nth 2 case))
+           (metadata
+            (edgar-offerings-test--read
+             (expand-file-name (concat "fixtures/" slug ".eld")
+                               edgar-offerings-test--directory)))
+           (primary
+            (expand-file-name (concat "fixtures/" slug extension)
+                              edgar-offerings-test--directory))
+           (expect
+            (expand-file-name (concat "expect/" slug ".eld")
+                              edgar-offerings-test--directory)))
+      (should (equal (plist-get metadata :form) form))
+      (should (stringp (plist-get metadata :accn)))
+      (should (numberp (plist-get metadata :cik)))
+      (should
+       (string-match-p
+        "\\`https://www\\.sec\\.gov/Archives/edgar/"
+        (or (plist-get metadata :url) "")))
+      (should (file-exists-p primary))
+      (should (file-exists-p expect))
+      (when (member form '("C" "C-AR"))
+        (should
+         (file-exists-p
+          (expand-file-name (concat "golden-fields/" slug ".eld")
+                            edgar-offerings-test--directory)))))))
+
 (defun edgar-offerings-test--form-144-fields (value)
   "Return VALUE's typed Form 144 fields as a plist."
   (list
