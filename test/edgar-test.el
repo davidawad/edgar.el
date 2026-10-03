@@ -374,6 +374,44 @@
         (should (stringp body))
         (should (string-match-p "exhibits" (downcase body)))))))
 
+(ert-deftest edgar-g10-additional-layouts-use-generic-structure-api ()
+  "Real G10 application, registration, supplement, and letter layouts work."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path
+             "expect/g10-additional-structures.eld")))
+    (let* ((slug (plist-get expected :slug))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (let* ((tree (edgar-document-structure filing))
+               (paragraphs (edgar-structure-paragraphs tree))
+               (tables (edgar-structure-nodes tree "table"))
+               (heading (plist-get expected :heading))
+               (body (and heading (edgar-section filing heading))))
+          (should (eq (plist-get tree :format) 'html))
+          (should
+           (>= (length paragraphs)
+               (plist-get expected :min-paragraphs)))
+          (should
+           (>= (length tables) (plist-get expected :min-tables)))
+          (should
+           (seq-some
+            (lambda (paragraph)
+              (string-match-p
+               (regexp-quote
+                (edgar-fixtures-norm
+                 (plist-get expected :paragraph-marker)))
+               (edgar-fixtures-norm paragraph)))
+            paragraphs))
+          (when heading
+            (should (stringp body))
+            (should
+             (string-match-p
+              (regexp-quote
+               (plist-get expected :body-marker))
+              body))))))))
+
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."
   (dolist (slug

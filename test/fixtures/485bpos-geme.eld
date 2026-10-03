@@ -1,0 +1,1 @@
+(:accn "0001999371-26-009141" :form "485BPOS" :filed "2026-04-27" :report "" :doc "geme-485bpos_042726.htm" :cik 1969674 :url "https://www.sec.gov/Archives/edgar/data/1969674/000199937126009141/geme-485bpos_042726.htm" :ticker "")
