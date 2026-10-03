@@ -37,6 +37,7 @@ Veralto sample exercises Part II Item access without a table of contents.
 
 Proxy, merger, and tender-offer samples:
 
+- `defa14a-pra.htm.gz` — PRA Group additional definitive proxy materials ([DEFA14A accession 0001185348-26-000015](https://www.sec.gov/Archives/edgar/data/1185348/000118534826000015/defa14a2026proxycard.htm); 2026-04-30).
 - `def-14c-pmgc.htm.gz` — PMGC Holdings definitive information statement ([DEF 14C accession 0001213900-25-080463](https://www.sec.gov/Archives/edgar/data/1840563/000121390025080463/0001213900-25-080463-index.htm); 2025-08-26).
 - `def-14a-encore.htm.gz` — Encore Capital Group definitive proxy ([DEF 14A accession 0001193125-25-093645](https://www.sec.gov/Archives/edgar/data/1500881/000119312525093645/d843005ddef14a.htm); 2025-04-24).
 - `def-14a-venture-global.htm.gz` — Venture Global definitive proxy ([DEF 14A accession 0001193125-25-071787](https://www.sec.gov/Archives/edgar/data/2007855/000119312525071787/d906341ddef14a.htm); 2025-04-03).

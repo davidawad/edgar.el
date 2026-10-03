@@ -1103,7 +1103,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3042
       :notes nil)

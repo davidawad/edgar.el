@@ -105,6 +105,10 @@
              "SC 14D9"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g8-additional-proxy-materials-have-generic-coverage ()
+  "Recorded DEFA14A material is available through the generic text API."
+  (should (eq (plist-get (edgar-form-info "DEFA14A") :level) 'L1)))
+
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
   "G11 records all but the unavailable Form 1 primary document."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))

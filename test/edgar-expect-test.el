@@ -154,6 +154,7 @@
     ("18-K" "form 18-k" nil)
     ("25" "walmart inc" nil)
     ("40FR12B" "nuran wireless" nil)
+    ("DEFA14A" "pra group, inc." nil)
     ("DEFA14C" "notice of internet availability" nil)
     ("DEFM14C" "schedule 14c information" nil)
     ("DEFR14C" "amendment no. 1" nil)
