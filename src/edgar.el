@@ -837,8 +837,8 @@ section.  For arbitrary data elements, use `edgar-document-structure' and
                      (seq-filter
                       (lambda (section)
                         (string-equal
-                         (string-trim item)
-                         (plist-get section :name)))
+                         (downcase (string-trim item))
+                         (downcase (plist-get section :name))))
                       (edgar-named-sections text))))
                 (cond
                  ((cdr item-hits)

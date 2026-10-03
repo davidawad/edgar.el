@@ -3,12 +3,16 @@
 (require 'ert)
 (require 'json)
 
+(add-to-list 'load-path
+             (file-name-directory (or load-file-name buffer-file-name)))
+
 ;; Coverage (undercover.el, pack-mandated).  Must run before the source loads.
 (setq load-prefer-newer t)
 (when (require 'undercover nil t)
   (undercover "src/*.el" (:report-format 'text) (:send-report nil)))
 
 (require 'edgar)
+(require 'edgar-fixtures)
 
 (defconst edgar-test--dir
   (file-name-directory (or load-file-name buffer-file-name))
@@ -312,6 +316,19 @@
        (string-match-p
         "risks galore" (edgar-section f "Risk Factors")))
       (should-not (edgar-section f "99")))))
+
+(ert-deftest edgar-named-sections-resolve-prospectus-and-proxy-fixtures ()
+  "Named sections resolve across recorded prospectus and proxy filings."
+  (dolist (entry
+           '(("s-1-rivn" "Prospectus Summary" "Rivian")
+             ("def-14a-gme" "Proxy Statement Summary" "PROXY STATEMENT")))
+    (let* ((slug (nth 0 entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (let ((body (edgar-section filing (nth 1 entry))))
+          (should (stringp body))
+          (should (string-match-p (regexp-quote (nth 2 entry)) body)))))))
 
 (ert-deftest
     edgar-document-structure-preserves-html-sections-and-paragraphs

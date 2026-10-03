@@ -2066,8 +2066,8 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(prospectus-summary part-ii-items)
       :volume 718
       :notes nil)
      table)
