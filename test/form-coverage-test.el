@@ -159,6 +159,24 @@
     (should-not (member '("10-K" . "10-k-bd-1998") records))
     (should-not (cdr records-and-problems))
     (should-not (edgar-coverage-problems))))
+(ert-deftest edgar-form-coverage-g9-primary-fixtures-are-not-l0 ()
+  "A G9 form with a recorded primary document must not remain L0."
+  (let* ((fixtures edgar-coverage-fixture-directory)
+         (records
+          (car (edgar-coverage--fixture-records
+                edgar-forms--registry fixtures))))
+    (dolist (record records)
+      (let* ((form (car record))
+             (slug (cdr record))
+             (info (gethash form edgar-forms--registry)))
+        (when (and (equal (plist-get info :family)
+                          "G9 Periodic & event narrative")
+                   (eq (plist-get info :level) 'L0)
+                   (edgar-coverage--primary-artifact-p
+                    slug (plist-get info :backend) fixtures))
+          (ert-fail
+           (format "%s has primary fixture %s but remains L0"
+                   form slug)))))))
 
 (ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
   "Do not promote low-volume L0 forms absent from the recorded index samples."
