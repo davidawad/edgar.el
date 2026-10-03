@@ -114,10 +114,12 @@
          "[ \t\n ]+" " " (edgar-fixtures-norm section)))))))
 
 (ert-deftest edgar-golden-g9-generic-html-body-access ()
-  "Newly covered registration and NT forms expose their HTML body generically."
+  "New G9 notices, registrations, and NT forms expose generic HTML structure."
   (dolist
       (entry
        '(("15-12g-apogee" . "Apogee Therapeutics")
+         ("15-15d-plus-automation" . "Plus Automation")
+         ("irannotice-intel" . "Intel Corporation")
          ("nt-10k-dbmm" . "Digital Brand Media")
          ("nt-10q-dbmm" . "Digital Brand Media")
          ("nt-11k-oldrepublic" . "ori 401(k) savings")
@@ -125,14 +127,23 @@
     (let* ((slug (car entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
+           tree
            body)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq body (edgar-section filing '("html" "body"))))
+        (setq tree (edgar-document-structure filing))
+        (setq body (edgar-structure-section tree '("html" "body"))))
+      (should (eq (plist-get tree :format) 'html))
       (should body)
+      (should (= (length (edgar-structure-nodes tree "body")) 1))
       (should
        (string-match-p
         (regexp-quote (cdr entry))
-        (edgar-fixtures-norm body))))))
+        (edgar-fixtures-norm (plist-get body :body))))
+      (should
+       (string-match-p
+        (regexp-quote (cdr entry))
+        (edgar-fixtures-norm
+         (edgar-structure-text (plist-get body :node))))))))
 
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."

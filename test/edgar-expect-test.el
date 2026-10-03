@@ -104,6 +104,8 @@
     ("QRTLYRPT" "african development bank" nil)
     ("SD" "specialized disclosure report" nil)
     ("15-12G" "apogee therapeutics" nil)
+    ("15-15D" "plus automation" nil)
+    ("IRANNOTICE" "intel corporation" nil)
     ("NT 10-K" "digital brand media" nil)
     ("NT 10-Q" "digital brand media" nil)
     ("NT 11-K" "ori 401" nil)

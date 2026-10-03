@@ -1,0 +1,1 @@
+(:accn "0000050863-26-000081" :form "IRANNOTICE" :filed "2026-04-24" :report nil :doc "q12026irannotice.htm" :cik 50863 :url "https://www.sec.gov/Archives/edgar/data/50863/000005086326000081/q12026irannotice.htm")

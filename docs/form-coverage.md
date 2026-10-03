@@ -63,7 +63,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `13F-NT` | G4 13F holdings | xml | L0 | `(edgar-form-info "13F-NT")` |
 | `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
 | `15-12G` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |
+| `15-15D` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `15F-12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12B")` |
 | `15F-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12G")` |
 | `18-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
@@ -184,7 +184,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `F-X` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-X")` |
 | `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `G-FIN` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "G-FIN")` |
-| `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
+| `IRANNOTICE` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `MA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA")` |
 | `MA-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-A")` |
 | `MA-I` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-I")` |
