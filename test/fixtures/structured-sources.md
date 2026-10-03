@@ -6,6 +6,15 @@ G13 tail form:
 
 - `index-305b2-2026-q3.htm.gz` — Form 305B2, Beacon Financial Corp. ([SEC daily index for 2026-08-17](https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/form.20260817.idx); [accession 0001104659-26-097599](https://www.sec.gov/Archives/edgar/data/1108134/000110465926097599/tm2623171d1_305b2.htm); primary listed at 20,436 bytes).
 
+G9 low-volume filings sampled from the 2026 Q2 full index:
+
+- `index-15f-12b-2026-q2.htm.gz` — 15F-12B, Westpac Banking Corp. ([accession 0001104659-26-053346](https://www.sec.gov/Archives/edgar/data/719245/000110465926053346/tm2612452d1_15f12b.htm); 2026-05-01).
+- `index-15f-12g-2026-q2.htm.gz` — 15F-12G, Red Metal Resources Ltd. ([accession 0001062993-26-002596](https://www.sec.gov/Archives/edgar/data/1358654/000106299326002596/form15f12g.htm); 2026-05-14).
+- `index-6b-ntc-2026-q2.pdf` — 6B NTC, Goldman Sachs Group Inc. ([accession 9999999997-26-000877](https://www.sec.gov/Archives/edgar/data/886982/999999999726000877/filename1.pdf); 2026-05-19).
+- `index-6b-ordr-2026-q2.pdf` — 6B ORDR, Goldman Sachs Group Inc. ([accession 9999999997-26-001047](https://www.sec.gov/Archives/edgar/data/886982/999999999726001047/filename1.pdf); 2026-06-15).
+- `index-annlrpt-2026-q2.htm.gz` — ANNLRPT/A (resolved through base form ANNLRPT), Asian Development Bank ([accession 0001140361-26-020379](https://www.sec.gov/Archives/edgar/data/311669/000114036126020379/ef20071379_annlrpta.htm); 2026-05-11).
+- `index-sp-15d2-2026-q2.htm.gz` — SP 15D2, Suncrete, Inc. ([accession 0001104659-26-043247](https://www.sec.gov/Archives/edgar/data/2094433/000110465926043247/tm2611679d1_sp15d2.htm); 2026-04-14).
+
 Foreign issuer exhibit access:
 
 - `6-k-dxst-ex99-1.html` — EX-99.1 attached to Decent Holding Inc.'s 6-K ([accession 0001185185-26-003233](https://www.sec.gov/Archives/edgar/data/1958133/000118518526003233/dxstex99-1.htm); 2026-08-03). The filing directory is recorded in `6-k-dxst-index.json`.

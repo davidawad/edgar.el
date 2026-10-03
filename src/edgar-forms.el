@@ -222,7 +222,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3
       :notes nil)
@@ -232,7 +232,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -733,8 +733,8 @@
      "6B NTC"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -743,8 +743,8 @@
      "6B ORDR"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -824,7 +824,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -2410,7 +2410,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)

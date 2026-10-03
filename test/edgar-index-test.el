@@ -23,7 +23,7 @@
           (edgar-index--parse
            (edgar-index-test--fixture "form-index-2026-q2.idx")))
          (first (car rows)))
-    (should (= (length rows) 14))
+    (should (= (length rows) 20))
     (should (equal (plist-get first :form) "10-K"))
     (should
      (equal (plist-get first :company) "21Shares Polkadot ETF"))
@@ -43,11 +43,22 @@
   (let ((rows
          (edgar-index--parse
           (edgar-index-test--fixture "form-index-2026-q2.idx"))))
-    (dolist
-        (slug
-         '("defa14c-graybar" "defm14c-olaplex" "defr14c-srx"
-           "pos-8c-monroe" "prem14c-emerald" "pren14a-fermi"
-           "prer14c-esg" "sc-14n-first-trinity"))
+    (dolist (slug
+             '("defa14c-graybar"
+               "defm14c-olaplex"
+               "defr14c-srx"
+               "pos-8c-monroe"
+               "prem14c-emerald"
+               "pren14a-fermi"
+               "prer14c-esg"
+               "sc-14n-first-trinity"
+               "index-d-2026-q2"
+               "index-15f-12b-2026-q2"
+               "index-15f-12g-2026-q2"
+               "index-6b-ntc-2026-q2"
+               "index-6b-ordr-2026-q2"
+               "index-annlrpt-2026-q2"
+               "index-sp-15d2-2026-q2"))
       (let* ((metadata
               (with-temp-buffer
                 (insert-file-contents
