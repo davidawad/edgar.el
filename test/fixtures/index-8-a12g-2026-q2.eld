@@ -1,0 +1,1 @@
+(:accn "0002044820-26-000026" :form "8-A12G" :company "VistaOne, L.P." :filed "2026-06-01" :report "" :doc "vo_form_8-a.htm" :cik 2044820 :url "https://www.sec.gov/Archives/edgar/data/2044820/000204482026000026/vo_form_8-a.htm" :size 49184 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

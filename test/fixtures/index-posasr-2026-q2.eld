@@ -1,0 +1,1 @@
+(:accn "0001104659-26-043773" :form "POSASR" :company "Canaan Inc." :filed "2026-04-15" :report "" :doc "tm2611693-1_posasr.htm" :cik 1780652 :url "https://www.sec.gov/Archives/edgar/data/1780652/000110465926043773/tm2611693-1_posasr.htm" :size 477709 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

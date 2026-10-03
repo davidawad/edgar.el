@@ -1,0 +1,1 @@
+(:accn "0001104659-26-057251" :form "S-3DPOS" :company "CARNIVAL PLC" :filed "2026-05-07" :report "" :doc "tm2613687d2_s3dpos.htm" :cik 1125259 :url "https://www.sec.gov/Archives/edgar/data/1125259/000110465926057251/tm2613687d2_s3dpos.htm" :size 161736 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

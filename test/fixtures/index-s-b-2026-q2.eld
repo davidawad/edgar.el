@@ -1,0 +1,1 @@
+(:accn "0001104659-26-079265" :form "S-B" :company "ISRAEL, STATE OF" :filed "2026-06-30" :report "" :doc "tm2619373-1_sb.htm" :cik 52749 :url "https://www.sec.gov/Archives/edgar/data/52749/000110465926079265/tm2619373-1_sb.htm" :size 227719 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

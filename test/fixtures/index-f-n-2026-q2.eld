@@ -1,0 +1,1 @@
+(:accn "0001193125-26-275186" :form "F-N" :company "KOREA DEVELOPMENT BANK" :filed "2026-06-18" :report "" :doc "d151345dfn.htm" :cik 869318 :url "https://www.sec.gov/Archives/edgar/data/869318/000119312526275186/d151345dfn.htm" :size 20212 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

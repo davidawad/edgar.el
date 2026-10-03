@@ -1,0 +1,1 @@
+(:accn "0001493152-26-027535" :form "DRS" :company "RedCloud Holdings plc" :filed "2026-06-05" :report "" :doc "filename1.htm" :cik 2027360 :url "https://www.sec.gov/Archives/edgar/data/2027360/000149315226027535/filename1.htm" :size 444492 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

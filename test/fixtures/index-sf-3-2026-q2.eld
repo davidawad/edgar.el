@@ -1,0 +1,1 @@
+(:accn "0001193125-26-285649" :form "SF-3" :company "CHASE ISSUANCE TRUST" :filed "2026-06-26" :report "" :doc "d138248dsf3.htm" :cik 1174821 :url "https://www.sec.gov/Archives/edgar/data/1174821/000119312526285649/d138248dsf3.htm" :size 1927441 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
