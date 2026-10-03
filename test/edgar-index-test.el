@@ -52,7 +52,6 @@
                "pren14a-fermi"
                "prer14c-esg"
                "sc-14n-first-trinity"
-               "index-d-2026-q2"
                "index-15f-12b-2026-q2"
                "index-15f-12g-2026-q2"
                "index-6b-ntc-2026-q2"
