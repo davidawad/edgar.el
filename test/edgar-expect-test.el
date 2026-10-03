@@ -89,6 +89,11 @@
     ("6-K" "report of foreign private issuer" nil)
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
+    ("40-17F1" "form n-17f-1" nil)
+    ("40-24B2" "filing of sales literature" nil)
+    ("40-33" "via edgar" nil)
+    ("40-6B" "marshall wace llp" nil)
+    ("40-8F-2/A" "foley & lardner" nil)
     ("485APOS"
      "post-effective amendment"
      ("28" "29" "30" "31" "32" "33" "34" "35"))
@@ -108,6 +113,7 @@
     ("N-1A" "registration statement" nil)
     ("S-6" "form s-6" nil)
     ("DEL AM" "form n-1a" nil)
+    ("MSD/A" "auto-generated paper document" nil)
     ("S-3" "autonomix medical" nil)
     ("F-1" "fast track group" nil)
     ("424B2" "preliminary pricing supplement" nil)

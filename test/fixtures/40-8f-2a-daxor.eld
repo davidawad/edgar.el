@@ -1,0 +1,1 @@
+(:accn "0000897069-26-001198" :form "40-8F-2/A" :filed "2026-05-21" :report "" :doc "daxor408f.htm" :cik 27367 :url "https://www.sec.gov/Archives/edgar/data/27367/000089706926001198/daxor408f.htm" :ticker "")

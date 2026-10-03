@@ -97,6 +97,10 @@ Post-effective G10 coverage also includes 486APOS/BPOS/BXT, 487, 497AD,
 497VPSUB, and DEL AM layouts, including Item 25–34 lookup where those filings
 expose conventional Item headings.
 
+Custody and miscellaneous G10 coverage includes 40-17F1, plain-text 40-17F2,
+40-24B2, 40-33, 40-6B, 40-8F-2 amendments, and MSD paper-submission
+placeholders through the same generic structure API.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.

@@ -1,0 +1,167 @@
+<DOCUMENT>
+<TYPE>40-17F2
+<SEQUENCE>1
+<FILENAME>anfund12-1.txt
+<DESCRIPTION>JANUARY 31, 2026 FILING
+<TEXT>
+U.S. Securities and Exchange Commission
+Washington, D.C. 20549
+FORM N-17f-2
+Certificate of Accounting of Securities and Similar
+Investments in the Custody of
+Management Investment Companies
+Pursuant to Rule 17f-2 [17 CFR 270.17f-2]
+
+1. Investment Company Act File Number:          Date Examination completed:
+811-03081                                       January 31, 2026
+2. State Identification Number:
+AL	AK	AZ	AR	CA	CO
+CT	DE	DC	FL	GA	HI
+ID	IL	IN	IA	KS	KY
+LA	ME	MD	MA	MI	MN
+MS	MO	MT	NE	NV	NH
+NJ	NM	NY	NC	ND	OH
+OK	OR	PA	RI	SC	SD
+TN	TX	UT	VT	VA	WA
+WV	WI	WY	PUERTO RICO
+Other (specify):
+
+3. Exact name of investment company as specified in registration statement:
+BNY Mellon Appreciation Fund, Inc.
+
+4. Address of principal executive office:(number,street,city,state,zip code)
+240 Greenwich Street, New York, New York, 10286
+
+            Independent Accountant's Report
+
+The Board of Directors of
+BNY Mellon Appreciation Fund, Inc.
+
+We have examined management's assertion, included
+in the accompanying Report of Management on Compliance
+with Certain Provisions of the Investment
+Company Act of 1940, that
+BNY Mellon Appreciation Fund, Inc. (the Company)
+complied with the requirements of
+subsections (b) and (c) of Rule 17f-2 under the Investment
+Company Act of 1940 (the Act) as of January 31, 2026.
+Management is responsible for its assertion about compliance
+with the requirements of subsections (b) and (c) of Rule 17f-2
+of the Act (the specified requirements). Our responsibility is
+to express an opinion on management's assertion about the Company's
+compliance with the specified requirements based on our examination.
+
+Our examination was conducted in accordance with the
+attestation standards established by the American Institute
+of Certified Public Accountants ("AICPA").
+Those standards require that we
+plan and perform the examination to obtain reasonable assurance about
+whether management's assertion about compliance with the
+specified requirements is fairly stated, in all material
+respects. An examination involves performing procedures to
+obtain evidence about whether management's assertion is
+fairly stated, in all material respects. The nature, timing,
+and extent of the procedures selected depend on our judgment,
+including an assessment of the risks of material misstatement of
+management's assertion, whether due to fraud or error.
+We believe that the evidence we obtained is sufficient
+and appropriate to provide a reasonable basis for our opinion.
+
+We are required to be independent of
+BNY Mellon Appreciation Fund, Inc.
+and to meet our other ethical responsibilities, as applicable for
+examination engagements set forth in the Preface: Applicable
+to All Members and Part 1 : Members in Public Practice of the
+Code of Professional Conduct established by the AICPA.
+
+Included among our procedures were the
+following tests performed as of January 31, 2026 (the examination
+date we selected without prior notice to management)
+and with respect to agreement of security
+purchases and sales or maturities, for the period from
+August 1, 2025 (the immediate date after our last examination), through
+January 31, 2026:
+-Confirmation of all securities held by institutions in
+book entry form (e.g., the Federal Reserve Bank of Kansas City,
+the Depository Trust Company and various sub-custodians);
+-Confirmation of all securities hypothecated, pledged, placed
+in escrow or out for transfer with brokers, pledgees, transfer
+agents or securities lending administrators;
+-Reconciliation of all such securities
+to the books and records of the Company and
+The Bank of New York (the Custodian);
+-Confirmation of all repurchase agreements with brokers/banks
+and agreement of underlying collateral with
+The Bank of New York (the Custodian) records, if any; and
+-Agreement of 5 security purchases and 5 security sales
+or maturities, if occurred, since our last report
+from the books and records
+of the Company to corresponding bank statements.
+
+We believe that our examination provides a reasonable
+basis for our opinion. Our examination does not provide
+a legal determination on the Company's compliance with
+specified requirements.
+
+In our opinion, management's assertion that
+BNY Mellon Appreciation Fund, Inc.
+complied with the requirements of subsections (b) and (c) of
+Rule 17f-2 of the Act as of January 31, 2026,
+with respect to securities reflected in the
+investment account of the
+Company is fairly stated, in all material respects.
+
+This report is intended solely for the information and use of
+management and the Board of Directors of
+BNY Mellon Appreciation Fund, Inc.
+and the Securities and Exchange Commission and is not
+intended to be and should not be
+used by anyone other than these specified parties.
+
+               /s/ERNST & YOUNG LLP
+
+New York, New York
+April 29, 2026
+
+
+Report of Management on Compliance with
+        Certain Provisions
+of the Investment Company Act of 1940
+
+April 29, 2026
+
+We, as members of management of
+BNY Mellon Appreciation Fund, Inc. (the Company),
+are responsible for complying with the
+requirements of subsections (b) and (c) of Rule 17f-2,
+"Custody of Investments by Registered Management
+Investment Companies," of the Investment Company
+Act of 1940 ("the Act"). We are also responsible for establishing
+and maintaining effective internal controls over compliance
+with those requirements.  We have performed an
+evaluation  of the Company's compliance with the
+requirements of subsections (b) and (c) of Rule 17f-2
+as of January 31, 2026 and from August 1, 2025
+through January 31, 2026.
+
+Based on this evaluation, we assert that the Company
+was in compliance with the requirements of subsections
+(b) and (c) of Rule 17f-2 of the Act
+as of January 31, 2026 and from
+August 1, 2025 through January 31, 2026, with respect to securities
+reflected in the investment account of the Company.
+
+BNY Mellon Appreciation Fund, Inc.
+
+
+
+By:
+
+     /s/Jim Windels
+     Jim Windels,
+     Treasurer
+     BNY Mellon Investment Adviser, Inc.
+
+
+</TEXT>
+</DOCUMENT>

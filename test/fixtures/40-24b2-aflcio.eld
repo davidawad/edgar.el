@@ -1,0 +1,1 @@
+(:accn "0001999371-26-010421" :form "40-24B2" :filed "2026-05-11" :report "" :doc "hitstlwt_4024b2-050426.htm" :cik 225030 :url "https://www.sec.gov/Archives/edgar/data/225030/000199937126010421/hitstlwt_4024b2-050426.htm" :ticker "")

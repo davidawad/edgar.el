@@ -28,6 +28,13 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `497ad-aetos.htm.gz` — compressed [497AD accession 0001169578-26-000036](https://www.sec.gov/Archives/edgar/data/1169578/000116957826000036/distressed-495ad_02282026.htm).
 - `497vpsub-voya.htm.gz` — compressed [497VPSUB accession 0001133228-26-007876](https://www.sec.gov/Archives/edgar/data/103005/000113322826007876/vaab-efp24740_497vpsub.htm).
 - `del-am-ab.htm.gz` — compressed [DEL AM accession 0000919574-26-002487](https://www.sec.gov/Archives/edgar/data/825316/000091957426002487/d12151316_del-am.htm).
+- `40-17f1-advisors.htm.gz` — compressed [40-17F1 accession 0001580642-26-002926](https://www.sec.gov/Archives/edgar/data/1556505/000158064226002926/hundredfold_40-17f1.htm).
+- `40-17f2-bny.txt` — [40-17F2 accession 0000318478-26-000002](https://www.sec.gov/Archives/edgar/data/318478/000031847826000002/anfund12-1.txt).
+- `40-24b2-aflcio.htm.gz` — compressed [40-24B2 accession 0001999371-26-010421](https://www.sec.gov/Archives/edgar/data/225030/000199937126010421/hitstlwt_4024b2-050426.htm).
+- `40-33-blueowl.htm.gz` — compressed [40-33 accession 0001193125-26-201635](https://www.sec.gov/Archives/edgar/data/1655888/000119312526201635/d122697d4033.htm).
+- `40-6b-marshall.htm.gz` — compressed [40-6B accession 0000902664-26-002363](https://www.sec.gov/Archives/edgar/data/1318757/000090266426002363/p26-1185form406b.htm).
+- `40-8f-2a-daxor.htm.gz` — compressed [40-8F-2/A accession 0000897069-26-001198](https://www.sec.gov/Archives/edgar/data/27367/000089706926001198/daxor408f.htm).
+- `msda-fhn.htm.gz` — compressed [MSD/A accession 9999999997-26-000650](https://www.sec.gov/Archives/edgar/data/36637/999999999726000650/9999999997-26-000650.paper).
 
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.

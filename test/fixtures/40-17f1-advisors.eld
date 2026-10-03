@@ -1,0 +1,1 @@
+(:accn "0001580642-26-002926" :form "40-17F1" :filed "2026-05-05" :report "" :doc "hundredfold_40-17f1.htm" :cik 1556505 :url "https://www.sec.gov/Archives/edgar/data/1556505/000158064226002926/hundredfold_40-17f1.htm" :ticker "")

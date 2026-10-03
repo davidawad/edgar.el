@@ -1,0 +1,1 @@
+(:accn "0000318478-26-000002" :form "40-17F2" :filed "2026-05-01" :report "" :doc "anfund12-1.txt" :cik 318478 :url "https://www.sec.gov/Archives/edgar/data/318478/000031847826000002/anfund12-1.txt" :ticker "")

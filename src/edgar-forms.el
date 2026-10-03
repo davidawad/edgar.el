@@ -362,7 +362,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 30
       :notes nil)
@@ -371,8 +371,8 @@
      "40-17F2"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'text
+      :level 'L1
       :sections-or-fields nil
       :volume 134
       :notes nil)
@@ -392,7 +392,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -402,7 +402,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 8
       :notes nil)
@@ -412,7 +412,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 17
       :notes nil)
@@ -422,7 +422,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -1472,7 +1472,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
