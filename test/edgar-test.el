@@ -338,6 +338,17 @@
           (should (stringp body))
           (should (string-match-p (regexp-quote (nth 2 entry)) body)))))))
 
+(ert-deftest edgar-sd-exposes-numbered-items-through-section-api ()
+  "A real Form SD supports generic item-number section lookup."
+  (let* ((filing (edgar-fixtures-filing "sd-apple"))
+         (html (edgar-fixtures-html "sd-apple")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let ((body (edgar-section filing "1.01")))
+        (should (stringp body))
+        (should (string-match-p "Conflict Minerals Disclosure" body))
+        (should (string-match-p "Apple designs" body)))
+      (should (assoc "2.01" (edgar-sections (edgar-text filing)))))))
+
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
   "Named section output stays pinned across distinct prospectus layouts."
   (let ((goldens

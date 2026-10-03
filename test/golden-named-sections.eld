@@ -12,4 +12,5 @@
  ("s-1-rivn" "Prospectus Summary" "Rivian")
  ("10-kt-keemo" "I.1A" "We are a smaller reporting company")
  ("8-k12b-nova" "3.01" "Notice of Delisting or Failure")
- ("def-14a-gme" "Proxy Statement Summary" "PROXY STATEMENT"))
+ ("def-14a-gme" "Proxy Statement Summary" "PROXY STATEMENT")
+ ("sd-apple" "1.01" "Apple designs"))
