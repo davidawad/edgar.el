@@ -113,8 +113,8 @@
      "10-D"
      (list
       :family "G6 Asset-backed"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 2804
       :notes nil)
@@ -785,8 +785,8 @@
      "ABS-15G"
      (list
       :family "G6 Asset-backed"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 529
       :notes nil)
