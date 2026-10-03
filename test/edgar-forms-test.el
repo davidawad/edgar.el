@@ -86,6 +86,15 @@
      (= (length (edgar-forms-by-family (car expected)))
         (cdr expected)))))
 
+(ert-deftest edgar-forms-g5-fund-reports-have-recorded-generic-coverage ()
+  "Every G5 filing form has at least generic L1 coverage."
+  (let ((rows (edgar-forms-by-family "G5 Fund periodic reports")))
+    (should (= (length rows) 25))
+    (dolist (row rows)
+      (should (memq (plist-get (cdr row) :level) '(L1 L2))))
+    (dolist (form '("NPORT-P" "N-MFP3" "N-CEN"))
+      (should (eq (plist-get (edgar-form-info form) :level) 'L2)))))
+
 (ert-deftest edgar-forms-g10-family-has-l1-and-named-section-coverage ()
   "Every G10 form is L1+ and the three reviewed forms retain L2 sections."
   (let ((rows (edgar-forms-by-family "G10 Investment-company registration"))

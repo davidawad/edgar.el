@@ -4,6 +4,7 @@
 
 (require 'ert)
 (require 'edgar-funds)
+(require 'edgar-fixtures)
 
 (defconst edgar-funds-test--directory
   (file-name-directory (or load-file-name buffer-file-name)))
@@ -48,6 +49,24 @@
   (with-temp-buffer
     (insert-file-contents
      (expand-file-name "golden/ncsr-sample.eld"
+                       edgar-funds-test--directory))
+    (read (current-buffer))))
+
+(defun edgar-funds-test--n-csrs-html ()
+  "Read the real, compressed N-CSRS primary document fixture."
+  (with-temp-buffer
+    (let ((coding-system-for-read 'utf-8)
+          (auto-compression-mode t))
+      (insert-file-contents
+       (expand-file-name "fixtures/n-csrs-360-funds.htm.gz"
+                         edgar-funds-test--directory)))
+    (buffer-string)))
+
+(defun edgar-funds-test--n-csrs-golden ()
+  "Read reviewed Item-section values for the N-CSRS fixture."
+  (with-temp-buffer
+    (insert-file-contents
+     (expand-file-name "golden/n-csrs-360-funds.eld"
                        edgar-funds-test--directory))
     (read (current-buffer))))
 
@@ -201,6 +220,26 @@
              (item (cdr (assoc (plist-get expected :section) sections))))
         (should item)
         (should (string-match-p (plist-get expected :contains) item))))))
+
+(ert-deftest edgar-fund-sections-reads-real-n-csrs-item-section ()
+  "The shared section API extracts reviewed Item 7 from a real N-CSRS."
+  (let* ((html (edgar-funds-test--n-csrs-html))
+         (golden (edgar-funds-test--n-csrs-golden))
+         (expected (cadr (assoc "7" (plist-get golden :sections)))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_url) html)))
+      (let* ((filing
+              '(:form "N-CSRS"
+                :url "https://www.sec.gov/Archives/edgar/data/1319067/000199937126012055/mcgxx-ncsrs_060426.htm"))
+             (section (cdr (assoc "7" (edgar-fund-sections filing)))))
+        (should section)
+        (should
+         (string-match-p
+          (regexp-quote (edgar-fixtures-norm expected))
+          (edgar-fixtures-norm section)))
+        (should
+         (string-match-p
+          "M3Sixty Onchain U\\.S\\. Government Money Market Fund"
+          (edgar-fixtures-norm section)))))))
 
 (provide 'edgar-funds-test)
 ;;; edgar-funds-test.el ends here

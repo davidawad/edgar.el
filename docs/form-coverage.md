@@ -356,6 +356,11 @@ the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
 binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
 payloads rather than an alternate readable document.
 
+Performance note: NPORT-P filings can contain many repeated holding records.
+`edgar-fund-report` parses each XML document once and returns the complete tree,
+projected data, and ordered holdings. Reuse that report value when inspecting a
+large filing instead of reparsing the same primary document for each query.
+
 All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
 All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
 the other 16 forms are L1. Form 1 uses the readable scanned PDF from Nasdaq
