@@ -99,6 +99,11 @@ Recorded G10 layouts include 40-APP applications, 485BPOS registrations,
 N-1A registrations. They use the generic text, paragraph, table, and named
 section interfaces without form-specific projections.
 
+Additional G10 fixtures cover raw 24F-2NT XML, 40-17G fidelity-bond notices,
+485APOS amendments, 485BXT delaying amendments, 497VPI/497VPU variable-product
+updates, and S-6 unit-investment-trust registrations through the same generic
+tree, element, paragraph, table, and Item-section interfaces.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.

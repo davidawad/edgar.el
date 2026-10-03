@@ -43,6 +43,13 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `485bpos-geme.htm.gz` — compressed [485BPOS accession 0001999371-26-009141](https://www.sec.gov/Archives/edgar/data/1969674/000199937126009141/geme-485bpos_042726.htm).
 - `497-1290.htm.gz` — compressed [497 accession 0001193125-26-147484](https://www.sec.gov/Archives/edgar/data/1605941/000119312526147484/d64604d497.htm).
 - `497j-360.htm.gz` — compressed [497J accession 0001999371-26-007585](https://www.sec.gov/Archives/edgar/data/1319067/000199937126007585/income-497j_040226.htm).
+- `24f-2nt-ab.xml` — [24F-2NT accession 0001193125-26-275392](https://www.sec.gov/Archives/edgar/data/81443/000119312526275392/primary_doc.xml).
+- `40-17g-1290.htm.gz` — compressed [40-17G accession 0001193125-26-265192](https://www.sec.gov/Archives/edgar/data/1605941/000119312526265192/d56800d4017g.htm).
+- `485apos-360.htm.gz` — compressed [485APOS accession 0001999371-26-013444](https://www.sec.gov/Archives/edgar/data/1319067/000199937126013444/m3sixty-485apos_062526.htm).
+- `485bxt-ark.htm.gz` — compressed [485BXT accession 0001213900-26-041967](https://www.sec.gov/Archives/edgar/data/1579982/000121390026041967/ea0285627-01_485bxt.htm).
+- `497vpi-allianz.htm.gz` — compressed [497VPI accession 0000072499-26-000023](https://www.sec.gov/Archives/edgar/data/72499/000007249926000023/iaincomeadvsupplement.htm).
+- `497vpu-allianz-ny.htm.gz` — compressed [497VPU accession 0000080019-26-000008](https://www.sec.gov/Archives/edgar/data/80019/000008001926000008/iany497vpu.htm).
+- `s-6-ft12946.htm.gz` — compressed [S-6 accession 0001445546-26-002415](https://www.sec.gov/Archives/edgar/data/2111250/000144554626002415/s-6.htm).
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed

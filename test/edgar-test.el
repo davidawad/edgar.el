@@ -450,6 +450,70 @@
                (plist-get expected :body-marker))
               body))))))))
 
+(ert-deftest edgar-g10-second-batch-uses-generic-structure-api ()
+  "Real G10 XML and rendered layouts work without form-specific switches."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path
+             "expect/g10-second-batch-structures.eld")))
+    (let* ((slug (plist-get expected :slug))
+           (format (plist-get expected :format))
+           (filing (edgar-fixtures-filing slug))
+           (per-filing-expected
+            (and (eq format 'xml)
+                 (edgar-fixtures-read
+                  (edgar-fixtures-path
+                   (format "expect/%s.eld" slug)))))
+           (source
+            (if (eq format 'xml)
+                (with-temp-buffer
+                  (insert-file-contents
+                   (edgar-fixtures-path
+                    (format "fixtures/%s.xml" slug)))
+                  (buffer-string))
+              (edgar-fixtures-html slug))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) source)))
+        (let* ((tree (edgar-document-structure filing))
+               (paragraphs (edgar-structure-paragraphs tree))
+               (tables (edgar-structure-nodes tree "table"))
+               (text
+                (edgar-fixtures-norm (edgar-structure-text tree)))
+               (section-name (plist-get expected :section))
+               (section
+                (and section-name
+                     (edgar-section filing section-name)))
+               (node-name (plist-get expected :node-name))
+               (nodes
+                (and node-name
+                     (edgar-structure-nodes tree node-name))))
+          (when per-filing-expected
+            (should (equal (cddr expected) per-filing-expected)))
+          (should (eq (plist-get tree :format) format))
+          (should
+           (>= (length paragraphs)
+               (plist-get expected :min-paragraphs)))
+          (should
+           (>= (length tables) (plist-get expected :min-tables)))
+          (should
+           (string-match-p
+            (regexp-quote (plist-get expected :text-marker)) text))
+          (when section-name
+            (should (stringp section))
+            (should
+             (string-match-p
+              (regexp-quote
+               (plist-get expected :body-marker))
+              section)))
+          (when node-name
+            (should nodes)
+            (should
+             (seq-some
+              (lambda (node)
+                (string-match-p
+                 (regexp-quote (plist-get expected :node-marker))
+                 (edgar-structure-text node)))
+              nodes))))))))
+
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."
   (dolist (slug
