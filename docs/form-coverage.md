@@ -90,7 +90,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12B")` |
 | `40FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12G")` |
 | `424B1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B1")` |
-| `424B2` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B2")` |
+| `424B2` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B3")` |
 | `424B4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B4")` |
 | `424B5` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B5")` |
@@ -168,7 +168,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DRSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRSLTR")` |
 | `DSTRBRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "DSTRBRPT")` |
 | `EFFECT` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "EFFECT")` |
-| `F-1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-1")` |
+| `F-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-10` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10")` |
 | `F-10EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10EF")` |
 | `F-10POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10POS")` |
@@ -252,7 +252,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `S-11` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-11")` |
 | `S-1MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-1MEF")` |
-| `S-3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3")` |
+| `S-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-3ASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3ASR")` |
 | `S-3D` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3D")` |
 | `S-3DPOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3DPOS")` |

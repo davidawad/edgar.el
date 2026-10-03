@@ -330,6 +330,23 @@
           (should (stringp body))
           (should (string-match-p (regexp-quote (nth 2 entry)) body)))))))
 
+(ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
+  "Named section output stays pinned across distinct prospectus layouts."
+  (let ((goldens
+         (edgar-fixtures-read
+          (edgar-fixtures-path "golden-named-sections.eld"))))
+    (dolist (golden goldens)
+      (let* ((slug (nth 0 golden))
+             (name (nth 1 golden))
+             (fragment (nth 2 golden))
+             (filing (edgar-fixtures-filing slug))
+             (html (edgar-fixtures-html slug)))
+        (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+          (let ((body (edgar-section filing name)))
+            (should (stringp body))
+            (should (string-match-p
+                     (regexp-quote fragment) body))))))))
+
 (ert-deftest edgar-g10-registration-fixtures-use-generic-section-api ()
   "Real G10 filings are readable and expose generic Item sections."
   (let* ((summary (edgar-fixtures-filing "497k-hennessy"))

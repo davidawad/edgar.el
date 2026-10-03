@@ -552,11 +552,31 @@ Signal `user-error' if multiple matches exist; return nil if absent."
       (`(,hit) hit)
       (_ (user-error "Section %s is ambiguous" name)))))
 
+(defun edgar--title-case-heading-p (line)
+  "Return non-nil if LINE resembles a standalone title-case heading."
+  (let ((words (split-string line "[ \t]+" t))
+        (small-words
+         '("a" "an" "and" "as" "at" "by" "due" "for" "from"
+           "in" "into" "of" "on" "or" "the" "to" "with"))
+        has-capitalized-word)
+    (and
+     (<= 3 (length line) 100)
+     (not (string-match-p "[.!?;]" line))
+     (seq-every-p
+      (lambda (word)
+        (cond
+         ((member (downcase word) small-words) t)
+         ((string-match-p "\\`[[:upper:]]" word)
+          (setq has-capitalized-word t))
+         (t nil)))
+      words)
+     has-capitalized-word)))
+
 (defun edgar-named-sections (text)
-  "Return generic all-caps section headings found in TEXT.
+  "Return generic named section headings found in TEXT.
 Each result is a plist with :name, :path, :body, and :position.  This
-form-agnostic fallback recognizes standalone uppercase heading lines; callers
-needing every source node should use `edgar-document-structure'."
+form-agnostic fallback recognizes standalone uppercase or title-case headings;
+callers needing every source node should use `edgar-document-structure'."
   (let ((case-fold-search nil)
         marks)
     (with-temp-buffer
@@ -585,12 +605,13 @@ needing every source node should use `edgar-document-structure'."
                         (line-beginning-position)
                         (line-end-position))))))
                (named-p
-                (and (<= 3 (length line) 100)
-                     (string-match-p "[A-Z]" line)
-                     (not (string-match-p "[a-z]" line))
-                     (not
-                      (string-match-p
-                       "\\`\\(?:ITEM\\|PART\\)\\_>" line))
+                (and (or (and (<= 3 (length line) 100)
+                              (string-match-p "[A-Z]" line)
+                              (not (string-match-p "[a-z]" line)))
+                         (edgar--title-case-heading-p line))
+                     (not (string-match-p
+                           "\\`\\(?:ITEM\\|PART\\)\\_>"
+                           (upcase line)))
                      (or before-blank after-blank)))
                (boundary-p
                 (or named-p

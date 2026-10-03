@@ -1,0 +1,1 @@
+(:accn "0001493152-26-036677" :form "F-1" :filed "2026-08-07" :report "" :doc "formf-1.htm" :cik 2027262 :url "https://www.sec.gov/Archives/edgar/data/2027262/000149315226036677/formf-1.htm" :ticker "FTRK")

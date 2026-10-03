@@ -1,0 +1,1 @@
+(:accn "0001437749-26-024697" :form "S-3" :filed "2026-07-28" :report "" :doc "amix20260721_s3.htm" :cik 1617867 :url "https://www.sec.gov/Archives/edgar/data/1617867/000143774926024697/amix20260721_s3.htm" :ticker "AMIX")
