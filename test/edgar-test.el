@@ -592,7 +592,9 @@
     (list
      :form (plist-get filing :form)
      :format (plist-get tree :format)
-     :primary-document (plist-get tree :primary-document)
+     :primary-document
+     (edgar--primary-document-metadata
+      (edgar-primary-document filing))
      :text-length (length text)
      :text-sha256 (secure-hash 'sha256 text)
      :paragraph-count (length (edgar-structure-paragraphs tree))

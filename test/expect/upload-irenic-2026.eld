@@ -5,8 +5,8 @@
        (:form "UPLOAD" :format text :primary-document
 	      (:type "TEXT-EXTRACT" :sequence "2" :filename
 		     "filename2.txt" :description nil :format text)
-	      :text-length 1359 :text-sha256
-	      "b4f92e444142e81153e4180b8f1ae12d602db0b8ea5280393b2716c80cbc8c95"
+	      :text-length 1298 :text-sha256
+	      "7e45c0c5a37284f9dacb4bc53a3d5542563329e1791939bd111b5347959d9eaf"
 	      :paragraph-count 8 :named-section-count 3
 	      :named-section-head
 	      ("Adam Katz" "Sincerely," "Division of") :tag-counts
