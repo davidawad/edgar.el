@@ -45,7 +45,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 <!-- BEGIN GENERATED FORM COVERAGE -->
 | Form | Family | Backend | Level | Example call |
 |---|---|---|---|---|
-| `1` | G11 Reg CF & Reg A | html | L0 | `(edgar-form-info "1")` |
+| `1` | G11 Reg CF & Reg A | pdf | L1 | `(edgar-text filing)` |
 | `1-A` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A POS` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A-W` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
@@ -346,6 +346,11 @@ All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
 binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
 payloads rather than an alternate readable document.
+
+Performance note: NPORT-P filings can contain many repeated holding records.
+`edgar-fund-report` parses each XML document once and returns the complete tree,
+projected data, and ordered holdings. Reuse that report value when inspecting a
+large filing instead of reparsing the same primary document for each query.
 
 All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
 All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
