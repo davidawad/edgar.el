@@ -5,6 +5,8 @@
 (require 'ert)
 (require 'cl-lib)
 (require 'edgar-offerings)
+(require 'edgar-forms)
+(require 'edgar-fixtures)
 
 (defconst edgar-offerings-test--directory
   (file-name-directory (or load-file-name buffer-file-name)))
@@ -57,9 +59,10 @@
 (ert-deftest
     edgar-g11-required-forms-have-sec-fixtures-and-expectations
     ()
-  "Every named G11 form has an SEC fixture and reviewed expectation."
+  "Every required G11 form has an SEC fixture and reviewed expectation."
   (dolist (case
-           '(("C" "c-airthium" ".xml")
+           '(("1" "form-1-nasdaq-ise" ".pdf" "1/A")
+             ("C" "c-airthium" ".xml")
              ("C-AR" "c-ar-qnetic" ".xml")
              ("C-U" "c-u-same-same" ".xml")
              ("C-TR" "c-tr-pegasus" ".xml")
@@ -71,6 +74,8 @@
     (let* ((form (nth 0 case))
            (slug (nth 1 case))
            (extension (nth 2 case))
+           (actual-forms
+            (or (and (nth 3 case) (list (nth 3 case))) (list form)))
            (metadata
             (edgar-offerings-test--read
              (expand-file-name (concat "fixtures/" slug ".eld")
@@ -81,7 +86,7 @@
            (expect
             (expand-file-name (concat "expect/" slug ".eld")
                               edgar-offerings-test--directory)))
-      (should (equal (plist-get metadata :form) form))
+      (should (member (plist-get metadata :form) actual-forms))
       (should (stringp (plist-get metadata :accn)))
       (should (numberp (plist-get metadata :cik)))
       (should
@@ -90,11 +95,30 @@
         (or (plist-get metadata :url) "")))
       (should (file-exists-p primary))
       (should (file-exists-p expect))
+      (when (equal form "1")
+        (should (eq (plist-get (edgar-form-info form) :level) 'L1))
+        (should
+         (file-exists-p
+          (expand-file-name "golden/form-1-nasdaq-ise.eld"
+                            edgar-offerings-test--directory))))
       (when (member form '("C" "C-AR"))
         (should
          (file-exists-p
           (expand-file-name (concat "golden-fields/" slug ".eld")
                             edgar-offerings-test--directory)))))))
+
+(ert-deftest edgar-g11-form-1-has-generic-pdf-text ()
+  "The SEC Form 1/A PDF exposes its body through generic `edgar-text'."
+  (let* ((text (edgar-fixtures-text "form-1-nasdaq-ise"))
+         (normalized (edgar-fixtures-norm text)))
+    (should (> (length text) 1000))
+    (dolist
+        (phrase
+         '("APPLICATION FOR, AND AMENDMENTS TO APPLICATION FOR,"
+           "REGISTRATION AS A NATIONAL SECURITIES EXCHANGE OR EXEMPTION"
+           "Pursuant to Rule 6a-2(a), the Exchange is hereby filing"
+           "Tower Principal Markets LLC"))
+      (should (string-match-p (regexp-quote phrase) normalized)))))
 
 (defun edgar-offerings-test--form-144-fields (value)
   "Return VALUE's typed Form 144 fields as a plist."

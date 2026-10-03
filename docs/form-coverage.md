@@ -347,6 +347,16 @@ the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
 binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
 payloads rather than an alternate readable document.
 
+All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
+All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
+the other 16 forms are L1. Form 1 uses the readable scanned PDF from Nasdaq
+ISE's Form 1/A filing (accession 9999999997-26-000896); the generic PDF reader
+extracts its header and filing letter, while custom-encoded form parts may
+extract with garbled characters. The later Q3 Form 1 filing at accession
+9999999997-26-001567 contains only an auto-generated paper-submission
+placeholder ([SEC filing detail](https://www.sec.gov/Archives/edgar/data/1394565/999999999726000896/9999999997-26-000896-index.htm),
+[scanned PDF](https://www.sec.gov/Archives/edgar/vprr/2600/26000205.pdf),
+[paper submission](https://www.sec.gov/Archives/edgar/data/2157991/999999999726001567/9999999997-26-001567.txt)).
 ## Gaps that are not about a specific form
 
 Implemented whole-library capabilities: raw-XML access, multi-document filings
