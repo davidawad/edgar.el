@@ -1066,11 +1066,8 @@
      (list
       :family "G2 Notice of sale / Reg D"
       :backend 'xml
-      :level 'L2
-      :sections-or-fields
-      '(issuer-name federal-exemptions total-offering-amount total-amount-sold
-        total-remaining investor-count non-accredited-investor-count
-        sales-commissions finders-fees)
+      :level 'L0
+      :sections-or-fields nil
       :volume 16851
       :notes nil)
      table)
