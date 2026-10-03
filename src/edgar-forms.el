@@ -1532,8 +1532,8 @@
      "N-23C-2"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 31
       :notes nil)
@@ -1542,8 +1542,8 @@
      "N-23C3A"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 168
       :notes nil)
@@ -1582,8 +1582,8 @@
      "N-30B-2"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 27
       :notes nil)
@@ -1652,8 +1652,8 @@
      "N-8A"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 28
       :notes nil)
@@ -1662,8 +1662,8 @@
      "N-8F"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 20
       :notes nil)
@@ -1863,8 +1863,8 @@
      "NT-NCSR"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 11
       :notes nil)

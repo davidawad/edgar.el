@@ -1,0 +1,1 @@
+(:accn "0001104659-26-074136" :form "N-23C-2" :company "Ares Dynamic Credit Allocation Fund, Inc." :filed "2026-06-15" :doc "tm2617761d1_n23c2.htm" :cik 1515324 :url "https://www.sec.gov/Archives/edgar/data/1515324/000110465926074136/tm2617761d1_n23c2.htm")

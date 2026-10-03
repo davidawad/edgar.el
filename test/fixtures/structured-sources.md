@@ -12,6 +12,12 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `n-csrs-360-funds.htm.gz` — compressed primary N-CSRS from [accession 0001999371-26-012055](https://www.sec.gov/Archives/edgar/data/1319067/000199937126012055/mcgxx-ncsrs_060426.htm).
 - `n-vp-american-separate-2.htm.gz` — compressed primary N-VP from [accession 0001193125-26-163027](https://www.sec.gov/Archives/edgar/data/909758/000119312526163027/d123038dnvp.htm).
 - `n-vpfs-alger.htm.gz` — compressed primary N-VPFS from [accession 0000847554-26-000007](https://www.sec.gov/Archives/edgar/data/847554/000084755426000007/algerseparateaccountaafs.htm).
+- `n-23c-2-ares.htm.gz` — compressed primary N-23C-2 from [accession 0001104659-26-074136](https://www.sec.gov/Archives/edgar/data/1515324/000110465926074136/tm2617761d1_n23c2.htm).
+- `n-23c3a-1ws.htm.gz` — compressed primary N-23C3A from [accession 0001398344-26-010907](https://www.sec.gov/Archives/edgar/data/1748680/000139834426010907/fp0099402-1_n23c3a.htm).
+- `n-30b-2-adams.htm.gz` — compressed primary N-30B-2 from [accession 0001104659-26-046892](https://www.sec.gov/Archives/edgar/data/2230/000110465926046892/tm268124-1_n30b2.htm).
+- `n-8a-ab-tax-aware.htm.gz` — compressed primary N-8A from [accession 0001193125-26-228561](https://www.sec.gov/Archives/edgar/data/2132363/000119312526228561/d78843dn8a.htm).
+- `n-8f-aam-alternatives.htm.gz` — compressed primary N-8F from [accession 0001213900-26-070526](https://www.sec.gov/Archives/edgar/data/2065443/000121390026070526/ea0295460-01_n8f.htm).
+- `nt-ncsr-cpg-carlyle.htm.gz` — compressed primary NT-NCSR from [accession 0001398344-26-010691](https://www.sec.gov/Archives/edgar/data/1560916/000139834426010691/fp0098304-2_ntncsr.htm).
 - `10-d-ms-c21.htm.gz` — compressed primary 10-D from [accession 0001888524-26-012144](https://www.sec.gov/Archives/edgar/data/1631406/000188852426012144/msc15c21_10d-202606.htm).
 - `abs-15g-tesla-energy.htm.gz` — compressed primary ABS-15G from [accession 0001193125-26-219735](https://www.sec.gov/Archives/edgar/data/2037778/000119312526219735/d108502dabs15g.htm).
 - `abs-ee-deutsche.xml` — [EX-102 in ABS-EE accession 0001539497-25-000961](https://www.sec.gov/Archives/edgar/data/1013454/000153949725000961/exh_102.xml).
