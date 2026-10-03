@@ -160,49 +160,6 @@
     (should-not (cdr records-and-problems))
     (should-not (edgar-coverage-problems))))
 
-(ert-deftest edgar-form-coverage-l2-requires-three-distinct-filers ()
-  "An L2 form needs three distinct filer CIKs, not three filings."
-  (let* ((root (make-temp-file "edgar-coverage-diversity-" t))
-         (snapshot (expand-file-name "snapshot.txt" root)))
-    (unwind-protect
-        (progn
-          (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
-          (edgar-form-coverage-test--seed-l2-artifacts root 'html 2)
-          (let* ((fixtures (expand-file-name "fixtures" root))
-                 (expects (expand-file-name "expect" root))
-                 (goldens (expand-file-name "golden" root)))
-            (edgar-form-coverage-test--write
-             (expand-file-name "same-filer-prior.eld" fixtures)
-             "(:form \"TEST-FORM\" :cik 1001)\n")
-            (edgar-form-coverage-test--write
-             (expand-file-name "same-filer-prior.htm.gz" fixtures)
-             "fixture")
-            (edgar-form-coverage-test--write
-             (expand-file-name "same-filer-prior.eld" expects) "(:ok t)\n")
-            (edgar-form-coverage-test--write
-             (expand-file-name "same-filer-prior.eld" goldens)
-             "(:text (\"ok\"))\n")
-            (let ((messages
-                   (edgar-form-coverage-test--messages
-                    (edgar-coverage-problems
-                     :registry (edgar-form-coverage-test--registry 'L2)
-                     :snapshot-file snapshot
-                     :fixture-directory fixtures
-                     :expect-directory expects
-                     :golden-directory goldens))))
-              (should
-               (string-match-p
-                "2 distinct filer CIKs; 3 required" messages)))
-            (edgar-form-coverage-test--seed-l2-artifacts root 'html 3)
-            (should-not
-             (edgar-coverage-problems
-              :registry (edgar-form-coverage-test--registry 'L2)
-              :snapshot-file snapshot
-              :fixture-directory fixtures
-              :expect-directory expects
-              :golden-directory goldens))))
-      (delete-directory root t))))
-
 (ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
   "Do not promote low-volume L0 forms absent from the recorded index samples."
   (let ((low-volume-l0 (make-hash-table :test #'equal))

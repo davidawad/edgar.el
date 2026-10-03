@@ -1,3 +1,3 @@
 (:form "497K" :text-bucket 14 :text-head
-       "497K 1 htecx-497k_030226.htm SUMMARY PROSPECTUS Filed pursua"
+       "Filed pursuant to Rule 497(k) 1933 Act File No. 033-52154 19"
        :sections nil)

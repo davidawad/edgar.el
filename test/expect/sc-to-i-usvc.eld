@@ -1,5 +1,5 @@
 (:form "SC TO-I" :text-bucket 15 :text-head
-       "SC TO-I 1 tm2619065d1_sctoi.htm SC TO-I UNITED STATES SECURI"
+       "UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON,"
        :sections
        (("1" 12 "ITEM 1. SUMMARY TERM SHEET. · USVC Venture Capital")
 	("2" 10 "ITEM 2. ISSUER INFORMATION. (a)            The nam")

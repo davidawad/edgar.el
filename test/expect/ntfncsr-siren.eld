@@ -1,3 +1,3 @@
 (:form "NTFNCSR" :text-bucket 12 :text-head
-       "NT-NCSR 1 fp0099394-1_ntcsr.htm OMB APPROVAL UNITED STATES O"
+       "OMB APPROVAL UNITED STATES OMB Number: 3235-0058 SECURITIES "
        :sections nil)

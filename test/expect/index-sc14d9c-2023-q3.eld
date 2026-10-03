@@ -1,3 +1,3 @@
 (:form "SC14D9C" :text-bucket 13 :text-head
-       "SC14D9C 1 d514485dsc14d9c.htm SC14D9C SC14D9C UNITED STATES "
+       "SC14D9C UNITED STATES SECURITIES AND EXCHANGE COMMISSION Was"
        :sections nil)

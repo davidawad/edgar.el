@@ -237,7 +237,7 @@
     ("SC TO-C" "tender offer statement on schedule to" nil)
     ("SC TO-I" "tender offer statement" nil)
     ("SC 14D9" "schedule 14d-9" nil)
-    ("SC14D1F" "sc14d1f" nil)
+    ("SC14D1F" "curaleaf holdings" nil)
     ("SC14D9C" "schedule 14d-9" nil)
     ("UPLOAD" "do not intend to review" nil)
     ("1-K" "form 1-k" nil)

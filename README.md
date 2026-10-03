@@ -2,7 +2,8 @@
 
 Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for SEC data access.
 
-PDF-only primaries expose generic source metadata; text extraction is unsupported.
+Direct PDF primaries use `pdftotext` for plain text and generic paragraph access.
+PDFs embedded as uuencoded data inside complete submissions expose metadata only.
 
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
@@ -83,10 +84,11 @@ access to the document structure, use the generic tree API:
       (edgar-structure-paragraphs tree)
       (edgar-structure-nodes tree "ix:nonfraction"))
 
-HTML, XML, and plain-text submissions use one tree representation. Element
-names, attributes, child order, and text nodes are kept; individual form codes
-do not select custom fields. PDF-only sources expose metadata without extracted
-text. `edgar-structure-section` accepts a visible
+HTML, XML, plain-text, and readable PDF submissions use one tree
+representation. Element names, attributes, child order, and text nodes are
+kept; individual form codes do not select custom fields. PDF text extraction
+requires `pdftotext` (configurable with `edgar-pdftotext-program`).
+`edgar-structure-section` accepts a visible
 heading name or a full heading/tag path. Duplicate names signal an ambiguity
 error that a path resolves. `edgar-structure-nodes-at-path` addresses nested
 element paths, `edgar-structure-nodes` returns elements with a given tag, and

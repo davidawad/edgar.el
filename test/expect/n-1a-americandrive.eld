@@ -1,5 +1,5 @@
 (:form "N-1A" :text-bucket 19 :text-head
-       "N-1A 1 ea0271727-01_n1a.htm N-1A As filed with the Securitie"
+       "As filed with the Securities and Exchange Commission on Janu"
        :sections
        (("28" 10 "Item 28. Exhibits Exhibit No. Description (a) (1) ")
 	("29" 6 "Item 29. Persons Controlled By or Under Common Con")

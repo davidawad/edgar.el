@@ -1,5 +1,5 @@
 (:form "10-K" :text-bucket 18 :text-head
-       "10-K 1 d17062d10k.htm FORM 10-K Form 10-K Table of Contents "
+       "Form 10-K Table of Contents UNITED STATES SECURITIES AND EXC"
        :sections
        (("I.1" 15 "Item 1. Business Company Background The Company de")
 	("I.1A" 15

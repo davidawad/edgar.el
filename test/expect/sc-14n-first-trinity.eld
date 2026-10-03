@@ -1,5 +1,5 @@
 (:form "SC 14N" :text-bucket 14 :text-head
-       "SC 14N 1 zge20260318_sc14n.htm FORM SC 14N zge20260318_sc14n"
+       "zge20260318_sc14n.htm UNITED STATES SECURITIES AND EXCHANGE "
        :sections
        (("3" 11 "Item 3. Ownership (a) Securities entitled to be vo")
 	("4" 8 "Item 4. Statement of Ownership From a Nominating S")

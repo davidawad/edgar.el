@@ -1,3 +1,3 @@
 (:form "424B4" :text-bucket 19 :text-head
-       "424B4 1 d551112d424b4.htm 424B4 424B4 Table of Contents File"
+       "424B4 Table of Contents Filed Pursuant to Rule 424(b)(4) Reg"
        :sections nil)

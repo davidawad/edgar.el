@@ -1,5 +1,5 @@
 (:form "485APOS" :text-bucket 18 :text-head
-       "485APOS 1 m3sixty-485apos_062526.htm POST-EFFECTIVE AMENDMEN"
+       "As filed with the Securities and Exchange Commission on June"
        :sections
        (("28" 14 "ITEM 28. Exhibits (a)(1) Agreement and Declaration")
 	("29" 7 "ITEM 29. Persons Controlled by or Under Common Con")

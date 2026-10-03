@@ -1,5 +1,5 @@
 (:form "1-SA" :text-bucket 16 :text-head
-       "1-SA 1 ea0296275-1sa_figpublish.htm SEMIANNUAL REPORT PURSUA"
+       "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,"
        :sections
        (("1" 15 "Item 1. Management’s Discussion and Analysis of Fi")
 	("2" 10 "Item 2. Other Information Conflicts of Interest We")

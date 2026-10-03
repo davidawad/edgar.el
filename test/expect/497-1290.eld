@@ -1,3 +1,3 @@
 (:form "497" :text-bucket 11 :text-head
-       "497 1 d64604d497.htm 1290 GAMCO SMALL/MID CAP VALUE 1290 GAM"
+       "1290 GAMCO Small/Mid Cap Value 1290 FUNDS® 1290 Avantis® U.S"
        :sections nil)

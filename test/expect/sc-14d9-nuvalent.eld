@@ -1,5 +1,5 @@
 (:form "SC 14D9" :text-bucket 18 :text-head
-       "SC 14D9 1 d26485dsc14d9.htm SC 14D9 SC 14D9 UNITED STATES SE"
+       "SC 14D9 UNITED STATES SECURITIES AND EXCHANGE COMMISSION Was"
        :sections
        (("1" 10 "Item 1. Subject Company Information. (a) Name and ")
 	("2" 13 "Item 2. Identity and Background of Filing Person. ")

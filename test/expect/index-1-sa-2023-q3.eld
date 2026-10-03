@@ -1,5 +1,5 @@
 (:form "1-SA" :text-bucket 15 :text-head
-       "1-SA 1 form1-sa.htm UNITED STATES SECURITIES AND EXCHANGE CO"
+       "UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON,"
        :sections
        (("1" 13 "Item 1. Management’s Discussion and Analysis of Fi")
 	("2" 5 "Item 2. Other Information None 4")

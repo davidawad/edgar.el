@@ -1,5 +1,5 @@
 (:form "S-8" :text-bucket 14 :text-head
-       "S-8 1 veralto-2026sx8.htm S-8 Document As filed with the Sec"
+       "Document As filed with the Securities and Exchange Commissio"
        :sections
        (("II.3" 10
 	 "Item 3. Incorporation of Documents by Reference. T")

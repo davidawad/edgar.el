@@ -1,5 +1,5 @@
 (:form "486BXT" :text-bucket 14 :text-head
-       "486BXT 1 ea0299591-01_486bxt.htm 486BXT As filed with the Se"
+       "As filed with the Securities and Exchange Commission on July"
        :sections
        (("25" 12 "Item 25. Financial Statements and Exhibits (1) Fin")
 	("26" 7 "Item 26. Marketing Arrangements The information co")

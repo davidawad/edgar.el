@@ -1,5 +1,5 @@
 (:form "S-1" :text-bucket 16 :text-head
-       "S-1 1 ea0295800-s1_biomx.htm REGISTRATION STATEMENT As filed"
+       "As filed with the Securities and Exchange Commission on June"
        :sections
        (("9" 12 "Item 9.01 of Form 8-K). These documents contain im")
 	("II.13" 9

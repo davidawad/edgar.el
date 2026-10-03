@@ -246,6 +246,31 @@ PDF bodies are returned as unibyte strings."
       'html)
      (t 'text))))
 
+(defun edgar--pdf-text (pdf)
+  "Render unibyte PDF body PDF as text with `edgar-pdftotext-program'."
+  (let ((program (executable-find edgar-pdftotext-program))
+        (output (generate-new-buffer " *edgar-pdftotext*")))
+    (unless program
+      (kill-buffer output)
+      (user-error "PDF filing requires the %s program"
+                  edgar-pdftotext-program))
+    (unwind-protect
+        (with-temp-buffer
+          (set-buffer-multibyte nil)
+          (insert pdf)
+          (let ((coding-system-for-read 'utf-8-unix)
+                (coding-system-for-write 'no-conversion))
+            (let ((status
+                   (call-process-region
+                    (point-min) (point-max) program
+                    nil output nil "-layout" "-" "-")))
+              (unless (and (integerp status) (zerop status))
+                (error "%s failed with status %s" program status))))
+          (with-current-buffer output
+            (buffer-string)))
+      (when (buffer-live-p output)
+        (kill-buffer output)))))
+
 (defun edgar--submission-primary-info (submission filing)
   "Return generic metadata and content for FILING's primary document."
   (let* ((case-fold-search t)
@@ -312,14 +337,12 @@ PDF bodies are returned as unibyte strings."
        "\\n[ \t]*\\n[ \t]*\\n+" "\n\n" plain))))
 
 (defun edgar-text (filing)
-  "FILING rendered to plain text (what `shr' would display).
-Signal `user-error' for a PDF primary document; PDF text extraction is not
-supported."
+  "FILING rendered to plain text (what `shr' would display)."
   (let* ((url (plist-get filing :url))
          (pdf-url-p
           (and (stringp url)
                (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url)))
-         (source (unless pdf-url-p (edgar-html filing)))
+         (source (edgar-html filing))
          (submission-p
           (or (and (stringp url)
                    (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
@@ -330,12 +353,21 @@ supported."
          (format
           (if primary
               (plist-get primary :format)
-            (if pdf-url-p 'pdf 'html)))
+            (cond
+             (pdf-url-p 'pdf)
+             ((and (stringp url)
+                   (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+              'text)
+             (t 'html))))
          (text (if primary (plist-get primary :content) source)))
     (when (eq format 'pdf)
-      (user-error "EDGAR: PDF text extraction is not supported for %s"
-                  (or (plist-get primary :name) (plist-get filing :doc) url)))
-    (if submission-p
+      (if (string-match-p "<PDF>[ \t\r\n]*begin [0-7]+" text)
+          (user-error "EDGAR: encoded PDF text is not readable for %s"
+                      (or (plist-get primary :name)
+                          (plist-get filing :doc) url))
+        (setq text (edgar--pdf-text text)
+              format 'text)))
+    (if (eq format 'text)
         (edgar--legacy-text text)
       (with-temp-buffer
         (insert text)
@@ -391,7 +423,10 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
       :name primary-name
       :type (or (plist-get primary :type) (plist-get filing :form))
       :format (or (plist-get primary :format) format)
-      :readable (not (eq format 'pdf))))))
+      :readable (if (plist-member primary :readable)
+                    (plist-get primary :readable)
+                  (or (not (eq format 'pdf))
+                      (executable-find edgar-pdftotext-program)))))))
 
 (defun edgar--document-structure-result
     (filing format children &optional text primary)
@@ -411,7 +446,27 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
   "Build FILING's generic tree from CONTENT in FORMAT."
   (pcase format
     ('pdf
-     (edgar--document-structure-result filing 'pdf nil nil primary))
+     (if (string-match-p "<PDF>[ \t\r\n]*begin [0-7]+" content)
+         (edgar--document-structure-result
+          filing 'pdf nil nil
+          (if primary
+              (plist-put (copy-sequence primary) :readable nil)
+            '(:readable nil)))
+       (let* ((text (edgar--pdf-text content))
+            (paragraphs
+             (seq-remove
+              #'string-empty-p
+              (mapcar
+               #'string-trim
+               (split-string
+                text "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
+       (edgar--document-structure-result
+        filing 'pdf
+        (mapcar
+         (lambda (paragraph)
+           (list :type 'paragraph :text paragraph))
+         paragraphs)
+        text primary))))
     ((or 'html 'xml)
      (with-temp-buffer
        (insert content)
@@ -446,7 +501,7 @@ The root plist has :format, :metadata, and :children.  :metadata contains
 filing identifiers and a :primary-document record with its name, type, format,
 and readability.  Each element has :name, :attributes, and ordered :children;
 text is retained in leaf plists.  HTML, XML, and text use the same
-representation.  PDF sources return metadata without extracted text."
+representation."
   (let ((url (plist-get filing :url)))
     (cond
      ((and (stringp url)
@@ -458,7 +513,8 @@ representation.  PDF sources return metadata without extracted text."
          (and tree (list (edgar--structure-node tree))))))
      ((and (stringp url)
            (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url))
-      (edgar--document-structure-result filing 'pdf nil))
+      (edgar--document-structure-from-content
+       filing 'pdf (edgar-html filing) nil))
      ((and (stringp url)
            (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
       (let* ((submission (edgar--fetch url))

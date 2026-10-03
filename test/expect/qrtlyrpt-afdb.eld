@@ -1,3 +1,3 @@
 (:form "QRTLYRPT" :text-bucket 13 :text-head
-       "QRTLYRPT 1 2026_Report_Q1.htm Q1 2026 BORROWING TRANSACTIONS"
+       "AFRICAN DEVELOPMENT BANK BANQUE AFRICAINE DE DEVELOPPEMENT F"
        :sections nil)

@@ -1,5 +1,5 @@
 (:form "SD" :text-bucket 11 :text-head
-       "SD 1 lpth20260626_sd.htm FORM SD lpth20260626_sd.htm UNITED "
+       "lpth20260626_sd.htm UNITED STATES SECURITIES AND EXCHANGE CO"
        :sections
        (("1.01" 9 "Item 1.01 Conflict Minerals Disclosure and Report ")
 	("1.02" 7 "Item 1.02 Exhibit The Conflict Minerals Report is ")

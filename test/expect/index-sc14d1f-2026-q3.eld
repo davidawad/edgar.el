@@ -1,5 +1,5 @@
 (:form "SC14D1F" :text-bucket 12 :text-head
-       "SC14D1F 1 tm2623363d2_sc14d1f.htm SC14D1F As filed with the "
+       "As filed with the Securities and Exchange Commission on Augu"
        :sections
        (("I.1" 7 "Item 1. Home Jurisdiction Documents. Offer to Purc")
 	("I.2" 7 "Item 2. Informational Legends. See “Notice to Shar")

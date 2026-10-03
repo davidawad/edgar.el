@@ -1,5 +1,5 @@
 (:form "F-1" :text-bucket 17 :text-head
-       "F-1 1 tm2527757d2_f1.htm F-1 As filed with the United States"
+       "As filed with the United States Securities and Exchange Comm"
        :sections
        (("II.6" 10
 	 "ITEM 6: INDEMNIFICATION OF DIRECTORS AND OFFICERS ")

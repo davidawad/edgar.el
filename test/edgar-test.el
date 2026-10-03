@@ -610,8 +610,8 @@
         (should (> (length (edgar-structure-paragraphs tree)) 1))
         (should (edgar-structure-nodes tree "html"))))))
 
-(ert-deftest edgar-pdf-primary-exposes-metadata-without-text ()
-  "A real SEC PDF primary exposes source metadata without extraction."
+(ert-deftest edgar-pdf-primary-exposes-metadata-and-generic-text ()
+  "A real SEC PDF primary exposes metadata and generic text paragraphs."
   (let* ((slug "n-8f-ordr-blackrock")
          (filing (edgar-fixtures-filing slug))
          (pdf (edgar-fixtures-primary slug)))
@@ -623,12 +623,12 @@
                :name)))
         (should (eq (plist-get tree :format) 'pdf))
         (should (equal primary "filename1.pdf"))
-        (should-not
+        (should
          (plist-get
           (plist-get (plist-get tree :metadata) :primary-document)
           :readable))
-        (should-not (edgar-structure-paragraphs tree))
-        (should-error (edgar-text filing) :type 'user-error)))))
+        (should (> (length (edgar-structure-paragraphs tree)) 3))
+        (should (> (length (edgar-text filing)) 100))))))
 
 (ert-deftest edgar-pdf-g10-filings-use-generic-text-api ()
   "Real SEC investment-company PDFs use the shared text and tree APIs."

@@ -1,5 +1,5 @@
 (:form "F-1" :text-bucket 19 :text-head
-       "F-1 1 tm267430d5_f-1.htm FORM F-1 Registration No. 333- UNIT"
+       "Registration No. 333- UNITED STATES SECURITIES AND EXCHANGE "
        :sections
        (("II.6" 12
 	 "Item 6. Indemnification of Directors and Officers.")

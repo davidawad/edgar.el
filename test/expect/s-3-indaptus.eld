@@ -1,5 +1,5 @@
 (:form "S-3" :text-bucket 17 :text-head
-       "S-3 1 forms-3.htm S-3 As filed with the Securities and Excha"
+       "As filed with the Securities and Exchange Commission on Augu"
        :sections
        (("7" 11 "Item 7.01 of Form 8-K and exhibits accompanying su")
 	("II.14" 9

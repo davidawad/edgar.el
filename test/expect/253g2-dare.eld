@@ -1,5 +1,5 @@
 (:form "253G2" :text-bucket 17 :text-head
-       "253G2 1 a253g2regaofferingcircular.htm 253G2 Document Filed "
+       "Document Filed Pursuant to Rule 253(g)(2) File No. 024-12688"
        :sections
        (("I.1" 16 "Item 1. Condensed Consolidated Financial Statement")
 	("I.2" 12 "Item 2. Management's Discussion and Analysis of Fi")

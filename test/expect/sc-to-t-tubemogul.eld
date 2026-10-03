@@ -1,5 +1,5 @@
 (:form "SC TO-T" :text-bucket 14 :text-head
-       "SC TO-T 1 a2230333zscto-t.htm SC TO-T QuickLinks -- Click he"
+       "QuickLinks -- Click here to rapidly navigate through this do"
        :sections
        (("1" 7 "Item 1. Summary Term Sheet. The information set fo")
 	("2" 9 "Item 2. Subject Company Information. (a) The name ")

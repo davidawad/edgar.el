@@ -1,5 +1,5 @@
 (:form "SC TO-T" :text-bucket 14 :text-head
-       "SC TO-T 1 d38438dsctot.htm SC TO-T SC TO-T UNITED STATES SEC"
+       "SC TO-T UNITED STATES SECURITIES AND EXCHANGE COMMISSION Was"
        :sections
        (("1" 7 "Item 1. Summary Term Sheet. The information set fo")
 	("2" 10 "Item 2. Subject Company Information. (a) Name and ")

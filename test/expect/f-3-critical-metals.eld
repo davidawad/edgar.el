@@ -1,5 +1,5 @@
 (:form "F-3" :text-bucket 17 :text-head
-       "F-3 1 ea0235868-f3_critical.htm REGISTRATION STATEMENT As fi"
+       "As filed with the Securities and Exchange Commission on Apri"
        :sections
        (("II.8" 10
 	 "Item 8. Indemnification of Directors and Officers ")

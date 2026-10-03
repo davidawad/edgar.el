@@ -1,5 +1,5 @@
 (:form "SD" :text-bucket 13 :text-head
-       "SD 1 eh260800829_sd.htm FORM SD UNITED STATES SECURITIES AND"
+       "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,"
        :sections
        (("1.01" 12
 	 "Item 1.01 Conflict Minerals Disclosure and Report ")

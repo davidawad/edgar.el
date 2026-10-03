@@ -1,5 +1,5 @@
 (:form "SC 14D9" :text-bucket 18 :text-head
-       "SC 14D9 1 d59361dsc14d9.htm SC 14D9 SC 14D9 Table of Content"
+       "SC 14D9 Table of Contents UNITED STATES SECURITIES AND EXCHA"
        :sections
        (("1" 10 "Item 1. Subject Company Information. (a) Name and ")
 	("2" 13 "Item 2. Identity and Background of Filing Person. ")

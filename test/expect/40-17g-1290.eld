@@ -1,5 +1,5 @@
 (:form "40-17G" :text-bucket 17 :text-head
-       "40-17G 1 d56800d4017g.htm 1290 FUNDS 40-17G 1290 Funds 40-17"
+       "1290 Funds 40-17G LOGO June 10, 2026 Office of Registration "
        :sections
        (("1" 8 "Item 1. Name of Insured (the “Insured”) Bond Numbe")
 	("2" 7 "Item 2. Bond Period: from 12:01 a.m. on   April 27")

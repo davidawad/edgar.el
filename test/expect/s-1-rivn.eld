@@ -1,5 +1,5 @@
 (:form "S-1" :text-bucket 19 :text-head
-       "S-1 1 d157488ds1.htm S-1 S-1 Table of Contents As filed with"
+       "S-1 Table of Contents As filed with the U.S. Securities and "
        :sections
        (("II.13" 10
 	 "Item 13. Other Expenses of Issuance and Distributi")
