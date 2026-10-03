@@ -1,0 +1,1 @@
+(:accn "0000950103-23-009120" :form "4" :filed "2023-06-22" :report "2023-06-20" :doc "dp195497_4-newstead.xml" :cik 1326801 :url "https://www.sec.gov/Archives/edgar/data/1326801/000095010323009120/dp195497_4-newstead.xml" :ticker "META")

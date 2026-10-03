@@ -1,0 +1,1 @@
+(:accn "0001950047-24-009417" :form "144" :filed "2024-12-04" :report "" :doc "primary_doc.xml" :cik 2488 :url "https://www.sec.gov/Archives/edgar/data/2488/000195004724009417/primary_doc.xml" :ticker "AMD")

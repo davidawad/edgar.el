@@ -89,6 +89,29 @@
       (edgar-offerings-test--form-144-fields value)
       (edgar-offerings-test--golden "144-aapl-prior")))))
 
+(ert-deftest edgar-form-144-additional-filers-match-golden-values ()
+  "Parse Form 144 XML from distinct issuers and layouts."
+  (dolist (slug '("144-amd" "144-jpm"))
+    (let ((value
+           (edgar-offerings-test--read-fields
+            slug "144" #'edgar-form-144)))
+      (should (edgar-form-144-p value))
+      (should
+       (equal
+        (edgar-offerings-test--form-144-fields value)
+        (edgar-offerings-test--golden slug)))
+      (should
+       (equal
+        (list :form "144"
+              :issuer-name (edgar-form-144-issuer-name value)
+              :seller-name (edgar-form-144-seller-name value)
+              :units-to-be-sold (edgar-form-144-units-to-be-sold value)
+              :approximate-sale-date
+              (edgar-form-144-approximate-sale-date value))
+        (edgar-offerings-test--read
+         (expand-file-name (concat "expect/" slug ".eld")
+                           edgar-offerings-test--directory)))))))
+
 (ert-deftest edgar-form-d-accessors-match-golden-values ()
   "Typed Form D accessors preserve amounts and return integer counts."
   (let ((value

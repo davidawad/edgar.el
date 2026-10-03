@@ -1,0 +1,1 @@
+(:accn "0001829126-24-003695" :form "3" :filed "2024-05-23" :report "2024-05-21" :doc "ownership.xml" :cik 2012807 :url "https://www.sec.gov/Archives/edgar/data/2012807/000182912624003695/ownership.xml" :ticker "RFAI")

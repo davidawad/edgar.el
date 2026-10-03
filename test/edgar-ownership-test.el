@@ -121,6 +121,108 @@
                 :footnotes nil :signatures (list signature))
           golden))))))
 
+(defun edgar-ownership-test--form3-snapshot (slug)
+  "Return ownership field snapshot for Form 3 fixture SLUG."
+  (let* ((filing
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name (concat "fixtures/" slug ".eld")
+                               edgar-ownership-test--directory))
+            (read (current-buffer))))
+         (tree (edgar-ownership-test--fixture slug)))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
+      (list :issuer (edgar-ownership-issuer filing)
+            :owner (car (edgar-ownership-reporting-owners filing))
+            :transactions (edgar-ownership-transactions filing)
+            :holdings (edgar-form3-holdings filing)
+            :footnotes (edgar-ownership-footnotes filing)
+            :signatures (edgar-ownership-signatures filing)))))
+
+(ert-deftest edgar-ownership-additional-form3-filer-goldens ()
+  "Parse Form 3 filings from a large and a small issuer."
+  (dolist (slug '("3-coreweave" "3-rfai"))
+    (let* ((snapshot (edgar-ownership-test--form3-snapshot slug))
+           (filing
+            (with-temp-buffer
+              (insert-file-contents
+               (expand-file-name (concat "fixtures/" slug ".eld")
+                                 edgar-ownership-test--directory))
+              (read (current-buffer))))
+           (tree (edgar-ownership-test--fixture slug))
+           (owner (plist-get snapshot :owner))
+           (signature (car (plist-get snapshot :signatures)))
+           (expect
+            (list :form "3"
+                  :schema (edgar-ownership--text
+                           (edgar-ownership--child tree 'schemaVersion))
+                  :issuer (plist-get (plist-get snapshot :issuer) :name)
+                  :owner (plist-get owner :name)
+                  :is-officer (plist-get owner :is-officer)
+                  :signature-date (plist-get signature :date))))
+      (should (equal snapshot (edgar-ownership-test--golden slug)))
+      (should (equal expect (edgar-ownership-test--expect slug))))))
+(defun edgar-ownership-test--form4-snapshot (slug)
+  "Return the typed field snapshot for Form 4 fixture SLUG."
+  (let* ((filing (edgar-ownership-test--fixture slug))
+         (metadata
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name (concat "fixtures/" slug ".eld")
+                               edgar-ownership-test--directory))
+            (read (current-buffer)))))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) filing)))
+      (let* ((owner (car (edgar-ownership-reporting-owners metadata)))
+             (transactions (edgar-form4-transactions metadata)))
+        (list
+         :issuer (edgar-ownership-issuer metadata)
+         :owner (list :name (plist-get owner :name)
+                      :officer-title (plist-get owner :officer-title)
+                      :is-officer (plist-get owner :is-officer)
+                      :is-director (plist-get owner :is-director))
+         :transactions
+         (mapcar
+          (lambda (row)
+            (list :kind (plist-get row :kind)
+                  :code (plist-get row :code)
+                  :shares (plist-get row :shares)
+                  :price (plist-get row :price)
+                  :acquired-disposed (plist-get row :acquired-disposed)
+                  :shares-owned-following (plist-get row :shares-owned-following)
+                  :direct-indirect (plist-get row :direct-indirect)
+                  :footnote-count (length (plist-get row :footnotes))))
+          transactions)
+         :footnote-head (car (plist-get (car transactions) :footnotes))
+         :10b5-1 (edgar-ownership-10b5-1-p metadata)
+         :signature (car (edgar-ownership-signatures metadata)))))))
+
+(ert-deftest edgar-ownership-additional-filer-golden-values ()
+  "Parse Form 4 filings from additional issuers and schema vintages."
+  (dolist (slug '("4-meta" "4-tsla"))
+    (should (equal (edgar-ownership-test--form4-snapshot slug)
+                   (edgar-ownership-test--golden slug)))
+    (should (equal (edgar-ownership-test--form4-expect-snapshot slug)
+                   (edgar-ownership-test--expect slug)))))
+
+(defun edgar-ownership-test--form4-expect-snapshot (slug)
+  "Return a compact layout expectation for Form 4 fixture SLUG."
+  (let* ((filing
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name (concat "fixtures/" slug ".eld")
+                               edgar-ownership-test--directory))
+            (read (current-buffer))))
+         (tree (edgar-ownership-test--fixture slug)))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
+      (let ((owner (car (edgar-ownership-reporting-owners filing)))
+            (signature (car (edgar-ownership-signatures filing))))
+        (list :form (plist-get filing :form)
+              :schema (edgar-ownership--text
+                       (edgar-ownership--child tree 'schemaVersion))
+              :issuer (plist-get (edgar-ownership-issuer filing) :name)
+              :owner (plist-get owner :name)
+              :is-officer (plist-get owner :is-officer)
+              :signature-date (plist-get signature :date))))))
+
 (ert-deftest edgar-ownership-transaction-golden-codes ()
   "Keep representative buy, sale, and option-exercise transaction values."
   (dolist (case '(("4" "P" "A") ("4" "S" "D") ("4" "M" "A")))

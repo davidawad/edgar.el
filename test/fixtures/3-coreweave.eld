@@ -1,0 +1,1 @@
+(:accn "0001045810-26-000007" :form "3" :filed "2026-01-26" :report "2026-01-23" :doc "wk-form3_1769436374.xml" :cik 1769628 :url "https://www.sec.gov/Archives/edgar/data/1769628/000104581026000007/wk-form3_1769436374.xml" :ticker "CRWV")
