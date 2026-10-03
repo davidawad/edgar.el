@@ -163,7 +163,7 @@
     ("SC 13G/A" "schedule 13g" nil)
     ("SC TO-T" "schedule to" nil)
     ("SC TO-C" "tender offer statement on schedule to" nil)
-    ("SC TO-I" "issuer tender offer statement" nil)
+    ("SC TO-I" "tender offer statement" nil)
     ("SC 14D9" "schedule 14d-9" nil)
     ("1-A-W" "withdrawal of offering statement" nil)
     ("253G1" "offering circular" nil)

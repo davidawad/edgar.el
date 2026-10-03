@@ -1,0 +1,1 @@
+(:accn "0001193125-26-279627" :form "DEFM14A" :filed "2026-06-23" :cik 1562476 :doc "d57916ddefm14a.htm" :url "https://www.sec.gov/Archives/edgar/data/1562476/000119312526279627/d57916ddefm14a.htm" :company "Taylor Morrison Home Corp.")

@@ -1,0 +1,1 @@
+(:accn "0001104659-26-038600" :form "SCHEDULE 13G" :filed "2026-04-01" :cik 1273087 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/1273087/000110465926038600/primary_doc.xml" :company "PennyMac Financial Services, Inc.")

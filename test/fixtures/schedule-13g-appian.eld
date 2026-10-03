@@ -1,0 +1,1 @@
+(:accn "0001802797-26-000008" :form "SCHEDULE 13G" :filed "2026-06-30" :cik 1441683 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/1441683/000180279726000008/primary_doc.xml" :company "Appian Corporation")

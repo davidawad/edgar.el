@@ -1,0 +1,1 @@
+(:accn "0001193125-26-407475" :form "NPORT-P" :filed "2026-09-29" :cik 924211 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/924211/000119312526407475/primary_doc.xml" :company "American Century Strategic Asset Allocations Inc.")

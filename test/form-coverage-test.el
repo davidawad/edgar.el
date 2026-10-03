@@ -29,6 +29,28 @@
   (with-temp-file file
     (insert contents)))
 
+(defun edgar-form-coverage-test--seed-l2-artifacts (root backend count)
+  "Create COUNT complete L2 test filings under ROOT for BACKEND."
+  (let ((fixtures (expand-file-name "fixtures" root))
+        (expects (expand-file-name "expect" root))
+        (goldens (expand-file-name "golden" root))
+        (field-goldens (expand-file-name "golden-fields" root)))
+    (dotimes (index count)
+      (let* ((number (1+ index))
+             (slug (format "filer-%d" number))
+             (primary-suffix (if (eq backend 'xml) ".xml" ".htm.gz"))
+             (golden-dir (if (eq backend 'xml) field-goldens goldens)))
+        (edgar-form-coverage-test--write
+         (expand-file-name (concat slug ".eld") fixtures)
+         (format "(:form \"TEST-FORM\" :cik %d)\n" (+ 1000 number)))
+        (edgar-form-coverage-test--write
+         (expand-file-name (concat slug primary-suffix) fixtures) "fixture")
+        (edgar-form-coverage-test--write
+         (expand-file-name (concat slug ".eld") expects) "(:ok t)\n")
+        (edgar-form-coverage-test--write
+         (expand-file-name (concat slug ".eld") golden-dir)
+         "(:fields (value))\n")))))
+
 (defun edgar-form-coverage-test--registry (level &optional backend)
   "Return a one-row test registry at LEVEL using BACKEND or HTML."
   (let ((registry (make-hash-table :test #'equal)))
@@ -47,6 +69,49 @@
 (ert-deftest edgar-form-coverage-offline-baseline-passes ()
   "The committed snapshot and registry satisfy the offline gate."
   (should-not (edgar-coverage-problems)))
+
+(ert-deftest edgar-form-coverage-l2-requires-three-distinct-filers ()
+  "An L2 form needs three distinct filer CIKs, not three filings."
+  (let* ((root (make-temp-file "edgar-coverage-diversity-" t))
+         (snapshot (expand-file-name "snapshot.txt" root)))
+    (unwind-protect
+        (progn
+          (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
+          (edgar-form-coverage-test--seed-l2-artifacts root 'html 2)
+          (let* ((fixtures (expand-file-name "fixtures" root))
+                 (expects (expand-file-name "expect" root))
+                 (goldens (expand-file-name "golden" root)))
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.eld" fixtures)
+             "(:form \"TEST-FORM\" :cik 1001)\n")
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.htm.gz" fixtures)
+             "fixture")
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.eld" expects) "(:ok t)\n")
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.eld" goldens)
+             "(:text (\"ok\"))\n")
+            (let ((messages
+                   (edgar-form-coverage-test--messages
+                    (edgar-coverage-problems
+                     :registry (edgar-form-coverage-test--registry 'L2)
+                     :snapshot-file snapshot
+                     :fixture-directory fixtures
+                     :expect-directory expects
+                     :golden-directory goldens))))
+              (should
+               (string-match-p
+                "2 distinct filer CIKs; 3 required" messages)))
+            (edgar-form-coverage-test--seed-l2-artifacts root 'html 3)
+            (should-not
+             (edgar-coverage-problems
+              :registry (edgar-form-coverage-test--registry 'L2)
+              :snapshot-file snapshot
+              :fixture-directory fixtures
+              :expect-directory expects
+              :golden-directory goldens))))
+      (delete-directory root t))))
 
 (ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
   "Do not promote low-volume L0 forms absent from the recorded index samples."
@@ -191,25 +256,16 @@
          (goldens (expand-file-name "golden" root))
          (field-goldens (expand-file-name "golden-fields" root))
          (snapshot (expand-file-name "snapshot.txt" root))
-         (primary (expand-file-name "test.xml" fixtures))
-         (golden (expand-file-name "test.eld" field-goldens)))
+         (primary (expand-file-name "filer-1.xml" fixtures))
+         (golden (expand-file-name "filer-1.eld" field-goldens)))
     (unwind-protect
         (progn
           (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test.eld" fixtures) "(:form \"TEST-FORM\")\n")
-          (edgar-form-coverage-test--write primary "<fixture/>")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test.eld" expects) "(:ok t)\n")
-          (edgar-form-coverage-test--write golden "(:fields (value))\n")
-          ;; Historical secondary fixtures may retain their rendered form.
-          (edgar-form-coverage-test--write
-           (expand-file-name "test-prior.eld" fixtures)
-           "(:form \"TEST-FORM\")\n")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test-prior.htm.gz" fixtures) "rendered")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test-prior.eld" expects) "(:ok t)\n")
+          (edgar-form-coverage-test--seed-l2-artifacts root 'xml 3)
+          (delete-file
+           (expand-file-name "filer-2.eld" field-goldens))
+          (delete-file
+           (expand-file-name "filer-3.eld" field-goldens))
           (should-not
            (edgar-coverage-problems
             :registry
@@ -244,17 +300,8 @@
     (unwind-protect
         (progn
           (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test.eld"
-                             fixtures)
-           "(:form \"TEST-FORM\")\n")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test.htm.gz" fixtures) "fixture")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test.eld" expects) "(:ok t)\n")
-          (edgar-form-coverage-test--write
-           (expand-file-name "test.eld" goldens) "(:text (\"ok\"))\n")
-          (delete-file (expand-file-name "test.eld" goldens))
+          (edgar-form-coverage-test--seed-l2-artifacts root 'html 3)
+          (delete-file (expand-file-name "filer-1.eld" goldens))
           (let ((messages
                  (edgar-form-coverage-test--messages
                   (edgar-coverage-problems

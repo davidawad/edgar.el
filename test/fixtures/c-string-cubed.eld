@@ -1,0 +1,1 @@
+(:accn "0001872856-26-000328" :form "C" :filed "2026-09-30" :cik 2136589 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/2136589/000187285626000328/primary_doc.xml" :company "String Cubed Inc.")

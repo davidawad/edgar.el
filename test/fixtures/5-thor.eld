@@ -1,0 +1,1 @@
+(:accn "0001488301-26-000002" :form "5" :filed "2026-09-02" :cik 730263 :doc "form5-09022026_090949.xml" :url "https://www.sec.gov/Archives/edgar/data/730263/000148830126000002/form5-09022026_090949.xml" :company "Thor Industries Inc.")

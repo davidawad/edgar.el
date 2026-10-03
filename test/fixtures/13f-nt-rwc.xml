@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xsi:schemaLocation="http://www.sec.gov/edgar/thirteenffiler eis_13F_Filer.xsd" xmlns="http://www.sec.gov/edgar/thirteenffiler" xmlns:ns1="http://www.sec.gov/edgar/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <schemaVersion>X0202</schemaVersion>
+  <headerData>
+    <submissionType>13F-NT</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+      <filer>
+        <credentials>
+          <cik>0001767867</cik>
+          <ccc>XXXXXXXX</ccc>
+        </credentials>
+      </filer>
+      <periodOfReport>06-30-2026</periodOfReport>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <coverPage>
+      <reportCalendarOrQuarter>06-30-2026</reportCalendarOrQuarter>
+      <isAmendment>false</isAmendment>
+      <filingManager>
+        <name>RWC (US) LLC</name>
+        <address>
+          <ns1:street1>2640 S. BAYSHORE DRIVE, SUITE 201</ns1:street1>
+          <ns1:city>MIAMI</ns1:city>
+          <ns1:stateOrCountry>FL</ns1:stateOrCountry>
+          <ns1:zipCode>33133</ns1:zipCode>
+        </address>
+      </filingManager>
+      <reportType>13F NOTICE</reportType>
+      <form13FFileNumber>028-19401</form13FFileNumber>
+      <otherManagersInfo>
+        <otherManager>
+          <cik>0001638081</cik>
+          <form13FFileNumber>028-19400</form13FFileNumber>
+          <crdNumber>000166517</crdNumber>
+          <secFileNumber>801-77698</secFileNumber>
+          <name>RWC ASSET ADVISORS (US) LLC</name>
+        </otherManager>
+      </otherManagersInfo>
+      <provideInfoForInstruction5>N</provideInfoForInstruction5>
+    </coverPage>
+    <signatureBlock>
+      <name>Fadi Freiha</name>
+      <title>Compliance Officer</title>
+      <phone>44-0-20-7227-6150</phone>
+      <signature>/s/ Fadi Freiha</signature>
+      <city>London</city>
+      <stateOrCountry>X0</stateOrCountry>
+      <signatureDate>07-15-2026</signatureDate>
+    </signatureBlock>
+    <summaryPage>
+      <otherIncludedManagersCount/>
+      <tableEntryTotal/>
+      <tableValueTotal/>
+    </summaryPage>
+  </formData>
+</edgarSubmission>

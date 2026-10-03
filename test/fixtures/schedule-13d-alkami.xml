@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><edgarSubmission xmlns="http://www.sec.gov/edgar/schedule13D" xmlns:com="http://www.sec.gov/edgar/common">
+  <schemaVersion>X0202</schemaVersion>
+<headerData>
+    <submissionType>SCHEDULE 13D</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <!-- Field: Pseudo-Tag; ID: Name; Data: JANA Partners Management, LP -->
+          <cik>0001998597</cik>
+          <ccc>XXXXXXXX</ccc>
+        </filerCredentials>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+
+
+
+    </filerInfo>
+  </headerData>
+  <formData>
+    <coverPageHeader>
+      <securitiesClassTitle>Common Stock, par value $0.001 per share</securitiesClassTitle>
+      <dateOfEvent>03/25/2026</dateOfEvent>
+      <previouslyFiledFlag>false</previouslyFiledFlag>
+      <issuerInfo>
+        <issuerCIK>0001529274</issuerCIK>
+        <issuerCusips>
+          <issuerCusipNumber>01644J108</issuerCusipNumber>
+        </issuerCusips>
+        <issuerName>ALKAMI TECHNOLOGY, INC.</issuerName>
+        <address>
+          <com:street1>5601 GRANITE PARKWAY</com:street1>
+          <com:street2>SUITE 120</com:street2>
+          <com:city>PLANO</com:city>
+          <com:stateOrCountry>TX</com:stateOrCountry>
+          <com:zipCode>75024</com:zipCode>
+        </address>
+      </issuerInfo>
+      <authorizedPersons>
+        <notificationInfo>
+          <personName>Eleazer Klein and Brandon Gold</personName>
+          <personPhoneNum>212-756-2000</personPhoneNum>
+          <personAddress>
+            <com:street1>McDermott Will &amp; Schulte LLP</com:street1>
+            <com:street2>919 Third Avenue</com:street2>
+            <com:city>New York</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10022</com:zipCode>
+          </personAddress>
+        </notificationInfo>
+      </authorizedPersons>
+    </coverPageHeader>
+    <reportingPersons>
+      <reportingPersonInfo>
+        <reportingPersonCIK>0001998597</reportingPersonCIK>
+        <reportingPersonNoCIK>N</reportingPersonNoCIK>
+        <reportingPersonName>JANA PARTNERS MANAGEMENT, LP</reportingPersonName>
+        <memberOfGroup>b</memberOfGroup>
+        <fundType>AF</fundType>
+        <legalProceedings>N</legalProceedings>
+        <citizenshipOrOrganization>DE</citizenshipOrOrganization>
+        <soleVotingPower>5431388.00</soleVotingPower>
+        <sharedVotingPower>0.00</sharedVotingPower>
+        <soleDispositivePower>5431388.00</soleDispositivePower>
+        <sharedDispositivePower>0.00</sharedDispositivePower>
+        <aggregateAmountOwned>5431388.00</aggregateAmountOwned>
+        <isAggregateExcludeShares>N</isAggregateExcludeShares>
+        <percentOfClass>5.1</percentOfClass>
+        <typeOfReportingPerson>IA</typeOfReportingPerson>
+        <typeOfReportingPerson>PN</typeOfReportingPerson>
+      </reportingPersonInfo>
+    </reportingPersons>
+    <items1To7>
+      <item1>
+        <securityTitle>Common Stock, par value $0.001 per share</securityTitle>
+        <issuerName>ALKAMI TECHNOLOGY, INC.</issuerName>
+        <issuerPrincipalAddress>
+          <com:street1>5601 GRANITE PARKWAY</com:street1>
+          <com:street2>SUITE 120</com:street2>
+          <com:city>PLANO</com:city>
+          <com:stateOrCountry>TX</com:stateOrCountry>
+          <com:zipCode>75024</com:zipCode>
+        </issuerPrincipalAddress>
+      </item1>
+      <item2>
+        <filingPersonName>This statement on Schedule 13D is filed by JANA Partners Management, LP, a Delaware limited partnership ("JANA" or the "Reporting Person") with respect to the shares of common stock, par value $0.001 per share ("Shares"), of Alkami Technology, Inc., a Delaware corporation (the "Issuer").  JANA is a private money management firm which holds the Shares reported as beneficially owned by it in various accounts under its management and control.  JANA Partners Management GP, LLC (the "JANA GP") is the general partner of JANA.</filingPersonName>
+        <principalBusinessAddress>The principal business address of JANA and the JANA GP is 888 Seventh Avenue, 24th Floor, New York, New York 10106.</principalBusinessAddress>
+        <principalJob>The principal business of JANA is investing for accounts under its management.  The principal business of the JANA GP is acting as the general partner of JANA.</principalJob>
+        <hasBeenConvicted>Neither JANA nor the JANA GP has, during the last five years, been convicted in a criminal proceeding (excluding traffic violations or similar misdemeanors).</hasBeenConvicted>
+        <convictionDescription>Neither JANA nor the JANA GP has, during the last five years, been a party to a civil proceeding of a judicial or administrative body of competent jurisdiction and as a result of such proceeding was or is subject to a judgment, decree or final order enjoining future violations of, or prohibiting or mandating activities subject to, federal or state securities laws or finding any violation with respect to such laws.</convictionDescription>
+        <citizenship>JANA is a limited partnership organized in Delaware.  The JANA GP is a limited liability company organized in Delaware.</citizenship>
+      </item2>
+      <item3>
+        <fundsSource>The 5,431,388 Shares reported herein as beneficially owned by JANA were acquired at an aggregate purchase price of approximately $119 million.</fundsSource>
+      </item3>
+      <item4>
+        <transactionPurpose>The Reporting Person acquired the Shares because it believes the Shares are undervalued and represent an attractive investment opportunity.</transactionPurpose>
+      </item4>
+      <item5>
+        <percentageOfClassSecurities>See rows (11) and (13) of the cover page to this Schedule 13D for the aggregate number of Shares and percentage of Shares beneficially owned by the Reporting Person.  The percentage of Shares reported to be beneficially owned by the Reporting Person is based upon 106,148,144 Shares outstanding as of February 20, 2026, as reported in the Issuer's Annual Report on Form 10-K for the fiscal year ended December 31, 2025, filed with the Securities and Exchange Commission (the "SEC") on February 26, 2026.</percentageOfClassSecurities>
+        <numberOfShares>See rows (7) through (10) of the cover page to this Schedule 13D for the number of Shares as to which the Reporting Person has the sole or shared power to vote or direct the vote and sole or shared power to dispose or to direct the disposition.</numberOfShares>
+        <transactionDesc>All transactions in the Shares effected by the Reporting Person during the past sixty (60) days, which were all in the open market, are set forth in Schedule A and are incorporated herein by reference.</transactionDesc>
+        <listOfShareholders>No person (other than the Reporting Person) is known to have the right to receive or the power to direct the receipt of dividends from, or the proceeds from the sale of, the Shares.</listOfShareholders>
+        <date5PercentOwnership>Not Applicable.</date5PercentOwnership>
+      </item5>
+      <item6>
+        <contractDescription>Certain accounts under JANA's management and control have entered into notional principal amount derivative agreements in the form of cash settled swaps with respect to an aggregate of 2,953,899 Shares (collectively representing economic exposure comparable to 2.8% of the Shares) with expiration dates ranging from October 16, 2028 to April 15, 2030.
+
+Except as set forth herein, the Reporting Person has no contracts, arrangements, understandings or relationships (legal or otherwise) with respect to any securities of the Issuer, including any class of the Issuer's securities used as a reference security, in connection with any of the following: call options, put options, security-based swaps or any other derivative securities, transfer or voting of any of the securities, finder's fees, joint ventures, loan or option arrangements, guarantees of profits, division of profits or loss, or the giving or withholding of proxies.</contractDescription>
+      </item6>
+      <item7>
+        <filedExhibits>None</filedExhibits>
+      </item7>
+    </items1To7>
+    <signatureInfo>
+      <signaturePerson>
+        <signatureReportingPerson>JANA PARTNERS MANAGEMENT, LP</signatureReportingPerson>
+        <signatureDetails>
+          <signature>/s/ Jennifer Fanjiang</signature>
+          <title>Jennifer Fanjiang, Partner, Chief Legal Officer and Chief Compliance Officer</title>
+          <date>04/01/2026</date>
+        </signatureDetails>
+      </signaturePerson>
+    </signatureInfo>
+  </formData>
+
+</edgarSubmission>
