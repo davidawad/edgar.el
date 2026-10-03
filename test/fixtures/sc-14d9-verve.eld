@@ -1,0 +1,1 @@
+(:accn "0001193125-25-146127" :form "SC 14D9" :filed "2025-06-25" :report "" :doc "d917975dsc14d9.htm" :cik 1840574 :url "https://www.sec.gov/Archives/edgar/data/1840574/000119312525146127/d917975dsc14d9.htm" :ticker "VERV")

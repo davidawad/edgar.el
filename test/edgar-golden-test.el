@@ -624,7 +624,7 @@
             (edgar-fixtures-norm body))))))))
 
 (ert-deftest edgar-golden-g8-sc-14d9-items-have-per-filer-goldens ()
-  "Three Schedule 14D-9 filers expose the same named Items."
+  "Five Schedule 14D-9 filers expose the same named Items."
   (dolist
       (entry
        '(("sc-14d9-cidara"
@@ -636,6 +636,14 @@
           ("4" "solicitation or recommendation")
           ("8" "additional information"))
          ("sc-14d9-open-lending"
+          ("1" "subject company information")
+          ("4" "solicitation or recommendation")
+          ("8" "additional information"))
+         ("sc-14d9-verve"
+          ("1" "subject company information")
+          ("4" "solicitation or recommendation")
+          ("8" "additional information"))
+         ("sc-14d9-g1-therapeutics"
           ("1" "subject company information")
           ("4" "solicitation or recommendation")
           ("8" "additional information"))))

@@ -1,0 +1,1 @@
+(:accn "0001193125-24-203615" :form "SC 14D9" :filed "2024-08-20" :report "" :doc "d856692dsc14d9.htm" :cik 1560241 :url "https://www.sec.gov/Archives/edgar/data/1560241/000119312524203615/d856692dsc14d9.htm" :ticker "GTHX")
