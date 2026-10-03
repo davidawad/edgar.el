@@ -376,7 +376,7 @@
         (should (string-match-p "FORM 25" body))))))
 
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
-  "Named section output stays pinned across distinct prospectus layouts."
+  "Named section output stays pinned across reviewed filing layouts."
   (let ((goldens
          (edgar-fixtures-read
           (edgar-fixtures-path "golden-named-sections.eld"))))
