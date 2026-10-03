@@ -862,8 +862,8 @@
      "APP WDG"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 13
       :notes nil)

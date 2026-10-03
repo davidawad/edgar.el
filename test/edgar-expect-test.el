@@ -144,6 +144,7 @@
     ("N-6" "form n-6" nil)
     ("N-2MEF" "ives ultra ai opportunities" nil)
     ("APP WD" "guggenheim strategic opportunities fund" nil)
+    ("APP WDG" "pear tree funds" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("424B2" "pricing supplement" nil)
