@@ -27,6 +27,32 @@
        (expand-file-name (concat "fixtures/" name) edgar-test--dir)))
     (json-parse-buffer :object-type 'plist :array-type 'list)))
 
+(ert-deftest edgar-facts-exposes-inline-facts-from-the-primary-document ()
+  (let* ((fixture
+          (expand-file-name "fixtures/10-k-aapl.htm.gz" edgar-test--dir))
+         (filing '(:form "10-K" :accn "0000320193-25-000079"
+                   :url "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm")))
+    (cl-letf (((symbol-function 'edgar-html)
+               (lambda (_filing)
+                 (with-temp-buffer
+                   (let ((auto-compression-mode t))
+                     (insert-file-contents fixture))
+                   (buffer-string)))))
+      (let ((revenue
+             (seq-find
+              (lambda (fact)
+                (and (equal (plist-get fact :name)
+                            "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax")
+                     (equal (plist-get (plist-get fact :context) :end)
+                            "2025-09-27")
+                     (null (plist-get (plist-get fact :context) :dimensions))))
+              (edgar-facts filing))))
+        (should revenue)
+        (should (= (plist-get revenue :value) 416161000000))
+        (should (equal (plist-get revenue :unit) "USD"))
+        (should (equal (plist-get (plist-get revenue :context) :start)
+                       "2024-09-29"))))))
+
 (defconst edgar-test--submissions
   '(:filings
     (:recent

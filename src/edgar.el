@@ -207,6 +207,11 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
 PDF bodies are returned as unibyte strings."
   (edgar--fetch (plist-get filing :url)))
 
+(defun edgar-facts (filing)
+  "Return FILING's Inline XBRL facts, including context and unit metadata.
+Non-iXBRL filings return nil."
+  (xbrl-inline-facts (edgar-html filing)))
+
 (defun edgar--pdf-url-p (url)
   "Return non-nil when URL identifies a PDF primary document."
   (and (stringp url) (string-match-p "\\.pdf\\(?:[?#]\\|\\'\\)" url)))

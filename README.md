@@ -9,6 +9,7 @@ Customize `edgar-pdftotext-program` when it is installed under another name.
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
     (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
+    (edgar-facts (edgar-latest "AAPL" "10-K"))          ; Inline XBRL facts + contexts
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
