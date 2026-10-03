@@ -149,6 +149,7 @@
              ("40-6b-robinhood" . "Robinhood")
              ("40-17f1-northern-lights" . "Northern Lights")
              ("40-17f2-fundrise" . "Fundrise Innovation Fund")
+             ("40-8f-2-chesapeake" . "Chesapeake Investors")
              ("486bxt-ark-venture" . "ARK Venture Fund")
              ("497ad-powerlaw" . "Powerlaw")
              ("n-4-2026" . "Form N-4")

@@ -114,6 +114,7 @@
     ("40-APP" "application for an order" nil)
     ("40-17F1" "northern lights fund trust" nil)
     ("40-17F2" "fundrise innovation fund" nil)
+    ("40-8F-2" "chesapeake investors" nil)
     ("40-6B" "robinhood" nil)
     ("486BXT" "ark venture fund" nil)
     ("485APOS"
