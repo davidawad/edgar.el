@@ -243,8 +243,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 40
       :notes nil)
      table)

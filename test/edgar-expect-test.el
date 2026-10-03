@@ -106,6 +106,7 @@
     ("8-K12B" "nova minerals" nil)
     ("QRTLYRPT" "african development bank" nil)
     ("SD" "specialized disclosure report" nil)
+    ("18-K" "form 18-k" nil)
     ("40FR12B" "nuran wireless" nil)
     ("DEF 14A" "proxy statement" nil)
     ("11-K" "annual report" nil)

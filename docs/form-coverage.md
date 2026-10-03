@@ -66,7 +66,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |
 | `15F-12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12B")` |
 | `15F-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12G")` |
-| `18-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "18-K")` |
+| `18-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `20-F` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "20-F")` |
 | `20FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12B")` |
 | `20FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12G")` |
@@ -339,6 +339,9 @@ exhibit text excerpt (Shopify, accession 0001594805-24-000007). These validate
 access to filing-level documents; they do not imply that every G9 form's
 narrative layout has a dedicated parser. Form SD is now L2 based on Apple's
 2026-05-28 filing (accession 0001140361-26-023149), with generic item access
-goldened for Items 1.01, 1.02, 2.01, and 3.01.
+goldened for Items 1.01, 1.02, 2.01, and 3.01. Form 18-K has L1 generic HTML
+structure and body-path coverage from the Republic of Chile filing (accession
+0001104659-25-094669, filed 2025-09-30); its numeric disclosure prompts do not
+currently appear as parser-level item sections.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).

@@ -355,6 +355,16 @@
         (should (string-match-p "Apple designs" body)))
       (should (assoc "2.01" (edgar-sections (edgar-text filing)))))))
 
+(ert-deftest edgar-18k-generic-document-subtree-is-addressable ()
+  "A real 18-K supports access to its body through generic element paths."
+  (let* ((filing (edgar-fixtures-filing "18-k-chile"))
+         (html (edgar-fixtures-html "18-k-chile")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let ((body (edgar-section filing '("html" "body"))))
+        (should (stringp body))
+        (should (string-match-p "FORM 18-K" body))
+        (should (string-match-p "In respect of each issue" body))))))
+
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
   "Named section output stays pinned across distinct prospectus layouts."
   (let ((goldens
