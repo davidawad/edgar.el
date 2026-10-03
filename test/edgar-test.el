@@ -418,6 +418,19 @@
         (should (string-match-p "Walmart Inc." body))
         (should (string-match-p "FORM 25" body))))))
 
+(ert-deftest edgar-g13-305b2-real-filing-uses-generic-tree-api ()
+  "A real 305B2 filing exposes text and paragraphs through the generic tree."
+  (let* ((filing (edgar-fixtures-filing "index-305b2-2026-q3"))
+         (html (edgar-fixtures-html "index-305b2-2026-q3")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let ((tree (edgar-document-structure filing)))
+        (should (eq (plist-get tree :format) 'html))
+        (should (> (length (edgar-structure-paragraphs tree)) 0))
+        (should
+         (string-match-p
+          "statement of eligibility"
+          (downcase (edgar-structure-text tree))))))))
+
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens
     ()
   "Named section output stays pinned across reviewed filing layouts."

@@ -342,7 +342,7 @@
      (list
       :family "G13 Tail"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 42
       :notes nil)

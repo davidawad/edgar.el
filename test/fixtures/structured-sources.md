@@ -2,6 +2,10 @@
 
 These are unmodified documents published in SEC EDGAR's Archives:
 
+G13 tail form:
+
+- `index-305b2-2026-q3.htm.gz` — Form 305B2, Beacon Financial Corp. ([SEC daily index for 2026-08-17](https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/form.20260817.idx); [accession 0001104659-26-097599](https://www.sec.gov/Archives/edgar/data/1108134/000110465926097599/tm2623171d1_305b2.htm); primary listed at 20,436 bytes).
+
 Foreign issuer exhibit access:
 
 - `6-k-dxst-ex99-1.html` — EX-99.1 attached to Decent Holding Inc.'s 6-K ([accession 0001185185-26-003233](https://www.sec.gov/Archives/edgar/data/1958133/000118518526003233/dxstex99-1.htm); 2026-08-03). The filing directory is recorded in `6-k-dxst-index.json`.
