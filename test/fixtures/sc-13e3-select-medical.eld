@@ -1,0 +1,1 @@
+(:accn "0001104659-26-043531" :form "SC 13E3" :company "SELECT MEDICAL HOLDINGS CORP" :filed "2026-04-15" :report "" :cik 1320414 :ticker "" :doc "tm2611660-1_sc13e3.htm" :url "https://www.sec.gov/Archives/edgar/data/1320414/000110465926043531/tm2611660-1_sc13e3.htm" :size 430290 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
