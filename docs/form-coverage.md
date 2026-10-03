@@ -327,7 +327,11 @@ G10 currently has 39 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
 486BPOS, 486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU,
 APP NTC, APP ORDR, APP WD, APP WDG, CT ORDER, DEL AM, N-14, N-14 8C, N-1A,
 N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. MSD is the only
-remaining L0 form.
+remaining L0 form. The sampled MSD accession (9999999997-12-000716) contains
+only a 290-byte auto-generated `.paper` placeholder. Its complete submission
+text says to reference Document Control Number 12010226 to access the original
+document; it does not include that document, so the generic text result is not
+representative filing content.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the

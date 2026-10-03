@@ -629,6 +629,26 @@
           (should (string-match-p
                    (cadr entry) (edgar-structure-text tree))))))))
 
+(ert-deftest edgar-msd-paper-primary-only-exposes-generated-notice ()
+  "An SEC MSD paper submission exposes only its generated placeholder notice."
+  (let* ((filing (edgar-fixtures-filing "msd-state-street"))
+         (submission
+          (with-temp-buffer
+            (insert-file-contents
+             (edgar-fixtures-path "fixtures/msd-state-street.txt"))
+            (buffer-string))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
+      (let* ((text (edgar-text filing))
+             (tree (edgar-document-structure filing)))
+        (should (string-match-p
+                 "This document was generated as part of a paper submission"
+                 text))
+        (should (string-match-p
+                 "reference the Document Control Number 12010226"
+                 (edgar-structure-text tree)))
+        (should-not
+         (string-match-p "application form contents" text))))))
+
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
   (let* ((slug "upload-irenic-2026")
