@@ -392,7 +392,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -402,7 +402,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 8
       :notes nil)
@@ -422,7 +422,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -832,8 +832,8 @@
      "APP NTC"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 65
       :notes nil)
@@ -842,8 +842,8 @@
      "APP ORDR"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 63
       :notes nil)
@@ -853,7 +853,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -862,8 +862,8 @@
      "APP WDG"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -1062,8 +1062,8 @@
      "CT ORDER"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 11
       :notes nil)
@@ -1176,7 +1176,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 16
       :notes nil)
@@ -1475,8 +1475,8 @@
      "MSD"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'text
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)

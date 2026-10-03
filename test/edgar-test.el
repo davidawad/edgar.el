@@ -494,6 +494,42 @@
                (plist-get expected :body-marker))
               body))))))))
 
+(ert-deftest edgar-g10-remaining-l0-filings-use-generic-structure-api
+    ()
+  "The remaining real G10 filings work through the generic structure API."
+  (dolist (case
+           '(("40-24b2-hit-investment" html)
+             ("40-33-180degree" html)
+             ("40-8f-2-chesapeake" html)
+             ("app-ntc-advisors-preferred" pdf)
+             ("app-ordr-great-elm" pdf)
+             ("app-wd-guggenheim" html)
+             ("app-wdg-peartree" pdf)
+             ("ct-order-janus-henderson" pdf)
+             ("del-am-jpmorgan" html)))
+    (let* ((slug (car case))
+           (format (cadr case))
+           (filing (edgar-fixtures-filing slug))
+           (source (edgar-fixtures-primary slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) source)))
+        (let* ((info (edgar-form-info (plist-get filing :form)))
+               (tree (edgar-document-structure filing))
+               (primary (plist-get tree :primary-document))
+               (paragraphs (edgar-structure-paragraphs tree))
+               (text (edgar-structure-text tree)))
+          (should (eq (plist-get info :level) 'L1))
+          (should (eq (plist-get info :backend) format))
+          (should (eq (plist-get tree :format) format))
+          (should (eq (plist-get primary :format) format))
+          (should
+           (equal (plist-get primary :type) (plist-get filing :form)))
+          (should
+           (equal
+            (plist-get primary :filename) (plist-get filing :doc)))
+          (should (> (length paragraphs) 0))
+          (should (seq-every-p #'stringp paragraphs))
+          (should (> (length (string-trim text)) 0)))))))
+
 (ert-deftest edgar-g10-second-batch-uses-generic-structure-api ()
   "Real G10 XML and rendered layouts work without form-specific switches."
   (dolist (expected

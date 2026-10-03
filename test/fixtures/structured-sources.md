@@ -151,6 +151,18 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `487-adt2360.htm.gz` — compressed primary [Form 487 accession 0001999371-26-021338](https://www.sec.gov/Archives/edgar/data/2118248/000199937126021338/adt2360-487.htm) (Advisors Disciplined Trust 2360; 2026-09-25).
 - `n-2-buttonwood.htm.gz` — compressed primary [N-2 accession 0001213900-26-023498](https://www.sec.gov/Archives/edgar/data/2104046/000121390026023498/ea0279503-01_n2.htm) (Buttonwood First Access Fund; 2026-03-04).
 
+Additional G10 filings use the generic document-structure API:
+
+- `40-24b2-hit-investment.htm.gz` — 40-24B2, AFL-CIO Housing Investment Trust ([accession 0001999371-25-001001](https://www.sec.gov/Archives/edgar/data/225030/000199937125001001/kmbostbl-4024b2_012825.htm)).
+- `40-33-180degree.htm.gz` — 40-33, 180 Degree Capital ([accession 0000893739-25-000085](https://www.sec.gov/Archives/edgar/data/893739/000089373925000085/a180degreecapital-40x33fila.htm)); the complaint body is text-readable, while image exhibits are outside this fixture.
+- `40-8f-2-chesapeake.htm.gz` — 40-8F-2, Chesapeake Investors ([accession 0001193125-05-064452](https://www.sec.gov/Archives/edgar/data/63848/000119312505064452/d408f2.htm)).
+- `app-ntc-advisors-preferred.pdf` — APP NTC, SEC notice of an application ([accession 9999999997-26-000788](https://www.sec.gov/Archives/edgar/data/1174610/999999999726000788/filename1.pdf)); it covers the published notice, not the underlying application.
+- `app-ordr-great-elm.pdf` — APP ORDR, SEC order granting an application ([accession 9999999997-25-003097](https://www.sec.gov/Archives/edgar/data/1675033/999999999725003097/filename1.pdf)).
+- `app-wd-guggenheim.htm.gz` — APP WD, Guggenheim request to withdraw an application ([accession 0001821268-26-000067](https://www.sec.gov/Archives/edgar/data/2122340/000182126826000067/gug89737-appwd.htm)).
+- `app-wdg-peartree.pdf` — APP WDG, SEC order granting an application ([accession 9999999997-26-000757](https://www.sec.gov/Archives/edgar/data/722885/999999999726000757/filename1.pdf)).
+- `ct-order-janus-henderson.pdf` — CT ORDER, SEC order ([accession 9999999997-26-000767](https://www.sec.gov/Archives/edgar/data/1274173/999999999726000767/filename1.pdf)).
+- `del-am-jpmorgan.htm.gz` — DEL AM, J.P. Morgan Exchange-Traded Fund Trust ([accession 0001193125-25-064178](https://www.sec.gov/Archives/edgar/data/1485894/000119312525064178/d916859ddelam.htm)).
+
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.
