@@ -60,6 +60,33 @@
            :url (concat "https://www.sec.gov/Archives/edgar/data/fixture/"
                         "primary_doc.xml")))))
 
+(defun edgar-funds-test--report-snapshot (form slug)
+  "Return stable identifying and first-holding fields for SLUG."
+  (let* ((report (edgar-funds-test--report form slug))
+         (first (car (edgar-fund-report-holdings report))))
+    (list :registrant-name (edgar-fund-report-registrant-name report)
+          :cik (edgar-fund-report-cik report)
+          :report-date (edgar-fund-report-report-date report)
+          :net-assets (edgar-fund-report-net-assets report)
+          :holding-count (length (edgar-fund-report-holdings report))
+          :first-holding-name (edgar-funds--value first '(name))
+          :first-holding-cusip (edgar-funds--value first '(cusip))
+          :first-holding-value (edgar-funds--value first '(valUSD)))))
+
+(ert-deftest edgar-fund-reports-match-distinct-filer-goldens ()
+  "N-CEN, N-MFP3 and NPORT-P layouts match expectations from distinct filers."
+  (dolist (case '( ("N-CEN" "n-cen-lincoln-funds")
+                   ("N-CEN" "n-cen-yieldstreet")
+                   ("N-MFP3" "n-mfp3-jnl-series")
+                   ("N-MFP3" "n-mfp3-pace-select")
+                   ("NPORT-P" "nport-p-senior-debt")
+                   ("NPORT-P" "nport-p-american-century")))
+    (let ((slug (cadr case)))
+      (should (edgar-fund-report-p
+               (edgar-funds-test--report (car case) slug)))
+      (should (equal (edgar-funds-test--report-snapshot (car case) slug)
+                     (edgar-funds-test--golden slug))))))
+
 (ert-deftest edgar-fund-report-nport-holdings-match-golden-data ()
   "N-PORT-P accessors expose registrant totals and ordered holdings."
   (let* ((expected (edgar-funds-test--golden "nport-p-eagle"))

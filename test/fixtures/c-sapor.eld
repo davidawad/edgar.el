@@ -1,0 +1,1 @@
+(:accn "0002139881-26-000001" :form "C" :filed "2026-09-30" :cik 2139881 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/2139881/000213988126000001/primary_doc.xml" :company "Sapor Syrup Inc.")

@@ -1,0 +1,1 @@
+(:accn "0001307744-26-000007" :form "5" :filed "2026-09-29" :cik 1005210 :doc "f5_a1eus00000a5hcama3-live.xml" :url "https://www.sec.gov/Archives/edgar/data/1307744/000130774426000007/f5_a1eus00000a5hcama3-live.xml" :company "Suburban Propane Partners LP")

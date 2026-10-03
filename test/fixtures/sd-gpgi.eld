@@ -1,0 +1,1 @@
+(:accn "0000950142-26-001922" :form "SD" :filed "2026-06-30" :cik 1823144 :doc "eh260800829_sd.htm" :url "https://www.sec.gov/Archives/edgar/data/1823144/000095014226001922/eh260800829_sd.htm" :company "GPGI, Inc.")

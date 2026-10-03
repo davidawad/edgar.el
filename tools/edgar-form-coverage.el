@@ -113,6 +113,36 @@ Each value is a plist with `:volume' and `:raw-forms' entries."
      forms)
     (nreverse problems)))
 
+(defun edgar-coverage--l2-diversity-problems
+    (registry records fixture-directory)
+  "Return problems for L2 forms with fewer than three distinct filer CIKs.
+REGISTRY contains form metadata, RECORDS contains (FORM . SLUG) pairs, and
+FIXTURE-DIRECTORY contains their filing plists.  Historical fixtures from the
+same filer count once."
+  (let (problems)
+    (dolist (row (edgar-coverage--registry-rows registry))
+      (let ((form (car row))
+            (info (cdr row))
+            ciks)
+        (when (eq (plist-get info :level) 'L2)
+          (dolist
+              (record
+               (seq-filter
+                (lambda (record) (equal form (car record)))
+                records))
+            (let* ((slug (cdr record))
+                   (file (expand-file-name
+                          (concat slug ".eld") fixture-directory))
+                   (filing (edgar-coverage--read-object file))
+                   (cik (plist-get filing :cik)))
+              (when cik (cl-pushnew cik ciks :test #'equal))))
+          (when (< (length ciks) 3)
+            (push (format
+                   "%s: L2 diversity has %d distinct filer CIKs; 3 required"
+                   form (length ciks))
+                  problems)))))
+    (nreverse problems)))
+
 (defun edgar-coverage--fixture-records (registry fixture-directory)
   "Return (RECORDS . PROBLEMS) from FIXTURE-DIRECTORY for REGISTRY.
 Each record is a (BASE-FORM . SLUG) pair.  Metadata with `:fixture-kind'
@@ -304,7 +334,9 @@ and expect snapshot; L2 forms additionally require golden values."
      fixture-directory
      expect-directory
      golden-directory
-     field-golden-directory))))
+     field-golden-directory)
+    (edgar-coverage--l2-diversity-problems
+     registry records fixture-directory))))
 
 (defun edgar-coverage--total-volume (registry)
   "Return the total filing volume recorded in REGISTRY."

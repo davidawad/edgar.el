@@ -2,6 +2,7 @@
 
 (require 'ert)
 (require 'edgar-fixtures)
+(require 'edgar-forms)
 (require 'edgar-asset-backed)
 (require 'edgar-offerings)
 
@@ -56,25 +57,32 @@
 
 (ert-deftest edgar-l2-diversity-has-three-filers-for-audited-l2-forms
     ()
-  "Each L2 form audited here includes three distinct SEC filing CIKs."
-  (dolist (entry
-           '(("11-K" "11-k-ko" "11-k-ball" "11-k-campbell")
-             ("40-F" "40-f-shop" "40-f-suncor" "40-f-cibc")
-             ("6-K" "6-k-tsm" "6-k-sony" "6-k-ryojobaba")
-             ("ABS-EE"
-              "abs-ee-bank5-sample"
-              "abs-ee-deutsche"
-              "abs-ee-cd2017-cd3")
-             ("C-AR" "c-ar-qnetic" "c-ar-diaspora" "c-ar-kronos")))
-    (let ((ciks
-           (delete-dups
-            (mapcar
-             (lambda (slug)
-               (plist-get
-                (edgar-l2-diversity-test--metadata slug)
-                :cik))
-             (cdr entry)))))
-      (should (= (length ciks) 3)))))
+  "Every registered L2 form has fixtures from three distinct filing CIKs."
+  (let ((l2-forms nil)
+        (ciks-by-form (make-hash-table :test #'equal)))
+    (maphash
+     (lambda (form info)
+       (when (eq (plist-get info :level) 'L2)
+         (push form l2-forms)))
+     edgar-forms--registry)
+    (dolist
+        (file
+         (directory-files
+          (edgar-fixtures-path "fixtures/") t "\\.eld\\'"))
+      (let* ((slug (file-name-base file))
+             (filing (edgar-l2-diversity-test--metadata slug))
+             (form (replace-regexp-in-string
+                    "/A\\'" "" (plist-get filing :form))))
+        (when (member form l2-forms)
+          (cl-pushnew (plist-get filing :cik)
+                      (gethash form ciks-by-form)
+                      :test #'equal))))
+    (dolist (form l2-forms)
+      (let ((count (length (gethash form ciks-by-form))))
+        (unless (>= count 3)
+          (ert-fail
+           (format "%s has %d distinct filer CIKs; 3 required"
+                   form count)))))))
 
 (ert-deftest
     edgar-l2-diversity-g8-tender-offers-have-three-distinct-filers

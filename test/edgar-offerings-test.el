@@ -37,6 +37,12 @@
    (expand-file-name (concat "golden-fields/" slug ".eld")
                      edgar-offerings-test--directory)))
 
+(defun edgar-offerings-test--expect (slug)
+  "Read the compact expectation for SLUG."
+  (edgar-offerings-test--read
+   (expand-file-name (concat "expect/" slug ".eld")
+                     edgar-offerings-test--directory)))
+
 (defun edgar-offerings-test--read-fields (slug form parse)
   "Parse fixture SLUG with PARSE and return its typed fields."
   (let ((filing (edgar-offerings-test--filing slug form)))
@@ -238,15 +244,22 @@
     "c-ar-qnetic" "C" #'edgar-form-c-ar)))
 
 (ert-deftest edgar-form-c-accessors-match-golden-values ()
-  "Typed Form C accessors match a genuine SEC offering statement."
-  (let ((value
-         (edgar-offerings-test--read-fields
-          "c-airthium" "C" #'edgar-form-c)))
-    (should (edgar-form-c-p value))
-    (should
-     (equal
-      (edgar-offerings-test--form-c-fields value)
-      (edgar-offerings-test--golden "c-airthium")))))
+  "Typed accessors match filed values across three Form C filers."
+  (dolist (slug '("c-airthium" "c-sapor" "c-string-cubed"))
+    (let* ((filing (edgar-offerings-test--filing slug "C"))
+           (value
+            (edgar-offerings-test--read-fields
+             slug "C" #'edgar-form-c))
+           (fields (edgar-offerings-test--form-c-fields value))
+           (expect
+            (list :form "C"
+                  :accn (plist-get filing :accn)
+                  :issuer (edgar-form-c-issuer-name value)
+                  :offering-amount (edgar-form-c-offering-amount value)
+                  :deadline (edgar-form-c-deadline value))))
+      (should (edgar-form-c-p value))
+      (should (equal fields (edgar-offerings-test--golden slug)))
+      (should (equal expect (edgar-offerings-test--expect slug))))))
 
 (ert-deftest edgar-form-c-is-nil-for-other-forms ()
   "Form C projection does not accept a different form code."

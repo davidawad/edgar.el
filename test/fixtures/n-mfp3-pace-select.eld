@@ -1,0 +1,1 @@
+(:accn "0001410368-26-091096" :form "N-MFP3" :filed "2026-09-08" :cik 930007 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/930007/000141036826091096/primary_doc.xml" :company "PACE Select Advisors Trust")

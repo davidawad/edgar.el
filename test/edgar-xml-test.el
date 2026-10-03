@@ -347,6 +347,33 @@
       (edgar-xml-test--13f-notice-snapshot notice)
       (edgar-xml-test--13f-golden slug)))))
 
+(ert-deftest edgar-13f-notice-layouts-match-distinct-filer-goldens ()
+  "Parse two additional 13F-NT filer layouts against typed field goldens."
+  (dolist (slug '("13f-nt-rwc" "13f-nt-attucks"))
+    (let* ((metadata (edgar-xml-test--13f-metadata slug))
+           (fixture (edgar-xml-test--13f-fixture slug))
+           notice
+           snapshot)
+      (cl-letf (((symbol-function 'edgar--fetch)
+                 (lambda (url)
+                   (should
+                    (equal url
+                           (edgar-xml--raw-url
+                            (plist-get metadata :url))))
+                   fixture)))
+        (setq notice (edgar-13f-notice metadata)))
+      (setq snapshot (edgar-xml-test--13f-notice-snapshot notice))
+      (should (edgar-13f-notice-p notice))
+      (should (equal snapshot (edgar-xml-test--13f-golden slug)))
+      (should
+       (equal
+        (list :submission-type (plist-get snapshot :submission-type)
+              :report-period (plist-get snapshot :report-period)
+              :manager-name (plist-get snapshot :manager-name)
+              :other-manager-count (length (plist-get snapshot :other-managers))
+              :signature-name (plist-get (plist-get snapshot :signature) :name))
+        (edgar-xml-test--expect slug))))))
+
 (ert-deftest edgar-13f-fixtures-cover-three-distinct-filers ()
   "Keep the recorded 13F regression corpus at three distinct filer CIKs."
   (let ((ciks

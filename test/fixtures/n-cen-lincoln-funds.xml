@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ncen" xmlns:com="http://www.sec.gov/edgar/common">
+  <schemaVersion>X0505</schemaVersion>
+  <headerData>
+    <submissionType>N-CEN</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0002015799</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+        <fileNumber>811-23952</fileNumber>
+      </filer>
+      <flags>
+        <overrideInternetFlag>false</overrideInternetFlag>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+      </flags>
+      <investmentCompanyType>N-1A</investmentCompanyType>
+    </filerInfo>
+    <seriesClass>
+      <reportSeriesClass>
+        <rptSeriesClassInfo>
+          <seriesId>S000085533</seriesId>
+          <classInfo>
+            <classId>C000250824</classId>
+          </classInfo>
+          <classInfo>
+            <classId>C000250823</classId>
+          </classInfo>
+        </rptSeriesClassInfo>
+        <rptSeriesClassInfo>
+          <seriesId>S000085534</seriesId>
+          <classInfo>
+            <classId>C000250826</classId>
+          </classInfo>
+          <classInfo>
+            <classId>C000250825</classId>
+          </classInfo>
+        </rptSeriesClassInfo>
+      </reportSeriesClass>
+    </seriesClass>
+  </headerData>
+  <formData>
+    <generalInfo reportEndingPeriod="2026-07-31" isReportPeriodLt12="N"/>
+    <registrantInfo>
+      <registrantFullName>Lincoln Funds Trust</registrantFullName>
+      <investmentCompFileNo>811-23952</investmentCompFileNo>
+      <registrantCik>0002015799</registrantCik>
+      <registrantLei>25490047JKRSM3ZCKX41</registrantLei>
+      <registrantstreet1>1301 S. Harrison Street</registrantstreet1>
+      <registrantcity>Fort Wayne</registrantcity>
+      <registrantzipCode>46802</registrantzipCode>
+      <registrantstate>US-IN</registrantstate>
+      <registrantcountry>US</registrantcountry>
+      <registrantphoneNumber>484-583-6302</registrantphoneNumber>
+      <websites>
+        <website webpage="www.lincolnfinancial.com/lft"/>
+      </websites>
+      <locationBooksRecords>
+        <locationBooksRecord>
+          <officeName>State Street Bank and Trust Company</officeName>
+          <officeAddress1>1 Congress Street</officeAddress1>
+          <officeAddress2>Suite 1</officeAddress2>
+          <officeCity>Boston</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-MA"/>
+          <officeRecordsZipCode>02114</officeRecordsZipCode>
+          <officePhone>617-786-3000</officePhone>
+          <booksRecordsDesc>Custody and Accounting Records.</booksRecordsDesc>
+        </locationBooksRecord>
+      </locationBooksRecords>
+      <isRegistrantFirstFiling>N</isRegistrantFirstFiling>
+      <isRegistrantLastFiling>N</isRegistrantLastFiling>
+      <registrantFamilyInvComp isRegistrantFamilyInvComp="Y" familyInvCompFullName="LINCOLNTRS"/>
+      <registrantClassificationType>N-1A</registrantClassificationType>
+      <totalSeries>2</totalSeries>
+      <isSecuritiesActRegistration>Y</isSecuritiesActRegistration>
+      <directors>
+        <director>
+          <directorName>John G. Morriss</directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>Y</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="811-08090"/>
+            <fileNumberInfo fileNumber="811-24065"/>
+            <fileNumberInfo fileNumber="811-24066"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>Joseph P. LaRocque</directorName>
+          <crdNumber>004363277</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="811-24065"/>
+            <fileNumberInfo fileNumber="811-24066"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>Thomas A. Leonard</directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="811-22483"/>
+            <fileNumberInfo fileNumber="811-24065"/>
+            <fileNumberInfo fileNumber="811-24066"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>Thomas P. Sholes</directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="811-24065"/>
+            <fileNumberInfo fileNumber="811-24066"/>
+          </fileNumbers>
+        </director>
+      </directors>
+      <chiefComplianceOfficers>
+        <chiefComplianceOfficer>
+          <ccoName>John A. Weston</ccoName>
+          <crdNumber>001244146</crdNumber>
+          <ccoStreet1>44</ccoStreet1>
+          <ccoStreet2>Thackeray Rd</ccoStreet2>
+          <ccoCity>Concord</ccoCity>
+          <ccoStateCountry ccoCountry="US" ccoState="US-NH"/>
+          <ccoZipCode>03301</ccoZipCode>
+          <ccoPhone>XXXXXX</ccoPhone>
+          <isCcoChangedSinceLastFiling>N</isCcoChangedSinceLastFiling>
+          <ccoEmployers>
+            <ccoEmployer ccoEmployerName="The Lincoln National Life Insurance Company" ccoEmployerId="35-0472300"/>
+          </ccoEmployers>
+        </chiefComplianceOfficer>
+      </chiefComplianceOfficers>
+      <isRegistrantSubmittedMatter>N</isRegistrantSubmittedMatter>
+      <isPreviousLegalProceeding>N</isPreviousLegalProceeding>
+      <isPreviousProceedingTerminated>N</isPreviousProceedingTerminated>
+      <isClaimFiled>N</isClaimFiled>
+      <coveredByInsurancePolicy isCoveredByInsurancePolicy="Y" isClaimFiledDuringPeriod="N"/>
+      <isFinancialSupportDuringPeriod>N</isFinancialSupportDuringPeriod>
+      <isExemptionFromAct>N</isExemptionFromAct>
+      <principalUnderwriters>
+        <principalUnderwriter>
+          <principalUnderwriterName>Lincoln Financial Distributors, Inc.</principalUnderwriterName>
+          <principalUnderwriterFileNumber>8-13431</principalUnderwriterFileNumber>
+          <principalUnderwriterCrdNumber>000000145</principalUnderwriterCrdNumber>
+          <principalUnderWriterStateCountry principalUnderWriterCountry="US" principalUnderWriterState="US-PA"/>
+          <isPrincipalUnderwriterAffiliatedWithRegistrant>Y</isPrincipalUnderwriterAffiliatedWithRegistrant>
+        </principalUnderwriter>
+      </principalUnderwriters>
+      <isUnderwriterHiredOrTerminated>N</isUnderwriterHiredOrTerminated>
+      <publicAccountants>
+        <publicAccountant>
+          <publicAccountantName>Ernst &amp; Young LLP</publicAccountantName>
+          <pcaobNumber>42</pcaobNumber>
+          <publicAccountantLei>254900Y3CIB1KF938C31</publicAccountantLei>
+          <publicAccountantStateCountry publicAccountantCountry="US" publicAccountantState="US-PA"/>
+        </publicAccountant>
+      </publicAccountants>
+      <isPublicAccountantChanged>N</isPublicAccountantChanged>
+      <isMaterialWeakness>N</isMaterialWeakness>
+      <isOpinionOffered>N</isOpinionOffered>
+      <isMaterialChange>N</isMaterialChange>
+      <isAccountingPrincipleChange>N</isAccountingPrincipleChange>
+      <isPaymentErrorInNetAssetValue>N</isPaymentErrorInNetAssetValue>
+      <paymentDividendSeries isPaymentDividend="Y">
+        <seriesInfo seriesName="N/A" seriesId="N/A"/>
+      </paymentDividendSeries>
+    </registrantInfo>
+    <managementInvestmentQuestionSeriesInfo>
+      <managementInvestmentQuestion>
+        <mgmtInvFundName>Lincoln Inflation Plus Fund</mgmtInvFundName>
+        <mgmtInvSeriesId>S000085533</mgmtInvSeriesId>
+        <mgmtInvLei>2549004QBLWWTIIO1B82</mgmtInvLei>
+        <isFirstFilingByFund>N</isFirstFilingByFund>
+        <numAuthorizedClass>2</numAuthorizedClass>
+        <numAddedClass>0</numAddedClass>
+        <numTerminatedClass>0</numTerminatedClass>
+        <sharesOutstandings>
+          <sharesOutstanding sharesOutstandingClassName="Class A" sharesOutstandingClassId="C000250824" sharesOutstandingTickerSymbol="LFTAX"/>
+          <sharesOutstanding sharesOutstandingClassName="Class I" sharesOutstandingClassId="C000250823" sharesOutstandingTickerSymbol="LFTEX"/>
+        </sharesOutstandings>
+        <fundType>N/A</fundType>
+        <isNonDiversifiedCompany>Y</isNonDiversifiedCompany>
+        <foreignInvestments isForeignSubsidiary="Y">
+          <foreignInvestment foreignSubsidiaryName="Lincoln Inflation Plus Fund Cayman Ltd." foreignSubsidiaryLei="254900HL83JA6BXGDL23"/>
+        </foreignInvestments>
+        <isFundSecuritiesLending>N</isFundSecuritiesLending>
+        <didFundLendSecurities>N</didFundLendSecurities>
+        <paymentToAgentManagerType>N/A</paymentToAgentManagerType>
+        <avgPortfolioSecuritiesValue>N/A</avgPortfolioSecuritiesValue>
+        <netIncomeSecuritiesLending>N/A</netIncomeSecuritiesLending>
+        <relyOnRuleTypes>
+          <relyOnRuleType>Rule 12d1-4 (17 CFR 270.12d1-4)</relyOnRuleType>
+          <relyOnRuleType>Rule 18f-4 (17 CFR 270.18f-4)</relyOnRuleType>
+          <relyOnRuleType>Rule 32a-4 (17 CFR 270.32a-4)</relyOnRuleType>
+        </relyOnRuleTypes>
+        <isExpenseLimitationInPlace>Y</isExpenseLimitationInPlace>
+        <isExpenseReducedOrWaived>Y</isExpenseReducedOrWaived>
+        <isFeesWaivedRecoupable>Y</isFeesWaivedRecoupable>
+        <isExpenseWaivedRecoupable>N</isExpenseWaivedRecoupable>
+        <investmentAdvisers>
+          <investmentAdviser>
+            <investmentAdviserName>Lincoln Financial Investments Corporation</investmentAdviserName>
+            <investmentAdviserFileNo>801-23411</investmentAdviserFileNo>
+            <investmentAdviserCrdNo>000108881</investmentAdviserCrdNo>
+            <investmentAdviserLei>54930048QA2LAH0R2L49</investmentAdviserLei>
+            <investmentAdviserStateCountry investmentAdviserState="US-NH" investmentAdviserCountry="US"/>
+            <isInvestmentAdviserHired>N</isInvestmentAdviserHired>
+          </investmentAdviser>
+        </investmentAdvisers>
+        <subAdvisers>
+          <subAdviser>
+            <subAdviserName>Schroder Investment Management North America Inc.</subAdviserName>
+            <subAdviserFileNo>801-15834</subAdviserFileNo>
+            <subAdviserCrdNo>000105820</subAdviserCrdNo>
+            <subAdviserLei>5493003P29LAPF3HFV10</subAdviserLei>
+            <isSubAdviserAffiliated>N</isSubAdviserAffiliated>
+            <subAdviserStateCountry subAdviserState="US-NY" subAdviserCountry="US"/>
+            <isSubAdviserHired>N</isSubAdviserHired>
+          </subAdviser>
+        </subAdvisers>
+        <transferAgents>
+          <transferAgent>
+            <transferAgentName>FIS Investor Services LLC</transferAgentName>
+            <transferAgentFileNo>84-06522</transferAgentFileNo>
+            <transferAgentLei>254900Z6DOV5MWBF2023</transferAgentLei>
+            <transferAgentStateCountry transferAgentState="US-OH" transferAgentCountry="US"/>
+            <isTransferAgentAffiliated>N</isTransferAgentAffiliated>
+            <isTransferAgentSubAgent>N</isTransferAgentSubAgent>
+          </transferAgent>
+        </transferAgents>
+        <isTransferAgentHiredOrTerminated>N</isTransferAgentHiredOrTerminated>
+        <pricingServices>
+          <pricingService>
+            <pricingServiceName>Bank of America Merrill Lynch Securities Inc</pricingServiceName>
+            <pricingServiceOther>80-2456156</pricingServiceOther>
+            <pricingServiceIdNumberDesc>Tax ID</pricingServiceIdNumberDesc>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>Bloomberg L.P.</pricingServiceName>
+            <pricingServiceLei>549300B56MD0ZC402L06</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>CIBC World Markets Corp.</pricingServiceName>
+            <pricingServiceLei>549300445CON3DBMU275</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>ICE Data Pricing &amp; Reference Data, LLC</pricingServiceName>
+            <pricingServiceLei>5493000NQ9LYLDBCTL34</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>London Stock Exchange Group PLC</pricingServiceName>
+            <pricingServiceLei>213800QAUUUP6I445N30</pricingServiceLei>
+            <pricingServiceCountry>GB</pricingServiceCountry>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>PricingDirect Inc.</pricingServiceName>
+            <pricingServiceLei>549300WIC0TOJ7N7GD54</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>S&amp;P Global Inc.</pricingServiceName>
+            <pricingServiceLei>Y6X4K52KMJMZE7I7MY94</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+        </pricingServices>
+        <isPricingServiceHiredOrTerminated>N</isPricingServiceHiredOrTerminated>
+        <custodians>
+          <custodian>
+            <custodianName>BANCO CITI MEXICO S.A. INSTITUCION DE BANCA MULTIPLE, GRUPO FINANCIERO CITI MEXICO</custodianName>
+            <custodianLei>529900H31AYI6WA1J534</custodianLei>
+            <custodianCountry>MX</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>BNP Paribas (Athens, Attica, GR, Branch)</custodianName>
+            <custodianLei>R0MUWSFPU8MPRO8K5P83</custodianLei>
+            <custodianCountry>GR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Banco de Chile</custodianName>
+            <custodianLei>8B4EZFY8IHJC44TT2K84</custodianLei>
+            <custodianCountry>CL</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Bank Handlowy w Warszawie Spolka Akcyjna</custodianName>
+            <custodianLei>XLEZHWWOI4HFQDGL4793</custodianLei>
+            <custodianCountry>PL</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Bank Hapoalim B.M.</custodianName>
+            <custodianLei>B6ARUI4946ST4S7WOU88</custodianLei>
+            <custodianCountry>IL</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank Europe Public Limited Company</custodianName>
+            <custodianLei>N1FBEDJ5J41VKZLO2475</custodianLei>
+            <custodianCountry>IE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank Europe Public Limited Company (Bucharest, Bucharest, RO, Branch)</custodianName>
+            <custodianLei>N1FBEDJ5J41VKZLO2475</custodianLei>
+            <custodianCountry>RO</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank Europe Public Limited Company (Budapest, HU, Branch)</custodianName>
+            <custodianLei>N1FBEDJ5J41VKZLO2475</custodianLei>
+            <custodianCountry>HU</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank Maghreb S.A.</custodianName>
+            <custodianLei>5493003FVWLMBFTISI11</custodianLei>
+            <custodianCountry>MA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank del Peru S.A.</custodianName>
+            <custodianLei>MYTK5NHHP1G8TVFGT193</custodianLei>
+            <custodianCountry>PE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank, Anonim Sirketi</custodianName>
+            <custodianLei>CWZ8NZDH5SKY12Q4US31</custodianLei>
+            <custodianCountry>TR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank, National Association (Ciudad Autonoma de Buenos Aires, Ciudad Autonoma de Buenos Aires, AR, Branch)</custodianName>
+            <custodianLei>579100KKDGKCFFKKF005</custodianLei>
+            <custodianCountry>AR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank, National Association (Sao Paulo, Sao Paulo, BR, Branch)</custodianName>
+            <custodianLei>E57ODZWZ7FF32TWEFA76</custodianLei>
+            <custodianCountry>BR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Citibank, National Association (Singapore, SG, Branch)</custodianName>
+            <custodianLei>E57ODZWZ7FF32TWEFA76</custodianLei>
+            <custodianCountry>SG</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Cititrust Colombia S A Sociedad Fiduciaria</custodianName>
+            <custodianLei>549300242J3IJCOSGI49</custodianLei>
+            <custodianCountry>CO</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Deutsche Bank (Malaysia) Berhad</custodianName>
+            <custodianLei>529900DLWFR8HK7DR278</custodianLei>
+            <custodianCountry>MY</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Deutsche Bank Aktiengesellschaft (Amsterdam, Noord Holland, NL, Branch)</custodianName>
+            <custodianLei>7LTWFZYICNSX8D621K86</custodianLei>
+            <custodianCountry>NL</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Deutsche Bank Aktiengesellschaft (Jakarta, Jakarta, ID, Branch)</custodianName>
+            <custodianLei>7LTWFZYICNSX8D621K86</custodianLei>
+            <custodianCountry>ID</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Deutsche Bank Aktiengesellschaft (Makati City, Metro Manila, PH, Branch)</custodianName>
+            <custodianLei>7LTWFZYICNSX8D621K86</custodianLei>
+            <custodianCountry>PH</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Euroclear Bank</custodianName>
+            <custodianLei>549300OZ46BRLZ8Y6F65</custodianLei>
+            <custodianCountry>BE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign securities depository - rule 17f-7 (17 CFR 270.17f-7)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>First Abu Dhabi Bank MISR S.A.E.</custodianName>
+            <custodianLei>549300FRMQH3ELEXQI94</custodianLei>
+            <custodianCountry>EG</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>First Abu Dhabi Bank P.J.S.C.</custodianName>
+            <custodianLei>2138002Y3WMK6RZS8H90</custodianLei>
+            <custodianCountry>AE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>First Abu Dhabi Bank P.J.S.C. (Kuwait City, Al Asimah, KW, Branch)</custodianName>
+            <custodianLei>2138002Y3WMK6RZS8H90</custodianLei>
+            <custodianCountry>KW</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>FirstRand Bank Limited</custodianName>
+            <custodianLei>ZAYQDKTCATIXF9OQY690</custodianLei>
+            <custodianCountry>ZA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Intesa Sanpaolo S.p.A.</custodianName>
+            <custodianLei>2W8N8UU78PMDQKZENC08</custodianLei>
+            <custodianCountry>IT</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Mizuho Bank, Ltd. (Minato ku, Tokyo, JP, Branch)</custodianName>
+            <custodianLei>RB0PEZSDGCO3JS6CEU02</custodianLei>
+            <custodianCountry>JP</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Ngan Hang Trach Nhiem Huu Han Mot Thanh Vien HSBC (Viet Nam)</custodianName>
+            <custodianLei>213800H95OG9OHRT4Y78</custodianLei>
+            <custodianCountry>VN</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Royal Bank of Canada</custodianName>
+            <custodianLei>ES7IP3U3RHIGC71XBU11</custodianLei>
+            <custodianCountry>CA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Skandinaviska Enskilda Banken AB (Copenhagen, Hovedstaden, DK, Branch)</custodianName>
+            <custodianLei>F3JS33DEI6XQ4ZBPTN86</custodianLei>
+            <custodianCountry>DK</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Skandinaviska Enskilda Banken AB (Helsinki, Uusimaa, FI, Branch)</custodianName>
+            <custodianLei>F3JS33DEI6XQ4ZBPTN86</custodianLei>
+            <custodianCountry>FI</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Skandinaviska Enskilda Banken AB (Oslo, Oslo, NO, Branch)</custodianName>
+            <custodianLei>F3JS33DEI6XQ4ZBPTN86</custodianLei>
+            <custodianCountry>NO</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Stanbic IBTC Bank Ltd</custodianName>
+            <custodianLei>549300NIVXF92ZIOVW61</custodianLei>
+            <custodianCountry>NG</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Standard Chartered Bank (Thai) Public Company Limited</custodianName>
+            <custodianLei>549300O1LQYCQ7G1IM57</custodianLei>
+            <custodianCountry>TH</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Standard Chartered Bank Ghana PLC</custodianName>
+            <custodianLei>549300WFGKTC3MGDCX95</custodianLei>
+            <custodianCountry>GH</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>State Street Bank International GmbH</custodianName>
+            <custodianLei>ZMHGNT7ZPKZ3UFZ8EO46</custodianLei>
+            <custodianCountry>DE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>State Street Bank and Trust Company</custodianName>
+            <custodianLei>571474TGEMMWANRLN572</custodianLei>
+            <custodianStateCountry custodianState="US-MA" custodianCountry="US"/>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>N</isSubCustodian>
+            <custodyType>Bank - section 17(f)(1) (15 U.S.C. 80a-17(f)(1))</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>State Street Bank and Trust Company (Edinburgh, GB, Branch)</custodianName>
+            <custodianLei>571474TGEMMWANRLN572</custodianLei>
+            <custodianCountry>GB</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>State Street Trust Company Canada</custodianName>
+            <custodianLei>549300L71XG2CTQ2V827</custodianLei>
+            <custodianCountry>CA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>The Hongkong and Shanghai Banking Corporation Limited</custodianName>
+            <custodianLei>2HI3YI5320L3RW6NJ957</custodianLei>
+            <custodianCountry>HK</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>The Hongkong and Shanghai Banking Corporation Limited (Auckland, Auckland, NZ, Branch)</custodianName>
+            <custodianLei>2HI3YI5320L3RW6NJ957</custodianLei>
+            <custodianCountry>NZ</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>The Hongkong and Shanghai Banking Corporation Limited (Colombo, Western, LK, Branch)</custodianName>
+            <custodianLei>2HI3YI5320L3RW6NJ957</custodianLei>
+            <custodianCountry>LK</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>The Hongkong and Shanghai Banking Corporation Limited (Jung-gu, Seoul, KR, Branch)</custodianName>
+            <custodianLei>2HI3YI5320L3RW6NJ957</custodianLei>
+            <custodianCountry>KR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>The Hongkong and Shanghai Banking Corporation Limited (Mumbai, Maharashtra, IN, Branch)</custodianName>
+            <custodianLei>2HI3YI5320L3RW6NJ957</custodianLei>
+            <custodianCountry>IN</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>The Hongkong and Shanghai Banking Corporation Limited (Sydney, NSW, AU, Branch)</custodianName>
+            <custodianLei>2HI3YI5320L3RW6NJ957</custodianLei>
+            <custodianCountry>AU</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UBS Switzerland AG</custodianName>
+            <custodianLei>549300WOIFUSNYH0FL22</custodianLei>
+            <custodianCountry>CH</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UniCredit Bank Austria AG</custodianName>
+            <custodianLei>D1HEB8VEU6D9M8ZUXG17</custodianLei>
+            <custodianCountry>AT</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UniCredit Bank Czech Republic and Slovakia, a.s.</custodianName>
+            <custodianLei>KR6LSKV3BTSJRD41IF75</custodianLei>
+            <custodianCountry>CZ</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UniCredit Bank Srbija a.d. Beograd</custodianName>
+            <custodianLei>52990001O0THU00TYK59</custodianLei>
+            <custodianCountry>RS</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+        </custodians>
+        <isCustodianHiredOrTerminated>Y</isCustodianHiredOrTerminated>
+        <shareholderServicingAgents>
+          <shareholderServicingAgent>
+            <shareholderServiceAgentName>FIS Investor Services LLC</shareholderServiceAgentName>
+            <shareholderServiceAgentLei>254900Z6DOV5MWBF2023</shareholderServiceAgentLei>
+            <shareholderServiceAgentStateCountry shareholderServiceAgentState="US-OH" shareholderServiceAgentCountry="US"/>
+            <isShareholderServiceAgentAffiliated>N</isShareholderServiceAgentAffiliated>
+            <isShareholderServiceAgentSubshare>N</isShareholderServiceAgentSubshare>
+          </shareholderServicingAgent>
+        </shareholderServicingAgents>
+        <isShareholderServiceHiredTerminated>N</isShareholderServiceHiredTerminated>
+        <admins>
+          <admin>
+            <adminName>State Street Bank and Trust Company</adminName>
+            <adminLei>571474TGEMMWANRLN572</adminLei>
+            <adminStateCountry adminState="US-MA" adminCountry="US"/>
+            <isAdminAffiliated>N</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+          <admin>
+            <adminName>The Lincoln National Life Insurance Company</adminName>
+            <adminLei>NJ1Z0LLF4RLDWG2WCN80</adminLei>
+            <adminStateCountry adminState="US-IN" adminCountry="US"/>
+            <isAdminAffiliated>Y</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+        </admins>
+        <isAdminHiredOrTerminated>N</isAdminHiredOrTerminated>
+        <brokerDealers>
+          <brokerDealer>
+            <brokerDealerName>Lincoln Financial Distributors, Inc.</brokerDealerName>
+            <brokerDealerFileNo>8-13431</brokerDealerFileNo>
+            <brokerDealerCrdNo>000000145</brokerDealerCrdNo>
+            <brokerDealerStateCountry brokerDealerState="US-PA" brokerDealerCountry="US"/>
+            <brokerDealerCommission>0.00000000</brokerDealerCommission>
+          </brokerDealer>
+        </brokerDealers>
+        <brokers>
+          <broker>
+            <brokerName>J.P. Morgan Securities LLC</brokerName>
+            <brokerFileNo>8-35008</brokerFileNo>
+            <brokerCrdNo>000000079</brokerCrdNo>
+            <brokerLei>ZBUT11V806EZRVTWT807</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>276.70000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Goldman Sachs &amp; Co. LLC</brokerName>
+            <brokerFileNo>8-129</brokerFileNo>
+            <brokerCrdNo>000000361</brokerCrdNo>
+            <brokerLei>FOR8UP27PHTHYVLBNG30</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>301.64000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Jefferies LLC</brokerName>
+            <brokerFileNo>8-15074</brokerFileNo>
+            <brokerCrdNo>000002347</brokerCrdNo>
+            <brokerLei>58PU97L1C0WSRCWADL48</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>106.45000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Nomura Securities International, Inc.</brokerName>
+            <brokerFileNo>8-15255</brokerFileNo>
+            <brokerCrdNo>000004297</brokerCrdNo>
+            <brokerLei>OXTKY6Q8X53C9ILVV871</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>214.32000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>UBS Securities LLC</brokerName>
+            <brokerFileNo>8-22651</brokerFileNo>
+            <brokerCrdNo>000007654</brokerCrdNo>
+            <brokerLei>T6FIZBDPKLYJKFCRVK44</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>558.39000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Morgan Stanley &amp; Co. LLC</brokerName>
+            <brokerFileNo>8-15869</brokerFileNo>
+            <brokerCrdNo>000008209</brokerCrdNo>
+            <brokerLei>9R7GPTSO7KV3UQJZQ078</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>3401.67000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>BMO Capital Markets Corp.</brokerName>
+            <brokerFileNo>8-34344</brokerFileNo>
+            <brokerCrdNo>000016686</brokerCrdNo>
+            <brokerLei>RUC0QBLBRPRCU4W1NE59</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>131.92000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>TD Securities (USA) LLC</brokerName>
+            <brokerFileNo>8-36747</brokerFileNo>
+            <brokerCrdNo>000018476</brokerCrdNo>
+            <brokerLei>SUVUFHICNZMP2WKHG940</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>253.17000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Virtu Americas LLC</brokerName>
+            <brokerFileNo>8-68193</brokerFileNo>
+            <brokerCrdNo>000149823</brokerCrdNo>
+            <brokerLei>549300RA02N3BNSWBV74</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>99.63000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>BofA Securities, Inc.</brokerName>
+            <brokerFileNo>8-69787</brokerFileNo>
+            <brokerCrdNo>000283942</brokerCrdNo>
+            <brokerLei>549300HN4UKV1E2R3U73</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>201.58000000</grossCommission>
+          </broker>
+        </brokers>
+        <aggregateCommission>5624.94000000</aggregateCommission>
+        <principalTransactions>
+          <principalTransaction>
+            <principalName>J.P. Morgan Securities LLC</principalName>
+            <principalFileNo>8-35008</principalFileNo>
+            <principalCrdNo>000000079</principalCrdNo>
+            <principalLei>ZBUT11V806EZRVTWT807</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>10434420.71000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Goldman Sachs &amp; Co. LLC</principalName>
+            <principalFileNo>8-129</principalFileNo>
+            <principalCrdNo>000000361</principalCrdNo>
+            <principalLei>FOR8UP27PHTHYVLBNG30</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>3728332.52000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Deutsche Bank Securities Inc.</principalName>
+            <principalFileNo>8-17822</principalFileNo>
+            <principalCrdNo>000002525</principalCrdNo>
+            <principalLei>9J6MBOOO7BECTDTUZW19</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>1951251.73000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Nomura Securities International, Inc.</principalName>
+            <principalFileNo>8-15255</principalFileNo>
+            <principalCrdNo>000004297</principalCrdNo>
+            <principalLei>OXTKY6Q8X53C9ILVV871</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>3016786.84000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Citigroup Global Markets Inc.</principalName>
+            <principalFileNo>8-8177</principalFileNo>
+            <principalCrdNo>000007059</principalCrdNo>
+            <principalLei>MBNUM2BPBDO7JBLYG310</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>3545839.86000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Morgan Stanley &amp; Co. LLC</principalName>
+            <principalFileNo>8-15869</principalFileNo>
+            <principalCrdNo>000008209</principalCrdNo>
+            <principalLei>9R7GPTSO7KV3UQJZQ078</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>2515601.74000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>BMO Capital Markets Corp.</principalName>
+            <principalFileNo>8-34344</principalFileNo>
+            <principalCrdNo>000016686</principalCrdNo>
+            <principalLei>RUC0QBLBRPRCU4W1NE59</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>9402988.50000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>RBC Capital Markets, LLC</principalName>
+            <principalFileNo>8-45411</principalFileNo>
+            <principalCrdNo>000031194</principalCrdNo>
+            <principalLei>549300LCO2FLSSVFFR64</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>1800122.03000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Citadel Securities LLC</principalName>
+            <principalFileNo>8-53574</principalFileNo>
+            <principalCrdNo>000116797</principalCrdNo>
+            <principalLei>12UUJYTN7D3SW8KCSG25</principalLei>
+            <principalStateCountry principalState="US-FL" principalCountry="US"/>
+            <principalTotalPurchaseSale>4945876.97000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>BofA Securities, Inc.</principalName>
+            <principalFileNo>8-69787</principalFileNo>
+            <principalCrdNo>000283942</principalCrdNo>
+            <principalLei>549300HN4UKV1E2R3U73</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>3656161.33000000</principalTotalPurchaseSale>
+          </principalTransaction>
+        </principalTransactions>
+        <principalAggregatePurchase>58592919.01000000</principalAggregatePurchase>
+        <isBrokerageResearchPayment>N</isBrokerageResearchPayment>
+        <mnthlyAvgNetAssets>11951094.67538462</mnthlyAvgNetAssets>
+        <hasLineOfCredit>N</hasLineOfCredit>
+        <isInterfundLending>N</isInterfundLending>
+        <isInterfundBorrowing>N</isInterfundBorrowing>
+        <isSwingPricing>N</isSwingPricing>
+        <liquidityClassifications>
+          <liquidityClassificationService>
+            <liquidityName>State Street Bank and Trust Company</liquidityName>
+            <liquidityLei>571474TGEMMWANRLN572</liquidityLei>
+            <liquidityStateCountry liquidityCountry="US" liquidityState="US-MA"/>
+            <isAffiliatedPerson>N</isAffiliatedPerson>
+            <assetClassType>Debt</assetClassType>
+            <assetClassType>Derivative-commodity</assetClassType>
+            <assetClassType>Derivative-foreign exchange</assetClassType>
+            <assetClassType>Equity-common</assetClassType>
+            <assetClassType>Short-term investment vehicle</assetClassType>
+          </liquidityClassificationService>
+        </liquidityClassifications>
+        <isLiquidityHiredTerminated>N</isLiquidityHiredTerminated>
+      </managementInvestmentQuestion>
+      <managementInvestmentQuestion>
+        <mgmtInvFundName>Lincoln U.S. Equity Income Maximizer Fund</mgmtInvFundName>
+        <mgmtInvSeriesId>S000085534</mgmtInvSeriesId>
+        <mgmtInvLei>254900WEXI6X53HIPE65</mgmtInvLei>
+        <isFirstFilingByFund>N</isFirstFilingByFund>
+        <numAuthorizedClass>2</numAuthorizedClass>
+        <numAddedClass>0</numAddedClass>
+        <numTerminatedClass>0</numTerminatedClass>
+        <sharesOutstandings>
+          <sharesOutstanding sharesOutstandingClassName="Class A" sharesOutstandingClassId="C000250826" sharesOutstandingTickerSymbol="LFTOX"/>
+          <sharesOutstanding sharesOutstandingClassName="Class I" sharesOutstandingClassId="C000250825" sharesOutstandingTickerSymbol="LFTPX"/>
+        </sharesOutstandings>
+        <fundType>N/A</fundType>
+        <isNonDiversifiedCompany>Y</isNonDiversifiedCompany>
+        <isForeignSubsidiary>N</isForeignSubsidiary>
+        <isFundSecuritiesLending>N</isFundSecuritiesLending>
+        <didFundLendSecurities>N</didFundLendSecurities>
+        <paymentToAgentManagerType>N/A</paymentToAgentManagerType>
+        <avgPortfolioSecuritiesValue>N/A</avgPortfolioSecuritiesValue>
+        <netIncomeSecuritiesLending>N/A</netIncomeSecuritiesLending>
+        <relyOnRuleTypes>
+          <relyOnRuleType>Rule 18f-4 (17 CFR 270.18f-4)</relyOnRuleType>
+          <relyOnRuleType>Rule 32a-4 (17 CFR 270.32a-4)</relyOnRuleType>
+        </relyOnRuleTypes>
+        <isExpenseLimitationInPlace>Y</isExpenseLimitationInPlace>
+        <isExpenseReducedOrWaived>Y</isExpenseReducedOrWaived>
+        <isFeesWaivedRecoupable>Y</isFeesWaivedRecoupable>
+        <isExpenseWaivedRecoupable>N</isExpenseWaivedRecoupable>
+        <investmentAdvisers>
+          <investmentAdviser>
+            <investmentAdviserName>Lincoln Financial Investments Corporation</investmentAdviserName>
+            <investmentAdviserFileNo>801-23411</investmentAdviserFileNo>
+            <investmentAdviserCrdNo>000108881</investmentAdviserCrdNo>
+            <investmentAdviserLei>54930048QA2LAH0R2L49</investmentAdviserLei>
+            <investmentAdviserStateCountry investmentAdviserState="US-NH" investmentAdviserCountry="US"/>
+            <isInvestmentAdviserHired>N</isInvestmentAdviserHired>
+          </investmentAdviser>
+        </investmentAdvisers>
+        <subAdvisers>
+          <subAdviser>
+            <subAdviserName>Schroder Investment Management North America Inc.</subAdviserName>
+            <subAdviserFileNo>801-15834</subAdviserFileNo>
+            <subAdviserCrdNo>000105820</subAdviserCrdNo>
+            <subAdviserLei>5493003P29LAPF3HFV10</subAdviserLei>
+            <isSubAdviserAffiliated>N</isSubAdviserAffiliated>
+            <subAdviserStateCountry subAdviserState="US-NY" subAdviserCountry="US"/>
+            <isSubAdviserHired>N</isSubAdviserHired>
+          </subAdviser>
+        </subAdvisers>
+        <transferAgents>
+          <transferAgent>
+            <transferAgentName>FIS Investor Services LLC</transferAgentName>
+            <transferAgentFileNo>84-06522</transferAgentFileNo>
+            <transferAgentLei>254900Z6DOV5MWBF2023</transferAgentLei>
+            <transferAgentStateCountry transferAgentState="US-OH" transferAgentCountry="US"/>
+            <isTransferAgentAffiliated>N</isTransferAgentAffiliated>
+            <isTransferAgentSubAgent>N</isTransferAgentSubAgent>
+          </transferAgent>
+        </transferAgents>
+        <isTransferAgentHiredOrTerminated>N</isTransferAgentHiredOrTerminated>
+        <pricingServices>
+          <pricingService>
+            <pricingServiceName>Bank of America Merrill Lynch Securities Inc</pricingServiceName>
+            <pricingServiceOther>80-2456156</pricingServiceOther>
+            <pricingServiceIdNumberDesc>Tax ID</pricingServiceIdNumberDesc>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>Bloomberg L.P.</pricingServiceName>
+            <pricingServiceLei>549300B56MD0ZC402L06</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>CIBC World Markets Corp.</pricingServiceName>
+            <pricingServiceLei>549300445CON3DBMU275</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>ICE Data Pricing &amp; Reference Data, LLC</pricingServiceName>
+            <pricingServiceLei>5493000NQ9LYLDBCTL34</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>London Stock Exchange Group PLC</pricingServiceName>
+            <pricingServiceLei>213800QAUUUP6I445N30</pricingServiceLei>
+            <pricingServiceCountry>GB</pricingServiceCountry>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>PricingDirect Inc.</pricingServiceName>
+            <pricingServiceLei>549300WIC0TOJ7N7GD54</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>S&amp;P Global Inc.</pricingServiceName>
+            <pricingServiceLei>Y6X4K52KMJMZE7I7MY94</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-NY" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+        </pricingServices>
+        <isPricingServiceHiredOrTerminated>N</isPricingServiceHiredOrTerminated>
+        <custodians>
+          <custodian>
+            <custodianName>Euroclear Bank</custodianName>
+            <custodianLei>549300OZ46BRLZ8Y6F65</custodianLei>
+            <custodianCountry>BE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign securities depository - rule 17f-7 (17 CFR 270.17f-7)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>State Street Bank and Trust Company</custodianName>
+            <custodianLei>571474TGEMMWANRLN572</custodianLei>
+            <custodianStateCountry custodianState="US-MA" custodianCountry="US"/>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>N</isSubCustodian>
+            <custodyType>Bank - section 17(f)(1) (15 U.S.C. 80a-17(f)(1))</custodyType>
+          </custodian>
+        </custodians>
+        <isCustodianHiredOrTerminated>N</isCustodianHiredOrTerminated>
+        <shareholderServicingAgents>
+          <shareholderServicingAgent>
+            <shareholderServiceAgentName>FIS Investor Services LLC</shareholderServiceAgentName>
+            <shareholderServiceAgentLei>254900Z6DOV5MWBF2023</shareholderServiceAgentLei>
+            <shareholderServiceAgentStateCountry shareholderServiceAgentState="US-OH" shareholderServiceAgentCountry="US"/>
+            <isShareholderServiceAgentAffiliated>N</isShareholderServiceAgentAffiliated>
+            <isShareholderServiceAgentSubshare>N</isShareholderServiceAgentSubshare>
+          </shareholderServicingAgent>
+        </shareholderServicingAgents>
+        <isShareholderServiceHiredTerminated>N</isShareholderServiceHiredTerminated>
+        <admins>
+          <admin>
+            <adminName>State Street Bank and Trust Company</adminName>
+            <adminLei>571474TGEMMWANRLN572</adminLei>
+            <adminStateCountry adminState="US-MA" adminCountry="US"/>
+            <isAdminAffiliated>N</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+          <admin>
+            <adminName>The Lincoln National Life Insurance Company</adminName>
+            <adminLei>NJ1Z0LLF4RLDWG2WCN80</adminLei>
+            <adminStateCountry adminState="US-IN" adminCountry="US"/>
+            <isAdminAffiliated>Y</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+        </admins>
+        <isAdminHiredOrTerminated>N</isAdminHiredOrTerminated>
+        <brokerDealers>
+          <brokerDealer>
+            <brokerDealerName>Lincoln Financial Distributors, Inc.</brokerDealerName>
+            <brokerDealerFileNo>8-13431</brokerDealerFileNo>
+            <brokerDealerCrdNo>000000145</brokerDealerCrdNo>
+            <brokerDealerStateCountry brokerDealerState="US-PA" brokerDealerCountry="US"/>
+            <brokerDealerCommission>0.00000000</brokerDealerCommission>
+          </brokerDealer>
+        </brokerDealers>
+        <brokers>
+          <broker>
+            <brokerName>J.P. Morgan Securities LLC</brokerName>
+            <brokerFileNo>8-35008</brokerFileNo>
+            <brokerCrdNo>000000079</brokerCrdNo>
+            <brokerLei>ZBUT11V806EZRVTWT807</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>12.50000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Goldman Sachs &amp; Co. LLC</brokerName>
+            <brokerFileNo>8-129</brokerFileNo>
+            <brokerCrdNo>000000361</brokerCrdNo>
+            <brokerLei>FOR8UP27PHTHYVLBNG30</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>16.80000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Nomura Securities International, Inc.</brokerName>
+            <brokerFileNo>8-15255</brokerFileNo>
+            <brokerCrdNo>000004297</brokerCrdNo>
+            <brokerLei>OXTKY6Q8X53C9ILVV871</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>1.45000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>UBS Securities LLC</brokerName>
+            <brokerFileNo>8-22651</brokerFileNo>
+            <brokerCrdNo>000007654</brokerCrdNo>
+            <brokerLei>T6FIZBDPKLYJKFCRVK44</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>4.61000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Morgan Stanley &amp; Co. LLC</brokerName>
+            <brokerFileNo>8-15869</brokerFileNo>
+            <brokerCrdNo>000008209</brokerCrdNo>
+            <brokerLei>9R7GPTSO7KV3UQJZQ078</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>5437.99000000</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>BofA Securities, Inc.</brokerName>
+            <brokerFileNo>8-69787</brokerFileNo>
+            <brokerCrdNo>000283942</brokerCrdNo>
+            <brokerLei>549300HN4UKV1E2R3U73</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>133.93000000</grossCommission>
+          </broker>
+        </brokers>
+        <aggregateCommission>5607.28000000</aggregateCommission>
+        <principalTransactions>
+          <principalTransaction>
+            <principalName>Morgan Stanley &amp; Co. LLC</principalName>
+            <principalFileNo>8-15869</principalFileNo>
+            <principalCrdNo>000008209</principalCrdNo>
+            <principalLei>9R7GPTSO7KV3UQJZQ078</principalLei>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>1491074.22000000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>State Street Bank and Trust Company</principalName>
+            <principalFileNo>N/A</principalFileNo>
+            <principalCrdNo>N/A</principalCrdNo>
+            <principalLei>571474TGEMMWANRLN572</principalLei>
+            <principalStateCountry principalState="US-MA" principalCountry="US"/>
+            <principalTotalPurchaseSale>2.99000000</principalTotalPurchaseSale>
+          </principalTransaction>
+        </principalTransactions>
+        <principalAggregatePurchase>1491077.21000000</principalAggregatePurchase>
+        <isBrokerageResearchPayment>N</isBrokerageResearchPayment>
+        <mnthlyAvgNetAssets>18219584.36769231</mnthlyAvgNetAssets>
+        <hasLineOfCredit>N</hasLineOfCredit>
+        <isInterfundLending>N</isInterfundLending>
+        <isInterfundBorrowing>N</isInterfundBorrowing>
+        <isSwingPricing>N</isSwingPricing>
+        <liquidityClassifications>
+          <liquidityClassificationService>
+            <liquidityName>State Street Bank and Trust Company</liquidityName>
+            <liquidityLei>571474TGEMMWANRLN572</liquidityLei>
+            <liquidityStateCountry liquidityCountry="US" liquidityState="US-MA"/>
+            <isAffiliatedPerson>N</isAffiliatedPerson>
+            <assetClassType>Derivative-equity</assetClassType>
+            <assetClassType>Equity-common</assetClassType>
+            <assetClassType>Short-term investment vehicle</assetClassType>
+          </liquidityClassificationService>
+        </liquidityClassifications>
+        <isLiquidityHiredTerminated>N</isLiquidityHiredTerminated>
+      </managementInvestmentQuestion>
+    </managementInvestmentQuestionSeriesInfo>
+    <attachmentsTab>
+      <isIPAReportInternalControl>true</isIPAReportInternalControl>
+    </attachmentsTab>
+    <signature registrantSignedName="Lincoln Funds Trust" signedDate="2026-09-21" signature="James Hoffmayer" title="VP"/>
+  </formData>
+</edgarSubmission>

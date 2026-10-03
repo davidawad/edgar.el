@@ -1,0 +1,1 @@
+(:accn "0001398344-26-016561" :form "13F-NT" :filed "2026-09-03" :cik 1767867 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/1767867/000139834426016561/primary_doc.xml" :company "RWC (US) LLC")

@@ -1,0 +1,1 @@
+(:accn "0000902664-26-001830" :form "SCHEDULE 13D" :filed "2026-04-01" :cik 1529274 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/1529274/000090266426001830/primary_doc.xml" :company "Alkami Technology, Inc.")

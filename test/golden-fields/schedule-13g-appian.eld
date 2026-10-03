@@ -1,0 +1,37 @@
+(:form "SCHEDULE 13G" :cover
+       (:issuer
+	(:cik "0001441683" :name "Appian Corporation" :cusips nil)
+	:reporting-persons
+	((:name "Lead Edge Capital Management, LLC" :cik nil :shares
+		"2878544" :percent-of-class "6.8"
+		:type-of-reporting-person "IA" :sole-voting-power "0"
+		:shared-voting-power "2878544" :sole-dispositive-power
+		"0" :shared-dispositive-power "2878544" :item-4-amount
+		"Lead Edge Capital Management, LLC: 2,878,544*\n\nMitchell Green: 2,878,544*\n\nBrian Neider: 2,878,544*\n\nNimay Mehta: 2,878,544*\n\n*The Common Stock (the \"Shares\") of Appian Corporation (the \"Issuer\") reported herein represents Shares that are held by private investment funds (the \"Lead Edge Entities\") for which Lead Edge Capital Management, LLC serves as the investment manager (the \"Investment Manager\"). Mitchell Green, Brian Neider, and Nimay Mehta serve as the managing members of the Investment Manager (the \"Managing Members\", and collectively with the Lead Edge Entities and the Investment Manager, the \"Reporting Persons.\") By virtue of these relationships, the Reporting Persons may be deemed to have shared voting and dispositive power with respect to the Shares owned directly by the Lead Edge Entities.\n\nThe percent of class reported herein is based upon statements in the Issuer's Form 10-Q filed on May 7, 2026 that there were 42,324,735 Shares outstanding as of May 4, 2026.\n\nThis Schedule 13G shall not be deemed an admission that the Reporting Persons are beneficial owners of the Shares for purposes of Section 13 of the Securities Exchange Act of 1934, as amended, or for any other purpose. Each of the Reporting Persons disclaims beneficial ownership of the Shares reported herein except to the extent of the Reporting Person's pecuniary interest, if any, therein."
+		:item-4-percent
+		"Lead Edge Capital Management, LLC - 6.8%*\nMitchell Green - 6.8%*\nBrian Neider - 6.8%*\nNimay Mehta - 6.8%*")
+	 (:name "Mitchell Green" :cik nil :shares "2878544"
+		:percent-of-class "6.8" :type-of-reporting-person "HC"
+		:sole-voting-power "0" :shared-voting-power "2878544"
+		:sole-dispositive-power "0" :shared-dispositive-power
+		"2878544" :item-4-amount
+		"Lead Edge Capital Management, LLC: 2,878,544*\n\nMitchell Green: 2,878,544*\n\nBrian Neider: 2,878,544*\n\nNimay Mehta: 2,878,544*\n\n*The Common Stock (the \"Shares\") of Appian Corporation (the \"Issuer\") reported herein represents Shares that are held by private investment funds (the \"Lead Edge Entities\") for which Lead Edge Capital Management, LLC serves as the investment manager (the \"Investment Manager\"). Mitchell Green, Brian Neider, and Nimay Mehta serve as the managing members of the Investment Manager (the \"Managing Members\", and collectively with the Lead Edge Entities and the Investment Manager, the \"Reporting Persons.\") By virtue of these relationships, the Reporting Persons may be deemed to have shared voting and dispositive power with respect to the Shares owned directly by the Lead Edge Entities.\n\nThe percent of class reported herein is based upon statements in the Issuer's Form 10-Q filed on May 7, 2026 that there were 42,324,735 Shares outstanding as of May 4, 2026.\n\nThis Schedule 13G shall not be deemed an admission that the Reporting Persons are beneficial owners of the Shares for purposes of Section 13 of the Securities Exchange Act of 1934, as amended, or for any other purpose. Each of the Reporting Persons disclaims beneficial ownership of the Shares reported herein except to the extent of the Reporting Person's pecuniary interest, if any, therein."
+		:item-4-percent
+		"Lead Edge Capital Management, LLC - 6.8%*\nMitchell Green - 6.8%*\nBrian Neider - 6.8%*\nNimay Mehta - 6.8%*")
+	 (:name "Brian Neider" :cik nil :shares "2878544"
+		:percent-of-class "6.8" :type-of-reporting-person "HC"
+		:sole-voting-power "0" :shared-voting-power "2878544"
+		:sole-dispositive-power "0" :shared-dispositive-power
+		"2878544" :item-4-amount
+		"Lead Edge Capital Management, LLC: 2,878,544*\n\nMitchell Green: 2,878,544*\n\nBrian Neider: 2,878,544*\n\nNimay Mehta: 2,878,544*\n\n*The Common Stock (the \"Shares\") of Appian Corporation (the \"Issuer\") reported herein represents Shares that are held by private investment funds (the \"Lead Edge Entities\") for which Lead Edge Capital Management, LLC serves as the investment manager (the \"Investment Manager\"). Mitchell Green, Brian Neider, and Nimay Mehta serve as the managing members of the Investment Manager (the \"Managing Members\", and collectively with the Lead Edge Entities and the Investment Manager, the \"Reporting Persons.\") By virtue of these relationships, the Reporting Persons may be deemed to have shared voting and dispositive power with respect to the Shares owned directly by the Lead Edge Entities.\n\nThe percent of class reported herein is based upon statements in the Issuer's Form 10-Q filed on May 7, 2026 that there were 42,324,735 Shares outstanding as of May 4, 2026.\n\nThis Schedule 13G shall not be deemed an admission that the Reporting Persons are beneficial owners of the Shares for purposes of Section 13 of the Securities Exchange Act of 1934, as amended, or for any other purpose. Each of the Reporting Persons disclaims beneficial ownership of the Shares reported herein except to the extent of the Reporting Person's pecuniary interest, if any, therein."
+		:item-4-percent
+		"Lead Edge Capital Management, LLC - 6.8%*\nMitchell Green - 6.8%*\nBrian Neider - 6.8%*\nNimay Mehta - 6.8%*")
+	 (:name "Nimay Mehta" :cik nil :shares "2878544"
+		:percent-of-class "6.8" :type-of-reporting-person "HC"
+		:sole-voting-power "0" :shared-voting-power "2878544"
+		:sole-dispositive-power "0" :shared-dispositive-power
+		"2878544" :item-4-amount
+		"Lead Edge Capital Management, LLC: 2,878,544*\n\nMitchell Green: 2,878,544*\n\nBrian Neider: 2,878,544*\n\nNimay Mehta: 2,878,544*\n\n*The Common Stock (the \"Shares\") of Appian Corporation (the \"Issuer\") reported herein represents Shares that are held by private investment funds (the \"Lead Edge Entities\") for which Lead Edge Capital Management, LLC serves as the investment manager (the \"Investment Manager\"). Mitchell Green, Brian Neider, and Nimay Mehta serve as the managing members of the Investment Manager (the \"Managing Members\", and collectively with the Lead Edge Entities and the Investment Manager, the \"Reporting Persons.\") By virtue of these relationships, the Reporting Persons may be deemed to have shared voting and dispositive power with respect to the Shares owned directly by the Lead Edge Entities.\n\nThe percent of class reported herein is based upon statements in the Issuer's Form 10-Q filed on May 7, 2026 that there were 42,324,735 Shares outstanding as of May 4, 2026.\n\nThis Schedule 13G shall not be deemed an admission that the Reporting Persons are beneficial owners of the Shares for purposes of Section 13 of the Securities Exchange Act of 1934, as amended, or for any other purpose. Each of the Reporting Persons disclaims beneficial ownership of the Shares reported herein except to the extent of the Reporting Person's pecuniary interest, if any, therein."
+		:item-4-percent
+		"Lead Edge Capital Management, LLC - 6.8%*\nMitchell Green - 6.8%*\nBrian Neider - 6.8%*\nNimay Mehta - 6.8%*")))
+       :purpose nil)

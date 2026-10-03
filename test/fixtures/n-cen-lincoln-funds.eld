@@ -1,0 +1,1 @@
+(:accn "0001410368-26-101209" :form "N-CEN" :filed "2026-09-29" :cik 2015799 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/2015799/000141036826101209/primary_doc.xml" :company "Lincoln Funds Trust")

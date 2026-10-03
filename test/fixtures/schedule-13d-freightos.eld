@@ -1,0 +1,1 @@
+(:accn "0001976454-26-000002" :form "SCHEDULE 13D" :filed "2026-06-29" :cik 1927719 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/1927719/000197645426000002/primary_doc.xml" :company "Freightos Limited")

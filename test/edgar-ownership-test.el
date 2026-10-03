@@ -351,19 +351,18 @@
                               (plist-get snapshot :transactions)))))))
 
 (ert-deftest edgar-ownership-form5-real-holdings-golden ()
-  "Parse the recorded SEC Form 5 holdings and match its typed field golden."
-  (let* ((filing (edgar-fixtures-filing "5-gaic"))
-         (tree (edgar-ownership-test--fixture "5-gaic")))
-    (should (equal (edgar-ownership-test--form5-snapshot "5-gaic")
-                   (edgar-ownership-test--golden "5-gaic")))
-    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
-      (should
-       (equal
-        (list :form "5"
-              :schema (edgar-ownership--text
-                       (edgar-ownership--child tree 'schemaVersion))
-              :issuer (plist-get (edgar-ownership-issuer filing) :name))
-        (edgar-ownership-test--expect "5-gaic"))))))
+  "Parse distinct SEC Form 5 holdings layouts against typed field goldens."
+  (dolist (slug '("5-gaic" "5-suburban-propane" "5-thor"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (tree (edgar-ownership-test--fixture slug))
+           (snapshot (edgar-ownership-test--form5-snapshot slug))
+           (expect
+            (list :form "5"
+                  :schema (edgar-ownership--text
+                           (edgar-ownership--child tree 'schemaVersion))
+                  :issuer (plist-get (plist-get snapshot :issuer) :name))))
+      (should (equal snapshot (edgar-ownership-test--golden slug)))
+      (should (equal expect (edgar-ownership-test--expect slug))))))
 
 (defun edgar-ownership-test--schedule-xml (form)
   "Return a compact Schedule 13D/G XML tree for FORM."
@@ -435,8 +434,13 @@
                      "Legacy purpose section")))))
 
 (ert-deftest edgar-schedule-13d-g-recorded-sec-xml-goldens ()
-  "Parse real Schedule 13G and amended 13D XML against typed field goldens."
-  (dolist (slug '("schedule-13g-gme-xml" "schedule-13d-taskus-a"))
+  "Parse Schedule 13D/G XML from distinct filers against typed goldens."
+  (dolist (slug '("schedule-13g-gme-xml"
+                  "schedule-13d-taskus-a"
+                  "schedule-13d-alkami"
+                  "schedule-13d-freightos"
+                  "schedule-13g-appian"
+                  "schedule-13g-pennymac"))
     (should (equal (edgar-ownership-test--schedule-snapshot slug)
                    (edgar-ownership-test--golden slug)))
     (should (equal (edgar-ownership-test--schedule-expect-snapshot slug)

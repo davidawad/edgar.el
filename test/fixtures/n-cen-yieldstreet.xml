@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ncen" xmlns:com="http://www.sec.gov/edgar/common">
+  <schemaVersion>X0505</schemaVersion>
+  <headerData>
+    <submissionType>N-CEN</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0001762229</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+        <fileNumber>811-23407</fileNumber>
+      </filer>
+      <flags>
+        <overrideInternetFlag>false</overrideInternetFlag>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+      </flags>
+      <investmentCompanyType>N-2</investmentCompanyType>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <generalInfo reportEndingPeriod="2026-08-24" isReportPeriodLt12="Y"/>
+    <registrantInfo>
+      <registrantFullName>YieldStreet Alternative Income Fund Inc.</registrantFullName>
+      <investmentCompFileNo>811-23407</investmentCompFileNo>
+      <registrantCik>0001762229</registrantCik>
+      <registrantLei>54930012QPI6TRWUNO52</registrantLei>
+      <registrantstreet1>245 Fifth Avenue</registrantstreet1>
+      <registrantstreet2>21st Floor</registrantstreet2>
+      <registrantcity>New York</registrantcity>
+      <registrantzipCode>10016</registrantzipCode>
+      <registrantstate>US-NY</registrantstate>
+      <registrantcountry>US</registrantcountry>
+      <registrantphoneNumber>8449435378</registrantphoneNumber>
+      <websites>
+        <website webpage="willowwealth.com"/>
+      </websites>
+      <locationBooksRecords>
+        <locationBooksRecord>
+          <officeName>ALPS Fund Services, Inc.</officeName>
+          <officeAddress1>1290 Broadway, Suite 1000</officeAddress1>
+          <officeCity>Denver</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-CO"/>
+          <officeRecordsZipCode>80203</officeRecordsZipCode>
+          <officePhone>18552984236</officePhone>
+          <booksRecordsDesc>The books and records required to be maintained by
+Section 31(a) of the Investment Company Act of 1940, as amended, and the rules there under</booksRecordsDesc>
+        </locationBooksRecord>
+        <locationBooksRecord>
+          <officeName>DST Asset Manager Solutions, Inc.</officeName>
+          <officeAddress1>430 W 7th Street, Suite 219238</officeAddress1>
+          <officeCity>Kansas City</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-MO"/>
+          <officeRecordsZipCode>64105</officeRecordsZipCode>
+          <officePhone>18164351000</officePhone>
+          <booksRecordsDesc>The books and records required to be maintained by
+Section 31(a) of the Investment Company Act of 1940, as amended, and the rules there under</booksRecordsDesc>
+        </locationBooksRecord>
+        <locationBooksRecord>
+          <officeName>Willow Asset Management, LLC</officeName>
+          <officeAddress1>245 Fifth Avenue, 21st Floor</officeAddress1>
+          <officeCity>New York</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-NY"/>
+          <officeRecordsZipCode>10016</officeRecordsZipCode>
+          <officePhone>8449435378</officePhone>
+          <booksRecordsDesc>The books and records required to be maintained by
+Section 31(a) of the Investment Company Act of 1940, as amended, and the rules there under</booksRecordsDesc>
+        </locationBooksRecord>
+        <locationBooksRecord>
+          <officeName>Wilmington Savings Fund Society, FSB</officeName>
+          <officeAddress1>500 Delaware Avenue</officeAddress1>
+          <officeCity>Wilmington</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-DE"/>
+          <officeRecordsZipCode>19801</officeRecordsZipCode>
+          <officePhone>18889737226</officePhone>
+          <booksRecordsDesc>The books and records required to be maintained by
+Section 31(a) of the Investment Company Act of 1940, as amended, and the rules there under</booksRecordsDesc>
+        </locationBooksRecord>
+      </locationBooksRecords>
+      <isRegistrantFirstFiling>N</isRegistrantFirstFiling>
+      <isRegistrantLastFiling>Y</isRegistrantLastFiling>
+      <isRegistrantFamilyInvComp>N</isRegistrantFamilyInvComp>
+      <registrantClassificationType>N-2</registrantClassificationType>
+      <isSecuritiesActRegistration>Y</isSecuritiesActRegistration>
+      <directors>
+        <director>
+          <directorName>George D. Riedel</directorName>
+          <crdNumber>002173124</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>John C. Siciliano</directorName>
+          <crdNumber>001022427</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>Ted Yarbrough</directorName>
+          <crdNumber>002086078</crdNumber>
+          <isDirectorInterestedPerson>Y</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>William M. Riegel</directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+      </directors>
+      <chiefComplianceOfficers>
+        <chiefComplianceOfficer>
+          <ccoName>Patrick J. Keniston</ccoName>
+          <crdNumber>N/A</crdNumber>
+          <ccoStreet1>190 Middle Street</ccoStreet1>
+          <ccoStreet2>Suite 301</ccoStreet2>
+          <ccoCity>Portland</ccoCity>
+          <ccoStateCountry ccoCountry="US" ccoState="US-ME"/>
+          <ccoZipCode>04101</ccoZipCode>
+          <ccoPhone>XXXXXX</ccoPhone>
+          <isCcoChangedSinceLastFiling>N</isCcoChangedSinceLastFiling>
+          <ccoEmployers>
+            <ccoEmployer ccoEmployerName="Adviser Compliance Associates, LLC" ccoEmployerId="75-2987063"/>
+          </ccoEmployers>
+        </chiefComplianceOfficer>
+      </chiefComplianceOfficers>
+      <securityMatterSeriesInfo isRegistrantSubmittedMatter="Y">
+        <seriesInfo seriesName="N/A" seriesId="N/A"/>
+      </securityMatterSeriesInfo>
+      <isPreviousLegalProceeding>N</isPreviousLegalProceeding>
+      <isPreviousProceedingTerminated>N</isPreviousProceedingTerminated>
+      <isClaimFiled>N</isClaimFiled>
+      <coveredByInsurancePolicy isCoveredByInsurancePolicy="Y" isClaimFiledDuringPeriod="N"/>
+      <isFinancialSupportDuringPeriod>N</isFinancialSupportDuringPeriod>
+      <releaseNumbers isExemptionFromAct="Y">
+        <releaseNumberInfo releaseNumber="IC-34050"/>
+      </releaseNumbers>
+      <isUnderwriterHiredOrTerminated>N</isUnderwriterHiredOrTerminated>
+      <publicAccountants>
+        <publicAccountant>
+          <publicAccountantName>Deloitte &amp; Touche LLP</publicAccountantName>
+          <pcaobNumber>34</pcaobNumber>
+          <publicAccountantLei>254900WYZPGQGKV3RF07</publicAccountantLei>
+          <publicAccountantStateCountry publicAccountantCountry="US" publicAccountantState="US-NY"/>
+        </publicAccountant>
+      </publicAccountants>
+      <isPublicAccountantChanged>N</isPublicAccountantChanged>
+      <isMaterialWeakness>N</isMaterialWeakness>
+      <isOpinionOffered>N</isOpinionOffered>
+      <isMaterialChange>N</isMaterialChange>
+      <isAccountingPrincipleChange>N</isAccountingPrincipleChange>
+      <paymentDividendSeries isPaymentDividend="Y">
+        <seriesInfo seriesName="YieldStreet Alternative Income Fund" seriesId="N/A"/>
+      </paymentDividendSeries>
+    </registrantInfo>
+    <managementInvestmentQuestionSeriesInfo>
+      <managementInvestmentQuestion>
+        <mgmtInvFundName>YieldStreet Alternative Income Fund Inc</mgmtInvFundName>
+        <mgmtInvLei>54930012QPI6TRWUNO52</mgmtInvLei>
+        <isFirstFilingByFund>N</isFirstFilingByFund>
+        <numAuthorizedClass>0</numAuthorizedClass>
+        <fundType>N/A</fundType>
+        <isNonDiversifiedCompany>Y</isNonDiversifiedCompany>
+        <isForeignSubsidiary>N</isForeignSubsidiary>
+        <isFundSecuritiesLending>N</isFundSecuritiesLending>
+        <didFundLendSecurities>N</didFundLendSecurities>
+        <paymentToAgentManagerType>N/A</paymentToAgentManagerType>
+        <avgPortfolioSecuritiesValue>N/A</avgPortfolioSecuritiesValue>
+        <netIncomeSecuritiesLending>N/A</netIncomeSecuritiesLending>
+        <relyOnRuleType>N/A</relyOnRuleType>
+        <isExpenseLimitationInPlace>Y</isExpenseLimitationInPlace>
+        <isExpenseReducedOrWaived>Y</isExpenseReducedOrWaived>
+        <isFeesWaivedRecoupable>Y</isFeesWaivedRecoupable>
+        <isExpenseWaivedRecoupable>Y</isExpenseWaivedRecoupable>
+        <investmentAdvisers>
+          <investmentAdviser>
+            <investmentAdviserName>Willow Asset Management, LLC</investmentAdviserName>
+            <investmentAdviserFileNo>801-107574</investmentAdviserFileNo>
+            <investmentAdviserCrdNo>000282487</investmentAdviserCrdNo>
+            <investmentAdviserLei>N/A</investmentAdviserLei>
+            <investmentAdviserRssdId>N/A</investmentAdviserRssdId>
+            <investmentAdviserStateCountry investmentAdviserState="US-NY" investmentAdviserCountry="US"/>
+            <isInvestmentAdviserHired>N</isInvestmentAdviserHired>
+          </investmentAdviser>
+        </investmentAdvisers>
+        <transferAgents>
+          <transferAgent>
+            <transferAgentName>DST Asset Manager Solutions, Inc.</transferAgentName>
+            <transferAgentFileNo>84-00448</transferAgentFileNo>
+            <transferAgentLei>21B7QCD05XOK0YTYOP98</transferAgentLei>
+            <transferAgentRssdId>N/A</transferAgentRssdId>
+            <transferAgentStateCountry transferAgentState="US-MO" transferAgentCountry="US"/>
+            <isTransferAgentAffiliated>N</isTransferAgentAffiliated>
+            <isTransferAgentSubAgent>N</isTransferAgentSubAgent>
+          </transferAgent>
+        </transferAgents>
+        <isTransferAgentHiredOrTerminated>N</isTransferAgentHiredOrTerminated>
+        <pricingServices>
+          <pricingService>
+            <pricingServiceName>ICE Data Pricing &amp; Reference Data, LLC </pricingServiceName>
+            <pricingServiceLei>5493000NQ9LYLDBCTL34</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+        </pricingServices>
+        <isPricingServiceHiredOrTerminated>N</isPricingServiceHiredOrTerminated>
+        <custodians>
+          <custodian>
+            <custodianName>Wilmington Savings Fund Society, FSB</custodianName>
+            <custodianLei>5493005DKMV1IHIM8E20</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianStateCountry custodianState="US-DE" custodianCountry="US"/>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>N</isSubCustodian>
+            <custodyType>Bank - section 17(f)(1) (15 U.S.C. 80a-17(f)(1))</custodyType>
+          </custodian>
+        </custodians>
+        <isCustodianHiredOrTerminated>N</isCustodianHiredOrTerminated>
+        <shareholderServicingAgents>
+          <shareholderServicingAgent>
+            <shareholderServiceAgentName>DST Asset Manager Solutions, Inc.</shareholderServiceAgentName>
+            <shareholderServiceAgentLei>21B7QCD05XOK0YTYOP98</shareholderServiceAgentLei>
+            <shareholderServiceAgentRssdId>N/A</shareholderServiceAgentRssdId>
+            <shareholderServiceAgentStateCountry shareholderServiceAgentState="US-MO" shareholderServiceAgentCountry="US"/>
+            <isShareholderServiceAgentAffiliated>N</isShareholderServiceAgentAffiliated>
+            <isShareholderServiceAgentSubshare>N</isShareholderServiceAgentSubshare>
+          </shareholderServicingAgent>
+        </shareholderServicingAgents>
+        <isShareholderServiceHiredTerminated>N</isShareholderServiceHiredTerminated>
+        <admins>
+          <admin>
+            <adminName>ALPS Fund Services, Inc.</adminName>
+            <adminLei>N/A</adminLei>
+            <adminRssdId>N/A</adminRssdId>
+            <adminStateCountry adminState="US-CO" adminCountry="US"/>
+            <isAdminAffiliated>N</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+        </admins>
+        <isAdminHiredOrTerminated>N</isAdminHiredOrTerminated>
+        <aggregateCommission>0</aggregateCommission>
+        <principalTransactions>
+          <principalTransaction>
+            <principalName>SCOTIA CAPITAL (USA) INC.</principalName>
+            <principalFileNo>8-3716</principalFileNo>
+            <principalCrdNo>000002739</principalCrdNo>
+            <principalLei>549300BLWPABP1VNME36</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>11509880</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>MERRILL LYNCH PROFESSIONAL CLEARING CORP.</principalName>
+            <principalFileNo>8-33359</principalFileNo>
+            <principalCrdNo>000016139</principalCrdNo>
+            <principalLei>549300PMHS66E71I2D34</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>16293833</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>BARCLAYS CAPITAL INC.</principalName>
+            <principalFileNo>8-41342</principalFileNo>
+            <principalCrdNo>000019714</principalCrdNo>
+            <principalLei>AC28XWWI3WIBK2824319</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>4405044</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>BREAN CAPITAL, LLC</principalName>
+            <principalFileNo>8-40742</principalFileNo>
+            <principalCrdNo>000023723</principalCrdNo>
+            <principalLei>254900ZZA1UBVDCNQ378</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>4925600</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>SMBC NIKKO SECURITIES AMERICA, INC.</principalName>
+            <principalFileNo>8-43852</principalFileNo>
+            <principalCrdNo>000028602</principalCrdNo>
+            <principalLei>6PJDTY319315T5LR2241</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>14483224</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>DBS VICKERS SECURITIES (USA) INC.</principalName>
+            <principalFileNo>8-46837</principalFileNo>
+            <principalCrdNo>000035691</principalCrdNo>
+            <principalLei>549300OUTDVU0NBODN81</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>11277666</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>GUGGENHEIM SECURITIES, LLC</principalName>
+            <principalFileNo>8-49107</principalFileNo>
+            <principalCrdNo>000040638</principalCrdNo>
+            <principalLei>5493005G25VHYWLYJU59</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>2166495</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>WELLS FARGO SECURITIES, LLC</principalName>
+            <principalFileNo>8-65876</principalFileNo>
+            <principalCrdNo>000126292</principalCrdNo>
+            <principalLei>PBLD0EJDB5FWOLXP3B76</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NC" principalCountry="US"/>
+            <principalTotalPurchaseSale>3826913</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>BOFA Securities, Inc.</principalName>
+            <principalFileNo>8-69787</principalFileNo>
+            <principalCrdNo>000283942</principalCrdNo>
+            <principalLei>549300HN4UKV1E2R3U73</principalLei>
+            <principalRssdId>N/A</principalRssdId>
+            <principalStateCountry principalState="US-NY" principalCountry="US"/>
+            <principalTotalPurchaseSale>2985000</principalTotalPurchaseSale>
+          </principalTransaction>
+          <principalTransaction>
+            <principalName>Wilmington Savings Fund Society, FSB</principalName>
+            <principalFileNo>N/A</principalFileNo>
+            <principalCrdNo>N/A</principalCrdNo>
+            <principalLei>5493005DKMV1IHIM8E20</principalLei>
+            <principalRssdId>437914</principalRssdId>
+            <principalStateCountry principalState="US-DE" principalCountry="US"/>
+            <principalTotalPurchaseSale>5738807</principalTotalPurchaseSale>
+          </principalTransaction>
+        </principalTransactions>
+        <principalAggregatePurchase>85838312</principalAggregatePurchase>
+        <isBrokerageResearchPayment>N</isBrokerageResearchPayment>
+        <mnthlyAvgNetAssets>135859957</mnthlyAvgNetAssets>
+      </managementInvestmentQuestion>
+    </managementInvestmentQuestionSeriesInfo>
+    <closedEndManagementInvestment>
+      <securityRelatedItems>
+        <securityRelatedItem>
+          <description>Common stock</description>
+          <securityClassTitle>N/A</securityClassTitle>
+          <commonStocks>
+            <commonStock commonStockExchange="N/A" commonStockTickerSymbol="N/A"/>
+          </commonStocks>
+        </securityRelatedItem>
+      </securityRelatedItems>
+      <isRightsOffering>N</isRightsOffering>
+      <isSecondaryOffering>N</isSecondaryOffering>
+      <repurchaseSecurities isRepurchaseSecurity="Y">
+        <repurchaseSecurityType>Common stock</repurchaseSecurityType>
+      </repurchaseSecurities>
+      <isDefaultLongTermDebt>N</isDefaultLongTermDebt>
+      <isDividendsInArrears>N</isDividendsInArrears>
+      <isSecuritiesModified>N</isSecuritiesModified>
+      <managementFee>0</managementFee>
+      <netOperatingExpenses>0</netOperatingExpenses>
+      <marketPricePerShare>N/A</marketPricePerShare>
+      <netAssetValuePerShare>0</netAssetValuePerShare>
+    </closedEndManagementInvestment>
+    <signature registrantSignedName="YieldStreet Alternative Income Fund Inc." signedDate="2026-09-16" signature="Stephen Ferrara" title="Chief Financial Officer and Treasurer"/>
+  </formData>
+</edgarSubmission>
