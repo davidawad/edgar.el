@@ -1,0 +1,1 @@
+(:accn "0001193125-20-075601" :form "20FR12G" :company "NIPPON DENKI KABUSHIKI KAISHA" :filed "2020-03-17" :report "" :doc "d856504d20fr12g.htm" :cik 72127 :url "https://www.sec.gov/Archives/edgar/data/72127/000119312520075601/d856504d20fr12g.htm" :size 3348751 :sha256 "b906b379f6db4058c52fbffcde257bff26b2bedc20e129e711458af4d4e3bcf8")

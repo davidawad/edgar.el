@@ -1,0 +1,1 @@
+(:accn "0001062993-22-001742" :form "20FR12G" :company "Greenbriar Capital Corp." :filed "2022-01-28" :report "" :doc "form20fr12g.htm" :cik 1570843 :url "https://www.sec.gov/Archives/edgar/data/1570843/000106299322001742/form20fr12g.htm" :size 2012660 :sha256 "b858c90d94738db2f93de83f13a1718e5a02c0618780471002c28f72ba82b628")

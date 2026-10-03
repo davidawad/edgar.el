@@ -1,0 +1,1 @@
+(:accn "0001753926-26-001026" :form "40FR12G" :company "Nuran Wireless Inc." :filed "2026-06-18" :report "" :doc "g085768_40f.htm" :cik 1680637 :url "https://www.sec.gov/Archives/edgar/data/1680637/000175392626001026/g085768_40f.htm" :size 173395 :sha256 "2ee6130aecc320ffa09acf21f471c1cd0d25ca3368bd14fdf25ed690f0fc7834")

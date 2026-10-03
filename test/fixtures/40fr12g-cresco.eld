@@ -1,0 +1,1 @@
+(:accn "0001193125-21-008131" :form "40FR12G" :company "Cresco Labs Inc." :filed "2021-01-13" :report "" :doc "d945319d40fr12g.htm" :cik 1832928 :url "https://www.sec.gov/Archives/edgar/data/1832928/000119312521008131/d945319d40fr12g.htm" :size 66874 :sha256 "ef35e205784ade7d6af1a86b805879a8af4eb43568f6fbe8ca6bebf4186a3568")

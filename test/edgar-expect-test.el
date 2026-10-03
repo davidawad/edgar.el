@@ -192,7 +192,18 @@
     ("DFRN14A" "schedule 14a" nil)
     ("SC14D1F" "schedule 14d" nil)
     ("25" "form 25" nil)
+    ("10-12B" "general form for registration of securities" ("1" "3"))
+    ("10-12G" "general form for registration of securities" ("1" "3"))
+    ("20FR12B"
+     "registration statement pursuant to section 12"
+     ("I.1" "II.13"))
+    ("20FR12G"
+     "registration statement pursuant to section 12"
+     ("I.1" "I.3"))
     ("40FR12B" "nuran wireless" nil)
+    ("40FR12G"
+     "registration statement pursuant to section 12 of the securities exchange act of 1934"
+     nil)
     ("DEFA14A" "pra group, inc." nil)
     ("425" "pursuant to rule 425" nil)
     ("DEFA14C" "notice of internet availability" nil)

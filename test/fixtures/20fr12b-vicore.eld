@@ -1,0 +1,1 @@
+(:accn "0001104659-26-065450" :form "20FR12B" :company "Vicore Pharma Holding AB" :filed "2026-05-22" :report "" :doc "tm269615-6_20fr12b.htm" :cik 2124403 :url "https://www.sec.gov/Archives/edgar/data/2124403/000110465926065450/tm269615-6_20fr12b.htm" :size 3376667 :sha256 "a1d6c87e417038308d7155dd8144d8de37d4725392c2a0d7d8b85f3aa7067d1a")

@@ -1,0 +1,1 @@
+(:accn "0001104659-20-130020" :form "40FR12G" :company "Bespoke Capital Acquisition Corp" :filed "2020-11-27" :report "" :doc "tm2037002d1_40fr12g.htm" :cik 1834045 :url "https://www.sec.gov/Archives/edgar/data/1834045/000110465920130020/tm2037002d1_40fr12g.htm" :size 100893 :sha256 "8893e345ee9731545a597beb258b25a4ec9cf1cf6167f3948762115fea3d9ba8")

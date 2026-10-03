@@ -119,6 +119,9 @@ Additional G10 fixtures cover raw 24F-2NT XML, 40-17G fidelity-bond notices,
 updates, and S-6 unit-investment-trust registrations through the same generic
 tree, element, paragraph, table, and Item-section interfaces.
 
+G7 Section 12 registration fixtures cover 10-12B, 10-12G, 20FR12B, 20FR12G,
+and 40FR12G through the generic document, body, and Item-section APIs.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.

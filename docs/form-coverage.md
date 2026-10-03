@@ -53,8 +53,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `1-SA` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `1-U` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `1-Z` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
-| `10-12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12B")` |
-| `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
+| `10-12B` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `10-12G` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `10-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `10-KT` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
@@ -69,8 +69,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `15F-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12G")` |
 | `18-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `20-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `20FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12B")` |
-| `20FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12G")` |
+| `20FR12B` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `20FR12G` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `24F-2NT` | G10 Investment-company registration | xml | L1 | `(edgar-text filing)` |
 | `25` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `25-NSE` | G9 Periodic & event narrative | xml | L1 | `(edgar-text filing)` |
@@ -89,7 +89,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40-APP` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `40FR12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `40FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12G")` |
+| `40FR12G` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `424B1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `424B2` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |

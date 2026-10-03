@@ -1,0 +1,1 @@
+(:accn "0001437749-26-011469" :form "10-12G" :company "JLM-WNCO Trust" :filed "2026-04-07" :report "" :doc "jlmw20260406_1012g.htm" :cik 2127486 :url "https://www.sec.gov/Archives/edgar/data/2127486/000143774926011469/jlmw20260406_1012g.htm" :size 62822 :sha256 "17473e647ef07147e8a398960234c646861f39e84b43488be9e2c08f7b38c559")
