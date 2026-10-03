@@ -2,6 +2,21 @@
 
 These are unmodified documents published in SEC EDGAR's Archives:
 
+Prospectus and registration samples used for generic named-section coverage:
+
+- `s-3-indaptus.htm.gz` — S-3, Indaptus Therapeutics ([accession 0001641172-25-023490](https://www.sec.gov/Archives/edgar/data/1857044/000164117225023490/forms-3.htm); 2025-08-13).
+- `s-3-maxcyte.htm.gz` — S-3, MaxCyte ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
+- `424b2-barclays.htm.gz` — 424B2, Barclays Bank PLC ([accession 0001918704-25-014571](https://www.sec.gov/Archives/edgar/data/312070/000191870425014571/form424b2.htm); 2025-09-04).
+- `424b2-hsbc.htm.gz` — 424B2, HSBC USA Inc. ([accession 0001104659-25-034612](https://www.sec.gov/Archives/edgar/data/83246/000110465925034612/tm2511073d92_424b2.htm); 2025-04-14).
+
+The S-3 samples have table-of-contents-linked `Risk Factors` headings and
+exercise the shared named-section accessor. The table-led 424B2 pricing
+supplements do not expose heading nodes in these captured primary documents;
+where inline structural cues permit, the shared named-section accessor can
+still identify `Risk Factors`. All three expose the full HTML body through
+generic section access. The S-8
+Veralto sample exercises Part II Item access without a table of contents.
+
 The following Q2 2026 samples are listed in the [SEC quarterly master index](https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx):
 
 - `defa14c-graybar.htm.gz` — DEFA14C, Graybar Electric Co. ([accession 0000205402-26-000030](https://www.sec.gov/Archives/edgar/data/205402/000020540226000030/c402-20260428corresp.htm); 2026-04-28).

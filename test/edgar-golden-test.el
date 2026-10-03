@@ -134,6 +134,85 @@
         (regexp-quote (cdr entry))
         (edgar-fixtures-norm body))))))
 
+(ert-deftest edgar-golden-g7-named-prospectus-sections ()
+  "Major prospectus layouts expose named headings through the shared API."
+  (dolist
+      (entry
+       '(("s-1-rivn" . "Rivian")
+         ("s-3-autonomix" . "Autonomix")
+         ("s-3-indaptus" . "Indaptus")
+         ("s-3-maxcyte" . "MaxCyte")
+         ("f-1-fasttrack" . "Fast Track")
+         ("f-3-ceragon" . "Ceragon")
+         ("424b5-singularity" . "Singularity")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           section)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq section (edgar-section filing "Risk Factors")))
+      (should section)
+      (should (> (length section) 100))
+    (should
+       (string-match-p "RISK FACTORS"
+                       (upcase (edgar-fixtures-norm section)))))))
+
+(ert-deftest edgar-golden-g7-pricing-supplement-generic-access ()
+  "Table-led 424B2 filings retain generic body access when heading nodes are absent."
+  (dolist (slug '("424b2-jpm" "424b2-barclays" "424b2-hsbc"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           (tree nil)
+           risk-section
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq tree (edgar-document-structure filing))
+        (setq risk-section (edgar-section filing "Risk Factors"))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should-not (edgar-structure-headings tree))
+      (when risk-section
+        (should (> (length risk-section) 100))
+        (should
+         (string-match-p "RISK FACTORS"
+                         (upcase (edgar-fixtures-norm risk-section)))))
+      (should body)
+      (should
+       (string-match-p "pricing supplement"
+                       (downcase (edgar-fixtures-norm body)))))))
+
+(ert-deftest edgar-golden-g7-toc-less-registration-items ()
+  "S-8 registration statements expose Part II Items without a contents page."
+  (let* ((slug "s-8-veralto")
+         (filing (edgar-fixtures-filing slug))
+         (html (edgar-fixtures-html slug))
+         text
+         section)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (setq text (edgar-text filing))
+      (setq section (edgar-section filing "II.8")))
+    (should-not (string-match-p "TABLE OF CONTENTS" (upcase text)))
+    (should section)
+    (should
+     (string-match-p
+      "exhibits"
+      (downcase (edgar-fixtures-norm section))))))
+
+(ert-deftest edgar-golden-g7-toc-backed-risk-sections ()
+  "S-3 prospectus Risk Factors resolve through TOC-backed named headings."
+  (dolist (entry
+           (edgar-fixtures-read
+            (edgar-fixtures-path "golden/g7-prospectus-sections.eld")))
+    (let* ((slug (nth 0 entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           section)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq section (edgar-section filing (nth 1 entry))))
+      (should section)
+      (should
+       (string-search (nth 2 entry)
+                      (edgar-fixtures-norm section))))))
+
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."
   (dolist
