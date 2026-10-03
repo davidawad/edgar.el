@@ -57,23 +57,23 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `10-12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12B")` |
 | `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
 | `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
-| `10-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-K")` |
-| `10-KT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `10-Q` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-Q")` |
+| `10-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `10-KT` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `10-Q` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `11-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `13F-HR` | G4 13F holdings | xml | L2 | `(edgar-13f-holdings filing)` |
 | `13F-NT` | G4 13F holdings | xml | L0 | `(edgar-form-info "13F-NT")` |
 | `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
-| `15-12G` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `15-12G` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `15-15D` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `15F-12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12B")` |
 | `15F-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12G")` |
-| `18-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `20-F` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "20-F")` |
+| `18-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `20-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `20FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12B")` |
 | `20FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12G")` |
 | `24F-2NT` | G10 Investment-company registration | html | L0 | `(edgar-form-info "24F-2NT")` |
-| `25` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `25` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `25-NSE` | G9 Periodic & event narrative | xml | L1 | `(edgar-text filing)` |
 | `253G1` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G1")` |
 | `253G2` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G2")` |
@@ -121,7 +121,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `6B ORDR` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "6B ORDR")` |
 | `8-A12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12B")` |
 | `8-A12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12G")` |
-| `8-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K")` |
+| `8-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `8-K12B` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `ABS-15G` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `ABS-EE` | G6 Asset-backed | xml | L2 | `(edgar-xml filing)` |
@@ -223,10 +223,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NPORT-P` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `NRSRO-CE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-CE")` |
 | `NRSRO-UPD` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-UPD")` |
-| `NT 10-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT 10-Q` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT 11-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT 20-F` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `NT 10-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `NT 10-Q` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `NT 11-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `NT 20-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `NT N-CEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT N-CEN")` |
 | `NT NPORT-P` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT NPORT-P")` |
 | `NT-NCEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCEN")` |

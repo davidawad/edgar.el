@@ -115,7 +115,8 @@ Each value is a plist with `:volume' and `:raw-forms' entries."
 
 (defun edgar-coverage--fixture-records (registry fixture-directory)
   "Return (RECORDS . PROBLEMS) from FIXTURE-DIRECTORY for REGISTRY.
-Each record is a (BASE-FORM . SLUG) pair."
+Each record is a (BASE-FORM . SLUG) pair.  Metadata with `:fixture-kind'
+marks supplemental excerpts, not complete primary-document fixtures."
   (let (records
         problems)
     (if (not (file-directory-p fixture-directory))
@@ -134,6 +135,11 @@ Each record is a (BASE-FORM . SLUG) pair."
                ((not base)
                 (push (format "%s: fixture has no form name" slug)
                       problems))
+               ((equal (plist-get filing :fixture-kind)
+                       "SEC complete-submission excerpt")
+                ;; Partial source excerpts exercise parser regressions, not
+                ;; full filing-render coverage.
+                nil)
                ((gethash base registry)
                 (push (cons base slug) records))))
           (error
