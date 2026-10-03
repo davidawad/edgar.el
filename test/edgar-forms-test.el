@@ -218,17 +218,20 @@
   (dolist (form '("10-12B" "10-12G" "20FR12B" "20FR12G" "40FR12G"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
 
-(ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
-  "G11 records all but the unavailable Form 1 primary document."
+(ert-deftest edgar-forms-g11-all-forms-meet-l1-acceptance ()
+  "Every registered G11 form has L1 fixture coverage or stronger."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
         (counts (list (cons 'L0 0) (cons 'L1 0) (cons 'L2 0))))
+    (should (= (length rows) 18))
     (dolist (row rows)
       (let ((cell (assq (plist-get (cdr row) :level) counts)))
+        (should (memq (plist-get (cdr row) :level) '(L1 L2)))
         (setcdr cell (1+ (cdr cell)))))
     (should (eq (plist-get (edgar-form-info "C") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-AR") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-U") :level) 'L1))
-    (should (equal counts '((L0 . 1) (L1 . 15) (L2 . 2))))))
+    (should (eq (plist-get (edgar-form-info "1") :backend) 'pdf))
+    (should (equal counts '((L0 . 0) (L1 . 16) (L2 . 2)))))
 
 (provide 'edgar-forms-test)
 
