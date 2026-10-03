@@ -1,0 +1,1 @@
+(:accn "0001520138-26-000133" :form "PRER14C" :company "ESG Inc." :filed "2026-04-24" :report "" :cik 1883835 :ticker "" :doc "esg-20260424_pre14c.htm" :url "https://www.sec.gov/Archives/edgar/data/1883835/000152013826000133/esg-20260424_pre14c.htm" :size 123119 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

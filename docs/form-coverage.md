@@ -153,12 +153,12 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DEF 14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14A")` |
 | `DEF 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14C")` |
 | `DEFA14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFA14A")` |
-| `DEFA14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFA14C")` |
+| `DEFA14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFC14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFC14A")` |
 | `DEFM14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFM14A")` |
-| `DEFM14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFM14C")` |
+| `DEFM14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFR14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFR14A")` |
-| `DEFR14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFR14C")` |
+| `DEFR14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEL AM` | G10 Investment-company registration | html | L0 | `(edgar-form-info "DEL AM")` |
 | `DFAN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DFAN14A")` |
 | `DFRN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DFRN14A")` |
@@ -230,7 +230,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NT-NCEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCEN")` |
 | `NT-NCSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCSR")` |
 | `NTFNCSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NTFNCSR")` |
-| `POS 8C` | G13 Tail | html | L0 | `(edgar-form-info "POS 8C")` |
+| `POS 8C` | G13 Tail | html | L1 | `(edgar-text filing)` |
 | `POS AM` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AM")` |
 | `POS AMI` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AMI")` |
 | `POS EX` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS EX")` |
@@ -239,10 +239,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `PRE 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRE 14C")` |
 | `PREC14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PREC14A")` |
 | `PREM14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PREM14A")` |
-| `PREM14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PREM14C")` |
-| `PREN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PREN14A")` |
+| `PREM14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
+| `PREN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PRER14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRER14A")` |
-| `PRER14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRER14C")` |
+| `PRER14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PRRN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRRN14A")` |
 | `PX14A6G` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PX14A6G")` |
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
@@ -269,7 +269,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SC 13E3` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13E3")` |
 | `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC 14F1` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 14F1")` |
-| `SC 14N` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC 14N")` |
+| `SC 14N` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `SC TO-C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-C")` |
 | `SC TO-I` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-I")` |
 | `SC TO-T` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
