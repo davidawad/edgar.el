@@ -113,6 +113,9 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `497ad-powerlaw.htm.gz` — compressed primary [497AD accession 0001213900-26-062218](https://www.sec.gov/Archives/edgar/data/2052053/000121390026062218/ea0292491-03_497ad.htm) (Powerlaw Corp.; 2026-05-28).
 - `497vpsub-voya.htm.gz` — compressed primary [497VPSUB accession 0000917677-26-000048](https://www.sec.gov/Archives/edgar/data/103005/000091767726000048/0126vmp497vpsub.htm) (Voya; 2026-01-21).
 - `s-6-ft12946.htm.gz` — compressed [S-6 accession 0001445546-26-002415](https://www.sec.gov/Archives/edgar/data/2111250/000144554626002415/s-6.htm).
+- `486apos-flat-rock.htm.gz` — compressed primary [486APOS accession 0001213900-26-050259](https://www.sec.gov/Archives/edgar/data/1814390/000121390026050259/ea0288074-02_486apos.htm) (Flat Rock Core Income Fund; 2026-04-30).
+- `487-adt2360.htm.gz` — compressed primary [Form 487 accession 0001999371-26-021338](https://www.sec.gov/Archives/edgar/data/2118248/000199937126021338/adt2360-487.htm) (Advisors Disciplined Trust 2360; 2026-09-25).
+- `n-2-buttonwood.htm.gz` — compressed primary [N-2 accession 0001213900-26-023498](https://www.sec.gov/Archives/edgar/data/2104046/000121390026023498/ea0279503-01_n2.htm) (Buttonwood First Access Fund; 2026-03-04).
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed

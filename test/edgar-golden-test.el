@@ -143,8 +143,11 @@
 (ert-deftest edgar-golden-g10-generic-html-body-access ()
   "New investment-company registration forms expose their HTML body."
   (dolist (entry
-           '(("486bpos-coller" . "Coller")
+           '(("486apos-flat-rock" . "Flat Rock")
+             ("486bpos-coller" . "Coller")
+             ("487-adt2360" . "Advisors Disciplined Trust 2360")
              ("497ad-powerlaw" . "Powerlaw")
+             ("n-2-buttonwood" . "Buttonwood")
              ("n-14-nomura" . "Nomura")
              ("497vpsub-voya" . "Voya")))
     (let* ((slug (car entry))
@@ -156,7 +159,8 @@
       (should body)
       (should
        (string-match-p
-        (regexp-quote (cdr entry)) (edgar-fixtures-norm body))))))
+        (regexp-quote (downcase (cdr entry)))
+        (downcase (edgar-fixtures-norm body)))))))
 
 (ert-deftest edgar-golden-g7-named-prospectus-sections ()
   "Major prospectus layouts expose named headings through the shared API."

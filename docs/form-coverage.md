@@ -103,10 +103,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `485APOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `485BPOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `485BXT` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `486APOS` | G10 Investment-company registration | html | L0 | `(edgar-form-info "486APOS")` |
+| `486APOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `486BPOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `486BXT` | G10 Investment-company registration | html | L0 | `(edgar-form-info "486BXT")` |
-| `487` | G10 Investment-company registration | html | L0 | `(edgar-form-info "487")` |
+| `487` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497AD` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497J` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -194,7 +194,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-14` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-14 8C` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14 8C")` |
 | `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2")` |
+| `N-2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
 | `N-23C-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
