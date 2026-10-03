@@ -23,9 +23,11 @@
                        edgar-offerings-test--directory))
     (buffer-string)))
 
-(defun edgar-offerings-test--filing (slug form)
-  "Return a filing plist for fixture SLUG and FORM."
-  (list :form form :url (concat "https://example.test/" slug ".xml")))
+(defun edgar-offerings-test--filing (slug _form)
+  "Return source metadata for fixture SLUG."
+  (edgar-offerings-test--read
+   (expand-file-name (concat "fixtures/" slug ".eld")
+                     edgar-offerings-test--directory)))
 
 (defun edgar-offerings-test--golden (slug)
   "Read field golden values for SLUG."
@@ -35,9 +37,14 @@
 
 (defun edgar-offerings-test--read-fields (slug form parse)
   "Parse fixture SLUG with PARSE and return its typed fields."
-  (cl-letf (((symbol-function 'edgar--fetch)
-             (lambda (_url) (edgar-offerings-test--fixture slug))))
-    (funcall parse (edgar-offerings-test--filing slug form))))
+  (let ((filing (edgar-offerings-test--filing slug form)))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (url)
+                 (should
+                  (equal url
+                         (edgar-xml--raw-url (plist-get filing :url))))
+                 (edgar-offerings-test--fixture slug))))
+      (funcall parse filing))))
 
 (defun edgar-offerings-test--form-144-fields (value)
   "Return VALUE's typed Form 144 fields as a plist."

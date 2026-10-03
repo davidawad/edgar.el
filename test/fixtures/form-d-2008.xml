@@ -1,23 +1,191 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Local older-schema example; not a downloaded SEC filing. -->
+<?xml version="1.0"?>
 <edgarSubmission>
-  <schemaVersion>X0708</schemaVersion>
-  <submissionType>D</submissionType>
-  <testOrLive>LIVE</testOrLive>
-  <primaryIssuer>
-    <cik>0001388987</cik>
-    <entityName>RETICLE PARTNERS GROWTH LLC</entityName>
-  </primaryIssuer>
-  <offeringData>
-    <federalExemptionsExclusions><item>06</item></federalExemptionsExclusions>
-    <offeringSalesAmounts>
-      <totalOfferingAmount>1000000</totalOfferingAmount>
-      <totalAmountSold>100000</totalAmountSold>
-      <totalRemaining>900000</totalRemaining>
-    </offeringSalesAmounts>
-    <investors>
-      <hasNonAccreditedInvestors>false</hasNonAccreditedInvestors>
-      <totalNumberAlreadyInvested>1</totalNumberAlreadyInvested>
-    </investors>
-  </offeringData>
+
+    <schemaVersion>X0101</schemaVersion>
+
+    <submissionType>D</submissionType>
+
+    <testOrLive>LIVE</testOrLive>
+
+    <primaryIssuer>
+        <cik>0001388987</cik>
+        <entityName>RETICLE PARTNERS GROWTH LLC</entityName>
+        <issuerAddress>
+            <street1>1297 KECKSBURG RD.</street1>
+            <street2></street2>
+            <city>MT. PLEASANT</city>
+            <stateOrCountry>PA</stateOrCountry>
+            <zipCode>15666</zipCode>
+        </issuerAddress>
+        <issuerPhoneNumber>7244237440</issuerPhoneNumber>
+        <issuerPreviousNameList>
+            <value>None</value>
+        </issuerPreviousNameList>
+        <jurisdictionOfInc>PA</jurisdictionOfInc>
+        <entityType>Limited Liability Company</entityType>
+        <yearOfInc>
+            <withinFiveYears>true</withinFiveYears>
+            <value>2007</value>
+        </yearOfInc>
+    </primaryIssuer>
+
+    <relatedPersonsList>
+        <relatedPersonInfo>
+            <relatedPersonName>
+                <firstName>Clyde</firstName>
+                <middleName></middleName>
+                <lastName>Collins</lastName>
+            </relatedPersonName>
+            <relatedPersonAddress>
+                <street1>1297 Kecksburg Rd.</street1>
+                <street2></street2>
+                <city>Mt. Pleasant</city>
+                <stateOrCountry>PA</stateOrCountry>
+                <zipCode>15666</zipCode>
+            </relatedPersonAddress>
+            <relatedPersonRelationshipList>
+                <relationship>Director</relationship>
+            </relatedPersonRelationshipList>
+            <relationshipClarification>Member of Issuer's Board of Managers.</relationshipClarification>
+        </relatedPersonInfo>
+        <relatedPersonInfo>
+            <relatedPersonName>
+                <firstName>David</firstName>
+                <middleName></middleName>
+                <lastName>Harel</lastName>
+            </relatedPersonName>
+            <relatedPersonAddress>
+                <street1>1297 Kecksburg Rd.</street1>
+                <street2></street2>
+                <city>Mt. Pleasant</city>
+                <stateOrCountry>PA</stateOrCountry>
+                <zipCode>15666</zipCode>
+            </relatedPersonAddress>
+            <relatedPersonRelationshipList>
+                <relationship>Director</relationship>
+            </relatedPersonRelationshipList>
+            <relationshipClarification>Member of Issuer's Board of Managers.</relationshipClarification>
+        </relatedPersonInfo>
+        <relatedPersonInfo>
+            <relatedPersonName>
+                <firstName>Patrick</firstName>
+                <middleName></middleName>
+                <lastName>Mercier</lastName>
+            </relatedPersonName>
+            <relatedPersonAddress>
+                <street1>1297 Kecksburg Rd.</street1>
+                <street2></street2>
+                <city>Mt. Pleasant</city>
+                <stateOrCountry>PA</stateOrCountry>
+                <zipCode>15666</zipCode>
+            </relatedPersonAddress>
+            <relatedPersonRelationshipList>
+                <relationship>Director</relationship>
+            </relatedPersonRelationshipList>
+            <relationshipClarification>Member of Issuer's Board of Managers.</relationshipClarification>
+        </relatedPersonInfo>
+        <relatedPersonInfo>
+            <relatedPersonName>
+                <firstName>Robert</firstName>
+                <middleName></middleName>
+                <lastName>Barmen</lastName>
+            </relatedPersonName>
+            <relatedPersonAddress>
+                <street1>1297 Kecksburg Rd.</street1>
+                <street2></street2>
+                <city>Mt. Pleasant</city>
+                <stateOrCountry>PA</stateOrCountry>
+                <zipCode>15666</zipCode>
+            </relatedPersonAddress>
+            <relatedPersonRelationshipList>
+                <relationship>Director</relationship>
+            </relatedPersonRelationshipList>
+            <relationshipClarification>Member of Issuer's Board of Managers.</relationshipClarification>
+        </relatedPersonInfo>
+        <relatedPersonInfo>
+            <relatedPersonName>
+                <firstName>Marty</firstName>
+                <middleName></middleName>
+                <lastName>Newingham</lastName>
+            </relatedPersonName>
+            <relatedPersonAddress>
+                <street1>1297 Kecksburg Rd.</street1>
+                <street2></street2>
+                <city>Mt. Pleasant</city>
+                <stateOrCountry>PA</stateOrCountry>
+                <zipCode>15666</zipCode>
+            </relatedPersonAddress>
+            <relatedPersonRelationshipList>
+                <relationship>Director</relationship>
+            </relatedPersonRelationshipList>
+            <relationshipClarification>Member of Issuer's Board of Managers.</relationshipClarification>
+        </relatedPersonInfo>
+    </relatedPersonsList>
+
+    <offeringData>
+        <industryGroup>
+            <industryGroupType>Manufacturing</industryGroupType>
+        </industryGroup>
+        <issuerSize>
+            <revenueRange>Decline to Disclose</revenueRange>
+        </issuerSize>
+        <federalExemptionsExclusions>
+            <item>06</item>
+        </federalExemptionsExclusions>
+        <typeOfFiling>
+            <newOrAmendment>
+                <isAmendment>false</isAmendment>
+            </newOrAmendment>
+            <dateOfFirstSale>
+                <value>2008-10-27</value>
+            </dateOfFirstSale>
+        </typeOfFiling>
+        <durationOfOffering>
+            <moreThanOneYear>false</moreThanOneYear>
+        </durationOfOffering>
+        <typesOfSecuritiesOffered>
+            <isEquityType>true</isEquityType>
+        </typesOfSecuritiesOffered>
+        <businessCombinationTransaction>
+            <isBusinessCombinationTransaction>false</isBusinessCombinationTransaction>
+            <clarificationOfResponse></clarificationOfResponse>
+        </businessCombinationTransaction>
+        <minimumInvestmentAccepted>0</minimumInvestmentAccepted>
+        <salesCompensationList></salesCompensationList>
+        <offeringSalesAmounts>
+            <totalOfferingAmount>755617</totalOfferingAmount>
+            <totalAmountSold>25000</totalAmountSold>
+            <totalRemaining>730617</totalRemaining>
+            <clarificationOfResponse></clarificationOfResponse>
+        </offeringSalesAmounts>
+        <investors>
+            <hasNonAccreditedInvestors>false</hasNonAccreditedInvestors>
+            <totalNumberAlreadyInvested>1</totalNumberAlreadyInvested>
+        </investors>
+        <salesCommissionsFindersFees>
+            <salesCommissions>
+                <dollarAmount>0</dollarAmount>
+            </salesCommissions>
+            <findersFees>
+                <dollarAmount>0</dollarAmount>
+            </findersFees>
+            <clarificationOfResponse></clarificationOfResponse>
+        </salesCommissionsFindersFees>
+        <useOfProceeds>
+            <grossProceedsUsed>
+                <dollarAmount>0</dollarAmount>
+            </grossProceedsUsed>
+            <clarificationOfResponse></clarificationOfResponse>
+        </useOfProceeds>
+        <signatureBlock>
+            <authorizedRepresentative>false</authorizedRepresentative>
+            <signature>
+                <issuerName>RETICLE PARTNERS GROWTH LLC</issuerName>
+                <signatureName>Clyde Collins</signatureName>
+                <nameOfSigner>Clyde Collins</nameOfSigner>
+                <signatureTitle>Manager</signatureTitle>
+                <signatureDate>2008-10-30</signatureDate>
+            </signature>
+        </signatureBlock>
+    </offeringData>
 </edgarSubmission>

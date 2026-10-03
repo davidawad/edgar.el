@@ -1,10 +1,10 @@
 (:submission-type "D"
- :issuer-name "Sample Issuer, Inc."
- :federal-exemptions ("06b" "06c")
+ :issuer-name "Greycroft Alpha, L.P."
+ :federal-exemptions ("06c" "3C" "3C.7")
  :total-offering-amount "Indefinite"
- :total-amount-sold "250000"
+ :total-amount-sold "0"
  :total-remaining "Indefinite"
- :investor-count 12
- :non-accredited-investor-count 2
- :sales-commissions "12500"
- :finders-fees "2500")
+ :investor-count 0
+ :non-accredited-investor-count nil
+ :sales-commissions "0"
+ :finders-fees "0")

@@ -1,2 +1,2 @@
-(:accn "sample-form-d-a" :form "D/A" :filed "2026-09-02"
- :url "https://example.test/form-d-a-sample.xml")
+(:accn "0002029719-26-000002" :form "D/A" :filed "2026-07-16"
+ :cik 2029719 :url "https://www.sec.gov/Archives/edgar/data/2029719/000202971926000002/primary_doc.xml")
