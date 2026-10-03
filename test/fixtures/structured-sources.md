@@ -162,6 +162,9 @@ Additional G10 filings use the generic document-structure API:
 - `app-wdg-peartree.pdf` — APP WDG, SEC order granting an application ([accession 9999999997-26-000757](https://www.sec.gov/Archives/edgar/data/722885/999999999726000757/filename1.pdf)).
 - `ct-order-janus-henderson.pdf` — CT ORDER, SEC order ([accession 9999999997-26-000767](https://www.sec.gov/Archives/edgar/data/1274173/999999999726000767/filename1.pdf)).
 - `del-am-jpmorgan.htm.gz` — DEL AM, J.P. Morgan Exchange-Traded Fund Trust ([accession 0001193125-25-064178](https://www.sec.gov/Archives/edgar/data/1485894/000119312525064178/d916859ddelam.htm)).
+- `40-17f2-fundrise.htm.gz` — 40-17F2, Fundrise Innovation Fund ([accession 0001867090-26-000072](https://www.sec.gov/Archives/edgar/data/1867090/000186709026000072/d17f2innovation03202026.htm)); the primary includes the custody certificate, accountant’s examination report, and management statement.
+- `n-2-posasr-eagle-point.htm.gz` — N-2 POSASR, Eagle Point Credit Company ([accession 0001104659-26-065749](https://www.sec.gov/Archives/edgar/data/1604174/000110465926065749/tm2615164d1_n2posasr.htm)); the primary includes the post-effective amendment and Part C.
+- `n-2mef-ives-ultra.htm.gz` — N-2MEF, Ives Ultra AI Opportunities ([accession 0001213900-26-104842](https://www.sec.gov/Archives/edgar/data/2077345/000121390026104842/ea0307144-01_n2mef.htm)); the Rule 462(b) filing’s explanatory note incorporates the earlier registration statement by reference.
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed

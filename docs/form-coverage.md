@@ -80,7 +80,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `40-17F2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17F2")` |
+| `40-17F2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-17G` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-24B2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-33` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -195,12 +195,12 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-14 8C` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
+| `N-2 POSASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-23C-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3B` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-2ASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2MEF` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2MEF")` |
+| `N-2MEF` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-30B-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-30D` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-4` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
