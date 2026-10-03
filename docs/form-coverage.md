@@ -83,7 +83,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40-17F2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-17G` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-24B2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-24B2")` |
-| `40-33` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-33")` |
+| `40-33` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-6B` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-8F-2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-APP` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -200,7 +200,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-23C3A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3B` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-2ASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2MEF` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2MEF")` |
+| `N-2MEF` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-30B-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-30D` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-4` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -322,11 +322,11 @@ G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
 and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot
 (87.7%). The remaining 21 forms are still L0.
 
-G10 currently has 32 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
-40-17G, 40-6B, 40-8F-2, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS, 486BPOS,
-486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU, APP WD, DEL AM,
-N-14, N-14 8C, N-1A, N-2, N-2 POSASR, N-2ASR, N-4, N-6, and S-6. The remaining
-8 forms are still L0.
+G10 currently has 34 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
+40-17G, 40-33, 40-6B, 40-8F-2, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS,
+486BPOS, 486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU,
+APP WD, DEL AM, N-14, N-14 8C, N-1A, N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4,
+N-6, and S-6. The remaining 6 forms are still L0.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
