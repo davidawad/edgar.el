@@ -2,6 +2,8 @@
 
 These are unmodified documents published in SEC EDGAR's Archives:
 
+- `schedule-13g-gme-xml.xml` — [Schedule 13G accession 0002063571-25-000002](https://www.sec.gov/Archives/edgar/data/1326380/000206357125000002/primary_doc.xml) (GameStop; 2025-04-02).
+- `schedule-13d-taskus-a.xml` — [Schedule 13D/A accession 0001635999-25-000007](https://www.sec.gov/Archives/edgar/data/1829864/000163599925000007/primary_doc.xml) (TaskUs; 2025-08-26).
 - `nport-p-eagle.xml` — [NPORT-P accession 0000850027-26-000015](https://www.sec.gov/Archives/edgar/data/850027/000085002726000015/primary_doc.xml).
 - `n-mfp3-northwestern-mutual.xml` — [N-MFP3 accession 0000742212-26-000029](https://www.sec.gov/Archives/edgar/data/742212/000074221226000029/primary_doc.xml).
 - `n-cen-alps.xml` — [N-CEN accession 0001049169-26-001803](https://www.sec.gov/Archives/edgar/data/915802/000104916926001803/primary_doc.xml).

@@ -275,8 +275,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SC TO-T` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-T")` |
 | `SC14D1F` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D1F")` |
 | `SC14D9C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D9C")` |
-| `SCHEDULE 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SCHEDULE 13D")` |
-| `SCHEDULE 13G` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SCHEDULE 13G")` |
+| `SCHEDULE 13D` | G3 Beneficial ownership 13D/13G | xml | L2 | `(edgar-schedule-13d-g-cover-page filing)` |
+| `SCHEDULE 13G` | G3 Beneficial ownership 13D/13G | xml | L2 | `(edgar-schedule-13d-g-cover-page filing)` |
 | `SD` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SEC STAFF ACTIO` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "SEC STAFF ACTIO")` |
 | `SEC STAFF LETTE` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "SEC STAFF LETTE")` |

@@ -42,6 +42,38 @@
                        edgar-ownership-test--directory))
     (read (current-buffer))))
 
+(defun edgar-ownership-test--schedule-snapshot (slug)
+  "Return the typed Schedule 13D/G snapshot for fixture SLUG."
+  (let* ((filing (edgar-fixtures-filing slug))
+         (tree (edgar-ownership-test--fixture slug)))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
+      (list :form (plist-get filing :form)
+            :cover (edgar-schedule-13d-g-cover-page filing)
+            :purpose (edgar-schedule-13d-purpose-of-transaction filing)))))
+
+(defun edgar-ownership-test--schedule-expect-snapshot (slug)
+  "Return compact expectation values for Schedule 13D/G fixture SLUG."
+  (let* ((filing (edgar-fixtures-filing slug))
+         (snapshot (edgar-ownership-test--schedule-snapshot slug))
+         (cover (plist-get snapshot :cover))
+         (issuer (plist-get cover :issuer))
+         (person (car (plist-get cover :reporting-persons)))
+         (purpose (plist-get snapshot :purpose)))
+    (list :form (plist-get filing :form)
+          :accession (plist-get filing :accn)
+          :issuer (plist-get issuer :name)
+          :reporting-person-count
+          (length (plist-get cover :reporting-persons))
+          :item-4-amount (plist-get person :item-4-amount)
+          :item-4-percent (plist-get person :item-4-percent)
+          :purpose-prefix
+          (and purpose
+               (substring
+                purpose 0
+                (min (length purpose)
+                     (length
+                      "The Reporting Persons have acquired shares in the issuer for investment purposes")))))))
+
 (defun edgar-ownership-test--transaction (form code)
   "Return a small offline ownership XML tree for FORM and transaction CODE."
   (edgar-ownership-test--xml
@@ -401,6 +433,25 @@
                  (and (equal item "4") "Legacy purpose section"))))
       (should (equal (edgar-schedule-13d-purpose-of-transaction legacy)
                      "Legacy purpose section")))))
+
+(ert-deftest edgar-schedule-13d-g-recorded-sec-xml-goldens ()
+  "Parse real Schedule 13G and amended 13D XML against typed field goldens."
+  (dolist (slug '("schedule-13g-gme-xml" "schedule-13d-taskus-a"))
+    (should (equal (edgar-ownership-test--schedule-snapshot slug)
+                   (edgar-ownership-test--golden slug)))
+    (should (equal (edgar-ownership-test--schedule-expect-snapshot slug)
+                   (edgar-ownership-test--expect slug)))))
+
+(ert-deftest edgar-schedule-13g-legacy-sections-match-golden ()
+  "Parse actual legacy SC 13G/A text into the recorded section golden."
+  (let* ((filing (edgar-fixtures-filing "sc-13ga-gme"))
+         (text (edgar-fixtures-text "sc-13ga-gme"))
+         (golden
+          (plist-get (edgar-ownership-test--golden "sc-13ga-gme")
+                     :sections)))
+    (cl-letf (((symbol-function 'edgar-text) (lambda (_) text)))
+      (should (equal (edgar-schedule-13d-g-legacy-sections filing)
+                     golden)))))
 
 (ert-deftest edgar-schedule-13g-legacy-fixture-remains-text-readable ()
   "Keep the recorded SC 13G/A text fixture available through legacy sections."

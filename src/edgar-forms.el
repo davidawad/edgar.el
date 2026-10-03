@@ -2327,8 +2327,8 @@
      (list
       :family "G3 Beneficial ownership 13D/13G"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(cover-page reporting-persons item-4-purpose)
       :volume 2688
       :notes nil)
      table)
@@ -2337,8 +2337,8 @@
      (list
       :family "G3 Beneficial ownership 13D/13G"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(cover-page reporting-persons item-4-ownership)
       :volume 16008
       :notes nil)
      table)
