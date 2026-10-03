@@ -33,7 +33,11 @@
 (defun edgar-docs--exhibit-type (name)
   "Infer an exhibit type from document NAME, or return its extension."
   (let ((case-fold-search t))
-    (or (and (string-match
+    (or (and (string-match "exhibit\\([0-9][0-9]\\)\\([0-9]\\)" name)
+             (format "EX-%s.%s"
+                     (match-string 1 name)
+                     (match-string 2 name)))
+        (and (string-match
               "ex[-_]?\\([0-9][0-9]?[a-z]?\\)[-_.]?\\([0-9]+\\)?"
               name)
              (format "EX-%s%s"
