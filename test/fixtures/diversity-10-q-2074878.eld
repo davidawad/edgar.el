@@ -1,0 +1,1 @@
+(:accn "0001493152-26-022814" :form "10-Q" :company "New America Acquisition I Corp." :filed "2026-05-14" :report "" :doc "form10-q.htm" :cik 2074878 :url "https://www.sec.gov/Archives/edgar/data/2074878/000149315226022814/form10-q.htm" :size 462680 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

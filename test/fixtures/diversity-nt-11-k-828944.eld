@@ -1,0 +1,1 @@
+(:accn "0000828944-26-000022" :form "NT 11-K" :company "WSFS FINANCIAL CORP" :filed "2026-06-30" :report "" :doc "formnt11-k.htm" :cik 828944 :url "https://www.sec.gov/Archives/edgar/data/828944/000082894426000022/formnt11-k.htm" :size 28411 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

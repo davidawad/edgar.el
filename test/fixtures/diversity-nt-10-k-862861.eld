@@ -1,0 +1,1 @@
+(:accn "0001493152-26-013194" :form "NT 10-K" :company "ALT5 Sigma Corp" :filed "2026-03-27" :report "" :doc "formnt10-k.htm" :cik 862861 :url "https://www.sec.gov/Archives/edgar/data/862861/000149315226013194/formnt10-k.htm" :size 42551 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

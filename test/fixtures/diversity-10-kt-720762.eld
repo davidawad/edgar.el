@@ -1,0 +1,1 @@
+(:accn "0001493152-26-013100" :form "10-KT" :company "NON INVASIVE MONITORING SYSTEMS INC /FL/" :filed "2026-03-27" :report "" :doc "form10-kt.htm" :cik 720762 :url "https://www.sec.gov/Archives/edgar/data/720762/000149315226013100/form10-kt.htm" :size 743545 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001193125-26-061644" :form "25" :company "BlackRock ETF Trust" :filed "2026-02-20" :report "" :doc "d113716d25.htm" :cik 1761055 :url "https://www.sec.gov/Archives/edgar/data/1761055/000119312526061644/d113716d25.htm" :size 14942 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

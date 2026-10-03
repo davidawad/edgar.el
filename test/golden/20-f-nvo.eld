@@ -37,8 +37,6 @@
    "ITEM 12 DESCRIPTION OF SECURITIES OTHER THAN EQUITY SECURITIES A."
    "Morgan Depositary Receipts Group as Depositary, JPMorgan Chase Bank, N.A., 383 Madison Avenue, Floor 11, New York, United States."
    "See Exhibit 2.1 to this Form 20-F for a description of the rights of holders of the ADRs.")
-  ("II.13"
-   "ITEM 13 DEFAULTS, DIVIDEND ARREARAGES AND DELINQUENCIES None.")
   ("II.14"
    "ITEM 14 MATERIAL MODIFICATIONS TO THE 29 RIGHTS OF SECURITY HOLDERS AN")
   ("II.15"

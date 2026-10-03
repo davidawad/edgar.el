@@ -128,15 +128,19 @@ Limit results to FORM and the inclusive SINCE and UNTIL filing dates."
            (lambda (original)
              (and (equal (plist-get original :form) base-form)
                   (equal (plist-get original :cik) cik)
-                  (or (not (and filed (plist-get original :filed)))
-                      (not (string< filed (plist-get original :filed))))
+                  (or (not
+                       (and filed (plist-get original :filed)))
+                      (not
+                       (string< filed (plist-get original :filed))))
                   (or (string-empty-p (or report ""))
                       (equal report (plist-get original :report)))))
            originals)))
-    (car (sort matches
-               (lambda (left right)
-                 (string< (or (plist-get right :filed) "")
-                          (or (plist-get left :filed) "")))))))
+    (car
+     (sort matches
+           (lambda (left right)
+             (string<
+              (or (plist-get right :filed) "")
+              (or (plist-get left :filed) "")))))))
 
 (defun edgar--annotate-amendments (ticker form filings)
   "Add each `/A' entry's original accession in `:amends' to FILINGS.
@@ -151,8 +155,9 @@ Only exact `/A' queries are annotated.  TICKER and FORM identify the query."
        (lambda (amendment)
          (let ((original (edgar--amends-target amendment originals)))
            (if original
-               (plist-put (copy-sequence amendment)
-                          :amends (plist-get original :accn))
+               (plist-put
+                (copy-sequence amendment)
+                :amends (plist-get original :accn))
              amendment)))
        filings))))
 
@@ -216,16 +221,17 @@ PDF bodies are returned as unibyte strings."
       (while (search-forward "<DOCUMENT>" nil t)
         (let ((start (point)))
           (when (search-forward "</DOCUMENT>" nil t)
-            (push
-             (buffer-substring-no-properties start (match-beginning 0))
-             documents)))))
+            (push (buffer-substring-no-properties
+                   start (match-beginning 0))
+                  documents)))))
     (nreverse documents)))
 
 (defun edgar--submission-document-tag (document tag)
   "Return the header value for TAG in SGML DOCUMENT, or nil."
   (let* ((case-fold-search t)
          (text-start (string-match "<TEXT>" document))
-         (header (substring document 0 (or text-start (length document))))
+         (header
+          (substring document 0 (or text-start (length document))))
          (pattern (format "<%s>[ \t]*\\([^\r\n]+\\)" tag)))
     (when (string-match pattern header)
       (string-trim (match-string 1 header)))))
@@ -233,7 +239,8 @@ PDF bodies are returned as unibyte strings."
 (defun edgar--source-format (name content)
   "Return a generic source format for NAME and CONTENT."
   (let ((case-fold-search t)
-        (prefix (downcase (substring content 0 (min 100 (length content))))))
+        (prefix
+         (downcase (substring content 0 (min 100 (length content))))))
     (cond
      ((or (and name (string-match-p "\\.pdf\\'" name))
           (string-prefix-p "<pdf>" (string-trim-left prefix)))
@@ -242,9 +249,11 @@ PDF bodies are returned as unibyte strings."
           (string-prefix-p "<?xml" (string-trim-left prefix)))
       'xml)
      ((or (and name (string-match-p "\\.html?\\'" name))
-          (string-match-p "\\`[ \t\r\n]*\\(?:<!doctype html\\|<html\\)" prefix))
+          (string-match-p
+           "\\`[ \t\r\n]*\\(?:<!doctype html\\|<html\\)" prefix))
       'html)
-     (t 'text))))
+     (t
+      'text))))
 
 (defun edgar--pdf-text (pdf)
   "Render unibyte PDF body PDF as text with `edgar-pdftotext-program'."
@@ -282,16 +291,20 @@ PDF bodies are returned as unibyte strings."
                  (equal
                   form
                   (edgar--base-form
-                   (or (edgar--submission-document-tag document "TYPE") ""))))
+                   (or
+                    (edgar--submission-document-tag document "TYPE")
+                    ""))))
                documents)
               (car documents))))
     (if (null primary)
-        (list :type form
-              :name (plist-get filing :doc)
-              :format
-              (edgar--source-format (plist-get filing :doc) submission)
-              :content submission)
-      (let* ((name (edgar--submission-document-tag primary "FILENAME"))
+        (list
+         :type form
+         :name (plist-get filing :doc)
+         :format
+         (edgar--source-format (plist-get filing :doc) submission)
+         :content submission)
+      (let* ((name
+              (edgar--submission-document-tag primary "FILENAME"))
              (text-start (string-match "<TEXT>[ \t\r\n]*" primary))
              (content-start (and text-start (match-end 0)))
              (content-end
@@ -299,17 +312,22 @@ PDF bodies are returned as unibyte strings."
                    (string-match "</TEXT>" primary content-start)))
              (content
               (if content-start
-                  (substring primary content-start
+                  (substring primary
+                             content-start
                              (or content-end (length primary)))
                 primary)))
-        (list :type (or (edgar--submission-document-tag primary "TYPE") form)
-              :name name
-              :format (edgar--source-format name content)
-              :content (string-trim content))))))
+        (list
+         :type
+         (or (edgar--submission-document-tag primary "TYPE") form)
+         :name name
+         :format (edgar--source-format name content)
+         :content (string-trim content))))))
 
 (defun edgar--submission-primary-document (submission filing)
   "Return FILING's primary content from EDGAR SGML SUBMISSION."
-  (plist-get (edgar--submission-primary-info submission filing) :content))
+  (plist-get
+   (edgar--submission-primary-info submission filing)
+   :content))
 
 (defun edgar--sgml-submission-p (content)
   "Return non-nil when CONTENT begins with an EDGAR SGML document wrapper."
@@ -388,8 +406,7 @@ PDF bodies are returned as unibyte strings."
    ((and (consp node) (symbolp (car node)))
     (let* ((attributes (and (listp (cadr node)) (cadr node)))
            (children
-            (if (or attributes
-                    (null (cadr node)))
+            (if (or attributes (null (cadr node)))
                 (cddr node)
               (cdr node))))
       (list
@@ -400,7 +417,8 @@ PDF bodies are returned as unibyte strings."
    (t
     (list :type 'value :value node))))
 
-(defun edgar--document-primary-metadata (filing format &optional primary)
+(defun edgar--document-primary-metadata
+    (filing format &optional primary)
   "Return generic source metadata for FILING and FORMAT.
 PRIMARY, when non-nil, is the selected EDGAR submission document record."
   (let* ((url (plist-get filing :url))
@@ -421,7 +439,8 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
      :primary-document
      (list
       :name primary-name
-      :type (or (plist-get primary :type) (plist-get filing :form))
+      :type
+      (or (plist-get primary :type) (plist-get filing :form))
       :format (or (plist-get primary :format) format)
       :readable (if (plist-member primary :readable)
                     (plist-get primary :readable)
@@ -432,11 +451,12 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
     (filing format children &optional text primary)
   "Build a generic document tree result for FILING and FORMAT."
   (let ((result
-         (list :type 'document
-               :format format
-               :metadata
-               (edgar--document-primary-metadata filing format primary)
-               :children children)))
+         (list
+          :type 'document
+          :format format
+          :metadata
+          (edgar--document-primary-metadata filing format primary)
+          :children children)))
     (when text
       (setq result (plist-put result :text text)))
     result))
@@ -471,13 +491,15 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
      (with-temp-buffer
        (insert content)
        (edgar--document-structure-result
-        filing format
+        filing
+        format
         (list
          (edgar--structure-node
           (if (eq format 'xml)
               (libxml-parse-xml-region (point-min) (point-max))
             (libxml-parse-html-region (point-min) (point-max)))))
-        nil primary)))
+        nil
+        primary)))
     (_
      (let* ((text (edgar--legacy-text content))
             (paragraphs
@@ -485,8 +507,8 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
               #'string-empty-p
               (mapcar
                #'string-trim
-               (split-string
-                text "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
+               (split-string text
+                             "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
        (edgar--document-structure-result
         filing 'text
         (mapcar
@@ -518,7 +540,8 @@ representation."
      ((and (stringp url)
            (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
       (let* ((submission (edgar--fetch url))
-             (primary (edgar--submission-primary-info submission filing)))
+             (primary
+              (edgar--submission-primary-info submission filing)))
         (edgar--document-structure-from-content
          filing
          (plist-get primary :format)
@@ -533,8 +556,7 @@ representation."
             (edgar--document-structure-from-content
              filing
              (plist-get primary :format)
-             (plist-get primary :content)
-             primary)
+             (plist-get primary :content) primary)
           (with-temp-buffer
             (insert html)
             (edgar--document-structure-result
@@ -581,12 +603,14 @@ NAME is a tag or XML element name, compared without regard to case."
   "Return elements at PATH in TREE.
 PATH is a list of tag names from an element below the document root."
   (let* ((children (plist-get tree :children))
-         (root-name (and (= (length children) 1)
-                         (plist-get (car children) :name)))
-         (first-name (and path
-                          (if (symbolp (car path))
-                              (symbol-name (car path))
-                            (car path))))
+         (root-name
+          (and (= (length children) 1)
+               (plist-get (car children) :name)))
+         (first-name
+          (and path
+               (if (symbolp (car path))
+                   (symbol-name (car path))
+                 (car path))))
          (roots
           (if (and (equal (downcase (or root-name "")) "top")
                    (not (equal (downcase (or first-name "")) "top")))
@@ -731,7 +755,8 @@ Signal `user-error' if multiple matches exist; return nil if absent."
          (wanted-name
           (and (not path-p)
                (downcase
-                (string-trim (edgar--normalize-section-whitespace name)))))
+                (string-trim
+                 (edgar--normalize-section-whitespace name)))))
          (headings (edgar-structure-headings tree))
          (heading-hits
           (seq-filter
@@ -776,8 +801,23 @@ Signal `user-error' if multiple matches exist; return nil if absent."
   (let ((case-fold-search nil)
         (words (split-string line "[ \t]+" t))
         (small-words
-         '("a" "an" "and" "as" "at" "by" "due" "for" "from"
-           "in" "into" "of" "on" "or" "the" "to" "with"))
+         '("a"
+           "an"
+           "and"
+           "as"
+           "at"
+           "by"
+           "due"
+           "for"
+           "from"
+           "in"
+           "into"
+           "of"
+           "on"
+           "or"
+           "the"
+           "to"
+           "with"))
         has-capitalized-word)
     (and
      (<= 3 (length line) 100)
@@ -787,10 +827,12 @@ Signal `user-error' if multiple matches exist; return nil if absent."
      (seq-every-p
       (lambda (word)
         (cond
-         ((member (downcase word) small-words) t)
+         ((member (downcase word) small-words)
+          t)
          ((string-match-p "\\`[[:upper:]]" word)
           (setq has-capitalized-word t))
-         (t nil)))
+         (t
+          nil)))
       words)
      has-capitalized-word)))
 
@@ -807,9 +849,10 @@ Signal `user-error' if multiple matches exist; return nil if absent."
       (insert normalized)
       (goto-char (point-min))
       (while (not (eobp))
-        (let ((line (string-trim
-                     (buffer-substring-no-properties
-                      (line-beginning-position) (line-end-position)))))
+        (let ((line
+               (string-trim
+                (buffer-substring-no-properties
+                 (line-beginning-position) (line-end-position)))))
           (when (and (string-equal (downcase line) (downcase name))
                      (edgar--title-case-heading-p line))
             (push (line-beginning-position) positions)))
@@ -824,7 +867,9 @@ Signal `user-error' if multiple matches exist; return nil if absent."
                  (and (> (plist-get section :position) start)
                       (plist-get section :position)))
                (edgar-named-sections normalized))))
-        (substring normalized (1- start) (1- (or next (1+ (length normalized)))))))))
+        (substring normalized
+                   (1- start)
+                   (1- (or next (1+ (length normalized)))))))))
 
 (defun edgar-named-sections (text)
   "Return generic named section headings found in TEXT.
@@ -832,7 +877,7 @@ Each result is a plist with :name, :path, :body, and :position.  This
 form-agnostic fallback recognizes standalone uppercase or title-case headings;
 callers needing every source node should use `edgar-document-structure'."
   (let ((case-fold-search nil)
-    marks)
+        marks)
     (with-temp-buffer
       (insert (edgar--normalize-section-whitespace text))
       (goto-char (point-min))
@@ -863,9 +908,9 @@ callers needing every source node should use `edgar-document-structure'."
                               (string-match-p "[A-Z]" line)
                               (not (string-match-p "[a-z]" line)))
                          (edgar--title-case-heading-p line))
-                     (not (string-match-p
-                           "\\`\\(?:ITEM\\|PART\\)\\_>"
-                           (upcase line)))
+                     (not
+                      (string-match-p
+                       "\\`\\(?:ITEM\\|PART\\)\\_>" (upcase line)))
                      (or before-blank after-blank)))
                (boundary-p
                 (or named-p
@@ -1040,21 +1085,24 @@ wins."
   "Non-nil if BODY contains only a possibly wrapped Item heading.
 Table-of-contents entries can wrap onto several lines and include a page
 number at the end of any line."
-  (let* ((lines (seq-remove #'string-blank-p (split-string body "\n")))
-         (first (car lines))
-         (rest
-          (and first
-               (string-match
-                "\\`[ \t\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?[ \t\u00a0]*\\(.*\\)"
-                first)
-               (cons (match-string 1 first) (cdr lines))))
-         (title-lines
-          (mapcar
-           (lambda (line)
-             (string-trim
-              (replace-regexp-in-string "[ \t\u00a0]+[0-9]+[ \t\u00a0]*\\'"
-                                        "" line)))
-           rest)))
+  (let*
+      ((lines
+        (seq-remove #'string-blank-p (split-string body "\n")))
+       (first (car lines))
+       (rest
+        (and
+         first
+         (string-match
+          "\\`[ \t\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?[ \t\u00a0]*\\(.*\\)"
+          first)
+         (cons (match-string 1 first) (cdr lines))))
+       (title-lines
+        (mapcar
+         (lambda (line)
+           (string-trim
+            (replace-regexp-in-string
+             "[ \t\u00a0]+[0-9]+[ \t\u00a0]*\\'" "" line)))
+         rest)))
     (and title-lines
          (<= (length (mapconcat #'identity title-lines " ")) 250)
          (seq-every-p
@@ -1138,10 +1186,11 @@ section.  For arbitrary data elements, use `edgar-document-structure' and
                   (cdr (car item-hits)))
                  (named-hits
                   (plist-get
-                   (car (sort named-hits
-                              (lambda (a b)
-                                (> (length (plist-get a :body))
-                                   (length (plist-get b :body))))))
+                   (car
+                    (sort named-hits
+                          (lambda (a b)
+                            (> (length (plist-get a :body))
+                               (length (plist-get b :body))))))
                    :body))
                  ((edgar--title-case-section text item))
                  ((not (stringp (plist-get filing :url)))
@@ -1152,7 +1201,7 @@ section.  For arbitrary data elements, use `edgar-document-structure' and
                           (edgar-document-structure filing) item)))
                     (and section (plist-get section :body)))))))
              ((null (cdr hits))
-             (cdr (car hits)))
+              (cdr (car hits)))
              (t
               (user-error "Item %s is ambiguous; use one of %s"
                           want
@@ -1164,26 +1213,33 @@ If no amendment to the latest original contains KEY, return its original
 section.  KEY follows `edgar-section' (for example, \"III.10\")."
   (let* ((base-form (edgar--base-form form))
          (originals
-          (sort (edgar-filings ticker base-form) #'
-                (lambda (left right)
-                  (string< (or (plist-get right :filed) "")
-                           (or (plist-get left :filed) "")))))
+          (sort (edgar-filings ticker base-form)
+                #'(lambda (left right)
+                    (string<
+                     (or (plist-get right :filed) "")
+                     (or (plist-get left :filed) "")))))
          (original (car originals))
          (original-accn (plist-get original :accn))
          (original-report (plist-get original :report))
          (amendments
-          (sort (edgar-filings ticker (concat base-form "/A")) #'
-                (lambda (left right)
-                  (string< (or (plist-get right :filed) "")
-                           (or (plist-get left :filed) "")))))
+          (sort (edgar-filings ticker (concat base-form "/A"))
+                #'(lambda (left right)
+                    (string<
+                     (or (plist-get right :filed) "")
+                     (or (plist-get left :filed) "")))))
          (related
           (seq-filter
            (lambda (amendment)
              (or (and original-accn
-                      (equal (plist-get amendment :amends) original-accn))
+                      (equal
+                       (plist-get amendment :amends) original-accn))
                  (and original-accn
                       (not (string-empty-p (or original-report "")))
-                      (equal (plist-get amendment :report) original-report))))
+                      (equal
+                       (plist-get
+                        amendment
+                        :report)
+                       original-report))))
            amendments))
          effective)
     (catch 'found
@@ -1209,9 +1265,17 @@ Return an empty string when the texts are equal."
             (insert after))
           (with-temp-buffer
             (let ((status
-                   (call-process "diff" nil t nil "-u"
-                                 "-L" "before" before-file
-                                 "-L" "after" after-file)))
+                   (call-process "diff"
+                                 nil
+                                 t
+                                 nil
+                                 "-u"
+                                 "-L"
+                                 "before"
+                                 before-file
+                                 "-L"
+                                 "after"
+                                 after-file)))
               (unless (memq status '(0 1))
                 (error "diff failed with status %s" status))
               (buffer-string))))

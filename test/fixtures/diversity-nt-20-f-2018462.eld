@@ -1,0 +1,1 @@
+(:accn "0001493152-26-004493" :form "NT 20-F" :company "PicoCELA Inc." :filed "2026-01-30" :report "" :doc "formnt20-f.htm" :cik 2018462 :url "https://www.sec.gov/Archives/edgar/data/2018462/000149315226004493/formnt20-f.htm" :size 32548 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

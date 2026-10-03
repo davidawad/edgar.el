@@ -76,9 +76,10 @@
 
 (ert-deftest edgar-sections-normalize-unicode-heading-spaces ()
   "Unicode spaces in Item headings do not make sections disappear."
-  (let ((sections
-         (edgar-sections
-          "Item\u20091. Summary of the Offer\nImportant terms follow.\n")))
+  (let
+      ((sections
+        (edgar-sections
+         "Item\u20091. Summary of the Offer\nImportant terms follow.\n")))
     (should (equal (mapcar #'car sections) '("1")))
     (should (string-match-p "Important terms" (cdar sections)))))
 
@@ -376,7 +377,8 @@
         (should (string-match-p "Walmart Inc." body))
         (should (string-match-p "FORM 25" body))))))
 
-(ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
+(ert-deftest edgar-named-section-extraction-matches-reviewed-goldens
+    ()
   "Named section output stays pinned across reviewed filing layouts."
   (let ((goldens
          (edgar-fixtures-read
@@ -619,7 +621,9 @@
       (let* ((tree (edgar-document-structure filing))
              (primary
               (plist-get
-               (plist-get (plist-get tree :metadata) :primary-document)
+               (plist-get
+                (plist-get tree :metadata)
+                :primary-document)
                :name)))
         (should (eq (plist-get tree :format) 'pdf))
         (should (equal primary "filename1.pdf"))
@@ -727,25 +731,32 @@
 
 (ert-deftest edgar-html-url-can-contain-an-sgml-primary-wrapper ()
   "Select the form-matching primary from a wrapped document at an HTML URL."
-  (let* ((filing
-          '(:form "15-12G" :accn "0000000000-26-000003" :cik 3
-            :doc "MainDocument.htm"
-            :url "https://example.invalid/MainDocument.htm"))
-         (submission
-          (concat
-           "<DOCUMENT><TYPE>EX-99\n<FILENAME>exhibit.htm\n<TEXT>"
-           "<html><body><p>Unrelated exhibit text.</p></body></html>"
-           "</TEXT></DOCUMENT>"
-           "<DOCUMENT><TYPE>15-12G\n<FILENAME>MainDocument.htm\n<TEXT>"
-           "<html><body><h1>Form 15-12G</h1>"
-           "<p>Primary filing text.</p></body></html>"
-           "</TEXT></DOCUMENT>")))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
+  (let*
+      ((filing
+        '(:form
+          "15-12G"
+          :accn "0000000000-26-000003"
+          :cik 3
+          :doc "MainDocument.htm"
+          :url "https://example.invalid/MainDocument.htm"))
+       (submission
+        (concat
+         "<DOCUMENT><TYPE>EX-99\n<FILENAME>exhibit.htm\n<TEXT>"
+         "<html><body><p>Unrelated exhibit text.</p></body></html>"
+         "</TEXT></DOCUMENT>"
+         "<DOCUMENT><TYPE>15-12G\n<FILENAME>MainDocument.htm\n<TEXT>"
+         "<html><body><h1>Form 15-12G</h1>"
+         "<p>Primary filing text.</p></body></html>"
+         "</TEXT></DOCUMENT>")))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) submission)))
       (let* ((text (edgar-text filing))
              (tree (edgar-document-structure filing))
              (primary
               (plist-get
-               (plist-get (plist-get tree :metadata) :primary-document)
+               (plist-get
+                (plist-get tree :metadata)
+                :primary-document)
                :name)))
         (should (string-match-p "Primary filing text" text))
         (should-not (string-match-p "<html>" text))
@@ -759,18 +770,25 @@
            :type)
           "15-12G"))
         (should
-         (string-match-p "Primary filing text"
-                         (edgar-structure-text tree)))
+         (string-match-p
+          "Primary filing text" (edgar-structure-text tree)))
         (should-not
-         (string-match-p "Unrelated exhibit text"
-                         (edgar-structure-text tree)))))))
+         (string-match-p
+          "Unrelated exhibit text" (edgar-structure-text tree)))))))
 
 (ert-deftest edgar-document-structure-supports-xml-and-plain-text ()
   (let ((xml-filing
-         '(:form "TEST-XML" :accn "0000000000-26-000001" :cik 1
-           :doc "report.xml" :url "https://example.invalid/report.xml"))
+         '(:form
+           "TEST-XML"
+           :accn "0000000000-26-000001"
+           :cik 1
+           :doc "report.xml"
+           :url "https://example.invalid/report.xml"))
         (text-filing
-         '(:form "TEST-TEXT" :accn "0000000000-26-000002" :cik 2
+         '(:form
+           "TEST-TEXT"
+           :accn "0000000000-26-000002"
+           :cik 2
            :doc "complete.txt"
            :url "https://example.invalid/complete.txt")))
     (cl-letf
@@ -784,8 +802,9 @@
              (text (edgar-document-structure text-filing)))
         (should (eq (plist-get xml :format) 'xml))
         (should
-         (equal (plist-get (plist-get xml :metadata) :accn)
-                "0000000000-26-000001"))
+         (equal
+          (plist-get (plist-get xml :metadata) :accn)
+          "0000000000-26-000001"))
         (should
          (equal
           (plist-get
@@ -820,10 +839,12 @@
           (edgar-structure-text text)
           "First paragraph.\n\nSecond paragraph."))))))
 
-(ert-deftest edgar-document-structure-identifies-pdf-only-submissions ()
+(ert-deftest edgar-document-structure-identifies-pdf-only-submissions
+    ()
   "PDF primary files expose metadata without attempting text extraction."
   (let* ((filing
-          '(:form "SEC STAFF ACTIO"
+          '(:form
+            "SEC STAFF ACTIO"
             :accn "9999999997-26-001144"
             :cik 2124403
             :doc "9999999997-26-001144.txt"
@@ -842,8 +863,8 @@
              (metadata (plist-get tree :metadata))
              (primary (plist-get metadata :primary-document)))
         (should (eq (plist-get tree :format) 'pdf))
-        (should (equal (plist-get metadata :accn)
-                       "9999999997-26-001144"))
+        (should
+         (equal (plist-get metadata :accn) "9999999997-26-001144"))
         (should (equal (plist-get primary :name) "filename1.pdf"))
         (should (eq (plist-get primary :format) 'pdf))
         (should-not (plist-get primary :readable))

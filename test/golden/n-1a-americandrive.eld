@@ -2,9 +2,12 @@
  (("28"
    "Bank National Association (1) (h) (1) Fund Administration, Accounting and Transfer Agency Agreement between the Registrant and U.S."
    "(q) Powers of Attorney (1) (1) Filed herewith.")
-  ("29" "Item 29. Persons Controlled By or Under Common Control with Registrant")
-  ("30" "Item 30. Indemnification Under the terms of the Delaware Statutory Tru")
-  ("31" "288829), as required under applicable state securities laws and regulations.")
+  ("29"
+   "Item 29. Persons Controlled By or Under Common Control with Registrant")
+  ("30"
+   "Item 30. Indemnification Under the terms of the Delaware Statutory Tru")
+  ("31"
+   "288829), as required under applicable state securities laws and regulations.")
   ("32"
    "ActivePassive Core Bond ETF, Series of Trust for Professional Managers 4."
    "CYBER HORNET S&P 500® and Bitcoin 75/25 Strategy ETF, Series of ONEFUND Trust 51."

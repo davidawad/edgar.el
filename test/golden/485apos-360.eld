@@ -23,5 +23,5 @@
  :text
  ("Average Annual Total Returns (for the periods ended December 31, 2025) One Year Since Inception 10/22/2024 M3Sixty Onchain U.S."
   "DISTRIBUTION OF SHARES Matrix 360 Distributors, LLC (the “Distributor”) is the Fund’s principal underwriter."
-  "The address of each trustee and officer is 4300 Shawnee Mission Parkway, Suite 100, Fairway, Kansas 66205."
+  "There will typically be no annual meeting of shareholders in any year in which the 1940 Act does not require the election of Trustees by shareholders."
   "The maximum tax rate on capital gain dividends individuals receive is generally 20%."))

@@ -12,8 +12,8 @@
    "(i) To include any prospectus required by section 10(a)(3) of the Securities Act of 1933;"
    "/s/ Janet Lee-Sheriff Janet Lee-Sheriff Title:"))
  :text
- ("There can be no assurance that we will be successful in our efforts to secure any additional financing on terms satisfactory to our management."
-  "However, these results do affirm the conclusions of the pilot ISR project operated by Mobil Exploration and Production in Section 9 (Vogt, 1984)."
+ ("From time to time, we may rely on debt financing for a portion of our business activities, including capital and operating expenditures."
+  "The estimate of mineral resources includes the Crownpoint area located in portions of Sections 24, Township 17 North, Range 13 West;"
   "Gabruch, former CEO and director, exercised his Verdera Options on February 17, 2026."
   "Holders who use the accrual method of tax accounting."
   "As at April 30, 2025, the weighted-average remaining life of the stock options was 4.63 years (March 31, 2025 – 4.71 years)."))

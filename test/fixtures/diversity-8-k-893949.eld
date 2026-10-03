@@ -1,0 +1,1 @@
+(:accn "0001193125-26-212117" :form "8-K" :company "Pediatrix Medical Group, Inc." :filed "2026-05-07" :report "" :doc "md-20260507.htm" :cik 893949 :url "https://www.sec.gov/Archives/edgar/data/893949/000119312526212117/md-20260507.htm" :size 146817 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

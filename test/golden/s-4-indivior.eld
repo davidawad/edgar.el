@@ -11,6 +11,5 @@
    "(i) To include any prospectus required by Section 10(a)(3) of the Securities Act of 1933;"
    "(c) (1) The undersigned registrant hereby undertakes as follows:"))
  :text
- ("The issuance of Jefferies’ opinion was authorized by Jefferies’ fairness committee."
-  "From 2000 to 118 ---------------------------------------------------------------------------------------------------- TABLE OF CONTENTS 2003, Dr."
+ ("From 2000 to 118 ---------------------------------------------------------------------------------------------------- TABLE OF CONTENTS 2003, Dr."
   "requires the affirmative vote of at least 75% of the voting power of the outstanding shares entitled to vote on the subject matter;"))

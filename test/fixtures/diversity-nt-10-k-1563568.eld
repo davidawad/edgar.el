@@ -1,0 +1,1 @@
+(:accn "0001437749-26-010728" :form "NT 10-K" :company "Envirotech Vehicles, Inc." :filed "2026-03-31" :report "" :doc "adom20260331_nt10k.htm" :cik 1563568 :url "https://www.sec.gov/Archives/edgar/data/1563568/000143774926010728/adom20260331_nt10k.htm" :size 28872 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001493152-26-016266" :form "10-Q" :company "Zhanling International Ltd" :filed "2026-04-13" :report "" :doc "form10-q.htm" :cik 1489300 :url "https://www.sec.gov/Archives/edgar/data/1489300/000149315226016266/form10-q.htm" :size 448954 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

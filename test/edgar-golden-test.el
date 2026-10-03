@@ -474,5 +474,12 @@
       (should
        (string-match-p "Exhibits" (edgar-section filing "12"))))))
 
+(ert-deftest edgar-golden-wrapped-toc-item-residue-is-dropped ()
+  "A wrapped table-of-contents Item does not shadow its Part-qualified body."
+  (let ((sections (edgar-sections
+                   (edgar-fixtures-text "diversity-10-kt-720762"))))
+    (should-not (assoc "5" sections))
+    (should (assoc "II.5" sections))))
+
 (provide 'edgar-golden-test)
 ;;; edgar-golden-test.el ends here
