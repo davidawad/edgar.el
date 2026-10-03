@@ -23,12 +23,13 @@
      (lambda (form)
        (let* ((info (edgar-form-info form))
               (example
-               (pcase (plist-get info :level)
-                 ('L0 (format "`(edgar-form-info \"%s\")`" form))
-                 ('L1 "`(edgar-text filing)`")
-                 (_ (pcase (plist-get info :backend)
-                      ('xml "`(edgar-xml filing)`")
-                      (_ "`(edgar-structure-headings (edgar-document-structure filing))`"))))))
+               (cond
+                ((equal form "13F-HR") "`(edgar-13f-holdings filing)`")
+                ((eq (plist-get info :level) 'L0)
+                 (format "`(edgar-form-info \"%s\")`" form))
+                ((eq (plist-get info :level) 'L1) "`(edgar-text filing)`")
+                ((eq (plist-get info :backend) 'xml) "`(edgar-xml filing)`")
+                (t "`(edgar-structure-headings (edgar-document-structure filing))`"))))
          (format "| `%s` | %s | %s | %s | %s |"
                  form
                  (or (plist-get info :family) "")

@@ -1,0 +1,1 @@
+(:count 148 :sha256 "832c67eebc2557e443b41a8271f30565d80967ae2d474c63d320e3695671c591" :first (:issuer "AMERICAN AIRLS GROUP INC" :class "COM" :cusip "02376R102" :value "1061824" :value-unit thousands :value-usd 1061824000 :shares "22742000" :share-type "SH" :put-call nil :discretion "DFND" :other-manager "4" :voting (:sole "22742000" :shared "0" :none "0")))

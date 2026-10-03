@@ -1,0 +1,1 @@
+(:count 89 :sha256 "8d0ecc14a7e5e9ba7fd32c59d4c31d69d44d4b445e31139566738784a338fc61" :first (:issuer "ALLY FINL INC" :class "COM" :cusip "02005N100" :value "577211815" :value-unit usd :value-usd 577211815 :shares "12561737" :share-type "SH" :put-call nil :discretion "DFND" :other-manager "4" :voting (:sole "12561737" :shared "0" :none "0")))

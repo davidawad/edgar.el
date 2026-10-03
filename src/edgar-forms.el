@@ -164,8 +164,8 @@
      (list
       :family "G4 13F holdings"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(issuer class cusip value shares put-call discretion voting)
       :volume 9625
       :notes nil)
      table)
