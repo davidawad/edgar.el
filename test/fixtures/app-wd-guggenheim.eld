@@ -1,0 +1,1 @@
+(:accn "0001821268-26-000067" :form "APP WD" :filed "2026-04-13" :report "" :doc "gug89737-appwd.htm" :cik 2122340 :url "https://www.sec.gov/Archives/edgar/data/2122340/000182126826000067/gug89737-appwd.htm" :ticker "")

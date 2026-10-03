@@ -1,6 +1,18 @@
 ;; Reviewed (FIXTURE SLUG HEADING BODY FRAGMENT) named-section goldens.
 (("497k-hennessy" "Investment Objective"
   "long-term capital appreciation.")
+ ("485bpos-geme" "Investment Objective"
+  "Pacific NoS Global EM Equity Active ETF")
+ ("485bpos-geme" "Fees and Expenses"
+  "table below describes the fees and expenses")
+ ("485bpos-geme" "Principal Risks"
+  "shareholder is subject to the risk")
+ ("n-1a-americandrive" "Investment Objective"
+  "no assurance that the Fund will achieve its objective")
+ ("n-1a-americandrive" "Fees and Expenses"
+  "table describes the fees and expenses")
+ ("n-1a-americandrive" "Principal Risks"
+  "You could lose money by investing in the Fund")
  ("s-3-autonomix" "RISK FACTORS"
   "Before making an investment decision")
  ("f-1-fasttrack" "USE OF PROCEEDS"

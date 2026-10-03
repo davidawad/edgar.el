@@ -1,0 +1,1 @@
+(:accn "0001193125-05-064452" :form "40-8F-2" :filed "2005-03-30" :report "" :doc "d408f2.htm" :cik 63848 :url "https://www.sec.gov/Archives/edgar/data/63848/000119312505064452/d408f2.htm" :ticker "")

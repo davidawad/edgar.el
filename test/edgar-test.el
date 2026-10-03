@@ -609,6 +609,42 @@
   (let ((edgar-pdftotext-program "edgar-test-missing-pdftotext"))
     (should-error (edgar--pdf-text "%PDF") :type 'user-error)))
 
+(ert-deftest edgar-pdf-g10-filings-use-generic-text-api ()
+  "Real SEC investment-company PDFs use the shared text and tree APIs."
+  (dolist (entry
+           '(("app-wdg-peartree" "withdrawal has been granted")
+             ("app-ordr-great-elm" "order under sections 17(d)")
+             ("app-ntc-advisors-preferred"
+              "multi-class etf fund exemptive relief")
+             ("ct-order-janus-henderson"
+              "order granting confidential treatment")))
+    (let* ((filing (edgar-fixtures-filing (car entry)))
+           (pdf (edgar-fixtures-primary (car entry))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
+        (let* ((text (edgar-text filing))
+               (tree (edgar-document-structure filing)))
+          (should (string-match-p (cadr entry) text))
+          (should (eq (plist-get tree :format) 'pdf))
+          (should (> (length (edgar-structure-paragraphs tree)) 3))
+          (should (string-match-p
+                   (cadr entry) (edgar-structure-text tree))))))))
+
+(ert-deftest edgar-msd-paper-primary-only-exposes-generated-notice ()
+  "An SEC MSD paper submission exposes only its generated placeholder notice."
+  (let* ((filing (edgar-fixtures-filing "msd-state-street"))
+         (submission (edgar-fixtures-primary "msd-state-street")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
+      (let* ((text (edgar-text filing))
+             (tree (edgar-document-structure filing)))
+        (should (string-match-p
+                 "This document was generated as part of a paper submission"
+                 text))
+        (should (string-match-p
+                 "reference the Document Control Number 12010226"
+                 (edgar-structure-text tree)))
+        (should-not
+         (string-match-p "application form contents" text))))))
+
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
   (let* ((slug "upload-irenic-2026")

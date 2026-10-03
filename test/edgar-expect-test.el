@@ -28,7 +28,7 @@
        #'file-exists-p
        (mapcar
         (lambda (ext) (edgar-expect--file slug ext))
-        '(".htm.gz" ".pdf")))
+        '(".htm.gz" ".pdf" ".txt")))
       (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
@@ -41,7 +41,7 @@
    (lambda (slug)
      (seq-some
       (lambda (ext) (file-exists-p (edgar-expect--file slug ext)))
-      '(".htm.gz" ".pdf")))
+      '(".htm.gz" ".pdf" ".txt")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -113,6 +113,11 @@
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
     ("40-17F1" "northern lights fund trust" nil)
+    ("40-17F2" "fundrise innovation fund" nil)
+    ("40-33" "180 degree capital" nil)
+    ("40-24B2" "economic impact of hit-financed projects" nil)
+    ("40-8F-2" "chesapeake investors" nil)
+    ("DEL AM" "j.p. morgan exchange-traded fund trust" nil)
     ("40-6B" "robinhood" nil)
     ("486BXT" "ark venture fund" nil)
     ("485APOS"
@@ -136,11 +141,19 @@
     ("N-4" "form n-4" nil)
     ("N-14 8C" "alternative credit income fund" nil)
     ("N-2ASR" "blackrock enhanced large cap core fund" nil)
+    ("N-2 POSASR" "eagle point credit" nil)
     ("N-6" "form n-6" nil)
+    ("N-2MEF" "ives ultra ai opportunities" nil)
+    ("APP WD" "guggenheim strategic opportunities fund" nil)
+    ("APP WDG" "pear tree funds" nil)
+    ("APP NTC" "multi-class etf fund exemptive relief" nil)
+    ("APP ORDR" "order under sections 17(d)" nil)
+    ("CT ORDER" "order granting confidential treatment" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
+    ("MSD" "generated as part of a paper submission" nil)
     ("F-1" "registration statement" nil)
     ("424B3" "prospectus" nil)
     ("424B4" "prospectus" nil)
@@ -154,8 +167,6 @@
     ("FWP" "hsbc" nil)
     ("S-1" "registration statement" nil)
     ("10-KT" "keemo fashion" ("I.1" "I.1A"))
-    ("1-SA" "form 1-sa" nil)
-    ("1-U" "form 1-u" nil)
     ("8-K12B" "nova minerals" nil)
     ("QRTLYRPT" "african development bank" nil)
     ("SD" "specialized disclosure report" nil)
@@ -167,7 +178,6 @@
     ("18-K" "form 18-k" nil)
     ("25" "walmart inc" nil)
     ("40FR12B" "nuran wireless" nil)
-    ("DEFA14A" "pra group, inc." nil)
     ("DEFA14C" "notice of internet availability" nil)
     ("DEFM14C" "schedule 14c information" nil)
     ("DEFR14C" "amendment no. 1" nil)

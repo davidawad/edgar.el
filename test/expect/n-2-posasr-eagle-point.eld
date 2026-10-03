@@ -1,0 +1,13 @@
+(:form "N-2 POSASR" :text-bucket 15 :text-head
+       "Eagle Point Credit Co Inc - 1604174 - 2026 As filed with the"
+       :sections
+       (("25" 13 "ITEM 25. FINANCIAL STATEMENTS AND EXHIBITS 1. Fina")
+	("26" 7 "ITEM 26. MARKETING ARRANGEMENTS The information co")
+	("27" 9 "ITEM 27. OTHER EXPENSES OF ISSUANCE AND DISTRIBUTI")
+	("28" 9 "ITEM 28. PERSONS CONTROLLED BY OR UNDER COMMON CON")
+	("29" 9 "ITEM 29. NUMBER OF HOLDERS OF SECURITIES The follo")
+	("30" 13 "ITEM 30. INDEMNIFICATION Directors and Officers Re")
+	("31" 9 "ITEM 31. BUSINESS AND OTHER CONNECTIONS OF INVESTM")
+	("32" 9 "ITEM 32. LOCATION OF ACCOUNTS AND RECORDS All acco")
+	("33" 5 "ITEM 33. MANAGEMENT SERVICES Not applicable.")
+	("34" 13 "ITEM 34. UNDERTAKINGS 1. Not applicable. 2. Not ap")))

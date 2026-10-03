@@ -372,7 +372,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 134
       :notes nil)
@@ -392,7 +392,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -402,7 +402,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 8
       :notes nil)
@@ -422,7 +422,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -582,8 +582,9 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(investment-objective fees-and-expenses principal-risks)
       :volume 2352
       :notes nil)
      table)
@@ -672,8 +673,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(summary-prospectus-named-sections)
       :volume 6592
       :notes nil)
      table)
@@ -832,8 +833,8 @@
      "APP NTC"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 65
       :notes nil)
@@ -842,8 +843,8 @@
      "APP ORDR"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 63
       :notes nil)
@@ -853,7 +854,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -862,8 +863,8 @@
      "APP WDG"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -1062,8 +1063,8 @@
      "CT ORDER"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 11
       :notes nil)
@@ -1173,7 +1174,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 16
       :notes nil)
@@ -1472,8 +1473,8 @@
      "MSD"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'text
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -1503,8 +1504,9 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(investment-objective fees-and-expenses principal-risks)
       :volume 13
       :notes nil)
      table)
@@ -1523,7 +1525,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1573,7 +1575,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
