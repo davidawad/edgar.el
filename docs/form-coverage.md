@@ -60,7 +60,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `10-Q` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-Q")` |
 | `11-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `13F-HR` | G4 13F holdings | xml | L2 | `(edgar-13f-holdings filing)` |
-| `13F-NT` | G4 13F holdings | xml | L0 | `(edgar-form-info "13F-NT")` |
+| `13F-NT` | G4 13F holdings | xml | L2 | `(edgar-13f-notice filing)` |
 | `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
 | `15-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-12G")` |
 | `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |

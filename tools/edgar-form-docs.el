@@ -28,6 +28,7 @@
                 ((equal form "3") "`(edgar-form3-holdings filing)`")
                 ((equal form "4") "`(edgar-form4-transactions filing)`")
                 ((equal form "5") "`(edgar-form5-holdings filing)`")
+                ((equal form "13F-NT") "`(edgar-13f-notice filing)`")
                 ((eq (plist-get info :level) 'L0)
                  (format "`(edgar-form-info \"%s\")`" form))
                 ((eq (plist-get info :level) 'L1) "`(edgar-text filing)`")

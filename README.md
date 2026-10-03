@@ -40,6 +40,17 @@ Schedule 13D/G XML and `edgar-schedule-13d-purpose-of-transaction` for 13D Item
 available through `edgar-schedule-13d-g-legacy-sections` and the generic
 `edgar-section` API.
 
+`edgar-offerings.el` provides `edgar-form-c` for typed Regulation Crowdfunding
+offering statements, including issuer, offering, deadline, financial, and
+signature fields. `edgar-form-c-ar` provides annual-report fields. Other Form C
+variants remain available through `edgar-text` and the generic document-tree
+API.
+
+`edgar-13f.el` provides `edgar-13f-holdings` for normalized 13F-HR information
+table rows and `edgar-13f-notice` for typed 13F-NT manager, other-manager, and
+signature data. Reported holding values retain their source unit and include a
+normalized dollar value across the January 2023 reporting-unit change.
+
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history
 pages whose date range overlaps the request.

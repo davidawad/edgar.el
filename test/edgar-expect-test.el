@@ -107,6 +107,7 @@
     ("11-K" "annual report" nil)
     ("4" "statement of changes in beneficial ownership" nil)
     ("13F-HR" "form 13f" nil)
+    ("13F-NT" "form 13f" nil)
     ("N-CSR" "separate N-CSR" ("2"))
     ("SCHEDULE 13G" "schedule 13g" nil)
     ("SC 13G" "schedule 13g" nil)
