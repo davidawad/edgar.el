@@ -367,7 +367,7 @@
         (dolist (marker (plist-get expected :markers))
           (should (string-match-p marker document-text)))
         (should (> (length (edgar-structure-paragraphs tree)) 1))
-        (should (string-match-p "</SEC-DOCUMENT>" document-text))))))
+        (should (string-match-p "</HTML>" document-text))))))
 
 (ert-deftest
     edgar-document-structure-preserves-html-sections-and-paragraphs
