@@ -1,4 +1,8 @@
-(:sections nil :text
+(:sections nil
+ :named-sections
+ (("VERIFICATION"
+   "The undersigned states that (i) he has executed this Form N-8F application"))
+ :text
 	   ("Turner, 11785 Beltsville Drive, Suite, 1600, Beltsville, Maryland 20705 (301) 572-7800 Note:"
 	    "Federated Investment Management Company and Federated Investment Counseling, Federated Investors Tower, Pittsburgh, PA 15222 12."
 	    "$213,811.47 (b) How were those expenses allocated? N/A."

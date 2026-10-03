@@ -196,7 +196,9 @@
   (dolist (slug
            '("40-17f2-fundrise"
              "n-2-posasr-eagle-point"
-             "n-2mef-ives-ultra"))
+             "n-2mef-ives-ultra"
+             "40-8f-2-chesapeake"
+             "app-wd-guggenheim"))
     (let* ((filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
            (golden

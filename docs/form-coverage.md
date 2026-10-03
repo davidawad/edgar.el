@@ -337,9 +337,10 @@ G10 currently has 30 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
 486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU, N-14,
 N-14 8C, N-1A, N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. The
 remaining 10 forms are still L0: 40-24B2, 40-33, 40-8F-2, APP NTC, APP ORDR,
-APP WD, APP WDG, CT ORDER, DEL AM, and MSD. The 40-17F2, N-2 POSASR, and
-N-2MEF fixtures have reviewed generic named-section goldens. They remain L1
-until three distinct filer fixtures support L2 diversity.
+APP WD, APP WDG, CT ORDER, DEL AM, and MSD. Reviewed generic named-section
+goldens cover 40-17F2, N-2 POSASR, N-2MEF, 40-8F-2, and APP WD. The first
+three are L1; 40-8F-2 and APP WD remain L0 pending registry promotion. They
+also need three distinct filer fixtures before any L2 promotion.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
