@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/formc" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>C-TR</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001377469</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <issuerInformation>
+      <issuerInfo>
+        <nameOfIssuer>PEGASUS TEL, INC.</nameOfIssuer>
+        <legalStatus>
+          <legalStatusForm>Corporation</legalStatusForm>
+          <jurisdictionOrganization>DE</jurisdictionOrganization>
+          <dateIncorporation>02-19-2002</dateIncorporation>
+        </legalStatus>
+        <issuerAddress>
+          <com:street1>Bloemendallseweg 69, 2061 CC</com:street1>
+          <com:city>Bloemendaalseweg, Netherlands</com:city>
+          <com:stateOrCountry>P7</com:stateOrCountry>
+          <com:zipCode>2061</com:zipCode>
+        </issuerAddress>
+        <issuerWebsite>pegasus-tel.com</issuerWebsite>
+      </issuerInfo>
+      <isCoIssuer>N</isCoIssuer>
+    </issuerInformation>
+    <offeringInformation>
+    </offeringInformation>
+    <annualReportDisclosureRequirements>
+    </annualReportDisclosureRequirements>
+    <signatureInfo>
+      <issuerSignature>
+        <issuer>Pegasus Tel, Inc.</issuer>
+        <issuerSignature>/s/ Lorenzo Luciano Piceni</issuerSignature>
+        <issuerTitle>President</issuerTitle>
+      </issuerSignature>
+      <signaturePersons>
+        <signaturePerson>
+          <personSignature>/s/ Lorenzo Luciano Piceni</personSignature>
+          <personTitle>President</personTitle>
+          <signatureDate>04-30-2026</signatureDate>
+        </signaturePerson>
+      </signaturePersons>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>

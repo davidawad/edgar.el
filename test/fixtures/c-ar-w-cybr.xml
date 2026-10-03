@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/formc">
+  <headerData>
+    <submissionType>C-AR-W</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001813760</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <period>12-31-2025</period>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <issuerInformation>
+      <issuerInfo>
+        <nameOfIssuer>Cybr International, Inc</nameOfIssuer>
+      </issuerInfo>
+    </issuerInformation>
+    <signatureInfo>
+      <issuerSignature>
+        <issuer>Cybr International, Inc</issuer>
+        <issuerSignature>Shawn Key</issuerSignature>
+        <issuerTitle>Chief Executive Officer</issuerTitle>
+      </issuerSignature>
+      <signaturePersons>
+        <signaturePerson>
+          <personSignature>John Wilson Cochran</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>05-05-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Joseph Steen</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>05-05-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Shawn Key</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>05-05-2026</signatureDate>
+        </signaturePerson>
+      </signaturePersons>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>

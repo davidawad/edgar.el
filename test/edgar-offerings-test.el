@@ -254,6 +254,26 @@
    (edgar-offerings-test--read-fields
     "c-airthium" "C-U" #'edgar-form-c)))
 
+(ert-deftest edgar-g11-xml-primary-fields-match-expectations ()
+  "Generic XML accessors preserve primary fields for SEC-backed G11 filings."
+  (dolist (case
+           '(("1-a-newport" "1-A" "issuerName" "submissionType")
+             ("1-a-pos-iron-bridge" "1-A POS" "issuerName" "offeringFileNumber")
+             ("c-ar-w-cybr" "C-AR-W" "nameOfIssuer" "submissionType")
+             ("c-tr-pegasus" "C-TR" "nameOfIssuer" "submissionType")
+             ("c-tr-w-contractor-plus" "C-TR-W" "nameOfIssuer" "submissionType")
+             ("c-w-rentberry" "C-W" "nameOfIssuer" "submissionType")
+             ("qualif-bio-path" "QUALIF" "entityName" "schemaVersion")))
+    (let* ((slug (nth 0 case))
+           (form (nth 1 case))
+           (tags (list (nth 2 case) (nth 3 case))))
+      (should
+       (equal (edgar-offerings-test--generic-fields slug form tags)
+              (plist-get (edgar-offerings-test--read
+                          (expand-file-name (concat "expect/" slug ".eld")
+                                            edgar-offerings-test--directory))
+                         :fields))))))
+
 (ert-deftest edgar-form-c-generic-text-and-tree-access ()
   "Generic APIs retain Form C text and nested XML values offline."
   (let* ((slug "c-airthium")

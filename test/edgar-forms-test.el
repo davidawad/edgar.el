@@ -97,7 +97,7 @@
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
-  "G11 declares only the three forms with recorded coverage above L0."
+  "G11 records all but the unavailable Form 1 primary document."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
         (counts (list (cons 'L0 0) (cons 'L1 0) (cons 'L2 0))))
     (dolist (row rows)
@@ -106,7 +106,7 @@
     (should (eq (plist-get (edgar-form-info "C") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-AR") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-U") :level) 'L1))
-    (should (equal counts '((L0 . 11) (L1 . 1) (L2 . 2))))))
+    (should (equal counts '((L0 . 1) (L1 . 11) (L2 . 2))))))
 
 (provide 'edgar-forms-test)
 

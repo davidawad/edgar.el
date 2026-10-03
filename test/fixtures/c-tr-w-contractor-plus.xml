@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/formc">
+  <headerData>
+    <submissionType>C-TR-W</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001862675</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <issuerInformation>
+      <issuerInfo>
+        <nameOfIssuer>Contractor Plus, Inc.</nameOfIssuer>
+      </issuerInfo>
+    </issuerInformation>
+    <signatureInfo>
+      <issuerSignature>
+        <issuer>Contractor Plus, Inc.</issuer>
+        <issuerSignature>Muhammad Arsalan</issuerSignature>
+        <issuerTitle>Principal Financial Officer</issuerTitle>
+      </issuerSignature>
+      <signaturePersons>
+        <signaturePerson>
+          <personSignature>Justin Smith</personSignature>
+          <personTitle>CEO</personTitle>
+          <signatureDate>06-17-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Roshanlal Sethia</personSignature>
+          <personTitle>CTO</personTitle>
+          <signatureDate>06-17-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Michael Demler</personSignature>
+          <personTitle>Board Member</personTitle>
+          <signatureDate>06-17-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Liam Bowers</personSignature>
+          <personTitle>Board Member </personTitle>
+          <signatureDate>06-17-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Muhammad Arsalan</personSignature>
+          <personTitle>CFO</personTitle>
+          <signatureDate>06-17-2026</signatureDate>
+        </signaturePerson>
+      </signaturePersons>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>
