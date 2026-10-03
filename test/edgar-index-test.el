@@ -39,34 +39,41 @@
        "0001213900-26-073214.txt")))))
 
 (ert-deftest edgar-index-q2-tail-rows-match-recorded-fixtures ()
-  "Index rows for the low-volume batch agree with fixture metadata."
+  "Sample index rows agree with recorded fixture metadata."
   (let ((rows
          (edgar-index--parse
           (edgar-index-test--fixture "form-index-2026-q2.idx"))))
-    (dolist
-        (slug
-         '("defa14c-graybar" "defm14c-olaplex" "defr14c-srx"
-           "pos-8c-monroe" "prem14c-emerald" "pren14a-fermi"
-           "prer14c-esg" "sc-14n-first-trinity"))
+    (dolist (slug
+             '("defa14c-graybar"
+               "defm14c-olaplex"
+               "defr14c-srx"
+               "pos-8c-monroe"
+               "prem14c-emerald"
+               "pren14a-fermi"
+               "prer14c-esg"
+               "sc-14n-first-trinity"
+               "index-d-2026-q2"))
       (let* ((metadata
               (with-temp-buffer
                 (insert-file-contents
-                 (expand-file-name
-                  (concat "fixtures/" slug ".eld")
-                  edgar-index-test--directory))
+                 (expand-file-name (concat "fixtures/" slug ".eld")
+                                   edgar-index-test--directory))
                 (read (current-buffer))))
              (row
               (seq-find
                (lambda (filing)
-                 (equal (plist-get filing :accn)
-                        (plist-get metadata :accn)))
+                 (equal
+                  (plist-get filing :accn)
+                  (plist-get metadata :accn)))
                rows)))
         (should row)
-        (should (equal (plist-get row :form) (plist-get metadata :form)))
         (should
-         (equal (plist-get row :company)
-                (plist-get metadata :company)))
-        (should (equal (plist-get row :filed) (plist-get metadata :filed)))
+         (equal (plist-get row :form) (plist-get metadata :form)))
+        (should
+         (equal
+          (plist-get row :company) (plist-get metadata :company)))
+        (should
+         (equal (plist-get row :filed) (plist-get metadata :filed)))
         (should
          (equal
           (plist-get metadata :url)

@@ -77,6 +77,39 @@
           (should (eq (plist-get tree :format) 'xml))
           (should (equal submission-types (list (cadr case)))))))))
 
+(ert-deftest edgar-xml-form-d-sampled-fixture-matches-golden ()
+  "A recorded Form D exposes generic XML fields matching its golden."
+  (let* ((slug "index-d-2026-q2")
+         (filing (edgar-fixtures-filing slug))
+         (xml (edgar-xml-test--fixture slug))
+         (snapshot (edgar-xml-test--expect slug))
+         (golden
+          (edgar-fixtures-read
+           (edgar-fixtures-path
+            (concat "golden-fields/" slug ".eld"))))
+         tree)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (setq tree (edgar-xml filing)))
+    (should
+     (equal
+      snapshot
+      (list :form (plist-get filing :form) :root (car tree))))
+    (should
+     (equal
+      golden
+      (list
+       :submission-type
+       (edgar-xml-test--projected-value
+        (edgar-xml-project tree) '(edgarSubmission submissionType))
+       :issuer-name
+       (edgar-xml-test--projected-value
+        (edgar-xml-project tree)
+        '(edgarSubmission primaryIssuer entityName))
+       :jurisdiction
+       (edgar-xml-test--projected-value
+        (edgar-xml-project tree)
+        '(edgarSubmission primaryIssuer jurisdictionOfInc)))))))
+
 (ert-deftest edgar-xml-projects-n-px-notice-report ()
   "Project identifying fields from a recorded N-PX notice filing."
   (let* ((tree (edgar-xml-test--parse "n-px-a4-wealth"))

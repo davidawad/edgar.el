@@ -77,7 +77,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `253G1` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `253G2` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `3` | G1 Ownership | xml | L2 | `(edgar-form3-holdings filing)` |
-| `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
+| `305B2` | G13 Tail | html | L1 | `(edgar-text filing)` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-17F2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -309,6 +309,35 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | G12 Broker-dealer, staff, market structure | 2,577 | 0.7% | 26 | mixed | CORRESP, X-17A-5, UPLOAD, MA-I |
 | G11 Reg CF & Reg A | 3,159 | 0.9% | 18 | XML/HTML | 1-U, C-AR, C, 1-K, C-U, C-TR |
 | G13 Tail | 46 | 0.0% | 2 | HTML | 305B2, POS 8C |
+
+The current registry has 24 L0 base forms with five or fewer Q2 filings.
+None has a row in the committed sampled index fixtures, so there is no sampled
+accession to record for them. This describes the checked-in sample set; it does
+not claim that the SEC had no filings for these forms.
+
+| Family | L0 forms at five or fewer Q2 filings |
+|---|---|
+| G7 Prospectuses & registration | `20FR12G` (2), `40FR12G` (2), `DOSLTR` (1), `DRSLTR` (4), `F-10EF` (1), `F-1MEF` (3), `F-3MEF` (1), `F-N` (1), `S-3D` (1), `S-3DPOS` (5), `S-3MEF` (4), `SF-1` (4), `SF-3` (5) |
+| G9 Periodic & event narrative | `15F-12B` (3), `15F-12G` (1), `6B NTC` (2), `6B ORDR` (1), `ANNLRPT` (4), `SP 15D2` (2) |
+| G10 Investment-company registration | `40-8F-2` (2), `MSD` (2), `N-2 POSASR` (1), `N-2MEF` (1) |
+| G12 Broker-dealer, staff, market structure | `ADV-H-T` (3) |
+
+The committed Q2 2026 index sample contains eight filings for forms with no
+more than five quarterly filings: DEFA14C, DEFM14C, DEFR14C, POS 8C, PREM14C,
+PREN14A, PRER14C, and SC 14N. Each has an SEC fixture, per-filing text
+expectation, and a generic document-structure snapshot in
+`test/expect/low-volume-sampled-structures.eld`. ERT checks all eight snapshots.
+The drift tests scan every committed `form-index-*.idx` fixture: sampled
+low-volume forms cannot remain L0, sampled forms must be registered, and a
+sampled accession with a recorded primary cannot remain L0 or lack a generic
+structure snapshot. Source accessions are listed in
+[`structured-sources.md`](../test/fixtures/structured-sources.md).
+
+For G13, POS 8C (accession `0001104659-26-040388`) and 305B2 (accession
+`0001104659-26-097599`) are L1 with recorded primaries, per-filing expectations,
+and generic structure snapshots. The 305B2 filing was submitted in 2026 Q3;
+its Q2 registry volume is 42. See the
+[G13 source audit](../test/fixtures/structured-sources.md#g13-sampled-source-audit).
 
 ## Current implementation state
 

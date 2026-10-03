@@ -173,6 +173,23 @@ The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.
 
+## G13 sampled source audit
+
+The committed sampled indexes contain one G13 row: POS 8C accession
+`0001104659-26-040388` (Monroe Capital, 2026-04-07), listed in
+`form-index-2026-q2.idx`. Its SEC primary is recorded as
+`pos-8c-monroe.htm.gz` with metadata, per-filing expectation and golden, and
+the generic structure snapshot in
+`test/expect/low-volume-sampled-structures.eld`.
+
+`305B2` — Beacon Financial Corp. ([accession
+0001104659-26-097599](https://www.sec.gov/Archives/edgar/data/1108134/000110465926097599/0001104659-26-097599-index.htm), filed
+2026-08-17). Its primary, [`tm2623171d1_305b2.htm`](https://www.sec.gov/Archives/edgar/data/1108134/000110465926097599/tm2623171d1_305b2.htm),
+is listed as type 305B2 and 20,436 bytes; the bounded fixture fetch recorded
+20,559 raw bytes. The directory also lists Exhibits 1, 2, 4, 6, and 7 plus a
+graphic. This filing supplies a real 305B2 primary despite the absence of the
+accession from the checked-in Q2 sample indexes.
+
 ## G12 source limitations
 
 These Q2 2026 SEC sources were checked through their accession directories.

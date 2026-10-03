@@ -628,8 +628,8 @@
            (plist-get node :children)))))
       elements))))
 
-(defun edgar-test--g12-document-snapshot (filing tree)
-  "Return a whole-text and generic-shape snapshot for G12 FILING and TREE."
+(defun edgar-test--document-snapshot (filing tree)
+  "Return a whole-text and generic-shape snapshot for FILING and TREE."
   (let* ((text (edgar-structure-text tree))
          (headings (edgar-structure-headings tree)))
     (list
@@ -651,6 +651,56 @@
       (lambda (name)
         (cons name (length (edgar-structure-nodes tree name))))
       '("html" "head" "body" "p" "table" "h1" "h2")))))
+
+(ert-deftest edgar-low-volume-sampled-filings-match-generic-structures
+    ()
+  "Indexed low-volume filings match generic document structure snapshots."
+  (let ((expected
+         (edgar-fixtures-read
+          (edgar-fixtures-path
+           "expect/low-volume-sampled-structures.eld"))))
+    (should expected)
+    (dolist (record expected)
+      (let* ((slug (plist-get record :slug))
+             (filing (edgar-fixtures-filing slug))
+             (form (plist-get filing :form))
+             (info (edgar-form-info form))
+             (primary (edgar-fixtures-primary slug)))
+        (should (<= (plist-get info :volume) 5))
+        (should (eq (plist-get info :level) 'L1))
+        (cl-letf (((symbol-function 'edgar--fetch)
+                   (lambda (_) primary)))
+          (let* ((tree (edgar-document-structure filing))
+                 (snapshot
+                  (edgar-test--document-snapshot filing tree)))
+            (should (eq (plist-get tree :format) 'html))
+            (should (> (length (edgar-structure-paragraphs tree)) 0))
+            (should
+             (equal
+              snapshot (plist-get record :document-snapshot)))))))))
+
+(ert-deftest edgar-sampled-filings-match-generic-structure-snapshots
+    ()
+  "Recorded sampled filings match their generic structure snapshots."
+  (let ((expected
+         (edgar-fixtures-read
+          (edgar-fixtures-path
+           "expect/sampled-filings-structures.eld"))))
+    (should expected)
+    (dolist (record expected)
+      (let* ((slug (plist-get record :slug))
+             (filing (edgar-fixtures-filing slug))
+             (info (edgar-form-info (plist-get filing :form)))
+             (primary (edgar-fixtures-primary slug)))
+        (should (memq (plist-get info :level) '(L1 L2)))
+        (cl-letf (((symbol-function 'edgar--fetch)
+                   (lambda (_) primary)))
+          (let* ((tree (edgar-document-structure filing))
+                 (snapshot
+                  (edgar-test--document-snapshot filing tree)))
+            (should
+             (equal
+              snapshot (plist-get record :document-snapshot)))))))))
 
 (defun edgar-test--g12-submission-filing (filing)
   "Return a copy of FILING pointing at its SEC complete-submission file."
@@ -767,7 +817,7 @@
         (should
          (equal
           (plist-get expected :document-snapshot)
-          (edgar-test--g12-document-snapshot filing tree)))))))
+          (edgar-test--document-snapshot filing tree)))))))
 
 (ert-deftest edgar-pdf-primary-uses-generic-text-and-tree-api ()
   "A real SEC PDF primary is readable through the generic APIs."
@@ -826,12 +876,12 @@
           (should
            (equal
             (plist-get expected :submission-snapshot)
-            (edgar-test--g12-document-snapshot
+            (edgar-test--document-snapshot
              submission-filing submission-tree)))
           (should
            (equal
             (plist-get expected :direct-snapshot)
-            (edgar-test--g12-document-snapshot filing direct-tree)))
+            (edgar-test--document-snapshot filing direct-tree)))
           (dolist (tree (list submission-tree direct-tree))
             (dolist (name
                      (plist-get
@@ -882,7 +932,7 @@
           (should
            (equal
             (plist-get expected :document-snapshot)
-            (edgar-test--g12-document-snapshot
+            (edgar-test--document-snapshot
              submission-filing tree))))))))
 
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
@@ -913,7 +963,7 @@
         (should
          (equal
           (plist-get expected :document-snapshot)
-          (edgar-test--g12-document-snapshot filing tree)))))))
+          (edgar-test--document-snapshot filing tree)))))))
 
 (ert-deftest edgar-g12-paper-source-limits-remain-l0 ()
   "G12 paper notices stay L0 while their original report bodies are absent."
