@@ -1,0 +1,1 @@
+(:form "15F-12G" :cik 1358654 :accn "0001062993-26-002596" :filed "2026-05-14" :company "RED METAL RESOURCES, LTD." :report "" :url "https://www.sec.gov/Archives/edgar/data/1358654/000106299326002596/form15f12g.htm" :doc "form15f12g.htm" :size 22357 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

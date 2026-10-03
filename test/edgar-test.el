@@ -632,6 +632,24 @@
     (plist-get filing :accn)
     ".txt")))
 
+(ert-deftest edgar-sampled-filings-match-generic-structure-snapshots
+    ()
+  "Sampled filings retain their reviewed generic document structures."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path
+             "expect/sampled-filings-structures.eld")))
+    (let* ((slug (plist-get expected :slug))
+           (filing (edgar-fixtures-filing slug))
+           (primary (edgar-fixtures-primary slug)))
+      (cl-letf (((symbol-function 'edgar--fetch)
+                 (lambda (_) primary)))
+        (should
+         (equal
+          (plist-get expected :document-snapshot)
+          (edgar-test--g12-document-snapshot
+           filing (edgar-document-structure filing))))))))
+
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."
   (dolist (slug

@@ -1,0 +1,1 @@
+(:form "6B NTC" :cik 886982 :accn "9999999997-26-000877" :filed "2026-05-19" :company "GOLDMAN SACHS GROUP INC" :report "" :url "https://www.sec.gov/Archives/edgar/data/886982/999999999726000877/filename1.pdf" :doc "filename1.pdf" :size 100729 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

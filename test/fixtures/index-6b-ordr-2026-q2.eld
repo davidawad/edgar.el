@@ -1,0 +1,1 @@
+(:form "6B ORDR" :cik 886982 :accn "9999999997-26-001047" :filed "2026-06-15" :company "GOLDMAN SACHS GROUP INC" :report "" :url "https://www.sec.gov/Archives/edgar/data/886982/999999999726001047/filename1.pdf" :doc "filename1.pdf" :size 90909 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

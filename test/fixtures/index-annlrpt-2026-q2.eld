@@ -1,0 +1,1 @@
+(:form "ANNLRPT/A" :cik 311669 :accn "0001140361-26-020379" :filed "2026-05-11" :company "ASIAN DEVELOPMENT BANK" :report "" :url "https://www.sec.gov/Archives/edgar/data/311669/000114036126020379/ef20071379_annlrpta.htm" :doc "ef20071379_annlrpta.htm" :size 1987404 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
