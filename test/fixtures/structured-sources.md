@@ -79,6 +79,9 @@ where inline structural cues permit, the shared named-section accessor can
 still identify `Risk Factors`. All three expose the full HTML body through
 generic section access. The S-8
 Veralto sample exercises Part II Item access without a table of contents.
+Reviewed named-section markers cover three distinct filers each for S-1, S-3,
+S-4, F-1, F-3, F-4, 424B1, and 424B4. 424B5 has named `Risk Factors` markers
+where the filing presents that section; Idaho Power remains body-only.
 
 Proxy, merger, and tender-offer samples:
 

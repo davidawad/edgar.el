@@ -25,6 +25,54 @@
   "You could lose money by investing in the Fund")
  ("s-3-autonomix" "RISK FACTORS"
   "Before making an investment decision")
+ ("s-1-rivn" "Risk Factors"
+  "Investing in our Class A common stock involves a high degree of risk.")
+ ("s-1-biomx" "Risk Factors"
+  "In addition to the other information contained in this prospectus")
+ ("s-1-jupiter-neurosciences" "Risk Factors"
+  "An investment in our securities carries a significant degree of risk.")
+ ("s-3-indaptus" "Risk Factors"
+  "An investment in our securities involves a high degree of risk.")
+ ("s-3-maxcyte" "Risk Factors"
+  "Investing in our securities involves significant risk.")
+ ("f-1-fasttrack" "Risk Factors"
+  "Investing in our ordinary shares involves a high degree of risk.")
+ ("f-1-verdera" "Risk Factors"
+  "We have a limited operating history and no history of revenue")
+ ("f-1-vision-marine" "Risk Factors"
+  "An investment in the offered securities carries a significant degree of risk.")
+ ("f-3-ceragon" "Risk Factors"
+  "carefully consider the risk factors set forth in our most recent Annual Report on Form 20-F")
+ ("f-3-bit-mining" "Risk Factors"
+  "Investing in the securities involves risk.")
+ ("f-3-critical-metals" "Risk Factors"
+  "Investing in any securities offered pursuant to this prospectus")
+ ("s-4-comcast" "Risk Factors"
+  "Any investment in the Exchange Notes involves a high degree of risk")
+ ("s-4-indivior" "Risk Factors"
+  "In considering how to vote on the proposals to be considered and voted on")
+ ("s-4-olin" "Risk Factors"
+  "In addition to the other information contained in or incorporated by reference herein")
+ ("f-4-china-auto" "Risk Factors"
+  "In considering whether to consent to the proposal to adopt the Merger Agreement")
+ ("f-4-alibaba" "Risk Factors"
+  "Investing in the Notes involves risks.")
+ ("f-4-aercap" "Risk Factors"
+  "In addition to the other information included or incorporated by reference in this prospectus")
+ ("424b1-nyseg" "Risk Factors"
+  "Please carefully consider all the information the depositor has included")
+ ("424b1-millrose" "Risk Factors"
+  "Investing in our Common Stock involves a high degree of risk.")
+ ("424b1-odyssey" "Risk Factors"
+  "You should carefully consider the following risks and all other information contained in this prospectus")
+ ("424b4-rectitude" "Risk Factors"
+  "Investing in our shares is highly speculative and involves a significant degree of risk.")
+ ("424b4-impact-biomedical" "Risk Factors"
+  "An investment in our securities is highly speculative and involves a high degree of risk.")
+ ("424b4-loar" "Risk Factors"
+  "Investing in our common stock involves a high degree of risk.")
+ ("424b5-oneok" "Risk Factors"
+  "An investment in our common stock involves risk.")
  ("f-1-fasttrack" "USE OF PROCEEDS"
   "gross proceeds of up to $20,000,000")
  ("424b2-jpm" "Key Terms" "6.00% per annum")

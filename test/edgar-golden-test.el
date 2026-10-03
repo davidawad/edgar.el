@@ -288,9 +288,11 @@
   (dolist (slug '("s-8-veralto" "s-8-pos-exxonmobil"))
     (let* ((filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
+           tree
            text
            section)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq tree (edgar-document-structure filing))
         (setq text (edgar-text filing))
         (setq section (edgar-section filing "II.8")))
       (should-not (string-match-p "TABLE OF CONTENTS" (upcase text)))
@@ -298,7 +300,22 @@
       (should
        (string-match-p
         "exhibits"
-        (downcase (edgar-fixtures-norm section)))))))
+        (downcase (edgar-fixtures-norm section))))
+      (when (equal slug "s-8-pos-exxonmobil")
+        (let* ((headings (edgar-structure-headings tree))
+               (signature
+                (edgar-structure-section tree "SIGNATURES")))
+          (should
+           (seq-some
+            (lambda (heading)
+              (equal "SIGNATURES"
+                     (upcase (plist-get heading :name))))
+            headings))
+          (should signature)
+          (should
+           (string-match-p
+            "Pursuant to the requirements of the Securities Act"
+            (edgar-fixtures-norm (plist-get signature :body)))))))))
 
 (ert-deftest edgar-golden-g7-drs-toc-and-toc-less-structure ()
   "Draft registration filings expose shared named and tree structure."
@@ -368,10 +385,48 @@
          (string-search (nth 2 entry)
                         (edgar-fixtures-norm
                          (plist-get tree-section :body)))))
+      (when (equal slug "s-3-autonomix")
+        (should
+         (seq-some
+          (lambda (heading)
+            (equal "RISK FACTORS" (upcase (plist-get heading :name))))
+          (edgar-structure-headings tree))))
       (should section)
       (should
        (string-search (nth 2 entry)
                       (edgar-fixtures-norm section))))))
+
+(ert-deftest edgar-golden-g7-prospectus-subfamilies-have-three-filer-goldens
+    ()
+  "Principal prospectus subfamilies retain reviewed goldens for three filers."
+  (dolist (form '("S-1" "S-3" "S-4" "F-1" "F-3" "F-4"
+                  "DRS" "424B1" "424B2" "424B3" "424B4" "424B5"))
+    (let* ((slugs
+            (seq-filter
+             (lambda (slug)
+               (equal form
+                      (plist-get (edgar-fixtures-filing slug) :form)))
+             (edgar-fixtures-slugs)))
+           (ciks
+            (delete-dups
+             (mapcar
+              (lambda (slug)
+                (plist-get (edgar-fixtures-filing slug) :cik))
+              slugs)))
+           (goldens
+            (mapcar
+             (lambda (slug)
+               (edgar-fixtures-read
+                (edgar-fixtures-path
+                 (concat "golden/" slug ".eld"))))
+             slugs)))
+      (should (>= (length ciks) 3))
+      (should
+       (seq-every-p
+        (lambda (golden)
+          (or (plist-get golden :sections)
+              (plist-get golden :text)))
+        goldens)))))
 
 (ert-deftest edgar-golden-g7-html-linked-prospectus-heading ()
   "Generic HTML fragment links expose a named prospectus section in the tree."

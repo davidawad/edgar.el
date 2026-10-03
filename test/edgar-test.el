@@ -447,7 +447,9 @@
           (let ((body (edgar-section filing name)))
             (should (stringp body))
             (should
-             (string-match-p (regexp-quote fragment) body))))))))
+             (string-match-p
+              (regexp-quote (edgar-fixtures-norm fragment))
+              (edgar-fixtures-norm body)))))))))
 
 (ert-deftest edgar-g10-registration-fixtures-use-generic-section-api
     ()
