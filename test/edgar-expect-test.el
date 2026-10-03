@@ -28,7 +28,7 @@
        #'file-exists-p
        (mapcar
         (lambda (ext) (edgar-expect--file slug ext))
-        '(".htm.gz" ".pdf")))
+        '(".htm.gz" ".pdf" ".txt")))
       (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
@@ -114,6 +114,16 @@
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
     ("40-17F1" "northern lights fund trust" nil)
+    ("40-24B2" "economic impact of hit-financed projects" nil)
+    ("40-33" "180 degree cap" nil)
+    ("40-8F-2" "form n-8f" nil)
+    ("APP NTC" "securities and exchange commission" nil)
+    ("APP ORDR" "united states of america" nil)
+    ("APP WD" "guggenheim" nil)
+    ("APP WDG" "april 24, 2026" nil)
+    ("CT ORDER" "securities and exchange commission" nil)
+    ("DEL AM" "j.p. morgan exchange-traded fund trust" nil)
+    ("MSD" "paper submission" nil)
     ("40-6B" "robinhood" nil)
     ("486BXT" "ark venture fund" nil)
     ("485APOS"
@@ -363,6 +373,10 @@
       :body
       (let ((s slug))
         (lambda () (edgar-expect--check s)))))))
+
+(ert-deftest edgar-expect-msd-state-street ()
+  "Replay the recorded text primary for the SEC MSD paper notice."
+  (edgar-expect--check "msd-state-street"))
 
 (provide 'edgar-expect-test)
 ;;; edgar-expect-test.el ends here

@@ -123,6 +123,12 @@
     (should (eq (plist-get (edgar-form-info form) :backend) 'xml))
     (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
 
+(ert-deftest edgar-forms-g10-recorded-named-sections-have-l1-coverage
+    ()
+  "Real G10 named-section fixtures have generic, gated L1 coverage."
+  (dolist (form '("40-17F2" "N-2 POSASR" "N-2MEF"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
+
 (ert-deftest edgar-forms-g11-reg-a-reports-remain-generic-l1 ()
   "Reg A XML/HTML reports stay at L1 until typed/named section goldens exist."
   (dolist (form '("1-K" "1-SA" "1-U" "1-Z"))

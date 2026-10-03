@@ -1,4 +1,12 @@
-(:sections nil :text
+(:sections nil
+ :named-sections
+ (("Investment Objective"
+   "The Hennessy Technology Fund seeks long-term capital appreciation.")
+  ("Principal Investment Strategy"
+   "The Fund invests primarily in companies whose securities are listed on U.S. national securities exchanges")
+  ("Principal Risks"
+   "The value of your investment will fluctuate over time, and it is possible to lose money."))
+ :text
 	   ("The Example assumes that you invest $10,000 in the Fund for the time periods indicated and then redeem all of your shares at the end of those periods."
 	    "national securities exchanges, including through American Depositary Receipts (“ADRs”), which are U.S."
 	    "For additional information on these indices, please see “Descriptions of Indices” on page 68 of the Prospectus."

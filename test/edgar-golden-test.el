@@ -19,6 +19,14 @@
    (lambda (s) (cons (car s) (edgar-fixtures-norm (cdr s))))
    (edgar-sections (edgar-fixtures-text slug))))
 
+(defun edgar-golden-test--named-bodies (slug)
+  "Alist of (NAME . normalized body) for generic headings in SLUG."
+  (mapcar
+   (lambda (section)
+     (cons (plist-get section :name)
+           (edgar-fixtures-norm (plist-get section :body))))
+   (edgar-named-sections (edgar-fixtures-text slug))))
+
 (defun edgar-golden-test--check-section (slug key strings bodies)
   "Assert STRINGS from SLUG's section KEY are in it and in no other of BODIES."
   (let ((body (cdr (assoc key bodies))))
@@ -45,6 +53,9 @@
           (edgar-fixtures-read
            (edgar-fixtures-path (concat "golden/" slug ".eld"))))
          (bodies (edgar-golden-test--bodies slug))
+         (named-bodies
+          (and (plist-get golden :named-sections)
+               (edgar-golden-test--named-bodies slug)))
          (norm (edgar-fixtures-norm (edgar-fixtures-text slug))))
     (dolist (entry (plist-get golden :sections))
       (edgar-golden-test--check-section
@@ -56,6 +67,9 @@
          (format "%s: section %s has no golden strings"
                  slug
                  (car b)))))
+    (dolist (entry (plist-get golden :named-sections))
+      (edgar-golden-test--check-section
+       slug (car entry) (cdr entry) named-bodies))
     (dolist (str (plist-get golden :text))
       (unless (string-search str norm)
         (ert-fail
@@ -176,6 +190,32 @@
        (string-match-p
         (regexp-quote (downcase (cdr entry)))
         (downcase (edgar-fixtures-norm body)))))))
+
+(ert-deftest edgar-golden-g10-generic-named-section-access ()
+  "Recorded G10 filings expose their golden generic named sections."
+  (dolist (slug
+           '("40-17f2-fundrise"
+             "n-2-posasr-eagle-point"
+             "n-2mef-ives-ultra"
+             "40-8f-2-chesapeake"
+             "app-wd-guggenheim"
+             "497k-hennessy"
+             "n-1a-americandrive"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           (golden
+            (edgar-fixtures-read
+             (edgar-fixtures-path (concat "golden/" slug ".eld")))))
+      (should (plist-get golden :named-sections))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (dolist (entry (plist-get golden :named-sections))
+          (let ((body (edgar-section filing (car entry))))
+            (should body)
+            (dolist (string (cdr entry))
+              (should
+               (string-match-p
+                (regexp-quote string)
+                (edgar-fixtures-norm body))))))))))
 
 (ert-deftest edgar-golden-g7-named-prospectus-sections ()
   "Major prospectus layouts expose named headings through the shared API."
