@@ -330,6 +330,24 @@
           (should (stringp body))
           (should (string-match-p (regexp-quote (nth 2 entry)) body)))))))
 
+(ert-deftest edgar-g10-registration-fixtures-use-generic-section-api ()
+  "Real G10 filings are readable and expose generic Item sections."
+  (let* ((summary (edgar-fixtures-filing "497k-hennessy"))
+         (summary-html (edgar-fixtures-html "497k-hennessy"))
+         (registration (edgar-fixtures-filing "n-1a-americandrive"))
+         (registration-html
+          (edgar-fixtures-html "n-1a-americandrive")))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) summary-html)))
+      (should (string-match-p
+               "long-term capital appreciation"
+               (downcase (edgar-text summary)))))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) registration-html)))
+      (let ((body (edgar-section registration "28")))
+        (should (stringp body))
+        (should (string-match-p "exhibits" (downcase body)))))))
+
 (ert-deftest edgar-g12-xml-fixture-is-readable-through-generic-tree-api ()
   "An X-17A-5 SEC XML filing works through the generic structure API."
   (let* ((filing (edgar-fixtures-filing "x-17a-5-m-stevens"))

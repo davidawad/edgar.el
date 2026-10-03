@@ -1,0 +1,1 @@
+(:accn "0001213900-26-006524" :form "N-1A" :filed "2026-01-22" :report "" :doc "ea0271727-01_n1a.htm" :cik 2104659 :url "https://www.sec.gov/Archives/edgar/data/2104659/000121390026006524/ea0271727-01_n1a.htm" :ticker "")

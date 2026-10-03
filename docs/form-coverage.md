@@ -109,7 +109,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `497` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497")` |
 | `497AD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497AD")` |
 | `497J` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497J")` |
-| `497K` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497K")` |
+| `497K` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497VPI` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPI")` |
 | `497VPSUB` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPSUB")` |
 | `497VPU` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPU")` |
@@ -192,7 +192,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `MSD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "MSD")` |
 | `N-14` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14")` |
 | `N-14 8C` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14 8C")` |
-| `N-1A` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-1A")` |
+| `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2")` |
 | `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
 | `N-23C-2` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C-2")` |

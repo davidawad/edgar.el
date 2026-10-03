@@ -88,6 +88,8 @@
     ("20-F" "annual report" nil)
     ("40-F" "annual report" nil)
     ("6-K" "report of foreign private issuer" nil)
+    ("497K" "summary prospectus" nil)
+    ("N-1A" "registration statement" nil)
     ("S-1" "registration statement" nil)
     ("DEF 14A" "proxy statement" nil)
     ("11-K" "annual report" nil)

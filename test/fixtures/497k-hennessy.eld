@@ -1,0 +1,1 @@
+(:accn "0001999371-26-004882" :form "497K" :filed "2026-03-02" :report "" :doc "htecx-497k_030226.htm" :cik 891944 :url "https://www.sec.gov/Archives/edgar/data/891944/000199937126004882/htecx-497k_030226.htm" :ticker "")
