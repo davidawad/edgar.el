@@ -1,0 +1,1 @@
+(:accn "0001999371-26-021338" :form "487" :filed "2026-09-25" :report "" :doc "adt2360-487.htm" :cik 2118248 :url "https://www.sec.gov/Archives/edgar/data/2118248/000199937126021338/adt2360-487.htm" :ticker "")
