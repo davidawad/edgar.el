@@ -91,9 +91,9 @@
   (dolist (form '("13F-HR" "13F-NT"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
-(ert-deftest edgar-forms-g8-tender-items-have-golden-coverage ()
-  "Proxy and tender Items with reviewed filing goldens are L2."
-  (dolist (form '("SC TO-T" "SC 14D9"))
+(ert-deftest edgar-forms-g8-proxy-and-tender-sections-have-golden-coverage ()
+  "Proxy and tender sections with reviewed filing goldens are L2."
+  (dolist (form '("DEF 14A" "SC TO-T" "SC 14D9"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
