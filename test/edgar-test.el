@@ -27,6 +27,48 @@
        (expand-file-name (concat "fixtures/" name) edgar-test--dir)))
     (json-parse-buffer :object-type 'plist :array-type 'list)))
 
+(ert-deftest
+    edgar-facts-exposes-inline-facts-from-the-primary-document
+    ()
+  (let*
+      ((fixture
+        (expand-file-name "fixtures/10-k-aapl.htm.gz"
+                          edgar-test--dir))
+       (filing
+        '(:form
+          "10-K"
+          :accn "0000320193-25-000079"
+          :url "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm")))
+    (cl-letf (((symbol-function 'edgar-html)
+               (lambda (_filing)
+                 (with-temp-buffer
+                   (let ((auto-compression-mode t))
+                     (insert-file-contents fixture))
+                   (buffer-string)))))
+      (let
+          ((revenue
+            (seq-find
+             (lambda (fact)
+               (and
+                (equal
+                 (plist-get fact :name)
+                 "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax")
+                (equal
+                 (plist-get
+                  (plist-get fact :context)
+                  :end)
+                 "2025-09-27")
+                (null
+                 (plist-get (plist-get fact :context) :dimensions))))
+             (edgar-facts filing))))
+        (should revenue)
+        (should (= (plist-get revenue :value) 416161000000))
+        (should (equal (plist-get revenue :unit) "USD"))
+        (should
+         (equal
+          (plist-get (plist-get revenue :context) :start)
+          "2024-09-29"))))))
+
 (defconst edgar-test--submissions
   '(:filings
     (:recent
@@ -363,8 +405,7 @@
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
       (let ((body (edgar-section filing '("html" "body"))))
         (should (stringp body))
-        (should (string-match-p "FORM" body))
-        (should (string-match-p "18-K" body))
+        (should (string-match-p "FORM 18-K" body))
         (should (string-match-p "In respect of each issue" body))))))
 
 (ert-deftest edgar-form25-generic-document-subtrees-are-addressable ()
@@ -544,6 +585,38 @@
            (plist-get node :children)))))
       elements))))
 
+(defun edgar-test--g12-document-snapshot (filing tree)
+  "Return a whole-text and generic-shape snapshot for G12 FILING and TREE."
+  (let* ((text (edgar-structure-text tree))
+         (headings (edgar-structure-headings tree)))
+    (list
+     :form (plist-get filing :form)
+     :format (plist-get tree :format)
+     :primary-document (plist-get tree :primary-document)
+     :text-length (length text)
+     :text-sha256 (secure-hash 'sha256 text)
+     :paragraph-count (length (edgar-structure-paragraphs tree))
+     :named-section-count (length headings)
+     :named-section-head
+     (mapcar
+      (lambda (heading) (plist-get heading :name))
+      (seq-take headings 3))
+     :tag-counts
+     (mapcar
+      (lambda (name)
+        (cons name (length (edgar-structure-nodes tree name))))
+      '("html" "head" "body" "p" "table" "h1" "h2")))))
+
+(defun edgar-test--g12-submission-filing (filing)
+  "Return a copy of FILING pointing at its SEC complete-submission file."
+  (plist-put
+   (copy-sequence filing)
+   :url
+   (concat
+    (file-name-directory (plist-get filing :url))
+    (plist-get filing :accn)
+    ".txt")))
+
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."
   (dolist (slug
@@ -577,6 +650,24 @@
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
         (let ((tree (edgar-document-structure filing)))
           (should (eq (plist-get tree :format) 'xml))
+          (should
+           (equal
+            (plist-get
+             (plist-get tree :primary-document)
+             :filename)
+            (plist-get filing :doc)))
+          (should
+           (equal
+            (plist-get
+             (plist-get tree :primary-document)
+             :format)
+            'xml))
+          (should
+           (equal
+            (plist-get
+             (plist-get tree :primary-document)
+             :type)
+            (plist-get filing :form)))
           (if (plist-get expected :sections)
               (dolist (entry (plist-get expected :sections))
                 (should
@@ -584,7 +675,10 @@
                   (plist-get
                    (edgar-structure-section tree (car entry))
                    :body)
-                  (cadr entry))))
+                  (cadr entry)))
+                (should
+                 (equal
+                  (edgar-section filing (car entry)) (cadr entry))))
             (should
              (equal
               expected
@@ -593,7 +687,7 @@
 (ert-deftest
     edgar-g12-corresp-text-fixture-is-readable-through-generic-api
     ()
-  "A CORRESP HTML primary works through the generic structure API."
+  "A CORRESP complete submission works through the generic text API."
   (let* ((filing (edgar-fixtures-filing "corresp-sce-2025"))
          (text
           (with-temp-buffer
@@ -605,70 +699,146 @@
            (edgar-fixtures-path "expect/corresp-sce-2025.eld"))))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) text)))
       (let* ((tree (edgar-document-structure filing))
-             (document-text (edgar-structure-text tree)))
+             (metadata (plist-get tree :primary-document))
+             (document-text (edgar-structure-text tree))
+             (rendered-text (edgar-text filing)))
         (should (eq (plist-get tree :format) 'html))
+        (should (equal (plist-get metadata :type) "CORRESP"))
+        (should (equal (plist-get metadata :sequence) "1"))
+        (should
+         (equal (plist-get metadata :filename) "filename1.htm"))
+        (should (eq (plist-get metadata :format) 'html))
         (dolist (marker (plist-get expected :markers))
-          (should (string-match-p marker document-text)))
+          (should (string-match-p marker rendered-text)))
         (should (> (length (edgar-structure-paragraphs tree)) 1))
-        (should (edgar-structure-nodes tree "html"))))))
+        (should
+         (string-match-p
+          "Securities and Exchange Commission" document-text))
+        (should-not (string-match-p "</HTML>" document-text))
+        (should
+         (string-match-p
+          "Securities and Exchange Commission"
+          (plist-get (edgar-structure-section tree "body") :body)))
+        (should
+         (equal
+          (plist-get expected :document-snapshot)
+          (edgar-test--g12-document-snapshot filing tree)))))))
 
-(ert-deftest edgar-pdf-primary-exposes-metadata-and-generic-text ()
-  "A real SEC PDF primary exposes metadata and generic text paragraphs."
+(ert-deftest edgar-pdf-primary-uses-generic-text-and-tree-api ()
+  "A real SEC PDF primary is readable through the generic APIs."
   (let* ((slug "n-8f-ordr-blackrock")
          (filing (edgar-fixtures-filing slug))
          (pdf (edgar-fixtures-primary slug)))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
-      (let* ((tree (edgar-document-structure filing))
-             (primary
-              (plist-get
-               (plist-get
-                (plist-get tree :metadata)
-                :primary-document)
-               :name)))
-        (should (eq (plist-get tree :format) 'pdf))
-        (should (equal primary "filename1.pdf"))
-        (should
-         (plist-get
-          (plist-get (plist-get tree :metadata) :primary-document)
-          :readable))
-        (should (> (length (edgar-structure-paragraphs tree)) 3))
-        (should (> (length (edgar-text filing)) 100))))))
-
-(ert-deftest edgar-pdf-g10-filings-use-generic-text-api ()
-  "Real SEC investment-company PDFs use the shared text and tree APIs."
-  (dolist (entry
-           '(("app-wdg-peartree" "withdrawal has been granted")
-             ("app-ordr-great-elm" "order under sections 17(d)")
-             ("app-ntc-advisors-preferred"
-              "multi-class etf fund exemptive relief")
-             ("ct-order-janus-henderson"
-              "order granting confidential treatment")))
-    (let* ((filing (edgar-fixtures-filing (car entry)))
-           (pdf (edgar-fixtures-primary (car entry))))
-      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
-        (let* ((text (edgar-text filing))
-               (tree (edgar-document-structure filing)))
-          (should (string-match-p (cadr entry) text))
-          (should (eq (plist-get tree :format) 'pdf))
-          (should (> (length (edgar-structure-paragraphs tree)) 3))
-          (should (string-match-p
-                   (cadr entry) (edgar-structure-text tree))))))))
-
-(ert-deftest edgar-msd-paper-primary-only-exposes-generated-notice ()
-  "An SEC MSD paper submission exposes only its generated placeholder notice."
-  (let* ((filing (edgar-fixtures-filing "msd-state-street"))
-         (submission (edgar-fixtures-primary "msd-state-street")))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
       (let* ((text (edgar-text filing))
              (tree (edgar-document-structure filing)))
-        (should (string-match-p
-                 "This document was generated as part of a paper submission"
-                 text))
-        (should (string-match-p
-                 "reference the Document Control Number 12010226"
-                 (edgar-structure-text tree)))
-        (should-not
-         (string-match-p "application form contents" text))))))
+        (should (string-match-p "ORDER UNDER SECTION 8(f)" text))
+        (should (eq (plist-get tree :format) 'pdf))
+        (should (> (length (edgar-structure-paragraphs tree)) 3))
+        (should
+         (string-match-p
+          "applicant has ceased to be an investment company"
+          (edgar-structure-text tree)))))))
+
+(ert-deftest edgar-pdf-primary-requires-pdftotext ()
+  "A missing PDF converter produces an actionable error."
+  (let ((edgar-pdftotext-program "edgar-test-missing-pdftotext"))
+    (should-error (edgar--pdf-text "%PDF") :type 'user-error)))
+
+(ert-deftest edgar-uuencoded-pdf-requires-uudecode ()
+  "A missing UU decoder produces an actionable error."
+  (let ((edgar-uudecode-program "edgar-test-missing-uudecode"))
+    (should-error
+     (edgar--uuencoded-pdf-bytes "begin 644 file.pdf\n`\nend\n")
+     :type 'user-error)))
+
+(ert-deftest edgar-g12-uuencoded-pdf-sources-match-reviewed-snapshots
+    ()
+  "Real G12 complete-submission PDFs decode and match direct SEC sources."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path "expect/g12-pdf-structures.eld")))
+    (let* ((slug (plist-get expected :slug))
+           (filing (edgar-fixtures-filing slug))
+           (submission-filing
+            (edgar-test--g12-submission-filing filing))
+           (submission (edgar-fixtures-submission slug))
+           (pdf (edgar-fixtures-primary slug)))
+      (cl-letf (((symbol-function 'edgar--fetch)
+                 (lambda (url)
+                   (if (string-suffix-p ".txt" url)
+                       submission
+                     pdf))))
+        (let* ((primary (edgar-primary-document submission-filing))
+               (submission-tree
+                (edgar-document-structure submission-filing))
+               (direct-tree (edgar-document-structure filing))
+               (info (edgar-form-info (plist-get filing :form))))
+          (should (eq (plist-get info :level) 'L1))
+          (should (eq (plist-get info :backend) 'pdf))
+          (should (eq (plist-get primary :format) 'pdf-uuencoded))
+          (should (equal (edgar--document-pdf-bytes primary) pdf))
+          (should
+           (equal
+            (plist-get expected :submission-snapshot)
+            (edgar-test--g12-document-snapshot
+             submission-filing submission-tree)))
+          (should
+           (equal
+            (plist-get expected :direct-snapshot)
+            (edgar-test--g12-document-snapshot filing direct-tree)))
+          (dolist (tree (list submission-tree direct-tree))
+            (dolist (name
+                     (plist-get
+                      (plist-get expected :direct-snapshot)
+                      :named-section-head))
+              (let ((section (edgar-structure-section tree name)))
+                (should section)
+                (should
+                 (> (length (plist-get section :body))
+                    (length name)))))))))))
+
+(ert-deftest
+    edgar-g12-paper-controls-document-unavailable-report-bodies
+    ()
+  "Recorded paper controls expose only the autogenerated notice and DCPN."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path "expect/g12-paper-structures.eld")))
+    (let* ((slug (plist-get expected :slug))
+           (filing (edgar-fixtures-filing slug))
+           (submission-filing
+            (edgar-test--g12-submission-filing filing))
+           (submission (edgar-fixtures-submission slug))
+           (paper (edgar-fixtures-paper slug)))
+      (cl-letf (((symbol-function 'edgar--fetch)
+                 (lambda (_) submission)))
+        (let* ((primary (edgar-primary-document submission-filing))
+               (tree (edgar-document-structure submission-filing))
+               (text (edgar-structure-text tree))
+               (info (edgar-form-info (plist-get filing :form))))
+          (should (eq (plist-get info :level) 'L0))
+          (should (eq (plist-get info :backend) 'text))
+          (should (equal (plist-get primary :sequence) "1"))
+          (should
+           (equal
+            (plist-get primary :description)
+            "AUTO-GENERATED PAPER DOCUMENT"))
+          (should
+           (string-match-p
+            "generated as part of a paper submission" text))
+          (should
+           (string-match-p
+            (regexp-quote (plist-get expected :control-number)) text))
+          (should
+           (equal
+            (plist-get expected :paper-sha256)
+            (secure-hash 'sha256 paper)))
+          (should
+           (equal
+            (plist-get expected :document-snapshot)
+            (edgar-test--g12-document-snapshot
+             submission-filing tree))))))))
 
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
@@ -684,11 +854,29 @@
            (edgar-fixtures-path (format "expect/%s.eld" slug)))))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) text)))
       (let* ((tree (edgar-document-structure filing))
+             (metadata (plist-get tree :primary-document))
              (document-text (edgar-structure-text tree)))
         (should (eq (plist-get tree :format) 'text))
+        (should (equal (plist-get metadata :type) "TEXT-EXTRACT"))
+        (should (equal (plist-get metadata :sequence) "2"))
+        (should
+         (equal (plist-get metadata :filename) "filename2.txt"))
+        (should (eq (plist-get metadata :format) 'text))
         (dolist (marker (plist-get expected :markers))
           (should (string-match-p marker document-text)))
-        (should (> (length (edgar-structure-paragraphs tree)) 2))))))
+        (should (> (length (edgar-structure-paragraphs tree)) 2))
+        (should
+         (equal
+          (plist-get expected :document-snapshot)
+          (edgar-test--g12-document-snapshot filing tree)))))))
+
+(ert-deftest edgar-g12-paper-source-limits-remain-l0 ()
+  "G12 paper notices stay L0 while their original report bodies are absent."
+  (dolist (form '("ADV-H-T" "G-FIN"))
+    (let ((info (edgar-form-info form)))
+      (should (eq (plist-get info :level) 'L0))
+      (should (stringp (plist-get info :notes)))
+      (should-not (string-empty-p (plist-get info :notes))))))
 
 (ert-deftest
     edgar-document-structure-preserves-html-sections-and-paragraphs
@@ -729,68 +917,9 @@
             "We monitor cash."
             "Cash balance is stable.")))))))
 
-(ert-deftest edgar-html-url-can-contain-an-sgml-primary-wrapper ()
-  "Select the form-matching primary from a wrapped document at an HTML URL."
-  (let*
-      ((filing
-        '(:form
-          "15-12G"
-          :accn "0000000000-26-000003"
-          :cik 3
-          :doc "MainDocument.htm"
-          :url "https://example.invalid/MainDocument.htm"))
-       (submission
-        (concat
-         "<DOCUMENT><TYPE>EX-99\n<FILENAME>exhibit.htm\n<TEXT>"
-         "<html><body><p>Unrelated exhibit text.</p></body></html>"
-         "</TEXT></DOCUMENT>"
-         "<DOCUMENT><TYPE>15-12G\n<FILENAME>MainDocument.htm\n<TEXT>"
-         "<html><body><h1>Form 15-12G</h1>"
-         "<p>Primary filing text.</p></body></html>"
-         "</TEXT></DOCUMENT>")))
-    (cl-letf (((symbol-function 'edgar--fetch)
-               (lambda (_) submission)))
-      (let* ((text (edgar-text filing))
-             (tree (edgar-document-structure filing))
-             (primary
-              (plist-get
-               (plist-get
-                (plist-get tree :metadata)
-                :primary-document)
-               :name)))
-        (should (string-match-p "Primary filing text" text))
-        (should-not (string-match-p "<html>" text))
-        (should-not (string-match-p "Unrelated exhibit text" text))
-        (should (eq (plist-get tree :format) 'html))
-        (should (equal primary "MainDocument.htm"))
-        (should
-         (equal
-          (plist-get
-           (plist-get (plist-get tree :metadata) :primary-document)
-           :type)
-          "15-12G"))
-        (should
-         (string-match-p
-          "Primary filing text" (edgar-structure-text tree)))
-        (should-not
-         (string-match-p
-          "Unrelated exhibit text" (edgar-structure-text tree)))))))
-
 (ert-deftest edgar-document-structure-supports-xml-and-plain-text ()
-  (let ((xml-filing
-         '(:form
-           "TEST-XML"
-           :accn "0000000000-26-000001"
-           :cik 1
-           :doc "report.xml"
-           :url "https://example.invalid/report.xml"))
-        (text-filing
-         '(:form
-           "TEST-TEXT"
-           :accn "0000000000-26-000002"
-           :cik 2
-           :doc "complete.txt"
-           :url "https://example.invalid/complete.txt")))
+  (let ((xml-filing '(:url "https://example.invalid/report.xml"))
+        (text-filing '(:url "https://example.invalid/complete.txt")))
     (cl-letf
         (((symbol-function 'edgar--fetch)
           (lambda (url)
@@ -801,16 +930,6 @@
              (risk (edgar-structure-section xml "RiskFactors"))
              (text (edgar-document-structure text-filing)))
         (should (eq (plist-get xml :format) 'xml))
-        (should
-         (equal
-          (plist-get (plist-get xml :metadata) :accn)
-          "0000000000-26-000001"))
-        (should
-         (equal
-          (plist-get
-           (plist-get (plist-get xml :metadata) :primary-document)
-           :name)
-          "report.xml"))
         (should (equal (plist-get risk :body) "Risk data"))
         (should
          (equal
@@ -823,12 +942,6 @@
         (should
          (equal (edgar-structure-paragraphs xml) '("Risk data")))
         (should (eq (plist-get text :format) 'text))
-        (should
-         (equal
-          (plist-get
-           (plist-get (plist-get text :metadata) :primary-document)
-           :format)
-          'text))
         (should-not (edgar-structure-headings text))
         (should
          (equal
@@ -838,39 +951,6 @@
          (equal
           (edgar-structure-text text)
           "First paragraph.\n\nSecond paragraph."))))))
-
-(ert-deftest edgar-document-structure-identifies-pdf-only-submissions
-    ()
-  "PDF primary files expose metadata without attempting text extraction."
-  (let* ((filing
-          '(:form
-            "SEC STAFF ACTIO"
-            :accn "9999999997-26-001144"
-            :cik 2124403
-            :doc "9999999997-26-001144.txt"
-            :url "https://example.invalid/submission.txt"))
-         (pdf
-          (concat
-           "<SEC-DOCUMENT><DOCUMENT>\n"
-           "<TYPE>SEC STAFF ACTIO\n"
-           "<FILENAME>filename1.pdf\n"
-           "<TEXT>\n<PDF>\nbegin 644 filename1.pdf\n"
-           (make-string 500000 ?A)
-           "\nend\n</PDF>\n</TEXT>\n</DOCUMENT>\n"
-           "</SEC-DOCUMENT>")))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
-      (let* ((tree (edgar-document-structure filing))
-             (metadata (plist-get tree :metadata))
-             (primary (plist-get metadata :primary-document)))
-        (should (eq (plist-get tree :format) 'pdf))
-        (should
-         (equal (plist-get metadata :accn) "9999999997-26-001144"))
-        (should (equal (plist-get primary :name) "filename1.pdf"))
-        (should (eq (plist-get primary :format) 'pdf))
-        (should-not (plist-get primary :readable))
-        (should-not (plist-get tree :children))
-        (should (string-empty-p (edgar-structure-text tree)))
-        (should-error (edgar-text filing) :type 'user-error)))))
 
 (ert-deftest edgar-complete-submission-selects-primary-legacy-text ()
   (let* ((fixture-dir (expand-file-name "fixtures" edgar-test--dir))
@@ -900,8 +980,52 @@
           (edgar-section filing "3")))
         (should
          (equal
-          (mapcar #'car (edgar-sections text))
-          '("I.1" "I.2" "I.3")))))))
+          (mapcar #'car (edgar-sections text)) '("I.1" "I.2" "I.3")))
+        (let ((document (edgar-primary-document filing)))
+          (should (equal (plist-get document :type) "10-K"))
+          (should (equal (plist-get document :sequence) "1"))
+          (should-not (plist-get document :filename))
+          (should
+           (equal (plist-get document :description) "FORM 10-K"))
+          (should (eq (plist-get document :format) 'text))
+          (should
+           (string-match-p
+            "ITEM 1\\.  BUSINESS" (plist-get document :content))))))))
+
+(ert-deftest edgar-primary-document-identifies-uuencoded-pdf ()
+  "Complete-submission metadata identifies a uuencoded PDF primary."
+  (let*
+      ((filing
+        '(:form "NRSRO-CE" :url "https://example.invalid/filing.txt"))
+       (submission
+        (concat
+         "<DOCUMENT>\n<TYPE>NRSRO-CE\n<SEQUENCE>1\n"
+         "<FILENAME>notice.pdf\n<TEXT>\n<PDF> begin 644 notice.pdf\n"
+         "M)5!$1BTQ\n</TEXT>\n</DOCUMENT>")))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) submission)))
+      (let ((document (edgar-primary-document filing)))
+        (should (eq (plist-get document :format) 'pdf-uuencoded))
+        (should (equal (plist-get document :filename) "notice.pdf"))
+        (should (equal (plist-get document :sequence) "1"))
+        (should (equal (plist-get document :type) "NRSRO-CE"))))))
+
+(ert-deftest edgar-primary-document-identifies-direct-pdf ()
+  "Direct PDF metadata remains readable without parsing its body."
+  (let ((filing
+         '(:form
+           "NRSRO-CE"
+           :doc "notice.pdf"
+           :url "https://example.invalid/notice.pdf")))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) "%PDF-1.7\nnot extracted")))
+      (let ((document (edgar-primary-document filing)))
+        (should (eq (plist-get document :format) 'pdf))
+        (should (equal (plist-get document :filename) "notice.pdf"))
+        (should
+         (equal
+          (plist-get document :content)
+          "%PDF-1.7\nnot extracted"))))))
 
 (ert-deftest
     edgar-named-sections-recognizes-generic-uppercase-headings

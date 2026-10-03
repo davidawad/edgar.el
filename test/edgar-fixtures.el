@@ -31,8 +31,7 @@ XML-only and PDF-only fixtures are exercised by dedicated tests."
          (mapcar
           #'file-name-sans-extension
           (directory-files (edgar-fixtures-path "fixtures")
-                           nil
-                           "\\.eld\\'")))
+                           nil "\\.eld\\'")))
         #'string<))
 
 (defun edgar-fixtures--primary-file (slug)
@@ -71,6 +70,30 @@ XML-only and PDF-only fixtures are exercised by dedicated tests."
         (let ((coding-system-for-read 'utf-8)
               (auto-compression-mode t))
           (insert-file-contents file))))
+    (buffer-string)))
+
+(defun edgar-fixtures-submission (slug)
+  "Decompressed complete-submission source recorded for SLUG."
+  (let ((file
+         (or (seq-find
+              #'file-exists-p
+              (mapcar
+               (lambda (suffix)
+                 (edgar-fixtures-path
+                  (concat "fixtures/" slug suffix)))
+               '(".txt.gz" ".txt")))
+             (error "No complete-submission fixture for %s" slug))))
+    (with-temp-buffer
+      (let ((auto-compression-mode t)
+            (coding-system-for-read 'utf-8))
+        (insert-file-contents file))
+      (buffer-string))))
+
+(defun edgar-fixtures-paper (slug)
+  "Raw `.paper' control document recorded for SLUG."
+  (with-temp-buffer
+    (insert-file-contents-literally
+     (edgar-fixtures-path (concat "fixtures/" slug ".paper")))
     (buffer-string)))
 
 (defun edgar-fixtures-text (slug)

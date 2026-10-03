@@ -1,0 +1,3 @@
+;; SEC complete submission: https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.txt
+;; SEC primary document: https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.paper
+(:accn "9999999997-26-001447" :form "G-FIN/A" :company "STATE STREET BANK & TRUST CO /G-FIN" :filed "2026-06-17" :report "" :doc "9999999997-26-001447.paper" :cik 823722 :url "https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.txt" :size 294 :sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent")

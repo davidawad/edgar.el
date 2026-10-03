@@ -93,7 +93,8 @@ completed quarter; OLDER is the same quarter three years earlier."
    (pcase (plist-get (edgar-form-info form) :backend)
      ('html ".htm.gz")
      ('xml ".xml")
-     ('text ".txt"))))
+     ('text ".txt")
+     ('pdf ".pdf"))))
 
 (defun edgar-record--backend-file-p (form name)
   "Return non-nil when NAME has FORM's registered backend extension."
@@ -101,7 +102,8 @@ completed quarter; OLDER is the same quarter three years earlier."
     (pcase (plist-get (edgar-form-info form) :backend)
       ('html (member extension '("htm" "html")))
       ('xml (equal extension "xml"))
-      ('text (equal extension "txt")))))
+      ('text (equal extension "txt"))
+      ('pdf (equal extension "pdf")))))
 
 (defun edgar-record--candidate-key (form vintage filing)
   "Hash key used to deterministically rank FILING for FORM and VINTAGE."
@@ -322,9 +324,17 @@ sampling period.  Return t on success, otherwise nil."
                        form
                        (plist-get filing :accn))
             (progn
-              (with-temp-file raw-temp
-                (set-buffer-file-coding-system 'utf-8-unix)
-                (insert content))
+              (if (eq backend 'pdf)
+                  (with-temp-buffer
+                    (set-buffer-multibyte nil)
+                    (insert content)
+                    (let ((coding-system-for-write 'no-conversion))
+                      (write-region (point-min) (point-max) raw-temp
+                                    nil
+                                    'silent)))
+                (with-temp-file raw-temp
+                  (set-buffer-file-coding-system 'utf-8-unix)
+                  (insert content)))
               (with-temp-file metadata-temp
                 (let ((print-length nil)
                       (print-level nil))

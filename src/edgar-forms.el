@@ -372,7 +372,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 134
       :notes nil)
@@ -392,7 +392,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -402,7 +402,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 8
       :notes nil)
@@ -422,7 +422,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -582,9 +582,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L2
-      :sections-or-fields
-      '(investment-objective fees-and-expenses principal-risks)
+      :level 'L1
+      :sections-or-fields nil
       :volume 2352
       :notes nil)
      table)
@@ -673,8 +672,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L2
-      :sections-or-fields '(summary-prospectus-named-sections)
+      :level 'L1
+      :sections-or-fields nil
       :volume 6592
       :notes nil)
      table)
@@ -813,11 +812,11 @@
      "ADV-H-T"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'xml
+      :backend 'text
       :level 'L0
       :sections-or-fields nil
       :volume 3
-      :notes nil)
+      :notes "Q2 2026 .paper notice cites DCPN 26007812; original report body is absent.")
      table)
     (puthash
      "ANNLRPT"
@@ -833,8 +832,8 @@
      "APP NTC"
      (list
       :family "G10 Investment-company registration"
-      :backend 'pdf
-      :level 'L1
+      :backend 'html
+      :level 'L0
       :sections-or-fields nil
       :volume 65
       :notes nil)
@@ -843,8 +842,8 @@
      "APP ORDR"
      (list
       :family "G10 Investment-company registration"
-      :backend 'pdf
-      :level 'L1
+      :backend 'html
+      :level 'L0
       :sections-or-fields nil
       :volume 63
       :notes nil)
@@ -854,7 +853,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -863,8 +862,8 @@
      "APP WDG"
      (list
       :family "G10 Investment-company registration"
-      :backend 'pdf
-      :level 'L1
+      :backend 'html
+      :level 'L0
       :sections-or-fields nil
       :volume 13
       :notes nil)
@@ -873,8 +872,8 @@
      "ARS"
      (list
       :family "G8 Proxy & M&A"
-      :backend 'pdf
-      :level 'L1
+      :backend 'html
+      :level 'L0
       :sections-or-fields nil
       :volume 1883
       :notes nil)
@@ -1014,7 +1013,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 46
       :notes nil)
@@ -1063,8 +1062,8 @@
      "CT ORDER"
      (list
       :family "G10 Investment-company registration"
-      :backend 'pdf
-      :level 'L1
+      :backend 'html
+      :level 'L0
       :sections-or-fields nil
       :volume 11
       :notes nil)
@@ -1074,18 +1073,8 @@
      (list
       :family "G2 Notice of sale / Reg D"
       :backend 'xml
-      :level 'L2
-      :sections-or-fields
-      '(submission-type
-        issuer-name
-        federal-exemptions
-        total-offering-amount
-        total-amount-sold
-        total-remaining
-        investor-count
-        non-accredited-investor-count
-        sales-commissions
-        finders-fees)
+      :level 'L0
+      :sections-or-fields nil
       :volume 16851
       :notes nil)
      table)
@@ -1134,7 +1123,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 52
       :notes nil)
@@ -1164,7 +1153,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -1184,7 +1173,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 16
       :notes nil)
@@ -1194,7 +1183,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 338
       :notes nil)
@@ -1204,7 +1193,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 10
       :notes nil)
@@ -1423,11 +1412,11 @@
      "G-FIN"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'xml
+      :backend 'text
       :level 'L0
       :sections-or-fields nil
       :volume 8
-      :notes nil)
+      :notes "Q2 2026 .paper notice cites DCPN 26007830; original report body is absent.")
      table)
     (puthash
      "IRANNOTICE"
@@ -1483,8 +1472,8 @@
      "MSD"
      (list
       :family "G10 Investment-company registration"
-      :backend 'text
-      :level 'L1
+      :backend 'html
+      :level 'L0
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -1514,9 +1503,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L2
-      :sections-or-fields
-      '(investment-objective fees-and-expenses principal-risks)
+      :level 'L1
+      :sections-or-fields nil
       :volume 13
       :notes nil)
      table)
@@ -1535,7 +1523,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1585,7 +1573,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1685,20 +1673,20 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'pdf
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 18
-      :notes "PDF primary; metadata available, text extraction unsupported")
+      :notes nil)
      table)
     (puthash
      "N-8F ORDR"
      (list
       :family "G5 Fund periodic reports"
       :backend 'pdf
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 10
-      :notes "PDF primary; metadata available, text extraction unsupported")
+      :notes nil)
      table)
     (puthash
      "N-CEN"
@@ -1785,21 +1773,21 @@
      "NRSRO-CE"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 1
-      :notes nil)
+      :notes "Q2 2026 PDF is readable through the generic primary-document and text APIs.")
      table)
     (puthash
      "NRSRO-UPD"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 8
-      :notes nil)
+      :notes "Q2 2026 PDF is readable through the generic primary-document and text APIs.")
      table)
     (puthash
      "NT 10-K"
@@ -1967,7 +1955,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 43
       :notes nil)
@@ -1977,7 +1965,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 39
       :notes nil)
@@ -2007,7 +1995,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 44
       :notes nil)
@@ -2027,7 +2015,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 26
       :notes nil)
@@ -2327,7 +2315,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 8
       :notes nil)
@@ -2337,7 +2325,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 28
       :notes nil)
@@ -2376,21 +2364,21 @@
      "SEC STAFF ACTIO"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'text
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 59
-      :notes nil)
+      :notes "Q2 2026 PDF is readable through the generic primary-document and text APIs.")
      table)
     (puthash
      "SEC STAFF LETTE"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'text
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 2
-      :notes nil)
+      :notes "Q2 2026 PDF is readable through the generic primary-document and text APIs.")
      table)
     (puthash
      "SF-1"

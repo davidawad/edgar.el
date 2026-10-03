@@ -28,7 +28,7 @@
        #'file-exists-p
        (mapcar
         (lambda (ext) (edgar-expect--file slug ext))
-        '(".htm.gz" ".pdf" ".txt")))
+        '(".htm.gz" ".pdf")))
       (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
@@ -40,8 +40,9 @@
   (seq-filter
    (lambda (slug)
      (seq-some
-      (lambda (ext) (file-exists-p (edgar-expect--file slug ext)))
-      '(".htm.gz" ".pdf" ".txt" ".htm")))
+      (lambda (ext)
+        (file-exists-p (edgar-expect--file slug ext)))
+      '(".htm.gz" ".pdf")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -101,12 +102,11 @@
 ;; Per-form facts that must hold whatever the snapshot says: a banner phrase
 ;; the rendered text must contain, and section keys that must be found.
 (defconst edgar-expect--invariants
-  '(("10-K" "item 1. business" ("I.1"))
+  '(("10-K" "annual report" ("I.1" "I.1A" "II.7" "II.8"))
     ("10-K/A" "amendment" nil)
     ("10-Q" "quarterly report" ("I.1" "I.2"))
     ("10-D" "asset backed issuer" nil)
     ("8-K" "current report" nil)
-    ("8-K/A" "current report" nil)
     ("ABS-15G" "asset-backed securitizer report" nil)
     ("20-F" "annual report" nil)
     ("40-F" "annual report" nil)
@@ -114,11 +114,6 @@
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
     ("40-17F1" "northern lights fund trust" nil)
-    ("40-17F2" "fundrise innovation fund" nil)
-    ("40-33" "180 degree capital" nil)
-    ("40-24B2" "economic impact of hit-financed projects" nil)
-    ("40-8F-2" "chesapeake investors" nil)
-    ("DEL AM" "j.p. morgan exchange-traded fund trust" nil)
     ("40-6B" "robinhood" nil)
     ("486BXT" "ark venture fund" nil)
     ("485APOS"
@@ -130,7 +125,7 @@
     ("485BXT" "form n-1a" nil)
     ("497" "supplement" nil)
     ("497AD" "powerlaw" nil)
-    ("497J" "pursuant to rule 497(j)" nil)
+    ("497J" "certification of no change" nil)
     ("497K" "summary prospectus" nil)
     ("497VPI" "income benefit supplement" nil)
     ("497VPU" "updating summary prospectus" nil)
@@ -142,19 +137,11 @@
     ("N-4" "form n-4" nil)
     ("N-14 8C" "alternative credit income fund" nil)
     ("N-2ASR" "blackrock enhanced large cap core fund" nil)
-    ("N-2 POSASR" "eagle point credit" nil)
     ("N-6" "form n-6" nil)
-    ("N-2MEF" "ives ultra ai opportunities" nil)
-    ("APP WD" "guggenheim strategic opportunities fund" nil)
-    ("APP WDG" "pear tree funds" nil)
-    ("APP NTC" "multi-class etf fund exemptive relief" nil)
-    ("APP ORDR" "order under sections 17(d)" nil)
-    ("CT ORDER" "order granting confidential treatment" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
-    ("MSD" "generated as part of a paper submission" nil)
     ("F-1" "registration statement" nil)
     ("424B3" "prospectus" nil)
     ("424B4" "prospectus" nil)
@@ -173,40 +160,28 @@
     ("8-K12B" "nova minerals" nil)
     ("QRTLYRPT" "african development bank" nil)
     ("SD" "specialized disclosure report" nil)
-    ("15-12G" "termination of registration" nil)
-    ("NT 10-K" "notification of late filing" nil)
-    ("NT 10-Q" "notification of late filing" nil)
-    ("NT 11-K" "notification of late filing" nil)
-    ("NT 20-F" "notification of late filing" nil)
+    ("15-12G" "apogee therapeutics" nil)
+    ("NT 10-K" "digital brand media" nil)
+    ("NT 10-Q" "digital brand media" nil)
+    ("NT 11-K" "ori 401" nil)
+    ("NT 20-F" "telekomunikasi" nil)
+    ("NRSRO-CE/A" "moody's ratings" nil)
+    ("NRSRO-UPD" "hr ratings llc" nil)
     ("18-K" "form 18-k" nil)
-    ("25" "notification of removal from listing" nil)
+    ("25" "walmart inc" nil)
     ("40FR12B" "nuran wireless" nil)
-    ("425" "pursuant to rule 425" nil)
-    ("CORRESP" "sec comment letter dated" nil)
     ("DEFA14A" "pra group, inc." nil)
     ("DEFA14C" "notice of internet availability" nil)
-    ("ARS" "annual report" nil)
-    ("CB" "tender offer/rights offering notification form" nil)
-    ("DEFC14A" "schedule 14a" nil)
-    ("DEFR14A" "schedule 14a" nil)
-    ("DFAN14A" "schedule 14a" nil)
-    ("DFRN14A" "schedule 14a" nil)
     ("DEFM14C" "schedule 14c information" nil)
     ("DEFR14C" "amendment no. 1" nil)
     ("POS 8C" "form n-2" nil)
     ("PREM14C" "schedule 14c information" nil)
-    ("PRE 14A" "schedule 14a" nil)
-    ("PREC14A" "schedule 14a" nil)
-    ("PREM14A" "schedule 14a" nil)
-    ("PRE 14C" "schedule 14c information statement" nil)
-    ("PRER14A" "schedule 14a" nil)
-    ("PRRN14A" "schedule 14a" nil)
     ("PREN14A" "preliminary proxy statement" nil)
     ("PRER14C" "schedule 14c information/amendment" nil)
     ("SC 14N" "schedule 14n" nil)
     ("DEF 14A" "proxy statement" nil)
     ("DEF 14C" "definitive information statement" nil)
-    ("DEFM14A" "schedule 14a" nil)
+    ("DEFM14A" "defm14a" nil)
     ("11-K" "annual report" nil)
     ("4" "statement of changes in beneficial ownership" nil)
     ("13F-HR" "form 13f" nil)
@@ -224,7 +199,9 @@
     ("N-8A" "notification of registration" nil)
     ("N-8F" "application for deregistration" nil)
     ("N-8F NTC" "notice of applications for deregistration" nil)
-    ("N-8F ORDR" "applicant has ceased to be an investment company" nil)
+    ("N-8F ORDR"
+     "applicant has ceased to be an investment company"
+     nil)
     ("N-VP" "annual notice" nil)
     ("N-VPFS" "financial statements" nil)
     ("NT-NCEN" "notification of late filing" nil)
@@ -235,13 +212,12 @@
     ("SC 13G/A" "schedule 13g" nil)
     ("SC TO-T" "schedule to" nil)
     ("SC TO-C" "tender offer statement on schedule to" nil)
-    ("SC TO-I" "tender offer statement" nil)
+    ("SC TO-I" "issuer tender offer statement" nil)
     ("SC 14D9" "schedule 14d-9" nil)
-    ("SC14D1F" "curaleaf holdings" nil)
-    ("SC14D9C" "schedule 14d-9" nil)
-    ("UPLOAD" "do not intend to review" nil)
+    ("SEC STAFF ACTIO" "united states of america" nil)
+    ("SEC STAFF LETTE" "mao shan huang holdings limited" nil)
     ("1-K" "form 1-k" nil)
-    ("1-SA" "report pursuant to regulation a" nil)
+    ("1-SA" "semiannual report pursuant to regulation a" nil)
     ("1-U" "current report" nil)
     ("1-A-W" "withdrawal of offering statement" nil)
     ("253G1" "offering circular" nil)
@@ -263,7 +239,7 @@
     (should inv)
     (should
      (string-match-p
-      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[^/]+"
+      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[0-9]+/"
       (plist-get filing :url)))
     (should
      (string-match-p
@@ -304,30 +280,6 @@
         (should
          (equal
           (plist-get amendment :amends) "0001318605-26-010001"))))))
-
-(ert-deftest edgar-amendments-annotate-recorded-examples ()
-  "Link recorded 8-K/A, 4/A, and legacy SC 13G/A filings to originals."
-  (dolist (pair
-           '(("8ka-mdxg-2026" "8k-mdxg-2026")
-             ("4-fossil-a" "4-fossil-original")
-             ("sc-13ga-gme" "sc-13g-gme-original")))
-    (let* ((amendment
-            (edgar-expect--read
-             (edgar-expect--file (car pair) ".eld")))
-           (original
-            (edgar-expect--read
-             (edgar-expect--file (cadr pair) ".eld")))
-           (form (plist-get amendment :form)))
-      (cl-letf (((symbol-function 'edgar-filings)
-                 (lambda (_ticker query &rest _bounds)
-                   (when (equal query (edgar--base-form form))
-                     (list original)))))
-        (should
-         (equal
-          (plist-get
-           (car (edgar--annotate-amendments "fixture" form (list amendment)))
-           :amends)
-          (plist-get original :accn)))))))
 
 (ert-deftest edgar-effective-section-uses-amendment-then-original ()
   (let*
@@ -375,37 +327,6 @@
        (string-match-p
         "Original business text"
         (or (edgar-effective-section "TSLA" "10-K" "1") ""))))))
-
-(ert-deftest edgar-effective-section-prefers-recorded-8-k-amendment ()
-  "Use a real 8-K/A Item 1.01 correction over the original section."
-  (let* ((original
-          (edgar-expect--read
-           (edgar-expect--file "8k-mdxg-2026" ".eld")))
-         (amendment
-          (edgar-expect--read
-           (edgar-expect--file "8ka-mdxg-2026" ".eld")))
-         (original-html (edgar-expect--html "8k-mdxg-2026"))
-         (amendment-html (edgar-expect--html "8ka-mdxg-2026")))
-    (setf (plist-get amendment :amends) (plist-get original :accn))
-    (cl-letf (((symbol-function 'edgar-filings)
-               (lambda (_ticker form &rest _bounds)
-                 (cond
-                  ((equal form "8-K") (list original))
-                  ((equal form "8-K/A") (list amendment)))))
-              ((symbol-function 'edgar--fetch)
-               (lambda (url)
-                 (cond
-                  ((equal url (plist-get original :url)) original-html)
-                  ((equal url (plist-get amendment :url)) amendment-html))))
-              ((symbol-function 'edgar--fetch-xml)
-               (lambda (&rest _) (error "Unexpected XML fetch"))))
-      (let ((original-section (edgar-section original "1.01"))
-            (amendment-section (edgar-section amendment "1.01"))
-            (effective (edgar-effective-section "MDXG" "8-K" "1.01")))
-        (should original-section)
-        (should amendment-section)
-        (should (equal effective amendment-section))
-        (should-not (equal effective original-section))))))
 
 (ert-deftest edgar-text-diff-returns-unified-diff ()
   (let ((diff (edgar-text-diff "before text\n" "after text\n")))

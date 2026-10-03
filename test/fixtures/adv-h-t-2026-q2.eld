@@ -1,0 +1,3 @@
+;; SEC complete submission: https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/9999999997-26-000671.txt
+;; SEC primary document: https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/9999999997-26-000671.paper
+(:accn "9999999997-26-000671" :form "ADV-H-T" :company "APPLE TREE VENTURE MANAGEMENT LLC" :filed "2026-04-06" :report "" :doc "9999999997-26-000671.paper" :cik 2130471 :url "https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/9999999997-26-000671.txt" :size 294 :sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent")

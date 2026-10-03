@@ -49,11 +49,21 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   it preserves repeated elements and document order without form-specific
   interpretation. Recorded XML fixtures sit beside their HTML fixtures and
   are tested offline in `test/edgar-xml-test.el`.
+- `edgar-primary-document` exposes primary-document metadata and raw content;
+  `edgar-document-structure`, `edgar-structure-section`, and
+  `edgar-structure-nodes` provide generic structure and named-element access.
+  `edgar-structure-headings` also recognizes standalone headings in PDF/text
+  output; use `edgar-structure-section` to read any detected heading body.
+  Complete submissions can carry UUENCODED PDFs; the shared path restores SEC
+  row padding, uses `uudecode`, then extracts paragraphs with `pdftotext`.
+  Direct PDFs use the same text and structure API. Configure
+  `edgar-uudecode-program` and `edgar-pdftotext-program` if needed.
 - `src/edgar-http.el` owns the shared synchronous HTTP contract: globally
   throttle uncached requests to `edgar-http-requests-per-second` (default 10),
   retry 429/5xx with backoff and `Retry-After`, send gzip acceptance, and cache
   successful `/Archives/edgar/data/` documents by URL in the configurable
-  `edgar-http-cache-directory`. Metadata/index endpoints are never cached.
+  `edgar-http-cache-directory`. PDF bodies and cache entries remain binary;
+  metadata/index endpoints are never cached.
   `edgar--fetch` delegates to `edgar-http-get`; `xbrl--get` can adopt the same
   function later by calling `(edgar-http-get url xbrl-user-agent)`.
 - `src/edgar-index.el` parses SEC quarterly `form.gz` and daily `form.*.idx`

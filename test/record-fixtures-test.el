@@ -150,6 +150,49 @@
                (equal (plist-get metadata :url) primary-url)))))
       (delete-directory directory t))))
 
+(ert-deftest edgar-record-write-pair-preserves-pdf-bytes ()
+  "Store a PDF primary byte-for-byte with a PDF fixture extension."
+  (let*
+      ((directory (make-temp-file "edgar-record-pdf-fixture-" t))
+       (filing
+        '(:accn
+          "0000000001-26-000002"
+          :form "TEST-PDF"
+          :cik 1
+          :doc "submission.txt"))
+       (item '((name . "primary.pdf") (size . "7")))
+       (primary-url
+        "https://www.sec.gov/Archives/edgar/data/1/000000000126000002/primary.pdf")
+       (content (unibyte-string 37 80 68 70 45 0 255)))
+    (unwind-protect
+        (let ((edgar-record-request-delay 0))
+          (cl-letf
+              (((symbol-function 'edgar-record--dir)
+                (lambda () directory))
+               ((symbol-function 'edgar-record--index-url)
+                (lambda (_)
+                  "https://www.sec.gov/Archives/edgar/data/1/000000000126000002/index.json"))
+               ((symbol-function 'edgar-form-info)
+                (lambda (_) '(:backend pdf)))
+               ((symbol-function 'edgar--fetch)
+                (lambda (url)
+                  (should (equal url primary-url))
+                  content)))
+            (should
+             (edgar-record--write-pair
+              "pdf-sample" filing item '(2026 . 3) "recent"))
+            (should
+             (edgar-record--backend-file-p "TEST-PDF" "primary.PDF"))
+            (should
+             (equal
+              (with-temp-buffer
+                (set-buffer-multibyte nil)
+                (insert-file-contents-literally
+                 (expand-file-name "pdf-sample.pdf" directory))
+                (buffer-string))
+              content)))
+          (delete-directory directory t)))))
+
 (ert-deftest edgar-record-sample-reports-no-filing-offline ()
   "An empty sampled index is reported without any network request."
   (should

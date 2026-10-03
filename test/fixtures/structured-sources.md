@@ -50,37 +50,6 @@ Proxy, merger, and tender-offer samples:
 - `sc-to-i-pamt.htm.gz` — P.A.M. Transportation issuer tender offer ([SC TO-I accession 0001174947-25-000508](https://www.sec.gov/Archives/edgar/data/798287/000117494725000508/sctoi0425_pamt.htm); 2025-04-03).
 - `sc-to-c-cresco.htm.gz` — Cresco Labs tender-offer communication ([SC TO-C accession 0001832928-25-000020](https://www.sec.gov/Archives/edgar/data/1832928/000183292825000020/august2025_scheduleto-c.htm); 2025-08-20).
 
-Quarterly-index proxy and communication samples include a recent and older
-filing for each form; the saved metadata records each accession, primary URL,
-sample quarter, and vintage:
-
-The remaining G8 forms below use exact-form quarterly-index entries. Each
-recorded filing has a public SEC primary, reviewed expectation, and per-filing
-golden in the corresponding fixture directories. The ARS sample uses its
-indexed PDF primary because the HTML primary is only an image wrapper; an
-older ARS PDF exceeds the fixture recorder's 1.8 MB document cap. SC14D1F had
-no filing in the older sampled quarter.
-
-- ARS: index-ars-2025-q4.pdf — Tempest Therapeutics, Inc. (accession [0001140361-25-047055](https://www.sec.gov/Archives/edgar/data/1544227/000114036125047055/edge20059672x3_ars.pdf); 2025-12-31).
-- CB: index-cb-2026-q3.htm.gz — Ambea AB (publ) (accession [0001829126-26-009970](https://www.sec.gov/Archives/edgar/data/2151906/000182912626009970/ambeaab_form-cb.htm); 2026-09-10); index-cb-2023-q3.htm.gz — Foresight Autonomous Holdings Ltd. (accession [0001493152-23-032623](https://www.sec.gov/Archives/edgar/data/1691221/000149315223032623/formcb.htm); 2023-09-14).
-- DEFC14A: index-defc14a-2026-q3.htm.gz (accession [0001213900-26-076544](https://www.sec.gov/Archives/edgar/data/1717906/000121390026076544/ea0295612-02.htm); 2026-07-09); index-defc14a-2023-q3.htm.gz (accession [0000921895-23-002248](https://www.sec.gov/Archives/edgar/data/1491072/000092189523002248/defc14a13392004_09262023.htm); 2023-09-26).
-- DEFR14A: index-defr14a-2026-q3.htm.gz (accession [0001829126-26-010575](https://www.sec.gov/Archives/edgar/data/2047455/000182912626010575/quartzseaacq_defr14a.htm); 2026-09-29); index-defr14a-2023-q3.htm.gz (accession [0001976877-23-000059](https://www.sec.gov/Archives/edgar/data/1976877/000197687723000059/a2023metfspecialmeetingpro.htm); 2023-09-28).
-- DFAN14A: index-dfan14a-2026-q3.htm.gz (accession [0001493152-26-042718](https://www.sec.gov/Archives/edgar/data/1314052/000149315226042718/formdfan14a.htm); 2026-09-15); index-dfan14a-2023-q3.htm.gz (accession [0000921895-23-002121](https://www.sec.gov/Archives/edgar/data/1516478/000092189523002121/dfan14a13224004_09062023.htm); 2023-09-06).
-- DFRN14A: index-dfrn14a-2026-q3.htm.gz (accession [0000921895-26-002652](https://www.sec.gov/Archives/edgar/data/1472520/000092189526002652/dfrn14857002_09252026.htm); 2026-09-28); index-dfrn14a-2023-q3.htm.gz (accession [0001213900-23-064120](https://www.sec.gov/Archives/edgar/data/1838395/000121390023064120/ea182948-dfrn14a_oceancap1.htm); 2023-08-07).
-- PREC14A: index-prec14a-2026-q3.htm.gz (accession [0001193125-26-300877](https://www.sec.gov/Archives/edgar/data/1979332/000119312526300877/d53280dprec14a.htm); 2026-07-10); index-prec14a-2023-q3.htm.gz (accession [0001193805-23-000990](https://www.sec.gov/Archives/edgar/data/1491072/000119380523000990/prec14a13392004_07142023.htm); 2023-07-17).
-- PREM14A: index-prem14a-2026-q3.htm.gz (accession [0001104659-26-105505](https://www.sec.gov/Archives/edgar/data/910108/000110465926105505/tm2624432d1_prem14a.htm); 2026-09-04); index-prem14a-2023-q3.htm.gz (accession [0000950170-23-047833](https://www.sec.gov/Archives/edgar/data/1651721/000095017023047833/prelim_proxy_statement_0.htm); 2023-09-13).
-- PRER14A: index-prer14a-2026-q3.htm.gz (accession [0000918541-26-000079](https://www.sec.gov/Archives/edgar/data/918541/000091854126000079/nn-specialmeetingprelimina.htm); 2026-08-25); index-prer14a-2023-q3.htm.gz (accession [0001683168-23-006762](https://www.sec.gov/Archives/edgar/data/1849294/000168316823006762/fortune_prer14a.htm); 2023-09-27).
-- PRRN14A: index-prrn14a-2026-q3.htm.gz (accession [0000921895-26-002219](https://www.sec.gov/Archives/edgar/data/2079674/000092189526002219/prrn14a13914005_08172026.htm); 2026-08-17); index-prrn14a-2023-q3.htm.gz (accession [0000921895-23-001982](https://www.sec.gov/Archives/edgar/data/1516478/000092189523001982/prrn14a13224004_08162023.htm); 2023-08-17).
-- SC14D1F: index-sc14d1f-2026-q3.htm.gz (accession [0001104659-26-098277](https://www.sec.gov/Archives/edgar/data/1683541/000110465926098277/tm2623363d2_sc14d1f.htm); 2026-08-18).
-- SC14D9C: index-sc14d9c-2026-q3.htm.gz (accession [0001493152-26-039578](https://www.sec.gov/Archives/edgar/data/1516899/000149315226039578/formsc14d9c.htm); 2026-08-21); index-sc14d9c-2023-q3.htm.gz (accession [0001193125-23-207468](https://www.sec.gov/Archives/edgar/data/1656536/000119312523207468/d514485dsc14d9c.htm); 2023-08-09).
-
-- `index-425-2026-q3.htm.gz` — Criteo S.A. ([accession 0001628280-26-050330](https://www.sec.gov/Archives/edgar/data/2144230/000162828026050330/criteo425.htm); 2026-07-29); `index-425-2023-q3.htm.gz` — Thunder Bridge Capital Partners IV ([accession 0001213900-23-072575](https://www.sec.gov/Archives/edgar/data/1843993/000121390023072575/ea184517-425_coincheck.htm); 2023-08-31).
-- `index-pre-14a-2026-q3.htm.gz` — SkinHealth Systems ([accession 0001683168-26-005869](https://www.sec.gov/Archives/edgar/data/1818093/000168316826005869/skinhealth_pre14a.htm); 2026-07-31); `index-pre-14a-2023-q3.htm.gz` — AERWINS Technologies ([accession 0001493152-23-034863](https://www.sec.gov/Archives/edgar/data/1855631/000149315223034863/formpre14a.htm); 2023-09-29).
-- `index-pre-14c-2026-q3.htm.gz` — Privacore PCAAM Alternative Income Fund ([accession 0001213900-26-100151](https://www.sec.gov/Archives/edgar/data/2017579/000121390026100151/ea0305473-01_pre14c.htm); 2026-09-15); `index-pre-14c-2023-q3.htm.gz` — Bird Global ([accession 0001861449-23-000166](https://www.sec.gov/Archives/edgar/data/1861449/000186144923000166/brdsinformationstatementon.htm); 2023-08-03).
-- `index-px14a6g-2026-q3.htm.gz` — Friends Fiduciary Corporation ([accession 0001214659-26-010867](https://www.sec.gov/Archives/edgar/data/1696940/000121465926010867/w826261px14a6g.htm); 2026-08-26); `index-px14a6g-2023-q3.htm.gz` — James R. Epstein ([accession 0001214659-23-012817](https://www.sec.gov/Archives/edgar/data/1992952/000121465923012817/s928231px14a6g.htm); 2023-09-29).
-- `index-sc-14d9-2026-q3.htm.gz` — Yatra Online ([SC 14D9 accession 0001213900-26-096205](https://www.sec.gov/Archives/edgar/data/1516899/000121390026096205/ea0303988-01.htm); 2026-09-01).
-- `index-sc-14d9-2023-q3.htm.gz` — Computer Task Group ([SC 14D9 accession 0001193125-23-218549](https://www.sec.gov/Archives/edgar/data/23111/000119312523218549/d528209dsc14d9.htm); 2023-08-23).
-
 The following Q2 2026 samples are listed in the [SEC quarterly master index](https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx):
 
 - `defa14c-graybar.htm.gz` — DEFA14C, Graybar Electric Co. ([accession 0000205402-26-000030](https://www.sec.gov/Archives/edgar/data/205402/000020540226000030/c402-20260428corresp.htm); 2026-04-28).
@@ -94,7 +63,6 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 
 - `schedule-13g-gme-xml.xml` — [Schedule 13G accession 0002063571-25-000002](https://www.sec.gov/Archives/edgar/data/1326380/000206357125000002/primary_doc.xml) (GameStop; 2025-04-02).
 - `schedule-13d-taskus-a.xml` — [Schedule 13D/A accession 0001635999-25-000007](https://www.sec.gov/Archives/edgar/data/1829864/000163599925000007/primary_doc.xml) (TaskUs; 2025-08-26).
-- `form-d-506b.xml` — [Form D accession 0002027302-24-000001](https://www.sec.gov/Archives/edgar/data/2027302/000202730224000001/primary_doc.xml) (Entry Inc.; Rule 506(b); 2024-06-18).
 - `nport-p-eagle.xml` — [NPORT-P accession 0000850027-26-000015](https://www.sec.gov/Archives/edgar/data/850027/000085002726000015/primary_doc.xml).
 - `n-mfp3-northwestern-mutual.xml` — [N-MFP3 accession 0000742212-26-000029](https://www.sec.gov/Archives/edgar/data/742212/000074221226000029/primary_doc.xml).
 - `n-cen-alps.xml` — [N-CEN accession 0001049169-26-001803](https://www.sec.gov/Archives/edgar/data/915802/000104916926001803/primary_doc.xml).
@@ -167,11 +135,6 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `486bxt-ark-venture.htm.gz` — compressed primary [486BXT accession 0001213900-26-083105](https://www.sec.gov/Archives/edgar/data/1905088/000121390026083105/ea0299591-01_486bxt.htm) (ARK Venture Fund; 2026-07-30).
 - `n-14-8c-acif.htm.gz` — compressed primary [N-14 8C accession 0001193125-26-124285](https://www.sec.gov/Archives/edgar/data/1726548/000119312526124285/d115975dn148c.htm) (Alternative Credit Income Fund; 2026-03-25).
 - `n-2asr-blackrock.htm.gz` — compressed primary [N-2ASR accession 0001193125-26-304963](https://www.sec.gov/Archives/edgar/data/1278895/000119312526304963/d131446dn2asr.htm) (BlackRock Enhanced Large Cap Core Fund; 2026-07-15).
-- `40-17f2-fundrise.htm.gz` — compressed primary [40-17F2 accession 0001867090-26-000072](https://www.sec.gov/Archives/edgar/data/1867090/000186709026000072/d17f2innovation03202026.htm) (Fundrise Innovation Fund; 2026-06-10).
-- `app-wd-guggenheim.htm.gz` — compressed primary [APP WD accession 0001821268-26-000067](https://www.sec.gov/Archives/edgar/data/2122340/000182126826000067/gug89737-appwd.htm) (Guggenheim Strategic Opportunities Fund; 2026-04-13).
-- `40-8f-2-chesapeake.htm.gz` — compressed primary [40-8F-2 accession 0001193125-05-064452](https://www.sec.gov/Archives/edgar/data/63848/000119312505064452/d408f2.htm) (Chesapeake Investors, Inc.; 2005-03-30).
-- `n-2-posasr-eagle-point.htm.gz` — compressed primary [N-2 POSASR accession 0001104659-26-065749](https://www.sec.gov/Archives/edgar/data/1604174/000110465926065749/tm2615164d1_n2posasr.htm) (Eagle Point Credit Co Inc; 2026-05-22).
-- `del-am-jpmorgan.htm.gz` — compressed primary [DEL AM accession 0001193125-25-064178](https://www.sec.gov/Archives/edgar/data/1485894/000119312525064178/d916859ddelam.htm) (J.P. Morgan Exchange-Traded Fund Trust; 2025-03-26).
 - `486apos-flat-rock.htm.gz` — compressed primary [486APOS accession 0001213900-26-050259](https://www.sec.gov/Archives/edgar/data/1814390/000121390026050259/ea0288074-02_486apos.htm) (Flat Rock Core Income Fund; 2026-04-30).
 - `487-adt2360.htm.gz` — compressed primary [Form 487 accession 0001999371-26-021338](https://www.sec.gov/Archives/edgar/data/2118248/000199937126021338/adt2360-487.htm) (Advisors Disciplined Trust 2360; 2026-09-25).
 - `n-2-buttonwood.htm.gz` — compressed primary [N-2 accession 0001213900-26-023498](https://www.sec.gov/Archives/edgar/data/2104046/000121390026023498/ea0279503-01_n2.htm) (Buttonwood First Access Fund; 2026-03-04).
@@ -180,33 +143,66 @@ The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.
 
-### G12 source limitations
+## G12 source limitations
 
-The Q2 2026 SEC archive samples for the remaining L0 forms have no readable
-HTML/XML primary documents:
+These Q2 2026 SEC sources were checked through their accession directories.
+The four PDF primaries are recorded as direct `.pdf` files and complete
+`.txt.gz` submissions. Their whole-text and primary-document snapshots are in
+`test/expect/g12-pdf-structures.eld`. Tests decode each submission payload,
+compare the bytes with the direct SEC PDF, and check generic text and paragraph
+structure.
 
-- `ADV-H-T` — Apple Tree Venture Management, accession
-  [9999999997-26-000671](https://www.sec.gov/Archives/edgar/data/2130471/9999999997-26-000671.txt).
-  Its `.paper` record resolves only to an SEC-generated notice directing the
-  reader to Document Control Number 26007812.
-- `G-FIN` — State Street Bank & Trust, accession
-  [9999999997-26-001447](https://www.sec.gov/Archives/edgar/data/823722/9999999997-26-001447.txt).
-  Its `.paper` record resolves only to an SEC-generated notice directing the
-  reader to Document Control Number 26007830.
-- `NRSRO-CE` — Moody's Investors Service, accession
-  [0001193125-26-255364](https://www.sec.gov/Archives/edgar/data/1698547/000119312526255364/index.json).
-  Its primary and exhibits are PDFs embedded as ASCII-armored PDF data in the
-  complete submission.
-- `NRSRO-UPD` — HR Ratings, accession
-  [0001628352-26-000006](https://www.sec.gov/Archives/edgar/data/1628352/000162835226000006/index.json).
-  Its documents are PDFs (`Exhibit4.pdf`, `UpdateJune.pdf`).
-- `SEC STAFF ACTIO` — Vicore Pharma, accession
-  [9999999997-26-001144](https://www.sec.gov/Archives/edgar/data/2124403/999999999726001144/index.json).
-  Its primary document is `filename1.pdf`.
-- `SEC STAFF LETTE` — Mao Shan Huang Holdings, accession
-  [9999999997-26-001105](https://www.sec.gov/Archives/edgar/data/2137634/999999999726001105/index.json).
-  Its primary document is `filename1.pdf`.
+- `ADV-H-T`, accession `9999999997-26-000671`: the directory contains a
+  294-byte `9999999997-26-000671.paper` control and the complete submission.
+  Both contain only the auto-generated paper notice; it names Document Control
+  Number `26007812` and says the original document must be accessed by that
+  number. The files are recorded as `adv-h-t-2026-q2.paper` and
+  `adv-h-t-2026-q2.txt.gz`
+  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/index.json),
+  [complete submission](https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/9999999997-26-000671.txt)).
+- `G-FIN/A` (base form `G-FIN`), accession `9999999997-26-001447`: the
+  directory likewise contains only the 294-byte `.paper` control and complete
+  submission. Its notice names Document Control Number `26007830`; no original
+  report body is present. The files are recorded as `g-fin-a-2026-q2.paper`
+  and `g-fin-a-2026-q2.txt.gz`
+  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/index.json),
+  [complete submission](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.txt)).
 
-These records stay L0: the generic tree exposes filing and primary-document
-metadata, and PDF sources have no extracted text or named sections. `edgar-text`
-reports PDF text extraction as unsupported.
+The paper notice structures and exact `.paper` hashes are pinned in
+`test/expect/g12-paper-structures.eld`. These two forms remain L0 because the
+public files contain no report body; the cited document-control numbers do not
+lead to publicly available report files in the accession directories.
+
+The four publicly available primary PDFs are now L1:
+
+- `NRSRO-CE/A` (base form `NRSRO-CE`), accession `0001193125-26-255364`, filed
+  2026-06-03: `d928396dnrsrocea.pdf`, 391,382 bytes. Fixture:
+  `nrsro-ce-2026-q2.pdf` and `nrsro-ce-2026-q2.txt.gz`
+  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/1698547/000119312526255364/index.json),
+  [primary PDF](https://www.sec.gov/Archives/edgar/data/1698547/000119312526255364/d928396dnrsrocea.pdf)).
+- `NRSRO-UPD`, accession `0001628352-26-000006`, filed 2026-06-16:
+  `UpdateJune.pdf`, 488,663 bytes. Fixture:
+  `nrsro-upd-2026-q2.pdf` and `nrsro-upd-2026-q2.txt.gz`
+  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/1628352/000162835226000006/index.json),
+  [primary PDF](https://www.sec.gov/Archives/edgar/data/1628352/000162835226000006/UpdateJune.pdf)).
+- `SEC STAFF ACTIO`, accession `9999999997-26-001144`, filed 2026-06-30:
+  `filename1.pdf`, 97,731 bytes. The complete submission labels the primary
+  `ORDER`. Fixture: `sec-staff-actio-2026-q2.pdf` and
+  `sec-staff-actio-2026-q2.txt.gz`
+  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/2124403/999999999726001144/index.json),
+  [primary PDF](https://www.sec.gov/Archives/edgar/data/2124403/999999999726001144/filename1.pdf)).
+- `SEC STAFF LETTE`, accession `9999999997-26-001105`, filed 2026-06-25:
+  `filename1.pdf`, 111,031 bytes. The complete submission labels the primary
+  `SERIOUS DEFICIENCIES`. Fixture: `sec-staff-lette-2026-q2.pdf` and
+  `sec-staff-lette-2026-q2.txt.gz`
+  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/2137634/999999999726001105/index.json),
+  [primary PDF](https://www.sec.gov/Archives/edgar/data/2137634/999999999726001105/filename1.pdf)).
+
+The base form names for the SEC staff rows follow the form-index snapshot
+(`SEC STAFF ACTIO` and `SEC STAFF LETTE`); their submission headers spell out
+`SEC STAFF ACTION` and `SEC STAFF LETTER`. The package uses no form-specific
+PDF parsing: `edgar-primary-document` exposes source metadata, `edgar-text`
+returns `pdftotext` output, and `edgar-document-structure` exposes the text as
+ordered paragraphs. Recognizable standalone headings are available through
+`edgar-structure-headings` and `edgar-structure-section`; this generic text
+heuristic only returns headings present in the extracted output.

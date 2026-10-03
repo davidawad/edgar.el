@@ -1,16 +1,18 @@
 # edgar.el
 
-Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for SEC data access.
+Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
 
-Direct PDF primaries use `pdftotext` for plain text and generic paragraph access.
-PDFs embedded as uuencoded data inside complete submissions expose metadata only.
+PDF primaries are rendered through Poppler's `pdftotext` executable. PDF
+payloads embedded in complete submissions also require `uudecode`.
+Customize `edgar-pdftotext-program` and `edgar-uudecode-program` when the
+executables use other names.
 
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
     (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
+    (edgar-facts (edgar-latest "AAPL" "10-K"))          ; Inline XBRL facts + contexts
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
-    (edgar-effective-section "TSLA" "10-K" "III.10")      ; latest amended section
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
     (edgar-documents filing)                    ; list filing documents
@@ -27,11 +29,6 @@ complete submissions rather than primary documents, their `:doc` and `:url`
 point to the filing's `.txt` submission. `edgar-text` and `edgar-section`
 extract the matching primary document from those SGML wrappers and preserve
 section boundaries in legacy plain-text filings.
-
-Exact `/A` queries add `:amends` when a matching original filing is found.
-`edgar-effective-section` returns a requested section from the latest matching
-amendment when present, otherwise it falls back to the original filing;
-`edgar-text-diff` returns a unified diff between two text strings.
 
 `edgar-ownership.el` provides typed plists for Forms 3, 4, and 5:
 `edgar-ownership-issuer`, `edgar-ownership-reporting-owners`,
@@ -84,25 +81,28 @@ access to the document structure, use the generic tree API:
       (edgar-structure-paragraphs tree)
       (edgar-structure-nodes tree "ix:nonfraction"))
 
-HTML, XML, plain-text, and readable PDF submissions use one tree
-representation. Element names, attributes, child order, and text nodes are
-kept; individual form codes do not select custom fields. PDF text extraction
-requires `pdftotext` (configurable with `edgar-pdftotext-program`).
-`edgar-structure-section` accepts a visible
+HTML, XML, PDF, and plain-text submissions use one tree representation. PDF
+documents expose their extracted paragraphs; element
+names, attributes, child order, and text nodes are kept; individual form codes
+do not select custom fields. `edgar-structure-section` accepts a visible
 heading name or a full heading/tag path. Duplicate names signal an ambiguity
 error that a path resolves. `edgar-structure-nodes-at-path` addresses nested
 element paths, `edgar-structure-nodes` returns elements with a given tag, and
 `edgar-structure-paragraphs` returns `p` elements or plain-text paragraphs.
-The tree root's `:metadata` includes filing identifiers and a `:primary-document`
-record with its name, type, format, and readability. PDF-only sources return
-that metadata without text; `edgar-text` signals `user-error` for them.
+`edgar-primary-document` returns the SEC document's `:type`, `:sequence`,
+`:filename`, `:description`, `:format`, and raw `:content`; the tree keeps the
+metadata under `:primary-document`. For XSL-rendered XML URLs it reads the raw
+XML source. `:format` is one of `xml`, `html`, `text`, `pdf`, or
+`pdf-uuencoded`. PDF submissions are decoded generically with `uudecode`, then
+their text and paragraphs are exposed through the same structure and section
+APIs using `pdftotext`.
 
-`edgar-structure-headings` discovers HTML `h1`-`h6` and titled `section`
-elements. `edgar-section` additionally resolves existing Item headings and
-standalone uppercase heading lines in rendered text. Unmarked headings in
-tables or other filing-specific markup are not inferred automatically; their
-source nodes and text remain available through the generic tree API. No form
-codes select custom fields or heading catalogs.
+`edgar-structure-headings` discovers HTML `h1`-`h6`, titled `section`
+elements, and recognizable standalone headings in PDF/text output.
+`edgar-section` also resolves existing Item headings. The plain-text heading
+fallback is heuristic; unmarked headings in tables or filing-specific markup
+remain available through the generic tree API. No form codes select custom
+fields or heading catalogs.
 
 The same tree API has recorded G12 coverage for CORRESP and UPLOAD text,
 plus X-17A-5, MA-I, TA-2, ATS-N and its amendments, CFPORTAL, MA, SBSE, and
