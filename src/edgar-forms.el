@@ -813,7 +813,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'text
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3
       :notes "Q2 2026 .paper notice cites DCPN 26007812; original report body is absent.")
@@ -1416,7 +1416,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'text
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 8
       :notes "Q2 2026 .paper notice cites DCPN 26007830; original report body is absent.")
