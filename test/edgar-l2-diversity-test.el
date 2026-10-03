@@ -56,6 +56,7 @@
            '(("11-K" "11-k-ko" "11-k-ball" "11-k-campbell")
              ("40-F" "40-f-shop" "40-f-suncor" "40-f-cibc")
              ("6-K" "6-k-tsm" "6-k-sony" "6-k-ryojobaba")
+             ("S-1" "s-1-rivn" "s-1-reddit" "s-1-astera")
              ("ABS-EE" "abs-ee-bank5-sample" "abs-ee-deutsche"
               "abs-ee-cd2017-cd3")
              ("C-AR" "c-ar-qnetic" "c-ar-diaspora" "c-ar-kronos")))

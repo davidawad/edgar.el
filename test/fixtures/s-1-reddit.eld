@@ -1,0 +1,1 @@
+(:accn "0001628280-24-006294" :form "S-1" :filed "2024-02-22" :report "" :doc "reddits-1q423.htm" :cik 1713445 :url "https://www.sec.gov/Archives/edgar/data/1713445/000162828024006294/reddits-1q423.htm" :ticker "RDDT")

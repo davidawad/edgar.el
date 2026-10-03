@@ -1,0 +1,1 @@
+(:accn "0001193125-24-040419" :form "S-1" :filed "2024-02-21" :report "" :doc "d285484ds1.htm" :cik 1736297 :url "https://www.sec.gov/Archives/edgar/data/1736297/000119312524040419/d285484ds1.htm" :ticker "ALAB")
