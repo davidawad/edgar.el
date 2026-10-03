@@ -112,14 +112,19 @@
       (delete-file compressed))))
 
 (ert-deftest edgar-record-write-pair-stores-xml-and-primary-url ()
-  "Store an XML primary as XML and replace the submission URL in metadata."
+  "Store the XML primary URL and preserve sampling provenance metadata."
   (let*
       ((directory (make-temp-file "edgar-record-fixture-" t))
+       (edgar-record-seed "offline-provenance-seed")
+       (edgar-record-request-delay 0)
        (filing
         '(:accn
           "0000000001-26-000001"
           :form "1-K"
           :cik 1
+          :company "Sample Corporation"
+          :filed "2026-06-30"
+          :report "2026-03-31"
           :doc "submission.txt"
           :url "https://www.sec.gov/submission.txt"))
        (item '((name . "primary_doc.xml") (size . "55")))
@@ -145,9 +150,60 @@
              (expand-file-name "sample.eld" directory))
             (let ((metadata (read (current-buffer))))
               (should
+               (equal (plist-get metadata :accn)
+                      "0000000001-26-000001"))
+              (should (equal (plist-get metadata :form) "1-K"))
+              (should (equal (plist-get metadata :cik) 1))
+              (should
+               (equal (plist-get metadata :company)
+                      "Sample Corporation"))
+              (should (equal (plist-get metadata :filed) "2026-06-30"))
+              (should (equal (plist-get metadata :report) "2026-03-31"))
+              (should
                (equal (plist-get metadata :doc) "primary_doc.xml"))
               (should
-               (equal (plist-get metadata :url) primary-url)))))
+               (equal (plist-get metadata :url) primary-url))
+              (should (equal (plist-get metadata :size) 55))
+              (should
+               (equal (plist-get metadata :sample-vintage) "recent"))
+              (should
+               (equal (plist-get metadata :sample-quarter) "2026-Q3"))
+              (should
+               (equal
+                (plist-get metadata :sample-seed)
+                "offline-provenance-seed")))))
+      (delete-directory directory t))))
+
+(ert-deftest edgar-record-sampler-falls-back-to-amended-base-form ()
+  "Use `/A' filings only when no exact base-form filing is indexed."
+  (let ((directory (make-temp-file "edgar-record-sampler-" t))
+        seen)
+    (unwind-protect
+        (cl-letf (((symbol-function 'edgar-record--dir)
+                   (lambda () directory))
+                  ((symbol-function 'edgar-record--candidate-docs)
+                   (lambda (_form _vintage filings)
+                     (setq seen filings)
+                     nil)))
+          (should
+           (eq
+            (edgar-record--sample-quarter
+             "10-K" "recent" '(2099 . 4)
+             '((:form "10-K/A" :accn "amendment")
+               (:form "10-K" :accn "base")))
+            :no-suitable))
+          (should
+           (equal (mapcar (lambda (filing) (plist-get filing :accn)) seen)
+                  '("base")))
+          (should
+           (eq
+            (edgar-record--sample-quarter
+             "10-K" "older" '(2096 . 4)
+             '((:form "10-K/A" :accn "amendment")))
+            :no-suitable))
+          (should
+           (equal (mapcar (lambda (filing) (plist-get filing :accn)) seen)
+                  '("amendment"))))
       (delete-directory directory t))))
 
 (ert-deftest edgar-record-write-pair-preserves-pdf-bytes ()
