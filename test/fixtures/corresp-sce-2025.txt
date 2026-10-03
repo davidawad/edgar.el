@@ -1,0 +1,222 @@
+<SEC-DOCUMENT>0001193125-25-253858.txt : 20260224
+<SEC-HEADER>0001193125-25-253858.hdr.sgml : 20260224
+<ACCEPTANCE-DATETIME>20251028171636
+<PRIVATE-TO-PUBLIC>
+ACCESSION NUMBER:		0001193125-25-253858
+CONFORMED SUBMISSION TYPE:	CORRESP
+PUBLIC DOCUMENT COUNT:		1
+FILED AS OF DATE:		20251028
+
+FILER:
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			SOUTHERN CALIFORNIA EDISON Co
+		CENTRAL INDEX KEY:			0000092103
+		STANDARD INDUSTRIAL CLASSIFICATION:	ELECTRIC SERVICES [4911]
+		ORGANIZATION NAME:           	01 Energy & Transportation
+		EIN:				951240335
+		STATE OF INCORPORATION:			CA
+		FISCAL YEAR END:			1231
+
+	FILING VALUES:
+		FORM TYPE:		CORRESP
+
+	BUSINESS ADDRESS:	
+		STREET 1:		2244 WALNUT GROVE AVE
+		STREET 2:		P O BOX 800
+		CITY:			ROSEMEAD
+		STATE:			CA
+		ZIP:			91770
+		BUSINESS PHONE:		6263021212
+
+	MAIL ADDRESS:	
+		STREET 1:		2244 WALNUT GROVE AVE
+		CITY:			ROSEMEAD
+		STATE:			CA
+		ZIP:			91770
+
+	FORMER COMPANY:	
+		FORMER CONFORMED NAME:	SOUTHERN CALIFORNIA EDISON CO
+		DATE OF NAME CHANGE:	19920703
+
+FILER:
+
+	COMPANY DATA:	
+		COMPANY CONFORMED NAME:			SCE Recovery Funding LLC
+		CENTRAL INDEX KEY:			0001826571
+		STANDARD INDUSTRIAL CLASSIFICATION:	ASSET-BACKED SECURITIES [6189]
+		ORGANIZATION NAME:           	Office of Structured Finance
+		EIN:				853002154
+		STATE OF INCORPORATION:			CA
+
+	FILING VALUES:
+		FORM TYPE:		CORRESP
+
+	BUSINESS ADDRESS:	
+		STREET 1:		2244 WALNUT GROVE AVE
+		CITY:			ROSEMEAD
+		STATE:			CA
+		ZIP:			91770
+		BUSINESS PHONE:		6263022662
+
+	MAIL ADDRESS:	
+		STREET 1:		2244 WALNUT GROVE AVE
+		CITY:			ROSEMEAD
+		STATE:			CA
+		ZIP:			91770
+</SEC-HEADER>
+<DOCUMENT>
+<TYPE>CORRESP
+<SEQUENCE>1
+<FILENAME>filename1.htm
+<TEXT>
+<HTML><HEAD>
+<TITLE>CORRESP</TITLE>
+</HEAD>
+ <BODY BGCOLOR="WHITE" STYLE="line-height:Normal">
+
+<Center><DIV STYLE="width:8.5in" align="left">
+ <P STYLE="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">October&nbsp;28, 2025 </P>
+<P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><U>VIA EDGAR </U></P> <P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Securities and Exchange Commission </P>
+<P STYLE="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Division of Corporate Finance </P> <P STYLE="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">100 F Street, N.E. </P>
+<P STYLE="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Washington, D.C. 20549 </P> <P STYLE="font-size:12pt;margin-top:0pt;margin-bottom:0pt">&nbsp;</P>
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="100%" BORDER="0" STYLE="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt" ALIGN="center">
+
+<TR>
+
+<TD WIDTH="8%"></TD>
+
+<TD VALIGN="bottom" WIDTH="1%"></TD>
+<TD WIDTH="91%"></TD></TR>
+
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top">Attention:</TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top">Jason Weidberg, Office of Structured Finance</TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top"></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top">Arthur Sandel, Office of Structured Finance&#8195;</TD></TR>
+<TR STYLE="font-size:1pt">
+<TD HEIGHT="16"></TD>
+<TD HEIGHT="16" COLSPAN="2"></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top" ALIGN="right"><B>Re:&#8195;</B></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top"><B>Southern California Edison Company</B></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top"></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top"><B>SCE Recovery Funding LLC</B></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top"></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top"><B>Registration Statement on Form <FONT STYLE="white-space:nowrap">SF-1</FONT></B></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top"></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top"><B>Filed September&nbsp;8, 2025</B></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top"></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top"><B>File Nos. <FONT STYLE="white-space:nowrap">333-290112</FONT> and <FONT STYLE="white-space:nowrap"><FONT STYLE="white-space:nowrap">333-290112-01</FONT></FONT></B></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top"></TD>
+<TD VALIGN="bottom">&nbsp;&nbsp;</TD>
+<TD VALIGN="top"><B>SEC Comment Letter dated September&nbsp;30, 2025</B></TD></TR>
+</TABLE> <P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Dear Mr.&nbsp;Weidberg and Mr.&nbsp;Sandel: </P>
+<P STYLE="margin-top:12pt; margin-bottom:0pt; text-indent:4%; font-size:10pt; font-family:Times New Roman">On behalf of Southern California Edison Company (&#8220;SCE&#8221;) and SCE Recovery Funding LLC (together with SCE, the
+&#8220;Registrants&#8221;), we submit via EDGAR for review by the Securities and Exchange Commission (the &#8220;Commission&#8221;) the accompanying Amendment No.&nbsp;1 (including certain exhibits) (&#8220;Amendment No.&nbsp;1&#8221;) to the
+Registrants&#8217; above-referenced Registration Statement on Form <FONT STYLE="white-space:nowrap">SF-1</FONT> (the &#8220;Registration Statement&#8221;). Amendment No.&nbsp;1 reflects the Registrants&#8217; responses to the comments received from
+the staff of the Commission (the &#8220;Staff&#8221;) contained in the Staff&#8217;s letter dated September&nbsp;30, 2025 (the &#8220;Comment Letter&#8221;), and certain other updated information and structural changes. For your convenience, the
+Registrants are providing to the Staff a supplemental typeset copy of Amendment No.&nbsp;1 marked to indicate the changes from the Registration Statement that was filed on September&nbsp;8, 2025. </P>
+<P STYLE="margin-top:12pt; margin-bottom:0pt; text-indent:4%; font-size:10pt; font-family:Times New Roman">The Staff&#8217;s comments as reflected in the Comment Letter are reproduced in italics in this letter, and the corresponding responses of the
+Registrants are shown below each comment. All references to page numbers in the Registrants&#8217; responses are to the page numbers in Amendment No.&nbsp;1. </P>
+<P STYLE="margin-top:12pt; margin-bottom:0pt; text-indent:4%; font-size:10pt; font-family:Times New Roman">Pursuant to the update regarding Division of Corporation Finance Actions In Advance of a Potential Government Shutdown of the Division of
+Corporation Finance on October&nbsp;9, 2025, the Registrants have revised the cover page of the Registration Statement to include language provided by Rule 473(b) of the Securities Act of 1933 for the automatic effectiveness of the Registration
+Statement 20 days following the filing of Amendment No.&nbsp;1. If the Commission resumes operations before the Registration Statement becomes effective, upon the request of the Commission staff, the Registrants may file an amendment to the
+Registration Statement requesting a delay or change in the effectiveness of the Registration Statement. </P>
+</DIV></Center>
+
+<p style="margin-top:1em; margin-bottom:0em; page-break-before:always"> </p>
+<HR SIZE="3" style="COLOR:#999999" WIDTH="100%" ALIGN="CENTER">
+
+<Center><DIV STYLE="width:8.5in" align="left">
+ <P STYLE="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><U>Form of Prospectus </U></P>
+<P STYLE="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><U>Legal Proceedings, page 127 </U></P> <P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:9pt; font-family:Times New Roman">Norton Rose Fulbright US LLP
+is a limited liability partnership registered under the laws of Texas. </P> <P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:9pt; font-family:Times New Roman">Norton Rose Fulbright US LLP, Norton Rose Fulbright LLP, Norton Rose Fulbright
+Australia, Norton Rose Fulbright Canada LLP and Norton Rose Fulbright South Africa Inc are separate legal entities and all of them are members of Norton Rose Fulbright Verein, a Swiss verein. Norton Rose Fulbright Verein helps coordinate the
+activities of the members but does not itself provide legal services to clients. Details of each entity, with certain regulatory information, are available at nortonrosefulbright.com. </P>
+<P STYLE="font-size:6pt;margin-top:0pt;margin-bottom:0pt">&nbsp;</P>
+<TABLE STYLE="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR style = "page-break-inside:avoid">
+<TD WIDTH="4%">&nbsp;</TD>
+<TD WIDTH="5%" VALIGN="top" ALIGN="left"><B>1.</B></TD>
+<TD ALIGN="left" VALIGN="top"> <P STYLE=" margin-top:0pt ; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman; " ALIGN="left"><B></B><I>We note your statement that there are no legal or governmental proceedings pending against the
+sponsor, depositor, seller, or servicer, or of which any property of the foregoing is subject, that are material to the holders of the bonds. We also note, however, that the United States filed two lawsuits on or about
+September</I><I></I><I>&nbsp;4, 2025, seeking damages against Southern California Edison (SCE) in connection with the Eaton Fire of 2025 and the Fairview Fire of 2022. Please tell us why these legal proceedings, which may relate to SCE&#8217;s role
+as sponsor, depositor and/or servicer are not material. Alternatively, revise your disclosure as necessary to describe any legal proceedings that are material to the purchasers of the bonds offered by this prospectus.</I> </P></TD></TR></TABLE>
+<P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><B>Response</B>: Losses from these Federal lawsuits, or any other lawsuits pending against SCE, are not expected to have a material impact on SCE&#8217;s
+ability to perform its role as sponsor, depositor and/or servicer nor on SCE&#8217;s property that is material to the holders of the bonds, and therefore such lawsuits are not considered material to the holders of the bonds. </P>
+<P STYLE="margin-top:18pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><U>Part II &#8211; Information Not Required in Prospectus </U></P>
+<P STYLE="margin-top:6pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><U>Item 14. Exhibits, page <FONT STYLE="white-space:nowrap">II-3</FONT> </U></P> <P STYLE="font-size:6pt;margin-top:0pt;margin-bottom:0pt">&nbsp;</P>
+<TABLE STYLE="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt" BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR style = "page-break-inside:avoid">
+<TD WIDTH="4%">&nbsp;</TD>
+<TD WIDTH="5%" VALIGN="top" ALIGN="left"><I>2.</I></TD>
+<TD ALIGN="left" VALIGN="top"> <P STYLE=" margin-top:0pt ; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman; " ALIGN="left"><I>Please file the remaining exhibits with your next amendment. Refer to Item 1100(f) of Regulation AB and
+Instruction 1 to Item 601 of Regulation <FONT STYLE="white-space:nowrap">S-K.</FONT> Note that we may have additional comments on your registration statement following our review of any such exhibits. </I></P></TD></TR></TABLE>
+<P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><B>Response</B>: The remaining exhibits, including the forms of the underwriting agreement, the Constitutional law opinion and Exhibits 5.1 and Exhibit 8.1
+are being filed with Amendment No.&nbsp;1. </P> <P STYLE="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">We hope that the foregoing has been responsive to the Staff&#8217;s comments. If you have any questions or
+comments about this letter or need any further information, please call the undersigned at (628) <FONT STYLE="white-space:nowrap">231-6803.</FONT> </P> <P STYLE="font-size:12pt;margin-top:0pt;margin-bottom:0pt">&nbsp;</P><DIV ALIGN="right">
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="40%" BORDER="0" STYLE="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt">
+
+<TR>
+
+<TD WIDTH="9%"></TD>
+
+<TD VALIGN="bottom" WIDTH="1%"></TD>
+<TD WIDTH="90%"></TD></TR>
+
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="bottom" COLSPAN="3">Very Truly Yours</TD></TR>
+<TR STYLE="font-size:1pt">
+<TD HEIGHT="16"></TD>
+<TD HEIGHT="16" COLSPAN="2"></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="bottom">By:&#8194;</TD>
+<TD VALIGN="bottom">&nbsp;</TD>
+<TD VALIGN="bottom"> <P STYLE="margin-top:0pt; margin-bottom:1pt; border-bottom:1px solid #000000; font-size:10pt; font-family:Times New Roman">/s/ Eric D. Tashman</P></TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="bottom">&nbsp;</TD>
+<TD VALIGN="bottom">&nbsp;</TD>
+<TD VALIGN="bottom">Eric D. Tashman</TD></TR>
+</TABLE></DIV> <P STYLE="font-size:12pt;margin-top:0pt;margin-bottom:0pt">&nbsp;</P>
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="40%" BORDER="0" STYLE="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt">
+
+<TR>
+
+<TD WIDTH="11%"></TD>
+
+<TD VALIGN="bottom" WIDTH="1%"></TD>
+<TD WIDTH="88%"></TD></TR>
+
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="top">cc:&#8195;</TD>
+<TD VALIGN="bottom">&nbsp;</TD>
+<TD VALIGN="top">Steven D. Powell (SCE)</TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="bottom"></TD>
+<TD VALIGN="bottom">&nbsp;</TD>
+<TD VALIGN="bottom" NOWRAP>Aaron D. Moss (SCE Recovery Funding LLC)</TD></TR>
+<TR STYLE="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<TD VALIGN="bottom"></TD>
+<TD VALIGN="bottom">&nbsp;</TD>
+<TD VALIGN="bottom">Kathleen Brennan de Jesus, Esq. (SCE)</TD></TR>
+</TABLE>
+</DIV></Center>
+
+</BODY></HTML>
+</TEXT>
+</DOCUMENT>
+</SEC-DOCUMENT>

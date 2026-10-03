@@ -1046,7 +1046,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'text
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 687
       :notes nil)
@@ -2456,7 +2456,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 673
       :notes nil)

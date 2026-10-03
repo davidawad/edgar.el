@@ -330,6 +330,45 @@
           (should (stringp body))
           (should (string-match-p (regexp-quote (nth 2 entry)) body)))))))
 
+(ert-deftest edgar-g12-xml-fixture-is-readable-through-generic-tree-api ()
+  "An X-17A-5 SEC XML filing works through the generic structure API."
+  (let* ((filing (edgar-fixtures-filing "x-17a-5-m-stevens"))
+         (xml
+          (with-temp-buffer
+            (insert-file-contents
+             (edgar-fixtures-path "fixtures/x-17a-5-m-stevens.xml"))
+            (buffer-string)))
+         (expected
+          (edgar-fixtures-read
+           (edgar-fixtures-path "expect/x-17a-5-m-stevens.eld"))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((tree (edgar-document-structure filing)))
+        (should (eq (plist-get tree :format) 'xml))
+        (dolist (entry (plist-get expected :sections))
+          (should
+           (equal (plist-get (edgar-structure-section tree (car entry)) :body)
+                  (cadr entry))))))))
+
+(ert-deftest edgar-g12-corresp-text-fixture-is-readable-through-generic-api ()
+  "A CORRESP complete submission works through the generic text API."
+  (let* ((filing (edgar-fixtures-filing "corresp-sce-2025"))
+         (text
+          (with-temp-buffer
+            (insert-file-contents
+             (edgar-fixtures-path "fixtures/corresp-sce-2025.txt"))
+            (buffer-string)))
+         (expected
+          (edgar-fixtures-read
+           (edgar-fixtures-path "expect/corresp-sce-2025.eld"))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) text)))
+      (let* ((tree (edgar-document-structure filing))
+             (document-text (edgar-structure-text tree)))
+        (should (eq (plist-get tree :format) 'text))
+        (dolist (marker (plist-get expected :markers))
+          (should (string-match-p marker document-text)))
+        (should (> (length (edgar-structure-paragraphs tree)) 1))
+        (should (string-match-p "</SEC-DOCUMENT>" document-text))))))
+
 (ert-deftest
     edgar-document-structure-preserves-html-sections-and-paragraphs
     ()

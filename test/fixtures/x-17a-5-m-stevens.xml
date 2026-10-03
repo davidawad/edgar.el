@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/seventeenafiler" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>X-17A-5</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001752756</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <returnCopyFlag>true</returnCopyFlag>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <submissionInformation>
+      <periodBegin>07-01-2025</periodBegin>
+      <periodEnd>06-30-2026</periodEnd>
+      <typeOfRegistrant>
+        <typeOfBDRegistrant>Broker-dealer</typeOfBDRegistrant>
+      </typeOfRegistrant>
+      <materialWeakness>N</materialWeakness>
+    </submissionInformation>
+    <registrantIdentification>
+      <brokerDealerName>M STEVENS SECURITIES, LLC</brokerDealerName>
+      <businessAddress>
+        <com:street1>3753 HOWARD HUGHES PARKWAY</com:street1>
+        <com:street2>SUITE 200</com:street2>
+        <com:city>LAS VEGAS</com:city>
+        <com:stateOrCountry>NV</com:stateOrCountry>
+        <com:zipCode>89169</com:zipCode>
+      </businessAddress>
+      <contactPersonName>Mark Stewart</contactPersonName>
+      <contactPersonPhoneNumber>7025097000</contactPersonPhoneNumber>
+    </registrantIdentification>
+    <accountantIdentification>
+      <accountantName>Mercurius &amp; Associates</accountantName>
+      <accountantAddress>
+        <com:street1>A 94/8 Wazipur Industrial Area</com:street1>
+        <com:city>New Dehli</com:city>
+        <com:stateOrCountry>K7</com:stateOrCountry>
+        <com:zipCode>110052</com:zipCode>
+      </accountantAddress>
+      <accountantType>Certified Public Accountant not resident in United States or any of its possessions</accountantType>
+    </accountantIdentification>
+    <oathSignature>
+      <signPersonName>Mark Stewart</signPersonName>
+      <entityName>M STEVENS SECURITIES, LLC</entityName>
+      <signDate>06-30-2026</signDate>
+      <signature>Mark Stewart</signature>
+      <oathTitle>CEO/CCO</oathTitle>
+    </oathSignature>
+  </formData>
+</edgarSubmission>
