@@ -124,8 +124,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(item-sections)
       :volume 994
       :notes nil)
      table)
@@ -134,8 +134,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(item-sections)
       :volume 3
       :notes nil)
      table)
@@ -144,8 +144,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(item-sections)
       :volume 5526
       :notes nil)
      table)
@@ -202,7 +202,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 103
       :notes nil)
@@ -242,7 +242,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 40
       :notes nil)
@@ -252,8 +252,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(item-sections)
       :volume 584
       :notes nil)
      table)
@@ -292,7 +292,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 33
       :notes nil)
@@ -582,8 +582,9 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(investment-objective fees-and-expenses principal-risks)
       :volume 2352
       :notes nil)
      table)
@@ -672,8 +673,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(summary-prospectus-named-sections)
       :volume 6592
       :notes nil)
      table)
@@ -773,8 +774,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(item-sections)
       :volume 18664
       :notes nil)
      table)
@@ -1103,7 +1104,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3042
       :notes nil)
@@ -1503,8 +1504,9 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(investment-objective fees-and-expenses principal-risks)
       :volume 13
       :notes nil)
      table)
@@ -1794,7 +1796,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 194
       :notes nil)
@@ -1804,7 +1806,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 331
       :notes nil)
@@ -1814,7 +1816,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 16
       :notes nil)
@@ -1824,7 +1826,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L1
+      :level 'L2
       :sections-or-fields '(generic-document-elements)
       :volume 104
       :notes nil)
@@ -2155,7 +2157,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 227
       :notes nil)

@@ -1,6 +1,18 @@
 ;; Reviewed (FIXTURE SLUG HEADING BODY FRAGMENT) named-section goldens.
 (("497k-hennessy" "Investment Objective"
   "long-term capital appreciation.")
+ ("485bpos-geme" "Investment Objective"
+  "Pacific NoS Global EM Equity Active ETF")
+ ("485bpos-geme" "Fees and Expenses"
+  "table below describes the fees and expenses")
+ ("485bpos-geme" "Principal Risks"
+  "shareholder is subject to the risk")
+ ("n-1a-americandrive" "Investment Objective"
+  "no assurance that the Fund will achieve its objective")
+ ("n-1a-americandrive" "Fees and Expenses"
+  "table describes the fees and expenses")
+ ("n-1a-americandrive" "Principal Risks"
+  "You could lose money by investing in the Fund")
  ("s-3-autonomix" "RISK FACTORS"
   "Before making an investment decision")
  ("f-1-fasttrack" "USE OF PROCEEDS"
@@ -12,6 +24,14 @@
  ("s-1-rivn" "Prospectus Summary" "Rivian")
  ("10-kt-keemo" "I.1A" "We are a smaller reporting company")
  ("8-k12b-nova" "3.01" "Notice of Delisting or Failure")
+ ("8-k-aapl" "2.02" "financial results")
+ ("8-k-aapl-prior" "8.01" "The 2024 Notes")
+ ("10-k-aapl" "I.1A" "General Risks")
+ ("10-k-aapl-prior" "I.1A" "Risk Factors")
+ ("10-q-gme" "I.2" "undue reliance")
+ ("10-q-gme-prior" "I.2" "undue reliance")
+ ("20-f-nvo" "I.3" "Factors that may inhibit")
+ ("20-f-nvo-prior" "I.3" "Risk factors")
  ("def-14a-gme" "Proxy Statement Summary" "PROXY STATEMENT")
  ("def-14a-encore" "Election of Directors"
   "The Company proposes to nominate the persons listed below")

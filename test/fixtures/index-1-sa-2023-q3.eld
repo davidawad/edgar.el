@@ -1,0 +1,1 @@
+(:accn "0001493152-23-034340" :form "1-SA" :company "Masterworks 239, LLC" :filed "2023-09-27" :report "" :doc "form1-sa.htm" :cik 1966602 :url "https://www.sec.gov/Archives/edgar/data/1966602/000149315223034340/form1-sa.htm" :size 176662 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

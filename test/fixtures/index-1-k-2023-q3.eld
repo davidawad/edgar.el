@@ -1,0 +1,1 @@
+(:accn "0001096906-23-001738" :form "1-K" :company "Sky Quarry Inc." :filed "2023-09-05" :report "" :doc "primary_doc.xml" :cik 1812447 :url "https://www.sec.gov/Archives/edgar/data/1812447/000109690623001738/primary_doc.xml" :size 2855 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

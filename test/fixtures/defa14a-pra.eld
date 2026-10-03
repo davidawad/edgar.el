@@ -1,0 +1,1 @@
+(:accn "0001185348-26-000015" :form "DEFA14A" :company "PRA GROUP INC" :filed "2026-04-30" :report "" :cik 1185348 :ticker "" :doc "defa14a2026proxycard.htm" :url "https://www.sec.gov/Archives/edgar/data/1185348/000118534826000015/defa14a2026proxycard.htm" :size 13816 :sha256 "b0d0a6bbc75ab5b0235cbdeeff8796f357329fa0c6a7639a2c0e5f3957f1f2b9")

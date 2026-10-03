@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns1:edgarSubmission xmlns:ns1="http://www.sec.gov/edgar/rega/onezfiler">
+  <ns1:headerData>
+    <ns1:submissionType>1-Z</ns1:submissionType>
+    <ns1:filerInfo>
+      <ns1:liveTestFlag>LIVE</ns1:liveTestFlag>
+      <ns1:filer>
+        <ns1:issuerCredentials>
+          <ns1:cik>0001076691</ns1:cik>
+          <ns1:ccc>XXXXXXXX</ns1:ccc>
+        </ns1:issuerCredentials>
+      </ns1:filer>
+      <ns1:flags>
+        <ns1:successorFilingFlag>N</ns1:successorFilingFlag>
+      </ns1:flags>
+    </ns1:filerInfo>
+  </ns1:headerData>
+  <ns1:formData>
+    <ns1:item1>
+      <ns1:issuerName>OCONEE FINANCIAL CORPORATION</ns1:issuerName>
+      <ns1:street1>41 N. Main Street</ns1:street1>
+      <ns1:city>Watkinsville</ns1:city>
+      <ns1:stateOrCountry>GA</ns1:stateOrCountry>
+      <ns1:zipCode>30677</ns1:zipCode>
+      <ns1:phone>706-769-6611</ns1:phone>
+      <ns1:commissionFileNumber>024-12151</ns1:commissionFileNumber>
+    </ns1:item1>
+    <ns1:summaryInfoOffering>
+      <ns1:offeringQualificationDate>05-09-2023</ns1:offeringQualificationDate>
+      <ns1:offeringCommenceDate>05-11-2023</ns1:offeringCommenceDate>
+      <ns1:offeringSecuritiesQualifiedSold>149015</ns1:offeringSecuritiesQualifiedSold>
+      <ns1:offeringSecuritiesSold>149015</ns1:offeringSecuritiesSold>
+      <ns1:pricePerSecurity>28.9400</ns1:pricePerSecurity>
+      <ns1:portionSecuritiesSoldIssuer>4312500.00</ns1:portionSecuritiesSoldIssuer>
+      <ns1:portionSecuritiesSoldSecurityholders>0.00</ns1:portionSecuritiesSoldSecurityholders>
+      <ns1:underwrittenSpName>NA</ns1:underwrittenSpName>
+      <ns1:underwriterFees>0.00</ns1:underwriterFees>
+      <ns1:salesCommissionsSpName>Performance Trust Capital Partners, LLC</ns1:salesCommissionsSpName>
+      <ns1:salesCommissionsFee>301875.00</ns1:salesCommissionsFee>
+      <ns1:findersSpName>NA</ns1:findersSpName>
+      <ns1:findersFees>0.00</ns1:findersFees>
+      <ns1:auditorSpName>Mauldin &amp; Jenkins, CPAs &amp; Advisors</ns1:auditorSpName>
+      <ns1:auditorFees>78587.68</ns1:auditorFees>
+      <ns1:legalSpName>Alston &amp; Bird, LLP</ns1:legalSpName>
+      <ns1:legalFees>568322.00</ns1:legalFees>
+      <ns1:promoterSpName>NA</ns1:promoterSpName>
+      <ns1:promotersFees>0.00</ns1:promotersFees>
+      <ns1:blueSkySpName>NA</ns1:blueSkySpName>
+      <ns1:blueSkyFees>49692.45</ns1:blueSkyFees>
+      <ns1:crdNumberBrokerDealer>36155</ns1:crdNumberBrokerDealer>
+      <ns1:issuerNetProceeds>3317022.87</ns1:issuerNetProceeds>
+    </ns1:summaryInfoOffering>
+    <ns1:certificationSuspension>
+      <ns1:securitiesClassTitle>Common stock</ns1:securitiesClassTitle>
+      <ns1:certificationFileNumber>024-12151</ns1:certificationFileNumber>
+      <ns1:approxRecordHolders>930</ns1:approxRecordHolders>
+    </ns1:certificationSuspension>
+    <ns1:signatureTab>
+      <ns1:cik>0001076691</ns1:cik>
+      <ns1:regulationIssuerName1>OCONEE FINANCIAL CORP</ns1:regulationIssuerName1>
+      <ns1:regulationIssuerName2>OCONEE FINANCIAL CORP</ns1:regulationIssuerName2>
+      <ns1:signatureBy>James R. McLemore</ns1:signatureBy>
+      <ns1:date>08-30-2023</ns1:date>
+      <ns1:title>Executive Vice President and Chief Financial Officer</ns1:title>
+    </ns1:signatureTab>
+  </ns1:formData>
+</ns1:edgarSubmission>

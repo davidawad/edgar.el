@@ -1,0 +1,1 @@
+(:accn "0001493152-26-033334" :form "1-K" :company "Worthy Property Bonds 2, Inc." :filed "2026-07-15" :report "" :doc "primary_doc.xml" :cik 1971864 :url "https://www.sec.gov/Archives/edgar/data/1971864/000149315226033334/primary_doc.xml" :size 1424 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

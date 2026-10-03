@@ -151,6 +151,7 @@
     ("CT ORDER" "order granting confidential treatment" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
+    ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
     ("MSD" "generated as part of a paper submission" nil)
     ("F-1" "registration statement" nil)

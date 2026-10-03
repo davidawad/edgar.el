@@ -1,0 +1,1 @@
+(:accn "0001853011-26-000018" :form "1-SA" :company "Energea Portfolio 4 USA LP" :filed "2026-09-25" :report "" :doc "port4_1sa.htm" :cik 1853011 :url "https://www.sec.gov/Archives/edgar/data/1853011/000185301126000018/port4_1sa.htm" :size 298293 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")
