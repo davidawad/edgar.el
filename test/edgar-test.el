@@ -365,6 +365,16 @@
         (should (string-match-p "FORM 18-K" body))
         (should (string-match-p "In respect of each issue" body))))))
 
+(ert-deftest edgar-form25-generic-document-subtrees-are-addressable ()
+  "A real Form 25 supports generic HTML body access."
+  (let* ((filing (edgar-fixtures-filing "form25-walmart"))
+         (html (edgar-fixtures-html "form25-walmart")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let ((body (edgar-section filing '("html" "body"))))
+        (should (stringp body))
+        (should (string-match-p "Walmart Inc." body))
+        (should (string-match-p "FORM 25" body))))))
+
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
   "Named section output stays pinned across distinct prospectus layouts."
   (let ((goldens

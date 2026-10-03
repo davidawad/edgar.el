@@ -1,0 +1,10 @@
+(:format xml
+ :sections ((("notificationOfRemoval" "issuer" "entityName")
+             "NRX Pharmaceuticals, Inc.")
+            (("notificationOfRemoval" "exchange" "entityName")
+             "Nasdaq Stock Market LLC")
+            (("notificationOfRemoval" "descriptionClassSecurity") "Warrant")
+            (("notificationOfRemoval" "signatureData" "signatureName")
+             "Tara Petta")
+            (("notificationOfRemoval" "signatureData" "signatureDate")
+             "2026-05-22")))

@@ -71,8 +71,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `20FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12B")` |
 | `20FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12G")` |
 | `24F-2NT` | G10 Investment-company registration | html | L0 | `(edgar-form-info "24F-2NT")` |
-| `25` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "25")` |
-| `25-NSE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "25-NSE")` |
+| `25` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `25-NSE` | G9 Periodic & event narrative | xml | L1 | `(edgar-text filing)` |
 | `253G1` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G1")` |
 | `253G2` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G2")` |
 | `3` | G1 Ownership | xml | L2 | `(edgar-form3-holdings filing)` |
@@ -343,5 +343,13 @@ goldened for Items 1.01, 1.02, 2.01, and 3.01. Form 18-K has L1 generic HTML
 structure and body-path coverage from the Republic of Chile filing (accession
 0001104659-25-094669, filed 2025-09-30); its numeric disclosure prompts do not
 currently appear as parser-level item sections.
+
+Form 25 has L1 generic HTML body access, recorded from Walmart (accession
+0000104169-25-000201, filed 2025-12-08). Form 25-NSE has L1 generic XML
+structure access, recorded from NRX Pharmaceuticals (accession
+0001354457-26-000493, filed 2026-05-22). These short delisting notifications
+do not have form-specific item headings exposed by the section parser; L1
+means the recorded primary document is readable through generic document
+paths.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).
