@@ -1,0 +1,1 @@
+(:accn "0001140361-25-047055" :form "ARS" :company "Tempest Therapeutics, Inc." :filed "2025-12-31" :report "" :doc "edge20059672x3_ars.pdf" :cik 1544227 :url "https://www.sec.gov/Archives/edgar/data/1544227/000114036125047055/edge20059672x3_ars.pdf" :size 1459984 :sample-vintage "recent" :sample-quarter "2025-Q4" :sample-seed "edgar-form-coverage-v1")

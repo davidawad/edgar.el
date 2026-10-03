@@ -1,0 +1,1 @@
+(:accn "0000921895-26-002652" :form "DFRN14A" :company "DGB Investment, Inc." :filed "2026-09-28" :report "" :doc "dfrn14857002_09252026.htm" :cik 1472520 :url "https://www.sec.gov/Archives/edgar/data/1472520/000092189526002652/dfrn14857002_09252026.htm" :size 69416 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001213900-26-076544" :form "DEFC14A" :company "Octagon Credit Investors, LLC" :filed "2026-07-09" :report "" :doc "ea0295612-02.htm" :cik 1717906 :url "https://www.sec.gov/Archives/edgar/data/1717906/000121390026076544/ea0295612-02.htm" :size 266993 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

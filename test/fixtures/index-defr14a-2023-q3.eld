@@ -1,0 +1,1 @@
+(:accn "0001976877-23-000059" :form "DEFR14A" :company "Madison ETFs Trust" :filed "2023-09-28" :report "" :doc "a2023metfspecialmeetingpro.htm" :cik 1976877 :url "https://www.sec.gov/Archives/edgar/data/1976877/000197687723000059/a2023metfspecialmeetingpro.htm" :size 268117 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

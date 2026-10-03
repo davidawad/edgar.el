@@ -1,0 +1,1 @@
+(:accn "0001193805-23-000990" :form "PREC14A" :company "Anson Funds Management LP" :filed "2023-07-17" :report "" :doc "prec14a13392004_07142023.htm" :cik 1491072 :url "https://www.sec.gov/Archives/edgar/data/1491072/000119380523000990/prec14a13392004_07142023.htm" :size 205962 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

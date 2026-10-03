@@ -1,0 +1,1 @@
+(:accn "0001104659-26-098277" :form "SC14D1F" :company "AURORA CANNABIS INC" :filed "2026-08-18" :report "" :doc "tm2623363d2_sc14d1f.htm" :cik 1683541 :url "https://www.sec.gov/Archives/edgar/data/1683541/000110465926098277/tm2623363d2_sc14d1f.htm" :size 27798 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

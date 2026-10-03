@@ -1,0 +1,1 @@
+(:accn "0000921895-26-002219" :form "PRRN14A" :company "ATG Capital Opportunities Fund LP" :filed "2026-08-17" :report "" :doc "prrn14a13914005_08172026.htm" :cik 2079674 :url "https://www.sec.gov/Archives/edgar/data/2079674/000092189526002219/prrn14a13914005_08172026.htm" :size 251482 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

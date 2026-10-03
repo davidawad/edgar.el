@@ -1,0 +1,1 @@
+(:accn "0001493152-23-032623" :form "CB" :company "Foresight Autonomous Holdings Ltd." :filed "2023-09-14" :report "" :doc "formcb.htm" :cik 1691221 :url "https://www.sec.gov/Archives/edgar/data/1691221/000149315223032623/formcb.htm" :size 23952 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0000921895-23-001982" :form "PRRN14A" :company "Camac Fund, LP" :filed "2023-08-17" :report "" :doc "prrn14a13224004_08162023.htm" :cik 1516478 :url "https://www.sec.gov/Archives/edgar/data/1516478/000092189523001982/prrn14a13224004_08162023.htm" :size 247002 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

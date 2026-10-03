@@ -1,3 +1,3 @@
-(:form "UPLOAD"
- :markers ("This is to advise you that we do not intend to review"
-           "Estate & Construction"))
+(:form "UPLOAD" :text-bucket 10 :text-head
+       "April 1, 2026 Adam Katz Chief Executive Officer Irenic Acqui"
+       :sections nil)

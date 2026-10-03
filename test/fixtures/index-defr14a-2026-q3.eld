@@ -1,0 +1,1 @@
+(:accn "0001829126-26-010575" :form "DEFR14A" :company "Quartzsea Acquisition Corp" :filed "2026-09-29" :report "" :doc "quartzseaacq_defr14a.htm" :cik 2047455 :url "https://www.sec.gov/Archives/edgar/data/2047455/000182912626010575/quartzseaacq_defr14a.htm" :size 232312 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

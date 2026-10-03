@@ -1,0 +1,1 @@
+(:accn "0001193125-23-207468" :form "SC14D9C" :company "Decibel Therapeutics, Inc." :filed "2023-08-09" :report "" :doc "d514485dsc14d9c.htm" :cik 1656536 :url "https://www.sec.gov/Archives/edgar/data/1656536/000119312523207468/d514485dsc14d9c.htm" :size 30464 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

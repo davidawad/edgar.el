@@ -50,6 +50,37 @@ Proxy, merger, and tender-offer samples:
 - `sc-to-i-pamt.htm.gz` — P.A.M. Transportation issuer tender offer ([SC TO-I accession 0001174947-25-000508](https://www.sec.gov/Archives/edgar/data/798287/000117494725000508/sctoi0425_pamt.htm); 2025-04-03).
 - `sc-to-c-cresco.htm.gz` — Cresco Labs tender-offer communication ([SC TO-C accession 0001832928-25-000020](https://www.sec.gov/Archives/edgar/data/1832928/000183292825000020/august2025_scheduleto-c.htm); 2025-08-20).
 
+Quarterly-index proxy and communication samples include a recent and older
+filing for each form; the saved metadata records each accession, primary URL,
+sample quarter, and vintage:
+
+The remaining G8 forms below use exact-form quarterly-index entries. Each
+recorded filing has a public SEC primary, reviewed expectation, and per-filing
+golden in the corresponding fixture directories. The ARS sample uses its
+indexed PDF primary because the HTML primary is only an image wrapper; an
+older ARS PDF exceeds the fixture recorder's 1.8 MB document cap. SC14D1F had
+no filing in the older sampled quarter.
+
+- ARS: index-ars-2025-q4.pdf — Tempest Therapeutics, Inc. (accession [0001140361-25-047055](https://www.sec.gov/Archives/edgar/data/1544227/000114036125047055/edge20059672x3_ars.pdf); 2025-12-31).
+- CB: index-cb-2026-q3.htm.gz — Ambea AB (publ) (accession [0001829126-26-009970](https://www.sec.gov/Archives/edgar/data/2151906/000182912626009970/ambeaab_form-cb.htm); 2026-09-10); index-cb-2023-q3.htm.gz — Foresight Autonomous Holdings Ltd. (accession [0001493152-23-032623](https://www.sec.gov/Archives/edgar/data/1691221/000149315223032623/formcb.htm); 2023-09-14).
+- DEFC14A: index-defc14a-2026-q3.htm.gz (accession [0001213900-26-076544](https://www.sec.gov/Archives/edgar/data/1717906/000121390026076544/ea0295612-02.htm); 2026-07-09); index-defc14a-2023-q3.htm.gz (accession [0000921895-23-002248](https://www.sec.gov/Archives/edgar/data/1491072/000092189523002248/defc14a13392004_09262023.htm); 2023-09-26).
+- DEFR14A: index-defr14a-2026-q3.htm.gz (accession [0001829126-26-010575](https://www.sec.gov/Archives/edgar/data/2047455/000182912626010575/quartzseaacq_defr14a.htm); 2026-09-29); index-defr14a-2023-q3.htm.gz (accession [0001976877-23-000059](https://www.sec.gov/Archives/edgar/data/1976877/000197687723000059/a2023metfspecialmeetingpro.htm); 2023-09-28).
+- DFAN14A: index-dfan14a-2026-q3.htm.gz (accession [0001493152-26-042718](https://www.sec.gov/Archives/edgar/data/1314052/000149315226042718/formdfan14a.htm); 2026-09-15); index-dfan14a-2023-q3.htm.gz (accession [0000921895-23-002121](https://www.sec.gov/Archives/edgar/data/1516478/000092189523002121/dfan14a13224004_09062023.htm); 2023-09-06).
+- DFRN14A: index-dfrn14a-2026-q3.htm.gz (accession [0000921895-26-002652](https://www.sec.gov/Archives/edgar/data/1472520/000092189526002652/dfrn14857002_09252026.htm); 2026-09-28); index-dfrn14a-2023-q3.htm.gz (accession [0001213900-23-064120](https://www.sec.gov/Archives/edgar/data/1838395/000121390023064120/ea182948-dfrn14a_oceancap1.htm); 2023-08-07).
+- PREC14A: index-prec14a-2026-q3.htm.gz (accession [0001193125-26-300877](https://www.sec.gov/Archives/edgar/data/1979332/000119312526300877/d53280dprec14a.htm); 2026-07-10); index-prec14a-2023-q3.htm.gz (accession [0001193805-23-000990](https://www.sec.gov/Archives/edgar/data/1491072/000119380523000990/prec14a13392004_07142023.htm); 2023-07-17).
+- PREM14A: index-prem14a-2026-q3.htm.gz (accession [0001104659-26-105505](https://www.sec.gov/Archives/edgar/data/910108/000110465926105505/tm2624432d1_prem14a.htm); 2026-09-04); index-prem14a-2023-q3.htm.gz (accession [0000950170-23-047833](https://www.sec.gov/Archives/edgar/data/1651721/000095017023047833/prelim_proxy_statement_0.htm); 2023-09-13).
+- PRER14A: index-prer14a-2026-q3.htm.gz (accession [0000918541-26-000079](https://www.sec.gov/Archives/edgar/data/918541/000091854126000079/nn-specialmeetingprelimina.htm); 2026-08-25); index-prer14a-2023-q3.htm.gz (accession [0001683168-23-006762](https://www.sec.gov/Archives/edgar/data/1849294/000168316823006762/fortune_prer14a.htm); 2023-09-27).
+- PRRN14A: index-prrn14a-2026-q3.htm.gz (accession [0000921895-26-002219](https://www.sec.gov/Archives/edgar/data/2079674/000092189526002219/prrn14a13914005_08172026.htm); 2026-08-17); index-prrn14a-2023-q3.htm.gz (accession [0000921895-23-001982](https://www.sec.gov/Archives/edgar/data/1516478/000092189523001982/prrn14a13224004_08162023.htm); 2023-08-17).
+- SC14D1F: index-sc14d1f-2026-q3.htm.gz (accession [0001104659-26-098277](https://www.sec.gov/Archives/edgar/data/1683541/000110465926098277/tm2623363d2_sc14d1f.htm); 2026-08-18).
+- SC14D9C: index-sc14d9c-2026-q3.htm.gz (accession [0001493152-26-039578](https://www.sec.gov/Archives/edgar/data/1516899/000149315226039578/formsc14d9c.htm); 2026-08-21); index-sc14d9c-2023-q3.htm.gz (accession [0001193125-23-207468](https://www.sec.gov/Archives/edgar/data/1656536/000119312523207468/d514485dsc14d9c.htm); 2023-08-09).
+
+- `index-425-2026-q3.htm.gz` — Criteo S.A. ([accession 0001628280-26-050330](https://www.sec.gov/Archives/edgar/data/2144230/000162828026050330/criteo425.htm); 2026-07-29); `index-425-2023-q3.htm.gz` — Thunder Bridge Capital Partners IV ([accession 0001213900-23-072575](https://www.sec.gov/Archives/edgar/data/1843993/000121390023072575/ea184517-425_coincheck.htm); 2023-08-31).
+- `index-pre-14a-2026-q3.htm.gz` — SkinHealth Systems ([accession 0001683168-26-005869](https://www.sec.gov/Archives/edgar/data/1818093/000168316826005869/skinhealth_pre14a.htm); 2026-07-31); `index-pre-14a-2023-q3.htm.gz` — AERWINS Technologies ([accession 0001493152-23-034863](https://www.sec.gov/Archives/edgar/data/1855631/000149315223034863/formpre14a.htm); 2023-09-29).
+- `index-pre-14c-2026-q3.htm.gz` — Privacore PCAAM Alternative Income Fund ([accession 0001213900-26-100151](https://www.sec.gov/Archives/edgar/data/2017579/000121390026100151/ea0305473-01_pre14c.htm); 2026-09-15); `index-pre-14c-2023-q3.htm.gz` — Bird Global ([accession 0001861449-23-000166](https://www.sec.gov/Archives/edgar/data/1861449/000186144923000166/brdsinformationstatementon.htm); 2023-08-03).
+- `index-px14a6g-2026-q3.htm.gz` — Friends Fiduciary Corporation ([accession 0001214659-26-010867](https://www.sec.gov/Archives/edgar/data/1696940/000121465926010867/w826261px14a6g.htm); 2026-08-26); `index-px14a6g-2023-q3.htm.gz` — James R. Epstein ([accession 0001214659-23-012817](https://www.sec.gov/Archives/edgar/data/1992952/000121465923012817/s928231px14a6g.htm); 2023-09-29).
+- `index-sc-14d9-2026-q3.htm.gz` — Yatra Online ([SC 14D9 accession 0001213900-26-096205](https://www.sec.gov/Archives/edgar/data/1516899/000121390026096205/ea0303988-01.htm); 2026-09-01).
+- `index-sc-14d9-2023-q3.htm.gz` — Computer Task Group ([SC 14D9 accession 0001193125-23-218549](https://www.sec.gov/Archives/edgar/data/23111/000119312523218549/d528209dsc14d9.htm); 2023-08-23).
+
 The following Q2 2026 samples are listed in the [SEC quarterly master index](https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx):
 
 - `defa14c-graybar.htm.gz` — DEFA14C, Graybar Electric Co. ([accession 0000205402-26-000030](https://www.sec.gov/Archives/edgar/data/205402/000020540226000030/c402-20260428corresp.htm); 2026-04-28).

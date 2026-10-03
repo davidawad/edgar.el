@@ -130,7 +130,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `APP ORDR` | G10 Investment-company registration | pdf | L1 | `(edgar-text filing)` |
 | `APP WD` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `APP WDG` | G10 Investment-company registration | pdf | L1 | `(edgar-text filing)` |
-| `ARS` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "ARS")` |
+| `ARS` | G8 Proxy & M&A | pdf | L1 | `(edgar-text filing)` |
 | `ATS-N` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N")` |
 | `ATS-N/CA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/CA")` |
 | `ATS-N/MA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/MA")` |
@@ -144,7 +144,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `C-TR-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `C-U` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `C-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
-| `CB` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "CB")` |
+| `CB` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `CERT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "CERT")` |
 | `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL")` |
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
@@ -155,14 +155,14 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DEF 14C` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DEFA14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFA14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `DEFC14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFC14A")` |
+| `DEFC14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFM14A` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DEFM14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `DEFR14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFR14A")` |
+| `DEFR14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFR14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEL AM` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `DFAN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DFAN14A")` |
-| `DFRN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DFRN14A")` |
+| `DFAN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
+| `DFRN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOS")` |
 | `DOSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOSLTR")` |
 | `DRS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRS")` |
@@ -238,13 +238,13 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `POSASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POSASR")` |
 | `PRE 14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRE 14A")` |
 | `PRE 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRE 14C")` |
-| `PREC14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PREC14A")` |
-| `PREM14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PREM14A")` |
+| `PREC14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
+| `PREM14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PREM14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PREN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `PRER14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRER14A")` |
+| `PRER14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PRER14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `PRRN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRRN14A")` |
+| `PRRN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PX14A6G` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PX14A6G")` |
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `QUALIF` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
@@ -274,8 +274,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SC TO-C` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC TO-I` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC TO-T` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `SC14D1F` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D1F")` |
-| `SC14D9C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D9C")` |
+| `SC14D1F` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
+| `SC14D9C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `SCHEDULE 13D` | G3 Beneficial ownership 13D/13G | xml | L2 | `(edgar-schedule-13d-g-cover-page filing)` |
 | `SCHEDULE 13G` | G3 Beneficial ownership 13D/13G | xml | L2 | `(edgar-schedule-13d-g-cover-page filing)` |
 | `SD` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |

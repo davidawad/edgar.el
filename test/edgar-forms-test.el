@@ -139,6 +139,26 @@
   "Recorded DEFA14A material is available through the generic text API."
   (should (eq (plist-get (edgar-form-info "DEFA14A") :level) 'L1)))
 
+(ert-deftest
+    edgar-forms-g8-residual-proxy-materials-have-generic-coverage
+    ()
+  "Recorded residual G8 primary documents are available at generic L1."
+  (dolist (form
+           '("ARS"
+             "CB"
+             "DEFC14A"
+             "DEFR14A"
+             "DFAN14A"
+             "DFRN14A"
+             "PREC14A"
+             "PREM14A"
+             "PRER14A"
+             "PRRN14A"
+             "SC14D1F"
+             "SC14D9C"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1)))
+  (should (eq (plist-get (edgar-form-info "ARS") :backend) 'pdf)))
+
 (ert-deftest edgar-forms-g9-high-volume-narratives-have-item-coverage ()
   "Core periodic and event reports expose generic Item sections."
   (dolist (form '("8-K" "10-K" "10-Q" "20-F"))

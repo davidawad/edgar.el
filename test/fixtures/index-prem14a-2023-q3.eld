@@ -1,0 +1,1 @@
+(:accn "0000950170-23-047833" :form "PREM14A" :company "GENERATION INCOME PROPERTIES, INC." :filed "2023-09-13" :report "" :doc "prelim_proxy_statement_0.htm" :cik 1651721 :url "https://www.sec.gov/Archives/edgar/data/1651721/000095017023047833/prelim_proxy_statement_0.htm" :size 333644 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

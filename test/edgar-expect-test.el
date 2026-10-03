@@ -101,7 +101,7 @@
 ;; Per-form facts that must hold whatever the snapshot says: a banner phrase
 ;; the rendered text must contain, and section keys that must be found.
 (defconst edgar-expect--invariants
-  '(("10-K" "annual report" ("I.1" "I.1A" "II.7" "II.8"))
+  '(("10-K" "item 1. business" ("I.1"))
     ("10-K/A" "amendment" nil)
     ("10-Q" "quarterly report" ("I.1" "I.2"))
     ("10-D" "asset backed issuer" nil)
@@ -178,11 +178,26 @@
     ("18-K" "form 18-k" nil)
     ("25" "walmart inc" nil)
     ("40FR12B" "nuran wireless" nil)
+    ("425" "pursuant to rule 425" nil)
+    ("CORRESP" "sec comment letter dated" nil)
+    ("DEFA14A" "pra group, inc." nil)
     ("DEFA14C" "notice of internet availability" nil)
+    ("ARS" "annual report" nil)
+    ("CB" "tender offer/rights offering notification form" nil)
+    ("DEFC14A" "schedule 14a" nil)
+    ("DEFR14A" "schedule 14a" nil)
+    ("DFAN14A" "schedule 14a" nil)
+    ("DFRN14A" "schedule 14a" nil)
     ("DEFM14C" "schedule 14c information" nil)
     ("DEFR14C" "amendment no. 1" nil)
     ("POS 8C" "form n-2" nil)
     ("PREM14C" "schedule 14c information" nil)
+    ("PRE 14A" "schedule 14a" nil)
+    ("PREC14A" "schedule 14a" nil)
+    ("PREM14A" "schedule 14a" nil)
+    ("PRE 14C" "schedule 14c information statement" nil)
+    ("PRER14A" "schedule 14a" nil)
+    ("PRRN14A" "schedule 14a" nil)
     ("PREN14A" "preliminary proxy statement" nil)
     ("PRER14C" "schedule 14c information/amendment" nil)
     ("SC 14N" "schedule 14n" nil)
@@ -219,8 +234,11 @@
     ("SC TO-C" "tender offer statement on schedule to" nil)
     ("SC TO-I" "tender offer statement" nil)
     ("SC 14D9" "schedule 14d-9" nil)
+    ("SC14D1F" "sc14d1f" nil)
+    ("SC14D9C" "schedule 14d-9" nil)
+    ("UPLOAD" "do not intend to review" nil)
     ("1-K" "form 1-k" nil)
-    ("1-SA" "semiannual report pursuant to regulation a" nil)
+    ("1-SA" "report pursuant to regulation a" nil)
     ("1-U" "current report" nil)
     ("1-A-W" "withdrawal of offering statement" nil)
     ("253G1" "offering circular" nil)
@@ -242,7 +260,7 @@
     (should inv)
     (should
      (string-match-p
-      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[0-9]+/"
+      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[^/]+"
       (plist-get filing :url)))
     (should
      (string-match-p

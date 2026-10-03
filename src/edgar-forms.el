@@ -873,8 +873,8 @@
      "ARS"
      (list
       :family "G8 Proxy & M&A"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 1883
       :notes nil)
@@ -1014,7 +1014,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 46
       :notes nil)
@@ -1124,7 +1124,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 52
       :notes nil)
@@ -1154,7 +1154,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -1184,7 +1184,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 338
       :notes nil)
@@ -1194,7 +1194,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 10
       :notes nil)
@@ -1957,7 +1957,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 43
       :notes nil)
@@ -1967,7 +1967,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 39
       :notes nil)
@@ -1997,7 +1997,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 44
       :notes nil)
@@ -2017,7 +2017,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 26
       :notes nil)
@@ -2317,7 +2317,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 8
       :notes nil)
@@ -2327,7 +2327,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 28
       :notes nil)
