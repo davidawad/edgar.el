@@ -142,9 +142,11 @@
              "SC 14D9"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
-(ert-deftest edgar-forms-g8-additional-proxy-materials-have-generic-coverage ()
-  "Recorded DEFA14A material is available through the generic text API."
-  (should (eq (plist-get (edgar-form-info "DEFA14A") :level) 'L1)))
+(ert-deftest edgar-forms-g8-additional-proxy-materials-have-generic-coverage
+    ()
+  "Recorded proxy communications and preliminary forms have generic text coverage."
+  (dolist (form '("425" "DEFA14A" "PRE 14A" "PRE 14C" "PX14A6G"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
 
 (ert-deftest
     edgar-forms-g8-residual-proxy-materials-have-generic-coverage

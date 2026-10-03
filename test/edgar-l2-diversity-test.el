@@ -115,6 +115,22 @@
     (should (= (length ciks) 3))))
 
 (ert-deftest
+    edgar-l2-diversity-g8-additional-proxy-forms-use-distinct-filers
+    ()
+  "New proxy communication and preliminary-form fixtures use distinct CIKs."
+  (dolist
+      (entry
+       '(("425" "index-425-2023-q3" "index-425-2026-q3")
+         ("PRE 14A" "index-pre-14a-2023-q3" "index-pre-14a-2026-q3")
+         ("PRE 14C" "index-pre-14c-2023-q3" "index-pre-14c-2026-q3")
+         ("PX14A6G" "index-px14a6g-2023-q3" "index-px14a6g-2026-q3")))
+    (let ((older (edgar-l2-diversity-test--metadata (nth 1 entry)))
+          (recent (edgar-l2-diversity-test--metadata (nth 2 entry))))
+      (should (equal (plist-get older :form) (car entry)))
+      (should (equal (plist-get recent :form) (car entry)))
+      (should-not (equal (plist-get older :cik) (plist-get recent :cik))))))
+
+(ert-deftest
     edgar-l2-diversity-g8-proxy-mna-fixtures-use-distinct-filers
     ()
   "The added DEF 14C, DEFM14A and Schedule TO filings have distinct CIKs."

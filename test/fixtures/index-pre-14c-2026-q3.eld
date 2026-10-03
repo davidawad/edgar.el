@@ -1,0 +1,1 @@
+(:accn "0001213900-26-100151" :form "PRE 14C" :company "Privacore PCAAM Alternative Income Fund" :filed "2026-09-15" :report "" :doc "ea0305473-01_pre14c.htm" :cik 2017579 :url "https://www.sec.gov/Archives/edgar/data/2017579/000121390026100151/ea0305473-01_pre14c.htm" :size 315242 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

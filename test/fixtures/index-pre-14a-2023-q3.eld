@@ -1,0 +1,1 @@
+(:accn "0001493152-23-034863" :form "PRE 14A" :company "AERWINS Technologies Inc." :filed "2023-09-29" :report "" :doc "formpre14a.htm" :cik 1855631 :url "https://www.sec.gov/Archives/edgar/data/1855631/000149315223034863/formpre14a.htm" :size 233545 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

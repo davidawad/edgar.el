@@ -1,0 +1,1 @@
+(:accn "0001214659-26-010867" :form "PX14A6G" :company "Friends Fiduciary Corp" :filed "2026-08-26" :report "" :doc "w826261px14a6g.htm" :cik 1696940 :url "https://www.sec.gov/Archives/edgar/data/1696940/000121465926010867/w826261px14a6g.htm" :size 36481 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

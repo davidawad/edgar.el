@@ -562,7 +562,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1546
       :notes nil)
@@ -1935,7 +1935,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 480
       :notes nil)
@@ -1945,7 +1945,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 63
       :notes nil)
@@ -2025,7 +2025,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 92
       :notes nil)

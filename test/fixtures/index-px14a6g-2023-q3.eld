@@ -1,0 +1,1 @@
+(:accn "0001214659-23-012817" :form "PX14A6G" :company "Epstein James R" :filed "2023-09-29" :report "" :doc "s928231px14a6g.htm" :cik 1992952 :url "https://www.sec.gov/Archives/edgar/data/1992952/000121465923012817/s928231px14a6g.htm" :size 30411 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

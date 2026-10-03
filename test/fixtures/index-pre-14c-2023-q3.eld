@@ -1,0 +1,1 @@
+(:accn "0001861449-23-000166" :form "PRE 14C" :company "Bird Global, Inc." :filed "2023-08-03" :report "" :doc "brdsinformationstatementon.htm" :cik 1861449 :url "https://www.sec.gov/Archives/edgar/data/1861449/000186144923000166/brdsinformationstatementon.htm" :size 251744 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

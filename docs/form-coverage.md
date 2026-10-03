@@ -99,7 +99,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `424B8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424H` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424H")` |
 | `424I` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424I")` |
-| `425` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "425")` |
+| `425` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `485APOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `485BPOS` | G10 Investment-company registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `485BXT` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -236,8 +236,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `POS AMI` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AMI")` |
 | `POS EX` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS EX")` |
 | `POSASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POSASR")` |
-| `PRE 14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRE 14A")` |
-| `PRE 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRE 14C")` |
+| `PRE 14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
+| `PRE 14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PREC14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PREM14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PREM14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
@@ -245,7 +245,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `PRER14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PRER14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PRRN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `PX14A6G` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PX14A6G")` |
+| `PX14A6G` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `QUALIF` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |

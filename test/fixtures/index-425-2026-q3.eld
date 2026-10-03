@@ -1,0 +1,1 @@
+(:accn "0001628280-26-050330" :form "425" :company "Criteo Holdings, Inc." :filed "2026-07-29" :report "" :doc "criteo425.htm" :cik 2144230 :url "https://www.sec.gov/Archives/edgar/data/2144230/000162828026050330/criteo425.htm" :size 246349 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

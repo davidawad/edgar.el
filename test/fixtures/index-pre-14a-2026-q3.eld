@@ -1,0 +1,1 @@
+(:accn "0001683168-26-005869" :form "PRE 14A" :company "SkinHealth Systems Inc." :filed "2026-07-31" :report "" :doc "skinhealth_pre14a.htm" :cik 1818093 :url "https://www.sec.gov/Archives/edgar/data/1818093/000168316826005869/skinhealth_pre14a.htm" :size 257834 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")
