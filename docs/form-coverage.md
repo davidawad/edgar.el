@@ -283,7 +283,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SEC STAFF LETTE` | G12 Broker-dealer, market structure, staff | pdf | L1 | `(edgar-text filing)` |
 | `SF-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `SF-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `SP 15D2` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "SP 15D2")` |
+| `SP 15D2` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `SUPPL` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `TA-1` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `TA-2` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
