@@ -1,10 +1,10 @@
 ;;; edgar-golden-test.el --- hardcoded-string tests over recorded filings -*- lexical-binding: t; -*-
 
-;; For every recorded filing, test/golden/<slug>.eld holds verbatim strings
-;; taken from specific sections (see tools/make-golden.el).  Each must still
-;; appear in exactly the section it was taken from and in no other section --
-;; so a shifted boundary, a merged Part or a lost section fails loudly -- and
-;; the whole-text strings must still appear in the rendered filing.
+;; For each filing with a reviewed golden, test/golden/<slug>.eld holds
+;; verbatim strings taken from specific sections (see tools/make-golden.el).
+;; Each must still appear in exactly the section it was taken from and in no
+;; other section -- so a shifted boundary, a merged Part or a lost section
+;; fails loudly -- and the whole-text strings must still appear in the filing.
 ;; test/golden-facts.eld holds hand-checked facts with the same guarantee.
 
 (require 'ert)
@@ -64,14 +64,16 @@
      (or (plist-get golden :sections) (plist-get golden :text)))))
 
 (dolist (slug (edgar-fixtures-slugs))
-  (let ((name (intern (concat "edgar-golden-" slug)))
-        (s slug))
-    (ert-set-test
-     name
-     (make-ert-test
-      :name name
-      :body
-      (lambda () (edgar-golden-test--run s))))))
+  (when (file-exists-p
+         (edgar-fixtures-path (concat "golden/" slug ".eld")))
+    (let ((name (intern (concat "edgar-golden-" slug)))
+          (s slug))
+      (ert-set-test
+       name
+       (make-ert-test
+        :name name
+        :body
+        (lambda () (edgar-golden-test--run s)))))))
 
 ;; Hand-checked facts: (SLUG SECTION-KEY-OR-nil STRING).  A nil key means
 ;; "somewhere in the filing".

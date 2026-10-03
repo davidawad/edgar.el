@@ -405,7 +405,7 @@
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
       (let ((body (edgar-section filing '("html" "body"))))
         (should (stringp body))
-        (should (string-match-p "FORM 18-K" body))
+        (should (string-match-p "FORM[[:space:]\u00a0]+18-K" body))
         (should (string-match-p "In respect of each issue" body))))))
 
 (ert-deftest edgar-form25-generic-document-subtrees-are-addressable ()

@@ -254,6 +254,24 @@
             (should (string-match-p "primary document" messages))))
       (delete-directory root t))))
 
+(ert-deftest edgar-form-coverage-skips-submission-excerpts ()
+  "A supplemental complete-submission excerpt is not a primary fixture."
+  (let* ((root (make-temp-file "edgar-coverage-excerpt-" t))
+         (fixtures (expand-file-name "fixtures" root)))
+    (unwind-protect
+        (progn
+          (make-directory fixtures t)
+          (with-temp-file (expand-file-name "excerpt.eld" fixtures)
+            (insert
+             "(:form \"TEST-FORM\" :fixture-kind \"SEC complete-submission excerpt\")\n"))
+          (let ((result
+                 (edgar-coverage--fixture-records
+                  (edgar-form-coverage-test--registry 'L2)
+                  fixtures)))
+            (should-not (car result))
+            (should-not (cdr result))))
+      (delete-directory root t))))
+
 (ert-deftest edgar-form-coverage-xml-fixture-removal-names-l1-form ()
   "An XML L1 fixture passes, and removing it fails with the form name."
   (let* ((root (make-temp-file "edgar-coverage-xml-fixture-" t))
