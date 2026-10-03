@@ -113,6 +113,7 @@
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
     ("40-17F1" "northern lights fund trust" nil)
+    ("40-17F2" "fundrise innovation fund" nil)
     ("40-6B" "robinhood" nil)
     ("486BXT" "ark venture fund" nil)
     ("485APOS"
@@ -137,6 +138,7 @@
     ("N-14 8C" "alternative credit income fund" nil)
     ("N-2ASR" "blackrock enhanced large cap core fund" nil)
     ("N-6" "form n-6" nil)
+    ("APP WD" "guggenheim strategic opportunities fund" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("424B2" "pricing supplement" nil)
