@@ -36,6 +36,12 @@ Additional 424B1 prospectuses used for generic named-heading coverage:
 - `424b1-millrose.htm.gz` — 424B1, Millrose Properties, Inc. ([accession 0001193125-25-008418](https://www.sec.gov/Archives/edgar/data/2017206/000119312525008418/d811267d424b1.htm); 2025-01-17).
 - `424b1-odyssey.htm.gz` — 424B1, Odyssey Marine Exploration, Inc. ([accession 0001193125-25-022760](https://www.sec.gov/Archives/edgar/data/798528/000119312525022760/d915473d424b1.htm); 2025-02-07).
 
+F-4 merger-registration samples used for generic named-heading coverage:
+
+- `f-4-china-auto.htm.gz` — F-4, China Automotive Systems Holdings, Inc. ([accession 0001104659-25-064447](https://www.sec.gov/Archives/edgar/data/2037400/000110465925064447/tm2518096d1_f4.htm); 2025-07-01).
+- `f-4-alibaba.htm.gz` — F-4, Alibaba Group Holding Ltd. ([accession 0001104659-25-069178](https://www.sec.gov/Archives/edgar/data/1577552/000110465925069178/tm2520871-1_f4.htm); 2025-07-21).
+- `f-4-aercap.htm.gz` — F-4, AerCap Holdings N.V. ([accession 0001193125-24-056057](https://www.sec.gov/Archives/edgar/data/1378789/000119312524056057/d780201df4.htm); 2024-03-01).
+
 The S-3 samples have table-of-contents-linked `Risk Factors` headings and
 exercise the shared named-section accessor. The table-led 424B2 pricing
 supplements do not expose heading nodes in these captured primary documents;

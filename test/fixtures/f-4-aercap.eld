@@ -1,0 +1,1 @@
+(:accn "0001193125-24-056057" :form "F-4" :company "AERCAP HOLDINGS N.V." :filed "2024-03-01" :report "" :cik 1378789 :doc "d780201df4.htm" :url "https://www.sec.gov/Archives/edgar/data/1378789/000119312524056057/d780201df4.htm" :size 805288 :sha256 "7e97a4b8481714b13c0cc98e2034fe5b8253ef18d79264a9d5237913b203e02b")

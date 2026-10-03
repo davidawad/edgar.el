@@ -177,7 +177,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `F-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-3ASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3ASR")` |
 | `F-3MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3MEF")` |
-| `F-4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-4")` |
+| `F-4` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `F-6` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6")` |
 | `F-6 POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6 POS")` |
 | `F-6EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6EF")` |

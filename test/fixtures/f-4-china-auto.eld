@@ -1,0 +1,1 @@
+(:accn "0001104659-25-064447" :form "F-4" :company "CHINA AUTOMOTIVE SYSTEMS HOLDINGS, INC." :filed "2025-07-01" :report "" :cik 2037400 :doc "tm2518096d1_f4.htm" :url "https://www.sec.gov/Archives/edgar/data/2037400/000110465925064447/tm2518096d1_f4.htm" :size 905713 :sha256 "5ac1a7411520bd2a1da084bf0ad3b25f0a6e4dc8f12407c3f5551b78e3e8a164")

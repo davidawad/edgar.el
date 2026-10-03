@@ -195,6 +195,9 @@
          ("424b1-nyseg" . "Recovery Bonds")
          ("424b1-millrose" . "Millrose")
          ("424b1-odyssey" . "Odyssey")
+         ("f-4-china-auto" . "China Automotive")
+         ("f-4-alibaba" . "Alibaba")
+         ("f-4-aercap" . "AerCap")
          ("424b5-singularity" . "Singularity")
          ("424b5-oneok" . "ONEOK")
          ("424b5-idaho-power" . "Idaho Power")))
@@ -335,6 +338,24 @@
 (ert-deftest edgar-golden-g7-424b1-named-risk-sections ()
   "424B1 prospectuses expose linked Risk Factors sections generically."
   (dolist (slug '("424b1-nyseg" "424b1-millrose" "424b1-odyssey"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           section
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq section (edgar-section filing "Risk Factors")
+              body (edgar-section filing '("html" "body"))))
+      (should section)
+      (should (> (length section) 100))
+      (should
+       (string-match-p "risk factors"
+                       (downcase (edgar-fixtures-norm section))))
+      (should body)
+      (should (> (length body) 1000)))))
+
+(ert-deftest edgar-golden-g7-f4-named-risk-sections ()
+  "F-4 merger registrations expose their linked Risk Factors generically."
+  (dolist (slug '("f-4-china-auto" "f-4-alibaba" "f-4-aercap"))
     (let* ((filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
            section
