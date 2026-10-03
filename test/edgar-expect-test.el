@@ -112,6 +112,8 @@
     ("6-K" "report of foreign private issuer" nil)
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
+    ("40-17F1" "northern lights fund trust" nil)
+    ("40-6B" "robinhood" nil)
     ("485APOS"
      "post-effective amendment"
      ("28" "29" "30" "31" "32" "33" "34" "35"))
@@ -130,6 +132,8 @@
     ("N-14" "nomura" nil)
     ("N-2" "form n-2" nil)
     ("487" "advisors disciplined trust 2360" nil)
+    ("N-4" "form n-4" nil)
+    ("N-6" "form n-6" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("424B2" "pricing supplement" nil)

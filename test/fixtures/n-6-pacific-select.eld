@@ -1,0 +1,1 @@
+(:accn "0000726865-26-000669" :form "N-6" :filed "2026-08-06" :report "" :doc "initialn6.htm" :cik 1048607 :url "https://www.sec.gov/Archives/edgar/data/1048607/000072686526000669/initialn6.htm" :ticker "")
