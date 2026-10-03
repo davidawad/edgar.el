@@ -198,7 +198,9 @@
              "n-2-posasr-eagle-point"
              "n-2mef-ives-ultra"
              "40-8f-2-chesapeake"
-             "app-wd-guggenheim"))
+             "app-wd-guggenheim"
+             "497k-hennessy"
+             "n-1a-americandrive"))
     (let* ((filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
            (golden

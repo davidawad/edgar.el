@@ -506,10 +506,13 @@
              ("app-wd-guggenheim" html)
              ("app-wdg-peartree" pdf)
              ("ct-order-janus-henderson" pdf)
-             ("del-am-jpmorgan" html)))
+             ("del-am-jpmorgan" html)
+             ("msd-state-street" text "9999999997-12-000716.paper")))
     (let* ((slug (car case))
            (format (cadr case))
            (filing (edgar-fixtures-filing slug))
+           (expected-filename
+            (or (nth 2 case) (plist-get filing :doc)))
            (source (edgar-fixtures-primary slug)))
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) source)))
         (let* ((info (edgar-form-info (plist-get filing :form)))
@@ -524,8 +527,7 @@
           (should
            (equal (plist-get primary :type) (plist-get filing :form)))
           (should
-           (equal
-            (plist-get primary :filename) (plist-get filing :doc)))
+           (equal (plist-get primary :filename) expected-filename))
           (should (> (length paragraphs) 0))
           (should (seq-every-p #'stringp paragraphs))
           (should (> (length (string-trim text)) 0)))))))

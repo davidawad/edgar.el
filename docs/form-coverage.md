@@ -332,15 +332,14 @@ auto-generated paper notice with a document control number; the original
 reports are absent from the SEC accession directories. The recorded files,
 accessions, and exact notices are listed in [the G12 source evidence](../test/fixtures/structured-sources.md#g12-source-limitations).
 
-G10 currently has 30 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
-40-17G, 40-6B, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS, 486BPOS,
-486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU, N-14,
-N-14 8C, N-1A, N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. The
-remaining 10 forms are still L0: 40-24B2, 40-33, 40-8F-2, APP NTC, APP ORDR,
-APP WD, APP WDG, CT ORDER, DEL AM, and MSD. Reviewed generic named-section
-goldens cover 40-17F2, N-2 POSASR, N-2MEF, 40-8F-2, and APP WD. The first
-three are L1; 40-8F-2 and APP WD remain L0 pending registry promotion. They
-also need three distinct filer fixtures before any L2 promotion.
+All 40 G10 base forms now have L1 coverage. The newly covered HTML, PDF, and
+text filings have SEC-backed fixture metadata, per-filing expectations, and
+generic document-structure assertions. The MSD fixture is an auto-generated
+paper control notice, not the original report. Generic named-section goldens
+cover 40-17F2, N-2 POSASR, N-2MEF, 40-8F-2, APP WD, 497K, and N-1A; each
+currently has one filer fixture, so more filer diversity is needed before L2
+promotion. The 497K and N-1A goldens pin prospectus strategy and risk sections
+through the shared named-section accessor.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the

@@ -162,6 +162,9 @@ Additional G10 filings use the generic document-structure API:
 - `app-wdg-peartree.pdf` — APP WDG, SEC order granting an application ([accession 9999999997-26-000757](https://www.sec.gov/Archives/edgar/data/722885/999999999726000757/filename1.pdf)).
 - `ct-order-janus-henderson.pdf` — CT ORDER, SEC order ([accession 9999999997-26-000767](https://www.sec.gov/Archives/edgar/data/1274173/999999999726000767/filename1.pdf)).
 - `del-am-jpmorgan.htm.gz` — DEL AM, J.P. Morgan Exchange-Traded Fund Trust ([accession 0001193125-25-064178](https://www.sec.gov/Archives/edgar/data/1485894/000119312525064178/d916859ddelam.htm)).
+- `msd-state-street.txt` — MSD paper notice for State Street Bank & Trust Co. ([accession 9999999997-12-000716](https://www.sec.gov/Archives/edgar/data/1528143/999999999712000716/9999999997-12-000716.txt)); the archived text is an auto-generated control notice, not the original report.
+- `497k-hennessy.htm.gz` — 497K, Hennessy Technology Fund summary prospectus ([accession 0001999371-26-004882](https://www.sec.gov/Archives/edgar/data/891944/000199937126004882/htecx-497k_030226.htm)).
+- `n-1a-americandrive.htm.gz` — N-1A, Capital-Force ETF Trust registration statement ([accession 0001213900-26-006524](https://www.sec.gov/Archives/edgar/data/2104659/000121390026006524/ea0271727-01_n1a.htm)); the named-section golden pins Part A's prospectus strategy and principal risks.
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed

@@ -18,4 +18,10 @@
   ("34" "Item 34. Management Services Not Applicable.")
   ("35"
    "Bank National Association (h)(1) Fund Administration, Accounting and Transfer Agency Agreement by and between the Registrant and U.S."))
+ :named-sections
+ (("Principal Investment Strategies"
+   "The Fund will normally invest at least 80% of its net assets"
+   "The Fund, using an indexing investment approach, attempts to replicate, before fees and expenses, the performance of the Index.")
+  ("Principal Risks"
+   "You could lose money by investing in the Fund."))
  :text nil)
