@@ -759,6 +759,32 @@ contain paragraph nodes."
          (walk tree))
         (nreverse out)))))
 
+(defun edgar--structure-heading-paragraph-p (node)
+  "Non-nil when paragraph NODE is a visually emphasized standalone heading."
+  (when (and (eq (plist-get node :type) 'element)
+             (equal (plist-get node :name) "p"))
+    (let* ((case-fold-search nil)
+           (attributes (plist-get node :attributes))
+           (style (or (cdr (assq 'style attributes))
+                      (cdr (assoc "style" attributes))
+                      ""))
+           (text (string-trim (edgar-structure-text node)))
+           (words (split-string text "[ \t]+" t))
+           (emphasized
+            (or (string-match-p
+                 "font-weight[ \t]*:[ \t]*\\(?:bold\\|[6-9]00\\)"
+                 (downcase style))
+                (cl-some
+                 (lambda (child)
+                   (member (plist-get child :name) '("b" "strong")))
+                 (plist-get node :children)))))
+      (and emphasized
+           (<= 3 (length text) 100)
+           (<= (length words) 2)
+           (string-match-p "[[:upper:]]" text)
+           (not (string-match-p "[[:lower:]]" text))
+           (not (string-match-p "[.!?;:]" text))))))
+
 (defun edgar--structure-heading-level (node)
   "Return NODE's semantic heading level, or nil."
   (let ((name (plist-get node :name)))
@@ -768,6 +794,8 @@ contain paragraph nodes."
       (string-to-number (match-string 1 name)))
      ((and (equal name "section")
            (assoc 'title (plist-get node :attributes)))
+      1)
+     ((edgar--structure-heading-paragraph-p node)
       1))))
 
 (defun edgar--structure-body-after (siblings level)
@@ -817,8 +845,9 @@ SIBLINGS are NODE's sibling nodes; OUT is the accumulator."
 
 (defun edgar-structure-headings (tree)
   "Return semantic headings in TREE as plists with :name, :level, :node, :body.
-HTML h1-h6 and elements whose local name is `section' with a title
-attribute are recognized generically, independent of SEC form type."
+HTML h1-h6, visually emphasized standalone paragraphs, and elements whose
+local name is `section' with a title attribute are recognized generically,
+independent of SEC form type."
   (let ((out (list nil))
         stack)
     (dolist (node (plist-get tree :children))
@@ -847,6 +876,90 @@ attribute are recognized generically, independent of SEC form type."
                 :level 1 :node nil :body (plist-get section :body)
                 :path (plist-get section :path)))
         (edgar-named-sections (edgar-structure-text tree)))))))
+
+(defun edgar--structure-linked-heading-section (tree name)
+  "Return a named HTML section linked to a fragment target in TREE.
+This recognizes the generic HTML pattern used by contents links and named
+anchors, without depending on an SEC form or filing-specific markup."
+  (when (and (eq (plist-get tree :format) 'html) (stringp name))
+    (let (links targets)
+      (with-temp-buffer
+        (cl-labels
+         ((walk
+           (node)
+           (pcase (plist-get node :type)
+             ('text (insert (plist-get node :text)))
+             ('paragraph (insert (plist-get node :text)))
+             ('element
+              (let* ((attrs (plist-get node :attributes))
+                     (href (cdr (or (assq 'href attrs)
+                                    (assoc "href" attrs))))
+                     (id (cdr (or (assq 'id attrs)
+                                  (assoc "id" attrs))))
+                     (anchor (cdr (or (assq 'name attrs)
+                                      (assoc "name" attrs))))
+                     (start (point)))
+                (when (and (stringp href) (string-match "\\`#\\(.+\\)\\'" href))
+                  (let ((target (match-string 1 href)))
+                    (push (list target
+                                (string-trim (edgar-structure-text node))
+                                start)
+                          links)))
+                (when (or id anchor)
+                  (push (cons (or id anchor) start) targets))
+                (dolist (child (plist-get node :children))
+                  (walk child)))))))
+         (dolist (child (plist-get tree :children))
+           (walk child)))
+        (let* ((target-ids (delete-dups (mapcar #'car links)))
+               (positions
+                (sort
+                 (delq nil
+                       (mapcar
+                        (lambda (target)
+                          (let ((entry (assoc target targets)))
+                            (and entry (cons target (cdr entry)))))
+                        target-ids))
+                 (lambda (a b) (< (cdr a) (cdr b))))))
+          (let* ((wanted
+                  (downcase
+                   (string-trim
+                    (edgar--normalize-section-whitespace name))))
+                 (matches
+                  (delete-dups
+                   (mapcar #'car
+                           (seq-filter
+                            (lambda (link)
+                              (and (member (car link) target-ids)
+                                   (equal wanted
+                                          (downcase
+                                           (edgar--normalize-section-whitespace
+                                            (cadr link))))))
+                            links)))))
+            (when (= (length matches) 1)
+              (let* ((target (car matches))
+                     (position (cdr (assoc target positions)))
+                     (toc-targets
+                      (mapcar #'car
+                              (seq-filter
+                               (lambda (link) (< (nth 2 link) position))
+                               links)))
+                     (next (seq-find
+                            (lambda (entry)
+                              (and (> (cdr entry) position)
+                                   (member (car entry) toc-targets)))
+                            positions))
+                     (body (buffer-substring-no-properties
+                            position (or (and next (cdr next)) (point-max))))
+                     (node
+                      (seq-find
+                       (lambda (candidate)
+                         (let ((attrs (plist-get candidate :attributes)))
+                           (equal target
+                                  (cdr (or (assq 'id attrs)
+                                           (assq 'name attrs))))))
+                       (edgar-structure-nodes tree "a"))))
+                (list :name name :node node :body body)))))))))
 
 (defun edgar-structure-section (tree name)
   "Return the unique named section or element NAME from TREE.
@@ -904,7 +1017,9 @@ Signal `user-error' if multiple matches exist; return nil if absent."
               (or wanted-path (list wanted-name))
               :body (edgar-structure-text node)))
            nodes))
-         (hits (append heading-hits node-hits)))
+         (linked-hit (and (null heading-hits)
+                          (edgar--structure-linked-heading-section tree name)))
+         (hits (append heading-hits node-hits (and linked-hit (list linked-hit)))))
     (pcase hits
       (`() nil)
       (`(,hit) hit)
