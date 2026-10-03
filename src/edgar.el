@@ -207,80 +207,93 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
 PDF bodies are returned as unibyte strings."
   (edgar--fetch (plist-get filing :url)))
 
-(defun edgar-facts (filing)
-  "Return FILING's Inline XBRL facts, including context and unit metadata.
-Non-iXBRL filings return nil."
-  (xbrl-inline-facts (edgar-html filing)))
-
-(defun edgar--pdf-url-p (url)
-  "Return non-nil when URL identifies a PDF primary document."
-  (and (stringp url) (string-match-p "\\.pdf\\(?:[?#]\\|\\'\\)" url)))
-
-(defun edgar--pdf-text (pdf)
-  "Render the unibyte PDF body PDF as plain text."
-  (let ((program (executable-find edgar-pdftotext-program))
-        (output (generate-new-buffer " *edgar-pdftotext*")))
-    (unless program
-      (kill-buffer output)
-      (user-error "PDF filing requires the %s program"
-                  edgar-pdftotext-program))
-    (unwind-protect
-        (with-temp-buffer
-          (set-buffer-multibyte nil)
-          (insert pdf)
-          (let ((coding-system-for-read 'utf-8-unix)
-                (coding-system-for-write 'no-conversion))
-            (let ((status
-                   (call-process-region
-                    (point-min) (point-max) program
-                    nil output nil "-layout" "-" "-")))
-              (unless (and (integerp status) (zerop status))
-                (error "%s failed with status %s" program status))))
-          (with-current-buffer output
-            (buffer-string)))
-      (when (buffer-live-p output)
-        (kill-buffer output)))))
-
-(defun edgar--submission-primary-document (submission filing)
-  "Return FILING's primary document from an EDGAR SGML SUBMISSION.
-When SUBMISSION is a complete-submission file, select the DOCUMENT whose
-TYPE matches FILING's form and return its TEXT payload.  A plain .txt
-primary document is returned unchanged."
-  (let ((case-fold-search t)
-        (form (edgar--base-form (or (plist-get filing :form) "")))
-        documents)
+(defun edgar--submission-documents (submission)
+  "Return the DOCUMENT bodies in SGML SUBMISSION, in source order."
+  (let (documents)
     (with-temp-buffer
       (insert submission)
       (goto-char (point-min))
-      (while (re-search-forward
-              "<DOCUMENT>[ \t\r\n]*\\(\\(?:.\\|\n\\)*?\\)</DOCUMENT>"
-              nil t)
-        (push (match-string-no-properties 1) documents)))
-    (if (null documents)
-        submission
-      (let* ((documents (nreverse documents))
-             (primary
-              (or (seq-find
-                   (lambda (document)
-                     (and (string-match
-                           "<TYPE>[ \t]*\\([^\r\n]+\\)" document)
-                          (equal
-                           (edgar--base-form
-                            (string-trim (match-string 1 document)))
-                           form)))
-                   documents)
-                  (car documents)))
-             (payload
-              (if (string-match
-                   "<TEXT>[ \t\r\n]*\\(\\(?:.\\|\n\\)*?\\)</TEXT>"
-                   primary)
-                  (match-string-no-properties 1 primary)
+      (while (search-forward "<DOCUMENT>" nil t)
+        (let ((start (point)))
+          (when (search-forward "</DOCUMENT>" nil t)
+            (push
+             (buffer-substring-no-properties start (match-beginning 0))
+             documents)))))
+    (nreverse documents)))
+
+(defun edgar--submission-document-tag (document tag)
+  "Return the header value for TAG in SGML DOCUMENT, or nil."
+  (let* ((case-fold-search t)
+         (text-start (string-match "<TEXT>" document))
+         (header (substring document 0 (or text-start (length document))))
+         (pattern (format "<%s>[ \t]*\\([^\r\n]+\\)" tag)))
+    (when (string-match pattern header)
+      (string-trim (match-string 1 header)))))
+
+(defun edgar--source-format (name content)
+  "Return a generic source format for NAME and CONTENT."
+  (let ((case-fold-search t)
+        (prefix (downcase (substring content 0 (min 100 (length content))))))
+    (cond
+     ((or (and name (string-match-p "\\.pdf\\'" name))
+          (string-prefix-p "<pdf>" (string-trim-left prefix)))
+      'pdf)
+     ((or (and name (string-match-p "\\.xml\\'" name))
+          (string-prefix-p "<?xml" (string-trim-left prefix)))
+      'xml)
+     ((or (and name (string-match-p "\\.html?\\'" name))
+          (string-match-p "\\`[ \t\r\n]*\\(?:<!doctype html\\|<html\\)" prefix))
+      'html)
+     (t 'text))))
+
+(defun edgar--submission-primary-info (submission filing)
+  "Return generic metadata and content for FILING's primary document."
+  (let* ((case-fold-search t)
+         (form (edgar--base-form (or (plist-get filing :form) "")))
+         (documents (edgar--submission-documents submission))
+         (primary
+          (or (seq-find
+               (lambda (document)
+                 (equal
+                  form
+                  (edgar--base-form
+                   (or (edgar--submission-document-tag document "TYPE") ""))))
+               documents)
+              (car documents))))
+    (if (null primary)
+        (list :type form
+              :name (plist-get filing :doc)
+              :format
+              (edgar--source-format (plist-get filing :doc) submission)
+              :content submission)
+      (let* ((name (edgar--submission-document-tag primary "FILENAME"))
+             (text-start (string-match "<TEXT>[ \t\r\n]*" primary))
+             (content-start (and text-start (match-end 0)))
+             (content-end
+              (and content-start
+                   (string-match "</TEXT>" primary content-start)))
+             (content
+              (if content-start
+                  (substring primary content-start
+                             (or content-end (length primary)))
                 primary)))
-        (string-trim payload)))))
+        (list :type (or (edgar--submission-document-tag primary "TYPE") form)
+              :name name
+              :format (edgar--source-format name content)
+              :content (string-trim content))))))
+
+(defun edgar--submission-primary-document (submission filing)
+  "Return FILING's primary content from EDGAR SGML SUBMISSION."
+  (plist-get (edgar--submission-primary-info submission filing) :content))
+
+(defun edgar--sgml-submission-p (content)
+  "Return non-nil when CONTENT begins with an EDGAR SGML document wrapper."
+  (and (stringp content)
+       (string-match-p "\\`[ \t\r\n]*<DOCUMENT>" content)))
 
 (defun edgar--legacy-text (text)
   "Render old SEC SGML TEXT to readable text, preserving line boundaries."
-  (if (string-match-p "<[Hh][Tt][Mm][Ll]\\_>" text)
+  (if (string-match-p "<[Hh][Tt][Mm][Ll]\\(?:[ \t\r\n/>]\\)" text)
       (with-temp-buffer
         (insert text)
         (let ((dom
@@ -299,21 +312,31 @@ primary document is returned unchanged."
        "\\n[ \t]*\\n[ \t]*\\n+" "\n\n" plain))))
 
 (defun edgar-text (filing)
-  "FILING rendered to plain text (what `shr' would display)."
+  "FILING rendered to plain text (what `shr' would display).
+Signal `user-error' for a PDF primary document; PDF text extraction is not
+supported."
   (let* ((url (plist-get filing :url))
-         (source (edgar-html filing))
-         (text
-          (if (and (stringp url)
+         (pdf-url-p
+          (and (stringp url)
+               (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url)))
+         (source (unless pdf-url-p (edgar-html filing)))
+         (submission-p
+          (or (and (stringp url)
                    (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-              (edgar--submission-primary-document source filing)
-            source)))
-    (cond
-     ((edgar--pdf-url-p url)
-      (edgar--pdf-text source))
-     ((and (stringp url)
-           (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-      (edgar--legacy-text text))
-     (t
+              (edgar--sgml-submission-p source)))
+         (primary
+          (and submission-p
+               (edgar--submission-primary-info source filing)))
+         (format
+          (if primary
+              (plist-get primary :format)
+            (if pdf-url-p 'pdf 'html)))
+         (text (if primary (plist-get primary :content) source)))
+    (when (eq format 'pdf)
+      (user-error "EDGAR: PDF text extraction is not supported for %s"
+                  (or (plist-get primary :name) (plist-get filing :doc) url)))
+    (if submission-p
+        (edgar--legacy-text text)
       (with-temp-buffer
         (insert text)
         (let ((dom
@@ -323,7 +346,7 @@ primary document is returned unchanged."
                 (shr-use-fonts nil)
                 (shr-width 100))
             (shr-insert-document dom)))
-        (buffer-substring-no-properties (point-min) (point-max)))))))
+        (buffer-substring-no-properties (point-min) (point-max))))))
 
 (defun edgar--structure-node (node)
   "Convert libxml NODE to a uniform plist tree without discarding data."
@@ -345,55 +368,125 @@ primary document is returned unchanged."
    (t
     (list :type 'value :value node))))
 
+(defun edgar--document-primary-metadata (filing format &optional primary)
+  "Return generic source metadata for FILING and FORMAT.
+PRIMARY, when non-nil, is the selected EDGAR submission document record."
+  (let* ((url (plist-get filing :url))
+         (primary-name
+          (or (plist-get primary :name)
+              (plist-get filing :doc)
+              (and (stringp url)
+                   (file-name-nondirectory
+                    (url-filename (url-generic-parse-url url)))))))
+    (list
+     :form (plist-get filing :form)
+     :accn (plist-get filing :accn)
+     :cik (plist-get filing :cik)
+     :filed (plist-get filing :filed)
+     :report (plist-get filing :report)
+     :url url
+     :doc (plist-get filing :doc)
+     :primary-document
+     (list
+      :name primary-name
+      :type (or (plist-get primary :type) (plist-get filing :form))
+      :format (or (plist-get primary :format) format)
+      :readable (not (eq format 'pdf))))))
+
+(defun edgar--document-structure-result
+    (filing format children &optional text primary)
+  "Build a generic document tree result for FILING and FORMAT."
+  (let ((result
+         (list :type 'document
+               :format format
+               :metadata
+               (edgar--document-primary-metadata filing format primary)
+               :children children)))
+    (when text
+      (setq result (plist-put result :text text)))
+    result))
+
+(defun edgar--document-structure-from-content
+    (filing format content primary)
+  "Build FILING's generic tree from CONTENT in FORMAT."
+  (pcase format
+    ('pdf
+     (edgar--document-structure-result filing 'pdf nil nil primary))
+    ((or 'html 'xml)
+     (with-temp-buffer
+       (insert content)
+       (edgar--document-structure-result
+        filing format
+        (list
+         (edgar--structure-node
+          (if (eq format 'xml)
+              (libxml-parse-xml-region (point-min) (point-max))
+            (libxml-parse-html-region (point-min) (point-max)))))
+        nil primary)))
+    (_
+     (let* ((text (edgar--legacy-text content))
+            (paragraphs
+             (seq-remove
+              #'string-empty-p
+              (mapcar
+               #'string-trim
+               (split-string
+                text "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
+       (edgar--document-structure-result
+        filing 'text
+        (mapcar
+         (lambda (paragraph)
+           (list :type 'paragraph :text paragraph))
+         paragraphs)
+        text primary)))))
+
 (defun edgar-document-structure (filing)
   "Return FILING as a generic, ordered document tree.
-The root plist has :format and :children.  Each element has :name,
-:attributes, and ordered :children; text is retained in leaf plists.  HTML,
-XML, PDF, and text submissions use the same representation, so callers can
-inspect any element or paragraph without form-specific projections."
+The root plist has :format, :metadata, and :children.  :metadata contains
+filing identifiers and a :primary-document record with its name, type, format,
+and readability.  Each element has :name, :attributes, and ordered :children;
+text is retained in leaf plists.  HTML, XML, and text use the same
+representation.  PDF sources return metadata without extracted text."
   (let ((url (plist-get filing :url)))
     (cond
      ((and (stringp url)
            (string-match-p "\\.xml\\(?:\\?\\|\\'\\)" url))
       (require 'edgar-xml)
       (let ((tree (edgar-xml filing)))
-        (list
-         :type 'document
-         :format 'xml
-         :children (and tree (list (edgar--structure-node tree))))))
+        (edgar--document-structure-result
+         filing 'xml
+         (and tree (list (edgar--structure-node tree))))))
      ((and (stringp url)
-           (or (edgar--pdf-url-p url)
-               (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url)))
-      (let* ((text (edgar-text filing))
-             (paragraphs
-              (seq-remove
-               #'string-empty-p
-               (mapcar
-                #'string-trim
-                (split-string text
-                              "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
-        (list
-         :type 'document
-         :format
-         (if (edgar--pdf-url-p url)
-             'pdf
-           'text)
-         :text text
-         :children
-         (mapcar
-          (lambda (p) (list :type 'paragraph :text p)) paragraphs))))
+           (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url))
+      (edgar--document-structure-result filing 'pdf nil))
+     ((and (stringp url)
+           (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+      (let* ((submission (edgar--fetch url))
+             (primary (edgar--submission-primary-info submission filing)))
+        (edgar--document-structure-from-content
+         filing
+         (plist-get primary :format)
+         (plist-get primary :content)
+         primary)))
      (t
-      (let ((html (edgar-html filing)))
-        (with-temp-buffer
-          (insert html)
-          (list
-           :type 'document
-           :format 'html
-           :children
-           (list
-            (edgar--structure-node
-             (libxml-parse-html-region
-              (point-min) (point-max)))))))))))
+      (let* ((html (edgar-html filing))
+             (primary
+              (and (edgar--sgml-submission-p html)
+                   (edgar--submission-primary-info html filing))))
+        (if primary
+            (edgar--document-structure-from-content
+             filing
+             (plist-get primary :format)
+             (plist-get primary :content)
+             primary)
+          (with-temp-buffer
+            (insert html)
+            (edgar--document-structure-result
+             filing 'html
+             (list
+              (edgar--structure-node
+               (libxml-parse-html-region
+                (point-min) (point-max))))))))))))
 
 (defun edgar-structure-text (node)
   "Return all text below NODE in document order."
@@ -624,7 +717,8 @@ Signal `user-error' if multiple matches exist; return nil if absent."
 
 (defun edgar--title-case-heading-p (line)
   "Return non-nil if LINE resembles a standalone title-case heading."
-  (let ((words (split-string line "[ \t]+" t))
+  (let ((case-fold-search nil)
+        (words (split-string line "[ \t]+" t))
         (small-words
          '("a" "an" "and" "as" "at" "by" "due" "for" "from"
            "in" "into" "of" "on" "or" "the" "to" "with"))
@@ -887,18 +981,31 @@ wins."
        (sort out (lambda (a b) (edgar--key< (car a) (car b))))))))
 
 (defun edgar--heading-only-p (body)
-  "Non-nil if BODY is a lone heading line with no sentence after it.
-That is what a table-of-contents entry leaves behind."
-  (let
-      ((rest
-        (replace-regexp-in-string
-         "\\`[ \t\n\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?"
-         ""
-         body)))
-    (and (= 1
-            (length
-             (seq-remove #'string-blank-p (split-string body "\n"))))
-         (not (string-match-p "[.!?]" rest)))))
+  "Non-nil if BODY contains only a possibly wrapped Item heading.
+Table-of-contents entries can wrap onto several lines and include a page
+number at the end of any line."
+  (let* ((lines (seq-remove #'string-blank-p (split-string body "\n")))
+         (first (car lines))
+         (rest
+          (and first
+               (string-match
+                "\\`[ \t\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?[ \t\u00a0]*\\(.*\\)"
+                first)
+               (cons (match-string 1 first) (cdr lines))))
+         (title-lines
+          (mapcar
+           (lambda (line)
+             (string-trim
+              (replace-regexp-in-string "[ \t\u00a0]+[0-9]+[ \t\u00a0]*\\'"
+                                        "" line)))
+           rest)))
+    (and title-lines
+         (<= (length (mapconcat #'identity title-lines " ")) 250)
+         (seq-every-p
+          (lambda (line)
+            (let ((line (string-remove-suffix "." line)))
+              (edgar--title-case-heading-p line)))
+          title-lines))))
 
 (defun edgar--drop-residue (secs)
   "Remove from SECS the heading-only entries that duplicate another Part's item.

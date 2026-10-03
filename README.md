@@ -1,15 +1,13 @@
 # edgar.el
 
-Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
+Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for SEC data access.
 
-PDF-only SEC primaries are rendered through Poppler's `pdftotext` executable.
-Customize `edgar-pdftotext-program` when it is installed under another name.
+PDF-only primaries expose generic source metadata; text extraction is unsupported.
 
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
     (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
-    (edgar-facts (edgar-latest "AAPL" "10-K"))          ; Inline XBRL facts + contexts
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
     (edgar-effective-section "TSLA" "10-K" "III.10")      ; latest amended section
     M-x edgar-list    ; browse a ticker's filings, RET opens one
@@ -85,14 +83,17 @@ access to the document structure, use the generic tree API:
       (edgar-structure-paragraphs tree)
       (edgar-structure-nodes tree "ix:nonfraction"))
 
-HTML, XML, PDF, and plain-text submissions use one tree representation. PDF
-documents expose their extracted paragraphs; element
+HTML, XML, and plain-text submissions use one tree representation. Element
 names, attributes, child order, and text nodes are kept; individual form codes
-do not select custom fields. `edgar-structure-section` accepts a visible
+do not select custom fields. PDF-only sources expose metadata without extracted
+text. `edgar-structure-section` accepts a visible
 heading name or a full heading/tag path. Duplicate names signal an ambiguity
 error that a path resolves. `edgar-structure-nodes-at-path` addresses nested
 element paths, `edgar-structure-nodes` returns elements with a given tag, and
 `edgar-structure-paragraphs` returns `p` elements or plain-text paragraphs.
+The tree root's `:metadata` includes filing identifiers and a `:primary-document`
+record with its name, type, format, and readability. PDF-only sources return
+that metadata without text; `edgar-text` signals `user-error` for them.
 
 `edgar-structure-headings` discovers HTML `h1`-`h6` and titled `section`
 elements. `edgar-section` additionally resolves existing Item headings and
@@ -102,8 +103,9 @@ source nodes and text remain available through the generic tree API. No form
 codes select custom fields or heading catalogs.
 
 The same tree API has recorded G12 coverage for CORRESP and UPLOAD text,
-plus X-17A-5, MA-I, and TA-2 XML. These are generic structure fixtures, not
-form-specific typed accessors.
+plus X-17A-5, MA-I, TA-2, ATS-N and its amendments, CFPORTAL, MA, SBSE, and
+TA-1/TA-W XML. These are generic structure fixtures, not form-specific typed
+accessors.
 
 Recorded G10 layouts include 40-APP applications, 485BPOS registrations,
 497 supplements, 497J certification letters, 497K summary prospectuses, and

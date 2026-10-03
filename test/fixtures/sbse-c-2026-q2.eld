@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 1204 :accn "0002117967-26-000002" :form "SBSE-C" :company "Jane Street Derivatives Dealer, LLC" :filed "2026-05-18" :report "" :doc "primary_doc.xml" :cik 2117967 :url "https://www.sec.gov/Archives/edgar/data/2117967/000211796726000002/primary_doc.xml")

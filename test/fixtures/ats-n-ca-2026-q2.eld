@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 187286 :accn "0000091154-26-000015" :form "ATS-N/CA" :company "CITIGROUP GLOBAL MARKETS INC." :filed "2026-06-26" :report "" :doc "primary_doc.xml" :cik 91154 :url "https://www.sec.gov/Archives/edgar/data/91154/000009115426000015/primary_doc.xml")

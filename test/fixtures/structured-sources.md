@@ -131,6 +131,21 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `ma-i-ey-2026.xml` — [MA-I accession 0001617793-26-000005](https://www.sec.gov/Archives/edgar/data/1617793/000161779326000005/primary_doc.xml).
 - `ta-2-edward-jones-2026.xml` — [TA-2 accession 0000810417-26-000002](https://www.sec.gov/Archives/edgar/data/810417/000081041726000002/primary_doc.xml).
 - `upload-irenic-2026.txt` — [UPLOAD accession 0000000000-26-003277](https://www.sec.gov/Archives/edgar/data/2122505/000000000026003277/filename2.txt), the SEC-provided text extract of the staff letter.
+- `ats-n-2026-q2.xml` — ATS-N, CODA Markets ([accession 0000921107-26-000004](https://www.sec.gov/Archives/edgar/data/921107/000092110726000004/primary_doc.xml)).
+- `ats-n-ca-2026-q2.xml` — ATS-N/CA, Citigroup Global Markets ([accession 0000091154-26-000015](https://www.sec.gov/Archives/edgar/data/91154/000009115426000015/primary_doc.xml)).
+- `ats-n-ma-2026-q2.xml` — ATS-N/MA, OTC Link ([accession 0001491895-26-000012](https://www.sec.gov/Archives/edgar/data/1491895/000149189526000012/coverpage.xml)); SEC publishes the cover page XML for this accession.
+- `ats-n-ofa-2026-q2.xml` — ATS-N/OFA, BNP Paribas Securities ([accession 0000753835-26-000011](https://www.sec.gov/Archives/edgar/data/753835/000075383526000011/primary_doc.xml)).
+- `ats-n-ua-2026-q2.xml` — ATS-N/UA, OneChronos Markets ([accession 0000902664-26-002942](https://www.sec.gov/Archives/edgar/data/1692652/000090266426002942/primary_doc.xml)).
+- `cfportal-2026-q2.xml` — CFPORTAL/A, Fursa Capital ([accession 0001803619-26-000003](https://www.sec.gov/Archives/edgar/data/1803619/000180361926000003/primary_doc.xml)).
+- `cfportal-w-2026-q2.xml` — CFPORTAL-W, EquityVest ([accession 0001774391-26-000002](https://www.sec.gov/Archives/edgar/data/1774391/000177439126000002/primary_doc.xml)).
+- `ma-2026-q2.xml` — MA/A, Capital Markets Advisors ([accession 0001620072-26-000004](https://www.sec.gov/Archives/edgar/data/1620072/000162007226000004/primary_doc.xml)).
+- `ma-a-2026-q2.xml` — MA-A, BOK Financial Securities ([accession 0000786671-26-000005](https://www.sec.gov/Archives/edgar/data/786671/000078667126000005/primary_doc.xml)).
+- `ma-w-2026-q2.xml` — MA-W, FTG Advisors ([accession 0001783919-26-000003](https://www.sec.gov/Archives/edgar/data/1783919/000178391926000003/primary_doc.xml)).
+- `sbse-2026-q2.xml` — SBSE/A, GIFMS Capital ([accession 0001910878-26-000005](https://www.sec.gov/Archives/edgar/data/1910878/000191087826000005/primary_doc.xml)).
+- `sbse-a-2026-q2.xml` — SBSE-A/A, Citigroup Global Markets ([accession 0001012467-26-000008](https://www.sec.gov/Archives/edgar/data/1012467/000101246726000008/primary_doc.xml)).
+- `sbse-c-2026-q2.xml` — SBSE-C, Jane Street Derivatives Dealer ([accession 0002117967-26-000002](https://www.sec.gov/Archives/edgar/data/2117967/000211796726000002/primary_doc.xml)).
+- `ta-1-2026-q2.xml` — TA-1/A, SS&C GIDS ([accession 0000027048-26-000003](https://www.sec.gov/Archives/edgar/data/27048/000002704826000003/primary_doc.xml)).
+- `ta-w-2026-q2.xml` — TA-W, Dominion Stock Transfer ([accession 0001938417-26-000005](https://www.sec.gov/Archives/edgar/data/1938417/000193841726000005/primary_doc.xml)).
 - `40-app-m3sixty.htm.gz` — compressed [40-APP accession 0001999371-26-010840](https://www.sec.gov/Archives/edgar/data/1319067/000199937126010840/m3sixty-40app_051526.htm).
 - `485bpos-geme.htm.gz` — compressed [485BPOS accession 0001999371-26-009141](https://www.sec.gov/Archives/edgar/data/1969674/000199937126009141/geme-485bpos_042726.htm).
 - `497-1290.htm.gz` — compressed [497 accession 0001193125-26-147484](https://www.sec.gov/Archives/edgar/data/1605941/000119312526147484/d64604d497.htm).
@@ -164,3 +179,34 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.
+
+### G12 source limitations
+
+The Q2 2026 SEC archive samples for the remaining L0 forms have no readable
+HTML/XML primary documents:
+
+- `ADV-H-T` — Apple Tree Venture Management, accession
+  [9999999997-26-000671](https://www.sec.gov/Archives/edgar/data/2130471/9999999997-26-000671.txt).
+  Its `.paper` record resolves only to an SEC-generated notice directing the
+  reader to Document Control Number 26007812.
+- `G-FIN` — State Street Bank & Trust, accession
+  [9999999997-26-001447](https://www.sec.gov/Archives/edgar/data/823722/9999999997-26-001447.txt).
+  Its `.paper` record resolves only to an SEC-generated notice directing the
+  reader to Document Control Number 26007830.
+- `NRSRO-CE` — Moody's Investors Service, accession
+  [0001193125-26-255364](https://www.sec.gov/Archives/edgar/data/1698547/000119312526255364/index.json).
+  Its primary and exhibits are PDFs embedded as ASCII-armored PDF data in the
+  complete submission.
+- `NRSRO-UPD` — HR Ratings, accession
+  [0001628352-26-000006](https://www.sec.gov/Archives/edgar/data/1628352/000162835226000006/index.json).
+  Its documents are PDFs (`Exhibit4.pdf`, `UpdateJune.pdf`).
+- `SEC STAFF ACTIO` — Vicore Pharma, accession
+  [9999999997-26-001144](https://www.sec.gov/Archives/edgar/data/2124403/999999999726001144/index.json).
+  Its primary document is `filename1.pdf`.
+- `SEC STAFF LETTE` — Mao Shan Huang Holdings, accession
+  [9999999997-26-001105](https://www.sec.gov/Archives/edgar/data/2137634/999999999726001105/index.json).
+  Its primary document is `filename1.pdf`.
+
+These records stay L0: the generic tree exposes filing and primary-document
+metadata, and PDF sources have no extracted text or named sections. `edgar-text`
+reports PDF text extraction as unsupported.

@@ -18,8 +18,8 @@
   (expand-file-name rel edgar-fixtures--test-dir))
 
 (defun edgar-fixtures-slugs ()
-  "Slugs of every rendered filing fixture, sorted.
-XML-only fixtures are exercised by form-specific tests."
+  "Slugs of every HTML filing fixture, sorted.
+XML-only and PDF-only fixtures are exercised by dedicated tests."
   (sort (seq-filter
          (lambda (slug)
            (seq-some
@@ -27,7 +27,7 @@ XML-only fixtures are exercised by form-specific tests."
               (file-exists-p
                (edgar-fixtures-path
                 (concat "fixtures/" slug suffix))))
-            '(".htm.gz" ".pdf" ".txt")))
+            '(".htm.gz" ".pdf" ".txt" ".htm")))
          (mapcar
           #'file-name-sans-extension
           (directory-files (edgar-fixtures-path "fixtures")

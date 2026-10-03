@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/sbse/sbsecfiler">
+  <headerData>
+    <submissionType>SBSE-C</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0002117967</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <flags>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <certificationOne>
+      <applicantName>Jane Street Derivatives Dealer, LLC</applicantName>
+      <cerApplicantName>Jane Street Derivatives Dealer, LLC</cerApplicantName>
+      <cerDate>05-18-2026</cerDate>
+      <signature>Andreas Roy</signature>
+      <name>Andreas Roy</name>
+      <title>President</title>
+    </certificationOne>
+    <certificationTwo>
+      <applicantName>Jane Street Derivatives Dealer, LLC</applicantName>
+      <cerApplicantName>Jane Street Derivatives Dealer, LLC</cerApplicantName>
+      <cerDate>05-18-2026</cerDate>
+      <signature>Andrew Weg</signature>
+      <name>Andrew Weg</name>
+    </certificationTwo>
+  </formData>
+</edgarSubmission>

@@ -70,6 +70,86 @@
   "The committed snapshot and registry satisfy the offline gate."
   (should-not (edgar-coverage-problems)))
 
+(ert-deftest edgar-form-coverage-l2-requires-three-distinct-filers ()
+  "An L2 form needs three distinct filer CIKs, not three filings."
+  (let* ((root (make-temp-file "edgar-coverage-diversity-" t))
+         (snapshot (expand-file-name "snapshot.txt" root)))
+    (unwind-protect
+        (progn
+          (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
+          (edgar-form-coverage-test--seed-l2-artifacts root 'html 2)
+          (let* ((fixtures (expand-file-name "fixtures" root))
+                 (expects (expand-file-name "expect" root))
+                 (goldens (expand-file-name "golden" root)))
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.eld" fixtures)
+             "(:form \"TEST-FORM\" :cik 1001)\n")
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.htm.gz" fixtures)
+             "fixture")
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.eld" expects) "(:ok t)\n")
+            (edgar-form-coverage-test--write
+             (expand-file-name "same-filer-prior.eld" goldens)
+             "(:text (\"ok\"))\n")
+            (let ((messages
+                   (edgar-form-coverage-test--messages
+                    (edgar-coverage-problems
+                     :registry (edgar-form-coverage-test--registry 'L2)
+                     :snapshot-file snapshot
+                     :fixture-directory fixtures
+                     :expect-directory expects
+                     :golden-directory goldens))))
+              (should
+               (string-match-p
+                "2 distinct filer CIKs; 3 required" messages)))
+            (edgar-form-coverage-test--seed-l2-artifacts root 'html 3)
+            (should-not
+             (edgar-coverage-problems
+              :registry (edgar-form-coverage-test--registry 'L2)
+              :snapshot-file snapshot
+              :fixture-directory fixtures
+              :expect-directory expects
+              :golden-directory goldens))))
+      (delete-directory root t))))
+
+(ert-deftest edgar-form-coverage-reports-every-l2-diversity-gap ()
+  "Report every L2 form below the distinct-filer minimum in one pass."
+  (let* ((root (make-temp-file "edgar-coverage-all-gaps-" t))
+         (registry (make-hash-table :test #'equal))
+         (records nil))
+    (unwind-protect
+        (progn
+          (dolist (form '("TEST-FORM-A" "TEST-FORM-B"))
+            (puthash
+             form
+             (list :family "Test"
+                   :backend 'html
+                   :level 'L2
+                   :sections-or-fields nil
+                   :volume 1
+                   :notes nil)
+             registry)
+            (let ((slug (downcase form)))
+              (edgar-form-coverage-test--write
+               (expand-file-name (concat slug ".eld") root)
+               (format "(:form %S :cik %d)\n"
+                       form (if (equal form "TEST-FORM-A") 1001 2001)))
+              (push (cons form slug) records)))
+          (let ((problems
+                 (edgar-coverage--l2-diversity-problems
+                  registry records root)))
+            (should (= (length problems) 2))
+            (should
+             (member
+              "TEST-FORM-A: L2 diversity has 1 distinct filer CIKs; 3 required"
+              problems))
+            (should
+             (member
+              "TEST-FORM-B: L2 diversity has 1 distinct filer CIKs; 3 required"
+              problems))))
+      (delete-directory root t))))
+
 (ert-deftest edgar-form-coverage-excludes-partial-submission-excerpts ()
   "Partial SEC excerpts remain parser tests, not complete-form fixtures."
   (let* ((records-and-problems

@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 34053 :accn "0001620072-26-000004" :form "MA/A" :company "Capital Markets Advisors, LLC" :filed "2026-06-30" :report "" :doc "primary_doc.xml" :cik 1620072 :url "https://www.sec.gov/Archives/edgar/data/1620072/000162007226000004/primary_doc.xml")

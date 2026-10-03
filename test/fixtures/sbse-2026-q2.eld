@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 50569 :accn "0001910878-26-000005" :form "SBSE/A" :company "GIFMS Capital Company, LLC" :filed "2026-06-24" :report "" :doc "primary_doc.xml" :cik 1910878 :url "https://www.sec.gov/Archives/edgar/data/1910878/000191087826000005/primary_doc.xml")

@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/atsn" xmlns:com="http://www.sec.gov/edgar/common" xmlns:ats="http://www.sec.gov/edgar/atsncommon">
+  <headerData>
+    <submissionType>ATS-N/UA</submissionType>
+    <accessionNumber>0000902664-26-002690</accessionNumber>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <filerCredentials>
+          <com:cik>0001692652</com:cik>
+          <com:ccc>XXXXXXXX</com:ccc>
+        </filerCredentials>
+        <fileNumber>013-00156</fileNumber>
+      </filer>
+      <flags>
+        <ats:overrideInternetFlag>false</ats:overrideInternetFlag>
+        <ats:confirmingCopyFlag>false</ats:confirmingCopyFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <cover>
+      <txNMSStockATSName>OneChronos</txNMSStockATSName>
+      <rbOperatesPursuantToFormATS>N</rbOperatesPursuantToFormATS>
+      <taStatementAboutAmendment>This Updating Amendment updates the Material Amendment filed on June 5, 2026 (Accession No. 0000902664-26-002690) and amends:
+
+(i) Part III Item 3 to provide the circumstances under which Operator may disable a Subscriber from interacting with or generating Conditional Invitations;
+
+(ii) Part III Item 9 to amend the ability of firm orders to opt-in to generate Conditional Invitations regardless of time-in-force; and
+
+(iii) Part III Item 11 to provide that as part of its market quality and risk checks, where an order is not eligible to participate because the External User-supplied price is 10% or more aggressive than the NBBO, during this process, the ATS will mark the order as ineligible.
+
+These changes apply to all Subscribers and the Operator of the ATS.</taStatementAboutAmendment>
+    </cover>
+    <partOne>
+      <rbPart1Item1IsBd>Y</rbPart1Item1IsBd>
+      <txPart1Item2ATSName>ONECHRONOS MARKETS LLC</txPart1Item2ATSName>
+      <atsNames>
+        <atsName txPart1Item3ATSName="OneChronos"/>
+      </atsNames>
+      <txPart1Item4aBdFileNumber>008-69882</txPart1Item4aBdFileNumber>
+      <txPart1Item4aBdCrdNumber>000286322</txPart1Item4aBdCrdNumber>
+      <txPart1Item5aNsaFullName>Financial Industry Regulatory Authority</txPart1Item5aNsaFullName>
+      <part1Item5bEffectiveMembershipDate>07/09/2018</part1Item5bEffectiveMembershipDate>
+      <txtPart1Item5cNmsStockMPID>CGXS</txtPart1Item5cNmsStockMPID>
+      <txtPart1Item6uwebsite>https://www.onechronos.com</txtPart1Item6uwebsite>
+      <part1Item7PrimarySite>
+        <ats:street1>800 Secaucus Rd.</ats:street1>
+        <ats:city>Secaucus</ats:city>
+        <ats:zip>07094</ats:zip>
+        <ats:state>US-NJ</ats:state>
+      </part1Item7PrimarySite>
+      <cbPart1Item8Exhibit1atWebsite>false</cbPart1Item8Exhibit1atWebsite>
+      <cbPart1Item9Exhibit2atWebsite>false</cbPart1Item9Exhibit2atWebsite>
+    </partOne>
+    <partTwo>
+      <rbPart2Item1aArePermittedToEnterInterest>N</rbPart2Item1aArePermittedToEnterInterest>
+      <rbPart2Item1dCanOATInterestBeRouted>N</rbPart2Item1dCanOATInterestBeRouted>
+      <rbPart2Item2aAreAfflPermittedToEnterInterest>N</rbPart2Item2aAreAfflPermittedToEnterInterest>
+      <rbPart2Item2dCanOATIBeRoutedByAffl>N</rbPart2Item2dCanOATIBeRoutedByAffl>
+      <rbPart2Item3aCanSubscrOptOutWithOATIOfBD>N</rbPart2Item3aCanSubscrOptOutWithOATIOfBD>
+      <rbPart2Item3aCanSubscrOptOutWithOATIOfAffl>N</rbPart2Item3aCanSubscrOptOutWithOATIOfAffl>
+      <rbPart2Item3cAreOptOutSametoAllSubscribers>Y</rbPart2Item3cAreOptOutSametoAllSubscribers>
+      <rbPart2Item4aAreThereArrangementsBtwBDAndTC>N</rbPart2Item4aAreThereArrangementsBtwBDAndTC>
+      <part2Item5aDoesOfferProductsAndServices rbPart2Item5aDoesOfferProductsAndServices="Y">
+        <taPart2Item5aProductsAndServices>OneChronos Markets, LLC, the Broker-Dealer Operator ("Operator") of the ATS, provides a supplemental service called the "Expressive Bidding Service" that is available to Subscribers as well as to institutional investors that may submit orders to the ATS indirectly through Subscribers, such as hedge funds, principal trading firms, etc. (collectively, Subscribers and other users of this service are "External Users"). External Users specify customizable execution constraints ("Bidder Logic") for use with a type of multi-part order permitted by the ATS known as an Expressive Order (described in detail in Part III Item 7). External Users are not able to transmit any orders to the ATS. External Users communicate Bidder Logic directly to OneChronos employees (business development, engineering, or both), and engineering staff deploy and activate the Bidder Logic into the ATS.
+
+We use the term "Subscriber" throughout this ATS-N to refer to a broker-dealer that is authorized by the Operator to submit orders, including Expressive Orders, directly to the ATS. Only an External User that is a Subscriber may send an Expressive Order directly to the ATS. Other External Users are not authorized to send Expressive Orders directly to the ATS for execution, and may only do so through, and as a customer of, a Subscriber. Such an External User may direct a Subscriber to send an Expressive Order on its behalf to the ATS, using the External User's specified Bidder Logic. For the limited purpose of accessing the Expressive Bidding Service, such an External User is a "subscriber" of that service for purposes of SEC Regulation ATS, even though it is not a Subscriber that is authorized to submit orders to the ATS.
+
+Upon request, OneChronos employees will provide technical support and guidance related to interaction with the ATS (e.g. connectivity, usage of order types, and construction and management of Bidder Logic).</taPart2Item5aProductsAndServices>
+        <rbPart2Item5bAreSevicesSametoAllSubscribersAndBD>Y</rbPart2Item5bAreSevicesSametoAllSubscribersAndBD>
+      </part2Item5aDoesOfferProductsAndServices>
+      <rbPart2Item5cDoesAfflOfferProductsAndServices>N</rbPart2Item5cDoesAfflOfferProductsAndServices>
+      <part2Item6aDoesEmployeeAccessConfidentialInfo rbPart2Item6aDoesEmployeeAccessConfidentialInfo="Y">
+        <taPart2Item6aUnitAfflEmployeeServices>OCX Group Inc. ("OCX") is the parent company of the Operator. OCX is not an operating business but a holding company and the owner of certain intellectual property used in the ATS.  Certain employees of Operator with access to confidential trading information that service the ATS, or are responsible for the ATS' compliance with applicable rules, also provide services to OCX and to the following of its direct and indirect subsidiaries and affiliates of the Operator, OneChronos Markets UK Limited, which operates a multilateral trade facility in the United Kingdom ("OneChronos UK"), OneChronos Markets NL B.V., which operates a multilateral trade facility in the Netherlands ("OneChronos NL"), and OneChronos Markets FX LLC, which operates a Spot FX trading platform ("OneChronos FX" and together with OCX, OneChronos UK, OneChronos NL, the "OneChronos Organization") (each such employee, a "Shared Employee").  The below identifies the roles and responsibilities of the Shared Employees at the ATS and, separately, at the Firm's affiliates.  The confidential trading information available to each group of employees identified below is described in Part II Item 7(d).
+
+ATS Operations staff.  Operator's operations personnel monitor activity occurring on the ATS, including in real-time, and provide various technology, operations, and support services to Subscribers.  Such personnel provide similar services (e.g., user operations and support services) to OneChronos FX and OneChronos UK and OneChronos NL. In addition, operations personnel of OneChronos UK and OneChronos NL provide various technology, operations, and support services to the ATS.
+
+ATS Engineering staff.  Operator's engineering and technology personnel develop and support the various technologies utilized in the ATS, including the ATS' matching engine software, FIX connectivity, and trade reporting functionality.  Such personnel provide similar services (e.g., technology development and maintenance) to OneChronos FX, OneChronos UK and OneChronos NL.  In addition, engineering and technology personnel of OneChronos UK and OneChronos NL develop and support the various technologies utilized in the ATS.
+
+ATS Operations staff. Operator's Operations personnel perform data analytics, trade reporting and supervision, back-office functions such as Subscriber onboarding and billing for the ATS. Such personnel provide similar services (e.g., operations, billing and back-office support) to OneChronos FX, OneChronos UK and OneChronos NL.
+
+Operator Supervisory, Legal and Compliance staff. Operator's Supervisory, Legal and Compliance personnel conduct market surveillance, ensure compliance with applicable rules and regulations.  Such personnel provide similar support (e.g., market surveillance and compliance support) to OneChronos FX.  Such Supervisory, Legal and Compliance personnel provide support to OCX to ensure compliance with applicable rules and regulations.  Additionally, Legal personnel provide legal support to Operator and the OneChronos Organization.
+
+Sales staff.  Operator's Sales personnel market the ATS to potential Subscribers.  Such personnel may separately provide sales support services to OneChronos FX.</taPart2Item6aUnitAfflEmployeeServices>
+      </part2Item6aDoesEmployeeAccessConfidentialInfo>
+      <part2Item6bDoesAnyEntitySupportServices rbPart2Item6bDoesAnyEntitySupportServices="Y">
+        <taPart2Item6bServiceProvider>1)  Equinix: provides OneChronos physical network connectivity services, and datacenter management services for physical IT infrastructure, including: Points of Presence, the matching engine, market data intake (i.e. SIP data) systems, and time synchronization systems, as described in Part III Items 5, 11, 21, and 23, respectively. Equinix provides power, cooling, server installation, troubleshooting, and various connectivity support services for these systems, along with the physical security controls described in Part II Item 7(a);
+
+2)  Instinet, LLC ("Instinet"): OneChronos has entered into a clearing agreement with Instinet. Trades executed (matched) by the ATS are electronically transmitted to Instinet for post-trade clearing and settlement as described in Part III Item 22;
+
+3) Beeks Financial Cloud ("Beeks"): provides OneChronos datacenter infrastructure including server rack space and rooftop GPS antenna access for: Points of Presence, the matching engine, market data intake (i.e. SIP data) systems, and time synchronization systems described in Part III Items 5, 11, 21, and 23, respectively.
+
+4)  Pico Quantitative Trading ("Pico"): provides OneChronos networking infrastructure and services for network connectivity between OneChronos and third parties such as: a) Subscribers (for order entry described in Part III Item 5), and b) trade reporting destinations (for regulatory and clearing reports described in Part III Items 11 and 21).
+
+5) Exegy Inc ("Exegy"): provides consolidated SIP data for use in the market data system described in Part III Items 11, 20, and 23.</taPart2Item6bServiceProvider>
+        <part2Item6cDoesServiceProviderUseATSServices rbPart2Item6cDoesServiceProviderUseATSServices="Y">
+          <taPart2Item6cProviderAfflAndServicesUsed>Instinet, LLC provides clearing and settlement services to the ATS and is a Subscriber to the ATS.</taPart2Item6cProviderAfflAndServicesUsed>
+          <rbPart2Item6dAreATSSevicesSametoAll>Y</rbPart2Item6dAreATSSevicesSametoAll>
+        </part2Item6cDoesServiceProviderUseATSServices>
+      </part2Item6bDoesAnyEntitySupportServices>
+      <taPart2Item7aDescrOfSafeGaurdsAndProcedures>The Operator maintains Written Supervisory Procedures ("WSPs") that govern the use of Confidential Trading Information.
+
+ The Operator classifies as Confidential Trading Information: orders and order handling instructions, Conditional Indications (as described in Part III Item 9), executions, clearing reports, non-tape TRF reports, risk configurations, and Bidder Logic (as described in Part II Item 5). Intraday and historical data are both considered Confidential Trading Information. The commingling of data that would otherwise not be considered confidential with Confidential Trading Information (for example, application performance logs containing raw FIX message data) is also treated as Confidential Trading Information. Individuals with access to a system that stores or processes Confidential Trading Information are considered to have access to that information.
+
+ACCESS TO AND USE OF CONFIDENTIAL TRADING INFORMATION: The Operator's activities as a broker-dealer are limited to operation of its alternative trading system. Operator employees operating the ATS, including, Shared Employees, may have access to Confidential Trading Information. A Series 24 registered supervisor ("ATS Supervisor") ensures the Operator restricts access to Confidential Trading Information to employees (and temporarily hired contractors, together with employees, "personnel") who are operating the ATS, those whose roles require access to such information for performing their duties, or those responsible for the Operator's compliance with Reg ATS and other applicable rules, as further described in Part II Item 7(c) below.
+
+Operator personnel with access to Confidential Trading Information, including Shared Employees, are only authorized to use such information as required by their job functions, and are prohibited from using such information for trading for their own accounts. Operator personnel, including Shared Employees, cannot disseminate such information to anyone not authorized to receive that information, and this restriction includes dissemination in the course of providing the services described in Part II Item 6 to other entities or business units within the OneChronos Organization. Shared Employees remain subject to Operator's policies and procedures with respect to handling and safeguarding Confidential Trading Information at all times, including when providing the services described in Part II Item 6 to other entities or business units within the OneChronos Organization.  Employees or other personnel within the OneChronos Organization that are not Operator personnel are not authorized to have access to Confidential Trading Information.  The Operator requires all employees, including those with authorized access to Confidential Trading Information, to undergo annual compliance training that includes instruction and attestation relating to the protection of Confidential Trading Information.
+
+The Operator performs at least quarterly reviews to confirm that those personnel with access to Confidential Trading Information continue to have a valid need to access such information, as described under KEY SECURITY CONTROLS below.
+
+As covered more fully in the ATS's Subscriber Agreement, the Operator's personnel and certain third parties (such as accountants and lawyers) may receive a subscriber's confidential information, which may include Confidential Trading Information, in connection with performing services for the Operator or its subsidiaries or affiliates (e.g., auditing, development or surveillance). To the extent they may receive Confidential Trading Information, such persons will be legally bound by confidentiality obligations substantially similar to those that apply to the Operator under the Subscriber Agreement. Any such Information will not be shared until a third party has satisfactorily undergone a Third Party Risk Assessment (as described below under KEY SECURITY CONTROLS).
+
+KEY SECURITY CONTROLS: The Operator employs a broad range of security controls to protect its trading systems and Confidential Trading Information. The principal controls are as follows:
+
+1)  Centralized identity management: The Operator maintains a central repository of user accounts for Operator personnel ("Internal Users"), which may include temporary contractors hired by the Operator as well as employees of the Operator. Only an ATS Supervisor or a designee can establish new accounts for Internal Users or External Users. Internal Users may only access Confidential Trading Information if their accounts have been authorized, as discussed in the "Authorization" section in paragraph (3) below;
+
+2)  Authentication: The Operator requires the use of strong passwords meeting specified length and complexity requirements for all authenticated internal and external systems and services. Systems require multi-factor authentication whenever possible. Anti-brute-force mechanisms such as request throttling, IP whitelisting and blacklisting, account lockouts, and the use of cryptographic hashing help protect user credentials against both online and offline attacks;
+
+3)  Authorization: The Operator uses Role-based access control ("RBAC") to manage access to resources and systems for both Internal and External Users. In an RBAC process, categories of Roles are identified. Persons in particular Roles are given defined access to specific systems and resources, and thereby to specific categories of Confidential Trading Information. Accounts of specific Internal Users and External Users are granted Roles. Those Accounts can then only access a system or resource to the extent that their configured Roles allow the access. For example, an Internal User in the Operations area who requires routine access to cleared transaction information, but not to "live" orders, would be assigned an Account for which the Role was configured to deny access to live order information. A Subscriber External User would only have access to information related to its orders and transactions, and not to that of other Subscribers. The "principle of least privilege" dictates what Roles are appropriate for a given Account. The Operator's CCO or a designee of the CCO conducts periodic (at least quarterly) audits of Roles and their assignments to Accounts. These audits analyze the current and expected job functions of Operator personnel, the Roles configured for their Accounts, and whether the systems, data, and other resources accessible through those Roles are necessary for those personnel to perform their job functions. As personnel responsibilities change, e.g. through assignments to new positions or due to systems or processes re-design, the CCO or designee would assess the (continued) need for those personnel to access specific kinds of Confidential Trading Information, and, as a result, the CCO or designee may require a change in Accounts or re-configuration of Roles;
+
+4)  Encryption: the Operator requires the use of strong encryption for data in transit over any untrusted network. Transmission of unencrypted data is not permissible unless a physical security model, e.g. a private cross connect between a Subscriber and an Operator trading system, provides comparable security guarantees. Media encryption protects Confidential Trading Information (as defined in Part II Item 7(d)) as part of the nightly archival process;
+
+5)  Physical Security: all production ATS trading systems are hosted in a SOC (System and Organization Controls) certified facility (described in Part II Item 6) which employs strong security controls, such as: surveillance, physical barriers, armed security, and multi-factor access controls. This facility maintains fully redundant HVAC and power systems to reduce the risk of outages and business interruptions. Control of production trading systems happens over a physically secured private network;
+
+6)  Change Management: The Operator employs a rigorous change management process for changes to all of its production systems, including the trading systems described in Part III ("Production Systems"). Any proposed changes to Production Systems are analyzed by a designated "Change Team" for: software and/or configuration integrity; adherence to regulatory requirements and disclosures; impact on systems, operations, and practices; changes to External User-facing elements; and adherence to policies and procedures. These reviews include an assessment of the impact of the change on Confidential Trading Information, including how it is processed and stored, access to the information by Internal Users and External Users, and possible vulnerability to unauthorized access or misuse. The Change Team includes senior management of the Operator and ATS System, Business Development and Compliance managers;
+
+7)  Monitoring: the ATS uses a combination of proprietary and commercial software that monitors: a) trading system status, utilization, connectivity, and message rates; b) anomalies in trading data (orders, executions, reports, market data); and c) centrally aggregated system and application log data for anomalous events and unauthorized access to critical systems and systems containing Confidential Trading Information;
+
+8)  Incident Management: The Operator maintains a documented incident response process identifying steps to investigate and remediate security incidents, and a list of designated emergency contacts to alert upon detection of a security incident;
+
+9)  Third Party Risk Assessment: The Operator maintains a list of third-party suppliers with whom it conducts business. Before integrating any new third-party supplier, the Operator conducts a risk assessment that analyzes a) the type and classification of data that third party may access, and b) the potential threats to that data. For any third parties that have access to or may reasonably receive access to Confidential Trading Information, the risk assessment includes a thorough review of the third-party's security controls, business continuity controls, data protection and privacy practices, policies and procedures. These reviews focus on the ability of the third party to protect the confidentiality, availability, and integrity of Confidential Trading Information at each point where such information is stored or processed;
+
+ATS EMPLOYEES' TRADING ACTIVITY: In accordance with FINRA Rule 3210 employees of the Operator must report to the CCO all personal investment accounts, as well as related accounts (those of immediate family members residing with the employee or to whom the employee provides material financial support, or other accounts the employee controls). These reports must be made to the CCO within 30 days of commencing employment or promptly upon opening a new account. Employees are strictly prohibited from trading on firm proprietary information, Confidential Trading Information, other confidential ATS External User information, and material non-public information ("MNPI"). The CCO surveils employee personal and related accounts for activity that may be indicative of possible abuses or violations of federal securities law, including those proscribing insider trading, which may include, as examples, excessive trading activity, activity that departs materially from typical activity in the account under review, or unusual trading activity in securities of a company with breaking news in the press. Operator employees operating the ATS may have access to External User orders and trading information; those and other employees described in Part II Item 7(d) may have access to information about Subscriber trading strategies and objectives. All Operator personnel are strictly prohibited from using any such information to their personal advantage. Annual compliance training includes materials and an attestation relating to employee trading activity, trading activity with regards to Confidential Trading Information, and identification, escalation and misuse of MNPI. The CCO reviews account statements received from broker-dealers where employees hold accounts on a monthly basis. Patterns of activity, as exemplified above, that may be indicative of insider trading or misuse of confidential data, including External User Confidential Trading Information, are subject to further scrutiny and escalation.</taPart2Item7aDescrOfSafeGaurdsAndProcedures>
+      <part2Item7bCanSubscriberConsentToDisclosure rbPart2Item7bCanSubscriberConsentToDisclosure="Y">
+        <taPart2Item7bExplainHowAndConditions>A Subscriber or External User can consent to the disclosure of its confidential trading information by providing written permission to the operator. For example, a Subscriber or External User may submit a request to the Operator that the Operator share the Subscriber's or External User's Confidential Trading Information with a third party Person to perform transaction cost analysis on their order and execution data, or to perform review of their Bidder Logic). The Operator may deny such a request if, for example, the disclosure conflicts with obligations the operator has to other Subscribers or External Users, or in other agreements. The operator must also have written confirmation from the Subscriber or External user of the type and classification of data that the Person may access. The Person will then be subject to all of the KEY SECURITY CONTROLS listed in Part II Item 7(a) with the exception of Third Party Risk Assessment.</taPart2Item7bExplainHowAndConditions>
+        <part2Item7cCanSubscriberWithdrawConsent rbPart2Item7cCanSubscriberWithdrawConsent="Y">
+          <taPart2Item7cExplainHowAndConditions>A Subscriber or External User can withdraw its previously provided consent and permission relating to the disclosure of its confidential trading information by written request to the operator.</taPart2Item7cExplainHowAndConditions>
+        </part2Item7cCanSubscriberWithdrawConsent>
+      </part2Item7bCanSubscriberConsentToDisclosure>
+      <taPart2Item7dSummaryOfRolesRespOfPersons>Operator personnel, including applicable personnel of OneChronos UK and OneChronos NL described in Part II Item 6(a), responsible for the day-to-day operation of the ATS have access to Confidential Trading Information to the extent that their responsibilities require it, as provided by the RBAC process described in Part II Item 7(a). The following personnel are authorized to access Confidential Trading Information:
+
+1) ATS Operations staff, including applicable personnel of OneChronos UK and OneChronos NL described in Part II Item 6(a), who require access to all categories of Confidential Trading Information, e.g. for market surveillance, analysis, and customer support;
+
+2) ATS Engineering staff, including applicable personnel of OneChronos UK and OneChronos NL described in Part II Item 6(a), who require access to all categories of Confidential Trading Information, e.g. for development and support of ATS matching systems and analysis of ATS matching performance as described in Part III Item 11;
+
+3) Operator Supervisory, Legal and Compliance staff, who require routine access to Confidential Trading Information in summary form, e.g. for market surveillance and investigation of any errors or anomalies, and may require non-routine access to more detailed Confidential Trading Information in the investigation or analysis of particular events, activities or Users; and
+
+4) Sales staff, who require access to Confidential Trading Information in summary form, e.g. for analysis of ATS participation and liquidity properties. Individuals who do not have access to specific subsets of Confidential Trading Information, e.g. sales staff who are asked by a Subscriber for assistance in evaluating the efficacy of Bidder Logic used in constructing Expressive Orders, may request access from an ATS Supervisor or designee on an as-needed basis.
+
+Persons from third-party service providers as listed in Part II Item 6, may have access to Confidential Trading Information as necessary or appropriate in connection with their performance of services for OneChronos (for example: clearing, settlement, surveillance, fraud detection). Such access is permitted with limited scope, subject to the evaluation, legal agreement and audit procedures for third-party vendors described in Part II Item 7(a). As part of the quarterly audit process described under KEY SECURITY CONTROLS in Part II Item 7(a), the Operator will review the type and scope of access of third-party service providers to Confidential Trading Information. As part of the review, the Operator confirms those providers continue to have a valid reason to access such information.</taPart2Item7dSummaryOfRolesRespOfPersons>
+    </partTwo>
+    <partThree>
+      <taPart3Item1SubscriberType>Brokers</taPart3Item1SubscriberType>
+      <taPart3Item1SubscriberType>Dealers</taPart3Item1SubscriberType>
+      <taPart3Item1SubscriberType>Other</taPart3Item1SubscriberType>
+      <taPart3Item1OtherSubscrbrDtls>Institutional Investors as External Users that are authorized to use the Operator's Expressive Bidding Service only; such persons are not authorized to access the ATS directly to submit orders.</taPart3Item1OtherSubscrbrDtls>
+      <rbPart3Item2aRegisteredBD>Y</rbPart3Item2aRegisteredBD>
+      <part3Item2bSummaryOfConditions rbPart3Item2bIsThereOtherConditions="Y">
+        <taPart3Item2bSummaryOfCndtns>Applicants to be a Subscriber to access the ATS directly for submitting orders must be duly registered under the Securities Exchange Act of 1934 with the SEC as a broker-dealer and in good standing; a member of FINRA or (only if it does not have customers) a member of an exchange that is registered with the SEC as a national securities exchange; and registered and/or qualified in those states and other jurisdictions where its business requires such registration and/or qualification. Applications must be satisfactorily complete and include the following documents for consideration:
+
+1)  Subscriber Agreement;
+
+2) Expressive Bidding Terms of Service Addendum to the Subscriber Agreement (required only if using Expressive Bidding Service described in Part II Item 5);
+
+3)  Attestation of electronic filing of NSCC Form 9-A, 9-B, Attachment #1;
+
+4)  FINRA Uniform Reporting Agreement;
+
+To receive initial approval and maintain access as a Subscriber, broker-dealer applicants must meet and maintain the following requirements:
+
+a)  Applicants must complete all application materials, as set forth above;
+
+b)  Applicants must be self-clearing, or clear through another broker-dealer, supplying information detailing their clearing relationship as prescribed above. Operator reserves the right to confirm the standing of the applicant, its clearing broker and the adequacy of clearance and settlement arrangements, with the applicant's clearing broker, NSCC, DTC or other registered clearing agency, as applicable;
+
+c)  Subscribers must remit all applicable payments on a timely basis;
+
+d)  Subscribers must meet the technical requirements prescribed by the Operator, including but not limited to connectivity certification and verification of a Subscriber's ability to send orders and cancellations and receive execution reports as well as unsolicited cancels;
+
+e)  Subscribers must have executed and not terminated the OneChronos Subscriber Agreement;
+
+f)  Subscribers and its personnel must otherwise remain in compliance with their obligations as set forth in the Subscriber's Agreement, the OneChronos User Manual (found on its public website), and other policies and procedures of which Subscriber is notified in writing by OneChronos reasonably in advance of effectiveness.
+Eligibility to Access the Supplemental Expressive Bidding Service:
+
+External Users may access the Expressive Bidding Service as described in Part II Item 5(b). A Subscriber is not required to use the Expressive Bidding Service but may elect to use this service by agreeing to the Operator's terms of service set forth in an optional addendum to the subscriber agreement. The Expressive Bidding Service is also available to any institutional investor (e.g., hedge funds, principal trading firms) as an External User if such person agrees to the Operator's terms of service set forth in an agreement developed for use with such External Users.
+
+An External User may submit its specific Bidder Logic ("Submitted Bidder Logic") to reside within the ATS electronically to designated OneChronos employees, as discussed in Part II Item 5. Submitted Bidder Logic submissions are NOT orders themselves. In addition, only Subscribers may submit orders directly to the ATS for execution.
+
+A person's Submitted Bidder Logic represents conditionality that may be attached to an order submitted to the ATS (termed a "Target Order") for execution. Subscribers may submit Target Orders that reference Submitted Bidder Logic to the ATS; the combination of the Target Order and referenced Submitted Bidder Logic is referred to as an "Expressive Order." Expressive Orders are always submitted to the ATS via FIX protocol. External Users that are not Subscribers cannot establish FIX connections to the ATS and cannot directly enter Expressive Orders into the ATS. Such an External User may instead direct a Subscriber with which it has established a customer relationship to submit an Expressive Order on its behalf that references the External User's Submitted Bidder Logic.
+
+As explained in Part 2 Item 5, the term "Subscriber" is used throughout this ATS-N to refer to a broker-dealer that is authorized by the Operator to submit orders to the ATS, but for the limited purpose of accessing the Expressive Bidding Service, an External User that is not a Subscriber within that meaning is considered a "subscriber" of the Expressive Bidding Service for purposes of SEC Regulation ATS.</taPart3Item2bSummaryOfCndtns>
+        <rbPart3Item2cIsConditionsSameForAll>Y</rbPart3Item2cIsConditionsSameForAll>
+      </part3Item2bSummaryOfConditions>
+      <rbPart3Item2dIsThereWrittenAgreement>Y</rbPart3Item2dIsThereWrittenAgreement>
+      <part3Item3aSumryOfExcludngCondtns rbPart3Item3aIsExcludeSubscriber="Y">
+        <taPart3Item3aExcludngSumryDtls>The Operator approves and denies Applicants to be Subscribers in its sole discretion. The Operator may reject Applicants and terminate Subscriber Agreements, Expressive Bidding Terms of Service, or both if, for example, an Applicant or Subscriber is charged with, or is determined to have committed, material violations of the federal securities laws, FINRA rules, or other relevant rules or regulations, or is deemed by Operator to have engaged in conduct or activities that may be materially detrimental to the operation of the ATS, the reputation of the Operator or the ATS, or the interests or well-being of other Subscribers or External Users of the ATS.
+
+If Operator personnel become aware of issues related to a Subscriber's participation in the ATS regarding any of the criteria set forth above in Part III Item 2(b) they may bring those issues to the attention of the team responsible for review of new and ongoing Subscribers ("Application Review Team"; which consists of a Registered Principal of the Operator, a Business Development person, and such other personnel as the Operator may designate). If deemed necessary the Application Review Team may convene and determine whether a Subscriber is still eligible for access in light of new information, and if their continued access jeopardizes the well-being of the ATS or other Subscribers. The Application Review Team may take actions including the termination of a Subscriber Agreement or the imposition of restrictions on a Subscriber's activities. If the Application Review Team concludes that action is necessary, they will document the material facts and actions taken before communicating them to the Subscriber via a Registered Principal of the Operator.
+
+If an application is denied, approved subject to terms and conditions, a Subscriber Agreement is terminated, or a Subscriber's activities are restricted, the applicant or Subscriber may request a written explanation of the determination made by the Operator. Upon receiving the Operator's written explanation, the Applicant/Subscriber will have 30 calendar days to respond or otherwise cure that which is the cause of the denial, termination, limitation or restriction of services.
+
+The Operator may disable a Subscriber from interacting with or generating Conditional Invitations if the Operator determines the Subscriber's firm-up rate is too low or if the Subscriber submits firm orders that generate Conditional Invitations and repeatedly cancels those orders within a time period that does not provide a contra Subscriber a reasonable opportunity to execute against the applicable orders. Performance standards may be adjusted by Operator from time to time and will apply uniformly to all similarly situated Subscribers.</taPart3Item3aExcludngSumryDtls>
+        <rbPart3Item3bIsCondtnsSameForAll>Y</rbPart3Item3bIsCondtnsSameForAll>
+      </part3Item3aSumryOfExcludngCondtns>
+      <taPart3Item4aHrsOfOperation>The ATS' regular trading hours are between 9:30 a.m. and 4:00 p.m. Eastern Time (the "Regular Trading Session").  Beginning on June 17, 2026, the ATS will operate pre-market trading between 7:00 a.m. and 9:30 a.m. Eastern Time (the "Early Trading Session").  Both the Regular Trading Session and Early Trading Session operate Monday through Friday according to the daily schedule set out below, with the exception of the following NYSE market holidays: New Years Day, Martin Luther King Jr. Day, Presidents' Day, Good Friday, Memorial Day, Juneteenth, National Independence Day, Independence Day, Labor Day, Thanksgiving Day, and Christmas Day.
+
+To allow for system testing prior to the launch of the Early Trading Session, through June 16, 2026, the ATS will permit Subscribers to begin connecting to the ATS at 5:30 a.m. Eastern Time, and Subscribers may submit orders to the ATS continuously between 6:45 a.m. and 4:00 p.m. Eastern Time.  For clarity, orders submitted between 6:45 a.m. and 9:30 a.m. through June 16, 2026 will only be eligible for the Regular Trading Session as the Early Trading Session will not begin until June 17, 2026.  As detailed in Part III Item 7, beginning on June 17, 2026, Subscribers may designate orders submitted to the ATS on an order-by-order basis or at the session level as (i) only eligible for the Regular Trading Session or (ii) eligible for both the Early Trading and Regular Trading Sessions. Orders received without a specific instruction as to session eligibility will by default only be eligible for the Regular Trading Session.  For clarity, Subscribers may submit orders designated as only eligible for the Regular Trading Session beginning at 6:45 a.m. Eastern Time.
+
+Early Trading Session:
+
+As noted above, Subscribers may enter orders eligible for matching in the Early Trading Session beginning at 6:45 a.m. The ATS will begin matching and executing orders in the Early Trading Session at 7:00 a.m. (i.e., first call auction for eligible orders will take place at or after 7:00 am). Orders eligible for matching during the Early Trading Session will be matched and executed in accordance with the ATS' standard logic, as detailed in Part III Item 11. Open orders, if any, following the final auction occurring during the Early Trading Session (i.e., as of 9:30 a.m.) will remain eligible for matching during the Regular Trading Session, including before the Regular Session Opening Auction (defined in Part III Item 10) for the applicable symbol. Please see Part III Item 7 for additional detail.
+
+Regular Trading Session:
+
+As noted above, Subscribers may enter orders eligible for matching in the Regular Trading Session beginning at 6:45 a.m. though the Early Trading Session will not begin until June 17, 2026. The ATS will begin matching and executing orders eligible for the Regular Trading Session at 9:30 a.m. (i.e., first call auction for eligible orders will take place at or after 9:30 am). The ATS will stop matching and executing orders at 4:00 p.m. (i.e., final call auction will take place at or before 4:00 p.m.).* Open orders, if any, will be canceled back to the relevant Subscriber.
+
+* The ATS stops matching and executing orders at 1:00pm instead of 4:00pm on: the day prior to observed Christmas Day, the day prior to observed Independence Day, and the day after Thanksgiving Day. FIX sessions are disconnected at 2:00pm instead of 5:00pm on these days.</taPart3Item4aHrsOfOperation>
+      <rbPart3Item4bIsHrsOfOperationsame>Y</rbPart3Item4bIsHrsOfOperationsame>
+      <part3Item5aProtocolDetails rbPart3Item5aIsPermitOrdrTradng="Y">
+        <taPart3Item5aProtocolused>The ATS is designed to accommodate multiple points of presence ("Points of Presence", "PoP", "PoPs") for order entry. Only Subscribers may directly submit orders to the ATS, and may only do so by establishing a connection via FIX (4.2) protocol at a PoP maintained by the Operator. The Operator maintains a PoP at Equinix NY5 and maintains an additional PoP at Equinix NY3.   Such orders are time-stamped then transmitted to the (centralized) matching engine location at Equinix NY5. Further information on the PoP model follows in Part III Items 5, 6 and 11. No other order entry protocols are available.
+
+ORDER AND BIDDER LOGIC SUBMISSION:
+
+Only a Subscriber may submit orders to the ATS. External Users may submit their Bidder Logic to the ATS (as described in Part II Item 5), but such Submitted Bidder Logic submissions are NOT orders themselves.
+
+An External User's Submitted Bidder Logic represents conditionality that may be attached to an order submitted to the ATS (termed a "Target Order") for execution. Subscribers may submit Target Orders that reference Submitted Bidder Logic (the combination of which is the "Expressive Order") to the ATS via FIX protocol. An External User that is not a Subscriber may direct a Subscriber with which it has established a customer relationship to submit an Expressive Order on its behalf that references the External User's Submitted Bidder Logic.</taPart3Item5aProtocolused>
+        <rbPart3Item5bIsProtclsameForAll>Y</rbPart3Item5bIsProtclsameForAll>
+      </part3Item5aProtocolDetails>
+      <rbPart3Item5cIsAnyOtherMeans>N</rbPart3Item5cIsAnyOtherMeans>
+      <part3Item6aProtocolDetails rbPart3Item6aIsCoLocRltdSrvcsOfrd="Y">
+        <taPart3Item6aCoLocRltdSrvcsDtls>The ATS allows Subscribers to connect directly to the ATS via cross-connect or extranet, through one or more of the ATS's Point of Presence systems (see Part III Item 5 for a description of points of presence). The currently maintained PoP is located at Equinix NY5 and any new connection directly to the ATS for a Subscriber via cross-connect will be at the ATS's PoP at Equinix NY3. Connectivity is provided via 10 gigabit single-mode optical fiber (SMF). See Part III Items 11(a) and 11(c) for details. Cross-connects are managed by Equinix. Subscribers must maintain an agreement with Equinix to establish a cross-connect with the ATS.</taPart3Item6aCoLocRltdSrvcsDtls>
+        <rbPart3Item6bIsTNCsameForAll>Y</rbPart3Item6bIsTNCsameForAll>
+      </part3Item6aProtocolDetails>
+      <rbPart3Item6cIsAnyOtherMeans>N</rbPart3Item6cIsAnyOtherMeans>
+      <rbPart3Item6eIsAnyRducdSpOfCom>N</rbPart3Item6eIsAnyRducdSpOfCom>
+      <taPart3Item7AOrdrTypExplain>STANDARD ORDER TYPES: The ATS supports the following "Standard Order" types:
+
+1)  "Limit Order": an order which (if filled) executes at or above (for an order to sell) or at or below (for an order to buy) the User specified price. Limit Orders must include a security (symbol), a side (buy or sell), a limit price, and a maximum quantity (shares);
+
+2)  "Peg Order": a type of Limit Order which (if filled) executes at the NBB, NBO, or midpoint of the NBBO (or better) as indicated by execution instructions. Determination of the NBBO and midpoint price follows in Part III Items 11 and 23. Peg Orders must include a security (symbol), a side (buy or sell), and a maximum quantity (shares). Peg orders can also optionally include a limit price and/or an offset amount. Offset amounts must be expressed in increments greater than or equal to one penny ($.01). Buy orders will not execute at a price greater than the lowest of: the limit price, the NBO, or the peg price plus or minus the offset amount. Sell orders will not execute at a price lower than the greatest of: the limit price, the NBB, or the peg price plus or minus offset amount.
+
+Limit prices greater than or equal to $1.00 must be expressed in increments of at least $.01 (i.e. sub-penny prices are not permitted). Limit prices less than $1.00 must be expressed in increments of at least $.0001. This applies to limit prices on all order types. If a Peg Order (including offset amount) would result in an effective price that is a sub-penny increment for a given auction, then the effective price for that order will be automatically rounded conservatively to the nearest permissible increment (i.e. the effective price will be rounded down for a buy order, and the effective price will be rounded up for a sell order) so that the order may participate in that auction.
+
+EXPRESSIVE ORDERS: The ATS also supports Expressive Orders, an order type that allows Subscribers or other External Users entering Bidder Logic to specify execution instructions spanning one or more individual Limit or Peg Orders. Any Limit or Peg Order or collection of Limit or Peg Orders referencing Bidder Logic receives treatment as an Expressive Order.
+
+Expressive Orders have four components: 1) Bidder Logic: static functions that take data and return execution instructions. External Users approved to use the Expressive Bidding Service may provide their Bidder Logic via the mechanism described in Part III Item 5 under "ORDER AND BIDDER LOGIC SUBMISSION"; 2) Bidder Inputs: data provided by Subscribers (for example, notional maximum values or symbol ratios/weightings) for use in Expressive Orders. Bidder Inputs are provided as a FIX tag and may be specified on any Target Order entered in connection with an Expressive Order; 3) Target Orders: Limit or Peg Orders submitted by Subscribers via FIX that reference Submitted Bidder Logic upon which such Bidder Logic acts; and 4) Market Inputs: market data (e.g. the NBBO) supplied by the Operator for use in Bidder Logic (see Part III Item 23 and Example B below).
+
+BIDDER LOGIC SUBMISSION: Bidder Logic can be expressed using a programming language supported by the Operator, or via a domain-specific language developed by the Operator External Users using the Expressive Bidding Service must submit its Bidder Logic via ATS operations personnel in advance of its use in any Expressive Order. The Operator may require External Users to certify their Bidder Logic in the OneChronos UAT environment before the Bidder Logic is available in production, particularly when the Bidder Logic is first submitted, or if the Bidder Logic is altered in a material way (minor updates to Bidder Inputs such as the tolerance of a fill ratio on a pairs order may not require certification). When UAT certification is not required, updates to existing Bidder Logic will be available on the next calendar day after receipt by the ATS.
+
+The ATS evaluates each Bidder Logic submission to confirm that it meets the required technical requirements (e.g. that it can successfully terminate), then assigned a unique reference ID, which is provided back to the External User, for inclusion in Target Orders. As detailed in Part III Item 5, Bidder Logic is not itself an order. The orders, i.e. Expressive Orders and the associated Target Orders themselves, can only be submitted directly to the ATS by Subscribers. The Subscriber may elect to have Bidder Logic apply to orders on an order-by-order basis or at the session level.
+
+The ATS supports Bidder Logic that enables the External User to submit one or more Target Orders as an Expressive Order on the ATS (see examples below). The ATS supports up to two Target Orders in a given Expressive Order. Target Orders will only execute if the constraints imposed on them by the applicable Bidder Logic are met.
+
+The applicable constraints may be customized and specified using Bidder Logic such that the constraints, when not satisfied, will result in in the applicable Target Order(s) not being executed. These constraints act on the prices or quantities set out in a given Target Order or across the Expressive Order (i.e. across one or more Target Orders). For example, in an Expressive Order comprised of two Target Orders where one relates to symbol A and the other to symbol B, a constraint in the applicable Bidder Logic could be, only execute the Target Order for shares of A if executing the Target Order for shares of B. A similar, more restrictive constraint would be, only execute the Target Order for shares of A if also executing the Target Order for an equal number of shares of B (i.e. if the share quantity in both symbols is equal). In either case, if the applicable constraints cannot be met, the Target Orders will not be filled in either A or B.
+
+Bidder Logic cannot permit an execution that would violate the parameters of a Target Order; likewise, Target Order parameters cannot permit an execution that would violate constraints provided in Bidder Logic. For example: an Expressive Order with Bidder Logic specifying willingness to execute multiple orders at the calculated midpoint or better, will not execute if dependent on inclusion of a Target Order whose limit price is less aggressive than the calculated midpoint and the clearing price of the auction.
+
+The following examples further illustrate this functionality:
+
+EXAMPLE A: Price Improvement Size-Up: A trader may be willing to transact a different quantity at different price levels: sell up to 500 shares at \$20, or sell up to 1,000 shares if the price is more favorable at \$21, but not both (i.e. not 1,500 total). This is an example of an Expressive Order involving a single Target Order.
+
+EXAMPLE B: Imbalance Discretion: A trader may wish to defer the execution decision between bidding at the midpoint price or at a more aggressive price until the time of auction on the ATS, based on external market conditions measured by the ATS via the SIP and made available as Market Inputs. For example, a trader might wish to enter an order on the following basis: if there is at least twice as much top of book quantity available at the national best offer (NBO) than is available at the national best bid (NBB), then buy 100 shares up to the NBO. Otherwise, buy 100 shares only up to the midpoint.
+
+EXAMPLE C: Hedge Trade Involving two Target Orders: A trader may wish to transact in two different symbols in similar amounts: buy A if and only if selling an approximately equal (within \$1,000) notional amount of B.
+
+Note: side (buy/sell) for A and B is expressed in the underlying two Target Orders. Additional logic could be constructed to identify and select buy vs. sell side Target Orders for participation if Target Orders were provided for both sides.
+
+ORDER AVAILABILITY: The ATS uses periodic call auctions that make use of mathematical optimization techniques to match buyers and sellers. These auctions take place multiple times per second throughout the trading day. Each auction considers all eligible orders across all symbols simultaneously and seeks an "optimal" matching between buyers and sellers as described in Part III Item 11. All order types, including Expressive Orders, are available to all Subscribers of the ATS, and have the same eligibility criteria and time cut-offs for participation in a given auction. Expressive Orders are evaluated (i.e. Bidder Logic code is processed) in each auction prior to the start of the auction's optimization process. Given that Expressive Orders could allow for varying degrees of complexity, their evaluation is resource constrained. That is, each Expressive Order is allocated a finite amount of computation resources and is evaluated prior to the commencement of the Match Optimization process described in Part III Item 11 under the Auction Procedure heading. These computational constraints apply to all Expressive Orders equally (i.e. regardless of order complexity or from whom the ATS received the order). An Expressive Order and its associated Target Orders will not be eligible for the auction if the Expressive Order exceeds its evaluation constraints.
+
+ORDER PRIORITY: The ATS periodically holds auctions (multiple times per second) designed to seek an optimal matching between buyers and sellers across all eligible orders. Each order's eligibility for participation is determined by its time-stamped receipt at one of the Operator's distributed PoPs (the Operator currently maintains a PoP in Equinix NY5 and an additional PoP at Equinix NY3). Executions, allocations, and per symbol clearing prices are determined using mathematical optimization techniques, maximizing Aggregate Price Improvement dollars across eligible orders in a given auction. See Part III Item 11 under the Distributed Point of Presence System and Auction Procedure headings for specific details.
+
+EXECUTION INSTRUCTIONS: The ATS supports a set of execution instructions applicable to both of its Standard Order types (Limit Orders and Peg Orders) at the FIX layer. These execution instructions also apply to the Target Orders that are used in connection with Expressive Bidding, and Conditional Indications (as described in Part III Item 9). Subscribers may use these execution instructions on a per order basis, subject to system bounds established and imposed by the ATS itself as described in Part III Item 8. The following execution instructions are available:
+
+1)  Price Limit (minimum price verification on a per-share basis);
+
+2)  Maximum number of shares;
+
+3)  Minimum number of shares;
+
+4)  Time-in-force: Day, Immediate or Cancel, Fill or Kill, Good 'Til Date (with an expire time not to exceed the end of the current trading session);
+
+With respect to a time-in-force of Immediate or Cancel, a Subscriber may opt in, at the FIX session level, to have each Immediate or Cancel order submitted during the applicable session to be handled as if it was submitted with a time-in-force of Good 'Til Date (an "Extended IOC"). To opt in, a Subscriber must specify an expiration time for each Extended IOC order as an offset from the Extended IOC order's PoP arrival timestamp. The expiration time specified for an Extended IOC order may not exceed the end of the current trading session.
+
+An Extended IOC order remains eligible for subsequent auctions until the earlier of (i) its execution, (ii) the specified expiration time, or (iii) cancellation by the Subscriber.
+
+These message-layer constraints cannot be overridden by Expressive Bidding and Bidder Logic.
+
+ORDER CANCELLATION, MODIFICATION, AND REPLACEMENT: the ATS does not support modification of resting orders, but Subscribers can cancel and replace orders with either a single cancel-replace request or two separate cancellation and new order entry requests. Order entry and cancellation requests are processed as described in Part III Item 11(c). As discussed in Part III Item 9, Firm Up Orders sent in response to a Conditional Invitation may not be cancelled and replaced.
+
+ROUTING: The ATS does not route orders to other trading centers.
+
+The ATS does not support any order types designed not to remove liquidity, as the ATS does not distinguish between providing and removing liquidity.
+
+CUSTOM COUNTERPARTY GROUPS: As described in Part III Item 14, the ATS offers functionality for Subscribers to specify custom groups of counterparties against which to execute on an order-by-order basis or at the session level, for both orders and Conditional Indications.
+
+REGULAR TRADING SESSION AND EARLY TRADING SESSION:  As discussed in Part III Item 4, the ATS operates a Regular Trading Session and an Early Trading Session.  Subscribers may designate orders submitted to the ATS on an order-by-order basis or at the session level as (i) only eligible for the Regular Trading Session or (ii) eligible for both the Early Trading and Regular Trading Sessions. Orders received without a specific instruction as to session eligibility will by default only be eligible for the Regular Trading Session.  All order instructions are available in both the Early Trading and Regular Trading Sessions.</taPart3Item7AOrdrTypExplain>
+      <rbPart3Item7bIsTnCSameForAll>Y</rbPart3Item7bIsTnCSameForAll>
+      <part3Item8aSizeReqrmnts rbPart3Item8aIsMinOrMaxSizeReqd="Y">
+        <taPart3Item8aOtiSizeReqrmns>The ATS accepts odd-lot and mixed-lot orders; the minimum order size is 1 share.
+
+The ATS will not accept individual Target Orders or Standard Orders with a quantity greater than 10,000,000 shares or with a notional value greater than $1,000,000,000.
+
+Subscribers may specify their own maximum order size and maximum notional value constraints on each FIX connection. These maxima may be configured within ranges defined by the ATS as follows:
+
+1)  Quantity (shares): 100 through 10,000,000;
+
+2)  Notional Value (dollars): $1 through $1,000,000,000;
+
+These maxima are defined by Subscribers at the FIX port or session level, acting as outer boundaries on the values that the Subscriber may enter on any individual Standard Order or Target Order entered in that session (see Part III Item 7 under the heading EXECUTION INSTRUCTIONS).
+
+The ATS also enforces a global constraint that orders may not be priced more than 10% more aggressively than the measured NBBO for a given security. Subscribers may configure more restrictive constraints at the FIX port or session level.</taPart3Item8aOtiSizeReqrmns>
+        <rbPart3Item8bIsReqProcSameForAll>Y</rbPart3Item8bIsReqProcSameForAll>
+      </part3Item8aSizeReqrmnts>
+      <part3Item8cOddltOrdrReqs rbPart3Item8cIsOddLotsAcptdExecutd="Y">
+        <taPart3Item8cOddLtOrdrReqsnProcdurs>Odd lot orders are treated and handled in the same manner as round and mixed lot orders.</taPart3Item8cOddLtOrdrReqsnProcdurs>
+        <rbPart3Item8dIsReqsProcdurSameForAll>Y</rbPart3Item8dIsReqsProcdurSameForAll>
+      </part3Item8cOddltOrdrReqs>
+      <part3Item8eMixltOrdrDetails rbPart3Item8eIsMixLotOrdrsAcptdExecutd="Y">
+        <taPart3Item8eMixltOrdrReqsProcDtls>Mixed lot orders are treated and handled in the same manner as odd and round lot orders.</taPart3Item8eMixltOrdrReqsProcDtls>
+        <rbPart3Item8fIsRecProcSameForAll>Y</rbPart3Item8fIsRecProcSameForAll>
+      </part3Item8eMixltOrdrDetails>
+      <part3Item9aMsgDtls rbPart3Item9aIsAnyMsgToIndicTI="Y">
+        <taPart3Item9aMsgUsgDtls>The OneChronos ATS accepts "Conditional Indications." A Conditional Indication is an instruction to the OneChronos ATS expressing potential interest to trade subject to counterparty liquidity availability. A Conditional Indication is not in itself an order. If the OneChronos ATS determines that there may be counterparty liquidity to interact with, via a process described below, the ATS cancels the Conditional Indication and sends a Conditional Invitation to the Subscriber, inviting the Subscriber to send a firm order in response ("Firm Up Order"), and providing the Subscriber with a specific Invitation ID (see next paragraph). Firm Up Orders sent in response to a Conditional Invitation are treated identically to firm orders that have equivalent order instructions, as described in Part III Item 7, with the following exceptions: 1) Firm Up Orders may be canceled, but may not be canceled and replaced, 2) Firm Up Orders must be received by the ATS within 1 second of the timestamp on the associated Conditional Invitation, 3) Firm Up Orders are always eligible as contra-side interest to Conditional Indications whereas regular firm orders must opt-in on an order-by order basis or at the session level to generate Conditional Invitations and thereby be available as contra-side interest to Conditional Indications, with the eligibility for opted-in firm orders with any time-in-force, and 4) Firm Up Orders must have the same symbol, side (with Sell, Sell Short, and Sell Short Exempt considered equivalent between the Conditional Indication and Firm Up Order), Custom Counterparty Group (if relevant), and Subscriber identifier as the original Conditional Indication, and if the Conditional Indication allowed for interaction outside the Custom Group, the associated Firm Up Order must also allow for interaction outside the Custom Group, otherwise the order is rejected. Conditional Indications have the same order instruction flexibility and requirements as firm orders at OneChronos (for example, peg instructions and minimum quantity).
+
+In addition, Subscribers must send the Firm Up Order on the same (FIX) order entry session that they sent the Conditional Indication on. Subscribers identify which Conditional Indication is associated with their Firm Up Order via the Invitation ID that was sent to them on the Conditional Invitation that the Subscriber is responding to; specifically, they include the Invitation ID with their Firm Up Order instruction.
+
+With the exceptions noted above, Firm Up Orders behave and participate in the same manner as all other firm orders with equivalent order instructions. They are able to trade amongst other Firm Up orders as well as standard (firm) orders in OneChronos ATS auctions. Firm orders have the option to opt-out of interacting with Firm Up orders, by including a specific instruction on an order-by-order basis or at the session level. The timestamp on the Firm Up Order, not the Conditional Indication, is used to determine eligibility for an auction.
+
+During the "Auction Preprocessing" step of the OneChronos Auction Procedure (described in Part III Item 11b), the OneChronos ATS: 1) looks for counterparty liquidity for Conditional Indications that it has received, and 2) sends Conditional Invitations out where applicable. This process is performed continuously in advance of the Initialization Time (described in Part III Item 11b). Cancellations for orders and Conditional Indications received during the Auction Preprocessing step are processed immediately. For a given Conditional Indication to receive an Invitation ID, there must be one or more contra-side orders or Conditional Indications in the symbol ("conditional contras") such that the following five constraints are satisfied:
+
+INVITE ELIGIBILITY CONSTRAINT: All Firm Up Orders and Conditional Indications are eligible as conditional contras. A Subscriber may opt-in to generate Conditional Invitations on firm orders for any time-in-force. If a Subscriber sends a firm order and does not specify a Custom Group, that order is not eligible as a conditional contra unless the firm order has opted in to generate Conditional Invitations outside of a Custom Counterparty Group.
+
+PRICE CONSTRAINT: The conditional contras must have marketable prices that can match with the given Conditional Indication.
+
+QUANTITY CONSTRAINT: The conditional contras must provide sufficient quantity to satisfy a minimum quantity constraint on the given Conditional Indication, where present.
+
+SELF-TRADE PREVENTION CONSTRAINT: The ATS will not send conditional invites to a Subscriber with self-trade prevention enabled that has otherwise-eligible conditional contras (e.g. Firm Up orders or Conditional Indications) on both sides of a symbol unless the other four constraints hold independently of that Subscriber's conditional contras (i.e., if there are orders or Conditional Indications from other Subscribers that are eligible to match with the given Conditional Indication).
+
+CUSTOM COUNTERPARTY GROUP CONSTRAINT: Custom Counterparty Group logic for orders and Conditional Indications (described in Part III Items 11 and 14) is respected. For example, if the given Conditional Indication has a constraint to only execute with a Custom Counterparty Group, then the set of conditional contras considered for inviting the given Conditional Indication is restricted to orders or Conditional Indications from that specific Custom Counterparty Group that the Firm Up order would be eligible to interact with. However, if a given Conditional Indication does not restrict interacting with orders or Conditional Indications outside the Custom Counterparty Group, the conditional contras will include all orders and Conditional Indications that satisfy the constraints set forth in the INVITE ELIGIBILITY CONSTRAINT section above.</taPart3Item9aMsgUsgDtls>
+      </part3Item9aMsgDtls>
+      <rbPart3Item9bIsIndIntrstSameForAll>Y</rbPart3Item9bIsIndIntrstSameForAll>
+      <taPart3Item10aOpenReOpenDtls>OPENING PROCEDURE EARLY TRADING SESSION:  As discussed in Part III Item 4, the ATS begins accepting orders for the Early Trading Session before the start of the session.  Following commencement of the Early Trading Session, the ATS will initiate auctions in accordance with its standard procedures.
+
+OPENING PROCEDURE-REGULAR TRADING SESSION: As discussed in Part III Item 4, the ATS begins accepting orders for the Regular Trading Session before the start of the session.  Following commencement of the Regular Trading Session, the ATS will initiate auctions, on a security-by-security basis, once there has been an opening or a re-opening print from the primary listing exchange for that security (for each security, the "Regular Session Opening Auction").  Where a Subscriber has designated an order as eligible for both the Early Trading Session and Regular Trading Session, any such order that remains open following the final Early Trading Session auction is eligible for matching during the Regular Trading Session, including before the Regular Session Opening Auction for the applicable security.  Orders designated as only eligible for the Regular Trading session will only be eligible to trade following the Regular Session Opening Auction for the applicable security.
+
+PRIORITY, MATCHING, EXECUTION: orders are prioritized, matched, and executed in an opening or re-opening auction in the same manner as subsequent auctions, as described in Part III Items 11(a) and 11(c).
+
+ORDER TYPES:  all order types specified in Part III Item 8 are accepted for opening and re-opening auctions.</taPart3Item10aOpenReOpenDtls>
+      <rbPart3Item10bIsOpnReopnSameForAll>Y</rbPart3Item10bIsOpnReopnSameForAll>
+      <taPart3Item10cUnexeOrdrTIDtls>EARLY TRADING SESSION:  The ATS begins accepting orders for the Early Trading Session prior the start thereof.  Following commencement of the Early Trading Session, the ATS will initiate auctions in accordance with its standard procedures.
+
+OPENING PROCEDURE - REGULAR TRADING SESSION:
+
+Following commencement of the Regular Trading Session, the ATS will initiate auctions, on a security-by-security basis following the Regular Session Opening Auction for the applicable security.  Where a Subscriber has designated an order as eligible for both the Early Trading Session and Regular Trading Session, any such order that remains open following the final Early Trading Session auction is eligible for matching during the Regular Trading Session, including before the Regular Session Opening Auction for the applicable security.  Orders designated as only eligible for the Regular Trading Session will only be eligible for matching following the Regular Session Opening Auction for the applicable security.
+
+RESUMPTION OF TRADING IN A SECURITY: orders that are not filled after an intraday stoppage and resumption of trading in a security remain open. Specifically, if an order is open for a halted security or entered during a halt in that security, and that order is not cancelled (by the Subscriber), it is eligible for participation in the auction following the resumption of trading in the given security or securities.
+
+END OF TRADING HOURS: orders that remain open after the last auction of the Regular Trading Session are automatically cancelled back to the relevant Subscriber. Such orders are not carried forward into the next trading day.</taPart3Item10cUnexeOrdrTIDtls>
+      <rbPart3Item10dIsAnyDifBtwnExeProcTrdHrs>Y</rbPart3Item10dIsAnyDifBtwnExeProcTrdHrs>
+      <part3Item10eDiffDtls rbPart3Item10eIsAnyDifBtwnPreOpExecFlwngStpg="Y">
+        <taPart3Item10eDiffDtls>As noted above, the Regular Trading Session commences trading, on a security-by-security basis, once there has been Regular Session Opening Auction for that security.  The Early Trading Session immediately commences trading at opening in accordance with the ATS' standard matching and execution logic.  As noted in Part III Item 20, the LULD bands apply during the Regular Trading Session, but not during the Early Trading Session.</taPart3Item10eDiffDtls>
+      </part3Item10eDiffDtls>
+      <taPart3Item11aStrucOfNmsStk>MATCHING SYSTEM: Rather than matching orders continuously as they arrive at the matching engine (as in a continuous limit order book) the ATS periodically holds auctions designed to seek an optimal matching between buyers and sellers across all eligible orders. As part of this mechanism, Subscribers can enter Limit Orders or Peg Orders in single securities or, by the use of Expressive Bidding, specify execution instructions that span one or more Target Orders (note, the ATS supports up to two Target Orders in a given Expressive Order). Expressive Bidding allows External Users to express constraints on orders to fit their business specific execution and or risk management objectives. As explained in Part III Item 7, Expressive Orders are comprised of Target Orders sent via FIX by Subscribers; Bidder Logic (computer code specifying constraints); and Bidder Inputs or Market Inputs, if any, to complement the Bidder Logic as it may apply to a given Target Order. Auctions are multilateral: one or more buyers can match against one or more sellers. Within a given auction the mechanism computes per-security uniform transaction prices that apply to all buyers and sellers of that security. The ATS matching mechanism is a call auction in that order matching happens at a specific point in time. All NMS stocks are eligible to trade in the ATS, with the exception of any NMS stocks that cannot be processed by the ATS's clearing or trade reporting partners. Eligibility is subject to procedures described in Part III Item 10 (Opening Procedure).
+
+DISTRIBUTED POINT OF PRESENCE SYSTEM: The Operator maintains a distributed and time-synchronized PoP system at multiple data centers for order entry and market data intake (see also Item III, Part 5 above for further information on the PoP system). Although matching happens at a centralized location, Subscribers can enter orders at any PoP. PoP arrival timestamps dictate order eligibility. Orders received at a PoP by a Cutoff Timestamp (the "Cutoff" or "Cutoff Time") selected by the ATS for a given auction are eligible for matching in that auction; orders received after the Cutoff are not eligible until the next auction. By using PoP arrival timestamps (rather than matching engine arrival timestamp) as described below, the distributed PoP system endeavors to promote equality of access to Subscribers with systems located in different geographies. The Operator operates the ATS with a PoP in Equinix NY5 at 800 Secaucus Road, Secaucus, New Jersey 07094 and an additional PoP at Equinix NY3 at 600 Jefferson Avenue, Secaucus, NJ 07094.
+
+ORDER ENTRY AND EXECUTION PROCESS: PoPs apply high precision (recorded in nanoseconds) timestamps to orders as they arrive. After receiving a timestamp, orders proceed to the matching engine located at Equinix NY5 in Secaucus, NJ. Orders are eligible for all auctions with a Cutoff Time greater than or equal to their PoP timestamp. The Cutoff Time is also used as a basis for computing NBBO (see Part III Item 23). Aside from the determination of orders' eligibility, the auctions have no notion of time priority (i.e. all orders participating in the same auction are on parity from a time perspective). Price priority and share allocation proceeds per the mechanism described in Part III Item 11(c).
+
+Because orders require time to propagate from their entry PoP to the matching engine, the matching engine pauses for a duration (the "Buffer Window" or "Buffer") long enough to allow the arrival of market data from the SIP as well as orders from all PoPs before commencing an auction. The duration of the Buffer Window is calibrated based on measured historical and real-time network latencies and may change over time but will remain on the order of milliseconds or tens of milliseconds. This Buffer seeks to prevent orders entered at PoPs further (in the sense of network transmission time) from the matching engine from experiencing a time disadvantage relative to PoPs closer to the matching engine. Execution report dissemination uses a similar system as described in Part III Item 21.
+
+REGULAR TRADING SESSION AND EARLY TRADING SESSION:  The ATS operates a Regular Trading Session and, starting on June 17, 2026, an Early Trading Session.  Subscribers may designate orders submitted to the ATS on an order-by-order basis or at the session level as (i) only eligible for the Regular Trading Session or (ii) eligible for both the Early Trading Session and Regular Trading Session. Orders received without a specific instruction as to session eligibility will by default only be eligible for the Regular Trading Session.  All order instructions are available in both the Early Trading and Regular Trading Sessions; however, while the Early Trading Session immediately commences trading at opening in accordance with the ATS' standard matching and execution logic, the Regular Trading Session commences trading, on a security-by-security basis, only once there has been an opening or a re-opening print from the primary listing exchange for that security.</taPart3Item11aStrucOfNmsStk>
+      <rbPart3Item11bIsMeansFeciltsSameForAll>Y</rbPart3Item11bIsMeansFeciltsSameForAll>
+      <taPart3Item11cRulsProcsOfNmsStk>The core mechanism underlying execution on the ATS is the combinatorial call auction process. This auction process uses a matching optimization formula that considers orders in all securities in a given auction simultaneously in an effort to identify mutually beneficial matches between buyers and sellers across the ATS's entire market.
+
+AUCTION PROCEDURE: In summary, auctions consist of the following steps:
+
+0) "Auction Preprocessing": the OneChronos ATS analyzes orders, Conditional Indications, and market data (all received prior to the start of this step) for conditional counterparty liquidity and sends Conditional Invitations, as described in Part III Item 14. Conditional Indications and orders received after the start of this step will not be processed until Auction Preprocessing for the subsequent auction.
+
+1) "Initialization Time": an auction Cutoff Time (as defined in the following paragraph) which is randomly chosen per the procedure described below as the start of an auction;
+
+2) "Auction Network Buffer" (or "Buffer"): this Buffer is intended to allow orders and market data enough time to arrive from distant PoPs as described in Part III Item 11(a). More specifically, the Buffer allows sufficient time for orders and market data to arrive from the furthest (measured in network transmission time) PoP from the matching engine. The length of the Buffer can vary based on expected transmission times, but would typically be on the order of milliseconds or tens of milliseconds;
+
+3) "Match Optimization": ATS systems evaluate Expressive Orders and run the combinatorial matching process, which determines prices and share allocations across all symbols;
+
+4) "Post Auction Network Buffer": upon completion of the Match Optimization process, the matching engine broadcasts auction results to all PoPs. Each PoP waits until a pre-determined time (which always precedes the following auction's Cutoff), to distribute execution reports, thereby providing a synchronized dissemination of such data externally. As with the Auction Network Buffer, the length of the Post Auction Network Buffer can vary based on expected transmission times, but would typically be on the order of milliseconds or tens of milliseconds;
+
+5) "Data Dissemination": at the conclusion of the Post Auction Network Buffer period, PoPs communicate auction results in the form of execution reports to external parties, including Subscribers, the ATS's direct clearing provider, and the Trade Reporting Facility.
+
+The complete lifecycle of these steps spans a timescale of less than 100 milliseconds. Auctions occur at discrete "Cutoff Times", following the completion of the prior auction lifecycle, drawn at random within a range of 20 milliseconds to 200 milliseconds from the previous auction. When the Auction Network Buffer has elapsed, the matching engine establishes auction eligibility per the PoP arrival timestamps as described in Part III Item 11(a). At this point, Market Inputs used by Expressive Orders and the data used for constructing NBBO is final. See Part III Item 23 under MEASUREMENT OF MARKET DATA AND NBBO for a detailed explanation of NBBO construction. All ATS timestamps, including those that appear on execution/trade reports, are recorded in nanoseconds.
+
+AUCTION ELIGIBILITY: the ATS accepts orders and Conditional Indications (Conditional Indications are described in Part III Item 9). Subscribers can send cancellation requests for resting orders and Conditional Indications. Cancellation requests received and timestamped before the Cutoff Time have immediate effect. Cancellation requests received after the Cutoff Time but before the completion of the auction cycle do not have effect until the following cycle (and therefore the order may still participate in the auction notwithstanding the cancellation request). The order entry system removes the referenced order from the matching engine as soon as the next auction window opens if the order is still present (not filled) and rejects it otherwise. With regards to a partial fill, the residual quantity is treated as the maximum fill quantity for the order in subsequent auctions, unless its time-in-force instructions dictate that it be cancelled.
+
+RISK CONTROLS: After determining auction eligibility (per Part 3 Item 11(a)) and selecting market data (per Part 3 Item 23) upon the completion of the Auction Network Buffer, the ATS carries out a series of pre-match market quality and risk checks. These consist of testing for locked and crossed markets (rules for trading during locked and crossed markets follow later in this section), verifying that user configured risk checks pass, and flagging "clearly erroneous orders" as ineligible. For Subscriber controlled risk checks, the following parameters are configurable within the bounds established by the ATS (see Part III Items 7 and 8 for minimum and maximum values):
+
+1) Total notional value maximums per order;
+
+2) Total quantity maximums per order;
+
+3) Symbol restrictions;
+
+4) Short sale restrictions;
+
+5) Self-Trade prevention by MPID and/or FIX session;
+
+As an additional risk control, orders with External User-supplied prices 10% or more aggressive than the NBBO are not eligible for participation, and the ATS marks orders for which this is true as ineligible. Subscribers can configure this behavior to be more restrictive (i.e. less than 10%) but not less restrictive (i.e. greater than 10%). The ATS may also enforce share quantity and notional value constraints according to maximums put in place by the ATS's clearing provider.
+
+MATCH OPTIMIZATION: After identifying a set of eligible, risk checked orders, matching of firm orders can proceed (Conditional Indications are not evaluated during this phase). Matching is conducted via a uniform clearing price combinatorial auction - a form of mathematical optimization that attempts to match one or more buyers with one or more sellers in a fashion that maximizes the chosen objective(s) while enforcing constraints. Because orders can include constraints that span securities (e.g., buy A if and only if an accompanying order for B gets filled) the optimization process must run over all securities simultaneously. The optimization procedure includes a rule that the solution found must respect the constraints placed on orders by participants (e.g. price limits, volume ratios) as well as the market wide constraints placed by the ATS (e.g., ensuring that aggregate buy fill volume equals aggregate sell fill volume on a security-by-security basis).
+
+The ATS optimization process consists of multiple optimization techniques (see "Additional Details on Optimization" below) that attempt to maximize the following two objectives:
+
+1) Aggregate Price Improvement: the optimization attempts to maximize the total price improvement realized across all orders eligible to participate in the auction, incorporating both price per share and number of shares filled. For an individual order to buy or sell a single security, "Price Improvement Dollars" refers to the difference between the limit price on the order and the auction clearing price (i.e. the price at which the order is filled) for the given security, times the quantity filled. For an Expressive Order to buy and/or sell multiple securities simultaneously, price improvement refers to differences in limit prices and clearing prices for each respective security, summed across all securities times the quantities filled. See below under "Priority and Price Formation Example" for information on treatment of NBBO. When considering a crossed buy and sell order for a security, Price Improvement Dollars can be calculated as the difference between limit prices for the two orders. Aggregate Price Improvement represents the sum of Price Improvement Dollars across all eligible orders under consideration for a given optimization solution, and across all securities. As a result, it is possible that an order (i.e. Standard Order or Expressive Order) may receive lower match priority in favor of an Expressive Order containing a less aggressively priced Target Order in the same security. This can occur if and only if prioritizing the less aggressive order results in a solution that is at least as optimal as other feasible solutions that include the more aggressive order (see a specific example lower in this section under heading: Priority And Price Formation Example). In other words, maximizing Aggregate Price Improvement is the dominant and first objective of the optimization.
+
+2) Volume: as a secondary objective, the optimization attempts to maximize the total share volume cleared in aggregate across all securities.
+
+Each optimization technique evaluates these two objectives using a mathematical formula known as an objective function to implement the priority outlined above, producing one or more sets of potential executions ("solutions"). The solution with the highest value (i.e. score) of the objective function is selected. A solution that represents the largest value of the objective function possible is known as globally optimal. Given finite computing resources obtaining globally optimal solutions is not always possible. Furthermore, globally optimal solutions are not always unique in that multiple solutions might yield identical values for the optimization objective. The ATS is designed such that solutions: a) do not violate constraints placed on orders by users or the global constraints placed by the ATS, such as those described below under "LOCKED AND CROSSED MARKETS" and those in Part III Item 20; and b) are optimal amongst the solutions explored during the optimization process. In the event that multiple solutions are equally optimal (i.e., have equal values of the objective function), any candidate in the set of equally optimal solutions may be selected based on which solution maximizes filled shares in Custom Counterparty Groups, which solution maximizes the average fill size of each execution, or a solution may be chosen randomly. The tie-breaking logic is the same for all Subscribers and in all cases does not consider the identity of Subscribers or the identities of their respective clients.
+
+Once a solution to the optimization is identified, clearing prices are determined for each symbol. A solution to the optimization represents a matching of buyers to sellers for which it is possible to find a list of per-security auction clearing prices (the "price vector"). For a given auction, all orders selected for participation via the solution to the optimization receive fills at the same clearing price on a per-security and, where applicable, a per-Custom Group (see below) basis. A given output to the optimization might yield more than one possible set of clearing prices (solution). When more than one possible set of clearing prices is identified, the ATS then uses a secondary procedure that seeks to identify distinct per-security clearing prices at the middle of the feasible range of clearing prices. In the absence of a two-sided quote (measured as described in Part III Item 23) the optimizer uses the last trade price (also measured as described in Part III Item 23) instead of the midpoint. The optimization solution represents a matching of buyers and sellers and is the mechanism for establishing order priority and share allocation.
+
+When orders with identical sets of constraints enter the auction (e.g. Limit Orders for the same security at the same limit price with no further constraints) an individual optimization technique may treat them as components of a single, larger "synthetic" order. When this approach results in a partially filled synthetic order (i.e. when there is insufficient volume on the contra side to fill the entire synthetic order), allocation to constituent orders happens via a randomized round-robin mechanism. Round-robin allocation is equivalent to:
+
+1) Assigning a random sequencing to all constituent orders;
+
+2) Allocating a random number of shares (up to 100 shares at a time) to constituent orders according to the random sequence, honoring all constraints (e.g. maximum quantity);
+
+3) Repeating step 2 above until the supply of available contra shares runs out.
+
+In the case where only Limit Orders and Peg Orders with no further constraints (i.e. beyond price / quantity constraints) are eligible to participate for a given security (in a given auction), the ATS match process behaves the same as described above.
+
+CUSTOM COUNTERPARTY GROUPS: As described in Part III Item 14, the ATS offers functionality for Subscribers to specify Custom Groups of counterparties against which to execute on an order-by-order basis or at the session level. The optimization logic for determining which orders execute, and at what price, is the same for orders within a Custom Group as for orders outside the Custom Group. Subscribers may provide an execution instruction on their Custom Group order to specify whether they would like their order to only execute against other orders in the Custom Group (which is also the default behavior if no instruction is provided), or to allow some or all of their order's fillable quantity to be executed outside of the Custom Group (i.e. in cases where not all of the order's fillable quantity can be executed within the Custom Group). The number of shares executed within Custom Groups is used as a tie-breaker in the optimization process described in Part 3 Item 11 under the MATCH OPTIMIZATION heading.
+
+All orders in a given security that do not execute as part of a Custom Group will execute at the same price in a given auction. Given the different set of counterparty liquidity within Custom Groups, Custom Group orders may receive executions at different (i.e. potentially better or worse) prices than orders not in that particular Custom Group. As also discussed in Part III Item 14, orders may participate in multiple Custom Groups simultaneously. In this scenario, an order may be executed at unique prices per Custom Group in which it executes. As discussed in Part III Item 21, the OneChronos ATS submits one trade report per price per symbol per auction.
+
+ADDITIONAL DETAILS ON OPTIMIZATION: Combinatorial auctions belong to a class of computationally intensive search and optimization tasks known as non-deterministic polynomial-time (NP) hard problems. Given that problem instances (auctions) could allow for varying degrees of complexity and therefore computational requirements, they cannot always be exhaustively evaluated. Accordingly, the ATS uses time and resource bounded optimization techniques whereby computational resources are utilized over a period of time lasting on the order of 10s of milliseconds. The amount of resources to be used for a given auction optimization cycle is fixed a priori and arrived at without knowledge of the orders participating in a given auction cycle. Between auctions, the total amount of resources available for optimization may fluctuate as a function of historical and expected future need for computational resources. While these optimization techniques are intended to improve the efficacy of the matching process, they might not identify a globally optimal solution in every scenario. Specifically, the optimizer makes decisions about the allocation of finite computing resources to exploring subsets of the solution space in ways that might leave portions of the search space unexplored.
+
+To ensure that the optimization techniques utilized by the ATS do not result in a "worse" overall outcome for Subscribers than if the ATS utilized individual security-by-security order books for matching securities, every auction includes a "lower bounding" procedure. The lower bounding procedure is deterministic and works by computing the value of the hierarchical objective strictly considering the components of Limit Orders, and Peg Orders. This produces a similar set of outcomes as a traditional per-security call auction would if it were to use a similar matching objective. As such, it places a deterministic lower bound on the performance of the optimization. A solution found through this deterministic search process is selected if it maximizes the objective function more than other solutions found by the optimization process.
+
+PRIORITY AND PRICE FORMATION EXAMPLE: Illustrative examples of the ATS optimization, and price assignment procedure follow.
+
+Example 1: Basic Bilateral Fill
+
+Order 1: Buy 100 @ $10.01
+
+Order 2: Sell 100 @ $10.00
+
+Orders 1 and 2 will fill 100 shares @ 10.005. Any price in the interval [$10.00, $10.01] is a valid clearing price that will maximize price improvement. In the absence of these other constraints, OneChronos will fill at the midpoint of the clearing price range.
+
+Example 2: Basic Multilateral Fill
+
+Order 1: Buy 100 @ $10.01
+
+Order 2: Buy 100 @ $10.01
+
+Order 3: Sell 200 @ $10.00
+
+Orders 1 and 2 will fill 100 shares at $10.005. Order 3 will fill 200 shares @ 10.005.
+
+Example 3: Expressive Bidding Order 1: Buy 100 ABC @ \$10.01 (Target Order from Subscriber A) Order 2: Sell 100 ABC @ \$10.00 (from Subscriber B)
+
+In this example, Subscriber A has entered a Target Order using the Expressive Bidding functionality, and has specified via Bidder Logic and Market Input that its Target Order should fill only if it is executed at the midpoint of the NBBO. If we assume the midpoint of the NBBO is $10.005, then since the constraint is met, Orders 1 &amp; 2 will match at $10.005 (as in Example #1) and is equivalent in outcome to a midpoint Peg order.
+
+Example 4: Pairs Expressive Bidding
+
+Order 1: Buy 100 ABC @ $10.01 (Order #1 of a Pair Order from Subscriber A)
+
+Order 2: Sell 100 XYZ @ $30.00 (Order #2 of a Pair Order from Subscriber A)
+
+Order 3: Sell 100 ABC @ $10.00 (from Subscriber B)
+
+Order 4: Buy 100 XYZ @ $30.01 (from Subscriber C)
+
+In this example, Subscriber A has entered a pairs order using the Expressive Bidding functionality, and has specified via Bidder Logic that both orders should fill, or neither order should fill. Since there is contra interest on both sides, Orders 1 &amp; 3 will match at $10.005 (as in Example #1), and similarly, Orders 2 and 4 will match at $30.005.
+
+Example 5: Multilateral Limit Order Fill
+
+Order 1: Sell 100 shares, midpeg, @ $20.33
+
+Order 2: Buy 25 shares, limit @ $20.40
+
+Order 3: Buy 25 shares, limit @ $20.36
+
+Order 4: Buy 50 shares, limit @ $20.35
+
+NBBO: $20.32 x $20.35
+
+In this example, all four orders will fully fill at $20.3425. The midpoint of the NBBO is $20.335, which is more passive than the sell order's limit price of $20.33, therefore the effective limit price of the sell order becomes $20.335. All buy orders' limit prices are at or more aggressive than the NBO of $20.35, so their effective prices are each $20.35. The range of clearing prices is then [$20.335, $20.35]. Any fill price in this interval will result in an aggregate price improvement of $2, so the midpoint of the range is chosen.
+
+The aggregate price improvement is calculated as follows:
+
+(($20.3425 - $20.33) * 100) + (($20.35 - $20.3425) * 25) + (($20.35 - $20.3425) * 25) + (($20.35 - $20.3425) * 50) = $2
+
+LOCKED AND CROSSED MARKETS:
+
+The ATS flags securities as locked or crossed at the start of each auction using the NBBO "snapshot" created using the procedure described in Part III Item 23(a) "MEASUREMENT OF MARKET DATA AND NBBO." Because the time scales on which auctions run (10s of milliseconds) are much longer than the duration of a typical locked market (&lt; 100 microseconds) the ATS allows Subscribers to specify via a port level setting if their orders for locked securities should remain eligible for the auction. Subscribers making this election might receive executions during a locked market. The default setting permits executions during locked markets. The ATS does not execute trades in crossed securities as measured by the process described in Part III Item 23. Securities that were not crossed at the time of measurement (i.e. at the Cutoff Time) but become crossed during the auction may still receive fills.
+
+EXECUTION ERRORS:
+
+The Operator maintains Written Supervisory Procedures that include procedures for handling execution errors. Execution errors may be the result, for example, of an ATS system failure, an error on the part of an ATS Subscriber, or an error in data (e.g. NBBO) provided to the ATS and used in executing a trade. In any of these cases, ATS personnel contact all Subscribers party to the transaction or transactions affected by the error and determine the appropriate course of action. If all Subscribers party to the trade wish to keep the trade in place and applicable FINRA, SEC, and SRO rules allow, no action is taken and the trade is processed. If one or more of the Subscribers wishes to break or correct a trade, the Operator may accordingly cancel or issue corrections for erroneous trades. If the Operator determines a transaction to be a bona fide error, the Operator may in its sole discretion accept erroneous legs of a transaction into an error account maintained with the Operator's clearing provider. The Operator promptly trades out of any positions it takes into the error account via execution services offered by its clearing provider. The CCO reviews all activity in the Operator's error account on a monthly basis to ensure that the account maintains a zero balance and that the account is only used for bona fide errors.</taPart3Item11cRulsProcsOfNmsStk>
+      <rbPart3Item11dIsProcsRulsSameForAll>Y</rbPart3Item11dIsProcsRulsSameForAll>
+      <rbPart3Item12aIsAnyFrmlInfrmlArngmnts>N</rbPart3Item12aIsAnyFrmlInfrmlArngmnts>
+      <rbPart3Item13aIsOrdrTiSegmntd>N</rbPart3Item13aIsOrdrTiSegmntd>
+      <rbPart3Item13cIsCustmrOrdr>N</rbPart3Item13cIsCustmrOrdr>
+      <part3Item14aCntrPrtySelectnDtls rbPart3Item14aIsDsgToIntrctOrNot="Y">
+        <taPart3Item14aCntrPrtyDtls>SELF-TRADE PREVENTION: The ATS provides a "self-trade prevention" mechanism which allows Subscribers to prevent their own orders from matching with one another (i.e. to prevent an order entered by the Subscriber from matching with another order entered by the same Subscriber), as described in Part III Item 11.
+
+CUSTOM COUNTERPARTY GROUPS: The ATS offers functionality for Subscribers to specify Custom Groups of counterparties against which to execute on an order-by-order basis or at the session level for both orders and Conditional Indications.
+
+OneChronos will set up a specific Custom Group at the request of one or more Subscribers that wish to form a particular grouping, and assign them a particular Group Id. A Subscriber must provide their consent for their orders and Conditional Indications to participate in a Custom Group. Clients of Subscribers can request that OneChronos set up a Custom Group, in which case the Subscriber routing their client's orders to OneChronos must be willing to pass through the Group Id pertaining to their client's Custom Group, on the orders that should participate in the Custom Group. As noted in Part III Item 11, Subscribers may provide an execution instruction to allow execution of some or all of the order's quantity outside of the Custom Group as described in Part III Item 11. This instruction is available on both orders and Conditional Indications, with the exceptions noted in Part III Item 9 regarding matching instructions on Conditional Invites and associated Firm Up Orders.
+
+OneChronos also supports combining Custom Groups into a composite group, with its own composite Group Id, and the specification of the composite group on an order via a composite Group Id. When this feature is utilized, the order will be eligible to execute against all Custom Groups in the composite group, where the user is an existing member of those Custom Groups. Which Custom Group or Custom Groups the order executes against will be determined by which set of executions best satisfies the objective function as specified in Part III Item 11. As also discussed in Part III Item 11, orders that participate in multiple Custom Groups may receive fills at distinct prices per Custom Group. References to Custom Groups in this document also apply to composite groups.
+
+The Custom Group functionality is generally available to any Subscriber or client of a Subscriber that wishes to use it, however, OneChronos in its sole discretion may deny usage of Custom Group functionality (in whole or in part) to a Subscriber or their client in a manner consistent with the conditions discussed in Part III Item 3.
+
+As detailed in Part III Item 11, executions that occur within a Custom Group may execute at a different price from orders in the same auction that execute outside of the Group. The number of shares executed within Custom Groups is used as a tie-breaker in the optimization process described in Part 3 Item 11 under the MATCH OPTIMIZATION heading.
+
+The above counterparty permissioning functionality is available to Subscribers in both the Early Trading Session and Regular Trading Session.</taPart3Item14aCntrPrtyDtls>
+        <rbPart3Item14bIsSelectnSameForAll>Y</rbPart3Item14bIsSelectnSameForAll>
+      </part3Item14aCntrPrtySelectnDtls>
+      <rbPart3Item15aIsElectrncCommu>N</rbPart3Item15aIsElectrncCommu>
+      <part3Item15bSubSctbDtls rbPart3Item15bIsSubScrbOrdBnd="Y">
+        <taPart3Item15bSubscrBndDtls>The OneChronos ATS does not display firm orders. When handling Conditional Indications, the OneChronos ATS will communicate a Conditional Invitation to the Subscriber that sent the Conditional Indication, making them aware that eligible counterparty liquidity exists, as described in Part III Item 9. The information contained within the Conditional Invitation is the same as the information within the associated Conditional Indication, with the addition of an Invitation ID as described in Part III Item 9. As the Broker-Dealer Operator does not route orders to its ATS, it does not send Conditional Indications or receive Conditional Invitations.</taPart3Item15bSubscrBndDtls>
+        <rbPart3Item15cIsDsplyProcSameForAll>Y</rbPart3Item15cIsDsplyProcSameForAll>
+      </part3Item15bSubSctbDtls>
+      <rbPart3Item16aIsInstRoutd>N</rbPart3Item16aIsInstRoutd>
+      <rbPart3Item17aIsDiffBtwnOrdTITrtmnt>N</rbPart3Item17aIsDiffBtwnOrdTITrtmnt>
+      <rbPart3Item17bIsTrtmntSameForAll>Y</rbPart3Item17bIsTrtmntSameForAll>
+      <part3Item18aTrdingHrDtls rbPart3Item18aIsOutsdeTrdingHrs="Y">
+        <part3Item18bOutsdHrsDiffDtls rbPart3Item18bIsAnyDiffInTrdingOutSdHrs="Y">
+          <taPart3Item18bDiffDtls>As noted in Part III Item 10, while the Early Trading Session immediately commences trading at opening in accordance with the ATS' standard matching and execution logic, the Regular Trading Session commences trading, on a security-by-security basis, only once there has been an opening or a re-opening print from the primary listing exchange for that security.
+
+As noted in Part III Item 20, the LULD bands apply during the Regular Trading Session, but not during the Early Trading Session.
+
+The Early Trading Session and Regular Trading Session otherwise operate in the same manner and include the same available order types and instructions.</taPart3Item18bDiffDtls>
+        </part3Item18bOutsdHrsDiffDtls>
+        <rbPart3Item18cIsTrtedDiffOutsdHrs>Y</rbPart3Item18cIsTrtedDiffOutsdHrs>
+      </part3Item18aTrdingHrDtls>
+      <taPart3Item19aSrvcUsgFees>The commissions charged for using the ATS are calculated on a per-share basis. As discussed in this section, the commission rate is dependent on the type of transaction, as well as the origin of the order, as discussed below, with discounts available based on a Subscriber's total traded quantity over the course of a calendar month. In the event that none of the pricing described in this section applies to an execution, the execution will be charged a commission of $0.0010 per executed share. The commission structure is the same for all Subscribers, outside of the Early Trading Session, an order for a security priced below a dollar per share (a "Sub-Dollar Order"), Custom Groups, Expressive Orders, and Firm Up Orders.
+
+EARLY TRADING SESSION, SUB-DOLLAR ORDERS, CUSTOM GROUPS, EXPRESSIVE ORDERS AND FIRM UP ORDERS: The ATS does not have a standard commission schedule associated with the Early Trading Session, Sub-Dollar Orders, Custom Groups, Expressive Orders or Firm Up Orders. Execution of Firm Up Orders, Expressive Orders, Sub-Dollar Orders or orders executed during the Early Trading Session, are charged commissions in a range from $0 per share to $0.0015 per share. Orders executed in a Custom Group are charged commissions in a range from $0 per share to $0.0030 per share. The commissions associated with the Early Trading Session, Custom Group, Expressive Orders, Sub-Dollar Orders and Firm Up Order executions are at a negotiated rate, and the negotiated rate for an execution during the Early Trading Session, a Custom Group execution, an Expressive Order execution, a Sub-Dollar Execution and a Firm Up Order execution may be subject to different negotiated commission rates with a single Subscriber. Factors considered when negotiating commissions change from time to time and may include but are not limited to historical trading volumes and patterns, anticipated trading volumes and patterns, and the characteristics of the orders (for example, how frequently marketable the orders are, size of orders, breadth of symbols, resting times, origin of the order flow (retail or institutional), etc). The commissions charged for Early Trading Session, Sub-Dollar Order, Custom Group, Expressive Order or Firm Up Order executions may be re-evaluated from time to time.
+
+RETAIL: Additionally, there is no commission charged for executions on orders that the Subscriber has attested, on an order-by-order basis, as originating from retail flow. This is irrespective of whether or not the executions occur inside of a Custom Group.
+
+INTRODUCTORY DISCOUNTS: As discussed in Item 19c, the Operator may offer an introductory discount period, pertaining to new Subscribers, new functionality, existing Subscribers' initial use of existing functionality, or material changes in existing Subscribers' use of existing functionality (see Item 19c) for which the Operator determines the discount amount and length of the discount period. The discounted commissions will generally be between $0.0000 and $0.0015 per share. The length of the discount period will generally be 3 to 6 months, subject to revision at the Operator's discretion (e.g. based upon onboarding progress).
+
+FEE PASSTHROUGH: In addition to the commissions described above, the Operator passes through certain regulatory fees it is assessed (e.g. Section 31 fees, and Trading Activity Fees) to Subscribers. The OneChronos ATS is the CAT Executing Broker for both the buyer and the seller on all trades it executes and the Operator is charged CAT fees accordingly, which it then passes through to Subscribers.
+
+REBATES: As discussed in Part III Item 19(c) below, certain Subscribers in Custom Groups may pay a higher negotiated commission rate to the Operator, who will rebate part of that higher rate to the other Subscriber or Subscribers in that Custom Group. As noted above, the Operator charges a commission of $0 per share to $0.0030 for executions in Custom Groups.
+
+OTHER: The ATS does not charge Subscribers for network connectivity, access, or execution data.</taPart3Item19aSrvcUsgFees>
+      <taPart3Item19bBundldSrvcUsgFees>No such fees are charged; no additional services are bundled with the use of the ATS.</taPart3Item19bBundldSrvcUsgFees>
+      <taPart3Item19cRbtDiscOfFees>INTRODUCTORY DISCOUNTS:
+
+The Operator may offer five types of introductory discounts, at its discretion, as described in Item 19a. Discounts may be available:
+
+1) To new Subscribers to the ATS, in the form of discounted commissions on their executions.
+
+2) When the Broker-Dealer Operator introduces new functionality (e.g., order types, order instructions) in the form of discounted commissions on executions resulting from the new functionality.
+
+3) When an existing Subscriber is using existing functionality (e.g., order types, order instructions) for the first time.
+
+4) When an existing Subscriber changes their usage of existing functionality in a way that materially increases anticipated activity on the platform (for example, increasing the number of symbols traded, average order size, price aggressiveness, duration of orders).
+
+5) When an existing Subscriber sends an entirely new category of flow to the ATS (e.g, if a Subscriber enables a new trading strategy, if a Subscriber routes flow for a new client to the ATS, or if a Subscriber routes qualitatively distinct (e.g. retail) flow to the ATS).
+
+In all of the above cases, the amount of the discount, and the amount of time for which the discount applies may be negotiated with an individual Subscriber, but will be in line with the ranges discussed in Item 19a. Factors involved in determining the amount of discount and the time for which the discount applies include but are not limited to the Subscribers anticipated volume, the characteristics of their orders (for example the number of symbols traded, average order size, amount of price improvement, duration of orders), and their usage of new ATS functionality.
+
+VOLUME-BASED TIERING:
+
+The Operator offers volume-based tiering where Subscribers can pay lower commissions, as follows:
+
+If a Subscriber's total traded volume for a calendar month across both the Early Trading Session and Regular Trading Session is greater than or equal to 5% of OneChronos total matched volume for the calendar month, the Subscriber will incur a commission of $0.0007 per share.
+
+If a Subscriber's total traded volume for a calendar month across both the Early Trading Session and Regular Trading Session is greater than or equal to 7% of OneChronos total matched volume for the calendar month, the Subscriber will incur a commission of $0.0005 per share.
+
+The Base Rate commission (i.e., the rate charged in the event no discounts/other pricing apply) of $0.0010 is the same for all Subscribers. Any discounts will be established and disclosed to the Subscriber at the beginning of a calendar month and will apply prospectively only to shares traded on the ATS during that month. Discounts will not be applied retroactively. In the event the execution is eligible for a lower commission by way of other pricing described in this section (for example, if the retail pricing applies, or the execution is in a Custom Group with a lower negotiated commission), the lower commission will apply. Subscribers' traded volume and OneChronos matched volume are computed as the sum of total shares traded/matched across all securities.
+
+REBATES: As discussed in Part III Item 19(c) below, certain Subscribers in Custom Groups may pay a higher negotiated commission rate to the Operator, who will rebate part of that higher rate to the other Subscriber or Subscribers in that Custom Group. As noted above, the Operator charges a commission of $0 per share to $0.0030 for executions in Custom Groups.</taPart3Item19cRbtDiscOfFees>
+      <taPart3Item20aSuspndProcdur>LIMIT-UP LIMIT-DOWN ("LULD"): the ATS continuously monitors LULD bands via the Securities Information Processor (SIP) consolidated feeds and does not execute trades outside of those price bands.  Note that that LULD does not apply during the Early Trading Session.
+
+As with the establishment of NBBO, the ATS processes trading halt information relative to the start of each auction - the Initialization Time per Part III Item 11(c). When news of a trading halt for a given security arrives via SIP, the ATS removes that symbol from consideration with immediate effect if an auction has not yet started, and in the next auction cycle if an auction is in progress. Expressive Orders including Target Orders for a halted security can still receive executions on Target Orders for non-halted symbols to the extent that the Bidder Logic allows. In the event that a circuit-breaker has been triggered for a given security, the ATS does not execute "short" orders in that security at the NBB unless they are marked "short exempt." Short orders that cannot execute while the circuit breaker is active are timestamped as usual but are marked ineligible for auction participation until they become executable in a subsequent auction, unless their time-in-force instructions require cancellation.
+
+The ATS may impose additional trading halts in one or more securities if the ATS approaches trading volume thresholds defined in Regulation Systems Compliance and Integrity ("Reg SCI"). The Operator performs monthly reviews of trading volume in an effort to anticipate a requirement for compliance with Reg SCI.
+
+ERROR CONDITIONS: The ATS may also suspend trading in one or more securities temporarily if it detects certain Error Conditions that materially impact its ability to match trades in the affected securities. These Error Conditions are defined in the Operator's Business Continuity Plan and include: loss or material degradation of communication between the matching engine and one or more PoPs; matching engine system errors; loss or material degradation of communication between market data sources and the matching engine; loss or material degradation of communication with the Trade Reporting Facility. When an Error Condition is detected, the ATS may suspend trading as follows:
+
+1) If an Error Condition is detected between auctions, i.e. prior to a chosen Cutoff Time but after the Data Dissemination of the previous auction, the auction may be delayed until the Error Condition is resolved;
+
+2) If an Error Condition is detected during an auction, i.e. after a Cutoff Time has elapsed but before the subsequent Data Dissemination is complete, no executions are reported for that auction and the subsequent auction may be delayed until the Error Condition is resolved.</taPart3Item20aSuspndProcdur>
+      <rbPart3Item20bIsSuspndProcdurSameFrAll>Y</rbPart3Item20bIsSuspndProcdurSameFrAll>
+      <taPart3Item21aMtrlArngmntDtls>The ATS reports transactions as follows:
+
+1) Execution reports to Subscribers;
+
+2) Trade Reporting Facility (TRF) reports (sent to the FINRA/NYSE TRF);
+
+3) Clearing reports to the ATS's clearing provider;
+
+4) Rule 605, Rule 606, CAT, and ATS-R Reports (sent to FINRA);
+
+5) Drop Copy reports upon Subscriber request;
+
+After each auction, execution reports are transmitted to each Subscriber reflecting their individual participation (fills, partial fills, "leaves") in the auction. These reports contain, for each order that participated in the auction: symbol, clearing price, volume filled, and side (buy or sell). In the case of a partial fill the execution report contains a "Leaves Quantity" field representing the remaining shares available to be filled for the order.
+
+Modifications made to orders are acknowledged within execution reports. This includes cancellations and automatic adjustments made by the ATS (such as automatically reducing max volume constraints in response a partial fill, as described above).
+
+To foster equal access across all geographies the ATS disseminates execution reports from PoPs at the same time (as detailed in Auction Procedure within Part III Item 11).
+
+Because of the time required for the Buffer Period and match optimization process, some amount of time will elapse between the measurement of NBBO and the dissemination of data to Subscribers and the TRF (i.e. the full completion of the Auction Procedure). This amount of time can vary based on technical factors and limitations but typically falls within 10s of milliseconds.
+
+In compliance with Reg NMS Rule 601 and the FINRA Rule 6000 series, the ATS also promptly transmits aggregate price and volume information for each security matched to the FINRA/NYSE TRF after the Post-Auction Network Buffering period described in Part III Item 11(c) has elapsed at the conclusion of each auction. TRF reports consist of one print per symbol per price per auction.
+
+Promptly after execution reports and TRF reports are transmitted the ATS transmits fully disclosed clearing reports to its direct clearing provider.
+
+In accordance with Reg NMS Rules 605 and 606 the ATS provides periodic reports to FINRA regarding the composition and timing of orders entered and executed on the ATS. CAT reports are filed on a daily basis, reporting all trades for which the ATS is the designated reporting party. This includes orders received from Subscribers and volume matched internally to the ATS.</taPart3Item21aMtrlArngmntDtls>
+      <rbPart3Item21bIsMtrlArngmtSameFrAll>Y</rbPart3Item21bIsMtrlArngmtSameFrAll>
+      <taPart3Item22aMtrlArngmntDtls>Each Subscriber must either self-clear its transactions executed on the ATS or have a clearing arrangement with a clearing firm, and transactions are settled by Subscribers themselves or their respective clearing firms. The ATS Operator has engaged Instinet, LLC ("Instinet"), as a broker-dealer clearing agent to facilitate the clearing and settlement process. Under the agreement, Instinet submits transactions executed on the ATS to the National Securities Clearing Corporation ("NSCC") for clearance and settlement, and performs certain related functions to facilitate the clearing and settlement process. The ATS Operator requires each Subscriber to acknowledge and consent to this arrangement as part of the Subscriber onboarding process, and to provide their own clearing information for the purpose of clearing and settlement. The ATS Operator acts as a dual-agent and is not a counterparty to the transactions that are matched on the ATS, but for operational purposes Instinet submits an executed transaction to NSCC as a number of matched transactions using the Operator's MPID to designate the Operator as the contra-side buying broker to the seller(s) and the contra-side selling broker to the buyer(s), consistent with its role as dual agent.</taPart3Item22aMtrlArngmntDtls>
+      <rbPart3Item22bIsMtrlArngmtSameFrAll>Y</rbPart3Item22bIsMtrlArngmtSameFrAll>
+      <taPart3Item23aMrktDatSrc>The ATS makes use of external market data (including NBBO) from the Securities Information Processor ("SIP") to: 1) Determine the prices at which peg orders are eligible for participation; 2) Evaluate Expressive Orders that rely on external market data received by the ATS; 3) Determine the prices at which each security in the auction clear; 4) Maintain compliance with the Regulation NMS Order Protection Rule.
+
+NBBO FOR PRICE CONSTRAINTS: The ATS treats Peg Orders as Limit Orders with dynamically computed limit prices. Thus, unless specified otherwise by an Expressive Bidding constraint, Peg Orders are eligible for price improvement when the computed clearing price for the security is more aggressive than the order's computed peg price (including offset, if present).
+
+Expressive Bids can also specify computations based on Market Inputs, which consist of the measured NBBO and other market data. This functionality is designed to provide all Subscribers' orders with a single, consistent view of market conditions. The following are examples of how Subscribers can elect to use Market Inputs in Bidder Logic: 1) Specify limit prices based on NBBO, NBO, NBBO midpoint (e.g. set a price limit to a specified amount higher or lower than NBBO, NBO or NBBO midpoint); 2) Compute a momentary volume-weighted average price for a security, based on data from one or more away venues; 3) Specify a limit quantity based on the consolidated top of book quantity; and 4) Specify a bid price for a security as a function of the price of one or more other securities.
+
+NBBO FOR ORDER PROTECTION RULE COMPLIANCE: The ATS match procedure takes the national best bid and national best offer for a given security as lower and upper bounds (constraints) on the allowable clearing price for that security, including during the Early Trading Session. If no clearing price within the measured NBBO results in a match for a security, the auction will not execute a trade in that security. The ATS runs multiple auctions per second, and as such the ATS reports all transactions within less than one second of measuring NBBO.
+
+MEASUREMENT OF MARKET DATA AND NBBO: The ATS constructs a view of NBBO from data provided by the SIP. Each SIP message contains a timestamp provided by the reporting exchange representing when that exchange processed the given message (the "Exchange Timestamp"). The ATS market data and matching systems use these Exchange Timestamps in an effort to construct a consistent time-aligned view of the market. The NBBO prices used in the auction are the ones most recent to but not after the Initialization Time. Below is an illustrative example of this procedure: 1) Auction Initialization results in a Cutoff Time; 2) Auction Network Buffering allows data to propagate from exchanges, to the SIP, and ultimately to the ATS; 3) After buffering the ATS computes NBBO for each tradable symbol by processing all messages from the SIP with Exchange Timestamps less than or equal to the Cutoff Time for the auction. The Exchange Timestamp for a given record is the same on the record for an event received through the SIP and the record for the same event received through lower latency proprietary direct feeds. The ATS does not subscribe to direct feeds from the national exchanges. However, the Auction Network Buffering Period is typically substantially more than the difference in latency between the SIP data feeds and the exchange direct feeds.
+The Operator uses a combination of time reference sources and statistical processing techniques to survey and correct inter-exchange clock synchronization issues and delays or cancels auctions during periods when the ATS market data systems flag national exchange timestamps as potentially anomalous (See ERROR CONDITIONS in Part III Item 20).</taPart3Item23aMrktDatSrc>
+      <rbPart3Item23bIsSrcSameFrAll>Y</rbPart3Item23bIsSrcSameFrAll>
+      <rbPart3Item24aIsSubScrbrOrdr>N</rbPart3Item24aIsSubScrbrOrdr>
+      <rbPart3Item25aIsAvgDlyTradinVolExcd>N</rbPart3Item25aIsAvgDlyTradinVolExcd>
+      <rbPart3Item26IsOrdrFloExecStatsPublshd>N</rbPart3Item26IsOrdrFloExecStatsPublshd>
+    </partThree>
+  </formData>
+</edgarSubmission>

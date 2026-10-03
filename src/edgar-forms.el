@@ -884,7 +884,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -894,7 +894,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -904,7 +904,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 22
       :notes nil)
@@ -914,7 +914,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -924,7 +924,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 33
       :notes nil)
@@ -1034,7 +1034,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 9
       :notes nil)
@@ -1044,7 +1044,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1444,7 +1444,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 55
       :notes nil)
@@ -1454,7 +1454,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 25
       :notes nil)
@@ -1474,7 +1474,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -1685,20 +1685,20 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'pdf
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 18
-      :notes nil)
+      :notes "PDF primary; metadata available, text extraction unsupported")
      table)
     (puthash
      "N-8F ORDR"
      (list
       :family "G5 Fund periodic reports"
       :backend 'pdf
-      :level 'L1
+      :level 'L0
       :sections-or-fields nil
       :volume 10
-      :notes nil)
+      :notes "PDF primary; metadata available, text extraction unsupported")
      table)
     (puthash
      "N-CEN"
@@ -2217,7 +2217,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3
       :notes nil)
@@ -2227,7 +2227,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 33
       :notes nil)
@@ -2237,7 +2237,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -2437,7 +2437,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 44
       :notes nil)
@@ -2457,7 +2457,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
