@@ -184,10 +184,12 @@ structure.
   ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/index.json),
   [complete submission](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.txt)).
 
-The paper notice structures and exact `.paper` hashes are pinned in
-`test/expect/g12-paper-structures.eld`. These two forms remain L0 because the
-public files contain no report body; the cited document-control numbers do not
-lead to publicly available report files in the accession directories.
+The paper notice structures, exact `.paper` hashes, and whole-text snapshots
+are pinned in `test/expect/`. Both forms are L1 for the publicly available SEC
+notice: `edgar-text` reads the complete submission and generic structure tests
+verify its notice text and metadata. The original report bodies remain
+unavailable; the cited document-control numbers do not lead to public report
+files in the accession directories.
 
 The four publicly available primary PDFs are now L1:
 
