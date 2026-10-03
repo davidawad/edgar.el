@@ -75,7 +75,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `25-NSE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "25-NSE")` |
 | `253G1` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G1")` |
 | `253G2` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G2")` |
-| `3` | G1 Ownership | xml | L0 | `(edgar-form-info "3")` |
+| `3` | G1 Ownership | xml | L2 | `(edgar-xml filing)` |
 | `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-xml filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17F1")` |

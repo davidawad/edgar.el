@@ -34,6 +34,14 @@
                        edgar-ownership-test--directory))
     (read (current-buffer))))
 
+(defun edgar-ownership-test--expect (slug)
+  "Read XML field snapshot for ownership fixture SLUG."
+  (with-temp-buffer
+    (insert-file-contents
+     (expand-file-name (concat "expect/" slug ".eld")
+                       edgar-ownership-test--directory))
+    (read (current-buffer))))
+
 (defun edgar-ownership-test--transaction (form code)
   "Return a small offline ownership XML tree for FORM and transaction CODE."
   (edgar-ownership-test--xml
@@ -87,6 +95,31 @@
          :10b5-1 (edgar-ownership-10b5-1-p filing)
          :signature (car (edgar-ownership-signatures filing)))
         (edgar-ownership-test--golden "4-aapl"))))))
+
+(ert-deftest edgar-ownership-oracle-form3-golden-values ()
+  "Read a genuine Oracle Form 3 filing and match its field golden."
+  (let ((filing '(:form "3"))
+        (tree (edgar-ownership-test--fixture "3-orcl"))
+        (expect (edgar-ownership-test--expect "3-orcl"))
+        (golden (edgar-ownership-test--golden "3-orcl")))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
+      (let* ((owner (car (edgar-ownership-reporting-owners filing)))
+             (signature (car (edgar-ownership-signatures filing)))
+             (snapshot
+              (list :form "3"
+                    :schema (edgar-ownership--text
+                             (edgar-ownership--child tree 'schemaVersion))
+                    :issuer (plist-get (edgar-ownership-issuer filing) :name)
+                    :owner (plist-get owner :name)
+                    :is-officer (plist-get owner :is-officer)
+                    :signature-date (plist-get signature :date))))
+        (should (equal snapshot expect))
+        (should
+         (equal
+          (list :issuer (edgar-ownership-issuer filing)
+                :owner owner :transactions nil :holdings nil
+                :footnotes nil :signatures (list signature))
+          golden))))))
 
 (ert-deftest edgar-ownership-transaction-golden-codes ()
   "Keep representative buy, sale, and option-exercise transaction values."

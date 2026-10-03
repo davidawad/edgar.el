@@ -326,7 +326,7 @@
      (list
       :family "G1 Ownership"
       :backend 'xml
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 11502
       :notes nil)

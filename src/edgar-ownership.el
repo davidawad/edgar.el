@@ -54,7 +54,9 @@
 (defun edgar-ownership--bool (node)
   "Return NODE's boolean value as t, nil, or nil when absent."
   (let ((value (edgar-ownership--text node)))
-    (and value (equal (downcase value) "true"))))
+    (and value
+         (member (downcase value) '("true" "1" "y"))
+         t)))
 
 (defun edgar-ownership--attribute (node name)
   "Return attribute NAME from XML NODE."

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ownershipDocument>
+  <schemaVersion>X0607</schemaVersion>
+  <documentType>3</documentType>
+  <periodOfReport>2026-04-06</periodOfReport>
+  <noSecuritiesOwned>1</noSecuritiesOwned>
+  <issuer>
+    <issuerCik>0001341439</issuerCik>
+    <issuerName>ORACLE CORP</issuerName>
+    <issuerTradingSymbol>ORCL</issuerTradingSymbol>
+    <issuerForeignTradingSymbol></issuerForeignTradingSymbol>
+  </issuer>
+  <reportingOwner>
+    <reportingOwnerId>
+      <rptOwnerCik>0002129261</rptOwnerCik>
+      <rptOwnerName>Maxson Hilary B</rptOwnerName>
+    </reportingOwnerId>
+    <reportingOwnerAddress>
+      <rptOwnerNonUSAddressFlag>false</rptOwnerNonUSAddressFlag>
+      <rptOwnerStreet1>C/O DELPHI ASSET MGMT CORPORATION</rptOwnerStreet1>
+      <rptOwnerStreet2>200 S. VIRGINIA ST., SUITE 625</rptOwnerStreet2>
+      <rptOwnerCity>RENO</rptOwnerCity>
+      <rptOwnerState>NV</rptOwnerState>
+      <rptOwnerZipCode>89501</rptOwnerZipCode>
+      <rptOwnerStateDescription></rptOwnerStateDescription>
+    </reportingOwnerAddress>
+    <reportingOwnerRelationship>
+      <isOfficer>1</isOfficer>
+      <officerTitle>Chief Financial Officer</officerTitle>
+    </reportingOwnerRelationship>
+  </reportingOwner>
+  <footnotes></footnotes>
+  <ownerSignature>
+    <signatureName>/s/ Aimee Weast by Aimee Weast, Attorney in Fact for Hilary B. Maxson (POA filed 4/14/2026)</signatureName>
+    <signatureDate>2026-04-14</signatureDate>
+  </ownerSignature>
+</ownershipDocument>
