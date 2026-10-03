@@ -8,6 +8,7 @@
 
 (require 'ert)
 (require 'cl-lib)
+(require 'edgar-index)
 
 (defconst edgar-form-coverage-test--directory
   (file-name-directory (or load-file-name buffer-file-name)))
@@ -46,6 +47,34 @@
 (ert-deftest edgar-form-coverage-offline-baseline-passes ()
   "The committed snapshot and registry satisfy the offline gate."
   (should-not (edgar-coverage-problems)))
+
+(ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
+  "Do not promote low-volume L0 forms absent from the recorded index samples."
+  (let ((low-volume-l0 (make-hash-table :test #'equal))
+        (q2
+         (edgar-index--parse
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name "fixtures/form-index-2026-q2.idx"
+                               edgar-form-coverage-test--directory))
+            (buffer-string))))
+        (q3
+         (edgar-index--parse
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name "fixtures/form-index-2026-09-30.idx"
+                               edgar-form-coverage-test--directory))
+            (buffer-string)))))
+    (maphash
+     (lambda (form info)
+       (when (and (eq (plist-get info :level) 'L0)
+                  (<= (plist-get info :volume) 5))
+         (puthash form t low-volume-l0)))
+     edgar-forms--registry)
+    (should-not
+     (seq-some (lambda (filing)
+                 (gethash (plist-get filing :form) low-volume-l0))
+               (append q2 q3)))))
 
 (ert-deftest edgar-form-coverage-registry-row-removal-names-form ()
   "Removing a registry row fails with that form name."
