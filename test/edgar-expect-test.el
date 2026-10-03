@@ -115,6 +115,7 @@
     ("40-17F1" "northern lights fund trust" nil)
     ("40-17F2" "fundrise innovation fund" nil)
     ("40-33" "180 degree capital" nil)
+    ("40-24B2" "economic impact of hit-financed projects" nil)
     ("40-8F-2" "chesapeake investors" nil)
     ("DEL AM" "j.p. morgan exchange-traded fund trust" nil)
     ("40-6B" "robinhood" nil)

@@ -144,6 +144,7 @@
   "New investment-company registration forms expose their HTML body."
   (dolist (entry
            '(("486apos-flat-rock" . "Flat Rock")
+             ("40-24b2-hit-investment" . "Economic Impact of HIT-Financed Projects")
              ("486bpos-coller" . "Coller")
              ("487-adt2360" . "Advisors Disciplined Trust 2360")
              ("40-6b-robinhood" . "Robinhood")
