@@ -1,0 +1,48 @@
+<DOCUMENT>
+<TYPE>DOSLTR
+<SEQUENCE>1
+<FILENAME>filename1.txt
+<TEXT>
+Crowdcasting Inc.
+2219 Main St, #389
+Santa Monica, CA 90405
+
+April 13, 2026
+
+U.S. Securities and Exchange Commission
+Division of Corporation Finance
+Office of Trade & Services
+
+Re: Crowdcasting Inc.
+Draft Offering Statement on Form 1-A
+Confidentially Submitted April 3, 2026
+CIK No. 0002125668
+
+Ladies and Gentlemen:
+
+Pursuant to Rule 252(d) of Regulation A under the Securities Act of
+1933, as amended, Crowdcasting Inc. (the "Company") hereby respectfully
+requests that the Securities and Exchange Commission (the "Commission")
+consent to the withdrawal of its Draft Offering Statement on Form 1-A,
+which was confidentially submitted to the Commission on April 3, 2026.
+
+The Company is requesting withdrawal of the Draft Offering Statement
+in order to proceed with a public filing of its offering statement
+pursuant to Regulation A.
+
+The Company acknowledges that, consistent with Rule 252(d), the Draft
+Offering Statement and all amendments thereto, as well as all
+correspondence related thereto, may be made publicly available on
+EDGAR.
+
+If you have any questions regarding this request, please contact the
+undersigned.
+
+Sincerely,
+
+/s/ John Stewart
+John Stewart
+Chief Executive Officer
+Crowdcasting Inc.
+</TEXT>
+</DOCUMENT>

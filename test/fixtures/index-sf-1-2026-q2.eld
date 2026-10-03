@@ -1,0 +1,1 @@
+(:accn "0001193125-26-245837" :form "SF-1" :company "SCE Recovery Funding LLC" :filed "2026-05-29" :report "" :doc "d143317dsf1.htm" :cik 1826571 :url "https://www.sec.gov/Archives/edgar/data/1826571/000119312526245837/d143317dsf1.htm" :size 1296943 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

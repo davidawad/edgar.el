@@ -1,0 +1,1 @@
+(:accn "0000720500-26-000006" :form "S-3MEF" :company "AMTECH SYSTEMS INC" :filed "2026-06-01" :report "" :doc "asys-20260601.htm" :cik 720500 :url "https://www.sec.gov/Archives/edgar/data/720500/000072050026000006/asys-20260601.htm" :size 93216 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

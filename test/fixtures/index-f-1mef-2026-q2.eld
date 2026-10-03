@@ -1,0 +1,1 @@
+(:accn "0001829126-26-005136" :form "F-1MEF" :company "Micware Co., Ltd." :filed "2026-05-13" :report "" :doc "micware_f1mef.htm" :cik 2083526 :url "https://www.sec.gov/Archives/edgar/data/2083526/000182912626005136/micware_f1mef.htm" :size 44079 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

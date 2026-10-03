@@ -1,0 +1,1 @@
+(:accn "0001193125-26-229144" :form "424H" :company "CHASE ISSUANCE TRUST" :filed "2026-05-18" :report "" :doc "d53666d424h.htm" :cik 1174821 :url "https://www.sec.gov/Archives/edgar/data/1174821/000119312526229144/d53666d424h.htm" :size 1583031 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

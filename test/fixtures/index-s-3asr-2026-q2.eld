@@ -1,0 +1,1 @@
+(:accn "0001193125-26-219799" :form "S-3ASR" :company "MERCURY GENERAL CORP" :filed "2026-05-12" :report "" :doc "d85381ds3asr.htm" :cik 64996 :url "https://www.sec.gov/Archives/edgar/data/64996/000119312526219799/d85381ds3asr.htm" :size 190133 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
