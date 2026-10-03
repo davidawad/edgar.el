@@ -1,0 +1,1 @@
+(:count 8 :sha256 "9155195d0abbbb2f91d841d7e5cc28c80eaefc872aeb11d9c4d6ba861a38c991" :first (:issuer "BRUKER CORP" :class "6.375 PREF SER A" :cusip "116794207" :value "13137181" :value-unit usd :value-usd 13137181 :shares "48334" :share-type "SH" :put-call nil :discretion "DFND" :other-manager "1,2" :voting (:sole "48334" :shared "0" :none "0")))

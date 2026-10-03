@@ -1,0 +1,1 @@
+(:accn "0001649339-25-000007" :form "13F-HR" :filed "2025-11-03" :report "2025-09-30" :doc "xslForm13F_X02/primary_doc.xml" :cik 1649339 :url "https://www.sec.gov/Archives/edgar/data/1649339/000164933925000007/xslForm13F_X02/primary_doc.xml" :info-url "https://www.sec.gov/Archives/edgar/data/1649339/000164933925000007/infotable.xml")
