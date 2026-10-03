@@ -1,0 +1,1 @@
+(:accn "0001104659-25-062474" :form "6-K" :filed "2025-06-25" :report "2025-06-25" :doc "tm2518775d1_6k.htm" :cik 313838 :url "https://www.sec.gov/Archives/edgar/data/313838/000110465925062474/tm2518775d1_6k.htm" :ticker "SONY")
