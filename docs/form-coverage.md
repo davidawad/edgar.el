@@ -346,10 +346,9 @@ original report bodies are absent from the SEC accession directories. The
 recorded files, accessions, and document-control numbers are listed in [the
 G12 source evidence](../test/fixtures/structured-sources.md#g12-source-limitations).
 
-G10 currently has 27 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17G,
-40-6B, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS, 486BPOS, 486BXT, 487,
-497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU, N-14, N-14 8C, N-1A,
-N-2, N-2ASR, N-4, N-6, and S-6. The remaining 13 forms are still L0.
+All 40 G10 base forms are L1 or higher: 497K, 485BPOS, and N-1A are L2;
+the remaining 37 forms are L1. Named-section goldens cover 497K summary
+prospectuses and Part A sections for 485BPOS and N-1A.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
