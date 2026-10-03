@@ -1,0 +1,1 @@
+(:accn "0001104659-25-094669" :form "18-K" :filed "2025-09-30" :report "2024-12-31" :doc "tm2526665d1_18k.htm" :cik 19957 :url "https://www.sec.gov/Archives/edgar/data/19957/000110465925094669/tm2526665d1_18k.htm")
