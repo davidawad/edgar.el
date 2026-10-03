@@ -937,8 +937,8 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(issuer offering financials signature)
       :volume 500
       :notes nil)
      table)
@@ -987,7 +987,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 163
       :notes nil)

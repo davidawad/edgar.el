@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/formc" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>C-U</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0002075690</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+        <fileNumber>020-36237</fileNumber>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>true</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <issuerInformation>
+      <progressUpdate>The final number is $398,338.00 in investments.</progressUpdate>
+      <issuerInfo>
+        <nameOfIssuer>Same Same But Different LLC</nameOfIssuer>
+        <legalStatus>
+          <legalStatusForm>Limited Liability Company</legalStatusForm>
+          <legalStatusOtherDesc/>
+          <jurisdictionOrganization>CA</jurisdictionOrganization>
+          <dateIncorporation>01-01-2018</dateIncorporation>
+        </legalStatus>
+        <issuerAddress>
+          <com:street1>650 Garnet Avenue #1023</com:street1>
+          <com:city>San Diego</com:city>
+          <com:stateOrCountry>CA</com:stateOrCountry>
+          <com:zipCode>92109</com:zipCode>
+        </issuerAddress>
+        <issuerWebsite>https://www.ssbdfest.com</issuerWebsite>
+      </issuerInfo>
+      <isCoIssuer>Y</isCoIssuer>
+      <coIssuers>
+        <coIssuerInfo>
+          <nameOfCoIssuer>Same Same But Different I, a series of Wefunder SPV, LLC</nameOfCoIssuer>
+          <coIssuerLegalStatus>
+            <legalStatusForm>Limited Liability Company</legalStatusForm>
+            <legalStatusOtherDesc/>
+            <jurisdictionOrganization>DE</jurisdictionOrganization>
+            <dateIncorporation>08-08-2025</dateIncorporation>
+          </coIssuerLegalStatus>
+          <coIssuerAddress>
+            <com:street1>1887 Whitney Mesa Dr</com:street1>
+            <com:street2>NUM 8885</com:street2>
+            <com:city>Henderson</com:city>
+            <com:stateOrCountry>NV</com:stateOrCountry>
+            <com:zipCode>89014</com:zipCode>
+          </coIssuerAddress>
+          <coIssuerWebsite>https://wefunder.com/</coIssuerWebsite>
+        </coIssuerInfo>
+        <coIssuerInfo>
+          <nameOfCoIssuer>Same Same But Different I EB, a series of Wefunder SPV, LLC</nameOfCoIssuer>
+          <coIssuerLegalStatus>
+            <legalStatusForm>Limited Liability Company</legalStatusForm>
+            <legalStatusOtherDesc/>
+            <jurisdictionOrganization>DE</jurisdictionOrganization>
+            <dateIncorporation>08-08-2025</dateIncorporation>
+          </coIssuerLegalStatus>
+          <coIssuerAddress>
+            <com:street1>1887 Whitney Mesa Dr</com:street1>
+            <com:street2>NUM 8885</com:street2>
+            <com:city>Henderson</com:city>
+            <com:stateOrCountry>NV</com:stateOrCountry>
+            <com:zipCode>89014</com:zipCode>
+          </coIssuerAddress>
+          <coIssuerWebsite>https://wefunder.com/</coIssuerWebsite>
+        </coIssuerInfo>
+      </coIssuers>
+      <companyName>Wefunder Portal LLC</companyName>
+      <commissionCik>0001670254</commissionCik>
+      <commissionFileNumber>007-00033</commissionFileNumber>
+      <crdNumber>283503</crdNumber>
+    </issuerInformation>
+    <offeringInformation>
+      <compensationAmount>7.5% of the offering amount upon a successful fundraise, and be entitled to reimbursement for out-of-pocket third party expenses it pays or incurs on behalf of the Issuer in connection with the offering.</compensationAmount>
+      <financialInterest>No</financialInterest>
+      <securityOfferedType>Other</securityOfferedType>
+      <securityOfferedOtherDesc>Units</securityOfferedOtherDesc>
+      <noOfSecurityOffered>500</noOfSecurityOffered>
+      <price>125.00000</price>
+      <priceDeterminationMethod>Dividing pre-money valuation $10,005,875.00 (or $8,004,700.00 for investors in the first $60,000.00) by number of units outstanding on fully diluted basis.</priceDeterminationMethod>
+      <offeringAmount>50000.00</offeringAmount>
+      <overSubscriptionAccepted>Y</overSubscriptionAccepted>
+      <overSubscriptionAllocationType>Other</overSubscriptionAllocationType>
+      <descOverSubscription>As determined by the issuer
+</descOverSubscription>
+      <maximumOfferingAmount>1235000.00</maximumOfferingAmount>
+      <deadlineDate>04-30-2026</deadlineDate>
+    </offeringInformation>
+    <annualReportDisclosureRequirements>
+      <currentEmployees>2</currentEmployees>
+      <totalAssetMostRecentFiscalYear>242811.00</totalAssetMostRecentFiscalYear>
+      <totalAssetPriorFiscalYear>110050.00</totalAssetPriorFiscalYear>
+      <cashEquiMostRecentFiscalYear>234620.00</cashEquiMostRecentFiscalYear>
+      <cashEquiPriorFiscalYear>97055.00</cashEquiPriorFiscalYear>
+      <actReceivedMostRecentFiscalYear>8191.00</actReceivedMostRecentFiscalYear>
+      <actReceivedPriorFiscalYear>8191.00</actReceivedPriorFiscalYear>
+      <shortTermDebtMostRecentFiscalYear>726962.00</shortTermDebtMostRecentFiscalYear>
+      <shortTermDebtPriorFiscalYear>352726.00</shortTermDebtPriorFiscalYear>
+      <longTermDebtMostRecentFiscalYear>1508128.00</longTermDebtMostRecentFiscalYear>
+      <longTermDebtPriorFiscalYear>1136404.00</longTermDebtPriorFiscalYear>
+      <revenueMostRecentFiscalYear>2192517.00</revenueMostRecentFiscalYear>
+      <revenuePriorFiscalYear>2135440.00</revenuePriorFiscalYear>
+      <costGoodsSoldMostRecentFiscalYear>804775.00</costGoodsSoldMostRecentFiscalYear>
+      <costGoodsSoldPriorFiscalYear>341334.00</costGoodsSoldPriorFiscalYear>
+      <taxPaidMostRecentFiscalYear>0.00</taxPaidMostRecentFiscalYear>
+      <taxPaidPriorFiscalYear>0.00</taxPaidPriorFiscalYear>
+      <netIncomeMostRecentFiscalYear>-911994.00</netIncomeMostRecentFiscalYear>
+      <netIncomePriorFiscalYear>-914735.00</netIncomePriorFiscalYear>
+      <issueJurisdictionSecuritiesOffering>AL</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>AK</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>AZ</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>AR</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>CA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>CO</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>CT</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>DE</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>DC</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>FL</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>GA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>HI</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>ID</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>IL</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>IN</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>IA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>KS</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>KY</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>LA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>ME</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MD</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MI</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MN</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MS</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MO</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>MT</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NE</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NV</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NH</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NJ</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NM</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NY</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>NC</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>ND</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>OH</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>OK</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>OR</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>PA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>RI</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>SC</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>SD</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>TN</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>TX</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>UT</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>VT</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>VA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>WA</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>WV</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>WI</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>WY</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>B5</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>GU</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>PR</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>VI</issueJurisdictionSecuritiesOffering>
+      <issueJurisdictionSecuritiesOffering>1V</issueJurisdictionSecuritiesOffering>
+    </annualReportDisclosureRequirements>
+    <signatureInfo>
+      <issuerSignature>
+        <issuer>Same Same But Different LLC</issuer>
+        <issuerSignature>Brad Sweet</issuerSignature>
+        <issuerTitle>CEO and Co-Founder</issuerTitle>
+      </issuerSignature>
+      <signaturePersons>
+        <signaturePerson>
+          <personSignature>Brad Sweet</personSignature>
+          <personTitle>CEO and Co-Founder</personTitle>
+          <signatureDate>09-09-2026</signatureDate>
+        </signaturePerson>
+      </signaturePersons>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>
