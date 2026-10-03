@@ -137,6 +137,56 @@
        (t
         (should (equal snap (edgar-expect--read file))))))))
 
+(ert-deftest edgar-amendments-link-original-accession ()
+  (let ((submissions
+         '(:filings
+           (:recent
+            (:accessionNumber ("0001318605-26-053166" "0001318605-26-010001")
+             :form ("10-K/A" "10-K")
+             :filingDate ("2026-04-30" "2026-02-01")
+             :reportDate ("2025-12-31" "2025-12-31")
+             :primaryDocument ("amendment.htm" "original.htm"))))))
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0001318605"))
+              ((symbol-function 'xbrl--get)
+               (lambda (_) submissions)))
+      (let ((amendment (car (edgar-filings "TSLA" "10-K/A"))))
+        (should (equal (plist-get amendment :amends)
+                       "0001318605-26-010001"))))))
+
+(ert-deftest edgar-effective-section-uses-amendment-then-original ()
+  (let* ((original
+          '(:accn "0001318605-26-010001" :form "10-K"
+            :filed "2026-02-01" :report "2025-12-31" :cik 1318605
+            :url "https://example.test/original"))
+         (amendment
+          (edgar-expect--read (edgar-expect--file "10-ka-tsla" ".eld")))
+         (amendment-html (edgar-expect--html "10-ka-tsla"))
+         (original-html
+          "<html><body><p>Item 1. Business</p><p>Original business text.</p></body></html>"))
+    (setf (plist-get amendment :amends) (plist-get original :accn))
+    (cl-letf (((symbol-function 'edgar-filings)
+               (lambda (_ticker form &rest _bounds)
+                 (if (equal form "10-K/A") (list amendment) (list original))))
+              ((symbol-function 'edgar--fetch)
+               (lambda (url)
+                 (if (equal url (plist-get amendment :url))
+                     amendment-html
+                   original-html)))
+              ((symbol-function 'edgar--fetch-xml)
+               (lambda (&rest _) (error "Unexpected XML fetch"))))
+      (should (string-match-p
+               "Tesla" (or (edgar-effective-section "TSLA" "10-K" "III.10") "")))
+      (should (string-match-p
+               "Original business text"
+               (or (edgar-effective-section "TSLA" "10-K" "1") ""))))))
+
+(ert-deftest edgar-text-diff-returns-unified-diff ()
+  (let ((diff (edgar-text-diff "before text\n" "after text\n")))
+    (should (string-match-p "^-before text$" diff))
+    (should (string-match-p "^+after text$" diff))
+    (should (equal (edgar-text-diff "same\n" "same\n") ""))))
+
 (dolist (slug (edgar-expect--slugs))
   (let ((name (intern (concat "edgar-expect-" slug))))
     (ert-set-test
