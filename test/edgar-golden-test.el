@@ -149,6 +149,31 @@
     (mapcar #'car (edgar-sections (edgar-fixtures-text "sc-to-t-biontech")))
     (mapcar #'number-to-string (number-sequence 1 13)))))
 
+(ert-deftest edgar-golden-g8-extracts-all-sc-14d9-items ()
+  "A real Schedule 14D-9 exposes each numbered Item through the section API."
+  (let ((filing (edgar-fixtures-filing "sc-14d9-cidara"))
+        (html (edgar-fixtures-html "sc-14d9-cidara")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (should
+       (equal
+        (mapcar #'car (edgar-sections (edgar-text filing)))
+        (mapcar #'number-to-string (number-sequence 1 9))))
+      (dolist (entry
+               '(("1" "Subject Company Information")
+                 ("2" "Identity and Background of Filing Person")
+                 ("3" "Past Contacts, Transactions, Negotiations and Agreements")
+                 ("4" "The Solicitation or Recommendation")
+                 ("5" "Person/Assets Retained, Employed, Compensated or Used")
+                 ("6" "Interest in Securities of the Subject Company")
+                 ("7" "Purposes of the Transaction and Plans or Proposals")
+                 ("8" "Additional Information")
+                 ("9" "Exhibits")))
+        (let ((body (edgar-section filing (car entry))))
+          (should (stringp body))
+          (should (string-match-p
+                   (regexp-quote (cadr entry))
+                   (edgar-fixtures-norm body))))))))
+
 (ert-deftest edgar-golden-g8-finds-def14a-security-ownership ()
   "Title-case filing headings without blank-line separators stay addressable."
   (let* ((filing (edgar-fixtures-filing "def-14a-gme"))

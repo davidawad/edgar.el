@@ -67,6 +67,16 @@
              (cdr entry)))))
       (should (= (length ciks) 3)))))
 
+(ert-deftest edgar-l2-diversity-g8-tender-offers-have-three-distinct-filers ()
+  "The recorded SC TO-T Item goldens cover three distinct filing CIKs."
+  (let ((ciks
+         (delete-dups
+          (mapcar
+           (lambda (slug)
+             (plist-get (edgar-l2-diversity-test--metadata slug) :cik))
+           '("sc-to-t-biontech" "sc-to-t-cidara" "sc-to-t-tubemogul")))))
+    (should (= (length ciks) 3))))
+
 (ert-deftest edgar-l2-diversity-abs-ee-accessors-match-filer-goldens ()
   "ABS-EE XML from three filers preserves common asset-data fields."
   (dolist (slug '("abs-ee-bank5-sample" "abs-ee-deutsche"

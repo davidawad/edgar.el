@@ -267,12 +267,12 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE-C")` |
 | `SC 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13D")` |
 | `SC 13E3` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13E3")` |
-| `SC 14D9` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC 14D9")` |
+| `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC 14F1` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 14F1")` |
 | `SC 14N` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC 14N")` |
 | `SC TO-C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-C")` |
 | `SC TO-I` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-I")` |
-| `SC TO-T` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-T")` |
+| `SC TO-T` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC14D1F` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D1F")` |
 | `SC14D9C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D9C")` |
 | `SCHEDULE 13D` | G3 Beneficial ownership 13D/13G | xml | L2 | `(edgar-schedule-13d-g-cover-page filing)` |
