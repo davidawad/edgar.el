@@ -1,0 +1,1 @@
+(:accn "0001193125-25-245191" :form "SC TO-T" :filed "2025-10-21" :report "" :doc "d38438dsctot.htm" :cik 1776985 :url "https://www.sec.gov/Archives/edgar/data/1809122/000119312525245191/d38438dsctot.htm" :ticker "BNTX")

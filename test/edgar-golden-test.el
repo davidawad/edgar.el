@@ -113,5 +113,34 @@
         (replace-regexp-in-string
          "[ \t\n ]+" " " (edgar-fixtures-norm section)))))))
 
+(ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
+  "Proxy proposals and tender-offer Items resolve in real SEC filings."
+  (dolist
+      (entry
+       '(("def-14a-gme" "PROPOSAL 1: ELECTION OF DIRECTORS"
+          "proposal 1: election of directors")
+         ("def-14a-gme" "PROPOSAL 2: ADVISORY VOTE ON EXECUTIVE COMPENSATION         20"
+          "advisory vote on executive compensation")
+         ("def-14a-gme-prior" "COMPENSATION DISCUSSION AND ANALYSIS"
+          "compensation")))
+    (let* ((slug (nth 0 entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (let ((body (edgar-section filing (nth 1 entry))))
+          (should (stringp body))
+          (should (string-match-p
+                   (regexp-quote (nth 2 entry))
+                   (downcase body)))))))
+  (let* ((filing (edgar-fixtures-filing "sc-to-t-tubemogul"))
+         (html (edgar-fixtures-html "sc-to-t-tubemogul")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (dolist (entry '(("1" "Summary Term Sheet")
+                       ("4" "Terms of the Transaction")
+                       ("8" "Interest in Securities of the Subject Company")))
+        (let ((body (edgar-section filing (car entry))))
+          (should (stringp body))
+          (should (string-match-p (regexp-quote (cadr entry)) body)))))))
+
 (provide 'edgar-golden-test)
 ;;; edgar-golden-test.el ends here

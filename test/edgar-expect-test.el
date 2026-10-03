@@ -99,6 +99,8 @@
     ("SCHEDULE 13G" "schedule 13g" nil)
     ("SC 13G" "schedule 13g" nil)
     ("SC 13G/A" "schedule 13g" nil)
+    ("SC TO-T" "schedule to" nil)
+    ("SC 14D9" "schedule 14d-9" nil)
     ("144" "notice of proposed sale" nil)))
 
 (defun edgar-expect--check (slug)
