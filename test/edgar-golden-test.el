@@ -110,8 +110,29 @@
       (should
        (string-match-p
         (regexp-quote (cdr entry))
-        (replace-regexp-in-string
+      (replace-regexp-in-string
          "[ \t\n ]+" " " (edgar-fixtures-norm section)))))))
+
+(ert-deftest edgar-golden-g9-generic-html-body-access ()
+  "Newly covered registration and NT forms expose their HTML body generically."
+  (dolist
+      (entry
+       '(("15-12g-apogee" . "Apogee Therapeutics")
+         ("nt-10k-dbmm" . "Digital Brand Media")
+         ("nt-10q-dbmm" . "Digital Brand Media")
+         ("nt-11k-oldrepublic" . "ori 401(k) savings")
+         ("nt-20f-telkom" . "Telekomunikasi Indonesia")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should
+       (string-match-p
+        (regexp-quote (cdr entry))
+        (edgar-fixtures-norm body))))))
 
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."

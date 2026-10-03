@@ -62,7 +62,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `13F-HR` | G4 13F holdings | xml | L2 | `(edgar-13f-holdings filing)` |
 | `13F-NT` | G4 13F holdings | xml | L2 | `(edgar-13f-notice filing)` |
 | `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
-| `15-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-12G")` |
+| `15-12G` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |
 | `15F-12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12B")` |
 | `15F-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12G")` |
@@ -221,10 +221,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NPORT-P` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `NRSRO-CE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-CE")` |
 | `NRSRO-UPD` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-UPD")` |
-| `NT 10-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "NT 10-K")` |
-| `NT 10-Q` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "NT 10-Q")` |
-| `NT 11-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "NT 11-K")` |
-| `NT 20-F` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "NT 20-F")` |
+| `NT 10-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `NT 10-Q` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `NT 11-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `NT 20-F` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `NT N-CEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT N-CEN")` |
 | `NT NPORT-P` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT NPORT-P")` |
 | `NT-NCEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCEN")` |
@@ -350,6 +350,13 @@ structure access, recorded from NRX Pharmaceuticals (accession
 0001354457-26-000493, filed 2026-05-22). These short delisting notifications
 do not have form-specific item headings exposed by the section parser; L1
 means the recorded primary document is readable through generic document
-paths.
+paths. Form 15-12G now has the same generic HTML body coverage, backed by
+Apogee Therapeutics (accession 0001140361-26-036410, filed 2026-09-14).
+NT 10-K, NT 10-Q, NT 11-K, and NT 20-F have L1 generic HTML body coverage
+from Digital Brand Media (accessions 0001185185-18-002101 and
+0001127475-17-000008), Old Republic (0000074260-26-000076), and PT
+Telekomunikasi Indonesia (0001001807-26-000016), respectively. These are
+Form 12b-25 notices; coverage means readable text and generic document paths,
+not a form-specific extension-deadline or reason parser.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).
