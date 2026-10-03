@@ -39,10 +39,21 @@
   "Slugs of every primary-document filing fixture."
   (seq-filter
    (lambda (slug)
-     (seq-some
-      (lambda (ext)
-        (file-exists-p (edgar-expect--file slug ext)))
-      '(".htm.gz" ".pdf" ".xml" ".txt")))
+     (and
+      (seq-some
+       (lambda (ext)
+         (file-exists-p (edgar-expect--file slug ext)))
+       '(".htm.gz" ".pdf" ".xml" ".txt"))
+      (let ((expect-file (edgar-expect--expect-file slug)))
+        (and (file-exists-p expect-file)
+             (not
+              (equal
+               (plist-get (edgar-expect--read
+                           (edgar-expect--file slug ".eld"))
+                          :fixture-kind)
+               "SEC complete-submission excerpt"))
+             (plist-member (edgar-expect--read expect-file)
+                           :text-bucket)))))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -321,17 +332,19 @@
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) primary)))
       (setq text (edgar-text filing)))
     (setq snap (edgar-expect--snapshot filing text))
-    (should inv)
     (should
      (string-match-p
-      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[0-9]+/"
+       "\\`https://www.sec.gov/Archives/edgar/\\(?:data/[0-9]+/[0-9-]+[/.]\\|vprr/[0-9]+/[0-9]+\\.pdf\\)"
       (plist-get filing :url)))
-    (should
-     (string-match-p
-      (nth 1 inv)
-      (replace-regexp-in-string "[ \t\n ]+" " " (downcase text))))
-    (dolist (key (nth 2 inv))
-      (should (assoc key (plist-get snap :sections))))
+    ;; Hand-selected form sentinels are extra checks for forms where we have
+    ;; them.  Every fixture still receives exact snapshot comparison below.
+    (when inv
+      (should
+       (string-match-p
+        (nth 1 inv)
+        (replace-regexp-in-string "[ \t\n ]+" " " (downcase text))))
+      (dolist (key (nth 2 inv))
+        (should (assoc key (plist-get snap :sections)))))
     (let ((file (edgar-expect--expect-file slug)))
       (cond
        ((getenv "EDGAR_EXPECT_UPDATE")

@@ -231,7 +231,7 @@
     (should (eq (plist-get (edgar-form-info "C-AR") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-U") :level) 'L1))
     (should (eq (plist-get (edgar-form-info "1") :backend) 'pdf))
-    (should (equal counts '((L0 . 0) (L1 . 16) (L2 . 2)))))
+    (should (equal counts '((L0 . 0) (L1 . 16) (L2 . 2))))))
 
 (provide 'edgar-forms-test)
 

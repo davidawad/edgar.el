@@ -22,6 +22,15 @@ snapshot. Override its target with `EDGAR_COVERAGE_YEAR` and
 `EDGAR_COVERAGE_QUARTER` (for example, `2026` and `3`). Network access is never
 part of the normal check.
 
+The Q2 snapshot has 19 `SC 13D/A` filings and no filing whose raw form is
+exactly `SC 13D`; its 19-volume base-form row folds in the amendment count.
+The 572 `SCHEDULE 13D` filings are a distinct modern XML form and are not
+evidence for the legacy `SC 13D` type. For example, the May 7, 2026 Pacific
+Airport Group filing is explicitly `SCHEDULE 13D` and publishes
+`primary_doc.xml` ([SEC filing index](https://www.sec.gov/Archives/edgar/data/1347557/000094787126000502/0000947871-26-000502-index.htm)).
+Do not promote the legacy `SC 13D` row from that source; it remains L0 until an
+exact-form source is recorded.
+
 - 342 distinct form types, 245 once amendments (`/A`) are folded into their base form.
 - Volume is extremely concentrated: top 10 base forms = 76% of filings, top 30 = 92%,
   top 75 = 98.5%. 56 base forms had 5 or fewer filings that quarter; 17 had one.
@@ -45,7 +54,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 <!-- BEGIN GENERATED FORM COVERAGE -->
 | Form | Family | Backend | Level | Example call |
 |---|---|---|---|---|
-| `1` | G11 Reg CF & Reg A | html | L0 | `(edgar-form-info "1")` |
+| `1` | G11 Reg CF & Reg A | pdf | L1 | `(edgar-text filing)` |
 | `1-A` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A POS` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A-W` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
