@@ -246,7 +246,8 @@
 
 (ert-deftest edgar-ownership-additional-filer-golden-values ()
   "Parse Form 4 filings from distinct issuers and transaction layouts."
-  (dolist (slug '("4-meta" "4-tsla" "4-epd-buy" "4-fossil-a"))
+  (dolist (slug '("4-meta" "4-tsla" "4-epd-buy" "4-fossil-a"
+                  "4-fossil-original"))
     (should (equal (edgar-ownership-test--form4-snapshot slug)
                    (edgar-ownership-test--golden slug)))
     (should (equal (edgar-ownership-test--form4-expect-snapshot slug)
@@ -330,10 +331,21 @@
   "Parse actual Form 4/A and X0306 filings against their field goldens."
   (let* ((amendment
           (edgar-ownership-test--form4-snapshot "4-fossil-a"))
+         (original
+          (edgar-ownership-test--form4-snapshot "4-fossil-original"))
          (old
           (edgar-ownership-test--form4-snapshot "4-aapl-prior"))
          (old-tree (edgar-ownership-test--fixture "4-aapl-prior")))
     (should (equal amendment (edgar-ownership-test--golden "4-fossil-a")))
+    (should
+     (equal original (edgar-ownership-test--golden "4-fossil-original")))
+    (should
+     (equal (plist-get (car (plist-get original :transactions)) :code) "A"))
+    (should
+     (equal (plist-get (car (plist-get amendment :transactions)) :code) "P"))
+    (should
+     (equal (edgar-ownership-test--form4-expect-snapshot "4-fossil-original")
+            (edgar-ownership-test--expect "4-fossil-original")))
     (should (equal (edgar-ownership-test--form4-expect-snapshot "4-fossil-a")
                    (edgar-ownership-test--expect "4-fossil-a")))
     (should (equal old (edgar-ownership-test--golden "4-aapl-prior")))

@@ -1,0 +1,1 @@
+(:accn "0000883569-26-000021" :form "4" :filed "2026-03-18" :report "2026-03-16" :cik 883569 :url "https://www.sec.gov/Archives/edgar/data/883569/000088356926000021/wk-form4_1773865453.xml" :ticker "FOSL" :doc "wk-form4_1773865453.xml" :size 3158 :sample-vintage "recent" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

@@ -106,6 +106,7 @@
     ("10-Q" "quarterly report" ("I.1" "I.2"))
     ("10-D" "asset backed issuer" nil)
     ("8-K" "current report" nil)
+    ("8-K/A" "current report" nil)
     ("ABS-15G" "asset-backed securitizer report" nil)
     ("20-F" "annual report" nil)
     ("40-F" "annual report" nil)
@@ -302,6 +303,30 @@
          (equal
           (plist-get amendment :amends) "0001318605-26-010001"))))))
 
+(ert-deftest edgar-amendments-annotate-recorded-examples ()
+  "Link recorded 8-K/A, 4/A, and legacy SC 13G/A filings to originals."
+  (dolist (pair
+           '(("8ka-mdxg-2026" "8k-mdxg-2026")
+             ("4-fossil-a" "4-fossil-original")
+             ("sc-13ga-gme" "sc-13g-gme-original")))
+    (let* ((amendment
+            (edgar-expect--read
+             (edgar-expect--file (car pair) ".eld")))
+           (original
+            (edgar-expect--read
+             (edgar-expect--file (cadr pair) ".eld")))
+           (form (plist-get amendment :form)))
+      (cl-letf (((symbol-function 'edgar-filings)
+                 (lambda (_ticker query &rest _bounds)
+                   (when (equal query (edgar--base-form form))
+                     (list original)))))
+        (should
+         (equal
+          (plist-get
+           (car (edgar--annotate-amendments "fixture" form (list amendment)))
+           :amends)
+          (plist-get original :accn)))))))
+
 (ert-deftest edgar-effective-section-uses-amendment-then-original ()
   (let*
       ((original
@@ -348,6 +373,37 @@
        (string-match-p
         "Original business text"
         (or (edgar-effective-section "TSLA" "10-K" "1") ""))))))
+
+(ert-deftest edgar-effective-section-prefers-recorded-8-k-amendment ()
+  "Use a real 8-K/A Item 1.01 correction over the original section."
+  (let* ((original
+          (edgar-expect--read
+           (edgar-expect--file "8k-mdxg-2026" ".eld")))
+         (amendment
+          (edgar-expect--read
+           (edgar-expect--file "8ka-mdxg-2026" ".eld")))
+         (original-html (edgar-expect--html "8k-mdxg-2026"))
+         (amendment-html (edgar-expect--html "8ka-mdxg-2026")))
+    (setf (plist-get amendment :amends) (plist-get original :accn))
+    (cl-letf (((symbol-function 'edgar-filings)
+               (lambda (_ticker form &rest _bounds)
+                 (cond
+                  ((equal form "8-K") (list original))
+                  ((equal form "8-K/A") (list amendment)))))
+              ((symbol-function 'edgar--fetch)
+               (lambda (url)
+                 (cond
+                  ((equal url (plist-get original :url)) original-html)
+                  ((equal url (plist-get amendment :url)) amendment-html))))
+              ((symbol-function 'edgar--fetch-xml)
+               (lambda (&rest _) (error "Unexpected XML fetch"))))
+      (let ((original-section (edgar-section original "1.01"))
+            (amendment-section (edgar-section amendment "1.01"))
+            (effective (edgar-effective-section "MDXG" "8-K" "1.01")))
+        (should original-section)
+        (should amendment-section)
+        (should (equal effective amendment-section))
+        (should-not (equal effective original-section))))))
 
 (ert-deftest edgar-text-diff-returns-unified-diff ()
   (let ((diff (edgar-text-diff "before text\n" "after text\n")))

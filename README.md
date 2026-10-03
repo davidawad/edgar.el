@@ -11,6 +11,7 @@ Customize `edgar-pdftotext-program` when it is installed under another name.
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
     (edgar-facts (edgar-latest "AAPL" "10-K"))          ; Inline XBRL facts + contexts
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
+    (edgar-effective-section "TSLA" "10-K" "III.10")      ; latest amended section
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
     (edgar-documents filing)                    ; list filing documents
@@ -27,6 +28,11 @@ complete submissions rather than primary documents, their `:doc` and `:url`
 point to the filing's `.txt` submission. `edgar-text` and `edgar-section`
 extract the matching primary document from those SGML wrappers and preserve
 section boundaries in legacy plain-text filings.
+
+Exact `/A` queries add `:amends` when a matching original filing is found.
+`edgar-effective-section` returns a requested section from the latest matching
+amendment when present, otherwise it falls back to the original filing;
+`edgar-text-diff` returns a unified diff between two text strings.
 
 `edgar-ownership.el` provides typed plists for Forms 3, 4, and 5:
 `edgar-ownership-issuer`, `edgar-ownership-reporting-owners`,

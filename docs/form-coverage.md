@@ -346,9 +346,13 @@ payloads rather than an alternate readable document.
 
 Implemented whole-library capabilities: raw-XML access, multi-document filings
 (exhibits), quarterly/daily enumeration across all filers, and a cache plus rate
-limiter.  Remaining gaps tracked as beads: history past the SEC's ~1000-filing
-`recent` window, amendment handling, legacy text-only filings, inline-XBRL facts
-(in xbrl.el), and testing each form on more than one filer.
+limiter. Amendment handling links `/A` filings to originals and selects the
+latest amended section with original-section fallback. Paired fixtures cover
+MiMedx 8-K/8-K/A (0001376339-26-000070 / 0001376339-26-000082), Fossil 4/4/A
+(0000883569-26-000021 / 0001321558-26-000002), and legacy GameStop SC 13G/13G/A
+(0000906304-13-000091 / 0000906304-14-000252). Remaining gaps tracked as beads:
+history past the SEC's ~1000-filing `recent` window, legacy text-only filings,
+inline-XBRL facts (in xbrl.el), and testing each form on more than one filer.
 
 The shared `edgar-documents` / `edgar-exhibit` API is also exercised on
 recorded foreign-issuer filings: 6-K directory enumeration and a 40-F EX-23.1
