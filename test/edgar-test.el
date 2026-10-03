@@ -1040,6 +1040,15 @@
           "Risks include liquidity" (plist-get section :body)))
         (should
          (equal
+          (edgar-structure-paragraphs section)
+          '("Risks include liquidity." "We monitor cash.")))
+        (should
+         (equal
+          (mapcar #'edgar-structure-text
+                  (edgar-structure-paragraph-nodes section))
+          '("Risks include liquidity." "We monitor cash.")))
+        (should
+         (equal
           (plist-get
            (edgar-structure-section
             tree '("Financials" "Risk Factors"))
@@ -1122,7 +1131,9 @@
         (((symbol-function 'edgar--fetch)
           (lambda (url)
             (if (string-suffix-p ".xml" url)
-                "<report><RiskFactors><p>Risk data</p></RiskFactors></report>"
+                (concat
+                 "<report><RiskFactors><p>Risk data</p></RiskFactors>"
+                 "<Other><p>Other data</p></Other></report>")
               "First paragraph.\n\nSecond paragraph."))))
       (let* ((xml (edgar-document-structure xml-filing))
              (risk (edgar-structure-section xml "RiskFactors"))
@@ -1146,9 +1157,13 @@
            :body)
           "Risk data"))
         (should
+         (equal (edgar-structure-paragraphs risk) '("Risk data")))
+        (should
          (equal (edgar-section xml-filing "RiskFactors") "Risk data"))
         (should
-         (equal (edgar-structure-paragraphs xml) '("Risk data")))
+         (equal
+          (edgar-structure-paragraphs xml)
+          '("Risk data" "Other data")))
         (should (eq (plist-get text :format) 'text))
         (should-not (edgar-structure-headings text))
         (should
@@ -1159,6 +1174,44 @@
          (equal
           (edgar-structure-text text)
           "First paragraph.\n\nSecond paragraph."))))))
+
+(ert-deftest edgar-structure-sections-scope-text-and-pdf-paragraphs ()
+  "Named text and PDF headings expose only their body paragraph nodes."
+  (let* ((filing '(:form "TEST" :accn "TEST-001"))
+         (source
+          (concat
+           "Risk Factors\n\n"
+           "First risk paragraph.\n\nSecond risk paragraph.\n\n"
+           "Liquidity\n\nLiquidity paragraph."))
+         (text-tree
+          (edgar--document-structure-from-content
+           filing 'text source nil))
+         pdf-tree)
+    (cl-letf (((symbol-function 'edgar--pdf-text)
+               (lambda (_bytes) source)))
+      (setq pdf-tree
+            (edgar--document-structure-from-content
+             filing 'pdf "%PDF-1.4 test bytes" nil)))
+    (dolist (tree (list text-tree pdf-tree))
+      (let* ((section (edgar-structure-section tree "Risk Factors"))
+             (paragraph-nodes (edgar-structure-paragraph-nodes section))
+             (expected
+              '("First risk paragraph." "Second risk paragraph.")))
+        (should section)
+        (should (plist-get section :body-node))
+        (should (equal (mapcar #'edgar-structure-text paragraph-nodes)
+                       expected))
+        (should (equal (edgar-structure-paragraphs section) expected))
+        (should
+         (equal
+          (edgar-structure-paragraphs (plist-get section :body-node))
+          expected))
+        (should-not (member "Liquidity paragraph."
+                            (edgar-structure-paragraphs section)))
+        (should
+         (seq-every-p
+          (lambda (node) (eq (plist-get node :type) 'paragraph))
+          paragraph-nodes))))))
 
 (ert-deftest edgar-document-structure-identifies-pdf-only-submissions
     ()
