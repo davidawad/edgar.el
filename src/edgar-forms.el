@@ -502,7 +502,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 170
       :notes nil)

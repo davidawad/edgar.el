@@ -8,6 +8,9 @@ Foreign issuer exhibit access:
 
 Prospectus and registration samples used for generic named-section coverage:
 
+- `424b4-rectitude.htm.gz` — 424B4, Rectitude Holdings Ltd. ([accession 0001213900-24-103728](https://www.sec.gov/Archives/edgar/data/1995116/000121390024103728/ea0222844-424b4_rectitude.htm); 2024-11-29).
+- `424b4-impact-biomedical.htm.gz` — 424B4, Impact Biomedical Inc. ([accession 0001493152-24-036520](https://www.sec.gov/Archives/edgar/data/1834105/000149315224036520/form424b4.htm); 2024-09-17).
+- `424b4-loar.htm.gz` — 424B4, Loar Holdings Inc. ([accession 0001193125-24-118106](https://www.sec.gov/Archives/edgar/data/2000178/000119312524118106/d551112d424b4.htm); 2024-04-26).
 - `8-a12b-amazon.htm.gz` — 8-A12B, Amazon.com, Inc. ([accession 0001104659-26-110227](https://www.sec.gov/Archives/edgar/data/1018724/000110465926110227/tm2625860d1_8a12b.htm); 2026-09-24). Its generic Items 1 and 2 are accessible through `edgar-section`.
 - `s-8-pos-exxonmobil.htm.gz` — S-8 POS, ExxonMobil Holdings Corp. ([accession 0001193125-26-292576](https://www.sec.gov/Archives/edgar/data/2115436/000119312526292576/d159056ds8pos.htm); 2026-07-01). Part II Items are accessible through `edgar-section`.
 

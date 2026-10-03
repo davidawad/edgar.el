@@ -93,7 +93,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `424B1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B1")` |
 | `424B2` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `424B4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B4")` |
+| `424B4` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B5` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B7` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
