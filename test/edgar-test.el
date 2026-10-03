@@ -356,7 +356,6 @@
       (should (assoc "2.01" (edgar-sections (edgar-text filing)))))))
 
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
-(ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
   "Named section output stays pinned across distinct prospectus layouts."
   (let ((goldens
          (edgar-fixtures-read
