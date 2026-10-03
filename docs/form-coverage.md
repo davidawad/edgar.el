@@ -56,7 +56,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
 | `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `10-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-K")` |
-| `10-KT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-KT")` |
+| `10-KT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `10-Q` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-Q")` |
 | `11-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `13F-HR` | G4 13F holdings | xml | L2 | `(edgar-13f-holdings filing)` |
@@ -87,7 +87,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40-8F-2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-8F-2")` |
 | `40-APP` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-APP")` |
 | `40-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `40FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12B")` |
+| `40FR12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `40FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12G")` |
 | `424B1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B1")` |
 | `424B2` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
@@ -120,7 +120,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `8-A12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12B")` |
 | `8-A12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12G")` |
 | `8-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K")` |
-| `8-K12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K12B")` |
+| `8-K12B` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `ABS-15G` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `ABS-EE` | G6 Asset-backed | xml | L2 | `(edgar-xml filing)` |
 | `ADV-H-T` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ADV-H-T")` |
@@ -245,7 +245,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `PRER14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRER14C")` |
 | `PRRN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRRN14A")` |
 | `PX14A6G` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PX14A6G")` |
-| `QRTLYRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "QRTLYRPT")` |
+| `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `QUALIF` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "QUALIF")` |
 | `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
 | `RW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "RW")` |

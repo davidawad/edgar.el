@@ -1,0 +1,1 @@
+(:accn "0001493152-26-028856" :form "8-K12B" :filed "2026-06-16" :report "2026-06-16" :doc "form8-k12b.htm" :cik 1852551 :url "https://www.sec.gov/Archives/edgar/data/1852551/000149315226028856/form8-k12b.htm" :ticker "")

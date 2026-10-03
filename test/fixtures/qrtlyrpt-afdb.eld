@@ -1,0 +1,1 @@
+(:accn "0000785677-26-000002" :form "QRTLYRPT" :filed "2026-06-22" :report "2026-03-31" :doc "2026_Report_Q1.htm" :cik 785677 :url "https://www.sec.gov/Archives/edgar/data/785677/000078567726000002/2026_Report_Q1.htm" :ticker "")

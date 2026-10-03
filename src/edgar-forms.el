@@ -134,7 +134,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3
       :notes nil)
@@ -446,7 +446,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 7
       :notes nil)
@@ -776,7 +776,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -2026,7 +2026,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 5
       :notes nil)
