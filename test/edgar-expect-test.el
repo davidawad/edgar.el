@@ -105,6 +105,7 @@
     ("10-KT" "keemo fashion" ("I.1" "I.1A"))
     ("8-K12B" "nova minerals" nil)
     ("QRTLYRPT" "african development bank" nil)
+    ("SD" "specialized disclosure report" nil)
     ("40FR12B" "nuran wireless" nil)
     ("DEF 14A" "proxy statement" nil)
     ("11-K" "annual report" nil)

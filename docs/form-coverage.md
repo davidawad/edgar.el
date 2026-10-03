@@ -277,7 +277,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SC14D9C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D9C")` |
 | `SCHEDULE 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SCHEDULE 13D")` |
 | `SCHEDULE 13G` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SCHEDULE 13G")` |
-| `SD` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "SD")` |
+| `SD` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SEC STAFF ACTIO` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "SEC STAFF ACTIO")` |
 | `SEC STAFF LETTE` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "SEC STAFF LETTE")` |
 | `SF-1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SF-1")` |
@@ -337,6 +337,8 @@ The shared `edgar-documents` / `edgar-exhibit` API is also exercised on
 recorded foreign-issuer filings: 6-K directory enumeration and a 40-F EX-23.1
 exhibit text excerpt (Shopify, accession 0001594805-24-000007). These validate
 access to filing-level documents; they do not imply that every G9 form's
-narrative layout has a dedicated parser.
+narrative layout has a dedicated parser. Form SD is now L2 based on Apple's
+2026-05-28 filing (accession 0001140361-26-023149), with generic item access
+goldened for Items 1.01, 1.02, 2.01, and 3.01.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).

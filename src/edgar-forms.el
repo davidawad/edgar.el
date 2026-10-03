@@ -2347,8 +2347,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(item-sections)
       :volume 1005
       :notes nil)
      table)
