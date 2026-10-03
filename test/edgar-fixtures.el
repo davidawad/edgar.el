@@ -18,12 +18,14 @@
   (expand-file-name rel edgar-fixtures--test-dir))
 
 (defun edgar-fixtures-slugs ()
-  "Slugs of every rendered filing fixture, sorted.
+  "Slugs of every HTML or PDF filing fixture, sorted.
 XML-only fixtures are exercised by form-specific tests."
   (sort (seq-filter
          (lambda (slug)
-           (file-exists-p
-            (edgar-fixtures-path (concat "fixtures/" slug ".htm.gz"))))
+           (or (file-exists-p
+                (edgar-fixtures-path (concat "fixtures/" slug ".htm.gz")))
+               (file-exists-p
+                (edgar-fixtures-path (concat "fixtures/" slug ".pdf")))))
          (mapcar
           #'file-name-sans-extension
           (directory-files (edgar-fixtures-path "fixtures")
@@ -51,10 +53,23 @@ XML-only fixtures are exercised by form-specific tests."
        (edgar-fixtures-path (concat "fixtures/" slug ".htm.gz"))))
     (buffer-string)))
 
+(defun edgar-fixtures-primary (slug)
+  "Raw primary document bytes for SLUG."
+  (let ((pdf (edgar-fixtures-path (concat "fixtures/" slug ".pdf"))))
+    (if (file-exists-p pdf)
+        (with-temp-buffer
+          (set-buffer-multibyte nil)
+          (insert-file-contents-literally pdf)
+          (buffer-string))
+      (edgar-fixtures-html slug))))
+
 (defun edgar-fixtures-text (slug)
-  "SLUG's filing rendered by `edgar-text', fully offline."
-  (let ((html (edgar-fixtures-html slug)))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+  "SLUG's filing rendered by edgar-text, fully offline."
+  (let ((source (edgar-fixtures-primary slug)))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) source))
+              ((symbol-function 'edgar--fetch-binary)
+               (lambda (_) source)))
       (edgar-text (edgar-fixtures-filing slug)))))
 
 (defun edgar-fixtures-norm (s)

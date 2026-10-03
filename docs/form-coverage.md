@@ -9,8 +9,10 @@ form rows were seeded from the index snapshot in `test/form-survey-2026-q2.txt`;
 `eask run script coverage` checks every snapshot form and volume against the
 registry, validates the artifacts required by each L1/L2 row, and prints the
 form-by-level-and-volume matrix. It runs offline inside `eask run script check`.
-Primary artifacts follow the registered backend: HTML uses `.htm.gz` or `.htm`,
-XML uses `.xml` or `.xml.gz`, and text uses `.txt` or `.txt.gz`.
+Primary artifacts follow the registered backend: HTML uses .htm.gz or .htm,
+XML uses .xml or .xml.gz, text uses .txt or .txt.gz, and PDF uses .pdf or
+.pdf.gz. PDF text extraction uses Poppler's pdftotext program, configurable
+with edgar-pdftotext-program.
 Run `EDGAR_UA="Name email" tools/form-survey.sh` to refresh the snapshot and
 registry when updating the measured quarter.
 
@@ -144,7 +146,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `C-U` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-U")` |
 | `C-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-W")` |
 | `CB` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "CB")` |
-| `CERT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "CERT")` |
+| `CERT` | G9 Periodic & event narrative | pdf | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL")` |
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
@@ -166,7 +168,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DOSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOSLTR")` |
 | `DRS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRS")` |
 | `DRSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRSLTR")` |
-| `DSTRBRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "DSTRBRPT")` |
+| `DSTRBRPT` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `EFFECT` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "EFFECT")` |
 | `F-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-10` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10")` |
@@ -247,7 +249,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `PX14A6G` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PX14A6G")` |
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `QUALIF` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "QUALIF")` |
-| `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
+| `REVOKED` | G9 Periodic & event narrative | pdf | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `RW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "RW")` |
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `S-11` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-11")` |

@@ -118,6 +118,7 @@
   (dolist
       (entry
        '(("15-12g-apogee" . "Apogee Therapeutics")
+         ("dstrbrpt-inter-american" . "Inter-American Development Bank")
          ("15-15d-plus-automation" . "Plus Automation")
          ("irannotice-intel" . "Intel Corporation")
          ("nt-10k-dbmm" . "Digital Brand Media")
@@ -144,6 +145,36 @@
         (regexp-quote (cdr entry))
         (edgar-fixtures-norm
          (edgar-structure-text (plist-get body :node))))))))
+
+(ert-deftest edgar-golden-g9-generic-pdf-body-access ()
+  "PDF filings expose extracted text and paragraph nodes generically."
+  (dolist
+      (entry
+       '(("cert-braveheart" . "Braveheart Bio, Inc.")
+         ("revoked-healing" . "OPINION OF THE COMMISSION")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (pdf (edgar-fixtures-primary slug))
+           tree
+           paragraphs)
+      (cl-letf (((symbol-function 'edgar--fetch-binary)
+                 (lambda (_) pdf)))
+        (setq tree (edgar-document-structure filing))
+        (setq paragraphs (edgar-structure-paragraphs tree)))
+      (should (eq (plist-get tree :format) 'pdf))
+      (should (plist-get tree :text))
+      (should paragraphs)
+      (should
+       (string-match-p
+        (regexp-quote (downcase (cdr entry)))
+        (downcase (edgar-structure-text tree))))
+      (should
+       (seq-some
+        (lambda (paragraph)
+          (string-match-p
+           (regexp-quote (downcase (cdr entry)))
+           (downcase paragraph)))
+        paragraphs)))))
 
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."

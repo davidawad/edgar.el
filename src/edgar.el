@@ -40,6 +40,10 @@
   "Return the body of URL as a decoded string."
   (edgar-http-get url xbrl-user-agent))
 
+(defun edgar--fetch-binary (url)
+  "Return the body of URL as an unibyte string."
+  (edgar-http-get url xbrl-user-agent t))
+
 ;;;; Filing lists
 
 (defun edgar--date-in-range-p (date since until)
@@ -193,6 +197,11 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
 
 ;;;; Content
 
+(defcustom edgar-pdftotext-program "pdftotext"
+  "Program used to render PDF filing bodies as text."
+  :type 'string
+  :group 'edgar)
+
 (defun edgar-html (filing)
   "Raw HTML (iXBRL) of FILING's primary document."
   (edgar--fetch (plist-get filing :url)))
@@ -254,20 +263,41 @@ primary document is returned unchanged."
       (replace-regexp-in-string
        "\\n[ \t]*\\n[ \t]*\\n+" "\n\n" plain))))
 
+(defun edgar--pdf-text (pdf)
+  "Render the PDF byte string PDF to plain text with Poppler."
+  (unless (executable-find edgar-pdftotext-program)
+    (error "Cannot find PDF text renderer: %s" edgar-pdftotext-program))
+  (let ((output (generate-new-buffer " *edgar-pdftotext*"))
+        status)
+    (unwind-protect
+        (with-temp-buffer
+          (set-buffer-multibyte nil)
+          (insert pdf)
+          (setq status
+                (call-process-region
+                 (point-min) (point-max) edgar-pdftotext-program
+                 nil output nil "-layout" "-" "-"))
+          (unless (and (integerp status) (zerop status))
+            (error "PDF text extraction failed with status %S" status))
+          (with-current-buffer output
+            (decode-coding-string (buffer-string) 'utf-8)))
+      (when (buffer-live-p output)
+        (kill-buffer output)))))
+
 (defun edgar-text (filing)
-  "FILING rendered to plain text (what `shr' would display)."
-  (let* ((url (plist-get filing :url))
-         (source (edgar-html filing))
-         (text
-          (if (and (stringp url)
-                   (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-              (edgar--submission-primary-document source filing)
-            source)))
-    (if (and (stringp url)
-             (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-        (edgar--legacy-text text)
+  "FILING rendered to plain text."
+  (let ((url (plist-get filing :url)))
+    (cond
+     ((and (stringp url)
+           (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url))
+      (edgar--pdf-text (edgar--fetch-binary url)))
+     ((and (stringp url)
+           (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+      (edgar--legacy-text
+       (edgar--submission-primary-document (edgar--fetch url) filing)))
+     (t
       (with-temp-buffer
-        (insert text)
+        (insert (edgar--fetch url))
         (let ((dom
                (libxml-parse-html-region (point-min) (point-max))))
           (erase-buffer)
@@ -275,7 +305,7 @@ primary document is returned unchanged."
                 (shr-use-fonts nil)
                 (shr-width 100))
             (shr-insert-document dom)))
-        (buffer-substring-no-properties (point-min) (point-max))))))
+        (buffer-substring-no-properties (point-min) (point-max)))))))
 
 (defun edgar--structure-node (node)
   "Convert libxml NODE to a uniform plist tree without discarding data."
@@ -297,14 +327,36 @@ primary document is returned unchanged."
    (t
     (list :type 'value :value node))))
 
+(defun edgar--text-document-structure (format text)
+  "Return TEXT as a document tree with FORMAT and paragraph children."
+  (let ((paragraphs
+         (seq-remove
+          #'string-empty-p
+          (mapcar
+           #'string-trim
+           (split-string
+            (replace-regexp-in-string (string ?\f) "\n\n" text t t)
+            "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
+    (list
+     :type 'document
+     :format format
+     :text text
+     :children
+     (mapcar
+      (lambda (paragraph) (list :type 'paragraph :text paragraph))
+      paragraphs))))
+
 (defun edgar-document-structure (filing)
   "Return FILING as a generic, ordered document tree.
 The root plist has :format and :children.  Each element has :name,
 :attributes, and ordered :children; text is retained in leaf plists.  HTML,
-XML, and text submissions use the same representation, so callers can inspect
+XML, text, and PDF documents use the same representation, so callers can inspect
 any element or paragraph without form-specific projections."
   (let ((url (plist-get filing :url)))
     (cond
+     ((and (stringp url)
+           (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url))
+      (edgar--text-document-structure 'pdf (edgar-text filing)))
      ((and (stringp url)
            (string-match-p "\\.xml\\(?:\\?\\|\\'\\)" url))
       (require 'edgar-xml)
@@ -315,21 +367,7 @@ any element or paragraph without form-specific projections."
          :children (and tree (list (edgar--structure-node tree))))))
      ((and (stringp url)
            (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-      (let* ((text (edgar-text filing))
-             (paragraphs
-              (seq-remove
-               #'string-empty-p
-               (mapcar
-                #'string-trim
-                (split-string text
-                              "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
-        (list
-         :type 'document
-         :format 'text
-         :text text
-         :children
-         (mapcar
-          (lambda (p) (list :type 'paragraph :text p)) paragraphs))))
+      (edgar--text-document-structure 'text (edgar-text filing)))
      (t
       (let ((html (edgar-html filing)))
         (with-temp-buffer

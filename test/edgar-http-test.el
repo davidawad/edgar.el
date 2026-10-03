@@ -71,6 +71,25 @@
           (should (= calls 3)))
       (delete-directory edgar-http-cache-directory t))))
 
+(ert-deftest edgar-http-preserves-binary-archive-bodies-in-cache ()
+  (let ((edgar-http-cache-directory
+         (make-temp-file "edgar-http-cache" t))
+        (edgar-http--last-request-time nil)
+        (calls 0)
+        (expected (unibyte-string #x25 #x50 #x44 #x46 #x00 #xff)))
+    (unwind-protect
+        (cl-letf (((symbol-function 'url-retrieve-synchronously)
+                   (lambda (&rest _)
+                     (setq calls (1+ calls))
+                     (edgar-http-test--response 200 expected))))
+          (let ((url "https://www.sec.gov/Archives/edgar/data/1/file.pdf"))
+            (dotimes (_ 2)
+              (let ((body (edgar-http-get url nil t)))
+                (should (equal body expected))
+                (should-not (multibyte-string-p body))))
+            (should (= calls 1))))
+      (delete-directory edgar-http-cache-directory t))))
+
 (ert-deftest edgar-http-retries-and-honours-retry-after ()
   (let ((calls 0)
         (delays nil)

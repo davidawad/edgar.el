@@ -74,7 +74,7 @@
   "Every registry row has a valid backend, level, and Q2 volume."
   (maphash
    (lambda (_form info)
-     (should (memq (plist-get info :backend) '(html xml text)))
+     (should (memq (plist-get info :backend) '(html xml text pdf)))
      (should (memq (plist-get info :level) '(L0 L1 L2)))
      (should (numberp (plist-get info :volume))))
    edgar-forms--registry))

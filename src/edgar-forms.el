@@ -1015,8 +1015,8 @@
      "CERT"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L2
       :sections-or-fields nil
       :volume 440
       :notes nil)
@@ -1236,7 +1236,7 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 24
       :notes nil)
@@ -2045,8 +2045,8 @@
      "REVOKED"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L2
       :sections-or-fields nil
       :volume 26
       :notes nil)

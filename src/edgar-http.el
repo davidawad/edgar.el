@@ -46,10 +46,12 @@
            (file-name-nondirectory path)
            '("index.json" "index.htm" "index.html"))))))
 
-(defun edgar-http--cache-file (url)
-  "Return the cache filename for URL."
-  (expand-file-name (concat (secure-hash 'sha256 url) ".html")
-                    edgar-http-cache-directory))
+(defun edgar-http--cache-file (url &optional binary)
+  "Return the cache filename for URL.
+When BINARY is non-nil, use a distinct path for the raw response."
+  (expand-file-name
+   (concat (secure-hash 'sha256 url) (if binary ".bin" ".html"))
+   edgar-http-cache-directory))
 
 (defun edgar-http--throttle ()
   "Wait as needed to respect `edgar-http-requests-per-second'."
@@ -78,8 +80,9 @@
                       (max 0 (- (float-time date) (float-time)))))))
         (expt 2 attempt))))
 
-(defun edgar-http--response ()
-  "Return (STATUS HEADERS BODY) for the current URL response buffer."
+(defun edgar-http--response (&optional binary)
+  "Return (STATUS HEADERS BODY) for the current URL response buffer.
+When BINARY is non-nil, return BODY as an unibyte string."
   (goto-char (point-min))
   (unless (looking-at "HTTP/[0-9.]+ \\([0-9]+\\)")
     (error "EDGAR HTTP: malformed response status"))
@@ -110,19 +113,23 @@
           (insert body)
           (zlib-decompress-region (point-min) (point-max))
           (setq body (buffer-string))))
-      (list status headers (decode-coding-string body 'utf-8)))))
+      (list status headers
+            (if binary body (decode-coding-string body 'utf-8))))))
 
-(defun edgar-http-get (url &optional user-agent)
-  "Return URL's decoded body, using USER-AGENT for the request.
+(defun edgar-http-get (url &optional user-agent binary)
+  "Return URL's body, using USER-AGENT for the request.
+When BINARY is non-nil, return the body as an unibyte string.
 Requests are globally throttled.  HTTP 429 and 5xx responses are retried
 with bounded exponential backoff, respecting a valid Retry-After header.
 Successful immutable SEC archive documents are cached by URL.  Other
 endpoints are never cached."
   (let* ((cacheable (edgar-http--archive-document-p url))
-         (cache-file (and cacheable (edgar-http--cache-file url))))
+         (cache-file
+          (and cacheable (edgar-http--cache-file url binary))))
     (or (and cache-file
              (file-readable-p cache-file)
              (with-temp-buffer
+               (when binary (set-buffer-multibyte nil))
                (insert-file-contents cache-file)
                (buffer-string)))
         (let ((attempt 0)
@@ -139,7 +146,7 @@ endpoints are never cached."
               (unwind-protect
                   (with-current-buffer buffer
                     (pcase-let ((`(,status ,headers ,response-body)
-                                 (edgar-http--response)))
+                                 (edgar-http--response binary)))
                       (cond
                        ((and (>= status 200) (< status 300))
                         (setq
@@ -159,8 +166,12 @@ endpoints are never cached."
                   (kill-buffer buffer)))))
           (when cache-file
             (make-directory edgar-http-cache-directory t)
-            (with-temp-file cache-file
-              (insert body)))
+            (with-temp-buffer
+              (when binary (set-buffer-multibyte nil))
+              (insert body)
+              (let ((coding-system-for-write
+                     (if binary 'no-conversion 'utf-8-unix)))
+                (write-region (point-min) (point-max) cache-file nil 'silent))))
           body))))
 
 (provide 'edgar-http)

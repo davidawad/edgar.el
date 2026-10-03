@@ -27,10 +27,11 @@
   (expand-file-name (concat "expect/" slug ".eld") edgar-expect--dir))
 
 (defun edgar-expect--slugs ()
-  "Slugs of every rendered filing fixture."
+  "Slugs of every HTML or PDF filing fixture."
   (seq-filter
    (lambda (slug)
-     (file-exists-p (edgar-expect--file slug ".htm.gz")))
+     (or (file-exists-p (edgar-expect--file slug ".htm.gz"))
+         (file-exists-p (edgar-expect--file slug ".pdf"))))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -42,13 +43,19 @@
     (insert-file-contents file)
     (read (current-buffer))))
 
-(defun edgar-expect--html (slug)
-  "Decompressed HTML of SLUG's fixture."
-  (with-temp-buffer
-    (let ((coding-system-for-read 'utf-8)
-          (auto-compression-mode t))
-      (insert-file-contents (edgar-expect--file slug ".htm.gz")))
-    (buffer-string)))
+(defun edgar-expect--primary (slug)
+  "Primary document bytes of SLUG's fixture."
+  (let ((pdf (edgar-expect--file slug ".pdf")))
+    (if (file-exists-p pdf)
+        (with-temp-buffer
+          (set-buffer-multibyte nil)
+          (insert-file-contents-literally pdf)
+          (buffer-string))
+      (with-temp-buffer
+        (let ((coding-system-for-read 'utf-8)
+              (auto-compression-mode t))
+          (insert-file-contents (edgar-expect--file slug ".htm.gz")))
+        (buffer-string)))))
 
 (defun edgar-expect--bucket (n)
   "Log2 bucket of N."
@@ -106,6 +113,9 @@
     ("15-12G" "apogee therapeutics" nil)
     ("15-15D" "plus automation" nil)
     ("IRANNOTICE" "intel corporation" nil)
+    ("CERT" "braveheart bio" nil)
+    ("DSTRBRPT" "inter-american development bank" nil)
+    ("REVOKED" "opinion of the commission" nil)
     ("NT 10-K" "digital brand media" nil)
     ("NT 10-Q" "digital brand media" nil)
     ("NT 11-K" "ori 401" nil)
@@ -129,12 +139,15 @@
   "Replay fixture SLUG and compare against its expectation."
   (let* ((filing
           (edgar-expect--read (edgar-expect--file slug ".eld")))
-         (html (edgar-expect--html slug))
+         (primary (edgar-expect--primary slug))
          (inv
           (assoc (plist-get filing :form) edgar-expect--invariants))
          text
          snap)
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) primary))
+              ((symbol-function 'edgar--fetch-binary)
+               (lambda (_) primary)))
       (setq text (edgar-text filing)))
     (setq snap (edgar-expect--snapshot filing text))
     (should inv)
@@ -190,7 +203,7 @@
           (edgar-expect--read (edgar-expect--file "10-ka-tsla" ".eld")))
          (newer-amendment
           (copy-sequence amendment))
-         (amendment-html (edgar-expect--html "10-ka-tsla"))
+         (amendment-html (edgar-expect--primary "10-ka-tsla"))
          (original-html
           "<html><body><p>Item 1. Business</p><p>Original business text.</p></body></html>"))
     (setf (plist-get amendment :amends) (plist-get original :accn))

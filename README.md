@@ -64,7 +64,9 @@ access to the document structure, use the generic tree API:
       (edgar-structure-paragraphs tree)
       (edgar-structure-nodes tree "ix:nonfraction"))
 
-HTML, XML, and plain-text submissions use one tree representation. Element
+HTML, XML, plain-text submissions, and direct PDF documents use one tree
+representation. PDF text extraction requires Poppler's pdftotext program;
+configure its path with edgar-pdftotext-program. Element
 names, attributes, child order, and text nodes are kept; individual form codes
 do not select custom fields. `edgar-structure-section` accepts a visible
 heading name or a full heading/tag path. Duplicate names signal an ambiguity

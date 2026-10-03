@@ -1,0 +1,1 @@
+(:accn "9999999997-26-001095" :form "REVOKED" :filed "2026-06-23" :report nil :doc "filename1.pdf" :cik 1441082 :url "https://www.sec.gov/Archives/edgar/data/1441082/999999999726001095/filename1.pdf")
