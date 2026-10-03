@@ -266,13 +266,18 @@
 
 (defun edgar-expect--check (slug)
   "Replay fixture SLUG and compare against its expectation."
-  (let* ((filing
-          (edgar-expect--read (edgar-expect--file slug ".eld")))
-         (primary (edgar-expect--primary slug))
-         (inv
-          (assoc (plist-get filing :form) edgar-expect--invariants))
-         text
-         snap)
+  (let*
+      ((filing
+        (edgar-expect--read (edgar-expect--file slug ".eld")))
+       (primary (edgar-expect--primary slug))
+       ;; Exact amendment markers win; otherwise inherit the base form.
+       (inv
+        (or (assoc (plist-get filing :form) edgar-expect--invariants)
+            (assoc
+             (edgar--base-form (plist-get filing :form))
+             edgar-expect--invariants)))
+       text
+       snap)
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) primary)))
       (setq text (edgar-text filing)))
     (setq snap (edgar-expect--snapshot filing text))

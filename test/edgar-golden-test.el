@@ -284,24 +284,24 @@
                        (downcase (edgar-fixtures-norm body)))))))
 
 (ert-deftest edgar-golden-g7-toc-less-registration-items ()
-  "S-8 registration statements expose Part II Items without a contents page."
-  (let* ((slug "s-8-veralto")
-         (filing (edgar-fixtures-filing slug))
-         (html (edgar-fixtures-html slug))
-         text
-         section)
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-      (setq text (edgar-text filing))
-      (setq section (edgar-section filing "II.8")))
-    (should-not (string-match-p "TABLE OF CONTENTS" (upcase text)))
-    (should section)
-    (should
-     (string-match-p
-      "exhibits"
-      (downcase (edgar-fixtures-norm section))))))
+  "S-8 filings expose Part II Items without a contents page."
+  (dolist (slug '("s-8-veralto" "s-8-pos-exxonmobil"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           text
+           section)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq text (edgar-text filing))
+        (setq section (edgar-section filing "II.8")))
+      (should-not (string-match-p "TABLE OF CONTENTS" (upcase text)))
+      (should section)
+      (should
+       (string-match-p
+        "exhibits"
+        (downcase (edgar-fixtures-norm section)))))))
 
 (ert-deftest edgar-golden-g7-toc-backed-risk-sections ()
-  "S-3 prospectus Risk Factors resolve through TOC-backed named headings."
+  "S-3 prospectus Risk Factors resolve through named section access."
   (dolist (entry
            (edgar-fixtures-read
             (edgar-fixtures-path "golden/g7-prospectus-sections.eld")))
@@ -328,6 +328,30 @@
       (should
        (string-search (nth 2 entry)
                       (edgar-fixtures-norm section))))))
+
+(ert-deftest edgar-golden-g7-html-linked-prospectus-heading ()
+  "Generic HTML fragment links expose a named prospectus section in the tree."
+  (let* ((entry
+          (car (edgar-fixtures-read
+                (edgar-fixtures-path "golden/g7-prospectus-linked-heading.eld"))))
+         (slug (nth 0 entry))
+         (name (nth 1 entry))
+         (marker (nth 2 entry))
+         (filing (edgar-fixtures-filing slug))
+         (html (edgar-fixtures-html slug))
+         tree
+         tree-section
+         filing-section)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (setq tree (edgar-document-structure filing))
+      (setq tree-section (edgar-structure-section tree name))
+      (setq filing-section (edgar-section filing name)))
+    (should tree-section)
+    (should (> (length (plist-get tree-section :body)) 100))
+    (should
+     (string-search marker
+                    (edgar-fixtures-norm (plist-get tree-section :body))))
+    (should (string-search marker (edgar-fixtures-norm filing-section)))))
 
 (ert-deftest edgar-golden-g7-8-a12b-generic-item-access ()
   "8-A12B registration documents expose generic numbered Item sections."
