@@ -54,7 +54,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `1-Z` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-Z")` |
 | `10-12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12B")` |
 | `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
-| `10-D` | G6 Asset-backed | xml | L0 | `(edgar-form-info "10-D")` |
+| `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `10-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-K")` |
 | `10-KT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-KT")` |
 | `10-Q` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "10-Q")` |
@@ -121,7 +121,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `8-A12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12G")` |
 | `8-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K")` |
 | `8-K12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K12B")` |
-| `ABS-15G` | G6 Asset-backed | xml | L0 | `(edgar-form-info "ABS-15G")` |
+| `ABS-15G` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `ABS-EE` | G6 Asset-backed | xml | L2 | `(edgar-xml filing)` |
 | `ADV-H-T` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ADV-H-T")` |
 | `ANNLRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "ANNLRPT")` |
@@ -304,7 +304,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | G3 Beneficial ownership 13D/13G | 18,768 | 5.3% | 5 | XML | SCHEDULE 13G (16,008), 13D |
 | G4 13F holdings | 11,633 | 3.3% | 2 | XML | 13F-HR, 13F-NT |
 | G8 Proxy & M&A | 11,244 | 3.2% | 31 | HTML | DEFA14A, DEF 14A, ARS, 425 |
-| G6 Asset-backed | 5,714 | 1.6% | 3 | XML | 10-D, ABS-EE, ABS-15G |
+| G6 Asset-backed | 5,714 | 1.6% | 3 | mixed | 10-D, ABS-EE, ABS-15G |
 | G12 Broker-dealer, staff, market structure | 2,577 | 0.7% | 26 | mixed | CORRESP, X-17A-5, UPLOAD, MA-I |
 | G11 Reg CF & Reg A | 1,757 | 0.5% | 14 | XML/HTML | C-AR, C, C-U, 1-A |
 | G13 Tail | 46 | 0.0% | 2 | HTML | 305B2, POS 8C |

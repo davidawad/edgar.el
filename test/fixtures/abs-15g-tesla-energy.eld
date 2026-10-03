@@ -1,0 +1,1 @@
+(:accn "0001193125-26-219735" :form "ABS-15G" :company "Tesla Sustainable Energy Holdings, LLC" :filed "2026-05-12" :report "2026-05-12" :doc "d108502dabs15g.htm" :cik 2037778 :url "https://www.sec.gov/Archives/edgar/data/2037778/000119312526219735/d108502dabs15g.htm")
