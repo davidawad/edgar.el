@@ -323,8 +323,11 @@ SBSE/SBSE-A/SBSE-C, and TA-1/TA-W. They account for 2,496 of 2,577 G12
 filings in the Q2 snapshot (96.9%).
 
 The six remaining L0 forms are ADV-H-T, G-FIN, NRSRO-CE, NRSRO-UPD,
-SEC STAFF ACTIO, and SEC STAFF LETTE. They remain L0 because there is no
-recorded readable whole-text fixture and generic-structure snapshot for them.
+SEC STAFF ACTIO, and SEC STAFF LETTE. A Q2 2026 archive check found ADV-H-T
+and G-FIN only as paper-submission control notices, and the other four only as
+PDFs. Their exact SEC samples and source limits are recorded in
+`test/fixtures/structured-sources.md`; PDF text extraction is unsupported.
+They remain L0 because none has a readable HTML/XML primary document to cover.
 
 G10 currently has 13 of 40 base forms at L1: 24F-2NT, 40-17G, 40-APP,
 485APOS, 485BPOS, 485BXT, 497, 497J, 497K, 497VPI, 497VPU, N-1A, and S-6.

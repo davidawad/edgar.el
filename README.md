@@ -82,6 +82,9 @@ heading name or a full heading/tag path. Duplicate names signal an ambiguity
 error that a path resolves. `edgar-structure-nodes-at-path` addresses nested
 element paths, `edgar-structure-nodes` returns elements with a given tag, and
 `edgar-structure-paragraphs` returns `p` elements or plain-text paragraphs.
+The tree root's `:metadata` includes filing identifiers and a `:primary-document`
+record with its name, type, format, and readability. PDF-only sources return
+that metadata without text; `edgar-text` signals `user-error` for them.
 
 `edgar-structure-headings` discovers HTML `h1`-`h6` and titled `section`
 elements. `edgar-section` additionally resolves existing Item headings and

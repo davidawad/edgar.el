@@ -100,3 +100,34 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.
+
+### G12 source limitations
+
+The Q2 2026 SEC archive samples for the remaining L0 forms have no readable
+HTML/XML primary documents:
+
+- `ADV-H-T` — Apple Tree Venture Management, accession
+  [9999999997-26-000671](https://www.sec.gov/Archives/edgar/data/2130471/9999999997-26-000671.txt).
+  Its `.paper` record resolves only to an SEC-generated notice directing the
+  reader to Document Control Number 26007812.
+- `G-FIN` — State Street Bank & Trust, accession
+  [9999999997-26-001447](https://www.sec.gov/Archives/edgar/data/823722/9999999997-26-001447.txt).
+  Its `.paper` record resolves only to an SEC-generated notice directing the
+  reader to Document Control Number 26007830.
+- `NRSRO-CE` — Moody's Investors Service, accession
+  [0001193125-26-255364](https://www.sec.gov/Archives/edgar/data/1698547/000119312526255364/index.json).
+  Its primary and exhibits are PDFs embedded as ASCII-armored PDF data in the
+  complete submission.
+- `NRSRO-UPD` — HR Ratings, accession
+  [0001628352-26-000006](https://www.sec.gov/Archives/edgar/data/1628352/000162835226000006/index.json).
+  Its documents are PDFs (`Exhibit4.pdf`, `UpdateJune.pdf`).
+- `SEC STAFF ACTIO` — Vicore Pharma, accession
+  [9999999997-26-001144](https://www.sec.gov/Archives/edgar/data/2124403/999999999726001144/index.json).
+  Its primary document is `filename1.pdf`.
+- `SEC STAFF LETTE` — Mao Shan Huang Holdings, accession
+  [9999999997-26-001105](https://www.sec.gov/Archives/edgar/data/2137634/999999999726001105/index.json).
+  Its primary document is `filename1.pdf`.
+
+These records stay L0: the generic tree exposes filing and primary-document
+metadata, and PDF sources have no extracted text or named sections. `edgar-text`
+reports PDF text extraction as unsupported.
