@@ -196,8 +196,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 103
       :notes nil)
      table)
@@ -1786,8 +1786,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 194
       :notes nil)
      table)
@@ -1796,8 +1796,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 331
       :notes nil)
      table)
@@ -1806,8 +1806,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 16
       :notes nil)
      table)
@@ -1816,8 +1816,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 104
       :notes nil)
      table)

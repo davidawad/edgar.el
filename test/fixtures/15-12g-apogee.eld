@@ -1,0 +1,1 @@
+(:accn "0001140361-26-036410" :form "15-12G" :filed "2026-09-14" :report nil :doc "ef20081882_1512g.htm" :cik 1974640 :url "https://www.sec.gov/Archives/edgar/data/1974640/000114036126036410/ef20081882_1512g.htm")
