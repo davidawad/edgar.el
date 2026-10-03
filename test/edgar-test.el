@@ -903,6 +903,15 @@
           "Risks include liquidity" (plist-get section :body)))
         (should
          (equal
+          (edgar-structure-paragraphs section)
+          '("Risks include liquidity." "We monitor cash.")))
+        (should
+         (equal
+          (mapcar #'edgar-structure-text
+                  (edgar-structure-paragraph-nodes section))
+          '("Risks include liquidity." "We monitor cash.")))
+        (should
+         (equal
           (plist-get
            (edgar-structure-section
             tree '("Financials" "Risk Factors"))
@@ -934,6 +943,8 @@
         (should (eq (plist-get xml :format) 'xml))
         (should (equal (plist-get risk :body) "Risk data"))
         (should
+         (equal (edgar-structure-paragraphs risk) '("Risk data")))
+        (should
          (equal
           (plist-get
            (edgar-structure-section xml '("report" "RiskFactors"))
@@ -953,6 +964,84 @@
          (equal
           (edgar-structure-text text)
           "First paragraph.\n\nSecond paragraph."))))))
+
+(ert-deftest edgar-structure-sections-scope-text-and-pdf-paragraphs ()
+  "Named text and PDF headings expose only their body paragraph nodes."
+  (let* ((filing '(:form "TEST" :accn "TEST-001"))
+         (source
+          (concat
+           "Risk Factors\n\n"
+           "First risk paragraph.\n\nSecond risk paragraph.\n\n"
+           "Liquidity\n\nLiquidity paragraph."))
+         (text-tree
+          (edgar--document-structure-from-content
+           filing 'text source nil))
+         pdf-tree)
+    (cl-letf (((symbol-function 'edgar--pdf-text)
+               (lambda (_bytes) source)))
+      (setq pdf-tree
+            (edgar--document-structure-from-content
+             filing 'pdf "%PDF-1.4 test bytes" nil)))
+    (dolist (tree (list text-tree pdf-tree))
+      (let* ((section (edgar-structure-section tree "Risk Factors"))
+             (paragraph-nodes (edgar-structure-paragraph-nodes section))
+             (expected
+              '("First risk paragraph." "Second risk paragraph.")))
+        (should section)
+        (should (plist-get section :body-node))
+        (should (equal (mapcar #'edgar-structure-text paragraph-nodes)
+                       expected))
+        (should (equal (edgar-structure-paragraphs section) expected))
+        (should
+         (equal
+          (edgar-structure-paragraphs (plist-get section :body-node))
+          expected))
+        (should-not (member "Liquidity paragraph."
+                            (edgar-structure-paragraphs section)))))))
+
+(ert-deftest edgar-structure-section-scopes-linked-html-target-paragraphs ()
+  "Contents links resolve named anchors to scoped generic paragraphs."
+  (let* ((html
+          (concat
+           "<html><body><nav><p><a href='#risk'>Risk Factors</a></p>"
+           "<p><a href='#liquidity'>Liquidity</a></p></nav>"
+           "<a id='risk'></a><p>Risk Factors</p><p>Risk detail.</p>"
+           "<a id='liquidity'></a><p>Liquidity</p>"
+           "<p>Liquidity detail.</p></body></html>"))
+         (filing '(:url "https://example.invalid/report.htm")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let* ((tree (edgar-document-structure filing))
+             (section (edgar-structure-section tree "Risk Factors")))
+        (should section)
+        (should
+         (equal (edgar-structure-paragraphs section) '("Risk detail.")))
+        (should-not
+         (member "Liquidity detail."
+                 (edgar-structure-paragraphs section)))))))
+
+(ert-deftest edgar-structure-sections-scope-emphasized-html-headings ()
+  "Visually emphasized generic HTML headings scope their paragraphs."
+  (let* ((html
+          (concat
+           "<html><body><p><strong>Management's Discussion and Analysis</strong></p>"
+           "<p>Management detail.</p>"
+           "<p><strong>Risk Factors</strong></p><p>Risk detail.</p>"
+           "<p><b>Liquidity</b></p><p>Liquidity detail.</p></body></html>"))
+         (filing '(:url "https://example.invalid/report.htm")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let* ((tree (edgar-document-structure filing))
+             (section
+              (edgar-structure-section
+               tree "Management's Discussion and Analysis")))
+        (should section)
+        (should (equal (edgar-structure-paragraphs section)
+                       '("Management detail.")))
+        (should-not
+         (member "Risk detail."
+                 (edgar-structure-paragraphs section)))
+        (should-not
+         (member "Liquidity detail."
+                 (edgar-structure-paragraphs section)))))))
 
 (ert-deftest edgar-complete-submission-selects-primary-legacy-text ()
   (let* ((fixture-dir (expand-file-name "fixtures" edgar-test--dir))
