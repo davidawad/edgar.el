@@ -94,8 +94,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `424B3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B4")` |
 | `424B5` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `424B7` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B7")` |
-| `424B8` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B8")` |
+| `424B7` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `424B8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424H` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424H")` |
 | `424I` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424I")` |
 | `425` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "425")` |
@@ -173,7 +173,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `F-10EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10EF")` |
 | `F-10POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10POS")` |
 | `F-1MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-1MEF")` |
-| `F-3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3")` |
+| `F-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-3ASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3ASR")` |
 | `F-3MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3MEF")` |
 | `F-4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-4")` |
@@ -259,7 +259,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `S-3MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3MEF")` |
 | `S-4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-4")` |
 | `S-6` | G10 Investment-company registration | html | L0 | `(edgar-form-info "S-6")` |
-| `S-8` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-8")` |
+| `S-8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-8 POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-8 POS")` |
 | `S-B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-B")` |
 | `SBSE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE")` |
