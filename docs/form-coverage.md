@@ -80,7 +80,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `40-17F2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17F2")` |
+| `40-17F2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-17G` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-24B2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-24B2")` |
 | `40-33` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-33")` |
@@ -195,12 +195,12 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-14 8C` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
+| `N-2 POSASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-23C-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3B` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-2ASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2MEF` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2MEF")` |
+| `N-2MEF` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-30B-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-30D` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-4` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -332,10 +332,14 @@ auto-generated paper notice with a document control number; the original
 reports are absent from the SEC accession directories. The recorded files,
 accessions, and exact notices are listed in [the G12 source evidence](../test/fixtures/structured-sources.md#g12-source-limitations).
 
-G10 currently has 27 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17G,
-40-6B, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS, 486BPOS, 486BXT, 487,
-497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU, N-14, N-14 8C, N-1A,
-N-2, N-2ASR, N-4, N-6, and S-6. The remaining 13 forms are still L0.
+G10 currently has 30 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
+40-17G, 40-6B, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS, 486BPOS,
+486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU, N-14,
+N-14 8C, N-1A, N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. The
+remaining 10 forms are still L0: 40-24B2, 40-33, 40-8F-2, APP NTC, APP ORDR,
+APP WD, APP WDG, CT ORDER, DEL AM, and MSD. The 40-17F2, N-2 POSASR, and
+N-2MEF fixtures have reviewed generic named-section goldens. They remain L1
+until three distinct filer fixtures support L2 diversity.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the

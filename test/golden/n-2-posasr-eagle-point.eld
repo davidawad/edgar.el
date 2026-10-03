@@ -23,6 +23,11 @@
    "(a) to file, during any period in which offers or sales are being made, a post-effective amendment to the registration statement:"
    "(1) to include any prospectus required by Section 10(a)(3) of the Securities Act of 1933;"
    "Tramontano /s/ * Trustee May 22, 2026 Jeffrey L."))
+ :named-sections
+ (("EXPLANATORY NOTE"
+   "This Post-Effective Amendment No. 2 (this “Amendment”) to the Registration Statement on Form N-2")
+  ("SIGNATURES"
+   "Pursuant to the requirements of the Securities Act of 1933, as amended, and the Investment Company Act of 1940"))
  :text
  ("333-286484 Check each box that appropriately characterizes the Registrant:"
   "Chief Executive Officer and Trustee May 22, 2026 Majewski Thomas P."))
