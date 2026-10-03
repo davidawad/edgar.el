@@ -369,6 +369,22 @@
         "risks galore" (edgar-section f "Risk Factors")))
       (should-not (edgar-section f "99")))))
 
+(ert-deftest edgar-8ka-generic-item-sections-are-addressable ()
+  "A real 8-K/A exposes dotted Items through the generic section API."
+  (let* ((filing (edgar-fixtures-filing "8ka-mdxg-2026"))
+         (html (edgar-fixtures-html "8ka-mdxg-2026")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (dolist (entry
+               '(("1.01"
+                  .
+                  "Entry into a Material Definitive Agreement")
+                 ("7.01" . "Regulation FD Disclosure")
+                 ("9.01" . "Financial Statements and Exhibits")))
+        (let ((body (edgar-section filing (car entry))))
+          (should (stringp body))
+          (should
+           (string-match-p (regexp-quote (cdr entry)) body)))))))
+
 (ert-deftest
     edgar-named-sections-resolve-prospectus-and-proxy-fixtures
     ()
@@ -403,10 +419,19 @@
   (let* ((filing (edgar-fixtures-filing "18-k-chile"))
          (html (edgar-fixtures-html "18-k-chile")))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-      (let ((body (edgar-section filing '("html" "body"))))
+      (let* ((tree (edgar-document-structure filing))
+             (primary (plist-get tree :primary-document))
+             (body-section
+              (edgar-structure-section tree '("html" "body")))
+             (body (plist-get body-section :body)))
+        (should (eq 'html (plist-get tree :format)))
+        (should
+         (string-match-p
+          "FORM 18-K" (plist-get primary :description)))
         (should (stringp body))
-        (should (string-match-p "FORM 18-K" body))
-        (should (string-match-p "In respect of each issue" body))))))
+        (should (string-match-p "ANNUAL REPORT" body))
+        (should (string-match-p "In respect of each issue" body))
+        (should-not (string-match-p "FORM 18-K" body))))))
 
 (ert-deftest edgar-form25-generic-document-subtrees-are-addressable ()
   "A real Form 25 supports generic HTML body access."

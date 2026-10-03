@@ -1,0 +1,1 @@
+(:accn "0001193125-26-202395" :form "10-12B" :company "Middleby Food Processing, Inc." :filed "2026-05-04" :report "" :doc "d14360d1012b.htm" :cik 2088281 :url "https://www.sec.gov/Archives/edgar/data/2088281/000119312526202395/d14360d1012b.htm" :size 33571 :sha256 "23e45f964670e34e0da48be82f86f0c12ae49379f8db658fd610edda7bf952d3")

@@ -1,0 +1,1 @@
+(:accn "0001213900-26-061646" :form "10-12G" :company "BioKey (Cayman), Inc." :filed "2026-05-28" :report "" :doc "ea0291546-1012g_biokey.htm" :cik 2108359 :url "https://www.sec.gov/Archives/edgar/data/2108359/000121390026061646/ea0291546-1012g_biokey.htm" :size 37257 :sha256 "048765cee61330b18724d105f55fd15b6071f60b3d199bf798517ba95305cbb7")

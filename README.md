@@ -124,6 +124,9 @@ filings have reviewed HTML/PDF fixtures and use the same generic text and
 paragraph structure API. Their SEC primary-document links and the APP NTC and
 N-2MEF scope notes are listed in [the fixture source record](test/fixtures/structured-sources.md).
 
+G7 Section 12 registration fixtures cover 10-12B, 10-12G, 20FR12B, 20FR12G,
+and 40FR12G through the generic document, body, and Item-section APIs.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.

@@ -1,0 +1,1 @@
+(:accn "0002011134-26-000009" :form "10-12B" :company "Kioni Holdings Ltd" :filed "2026-05-05" :report "" :doc "kioni260505-1012b.htm" :cik 2011134 :url "https://www.sec.gov/Archives/edgar/data/2011134/000201113426000009/kioni260505-1012b.htm" :size 27710 :sha256 "0e55c6d86585c742134d089b57b96f60fc076926236c5f7c58ccfdda4a9690f9")

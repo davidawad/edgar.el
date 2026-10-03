@@ -134,7 +134,9 @@
       (mapcar
        (lambda (b)
          (let ((g (edgar-golden--section (car b) bodies)))
-           (and g (cons (car b) g))))
+           ;; Retain a key even when every candidate also occurs in another
+           ;; section; the golden test still checks that section's presence.
+           (cons (car b) g)))
        bodies))
      :text (edgar-golden--text norm))))
 

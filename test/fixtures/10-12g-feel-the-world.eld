@@ -1,0 +1,1 @@
+(:accn "0001079973-26-000657" :form "10-12G" :company "Feel The World, Inc." :filed "2026-05-14" :report "" :doc "ftw_1012g.htm" :cik 1690455 :url "https://www.sec.gov/Archives/edgar/data/1690455/000107997326000657/ftw_1012g.htm" :size 1013831 :sha256 "231da58ee1ec0396b35c3ff5a2162ddef9b9bf8f61439cd9ee1708dbed2c02a4")
