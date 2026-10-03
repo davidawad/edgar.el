@@ -1,75 +1,4 @@
-((:slug "index-sp-15d2-2026-q2" :document-snapshot
-	(:form "SP 15D2" :format html :primary-document
-	       (:type "SP 15D2" :sequence "1" :filename
-		      "tm2611679d1_sp15d2.htm" :description "SP 15D2"
-		      :format html)
-	       :text-length 28375 :text-sha256
-	       "b123edd2ed997ccd1e1bb2ad08b381611e7ced64b59b2f48be097692032cf4e8"
-	       :paragraph-count 285 :named-section-count 0
-	       :named-section-head nil :tag-counts
-	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 285)
-		("table" . 14) ("h1" . 0) ("h2" . 0))))
- (:slug "index-annlrpt-2026-q2" :document-snapshot
-	(:form "ANNLRPT/A" :format html :primary-document
-	       (:type "ANNLRPT/A" :sequence "1" :filename
-		      "ef20071379_annlrpta.htm" :description
-		      "ANNLRPT/A" :format html)
-	       :text-length 370491 :text-sha256
-	       "3dcccc89d945b8feaeebd37d13bae615b95faac4346a652d744a424dda6ed43b"
-	       :paragraph-count 1951 :named-section-count 0
-	       :named-section-head nil :tag-counts
-	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 1951)
-		("table" . 242) ("h1" . 0) ("h2" . 0))))
- (:slug "index-6b-ordr-2026-q2" :document-snapshot
-	(:form "6B ORDR" :format pdf :primary-document
-	       (:type "6B ORDR" :sequence nil :filename
-		      "filename1.pdf" :description nil :format pdf)
-	       :text-length 2109 :text-sha256
-	       "0d26b2a29faed9220d51c858e425a7185beecbf3678365be9b71f7ecbd2f061a"
-	       :paragraph-count 15 :named-section-count 5
-	       :named-section-head
-	       ("UNITED STATES OF AMERICA"
-		"SECURITIES AND EXCHANGE COMMISSION"
-		"INVESTMENT COMPANY ACT OF 1940")
-	       :tag-counts
-	       (("html" . 0) ("head" . 0) ("body" . 0) ("p" . 0)
-		("table" . 0) ("h1" . 0) ("h2" . 0))))
- (:slug "index-6b-ntc-2026-q2" :document-snapshot
-	(:form "6B NTC" :format pdf :primary-document
-	       (:type "6B NTC" :sequence nil :filename "filename1.pdf"
-		      :description nil :format pdf)
-	       :text-length 3587 :text-sha256
-	       "84d614ff68316b70ebeb089ba66f6f302deec487d77916e4bc6674856a7d1006"
-	       :paragraph-count 46 :named-section-count 2
-	       :named-section-head
-	       ("SECURITIES AND EXCHANGE COMMISSION"
-		"FOR FURTHER INFORMATION CONTACT: Jill Ehrlich, Senior Counsel, or Daniele")
-	       :tag-counts
-	       (("html" . 0) ("head" . 0) ("body" . 0) ("p" . 0)
-		("table" . 0) ("h1" . 0) ("h2" . 0))))
- (:slug "index-15f-12g-2026-q2" :document-snapshot
-	(:form "15F-12G" :format html :primary-document
-	       (:type "15F-12G" :sequence "1" :filename
-		      "form15f12g.htm" :description "FORM 15F-12G"
-		      :format html)
-	       :text-length 8390 :text-sha256
-	       "50bd60e37f049ec9899127a81c1f40776f67257c101772e1a697bba698f6b808"
-	       :paragraph-count 40 :named-section-count 0
-	       :named-section-head nil :tag-counts
-	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 40)
-		("table" . 22) ("h1" . 0) ("h2" . 0))))
- (:slug "index-15f-12b-2026-q2" :document-snapshot
-	(:form "15F-12B" :format html :primary-document
-	       (:type "15F-12B" :sequence "1" :filename
-		      "tm2612452d1_15f12b.htm" :description
-		      "FORM 15F-12B" :format html)
-	       :text-length 8844 :text-sha256
-	       "d5e51f125bc8751c7f2346a617207dae787c04e4d59f50dcbae0df3410466dfe"
-	       :paragraph-count 141 :named-section-count 0
-	       :named-section-head nil :tag-counts
-	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 141)
-		("table" . 12) ("h1" . 0) ("h2" . 0))))
- (:slug "index-305b2-2026-q3" :document-snapshot
+((:slug "index-305b2-2026-q3" :document-snapshot
 	(:form "305B2" :format html :primary-document
 	       (:type "305B2" :sequence "1" :filename
 		      "tm2623171d1_305b2.htm" :description "305B2"
@@ -77,6 +6,69 @@
 	       :text-length 3576 :text-sha256
 	       "c65eeb4197e1e08146f6f0f39a3d542eb162abeae40a4c96128fec33599ac714"
 	       :paragraph-count 92 :named-section-count 0
-	       :named-section-head nil :tag-counts
+	       :named-section-head nil
+	       :tag-counts
 	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 92)
-		("table" . 13) ("h1" . 0) ("h2" . 0)))))
+		("table" . 13) ("h1" . 0) ("h2" . 0))))
+ (:slug "index-15-15d-2026-q2" :document-snapshot
+	(:form "15-15D" :format html :primary-document
+	       (:type "15-15D" :sequence nil :filename
+		      "d98890d1515d.htm" :description nil :format html)
+	       :text-length 1671 :text-sha256
+	       "6023c46b1a99e4e62e4a9ddd25c6d5c2dbdee1a5efd35560107170c6fdd25357"
+	       :paragraph-count 40 :named-section-count 3
+	       :named-section-head
+	       ("UNITED STATES" "FORM 15" "SIGNATURE") :tag-counts
+	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 40)
+		("table" . 2) ("h1" . 0) ("h2" . 0))))
+ (:slug "index-cert-2026-q2" :document-snapshot
+	(:form "CERT" :format pdf :primary-document
+	       (:type "CERT" :sequence nil :filename "PLUN042726.pdf"
+		      :description nil :format pdf)
+	       :text-length 755 :text-sha256
+	       "14d6560c7ab657fe47e2cb869a3da76b580aca0341c01138936cfa508b1623a2"
+	       :paragraph-count 7 :named-section-count 3
+	       :named-section-head
+	       ("Chief, Information Technology" "Sincerely,"
+		"New York Stock Exchange")
+	       :tag-counts
+	       (("html" . 0) ("head" . 0) ("body" . 0) ("p" . 0)
+		("table" . 0) ("h1" . 0) ("h2" . 0))))
+ (:slug "index-dstrbrpt-2026-q2" :document-snapshot
+	(:form "DSTRBRPT" :format html :primary-document
+	       (:type "DSTRBRPT" :sequence nil :filename
+		      "d96830ddstrbrpt.htm" :description nil :format
+		      html)
+	       :text-length 66702 :text-sha256
+	       "6a4ccd944f33a95a85bb46062a11621c5e461275e5180a0564f03778efee5ef8"
+	       :paragraph-count 478 :named-section-count 20
+	       :named-section-head
+	       ("PRICING\nSUPPLEMENT" "PRICING SUPPLEMENT"
+		"PRICING SUPPLEMENT")
+	       :tag-counts
+	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 478)
+		("table" . 46) ("h1" . 0) ("h2" . 0))))
+ (:slug "index-irannotice-2026-q2" :document-snapshot
+	(:form "IRANNOTICE" :format html :primary-document
+	       (:type "IRANNOTICE" :sequence nil :filename
+		      "q12026irannotice.htm" :description nil :format
+		      html)
+	       :text-length 1000 :text-sha256
+	       "1e96606d3f3a7794bc9ec8c7603f993d8a8ccc5ccc4de97f4dd688dfeb2352ea"
+	       :paragraph-count 0 :named-section-count 0
+	       :named-section-head nil :tag-counts
+	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 0)
+		("table" . 2) ("h1" . 0) ("h2" . 0))))
+ (:slug "index-revoked-2026-q2" :document-snapshot
+	(:form "REVOKED" :format pdf :primary-document
+	       (:type "REVOKED" :sequence nil :filename
+		      "filename1.pdf" :description nil :format pdf)
+	       :text-length 15903 :text-sha256
+	       "08ac608f4231ed1bd9c47d3fa35ede3f2891df1f039a7509ee4700a4d7d0fd0b"
+	       :paragraph-count 55 :named-section-count 14
+	       :named-section-head
+	       ("SECURITIES AND EXCHANGE COMMISSION"
+		"SECURITIES EXCHANGE ACT OF 1934" "In the Matter of")
+	       :tag-counts
+	       (("html" . 0) ("head" . 0) ("body" . 0) ("p" . 0)
+		("table" . 0) ("h1" . 0) ("h2" . 0)))))

@@ -258,3 +258,11 @@ returns `pdftotext` output, and `edgar-document-structure` exposes the text as
 ordered paragraphs. Recognizable standalone headings are available through
 `edgar-structure-headings` and `edgar-structure-section`; this generic text
 heuristic only returns headings present in the extracted output.
+
+G9 low-volume Q2 2026 samples used for generic document-structure coverage:
+
+- `index-15-15d-2026-q2.htm.gz` — 15-15D, Plus Automation, Inc. ([accession 0001193125-26-200707](https://www.sec.gov/Archives/edgar/data/2086744/000119312526200707/d98890d1515d.htm); 2026-05-01).
+- `index-cert-2026-q2.pdf` — CERT, Plutonian Acquisition Corp. II ([accession 0000876661-26-000366](https://www.sec.gov/Archives/edgar/data/2065661/000087666126000366/PLUN042726.pdf); 2026-04-27).
+- `index-dstrbrpt-2026-q2.htm.gz` — DSTRBRPT, Inter-American Development Bank ([accession 0001193125-26-184924](https://www.sec.gov/Archives/edgar/data/311670/000119312526184924/d96830ddstrbrpt.htm); 2026-04-28).
+- `index-irannotice-2026-q2.htm.gz` — IRANNOTICE, Intel Corp. ([accession 0000050863-26-000081](https://www.sec.gov/Archives/edgar/data/50863/000005086326000081/q12026irannotice.htm); 2026-04-24).
+- `index-revoked-2026-q2.pdf` — REVOKED, The Healing Company Inc. ([accession 9999999997-26-001095](https://www.sec.gov/Archives/edgar/data/1441082/999999999726001095/filename1.pdf); 2026-06-23).

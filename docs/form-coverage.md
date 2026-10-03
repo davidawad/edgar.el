@@ -73,7 +73,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `13F-NT` | G4 13F holdings | xml | L2 | `(edgar-13f-notice filing)` |
 | `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-form-144 filing)` |
 | `15-12G` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |
+| `15-15D` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `15F-12B` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `15F-12G` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `18-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
@@ -154,7 +154,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `C-U` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `C-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `CB` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `CERT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "CERT")` |
+| `CERT` | G9 Periodic & event narrative | pdf | L1 | `(edgar-text filing)` |
 | `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
@@ -176,7 +176,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DOSLTR` | G7 Prospectuses & registration | text | L1 | `(edgar-text filing)` |
 | `DRS` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DRSLTR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `DSTRBRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "DSTRBRPT")` |
+| `DSTRBRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `EFFECT` | G7 Prospectuses & registration | xml | L1 | `(edgar-text filing)` |
 | `F-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-10` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
@@ -194,7 +194,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `F-X` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `G-FIN` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
-| `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
+| `IRANNOTICE` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `MA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-I` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
@@ -257,7 +257,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `PX14A6G` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `QUALIF` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
-| `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
+| `REVOKED` | G9 Periodic & event narrative | pdf | L1 | `(edgar-text filing)` |
 | `RW` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `S-11` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
