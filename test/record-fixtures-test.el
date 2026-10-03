@@ -219,5 +219,66 @@
       (should-not (member "10-K" missing))
       (should (member "10-Q" missing)))))
 
+(ert-deftest edgar-record-run-records-each-present-form-in-both-vintages ()
+  "The one-command run writes each sampled form and reports absent forms."
+  (let* ((directory (make-temp-file "edgar-record-run-" t))
+         (quarters '((2026 . 3) (2023 . 3)))
+         (forms '("10-K" "N-PX" "N-VP"))
+         (registrations
+          '(((2026 . 3)
+             (:form "10-K" :accn "0000000001-26-000001" :cik 1
+              :filed "2026-01-01" :url "https://www.sec.gov/submission.txt")
+             (:form "N-PX" :accn "0000000002-26-000001" :cik 2
+              :filed "2026-01-01" :url "https://www.sec.gov/submission.txt"))
+            ((2023 . 3)
+             (:form "10-K" :accn "0000000001-23-000001" :cik 1
+              :filed "2023-01-01" :url "https://www.sec.gov/submission.txt")
+             (:form "N-PX" :accn "0000000002-23-000001" :cik 2
+              :filed "2023-01-01" :url "https://www.sec.gov/submission.txt"))))
+         result)
+    (unwind-protect
+        (let ((edgar-record-request-delay 0)
+              (edgar-record-total-budget-bytes (* 2 1024 1024)))
+          (cl-letf
+              (((symbol-function 'edgar-record--dir)
+                (lambda () directory))
+               ((symbol-function 'hash-table-keys)
+                (lambda (_table) forms))
+               ((symbol-function 'edgar-index-filings)
+                (lambda (year quarter)
+                  (cdr (assoc (cons year quarter) registrations))))
+               ((symbol-function 'edgar-record--directory-items)
+                (lambda (filing)
+                  (if (equal (plist-get filing :form) "10-K")
+                      '(((name . "annual.htm") (type . "10-K")
+                         (size . "31")))
+                    '(((name . "primary_doc.xml") (type . "N-PX")
+                       (size . "25"))))))
+               ((symbol-function 'edgar--fetch)
+                (lambda (url)
+                  (if (string-suffix-p ".xml" url)
+                      "<?xml version=\"1.0\"?><edgarSubmission/>"
+                    "<html><body>Recorded 10-K fixture.</body></html>"))))
+            (let ((inhibit-message t))
+              (setq result (edgar-record-fixtures-run quarters)))
+            (should-not (plist-get result :no-suitable))
+            (should (equal (plist-get result :no-filing) '("N-VP")))
+            (dolist (quarter quarters)
+              (dolist (form '("10-K" "N-PX"))
+                (let* ((slug (edgar-record--fixture-slug form quarter))
+                       (primary (edgar-record--fixture-primary-file slug form))
+                       (metadata-file
+                        (expand-file-name
+                         (concat slug ".eld") directory)))
+                  (should (file-exists-p primary))
+                  (should (file-exists-p metadata-file))
+                  (with-temp-buffer
+                    (insert-file-contents metadata-file)
+                    (let ((metadata (read (current-buffer))))
+                      (should (equal (plist-get metadata :form) form))
+                      (should (equal (plist-get metadata :sample-quarter)
+                                     (edgar-record--quarter-label quarter)))))))))
+      (delete-directory directory t)))))
+
 (provide 'record-fixtures-test)
 ;;; record-fixtures-test.el ends here
