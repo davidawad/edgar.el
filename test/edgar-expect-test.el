@@ -288,6 +288,7 @@
     ("SEC STAFF LETTE" "mao shan huang holdings limited" nil)
     ("1-K" "form 1-k" nil)
     ("1-SA" "semiannual report pursuant to regulation a" nil)
+    ("1/A" "application for" nil)
     ("1-U" "current report" nil)
     ("1-A-W" "withdrawal of offering statement" nil)
     ("305B2" "statement of eligibility under" nil)
@@ -315,7 +316,7 @@
     (should inv)
     (should
      (string-match-p
-      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[0-9]+/"
+      "\\`https://www.sec.gov/Archives/edgar/\\(?:data/[0-9]+/[0-9]+/\\|vprr/[0-9]+/[0-9]+\\.pdf\\)"
       (plist-get filing :url)))
     (should
      (string-match-p

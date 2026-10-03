@@ -188,18 +188,23 @@
       (plist-get info :sections-or-fields)
       '(generic-named-sections)))))
 
-(ert-deftest edgar-forms-g11-named-forms-meet-bead-acceptance ()
-  "The nine G11 forms in the coverage bead meet its stated levels."
+(ert-deftest edgar-forms-g11-all-forms-meet-l1-acceptance ()
+  "Every registered G11 form has L1 fixture coverage or stronger."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
         (counts (list (cons 'L0 0) (cons 'L1 0) (cons 'L2 0))))
+    (should (= (length rows) 18))
     (dolist (row rows)
-      (let ((cell (assq (plist-get (cdr row) :level) counts)))
+      (let* ((form (car row))
+             (level (plist-get (cdr row) :level))
+             (cell (assq level counts)))
+        (should (memq level '(L1 L2)))
+        (should
+         (if (member form '("C" "C-AR"))
+             (eq level 'L2)
+           (eq level 'L1)))
         (setcdr cell (1+ (cdr cell)))))
-    (dolist (form '("C" "C-AR"))
-      (should (eq (plist-get (edgar-form-info form) :level) 'L2)))
-    (dolist (form '("C-U" "C-TR" "1-A" "1-K" "1-U" "1-SA" "1-Z"))
-      (should (eq (plist-get (edgar-form-info form) :level) 'L1)))
-    (should (equal counts '((L0 . 1) (L1 . 15) (L2 . 2))))))
+    (should (eq (plist-get (edgar-form-info "1") :backend) 'pdf))
+    (should (equal counts '((L0 . 0) (L1 . 16) (L2 . 2))))))
 
 (provide 'edgar-forms-test)
 

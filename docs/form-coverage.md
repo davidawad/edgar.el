@@ -51,7 +51,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 <!-- BEGIN GENERATED FORM COVERAGE -->
 | Form | Family | Backend | Level | Example call |
 |---|---|---|---|---|
-| `1` | G11 Reg CF & Reg A | html | L0 | `(edgar-form-info "1")` |
+| `1` | G11 Reg CF & Reg A | pdf | L1 | `(edgar-text filing)` |
 | `1-A` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A POS` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A-W` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
@@ -313,7 +313,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | G8 Proxy & M&A | 11,244 | 3.2% | 31 | HTML | DEFA14A, DEF 14A, ARS, 425 |
 | G6 Asset-backed | 5,714 | 1.6% | 3 | mixed | 10-D, ABS-EE, ABS-15G |
 | G12 Broker-dealer, staff, market structure | 2,577 | 0.7% | 26 | mixed | CORRESP, X-17A-5, UPLOAD, MA-I |
-| G11 Reg CF & Reg A | 3,159 | 0.9% | 18 | XML/HTML | 1-U, C-AR, C, 1-K, C-U, C-TR |
+| G11 Reg CF & Reg A | 3,159 | 0.9% | 18 | XML/HTML/PDF | 1-U, C-AR, C, 1-K, C-U, C-TR |
 | G13 Tail | 46 | 0.0% | 2 | HTML | 305B2, POS 8C |
 
 The current registry has 24 L0 base forms with five or fewer Q2 filings.
@@ -381,12 +381,14 @@ the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
 binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
 payloads rather than an alternate readable document.
 
-G11 has 17 of 18 forms at L1 or higher: C and C-AR are L2 with typed fields,
-and 15 forms are L1. The nine forms named in the Reg CF/Reg A coverage increment
-(C, C-AR, C-U, C-TR, 1-A, 1-K, 1-U, 1-SA, 1-Z) all meet its acceptance. Form 1
-remains L0 because the Q3 2026 SEC filing for accession 9999999997-26-001567
-contains only an auto-generated paper-submission placeholder, not a parseable
-primary document ([SEC submission](https://www.sec.gov/Archives/edgar/data/2157991/999999999726001567/9999999997-26-001567.txt)).
+All 18 G11 forms are L1 or higher: C and C-AR are L2 with typed fields, and
+the other 16 forms are L1. Form 1 uses the readable scanned PDF from Nasdaq
+ISE's Form 1/A filing (accession 9999999997-26-000896); the package's generic
+PDF reader extracts its application text. The later Q3 Form 1 filing at
+accession 9999999997-26-001567 contains only an auto-generated paper-submission
+placeholder ([SEC filing detail](https://www.sec.gov/Archives/edgar/data/1394565/999999999726000896/9999999997-26-000896-index.htm),
+[scanned PDF](https://www.sec.gov/Archives/edgar/vprr/2600/26000205.pdf),
+[paper submission](https://www.sec.gov/Archives/edgar/data/2157991/999999999726001567/9999999997-26-001567.txt)).
 
 ## Gaps that are not about a specific form
 

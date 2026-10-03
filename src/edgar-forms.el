@@ -13,8 +13,8 @@
      "1"
      (list
       :family "G11 Reg CF & Reg A"
-      :backend 'html
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 163
       :notes nil)
