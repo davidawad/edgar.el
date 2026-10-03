@@ -1,0 +1,1 @@
+(:accn "0001013762-25-002141" :form "S-1" :company "BOLT PROJECTS HOLDINGS, INC." :filed "2025-03-25" :report "" :doc "ea0235324-s1_bolt.htm" :cik 1841125 :url "https://www.sec.gov/Archives/edgar/data/1841125/000101376225002141/ea0235324-s1_bolt.htm" :size 2297651 :sha256 "cf6c0b6e2a2c058339c2dec5c916ccd1c029bc414cb7a6b39cc728af091f4672")

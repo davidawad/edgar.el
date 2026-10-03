@@ -2154,8 +2154,8 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 227
       :notes nil)
      table)

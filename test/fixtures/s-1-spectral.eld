@@ -1,0 +1,1 @@
+(:accn "0001213900-26-079360" :form "S-1" :company "SPECTRAL CAPITAL CORP." :filed "2026-07-20" :report "" :doc "ea0298149-s1_spectral.htm" :cik 1131903 :url "https://www.sec.gov/Archives/edgar/data/1131903/000121390026079360/ea0298149-s1_spectral.htm" :size 4035578 :sha256 "871864aecca1b4c8c312cf7ac9d2ab437ab29c5ac49c38449c6078c798371141")

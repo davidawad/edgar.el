@@ -1,0 +1,1 @@
+(:accn "0000950103-25-009458" :form "FWP" :company "ROYAL BANK OF CANADA" :filed "2025-07-30" :report "" :doc "dp232241_fwp-mseln638sx5e.htm" :cik 1000275 :url "https://www.sec.gov/Archives/edgar/data/1000275/000095010325009458/dp232241_fwp-mseln638sx5e.htm" :size 35401 :sha256 "22de829d2fc023ee7afd527a2d74b9219205658d9a86abfe142dfa8fe1dc0958")

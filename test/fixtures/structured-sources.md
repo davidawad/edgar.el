@@ -4,6 +4,11 @@ These are unmodified documents published in SEC EDGAR's Archives:
 
 Prospectus and registration samples used for generic named-section coverage:
 
+- `s-1-bolt.htm.gz` — S-1, Bolt Projects Holdings ([accession 0001013762-25-002141](https://www.sec.gov/Archives/edgar/data/1841125/000101376225002141/ea0235324-s1_bolt.htm); 2025-03-25).
+- `s-1-spectral.htm.gz` — S-1, Spectral Capital Corp. ([accession 0001213900-26-079360](https://www.sec.gov/Archives/edgar/data/1131903/000121390026079360/ea0298149-s1_spectral.htm); 2026-07-20).
+- `s-4-spglobal.htm.gz` — S-4, S&P Global Inc. ([accession 0001104659-26-082258](https://www.sec.gov/Archives/edgar/data/64040/000110465926082258/tm2618680-1_s4.htm); 2026-07-09).
+- `fwp-rbc.htm.gz` — FWP, Royal Bank of Canada ([accession 0000950103-25-009458](https://www.sec.gov/Archives/edgar/data/1000275/000095010325009458/dp232241_fwp-mseln638sx5e.htm); 2025-07-30).
+- `fwp-franklin.htm.gz` — FWP, Franklin Ethereum Trust ([accession 0002011535-25-000007](https://www.sec.gov/Archives/edgar/data/2011535/000201153525000007/fwp062425-20253.htm); 2025-06-24).
 - `s-3-indaptus.htm.gz` — S-3, Indaptus Therapeutics ([accession 0001641172-25-023490](https://www.sec.gov/Archives/edgar/data/1857044/000164117225023490/forms-3.htm); 2025-08-13).
 - `s-3-maxcyte.htm.gz` — S-3, MaxCyte ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
 - `424b2-barclays.htm.gz` — 424B2, Barclays Bank PLC ([accession 0001918704-25-014571](https://www.sec.gov/Archives/edgar/data/312070/000191870425014571/form424b2.htm); 2025-09-04).
@@ -17,7 +22,9 @@ Prospectus and registration samples used for generic named-section coverage:
 - `424b5-oneok.htm.gz` — 424B5, ONEOK Inc. ([accession 0001193125-26-332962](https://www.sec.gov/Archives/edgar/data/1039684/000119312526332962/d132069d424b5.htm); 2026-08-04).
 - `424b5-idaho-power.htm.gz` — 424B5, Idaho Power Co. ([accession 0001193125-26-331165](https://www.sec.gov/Archives/edgar/data/49648/000119312526331165/d171114d424b5.htm); 2026-08-04).
 
-The S-3 samples have table-of-contents-linked `Risk Factors` headings and
+The S-1 samples have table-of-contents-linked `Risk Factors` headings and
+exercise the shared named-section accessor. The S-3 samples have
+table-of-contents-linked `Risk Factors` headings and
 exercise the shared named-section accessor. The table-led 424B2 pricing
 supplements do not expose heading nodes in these captured primary documents;
 where inline structural cues permit, the shared named-section accessor can

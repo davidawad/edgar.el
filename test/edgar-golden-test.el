@@ -139,9 +139,12 @@
   (dolist
       (entry
        '(("s-1-rivn" . "Rivian")
+         ("s-1-bolt" . "Bolt Projects")
+         ("s-1-spectral" . "Spectral Capital")
          ("s-3-autonomix" . "Autonomix")
          ("s-3-indaptus" . "Indaptus")
          ("s-3-maxcyte" . "MaxCyte")
+         ("s-4-spglobal" . "S&P Global")
          ("f-1-fasttrack" . "Fast Track")
          ("f-1-verdera" . "Verdera")
          ("f-1-vision-marine" . "Vision Marine")
@@ -193,6 +196,22 @@
       (should body)
       (should
        (string-match-p "pricing supplement"
+                       (downcase (edgar-fixtures-norm body)))))))
+
+(ert-deftest edgar-golden-g7-fwp-generic-body-access ()
+  "Free-writing prospectuses expose their full generic HTML body."
+  (dolist (entry '(("fwp-rbc" . "royal bank of canada")
+                   ("fwp-franklin" . "free writing prospectus")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should (> (length body) 100))
+      (should
+       (string-match-p (regexp-quote (cdr entry))
                        (downcase (edgar-fixtures-norm body)))))))
 
 (ert-deftest edgar-golden-g7-toc-less-registration-items ()

@@ -1,0 +1,1 @@
+(:accn "0002011535-25-000007" :form "FWP" :company "FRANKLIN ETHEREUM TRUST" :filed "2025-06-24" :report "" :doc "fwp062425-20253.htm" :cik 2011535 :url "https://www.sec.gov/Archives/edgar/data/2011535/000201153525000007/fwp062425-20253.htm" :size 3891 :sha256 "bf0c61e8e4c3765ac94e246577c9b1e41f5d5ef6cfe5e105b14a17445144a12e")

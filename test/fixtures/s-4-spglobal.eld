@@ -1,0 +1,1 @@
+(:accn "0001104659-26-082258" :form "S-4" :company "S&P GLOBAL INC." :filed "2026-07-09" :report "" :doc "tm2618680-1_s4.htm" :cik 64040 :url "https://www.sec.gov/Archives/edgar/data/64040/000110465926082258/tm2618680-1_s4.htm" :size 502963 :sha256 "58dd0d26d1ef744949369c5d9f5779e6fcb34526a2f8fd67b76ddf884d3a2e7e")
