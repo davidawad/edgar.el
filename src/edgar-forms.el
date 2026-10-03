@@ -1706,9 +1706,9 @@
      "N-CSRS"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'html
+      :level 'L1
+      :sections-or-fields '(item-sections)
       :volume 831
       :notes nil)
      table)
@@ -1727,7 +1727,7 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 71
       :notes nil)
@@ -1736,8 +1736,8 @@
      "N-VP"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 726
       :notes nil)
@@ -1746,8 +1746,8 @@
      "N-VPFS"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 652
       :notes nil)

@@ -213,11 +213,11 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-8F ORDR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F ORDR")` |
 | `N-CEN` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `N-CSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
-| `N-CSRS` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-CSRS")` |
+| `N-CSRS` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-MFP3` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
-| `N-PX` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-PX")` |
-| `N-VP` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-VP")` |
-| `N-VPFS` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-VPFS")` |
+| `N-PX` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
+| `N-VP` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
+| `N-VPFS` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `NPORT-P` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `NRSRO-CE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-CE")` |
 | `NRSRO-UPD` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-UPD")` |

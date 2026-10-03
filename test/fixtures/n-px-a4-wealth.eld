@@ -1,0 +1,1 @@
+(:accn "0002033987-26-000005" :form "N-PX" :company "A4 Wealth Advisors LLC" :filed "2026-06-30" :report "2026-06-30" :doc "primary_doc.xml" :cik 2033987 :url "https://www.sec.gov/Archives/edgar/data/2033987/000203398726000005/primary_doc.xml")
