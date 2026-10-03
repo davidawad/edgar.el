@@ -1,0 +1,1 @@
+(:accn "0001580642-26-003231" :form "N-23C3B" :company "Axxes Opportunistic Credit Fund" :filed "2026-05-18" :doc "axxesopportunistic23c3.htm" :cik 2003867 :url "https://www.sec.gov/Archives/edgar/data/2003867/000158064226003231/axxesopportunistic23c3.htm")

@@ -20,6 +20,13 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `n-8a-ab-tax-aware.htm.gz` — compressed primary N-8A from [accession 0001193125-26-228561](https://www.sec.gov/Archives/edgar/data/2132363/000119312526228561/d78843dn8a.htm).
 - `n-8f-aam-alternatives.htm.gz` — compressed primary N-8F from [accession 0001213900-26-070526](https://www.sec.gov/Archives/edgar/data/2065443/000121390026070526/ea0295460-01_n8f.htm).
 - `nt-ncsr-cpg-carlyle.htm.gz` — compressed primary NT-NCSR from [accession 0001398344-26-010691](https://www.sec.gov/Archives/edgar/data/1560916/000139834426010691/fp0098304-2_ntncsr.htm).
+- `n-30d-spdr.htm.gz` — compressed primary N-30D from [accession 0001193125-26-290785](https://www.sec.gov/Archives/edgar/data/1041130/000119312526290785/d163486dn30d.htm).
+- `nt-ncen-siren.htm.gz` — compressed primary NT-NCEN from [accession 0001398344-26-010849](https://www.sec.gov/Archives/edgar/data/1796383/000139834426010849/fp0099423-1_ntncen.htm).
+- `ntfncsr-siren.htm.gz` — compressed primary NTFNCSR from [accession 0001398344-26-010772](https://www.sec.gov/Archives/edgar/data/1796383/000139834426010772/fp0099394-1_ntcsr.htm); its primary document type is NT-NCSR.
+- `n-54a-third-point.htm.gz` — compressed primary N-54A from [accession 0001104659-26-040357](https://www.sec.gov/Archives/edgar/data/2025369/000110465926040357/tm2611086d1_n54a.htm).
+- `n-54c-nuveen.htm.gz` — compressed primary N-54C from [accession 0002071136-26-000023](https://www.sec.gov/Archives/edgar/data/2071136/000207113626000023/bdcv-formnx54cmay2026.htm).
+- `n-6f-robinhood.htm.gz` — compressed primary N-6F from [accession 0001628280-26-046265](https://www.sec.gov/Archives/edgar/data/2131040/000162828026046265/rviin-6f.htm).
+- `n-23c3b-axxes.htm.gz` — compressed primary N-23C3B from [accession 0001580642-26-003231](https://www.sec.gov/Archives/edgar/data/2003867/000158064226003231/axxesopportunistic23c3.htm); its filer-supplied description says N-23C3A, but the SEC filing type and document type are N-23C3B.
 - `10-d-ms-c21.htm.gz` — compressed primary 10-D from [accession 0001888524-26-012144](https://www.sec.gov/Archives/edgar/data/1631406/000188852426012144/msc15c21_10d-202606.htm).
 - `abs-15g-tesla-energy.htm.gz` — compressed primary ABS-15G from [accession 0001193125-26-219735](https://www.sec.gov/Archives/edgar/data/2037778/000119312526219735/d108502dabs15g.htm).
 - `abs-ee-deutsche.xml` — [EX-102 in ABS-EE accession 0001539497-25-000961](https://www.sec.gov/Archives/edgar/data/1013454/000153949725000961/exh_102.xml).
