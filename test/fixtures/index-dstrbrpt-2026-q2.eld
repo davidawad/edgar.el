@@ -1,0 +1,1 @@
+(:accn "0001193125-26-184924" :form "DSTRBRPT" :company "INTER-AMERICAN DEVELOPMENT BANK" :filed "2026-04-28" :report "" :cik 311670 :ticker "" :doc "d96830ddstrbrpt.htm" :url "https://www.sec.gov/Archives/edgar/data/311670/000119312526184924/d96830ddstrbrpt.htm" :size 160691 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

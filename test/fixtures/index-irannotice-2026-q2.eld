@@ -1,0 +1,1 @@
+(:accn "0000050863-26-000081" :form "IRANNOTICE" :company "INTEL CORP" :filed "2026-04-24" :report "" :cik 50863 :ticker "" :doc "q12026irannotice.htm" :url "https://www.sec.gov/Archives/edgar/data/50863/000005086326000081/q12026irannotice.htm" :size 9117 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

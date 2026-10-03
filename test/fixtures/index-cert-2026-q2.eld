@@ -1,0 +1,1 @@
+(:accn "0000876661-26-000366" :form "CERT" :company "PLUTONIAN ACQUISITION CORP II" :filed "2026-04-27" :report "" :cik 2065661 :ticker "" :doc "PLUN042726.pdf" :url "https://www.sec.gov/Archives/edgar/data/2065661/000087666126000366/PLUN042726.pdf" :size 121608 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

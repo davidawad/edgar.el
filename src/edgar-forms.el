@@ -212,8 +212,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 46
       :notes nil)
      table)
@@ -1022,9 +1022,9 @@
      "CERT"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 440
       :notes nil)
      table)
@@ -1246,8 +1246,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 24
       :notes nil)
      table)
@@ -1426,8 +1426,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 42
       :notes nil)
      table)
@@ -2057,9 +2057,9 @@
      "REVOKED"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 26
       :notes nil)
      table)

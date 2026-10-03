@@ -706,7 +706,7 @@
           (let* ((tree (edgar-document-structure filing))
                  (snapshot
                   (edgar-test--document-snapshot filing tree)))
-            (should (eq (plist-get tree :format) 'html))
+            (should (eq (plist-get tree :format) (plist-get info :backend)))
             (should (> (length (edgar-structure-paragraphs tree)) 0))
             (should
              (equal

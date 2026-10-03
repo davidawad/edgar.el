@@ -1,0 +1,1 @@
+(:accn "0001193125-26-200707" :form "15-15D" :company "PLUS AUTOMATION INC" :filed "2026-05-01" :report "" :cik 2086744 :ticker "" :doc "d98890d1515d.htm" :url "https://www.sec.gov/Archives/edgar/data/2086744/000119312526200707/d98890d1515d.htm" :size 10784 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

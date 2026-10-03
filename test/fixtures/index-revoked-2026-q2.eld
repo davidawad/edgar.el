@@ -1,0 +1,1 @@
+(:accn "9999999997-26-001095" :form "REVOKED" :company "THE HEALING COMPANY INC" :filed "2026-06-23" :report "" :cik 1441082 :ticker "" :doc "filename1.pdf" :url "https://www.sec.gov/Archives/edgar/data/1441082/999999999726001095/filename1.pdf" :size 198501 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
