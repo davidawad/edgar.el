@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/rega/oneafiler" xmlns:ns0="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>1-A POS</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0001462371</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+        <offeringFileNumber>024-12642</offeringFileNumber>
+      </filer>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <employeesInfo>
+      <issuerName>Iron Bridge Mortgage Fund, LLC</issuerName>
+      <jurisdictionOrganization>OR</jurisdictionOrganization>
+      <yearIncorporation>2008</yearIncorporation>
+      <cik>0001462371</cik>
+      <sicCode>6162</sicCode>
+      <irsNum>26-3458758</irsNum>
+      <fullTimeEmployees>0</fullTimeEmployees>
+      <partTimeEmployees>0</partTimeEmployees>
+    </employeesInfo>
+    <issuerInfo>
+      <street1>9755 SW Barnes Road</street1>
+      <street2>Suite 420</street2>
+      <city>Portland</city>
+      <stateOrCountry>OR</stateOrCountry>
+      <zipCode>97225</zipCode>
+      <phoneNumber>503-225-0300</phoneNumber>
+      <connectionName>Alison M. Pear</connectionName>
+      <industryGroup>Other</industryGroup>
+      <cashEquivalents>273571.00</cashEquivalents>
+      <investmentSecurities>0.00</investmentSecurities>
+      <accountsReceivable>129999880.00</accountsReceivable>
+      <propertyPlantEquipment>1745103.00</propertyPlantEquipment>
+      <totalAssets>133260880.00</totalAssets>
+      <accountsPayable>695599.00</accountsPayable>
+      <longTermDebt>60754756.00</longTermDebt>
+      <totalLiabilities>62308416.00</totalLiabilities>
+      <totalStockholderEquity>70952464.00</totalStockholderEquity>
+      <totalLiabilitiesAndEquity>133260880.00</totalLiabilitiesAndEquity>
+      <totalRevenues>16361281.00</totalRevenues>
+      <costAndExpensesApplToRevenues>9210984.00</costAndExpensesApplToRevenues>
+      <depreciationAndAmortization>0.00</depreciationAndAmortization>
+      <netIncome>7152579.00</netIncome>
+      <earningsPerShareBasic>0.00</earningsPerShareBasic>
+      <earningsPerShareDiluted>0.00</earningsPerShareDiluted>
+      <nameAuditor>Perkins &amp; Co</nameAuditor>
+    </issuerInfo>
+    <commonEquity>
+      <commonEquityClassName>N/A</commonEquityClassName>
+      <outstandingCommonEquity>0</outstandingCommonEquity>
+      <commonCusipEquity>0</commonCusipEquity>
+      <publiclyTradedCommonEquity>N/A</publiclyTradedCommonEquity>
+    </commonEquity>
+    <preferredEquity>
+      <preferredEquityClassName>Class A Units</preferredEquityClassName>
+      <outstandingPreferredEquity>7579823</outstandingPreferredEquity>
+      <preferredCusipEquity>0</preferredCusipEquity>
+      <publiclyTradedPreferredEquity>NA</publiclyTradedPreferredEquity>
+    </preferredEquity>
+    <preferredEquity>
+      <preferredEquityClassName>Class B Units</preferredEquityClassName>
+      <outstandingPreferredEquity>22933556</outstandingPreferredEquity>
+      <preferredCusipEquity>0</preferredCusipEquity>
+      <publiclyTradedPreferredEquity>NA</publiclyTradedPreferredEquity>
+    </preferredEquity>
+    <preferredEquity>
+      <preferredEquityClassName>Class C Units</preferredEquityClassName>
+      <outstandingPreferredEquity>29247876</outstandingPreferredEquity>
+      <preferredCusipEquity>0</preferredCusipEquity>
+      <publiclyTradedPreferredEquity>NA</publiclyTradedPreferredEquity>
+    </preferredEquity>
+    <preferredEquity>
+      <preferredEquityClassName>Class D Units</preferredEquityClassName>
+      <outstandingPreferredEquity>11176092</outstandingPreferredEquity>
+      <preferredCusipEquity>0</preferredCusipEquity>
+      <publiclyTradedPreferredEquity>NA</publiclyTradedPreferredEquity>
+    </preferredEquity>
+    <debtSecurities>
+      <outstandingDebtSecurities>0</outstandingDebtSecurities>
+    </debtSecurities>
+    <issuerEligibility>
+      <certifyIfTrue>true</certifyIfTrue>
+    </issuerEligibility>
+    <applicationRule262>
+      <certifyIfNotDisqualified>true</certifyIfNotDisqualified>
+      <certifyIfBadActor>false</certifyIfBadActor>
+    </applicationRule262>
+    <summaryInfo>
+      <indicateTier1Tier2Offering>Tier2</indicateTier1Tier2Offering>
+      <financialStatementAuditStatus>Audited</financialStatementAuditStatus>
+      <securitiesOfferedTypes>Equity (common or preferred stock)</securitiesOfferedTypes>
+      <offerDelayedContinuousFlag>Y</offerDelayedContinuousFlag>
+      <offeringYearFlag>Y</offeringYearFlag>
+      <offeringAfterQualifFlag>N</offeringAfterQualifFlag>
+      <offeringBestEffortsFlag>Y</offeringBestEffortsFlag>
+      <solicitationProposedOfferingFlag>N</solicitationProposedOfferingFlag>
+      <resaleSecuritiesAffiliatesFlag>N</resaleSecuritiesAffiliatesFlag>
+      <securitiesOffered>52000000</securitiesOffered>
+      <outstandingSecurities>70937347</outstandingSecurities>
+      <pricePerSecurity>1.0000</pricePerSecurity>
+      <issuerAggregateOffering>52000000.00</issuerAggregateOffering>
+      <securityHolderAggegate>0.00</securityHolderAggegate>
+      <qualificationOfferingAggregate>0.00</qualificationOfferingAggregate>
+      <concurrentOfferingAggregate>0.00</concurrentOfferingAggregate>
+      <totalAggregateOffering>52000000.00</totalAggregateOffering>
+      <underwritersFees>0.00</underwritersFees>
+      <salesCommissionsServiceProviderFees>0.00</salesCommissionsServiceProviderFees>
+      <finderFeesFee>0.00</finderFeesFee>
+      <auditorServiceProviderName>Perkins &amp; Co</auditorServiceProviderName>
+      <auditorFees>100000.00</auditorFees>
+      <legalServiceProviderName>Buchalter LLP</legalServiceProviderName>
+      <legalFees>60000.00</legalFees>
+      <promotersFees>0.00</promotersFees>
+      <blueSkyServiceProviderName>Buchalter LLP</blueSkyServiceProviderName>
+      <blueSkyFees>15000.00</blueSkyFees>
+      <estimatedNetAmount>51825000.00</estimatedNetAmount>
+      <clarificationResponses/>
+    </summaryInfo>
+    <juridictionSecuritiesOffered>
+      <jurisdictionsOfSecOfferedNone>true</jurisdictionsOfSecOfferedNone>
+      <issueJuridicationSecuritiesOffering>AK</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>AL</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>AR</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>AZ</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>CA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>CO</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>CT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>DC</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>DE</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>FL</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>GA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>HI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>IA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>ID</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>IL</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>IN</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>KS</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>KY</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>LA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MD</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>ME</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MN</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MO</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MS</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NC</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>ND</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NE</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NH</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NJ</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NM</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NV</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NY</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>OH</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>OK</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>OR</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>PA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>RI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>SC</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>SD</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>TN</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>TX</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>UT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>VA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>VT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WV</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WY</issueJuridicationSecuritiesOffering>
+    </juridictionSecuritiesOffered>
+    <unregisteredSecurities>
+      <ifUnregsiteredNone>false</ifUnregsiteredNone>
+    </unregisteredSecurities>
+    <securitiesIssued>
+      <securitiesIssuerName>Iron Bridge Mortgage Fund, LLC</securitiesIssuerName>
+      <securitiesIssuerTitle>Class A Units </securitiesIssuerTitle>
+      <securitiesIssuedTotalAmount>4019010</securitiesIssuedTotalAmount>
+      <securitiesPrincipalHolderAmount>0</securitiesPrincipalHolderAmount>
+      <securitiesIssuedAggregateAmount>May 1, 2025 - April 30, 2026 = $4,019,010</securitiesIssuedAggregateAmount>
+    </securitiesIssued>
+    <securitiesIssued>
+      <securitiesIssuerName>Iron Bridge Mortgage Fund, LLC</securitiesIssuerName>
+      <securitiesIssuerTitle>Class B Units</securitiesIssuerTitle>
+      <securitiesIssuedTotalAmount>7535841</securitiesIssuedTotalAmount>
+      <securitiesPrincipalHolderAmount>0</securitiesPrincipalHolderAmount>
+      <securitiesIssuedAggregateAmount>May 1, 2025 - April 30, 2026 = $7,535,841</securitiesIssuedAggregateAmount>
+    </securitiesIssued>
+    <securitiesIssued>
+      <securitiesIssuerName>Iron Bridge Mortgage Fund, LLC</securitiesIssuerName>
+      <securitiesIssuerTitle>Class C Units</securitiesIssuerTitle>
+      <securitiesIssuedTotalAmount>7877746</securitiesIssuedTotalAmount>
+      <securitiesPrincipalHolderAmount>0</securitiesPrincipalHolderAmount>
+      <securitiesIssuedAggregateAmount>May 1, 2025 - April 30, 2026 = $7,877,746</securitiesIssuedAggregateAmount>
+    </securitiesIssued>
+    <securitiesIssued>
+      <securitiesIssuerName>Iron Bridge Mortgage Fund, LLC</securitiesIssuerName>
+      <securitiesIssuerTitle>Class D Units</securitiesIssuerTitle>
+      <securitiesIssuedTotalAmount>3380925</securitiesIssuedTotalAmount>
+      <securitiesPrincipalHolderAmount>0</securitiesPrincipalHolderAmount>
+      <securitiesIssuedAggregateAmount>May 1, 2025 - April 30, 2026 = $3,380,925</securitiesIssuedAggregateAmount>
+    </securitiesIssued>
+    <unregisteredSecuritiesAct>
+      <securitiesActExcemption>All Units issued after 3/18/2025 were issued pursuant to Reg A.</securitiesActExcemption>
+    </unregisteredSecuritiesAct>
+  </formData>
+</edgarSubmission>

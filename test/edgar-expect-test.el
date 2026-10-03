@@ -154,6 +154,9 @@
     ("SC 13G/A" "schedule 13g" nil)
     ("SC TO-T" "schedule to" nil)
     ("SC 14D9" "schedule 14d-9" nil)
+    ("1-A-W" "withdrawal of offering statement" nil)
+    ("253G1" "offering circular" nil)
+    ("253G2" "offering circular supplement" nil)
     ("144" "notice of proposed sale" nil)))
 
 (defun edgar-expect--check (slug)

@@ -24,7 +24,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 100
       :notes nil)
@@ -34,7 +34,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 38
       :notes nil)
@@ -43,8 +43,8 @@
      "1-A-W"
      (list
       :family "G11 Reg CF & Reg A"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 7
       :notes nil)
@@ -312,8 +312,8 @@
      "253G1"
      (list
       :family "G11 Reg CF & Reg A"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 6
       :notes nil)
@@ -322,8 +322,8 @@
      "253G2"
      (list
       :family "G11 Reg CF & Reg A"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 66
       :notes nil)
@@ -963,7 +963,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 2
       :notes nil)
@@ -973,7 +973,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 89
       :notes nil)
@@ -983,7 +983,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -1003,7 +1003,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 17
       :notes nil)
@@ -2044,7 +2044,7 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 53
       :notes nil)

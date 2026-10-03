@@ -45,9 +45,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | Form | Family | Backend | Level | Example call |
 |---|---|---|---|---|
 | `1` | G11 Reg CF & Reg A | html | L0 | `(edgar-form-info "1")` |
-| `1-A` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "1-A")` |
-| `1-A POS` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "1-A POS")` |
-| `1-A-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "1-A-W")` |
+| `1-A` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
+| `1-A POS` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
+| `1-A-W` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `1-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-K")` |
 | `1-SA` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-SA")` |
 | `1-U` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-U")` |
@@ -73,8 +73,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `24F-2NT` | G10 Investment-company registration | xml | L1 | `(edgar-text filing)` |
 | `25` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `25-NSE` | G9 Periodic & event narrative | xml | L1 | `(edgar-text filing)` |
-| `253G1` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G1")` |
-| `253G2` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G2")` |
+| `253G1` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
+| `253G2` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `3` | G1 Ownership | xml | L2 | `(edgar-form3-holdings filing)` |
 | `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
@@ -138,11 +138,11 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `AW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "AW")` |
 | `C` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
 | `C-AR` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
-| `C-AR-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-AR-W")` |
-| `C-TR` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-TR")` |
-| `C-TR-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-TR-W")` |
+| `C-AR-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
+| `C-TR` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
+| `C-TR-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `C-U` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
-| `C-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-W")` |
+| `C-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `CB` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "CB")` |
 | `CERT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "CERT")` |
 | `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL")` |
@@ -246,7 +246,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `PRRN14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PRRN14A")` |
 | `PX14A6G` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "PX14A6G")` |
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `QUALIF` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "QUALIF")` |
+| `QUALIF` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
 | `RW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "RW")` |
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
