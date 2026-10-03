@@ -300,6 +300,50 @@
         "exhibits"
         (downcase (edgar-fixtures-norm section)))))))
 
+(ert-deftest edgar-golden-g7-drs-toc-and-toc-less-structure ()
+  "Draft registration filings expose shared named and tree structure."
+  (dolist
+      (entry
+       '(("index-drs-2026-q2" nil)
+         ("index-drs-2023-q2" t)
+         ("index-drs-2025-q2" t)))
+    (let* ((slug (car entry))
+           (has-toc (cadr entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           tree
+           named-section
+           body-section)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq tree (edgar-document-structure filing)
+              named-section (edgar-section filing "Risk Factors")
+              body-section
+              (edgar-structure-section tree '("html" "body"))))
+      (should
+       (eq has-toc
+           (and (string-match-p "TABLE OF CONTENTS" (upcase html)) t)))
+      (should named-section)
+      (should (> (length named-section) 100))
+      (should
+       (string-match-p
+        "investing in our securities"
+        (downcase (edgar-fixtures-norm named-section))))
+      (should body-section)
+      (should (> (length (plist-get body-section :body)) 1000))
+      (should
+       (string-match-p
+        "investing in our securities"
+        (downcase
+         (edgar-fixtures-norm (plist-get body-section :body)))))
+      (when has-toc
+        (let ((tree-risk (edgar-structure-section tree "Risk Factors")))
+          (should tree-risk)
+          (should
+           (string-match-p
+            "investing in our securities"
+            (downcase
+             (edgar-fixtures-norm (plist-get tree-risk :body))))))))))
+
 (ert-deftest edgar-golden-g7-toc-backed-risk-sections ()
   "S-3 prospectus Risk Factors resolve through named section access."
   (dolist (entry

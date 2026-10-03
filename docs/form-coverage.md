@@ -165,7 +165,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DFRN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOS")` |
 | `DOSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOSLTR")` |
-| `DRS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRS")` |
+| `DRS` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DRSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRSLTR")` |
 | `DSTRBRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "DSTRBRPT")` |
 | `EFFECT` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "EFFECT")` |

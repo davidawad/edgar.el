@@ -156,6 +156,7 @@
     ("424B1" "prospectus" nil)
     ("F-4" "registration statement" nil)
     ("F-1" "registration statement" nil)
+    ("DRS" "prospectus" nil)
     ("424B3" "prospectus" nil)
     ("424B4" "prospectus" nil)
     ("424B5" "prospectus" nil)

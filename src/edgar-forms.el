@@ -1227,7 +1227,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 343
       :notes nil)

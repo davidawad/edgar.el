@@ -1,0 +1,1 @@
+(:accn "0001437749-25-012862" :form "DRS" :company "Genprex, Inc." :filed "2025-04-24" :report "" :doc "filename1.htm" :cik 1595248 :url "https://www.sec.gov/Archives/edgar/data/1595248/000143774925012862/filename1.htm" :size 473078 :sample-vintage "middle" :sample-quarter "2025-Q2" :sample-seed "edgar-form-coverage-v1")

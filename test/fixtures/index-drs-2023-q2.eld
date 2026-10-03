@@ -1,0 +1,1 @@
+(:accn "0000950123-23-003276" :form "DRS" :company "GE HealthCare Technologies Inc." :filed "2023-04-18" :report "" :doc "filename1.htm" :cik 1932393 :url "https://www.sec.gov/Archives/edgar/data/1932393/000095012323003276/filename1.htm" :size 373627 :sample-vintage "older" :sample-quarter "2023-Q2" :sample-seed "edgar-form-coverage-v1")
