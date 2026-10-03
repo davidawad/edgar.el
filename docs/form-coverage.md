@@ -125,10 +125,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `ABS-EE` | G6 Asset-backed | xml | L2 | `(edgar-xml filing)` |
 | `ADV-H-T` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ADV-H-T")` |
 | `ANNLRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "ANNLRPT")` |
-| `APP NTC` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP NTC")` |
-| `APP ORDR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP ORDR")` |
-| `APP WD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP WD")` |
-| `APP WDG` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP WDG")` |
+| `APP NTC` | G10 Investment-company registration | text | L1 | `(edgar-text filing)` |
+| `APP ORDR` | G10 Investment-company registration | text | L1 | `(edgar-text filing)` |
+| `APP WD` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
+| `APP WDG` | G10 Investment-company registration | text | L1 | `(edgar-text filing)` |
 | `ARS` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "ARS")` |
 | `ATS-N` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N")` |
 | `ATS-N/CA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/CA")` |
@@ -148,7 +148,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL")` |
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
-| `CT ORDER` | G10 Investment-company registration | html | L0 | `(edgar-form-info "CT ORDER")` |
+| `CT ORDER` | G10 Investment-company registration | text | L1 | `(edgar-text filing)` |
 | `D` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "D")` |
 | `DEF 14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14A")` |
 | `DEF 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14C")` |
@@ -321,11 +321,12 @@ G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
 and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot
 (87.7%). The remaining 21 forms are still L0.
 
-G10 currently has 27 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
+G10 currently has 32 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
 40-17G, 40-24B2, 40-33, 40-6B, 40-8F-2, 40-APP, 485APOS, 485BPOS, 485BXT,
 486APOS, 486BPOS, 486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB,
-497VPU, DEL AM, MSD, N-1A, and S-6. They account for 24,003 of 24,427 G10
-filings in the Q2 snapshot (98.3%). The remaining 13 forms are still L0.
+497VPU, APP NTC, APP ORDR, APP WD, APP WDG, CT ORDER, DEL AM, MSD, N-1A,
+and S-6. They account for 24,202 of 24,427 G10 filings in the Q2 snapshot
+(99.1%). The remaining eight forms are still L0.
 
 ## Gaps that are not about a specific form
 

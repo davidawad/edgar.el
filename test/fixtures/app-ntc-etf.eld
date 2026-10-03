@@ -1,0 +1,1 @@
+(:accn "9999999997-26-000644" :form "APP NTC" :filed "2026-04-16" :report "" :doc "9999999997-26-000644.txt" :cik 1969674 :url "https://www.sec.gov/Archives/edgar/data/1969674/999999999726000644/9999999997-26-000644.txt" :ticker "")

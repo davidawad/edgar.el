@@ -35,6 +35,11 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `40-6b-marshall.htm.gz` — compressed [40-6B accession 0000902664-26-002363](https://www.sec.gov/Archives/edgar/data/1318757/000090266426002363/p26-1185form406b.htm).
 - `40-8f-2a-daxor.htm.gz` — compressed [40-8F-2/A accession 0000897069-26-001198](https://www.sec.gov/Archives/edgar/data/27367/000089706926001198/daxor408f.htm).
 - `msda-fhn.htm.gz` — compressed [MSD/A accession 9999999997-26-000650](https://www.sec.gov/Archives/edgar/data/36637/999999999726000650/9999999997-26-000650.paper).
+- `app-ntc-etf.txt.gz` — compressed [APP NTC accession 9999999997-26-000644](https://www.sec.gov/Archives/edgar/data/1969674/999999999726000644/9999999997-26-000644.txt); its sole primary document is a PDF embedded in the complete submission.
+- `app-ordr-etf.txt.gz` — compressed [APP ORDR accession 9999999997-26-000645](https://www.sec.gov/Archives/edgar/data/1969674/999999999726000645/9999999997-26-000645.txt); its sole primary document is a PDF embedded in the complete submission.
+- `app-wd-bilbao.htm.gz` — compressed [APP WD accession 0001821268-26-000067](https://www.sec.gov/Archives/edgar/data/2118701/000182126826000067/gug89737-appwd.htm).
+- `app-wdg-brinker.txt.gz` — compressed [APP WDG accession 9999999997-26-000758](https://www.sec.gov/Archives/edgar/data/1688680/999999999726000758/9999999997-26-000758.txt); its sole primary document is a PDF embedded in the complete submission.
+- `ct-order-argo.txt.gz` — compressed [CT ORDER accession 9999999997-26-001120](https://www.sec.gov/Archives/edgar/data/1841675/999999999726001120/9999999997-26-001120.txt); its sole primary document is a PDF embedded in the complete submission.
 
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.

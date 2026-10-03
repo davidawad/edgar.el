@@ -428,13 +428,19 @@
             (if (eq format 'html)
                 (edgar-fixtures-html slug)
               (with-temp-buffer
-                (insert-file-contents
-                 (edgar-fixtures-path
-                  (format "fixtures/%s.%s"
-                          slug
-                          (if (eq format 'xml)
-                              "xml"
-                            "txt"))))
+                (let* ((plain
+                        (edgar-fixtures-path
+                         (format "fixtures/%s.%s"
+                                 slug
+                                 (if (eq format 'xml)
+                                     "xml"
+                                   "txt"))))
+                       (file
+                        (if (file-exists-p plain)
+                            plain
+                          (concat plain ".gz")))
+                       (auto-compression-mode t))
+                  (insert-file-contents file))
                 (buffer-string)))))
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) source)))
         (let* ((tree (edgar-document-structure filing))
@@ -494,6 +500,11 @@
   "Real G10 custody and miscellaneous layouts use generic structure access."
   (edgar-test--assert-structure-expectations
    "expect/g10-custody-structures.eld"))
+
+(ert-deftest edgar-g10-application-orders-use-generic-structure-api ()
+  "Real G10 application and order layouts use generic structure access."
+  (edgar-test--assert-structure-expectations
+   "expect/g10-application-order-structures.eld"))
 
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."

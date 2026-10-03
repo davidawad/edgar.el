@@ -1,0 +1,25 @@
+((:slug "app-ntc-etf"
+  :format text
+  :min-paragraphs 2
+  :min-tables 0
+  :text-marker "<PDF>")
+ (:slug "app-ordr-etf"
+  :format text
+  :min-paragraphs 2
+  :min-tables 0
+  :text-marker "<PDF>")
+ (:slug "app-wd-bilbao"
+  :format html
+  :min-paragraphs 30
+  :min-tables 3
+  :text-marker "Request for Withdrawal")
+ (:slug "app-wdg-brinker"
+  :format text
+  :min-paragraphs 2
+  :min-tables 0
+  :text-marker "<PDF>")
+ (:slug "ct-order-argo"
+  :format text
+  :min-paragraphs 5
+  :min-tables 0
+  :text-marker "<PDF>"))

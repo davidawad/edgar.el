@@ -1,0 +1,1 @@
+(:accn "9999999997-26-001120" :form "CT ORDER" :filed "2026-06-26" :report "" :doc "9999999997-26-001120.txt" :cik 1841675 :url "https://www.sec.gov/Archives/edgar/data/1841675/999999999726001120/9999999997-26-001120.txt" :ticker "")

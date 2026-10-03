@@ -101,6 +101,10 @@ Custody and miscellaneous G10 coverage includes 40-17F1, plain-text 40-17F2,
 40-24B2, 40-33, 40-6B, 40-8F-2 amendments, and MSD paper-submission
 placeholders through the same generic structure API.
 
+Application-process coverage includes APP NTC, APP ORDR, APP WD, APP WDG,
+and CT ORDER. PDF-only submissions use their exact SEC complete-submission
+text; APP WD supplies a rendered HTML letter with paragraph/table coverage.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.
