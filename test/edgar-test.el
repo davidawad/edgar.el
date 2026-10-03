@@ -609,18 +609,25 @@
   (let ((edgar-pdftotext-program "edgar-test-missing-pdftotext"))
     (should-error (edgar--pdf-text "%PDF") :type 'user-error)))
 
-(ert-deftest edgar-pdf-investment-company-filing-uses-generic-text-api ()
-  "A real SEC APP WDG PDF uses the shared text and document-structure APIs."
-  (let* ((filing (edgar-fixtures-filing "app-wdg-peartree"))
-         (pdf (edgar-fixtures-primary "app-wdg-peartree")))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
-      (let* ((text (edgar-text filing))
-             (tree (edgar-document-structure filing)))
-        (should (string-match-p "withdrawal has been granted" text))
-        (should (eq (plist-get tree :format) 'pdf))
-        (should (> (length (edgar-structure-paragraphs tree)) 3))
-        (should (string-match-p "Investment Company Act of 1940"
-                                (edgar-structure-text tree)))))))
+(ert-deftest edgar-pdf-g10-filings-use-generic-text-api ()
+  "Real SEC investment-company PDFs use the shared text and tree APIs."
+  (dolist (entry
+           '(("app-wdg-peartree" "withdrawal has been granted")
+             ("app-ordr-great-elm" "order under sections 17(d)")
+             ("app-ntc-advisors-preferred"
+              "multi-class etf fund exemptive relief")
+             ("ct-order-janus-henderson"
+              "order granting confidential treatment")))
+    (let* ((filing (edgar-fixtures-filing (car entry)))
+           (pdf (edgar-fixtures-primary (car entry))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
+        (let* ((text (edgar-text filing))
+               (tree (edgar-document-structure filing)))
+          (should (string-match-p (cadr entry) text))
+          (should (eq (plist-get tree :format) 'pdf))
+          (should (> (length (edgar-structure-paragraphs tree)) 3))
+          (should (string-match-p
+                   (cadr entry) (edgar-structure-text tree))))))))
 
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
