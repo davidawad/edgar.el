@@ -2239,8 +2239,8 @@
      "SC 13D"
      (list
       :family "G3 Beneficial ownership 13D/13G"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 19
       :notes nil)

@@ -70,6 +70,31 @@
   "The committed snapshot and registry satisfy the offline gate."
   (should-not (edgar-coverage-problems)))
 
+(ert-deftest edgar-form-coverage-legacy-sc-13d-amendment-is-generic-l1 ()
+  "A primary SC 13D/A body supplies the base SC 13D generic fixture."
+  (let* ((info (edgar-form-info "SC 13D"))
+         (filing
+          (edgar-coverage--read-object
+           (expand-file-name "sc-13d-000114036124012291.eld"
+                             edgar-coverage-fixture-directory))))
+    (should (eq (plist-get info :backend) 'html))
+    (should (eq (plist-get info :level) 'L1))
+    (should (equal (plist-get filing :form) "SC 13D/A"))
+    (should (equal (edgar-coverage--base-form (plist-get filing :form))
+                   "SC 13D"))
+    (should (edgar-coverage--primary-artifact-p
+             "sc-13d-000114036124012291"
+             'html
+             edgar-coverage-fixture-directory))
+    (should
+     (file-exists-p
+      (expand-file-name "sc-13d-000114036124012291.eld"
+                        edgar-coverage-expect-directory)))
+    (should
+     (file-exists-p
+      (expand-file-name "sc-13d-000114036124012291.eld"
+                        edgar-coverage-golden-directory)))))
+
 (ert-deftest edgar-form-coverage-l2-requires-three-distinct-filers ()
   "An L2 form needs three distinct filer CIKs, not three filings."
   (let* ((root (make-temp-file "edgar-coverage-diversity-" t))

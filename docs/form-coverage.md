@@ -22,14 +22,21 @@ snapshot. Override its target with `EDGAR_COVERAGE_YEAR` and
 `EDGAR_COVERAGE_QUARTER` (for example, `2026` and `3`). Network access is never
 part of the normal check.
 
-The Q2 snapshot has 19 `SC 13D/A` filings and no filing whose raw form is
-exactly `SC 13D`; its 19-volume base-form row folds in the amendment count.
-The 572 `SCHEDULE 13D` filings are a distinct modern XML form and are not
-evidence for the legacy `SC 13D` type. For example, the May 7, 2026 Pacific
-Airport Group filing is explicitly `SCHEDULE 13D` and publishes
-`primary_doc.xml` ([SEC filing index](https://www.sec.gov/Archives/edgar/data/1347557/000094787126000502/0000947871-26-000502-index.htm)).
-Do not promote the legacy `SC 13D` row from that source; it remains L0 until an
-exact-form source is recorded.
+The Q2 snapshot has 19 `SC 13D/A` form-index rows and no filing whose raw form
+is exactly `SC 13D`; amendments fold into the 19-volume base-form row. These
+rows are indexed by file number and do not establish that every associated
+primary filing is an SC 13D/A. A historical primary does establish the legacy
+body shape: AmBase Corp's 2024-03-08 SC 13D/A (CIK 20639, accession
+`0001140361-24-012291`) has a primary HTML document that explicitly identifies
+itself as Amendment No. 1 to Schedule 13D and contains Items 1–7 ([filing
+index](https://www.sec.gov/Archives/edgar/data/20639/000114036124012291/0001140361-24-012291-index.html),
+[primary document](https://www.sec.gov/Archives/edgar/data/20639/000114036124012291/ef20023015_13da.htm)).
+Because `/A` amendments fold to their base form, this recorded body supplies a
+generic HTML L1 fixture for legacy `SC 13D`; no form-specific parser branch is
+needed. The 572 `SCHEDULE 13D` filings are a distinct modern XML form and are
+not the basis for this coverage. For example, the May 7, 2026 Pacific Airport
+Group filing is explicitly `SCHEDULE 13D` and publishes `primary_doc.xml`
+([SEC filing index](https://www.sec.gov/Archives/edgar/data/1347557/000094787126000502/0000947871-26-000502-index.htm)).
 
 - 342 distinct form types, 245 once amendments (`/A`) are folded into their base form.
 - Volume is extremely concentrated: top 10 base forms = 76% of filings, top 30 = 92%,
@@ -275,7 +282,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SBSE` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
-| `SC 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13D")` |
+| `SC 13D` | G3 Beneficial ownership 13D/13G | html | L1 | `(edgar-text filing)` |
 | `SC 13E3` | G3 Beneficial ownership 13D/13G | html | L1 | `(edgar-text filing)` |
 | `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC 14F1` | G3 Beneficial ownership 13D/13G | html | L1 | `(edgar-text filing)` |

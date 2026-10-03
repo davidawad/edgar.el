@@ -299,6 +299,7 @@
     ("SC 13G/A" "schedule 13g" nil)
     ("SC 13E3" "going private transaction" nil)
     ("SC 14F1" "schedule 14f-1" nil)
+    ("SC 13D/A" "amendment no\\. 1 to schedule 13d" nil)
     ("SC TO-T" "schedule to" nil)
     ("SC TO-C" "tender offer statement on schedule to" nil)
     ("SC TO-I" "tender offer statement" nil)
