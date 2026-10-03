@@ -1,0 +1,1 @@
+(:accn "0001213900-26-064301" :form "F-3MEF" :company "Gorilla Technology Group Inc." :filed "2026-06-02" :report "" :doc "ea0292567-f3mef_gorilla.htm" :cik 1903145 :url "https://www.sec.gov/Archives/edgar/data/1903145/000121390026064301/ea0292567-f3mef_gorilla.htm" :size 37397 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001213900-26-038417" :form "424I" :company "21Shares Ethereum ETF" :filed "2026-04-01" :report "" :doc "ea0284490-424i_21shares.htm" :cik 1992508 :url "https://www.sec.gov/Archives/edgar/data/1992508/000121390026038417/ea0284490-424i_21shares.htm" :size 2750 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001193125-26-236945" :form "SUPPL" :company "HYDRO ONE INC" :filed "2026-05-22" :report "" :doc "d133963dsuppl.htm" :cik 1114445 :url "https://www.sec.gov/Archives/edgar/data/1114445/000119312526236945/d133963dsuppl.htm" :size 491558 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

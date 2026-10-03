@@ -542,7 +542,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 81
       :notes nil)
@@ -552,7 +552,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 10
       :notes nil)
@@ -764,7 +764,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 15
       :notes nil)
@@ -1206,8 +1206,8 @@
      "DOS"
      (list
       :family "G7 Prospectuses & registration"
-      :backend 'html
-      :level 'L0
+      :backend 'xml
+      :level 'L1
       :sections-or-fields nil
       :volume 7
       :notes nil)
@@ -1216,8 +1216,8 @@
      "DOSLTR"
      (list
       :family "G7 Prospectuses & registration"
-      :backend 'html
-      :level 'L0
+      :backend 'text
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1237,7 +1237,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -1307,7 +1307,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 3
       :notes nil)
@@ -1327,7 +1327,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 25
       :notes nil)
@@ -1337,7 +1337,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1387,7 +1387,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1900,7 +1900,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 308
       :notes nil)
@@ -1910,7 +1910,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 50
       :notes nil)
@@ -1920,7 +1920,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 135
       :notes nil)
@@ -1930,7 +1930,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -2090,7 +2090,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 14
       :notes nil)
@@ -2100,7 +2100,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 36
       :notes nil)
@@ -2120,7 +2120,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 357
       :notes nil)
@@ -2130,7 +2130,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -2140,7 +2140,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 5
       :notes nil)
@@ -2150,7 +2150,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -2200,7 +2200,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 10
       :notes nil)
@@ -2390,7 +2390,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 4
       :notes nil)
@@ -2400,7 +2400,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 5
       :notes nil)
@@ -2420,7 +2420,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 33
       :notes nil)

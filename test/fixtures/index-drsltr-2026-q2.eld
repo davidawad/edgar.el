@@ -1,0 +1,1 @@
+(:accn "0001628279-26-000584" :form "DRSLTR" :company "SPACE EXPLORATION TECHNOLOGIES CORP" :filed "2026-05-07" :report "" :doc "filename1.htm" :cik 1181412 :url "https://www.sec.gov/Archives/edgar/data/1181412/000162827926000584/filename1.htm" :size 253739 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

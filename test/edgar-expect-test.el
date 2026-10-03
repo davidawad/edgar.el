@@ -23,12 +23,12 @@
   (expand-file-name (concat "fixtures/" slug ext) edgar-expect--dir))
 
 (defun edgar-expect--primary-file (slug)
-  "Path of SLUG's rendered primary fixture."
+  "Path of SLUG's primary-document fixture."
   (or (seq-find
        #'file-exists-p
        (mapcar
         (lambda (ext) (edgar-expect--file slug ext))
-        '(".htm.gz" ".pdf")))
+        '(".htm.gz" ".pdf" ".xml" ".txt")))
       (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
@@ -36,13 +36,13 @@
   (expand-file-name (concat "expect/" slug ".eld") edgar-expect--dir))
 
 (defun edgar-expect--slugs ()
-  "Slugs of every rendered filing fixture."
+  "Slugs of every primary-document filing fixture."
   (seq-filter
    (lambda (slug)
      (seq-some
       (lambda (ext)
         (file-exists-p (edgar-expect--file slug ext)))
-      '(".htm.gz" ".pdf")))
+      '(".htm.gz" ".pdf" ".xml" ".txt")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -154,9 +154,33 @@
     ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
     ("424B1" "prospectus" nil)
+    ("424H" "424h table of contents" nil)
+    ("424I" "rule 424" nil)
+    ("8-A12G" "item 1. description of registrant" ("1" "2"))
     ("F-4" "registration statement" nil)
     ("F-1" "registration statement" nil)
     ("DRS" "prospectus" nil)
+    ("DOS" "star gold corp." nil)
+    ("DOSLTR" "crowdcasting inc." nil)
+    ("DRSLTR" "document confidential treatment requested" nil)
+    ("F-1MEF" "as filed with the u.s. securities and exchange commission on" nil)
+    ("F-3ASR" "as filed with the u.s. securities and exchange commission on" ("II.8" "II.9" "II.10"))
+    ("F-3MEF" "as filed with the securities and exchange commission on june" ("II.9"))
+    ("F-N" "form f-n united states securities" nil)
+    ("POS AM" "table of contents as filed" ("II.14" "II.17"))
+    ("POS AMI" "as filed with the securities and exchange commission on april" ("5" "14"))
+    ("POS EX" "as filed with the securities and exchange commission" ("II.13" "II.17"))
+    ("POSASR" "table of contents as filed" ("II.8" "II.10"))
+    ("S-11" "as filed with the securities and exchange commission on june" ("II.37"))
+    ("S-1MEF" "as filed with the u.s. securities and exchange commission on" nil)
+    ("S-3ASR" "table of contents as filed" ("II.14" "II.17"))
+    ("S-3D" "s-3d as filed with the securities and exchange commission" ("II.14" "II.17"))
+    ("S-3DPOS" "as filed with the securities and exchange commission on may" ("II.14" "II.17"))
+    ("S-3MEF" "s-3mef as filed with the securities and exchange commission" nil)
+    ("S-B" "table of contents as filed" nil)
+    ("SF-1" "sf-1 table of contents" ("II.12" "II.15"))
+    ("SF-3" "sf-3 table of contents" ("II.12" "II.15"))
+    ("SUPPL" "suppl table of contents" nil)
     ("424B3" "prospectus" nil)
     ("424B4" "prospectus" nil)
     ("424B5" "prospectus" nil)
@@ -315,6 +339,46 @@
          (edgar-expect--read (edgar-expect--file "8ka-mdxg-2026" ".eld"))))
     (should (equal (plist-get filing :form) "8-K/A"))
     (edgar-expect--check "8ka-mdxg-2026")))
+
+(ert-deftest edgar-g7-owned-registrations-use-generic-document-trees ()
+  "Read the assigned G7 registration fixtures through the shared tree API."
+  (dolist
+      (entry
+       '(("index-424h-2026-q2" . html)
+         ("index-424i-2026-q2" . html)
+         ("index-8-a12g-2026-q2" . html)
+         ("index-dos-2026-q2" . xml)
+         ("index-dosltr-2026-q2" . text)
+         ("index-drsltr-2026-q2" . html)
+         ("index-f-1mef-2026-q2" . html)
+         ("index-f-3asr-2026-q2" . html)
+         ("index-f-3mef-2026-q2" . html)
+         ("index-f-n-2026-q2" . html)
+         ("index-pos-am-2026-q2" . html)
+         ("index-pos-ami-2026-q2" . html)
+         ("index-pos-ex-2026-q2" . html)
+         ("index-posasr-2026-q2" . html)
+         ("index-s-11-2026-q2" . html)
+         ("index-s-1mef-2026-q2" . html)
+         ("index-s-3asr-2026-q2" . html)
+         ("index-s-3d-2026-q2" . html)
+         ("index-s-3dpos-2026-q2" . html)
+         ("index-s-3mef-2026-q2" . html)
+         ("index-s-b-2026-q2" . html)
+         ("index-sf-1-2026-q2" . html)
+         ("index-sf-3-2026-q2" . html)
+         ("index-suppl-2026-q2" . html)))
+    (let* ((slug (car entry))
+           (filing (edgar-expect--read (edgar-expect--file slug ".eld")))
+           (primary (edgar-expect--primary slug))
+           tree)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) primary)))
+        (setq tree (edgar-document-structure filing)))
+      (should (eq (plist-get tree :format) (cdr entry)))
+      (should (plist-get tree :children))
+      (should (> (length (edgar-structure-text tree)) 100))
+      (when (eq (cdr entry) 'html)
+        (should (edgar-structure-nodes tree "body"))))))
 
 (ert-deftest edgar-amendments-link-original-accession ()
   (let ((submissions

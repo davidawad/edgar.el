@@ -1,0 +1,1 @@
+(:accn "0002125668-26-000001" :form "DOSLTR" :company "CROWDCASTING INC" :filed "2026-04-13" :report "" :doc "filename1.txt" :cik 2125668 :url "https://www.sec.gov/Archives/edgar/data/2125668/000212566826000001/filename1.txt" :size 1296 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

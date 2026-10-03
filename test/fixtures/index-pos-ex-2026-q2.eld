@@ -1,0 +1,1 @@
+(:accn "0001437749-26-012632" :form "POS EX" :company "GeoVax Labs, Inc." :filed "2026-04-17" :report "" :doc "govx20260417d_posex.htm" :cik 832489 :url "https://www.sec.gov/Archives/edgar/data/832489/000143774926012632/govx20260417d_posex.htm" :size 162760 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

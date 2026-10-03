@@ -97,8 +97,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `424B5` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B7` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `424H` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424H")` |
-| `424I` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424I")` |
+| `424H` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `424I` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `425` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `485APOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `485BPOS` | G10 Investment-company registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
@@ -119,7 +119,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `6B NTC` | G9 Periodic & event narrative | pdf | L1 | `(edgar-text filing)` |
 | `6B ORDR` | G9 Periodic & event narrative | pdf | L1 | `(edgar-text filing)` |
 | `8-A12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `8-A12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12G")` |
+| `8-A12G` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `8-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `8-K12B` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `ABS-15G` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
@@ -163,25 +163,25 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DEL AM` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `DFAN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DFRN14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `DOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOS")` |
-| `DOSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DOSLTR")` |
+| `DOS` | G7 Prospectuses & registration | xml | L1 | `(edgar-text filing)` |
+| `DOSLTR` | G7 Prospectuses & registration | text | L1 | `(edgar-text filing)` |
 | `DRS` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `DRSLTR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "DRSLTR")` |
+| `DRSLTR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `DSTRBRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "DSTRBRPT")` |
 | `EFFECT` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "EFFECT")` |
 | `F-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-10` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10")` |
 | `F-10EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10EF")` |
 | `F-10POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10POS")` |
-| `F-1MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-1MEF")` |
+| `F-1MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `F-3ASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3ASR")` |
-| `F-3MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-3MEF")` |
+| `F-3ASR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `F-3MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-4` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `F-6` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6")` |
 | `F-6 POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6 POS")` |
 | `F-6EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6EF")` |
-| `F-N` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-N")` |
+| `F-N` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-X` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-X")` |
 | `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `G-FIN` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
@@ -232,10 +232,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NT-NCSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `NTFNCSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `POS 8C` | G13 Tail | html | L1 | `(edgar-text filing)` |
-| `POS AM` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AM")` |
-| `POS AMI` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AMI")` |
-| `POS EX` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS EX")` |
-| `POSASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POSASR")` |
+| `POS AM` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `POS AMI` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `POS EX` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `POSASR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `PRE 14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PRE 14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `PREC14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
@@ -251,18 +251,18 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
 | `RW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "RW")` |
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `S-11` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-11")` |
-| `S-1MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-1MEF")` |
+| `S-11` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `S-1MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-3` | G7 Prospectuses & registration | html | L2 | `(edgar-section filing "Risk Factors")` |
-| `S-3ASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3ASR")` |
-| `S-3D` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3D")` |
-| `S-3DPOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3DPOS")` |
-| `S-3MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3MEF")` |
+| `S-3ASR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `S-3D` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `S-3DPOS` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `S-3MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-4` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-6` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `S-8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-8 POS` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `S-B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-B")` |
+| `S-B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `SBSE` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
@@ -281,10 +281,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SD` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SEC STAFF ACTIO` | G12 Broker-dealer, market structure, staff | pdf | L1 | `(edgar-text filing)` |
 | `SEC STAFF LETTE` | G12 Broker-dealer, market structure, staff | pdf | L1 | `(edgar-text filing)` |
-| `SF-1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SF-1")` |
-| `SF-3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SF-3")` |
-| `SP 15D2` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `SUPPL` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SUPPL")` |
+| `SF-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `SF-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `SP 15D2` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "SP 15D2")` |
+| `SUPPL` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `TA-1` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `TA-2` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `TA-W` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |

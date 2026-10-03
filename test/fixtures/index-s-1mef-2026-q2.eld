@@ -1,0 +1,1 @@
+(:accn "0001437749-26-019658" :form "S-1MEF" :company "LGL GROUP INC" :filed "2026-06-05" :report "" :doc "lglg20260521_s1mef.htm" :cik 61004 :url "https://www.sec.gov/Archives/edgar/data/61004/000143774926019658/lglg20260521_s1mef.htm" :size 72776 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

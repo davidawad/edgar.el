@@ -1,0 +1,1 @@
+(:accn "0001104659-26-075543" :form "F-3ASR" :company "Sony Group Corp" :filed "2026-06-18" :report "" :doc "tm2617950d1_f3asr.htm" :cik 313838 :url "https://www.sec.gov/Archives/edgar/data/313838/000110465926075543/tm2617950d1_f3asr.htm" :size 284032 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

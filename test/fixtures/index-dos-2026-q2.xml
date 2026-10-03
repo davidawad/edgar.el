@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/rega/oneafiler" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>DOS</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0001401835</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+      </filer>
+      <flags>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <employeesInfo>
+      <issuerName>Star Gold Corp.</issuerName>
+      <jurisdictionOrganization>NV</jurisdictionOrganization>
+      <yearIncorporation>2006</yearIncorporation>
+      <cik>0001401835</cik>
+      <sicCode>1000</sicCode>
+      <irsNum>27-0348508</irsNum>
+      <fullTimeEmployees>0</fullTimeEmployees>
+      <partTimeEmployees>0</partTimeEmployees>
+    </employeesInfo>
+    <issuerInfo>
+      <street1>1875 N. LAKEWOOD DR.</street1>
+      <street2>SUITE 200</street2>
+      <city>COEUR D'ALENE</city>
+      <stateOrCountry>ID</stateOrCountry>
+      <zipCode>83814</zipCode>
+      <phoneNumber>208-664-5066</phoneNumber>
+      <connectionName>Arden Anderson, Esq.</connectionName>
+      <industryGroup>Other</industryGroup>
+      <cashEquivalents>266144.00</cashEquivalents>
+      <investmentSecurities>0.00</investmentSecurities>
+      <accountsReceivable>0.00</accountsReceivable>
+      <propertyPlantEquipment>0.00</propertyPlantEquipment>
+      <totalAssets>1055788.00</totalAssets>
+      <accountsPayable>237594.00</accountsPayable>
+      <longTermDebt>328500.00</longTermDebt>
+      <totalLiabilities>1360313.00</totalLiabilities>
+      <totalStockholderEquity>-304525.00</totalStockholderEquity>
+      <totalLiabilitiesAndEquity>1055788.00</totalLiabilitiesAndEquity>
+      <totalRevenues>0.00</totalRevenues>
+      <costAndExpensesApplToRevenues>161370.00</costAndExpensesApplToRevenues>
+      <depreciationAndAmortization>0.00</depreciationAndAmortization>
+      <netIncome>-180986.00</netIncome>
+      <earningsPerShareBasic>0.00</earningsPerShareBasic>
+      <earningsPerShareDiluted>0.00</earningsPerShareDiluted>
+      <nameAuditor>Assure CPA, LLC</nameAuditor>
+    </issuerInfo>
+    <commonEquity>
+      <commonEquityClassName>Common Stock</commonEquityClassName>
+      <outstandingCommonEquity>191737060</outstandingCommonEquity>
+      <commonCusipEquity>85512U303</commonCusipEquity>
+      <publiclyTradedCommonEquity>OTCQB Venture Market</publiclyTradedCommonEquity>
+    </commonEquity>
+    <preferredEquity>
+      <preferredEquityClassName>N/A</preferredEquityClassName>
+      <outstandingPreferredEquity>0</outstandingPreferredEquity>
+      <preferredCusipEquity>N/A</preferredCusipEquity>
+      <publiclyTradedPreferredEquity>N/A</publiclyTradedPreferredEquity>
+    </preferredEquity>
+    <debtSecurities>
+      <debtSecuritiesClassName>N/A</debtSecuritiesClassName>
+      <outstandingDebtSecurities>0</outstandingDebtSecurities>
+      <cusipDebtSecurities>N/A</cusipDebtSecurities>
+      <publiclyTradedDebtSecurities>N/A</publiclyTradedDebtSecurities>
+    </debtSecurities>
+    <issuerEligibility>
+      <certifyIfTrue>true</certifyIfTrue>
+    </issuerEligibility>
+    <applicationRule262>
+      <certifyIfNotDisqualified>true</certifyIfNotDisqualified>
+      <certifyIfBadActor>false</certifyIfBadActor>
+    </applicationRule262>
+    <summaryInfo>
+      <indicateTier1Tier2Offering>Tier2</indicateTier1Tier2Offering>
+      <financialStatementAuditStatus>Audited</financialStatementAuditStatus>
+      <securitiesOfferedTypes>Equity (common or preferred stock)</securitiesOfferedTypes>
+      <offerDelayedContinuousFlag>Y</offerDelayedContinuousFlag>
+      <offeringYearFlag>Y</offeringYearFlag>
+      <offeringAfterQualifFlag>Y</offeringAfterQualifFlag>
+      <offeringBestEffortsFlag>Y</offeringBestEffortsFlag>
+      <solicitationProposedOfferingFlag>N</solicitationProposedOfferingFlag>
+      <resaleSecuritiesAffiliatesFlag>N</resaleSecuritiesAffiliatesFlag>
+      <securitiesOffered>113000000</securitiesOffered>
+      <outstandingSecurities>0</outstandingSecurities>
+      <pricePerSecurity>0.2500</pricePerSecurity>
+      <issuerAggregateOffering>22600000.00</issuerAggregateOffering>
+      <securityHolderAggegate>0.00</securityHolderAggegate>
+      <qualificationOfferingAggregate>0.00</qualificationOfferingAggregate>
+      <concurrentOfferingAggregate>0.00</concurrentOfferingAggregate>
+      <totalAggregateOffering>22600000.00</totalAggregateOffering>
+      <underwritersServiceProviderName>DealMaker Securities LLC</underwritersServiceProviderName>
+      <underwritersFees>27500.00</underwritersFees>
+      <salesCommissionsServiceProviderName>DealMaker Securities LLC</salesCommissionsServiceProviderName>
+      <salesCommissionsServiceProviderFees>900000.00</salesCommissionsServiceProviderFees>
+      <auditorServiceProviderName>Assure CPA, LLC</auditorServiceProviderName>
+      <auditorFees>35000.00</auditorFees>
+      <legalServiceProviderName>Solon Law, PC</legalServiceProviderName>
+      <legalFees>60000.00</legalFees>
+      <brokerDealerCrdNumber>000315324</brokerDealerCrdNumber>
+      <estimatedNetAmount>19402500.00</estimatedNetAmount>
+    </summaryInfo>
+    <juridictionSecuritiesOffered>
+      <jurisdictionsOfSecOfferedNone>false</jurisdictionsOfSecOfferedNone>
+      <jurisdictionsOfSecOfferedSame>true</jurisdictionsOfSecOfferedSame>
+      <issueJuridicationSecuritiesOffering>AL</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>AK</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>AZ</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>AR</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>CA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>CO</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>CT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>DE</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>DC</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>FL</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>GA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>HI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>ID</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>IL</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>IN</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>IA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>KS</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>KY</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>LA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>ME</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MD</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MN</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MS</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MO</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>MT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NE</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NV</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NH</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NJ</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NM</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NY</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>NC</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>ND</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>OH</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>OK</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>OR</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>PA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>PR</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>RI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>SC</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>SD</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>TN</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>TX</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>UT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>VT</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>VA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WA</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WV</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WI</issueJuridicationSecuritiesOffering>
+      <issueJuridicationSecuritiesOffering>WY</issueJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>AL</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>AK</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>AZ</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>AR</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>CA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>CO</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>CT</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>DE</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>DC</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>FL</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>GA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>HI</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>ID</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>IL</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>IN</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>IA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>KS</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>KY</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>LA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>ME</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MD</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MI</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MN</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MS</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MO</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>MT</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NE</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NV</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NH</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NJ</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NM</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NY</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>NC</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>ND</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>OH</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>OK</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>OR</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>PA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>PR</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>RI</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>SC</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>SD</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>TN</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>TX</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>UT</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>VT</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>VA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>WA</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>WV</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>WI</dealersJuridicationSecuritiesOffering>
+      <dealersJuridicationSecuritiesOffering>WY</dealersJuridicationSecuritiesOffering>
+    </juridictionSecuritiesOffered>
+    <unregisteredSecurities>
+      <ifUnregsiteredNone>false</ifUnregsiteredNone>
+    </unregisteredSecurities>
+    <securitiesIssued>
+      <securitiesIssuerName>Star Gold Corp.</securitiesIssuerName>
+      <securitiesIssuerTitle>Common Stock</securitiesIssuerTitle>
+      <securitiesIssuedTotalAmount>2500000</securitiesIssuedTotalAmount>
+      <securitiesPrincipalHolderAmount>0</securitiesPrincipalHolderAmount>
+      <securitiesIssuedAggregateAmount>$50,000; exercise of warrants at $0.02 per share</securitiesIssuedAggregateAmount>
+    </securitiesIssued>
+    <securitiesIssued>
+      <securitiesIssuerName>Star Gold Corp.</securitiesIssuerName>
+      <securitiesIssuerTitle>Units, with each Unit consisting of one share of common stock and one warrant to purchase one-half of a share of common stock at the exercise price of $0.08 per full share of common stock</securitiesIssuerTitle>
+      <securitiesIssuedTotalAmount>91946250</securitiesIssuedTotalAmount>
+      <securitiesPrincipalHolderAmount>14455750</securitiesPrincipalHolderAmount>
+      <securitiesIssuedAggregateAmount>$3,677,850; private offering</securitiesIssuedAggregateAmount>
+      <aggregateConsiderationBasis>$578,550</aggregateConsiderationBasis>
+    </securitiesIssued>
+    <unregisteredSecuritiesAct>
+      <securitiesActExcemption>Section 4(a)(2); non-public exercise of warrants Section 4(a)(2); Rule 506(b)</securitiesActExcemption>
+    </unregisteredSecuritiesAct>
+  </formData>
+</edgarSubmission>
