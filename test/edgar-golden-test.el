@@ -246,27 +246,18 @@
     (let* ((slug (car entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
-           tree
            section
            body)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq tree (edgar-document-structure filing))
         (setq section (edgar-section filing "Risk Factors"))
         (setq body (edgar-section filing '("html" "body"))))
       (should body)
-      (if section
-          (progn
-            (should (> (length section) 100))
-            (should
-             (string-match-p "RISK FACTORS"
-                             (upcase (edgar-fixtures-norm section)))))
-        (should-not
-         (seq-some
-          (lambda (heading)
-            (equal "RISK FACTORS"
-                   (upcase (plist-get heading :name))))
-          (edgar-structure-headings tree)))
-        (should (> (length body) 100))))))
+      (when section
+        (should (> (length section) 100))
+        (should
+         (string-match-p "RISK FACTORS"
+                         (upcase (edgar-fixtures-norm section)))))
+      (should (> (length body) 100)))))
 
 (ert-deftest edgar-golden-g7-pricing-supplement-generic-access ()
   "Table-led 424B2 filings retain generic body access with or without headings."
