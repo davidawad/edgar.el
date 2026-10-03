@@ -1672,8 +1672,8 @@
      "N-8F NTC"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 18
       :notes nil)
@@ -1682,8 +1682,8 @@
      "N-8F ORDR"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'pdf
+      :level 'L1
       :sections-or-fields nil
       :volume 10
       :notes nil)

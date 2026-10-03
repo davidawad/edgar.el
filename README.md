@@ -2,6 +2,9 @@
 
 Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
 
+PDF-only SEC primaries are rendered through Poppler's `pdftotext` executable.
+Customize `edgar-pdftotext-program` when it is installed under another name.
+
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
     (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
@@ -75,7 +78,8 @@ access to the document structure, use the generic tree API:
       (edgar-structure-paragraphs tree)
       (edgar-structure-nodes tree "ix:nonfraction"))
 
-HTML, XML, and plain-text submissions use one tree representation. Element
+HTML, XML, PDF, and plain-text submissions use one tree representation. PDF
+documents expose their extracted paragraphs; element
 names, attributes, child order, and text nodes are kept; individual form codes
 do not select custom fields. `edgar-structure-section` accepts a visible
 heading name or a full heading/tag path. Duplicate names signal an ambiguity

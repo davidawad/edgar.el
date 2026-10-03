@@ -34,6 +34,15 @@
 (defvar edgar--part-re)
 (defvar edgar--item-re)
 
+(defgroup edgar nil
+  "Read and navigate SEC EDGAR filings."
+  :group 'applications)
+
+(defcustom edgar-pdftotext-program "pdftotext"
+  "Program used to render PDF primary documents as plain text."
+  :type 'string
+  :group 'edgar)
+
 ;;;; Transport
 
 (defun edgar--fetch (url)
@@ -194,8 +203,38 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
 ;;;; Content
 
 (defun edgar-html (filing)
-  "Raw HTML (iXBRL) of FILING's primary document."
+  "Raw body of FILING's primary document.
+PDF bodies are returned as unibyte strings."
   (edgar--fetch (plist-get filing :url)))
+
+(defun edgar--pdf-url-p (url)
+  "Return non-nil when URL identifies a PDF primary document."
+  (and (stringp url) (string-match-p "\\.pdf\\(?:[?#]\\|\\'\\)" url)))
+
+(defun edgar--pdf-text (pdf)
+  "Render the unibyte PDF body PDF as plain text."
+  (let ((program (executable-find edgar-pdftotext-program))
+        (output (generate-new-buffer " *edgar-pdftotext*")))
+    (unless program
+      (kill-buffer output)
+      (user-error "PDF filing requires the %s program"
+                  edgar-pdftotext-program))
+    (unwind-protect
+        (with-temp-buffer
+          (set-buffer-multibyte nil)
+          (insert pdf)
+          (let ((coding-system-for-read 'utf-8-unix)
+                (coding-system-for-write 'no-conversion))
+            (let ((status
+                   (call-process-region
+                    (point-min) (point-max) program
+                    nil output nil "-layout" "-" "-")))
+              (unless (and (integerp status) (zerop status))
+                (error "%s failed with status %s" program status))))
+          (with-current-buffer output
+            (buffer-string)))
+      (when (buffer-live-p output)
+        (kill-buffer output)))))
 
 (defun edgar--submission-primary-document (submission filing)
   "Return FILING's primary document from an EDGAR SGML SUBMISSION.
@@ -263,9 +302,13 @@ primary document is returned unchanged."
                    (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
               (edgar--submission-primary-document source filing)
             source)))
-    (if (and (stringp url)
-             (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-        (edgar--legacy-text text)
+    (cond
+     ((edgar--pdf-url-p url)
+      (edgar--pdf-text source))
+     ((and (stringp url)
+           (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+      (edgar--legacy-text text))
+     (t
       (with-temp-buffer
         (insert text)
         (let ((dom
@@ -275,7 +318,7 @@ primary document is returned unchanged."
                 (shr-use-fonts nil)
                 (shr-width 100))
             (shr-insert-document dom)))
-        (buffer-substring-no-properties (point-min) (point-max))))))
+        (buffer-substring-no-properties (point-min) (point-max)))))))
 
 (defun edgar--structure-node (node)
   "Convert libxml NODE to a uniform plist tree without discarding data."
@@ -301,8 +344,8 @@ primary document is returned unchanged."
   "Return FILING as a generic, ordered document tree.
 The root plist has :format and :children.  Each element has :name,
 :attributes, and ordered :children; text is retained in leaf plists.  HTML,
-XML, and text submissions use the same representation, so callers can inspect
-any element or paragraph without form-specific projections."
+XML, PDF, and text submissions use the same representation, so callers can
+inspect any element or paragraph without form-specific projections."
   (let ((url (plist-get filing :url)))
     (cond
      ((and (stringp url)
@@ -314,7 +357,8 @@ any element or paragraph without form-specific projections."
          :format 'xml
          :children (and tree (list (edgar--structure-node tree))))))
      ((and (stringp url)
-           (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+           (or (edgar--pdf-url-p url)
+               (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url)))
       (let* ((text (edgar-text filing))
              (paragraphs
               (seq-remove
@@ -325,7 +369,10 @@ any element or paragraph without form-specific projections."
                               "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
         (list
          :type 'document
-         :format 'text
+         :format
+         (if (edgar--pdf-url-p url)
+             'pdf
+           'text)
          :text text
          :children
          (mapcar

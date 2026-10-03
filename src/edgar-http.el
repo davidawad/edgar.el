@@ -37,6 +37,10 @@
 (defvar edgar-http--last-request-time nil
   "Time at which the preceding uncached request was started.")
 
+(defun edgar-http--pdf-url-p (url)
+  "Return non-nil when URL identifies a PDF document."
+  (string-match-p "\\.pdf\\(?:[?#]\\|\\'\\)" url))
+
 (defun edgar-http--archive-document-p (url)
   "Return non-nil when URL identifies an immutable archive document."
   (let ((path (url-filename (url-generic-parse-url url))))
@@ -48,7 +52,10 @@
 
 (defun edgar-http--cache-file (url)
   "Return the cache filename for URL."
-  (expand-file-name (concat (secure-hash 'sha256 url) ".html")
+  (expand-file-name (concat (secure-hash 'sha256 url)
+                            (if (edgar-http--pdf-url-p url)
+                                ".pdf"
+                              ".html"))
                     edgar-http-cache-directory))
 
 (defun edgar-http--throttle ()
@@ -78,8 +85,9 @@
                       (max 0 (- (float-time date) (float-time)))))))
         (expt 2 attempt))))
 
-(defun edgar-http--response ()
-  "Return (STATUS HEADERS BODY) for the current URL response buffer."
+(defun edgar-http--response (&optional binary)
+  "Return (STATUS HEADERS BODY) for the current URL response buffer.
+When BINARY is non-nil, preserve BODY as an unibyte string."
   (goto-char (point-min))
   (unless (looking-at "HTTP/[0-9.]+ \\([0-9]+\\)")
     (error "EDGAR HTTP: malformed response status"))
@@ -110,20 +118,27 @@
           (insert body)
           (zlib-decompress-region (point-min) (point-max))
           (setq body (buffer-string))))
-      (list status headers (decode-coding-string body 'utf-8)))))
+      (list status headers
+            (if binary body (decode-coding-string body 'utf-8))))))
 
 (defun edgar-http-get (url &optional user-agent)
-  "Return URL's decoded body, using USER-AGENT for the request.
+  "Return URL's body, using USER-AGENT for the request.
+Text bodies are decoded as UTF-8; PDF bodies remain unibyte strings.
 Requests are globally throttled.  HTTP 429 and 5xx responses are retried
 with bounded exponential backoff, respecting a valid Retry-After header.
 Successful immutable SEC archive documents are cached by URL.  Other
 endpoints are never cached."
   (let* ((cacheable (edgar-http--archive-document-p url))
-         (cache-file (and cacheable (edgar-http--cache-file url))))
+         (cache-file (and cacheable (edgar-http--cache-file url)))
+         (binary (edgar-http--pdf-url-p url)))
     (or (and cache-file
              (file-readable-p cache-file)
              (with-temp-buffer
-               (insert-file-contents cache-file)
+               (if binary
+                   (progn
+                     (set-buffer-multibyte nil)
+                     (insert-file-contents-literally cache-file))
+                 (insert-file-contents cache-file))
                (buffer-string)))
         (let ((attempt 0)
               (body nil)
@@ -139,7 +154,7 @@ endpoints are never cached."
               (unwind-protect
                   (with-current-buffer buffer
                     (pcase-let ((`(,status ,headers ,response-body)
-                                 (edgar-http--response)))
+                                 (edgar-http--response binary)))
                       (cond
                        ((and (>= status 200) (< status 300))
                         (setq
@@ -159,8 +174,15 @@ endpoints are never cached."
                   (kill-buffer buffer)))))
           (when cache-file
             (make-directory edgar-http-cache-directory t)
-            (with-temp-file cache-file
-              (insert body)))
+            (if binary
+                (with-temp-buffer
+                  (set-buffer-multibyte nil)
+                  (insert body)
+                  (let ((coding-system-for-write 'no-conversion))
+                    (write-region (point-min) (point-max)
+                                  cache-file nil 'silent)))
+              (with-temp-file cache-file
+                (insert body))))
           body))))
 
 (provide 'edgar-http)

@@ -488,6 +488,27 @@
         (should (> (length (edgar-structure-paragraphs tree)) 1))
         (should (string-match-p "</HTML>" document-text))))))
 
+(ert-deftest edgar-pdf-primary-uses-generic-text-and-tree-api ()
+  "A real SEC PDF primary is readable through the generic APIs."
+  (let* ((slug "n-8f-ordr-blackrock")
+         (filing (edgar-fixtures-filing slug))
+         (pdf (edgar-fixtures-primary slug)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
+      (let* ((text (edgar-text filing))
+             (tree (edgar-document-structure filing)))
+        (should (string-match-p "ORDER UNDER SECTION 8(f)" text))
+        (should (eq (plist-get tree :format) 'pdf))
+        (should (> (length (edgar-structure-paragraphs tree)) 3))
+        (should
+         (string-match-p
+          "applicant has ceased to be an investment company"
+          (edgar-structure-text tree)))))))
+
+(ert-deftest edgar-pdf-primary-requires-pdftotext ()
+  "A missing PDF converter produces an actionable error."
+  (let ((edgar-pdftotext-program "edgar-test-missing-pdftotext"))
+    (should-error (edgar--pdf-text "%PDF") :type 'user-error)))
+
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
   (let* ((slug "upload-irenic-2026")

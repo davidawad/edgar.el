@@ -183,6 +183,46 @@
              (string-match-p "XML primary document" messages))))
       (delete-directory root t))))
 
+(ert-deftest edgar-form-coverage-pdf-fixture-removal-names-l1-form ()
+  "A PDF L1 fixture passes, and removing it fails with the form name."
+  (let* ((root (make-temp-file "edgar-coverage-pdf-fixture-" t))
+         (fixtures (expand-file-name "fixtures" root))
+         (expects (expand-file-name "expect" root))
+         (goldens (expand-file-name "golden" root))
+         (snapshot (expand-file-name "snapshot.txt" root))
+         (primary (expand-file-name "test.pdf" fixtures)))
+    (unwind-protect
+        (progn
+          (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test.eld" fixtures)
+           "(:form \"TEST-FORM\")\n")
+          (edgar-form-coverage-test--write primary "%PDF fixture")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test.eld" expects) "(:ok t)\n")
+          (make-directory goldens t)
+          (should-not
+           (edgar-coverage-problems
+            :registry
+            (edgar-form-coverage-test--registry 'L1 'pdf)
+            :snapshot-file snapshot
+            :fixture-directory fixtures
+            :expect-directory expects
+            :golden-directory goldens))
+          (delete-file primary)
+          (let ((messages
+                 (edgar-form-coverage-test--messages
+                  (edgar-coverage-problems
+                   :registry
+                   (edgar-form-coverage-test--registry 'L1 'pdf)
+                   :snapshot-file snapshot
+                   :fixture-directory fixtures
+                   :expect-directory expects
+                   :golden-directory goldens))))
+            (should (string-match-p "TEST-FORM" messages))
+            (should (string-match-p "PDF primary document" messages))))
+      (delete-directory root t))))
+
 (ert-deftest edgar-form-coverage-xml-l2-requires-field-golden ()
   "An XML L2 fixture uses the typed field-golden directory."
   (let* ((root (make-temp-file "edgar-coverage-xml-l2-" t))

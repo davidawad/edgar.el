@@ -148,7 +148,8 @@ Each record is a (BASE-FORM . SLUG) pair."
   (pcase backend
     ('html '(".htm.gz" ".htm"))
     ('xml '(".xml" ".xml.gz"))
-    ('text '(".txt" ".txt.gz"))))
+    ('text '(".txt" ".txt.gz"))
+    ('pdf '(".pdf"))))
 
 (defun edgar-coverage--primary-artifact-p
     (slug backend fixture-directory)
@@ -160,12 +161,12 @@ Each record is a (BASE-FORM . SLUG) pair."
    (edgar-coverage--primary-suffixes backend)))
 
 (defun edgar-coverage--any-primary-artifact-p (slug fixture-directory)
-  "Return non-nil when SLUG has an XML, HTML, or text primary."
+  "Return non-nil when SLUG has an XML, HTML, text, or PDF primary."
   (seq-some
    (lambda (backend)
      (edgar-coverage--primary-artifact-p
       slug backend fixture-directory))
-   '(xml html text)))
+   '(xml html text pdf)))
 
 (defun edgar-coverage--xml-field-golden-p
     (slug fixture-directory field-golden-directory)
