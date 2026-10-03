@@ -43,8 +43,8 @@
     (cl-letf (((symbol-function 'edgar--fetch)
                (lambda (url)
                  (should
-                  (equal url
-                         (edgar-xml--raw-url (plist-get filing :url))))
+                  (equal
+                   url (edgar-xml--raw-url (plist-get filing :url))))
                  (edgar-offerings-test--fixture slug))))
       (funcall parse filing))))
 
@@ -56,8 +56,7 @@
    :seller-name (edgar-form-144-seller-name value)
    :securities-class-title (edgar-form-144-securities-class-title value)
    :units-to-be-sold (edgar-form-144-units-to-be-sold value)
-   :aggregate-market-value
-   (edgar-form-144-aggregate-market-value value)
+   :aggregate-market-value (edgar-form-144-aggregate-market-value value)
    :approximate-sale-date (edgar-form-144-approximate-sale-date value)
    :broker-name (edgar-form-144-broker-name value)))
 
@@ -71,8 +70,7 @@
    :total-amount-sold (edgar-form-d-total-amount-sold value)
    :total-remaining (edgar-form-d-total-remaining value)
    :investor-count (edgar-form-d-investor-count value)
-   :non-accredited-investor-count
-   (edgar-form-d-non-accredited-investor-count value)
+   :non-accredited-investor-count (edgar-form-d-non-accredited-investor-count value)
    :sales-commissions (edgar-form-d-sales-commissions value)
    :finders-fees (edgar-form-d-finders-fees value)))
 
@@ -94,6 +92,45 @@
    :net-income-current (edgar-form-c-ar-net-income-current value)
    :net-income-prior (edgar-form-c-ar-net-income-prior value)
    :signatures (edgar-form-c-ar-signatures value)))
+
+(defun edgar-offerings-test--form-c-fields (value)
+  "Return VALUE's typed Form C fields as a plist."
+  (list
+   :issuer-cik (edgar-form-c-issuer-cik value)
+   :issuer-name (edgar-form-c-issuer-name value)
+   :issuer-website (edgar-form-c-issuer-website value)
+   :co-issuer-names (edgar-form-c-co-issuer-names value)
+   :intermediary-name (edgar-form-c-intermediary-name value)
+   :security-type (edgar-form-c-security-type value)
+   :securities-offered (edgar-form-c-securities-offered value)
+   :price (edgar-form-c-price value)
+   :offering-amount (edgar-form-c-offering-amount value)
+   :maximum-offering-amount (edgar-form-c-maximum-offering-amount value)
+   :deadline (edgar-form-c-deadline value)
+   :current-employees (edgar-form-c-current-employees value)
+   :total-assets-current (edgar-form-c-total-assets-current value)
+   :total-assets-prior (edgar-form-c-total-assets-prior value)
+   :revenue-current (edgar-form-c-revenue-current value)
+   :revenue-prior (edgar-form-c-revenue-prior value)
+   :net-income-current (edgar-form-c-net-income-current value)
+   :net-income-prior (edgar-form-c-net-income-prior value)
+   :signatures (edgar-form-c-signatures value)))
+
+(defun edgar-offerings-test--generic-fields (slug form tags)
+  "Return generic XML TAG values for recorded SLUG and FORM."
+  (let* ((filing (edgar-offerings-test--filing slug form))
+         (xml (edgar-offerings-test--fixture slug)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((tree (edgar-document-structure filing)))
+        (mapcar
+         (lambda (tag)
+           (let ((nodes (edgar-structure-nodes tree tag)))
+             (cons tag (mapcar #'edgar-structure-text nodes))))
+         tags)))))
+
+(defun edgar-offerings-test--normalize-text (text)
+  "Collapse whitespace in rendered filing TEXT."
+  (string-trim (replace-regexp-in-string "[ \t\n ]+" " " text)))
 
 (ert-deftest edgar-form-144-accessors-match-golden-values ()
   "Typed accessors expose key Form 144 fields from recorded XML."
@@ -130,12 +167,13 @@
         (edgar-offerings-test--golden slug)))
       (should
        (equal
-        (list :form "144"
-              :issuer-name (edgar-form-144-issuer-name value)
-              :seller-name (edgar-form-144-seller-name value)
-              :units-to-be-sold (edgar-form-144-units-to-be-sold value)
-              :approximate-sale-date
-              (edgar-form-144-approximate-sale-date value))
+        (list
+         :form "144"
+         :issuer-name (edgar-form-144-issuer-name value)
+         :seller-name (edgar-form-144-seller-name value)
+         :units-to-be-sold (edgar-form-144-units-to-be-sold value)
+         :approximate-sale-date
+         (edgar-form-144-approximate-sale-date value))
         (edgar-offerings-test--read
          (expand-file-name (concat "expect/" slug ".eld")
                            edgar-offerings-test--directory)))))))
@@ -162,7 +200,9 @@
       (edgar-offerings-test--form-d-fields value)
       (edgar-offerings-test--golden "form-d-a-sample")))))
 
-(ert-deftest edgar-form-d-older-schema-vintage-keeps-optional-fields-nil ()
+(ert-deftest
+    edgar-form-d-older-schema-vintage-keeps-optional-fields-nil
+    ()
   "Old Form D schema data parses without invented optional values."
   (let ((value
          (edgar-offerings-test--read-fields
@@ -196,6 +236,82 @@
   (should-not
    (edgar-offerings-test--read-fields
     "c-ar-qnetic" "C" #'edgar-form-c-ar)))
+
+(ert-deftest edgar-form-c-accessors-match-golden-values ()
+  "Typed Form C accessors match a genuine SEC offering statement."
+  (let ((value
+         (edgar-offerings-test--read-fields
+          "c-airthium" "C" #'edgar-form-c)))
+    (should (edgar-form-c-p value))
+    (should
+     (equal
+      (edgar-offerings-test--form-c-fields value)
+      (edgar-offerings-test--golden "c-airthium")))))
+
+(ert-deftest edgar-form-c-is-nil-for-other-forms ()
+  "Form C projection does not accept a different form code."
+  (should-not
+   (edgar-offerings-test--read-fields
+    "c-airthium" "C-U" #'edgar-form-c)))
+
+(ert-deftest edgar-form-c-generic-text-and-tree-access ()
+  "Generic APIs retain Form C text and nested XML values offline."
+  (let* ((slug "c-airthium")
+         (filing (edgar-offerings-test--filing slug "C"))
+         (xml (edgar-offerings-test--fixture slug)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((text
+             (edgar-offerings-test--normalize-text
+              (edgar-text filing))))
+        (should (string-match-p "Airthium Inc\\." text))
+        (should (string-match-p "50000\\.00" text))))
+    (should
+     (equal
+      (edgar-offerings-test--generic-fields
+       slug "C" '("nameofissuer" "offeringamount" "deadlinedate"))
+      '(("nameofissuer" "Airthium Inc.")
+        ("offeringamount" "50000.00")
+        ("deadlinedate" "04-30-2027"))))))
+
+(ert-deftest edgar-form-c-u-generic-values-match-golden ()
+  "Form C-U remains accessible through generic text and XML tree APIs."
+  (let* ((slug "c-u-same-same")
+         (filing (edgar-offerings-test--filing slug "C-U"))
+         (xml (edgar-offerings-test--fixture slug))
+         (golden
+          (edgar-offerings-test--read
+           (expand-file-name (concat "expect/" slug ".eld")
+                             edgar-offerings-test--directory))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((text
+             (edgar-offerings-test--normalize-text
+              (edgar-text filing))))
+        (should
+         (string-match-p
+          (regexp-quote (plist-get golden :progress-update)) text))
+        (should
+         (string-match-p
+          (regexp-quote (plist-get golden :issuer)) text))))
+    (let ((fields
+           (edgar-offerings-test--generic-fields
+            slug "C-U"
+            '("nameofissuer"
+              "progressupdate"
+              "offeringamount"
+              "maximumofferingamount"
+              "deadlinedate"))))
+      (should
+       (equal
+        (list
+         :form "C-U"
+         :accn (plist-get filing :accn)
+         :issuer (car (cdr (assoc "nameofissuer" fields)))
+         :progress-update (car (cdr (assoc "progressupdate" fields)))
+         :offering-amount (car (cdr (assoc "offeringamount" fields)))
+         :maximum-offering-amount
+         (car (cdr (assoc "maximumofferingamount" fields)))
+         :deadline (car (cdr (assoc "deadlinedate" fields))))
+        golden)))))
 
 (provide 'edgar-offerings-test)
 ;;; edgar-offerings-test.el ends here

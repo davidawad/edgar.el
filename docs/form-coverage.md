@@ -136,12 +136,12 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `ATS-N/OFA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/OFA")` |
 | `ATS-N/UA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/UA")` |
 | `AW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "AW")` |
-| `C` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C")` |
+| `C` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
 | `C-AR` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
 | `C-AR-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-AR-W")` |
 | `C-TR` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-TR")` |
 | `C-TR-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-TR-W")` |
-| `C-U` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-U")` |
+| `C-U` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `C-W` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "C-W")` |
 | `CB` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "CB")` |
 | `CERT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "CERT")` |
