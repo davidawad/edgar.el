@@ -14,6 +14,10 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `n-vpfs-alger.htm.gz` — compressed primary N-VPFS from [accession 0000847554-26-000007](https://www.sec.gov/Archives/edgar/data/847554/000084755426000007/algerseparateaccountaafs.htm).
 - `10-d-ms-c21.htm.gz` — compressed primary 10-D from [accession 0001888524-26-012144](https://www.sec.gov/Archives/edgar/data/1631406/000188852426012144/msc15c21_10d-202606.htm).
 - `abs-15g-tesla-energy.htm.gz` — compressed primary ABS-15G from [accession 0001193125-26-219735](https://www.sec.gov/Archives/edgar/data/2037778/000119312526219735/d108502dabs15g.htm).
+- `abs-ee-deutsche.xml` — [EX-102 in ABS-EE accession 0001539497-25-000961](https://www.sec.gov/Archives/edgar/data/1013454/000153949725000961/exh_102.xml).
+- `abs-ee-cd2017-cd3.xml` — [EX-102 in ABS-EE accession 0001888524-25-016561](https://www.sec.gov/Archives/edgar/data/1693368/000188852425016561/exh_102.xml).
+- `c-ar-diaspora.xml` — [C-AR accession 0002059521-25-000009](https://www.sec.gov/Archives/edgar/data/2059521/000205952125000009/primary_doc.xml).
+- `c-ar-kronos.xml` — [C-AR accession 0001108248-25-000004](https://www.sec.gov/Archives/edgar/data/1108248/000110824825000004/primary_doc.xml).
 - `structured/ncsr-sample.htm.gz` — compressed primary document from [N-CSR accession 0000030146-26-000114](https://www.sec.gov/Archives/edgar/data/737520/000003014626000114/output.htm), used to test the generic Item section API.
 - `ma-i-ey-2026.xml` — [MA-I accession 0001617793-26-000005](https://www.sec.gov/Archives/edgar/data/1617793/000161779326000005/primary_doc.xml).
 - `ta-2-edward-jones-2026.xml` — [TA-2 accession 0000810417-26-000002](https://www.sec.gov/Archives/edgar/data/810417/000081041726000002/primary_doc.xml).
