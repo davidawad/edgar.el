@@ -136,6 +136,7 @@ coverage gate checks registry metadata and recorded fixture artifacts.
 | 8-K | `2.02`, `9.01` ... | dotted items |
 | 20-F | Part-qualified items | heading-only table-of-contents residue is dropped |
 | S-1 | `II.13`-`II.17` | Part I is the prospectus, no Items |
+| S-3 | `Risk Factors` and other standalone prospectus headings | `edgar-section` |
 | Schedule 13G | `1`-`10` | legacy `SC 13G`/`SC 13G/A` text filings: little or no Item structure |
 | 40-F, 6-K, 11-K, 4, 13F-HR, 144 | none | whole text via `edgar-text` |
 | DEF 14A | named proposals, compensation, and ownership headings | `edgar-section` |

@@ -18,7 +18,7 @@ Prospectus and registration samples used for generic named-section coverage:
 - `s-8-pos-exxonmobil.htm.gz` — S-8 POS, ExxonMobil Holdings Corp. ([accession 0001193125-26-292576](https://www.sec.gov/Archives/edgar/data/2115436/000119312526292576/d159056ds8pos.htm); 2026-07-01). Part II Items are accessible through `edgar-section`.
 
 - `s-3-indaptus.htm.gz` — S-3, Indaptus Therapeutics ([accession 0001641172-25-023490](https://www.sec.gov/Archives/edgar/data/1857044/000164117225023490/forms-3.htm); 2025-08-13).
-- `s-3-maxcyte.htm.gz` — S-3, MaxCyte ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
+- `s-3-maxcyte.htm.gz` — S-3, Werewolf Therapeutics ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
 - `424b2-barclays.htm.gz` — 424B2, Barclays Bank PLC ([accession 0001918704-25-014571](https://www.sec.gov/Archives/edgar/data/312070/000191870425014571/form424b2.htm); 2025-09-04).
 - `424b2-hsbc.htm.gz` — 424B2, HSBC USA Inc. ([accession 0001104659-25-034612](https://www.sec.gov/Archives/edgar/data/83246/000110465925034612/tm2511073d92_424b2.htm); 2025-04-14).
 - `f-3-bit-mining.htm.gz` — F-3, BIT Mining Ltd. ([accession 0001104659-25-049758](https://www.sec.gov/Archives/edgar/data/1517496/000110465925049758/tm2515245d1_f3.htm); 2025-05-16).

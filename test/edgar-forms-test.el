@@ -173,6 +173,15 @@
   (dolist (form '("8-K" "10-K" "10-Q" "20-F"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g7-s3-has-generic-named-section-coverage ()
+  "S-3 exposes generic named sections without form-specific fields."
+  (let ((info (edgar-form-info "S-3")))
+    (should (eq (plist-get info :level) 'L2))
+    (should
+     (equal
+      (plist-get info :sections-or-fields)
+      '(generic-named-sections)))))
+
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
   "G11 records all but the unavailable Form 1 primary document."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))

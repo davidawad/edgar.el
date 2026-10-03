@@ -17,4 +17,7 @@
   "Up to 857,462 shares of common stock issuable upon exercise of the Warrants Shares of common stock outstanding as of July 971,043 27, 2026:"
   "Percentage of beneficial ownership is calculated based on 971,043 shares of common stock outstanding as of July 27, 2026."
   "● settlement of short sales entered into after the effective date of the registration statement of which this prospectus is a part;"
-  "(i) to include any prospectus required by Section 10(a)(3) of the Securities Act of 1933 (“Securities Act”);"))
+  "(i) to include any prospectus required by Section 10(a)(3) of the Securities Act of 1933 (“Securities Act”);")
+ :named-sections
+ (("Risk Factors"
+   "Before making an investment decision, in addition to the risks set forth below")))

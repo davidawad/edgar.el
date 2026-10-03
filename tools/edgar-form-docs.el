@@ -31,6 +31,7 @@
                 ((equal form "13F-NT") "`(edgar-13f-notice filing)`")
                 ((member form '("SCHEDULE 13D" "SCHEDULE 13G"))
                   "`(edgar-schedule-13d-g-cover-page filing)`")
+                ((equal form "S-3") "`(edgar-section filing \"Risk Factors\")`")
                 ((eq (plist-get info :level) 'L0)
                  (format "`(edgar-form-info \"%s\")`" form))
                 ((eq (plist-get info :level) 'L1) "`(edgar-text filing)`")

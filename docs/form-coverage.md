@@ -253,7 +253,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `S-11` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-11")` |
 | `S-1MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-1MEF")` |
-| `S-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `S-3` | G7 Prospectuses & registration | html | L2 | `(edgar-section filing "Risk Factors")` |
 | `S-3ASR` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3ASR")` |
 | `S-3D` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3D")` |
 | `S-3DPOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3DPOS")` |

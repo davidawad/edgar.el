@@ -184,7 +184,7 @@
        '(("s-1-rivn" . "Rivian")
          ("s-3-autonomix" . "Autonomix")
          ("s-3-indaptus" . "Indaptus")
-         ("s-3-maxcyte" . "MaxCyte")
+         ("s-3-maxcyte" . "Werewolf")
          ("f-1-fasttrack" . "Fast Track")
          ("f-1-verdera" . "Verdera")
          ("f-1-vision-marine" . "Vision Marine")
@@ -216,18 +216,15 @@
         (should (> (length body) 100))))))
 
 (ert-deftest edgar-golden-g7-pricing-supplement-generic-access ()
-  "Table-led 424B2 filings retain generic body access when heading nodes are absent."
+  "Table-led 424B2 filings retain generic body access with or without headings."
   (dolist (slug '("424b2-jpm" "424b2-barclays" "424b2-hsbc"))
     (let* ((filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
-           (tree nil)
            risk-section
            body)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq tree (edgar-document-structure filing))
         (setq risk-section (edgar-section filing "Risk Factors"))
         (setq body (edgar-section filing '("html" "body"))))
-      (should-not (edgar-structure-headings tree))
       (when risk-section
         (should (> (length risk-section) 100))
         (should
@@ -263,9 +260,22 @@
     (let* ((slug (nth 0 entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
+           (tree nil)
+           (tree-section nil)
            section)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq section (edgar-section filing (nth 1 entry))))
+        (setq tree (edgar-document-structure filing)
+              section (edgar-section filing (nth 1 entry))))
+      (should (eq (plist-get (edgar-form-info "S-3") :level) 'L2))
+      (if (equal slug "s-3-maxcyte")
+          (should-error (edgar-structure-section tree (nth 1 entry))
+                        :type 'user-error)
+        (setq tree-section (edgar-structure-section tree (nth 1 entry)))
+        (should tree-section)
+        (should
+         (string-search (nth 2 entry)
+                        (edgar-fixtures-norm
+                         (plist-get tree-section :body)))))
       (should section)
       (should
        (string-search (nth 2 entry)
