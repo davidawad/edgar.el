@@ -821,8 +821,24 @@
         (let* ((primary (edgar-primary-document submission-filing))
                (tree (edgar-document-structure submission-filing))
                (text (edgar-structure-text tree))
+               (rendered-text (edgar-text submission-filing))
                (info (edgar-form-info (plist-get filing :form))))
-          (should (equal expected per-filing-expected))
+          (should
+           (equal
+            (plist-get expected :slug)
+            (plist-get per-filing-expected :slug)))
+          (should
+           (equal
+            (plist-get expected :control-number)
+            (plist-get per-filing-expected :control-number)))
+          (should
+           (equal
+            (plist-get expected :paper-sha256)
+            (plist-get per-filing-expected :paper-sha256)))
+          (should
+           (equal
+            (plist-get expected :document-snapshot)
+            (plist-get per-filing-expected :document-snapshot)))
           (should (eq (plist-get info :level) 'L1))
           (should (eq (plist-get info :backend) 'text))
           (should (string-match-p "original report body is absent"
@@ -846,7 +862,16 @@
            (equal
             (plist-get expected :document-snapshot)
             (edgar-test--g12-document-snapshot
-             submission-filing tree))))))))
+             submission-filing tree)))
+          (should
+           (= (plist-get (plist-get per-filing-expected :edgar-text-snapshot)
+                         :text-length)
+              (length rendered-text)))
+          (should
+           (equal
+            (plist-get (plist-get per-filing-expected :edgar-text-snapshot)
+                       :text-sha256)
+            (secure-hash (quote sha256) rendered-text))))))))
 
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
