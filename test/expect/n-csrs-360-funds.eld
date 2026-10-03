@@ -1,0 +1,22 @@
+(:form "N-CSRS" :text-bucket 15 :text-head
+       "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,"
+       :sections
+       (("1" 11 "ITEM 1. REPORTS TO SHAREHOLDERS The Semi-Annual re")
+	("2" 6 "ITEM 2. CODE OF ETHICS. Not applicable at this tim")
+	("3" 6 "ITEM 3. AUDIT COMMITTEE FINANCIAL EXPERT. Not appl")
+	("4" 6 "ITEM 4. PRINCIPAL ACCOUNTANT FEES AND SERVICES. No")
+	("5" 6 "ITEM 5. AUDIT COMMITTEE OF LISTED REGISTRANTS. Not")
+	("6" 7 "ITEM 6. SCHEDULE OF INVESTMENTS. Included in Semi-")
+	("7" 15 "Item 7. Financial Statements and Financial Highlig")
+	("8" 8 "Item 8. Changes in and Disagreements with Accounta")
+	("9" 6 "Item 9. Proxy Disclosures for Open-End Management ")
+	("10" 7 "Item 10. Remuneration Paid to Directors, Officers,")
+	("11" 6 "Item 11. Statement Regarding Basis for Approval of")
+	("12" 7 "ITEM 12. DISCLOSURE OF PROXY VOTING POLICIES AND P")
+	("13" 7 "ITEM 13. PORTFOLIO MANAGERS OF CLOSED-END MANAGEME")
+	("14" 7 "ITEM 14. PURCHASES OF EQUITY SECURITIES BY CLOSED-")
+	("15" 6 "ITEM 15. SUBMISSION OF MATTERS TO A VOTE OF SECURI")
+	("16" 9 "ITEM 16. CONTROLS AND PROCEDURES. (a) The registra")
+	("17" 7 "ITEM 17. DISCLOSURE OF SECURITIES LENDING ACTIVITI")
+	("18" 6 "ITEM 18. RECOVERY OF ERRONEOUSLY AWARDED COMPENSAT")
+	("19" 10 "ITEM 19. EXHIBITS (a)(1) Not Applicable. (a)(2) No")))

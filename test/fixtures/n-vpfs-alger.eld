@@ -1,0 +1,1 @@
+(:accn "0000847554-26-000007" :form "N-VPFS" :company "ALGER SEPARATE ACCOUNT A OF VENERABLE INSURANCE & ANNUITY Co" :filed "2026-04-23" :report "2025-12-31" :doc "algerseparateaccountaafs.htm" :cik 847554 :url "https://www.sec.gov/Archives/edgar/data/847554/000084755426000007/algerseparateaccountaafs.htm")

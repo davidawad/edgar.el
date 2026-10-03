@@ -26,6 +26,14 @@
       (insert xml)
       (libxml-parse-xml-region (point-min) (point-max)))))
 
+(defun edgar-xml-test--expect (slug)
+  "Return the expectation recorded for XML fixture SLUG."
+  (with-temp-buffer
+    (insert-file-contents
+     (expand-file-name (concat "expect/" slug ".eld")
+                       edgar-xml-test--directory))
+    (read (current-buffer))))
+
 (ert-deftest edgar-xml-parses-form-4-fixture ()
   "Parse the recorded Form 4 ownership document."
   (let ((tree (edgar-xml-test--parse "4-aapl")))
@@ -37,6 +45,42 @@
   (let ((tree (edgar-xml-test--parse "144-aapl")))
     (should (eq (car tree) 'edgarSubmission))
     (should (assoc 'headerData (edgar-xml-project tree)))))
+
+(ert-deftest edgar-xml-projects-n-px-notice-report ()
+  "Project identifying fields from a recorded N-PX notice filing."
+  (let* ((tree (edgar-xml-test--parse "n-px-a4-wealth"))
+         (projected (edgar-xml-project tree))
+         (header (cdr (assq 'headerData (cdr projected))))
+         (filer (cdr (assq 'filerInfo header)))
+         (form-data (cdr (assq 'formData (cdr projected))))
+         (cover (cdr (assq 'coverPage form-data)))
+         (reporting-person (cdr (assq 'reportingPerson cover)))
+         (report (cdr (assq 'reportInfo cover))))
+    (should
+     (equal
+      (list
+       :root (car tree)
+       :submission-type (cdr (assq 'submissionType header))
+       :period (cdr (assq 'periodOfReport filer))
+       :reporting-person (cdr (assq 'name reporting-person))
+       :report-type (cdr (assq 'reportType report)))
+      (edgar-xml-test--expect "n-px-a4-wealth")))))
+
+(ert-deftest edgar-text-renders-n-px-xml-primary ()
+  "Render the recorded N-PX XML primary through the L1 text API."
+  (let ((expect
+         (edgar-xml-test--expect "n-px-a4-wealth"))
+        (xml (edgar-xml-test--fixture "n-px-a4-wealth")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((text
+             (edgar-text
+              (list :url "https://example.test/primary_doc.xml"))))
+        (should
+         (string-search (plist-get expect :submission-type) text))
+        (should
+         (string-search (plist-get expect :reporting-person) text))
+        (should
+         (string-search (plist-get expect :report-type) text))))))
 
 (ert-deftest edgar-xml-project-normalizes-prefixed-namespaces ()
   "Project namespace-prefixed elements using their local names."

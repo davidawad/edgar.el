@@ -1,0 +1,1 @@
+(:accn "0001193125-26-163027" :form "N-VP" :company "AMERICAN SEPARATE ACCOUNT NO 2" :filed "2026-04-20" :doc "d123038dnvp.htm" :cik 909758 :url "https://www.sec.gov/Archives/edgar/data/909758/000119312526163027/d123038dnvp.htm")
