@@ -48,6 +48,16 @@
   "The committed snapshot and registry satisfy the offline gate."
   (should-not (edgar-coverage-problems)))
 
+(ert-deftest edgar-form-coverage-excludes-partial-submission-excerpts ()
+  "Partial SEC excerpts remain parser tests, not complete-form fixtures."
+  (let* ((records-and-problems
+          (edgar-coverage--fixture-records
+           edgar-forms--registry edgar-coverage-fixture-directory))
+         (records (car records-and-problems)))
+    (should-not (member '("10-K" . "10-k-bd-1998") records))
+    (should-not (cdr records-and-problems))
+    (should-not (edgar-coverage-problems))))
+
 (ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
   "Do not promote low-volume L0 forms absent from the recorded index samples."
   (let ((low-volume-l0 (make-hash-table :test #'equal))

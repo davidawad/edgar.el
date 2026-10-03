@@ -109,6 +109,11 @@
   "Recorded DEFA14A material is available through the generic text API."
   (should (eq (plist-get (edgar-form-info "DEFA14A") :level) 'L1)))
 
+(ert-deftest edgar-forms-g9-high-volume-narratives-have-item-coverage ()
+  "Core periodic and event reports expose generic Item sections."
+  (dolist (form '("8-K" "10-K" "10-Q" "20-F"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
+
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
   "G11 records all but the unavailable Form 1 primary document."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
