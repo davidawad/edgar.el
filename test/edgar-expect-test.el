@@ -19,8 +19,17 @@
   (file-name-directory (or load-file-name buffer-file-name)))
 
 (defun edgar-expect--file (slug ext)
-  "Path of SLUG's fixture (EXT \".eld\" / \".htm.gz\") or expectation."
+  "Path of SLUG's fixture with EXT or expectation."
   (expand-file-name (concat "fixtures/" slug ext) edgar-expect--dir))
+
+(defun edgar-expect--primary-file (slug)
+  "Path of SLUG's rendered primary fixture."
+  (or (seq-find
+       #'file-exists-p
+       (mapcar
+        (lambda (ext) (edgar-expect--file slug ext))
+        '(".htm.gz" ".pdf")))
+      (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
   "Path of SLUG's committed expectation."
@@ -29,7 +38,10 @@
 (defun edgar-expect--slugs ()
   "Slugs of every rendered filing fixture."
   (seq-filter
-   (lambda (slug) (file-exists-p (edgar-expect--file slug ".htm.gz")))
+   (lambda (slug)
+     (seq-some
+      (lambda (ext) (file-exists-p (edgar-expect--file slug ext)))
+      '(".htm.gz" ".pdf")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -43,10 +55,19 @@
 
 (defun edgar-expect--html (slug)
   "Decompressed HTML of SLUG's fixture."
+  (edgar-expect--primary slug))
+
+(defun edgar-expect--primary (slug)
+  "Primary body of SLUG's fixture, preserving PDF bytes."
   (with-temp-buffer
-    (let ((coding-system-for-read 'utf-8)
-          (auto-compression-mode t))
-      (insert-file-contents (edgar-expect--file slug ".htm.gz")))
+    (let ((file (edgar-expect--primary-file slug)))
+      (if (string-suffix-p ".pdf" file t)
+          (progn
+            (set-buffer-multibyte nil)
+            (insert-file-contents-literally file))
+        (let ((coding-system-for-read 'utf-8)
+              (auto-compression-mode t))
+          (insert-file-contents file))))
     (buffer-string)))
 
 (defun edgar-expect--bucket (n)
@@ -153,6 +174,8 @@
     ("N-6F" "robinhood ventures fund ii" nil)
     ("N-8A" "notification of registration" nil)
     ("N-8F" "application for deregistration" nil)
+    ("N-8F NTC" "notice of applications for deregistration" nil)
+    ("N-8F ORDR" "applicant has ceased to be an investment company" nil)
     ("N-VP" "annual notice" nil)
     ("N-VPFS" "financial statements" nil)
     ("NT-NCEN" "notification of late filing" nil)
@@ -177,12 +200,12 @@
   "Replay fixture SLUG and compare against its expectation."
   (let* ((filing
           (edgar-expect--read (edgar-expect--file slug ".eld")))
-         (html (edgar-expect--html slug))
+         (primary (edgar-expect--primary slug))
          (inv
           (assoc (plist-get filing :form) edgar-expect--invariants))
          text
          snap)
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) primary)))
       (setq text (edgar-text filing)))
     (setq snap (edgar-expect--snapshot filing text))
     (should inv)

@@ -72,6 +72,8 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `n-54c-nuveen.htm.gz` — compressed primary N-54C from [accession 0002071136-26-000023](https://www.sec.gov/Archives/edgar/data/2071136/000207113626000023/bdcv-formnx54cmay2026.htm).
 - `n-6f-robinhood.htm.gz` — compressed primary N-6F from [accession 0001628280-26-046265](https://www.sec.gov/Archives/edgar/data/2131040/000162828026046265/rviin-6f.htm).
 - `n-23c3b-axxes.htm.gz` — compressed primary N-23C3B from [accession 0001580642-26-003231](https://www.sec.gov/Archives/edgar/data/2003867/000158064226003231/axxesopportunistic23c3.htm); its filer-supplied description says N-23C3A, but the SEC filing type and document type are N-23C3B.
+- `n-8f-ntc-blackrock.pdf` — PDF primary N-8F NTC for BlackRock Collateral Trust from [accession 9999999997-26-000987](https://www.sec.gov/Archives/edgar/data/1671416/999999999726000987/filename1.pdf).
+- `n-8f-ordr-blackrock.pdf` — PDF primary N-8F ORDR for BlackRock Collateral Trust from [accession 9999999997-26-001103](https://www.sec.gov/Archives/edgar/data/1671416/999999999726001103/filename1.pdf).
 - `10-d-ms-c21.htm.gz` — compressed primary 10-D from [accession 0001888524-26-012144](https://www.sec.gov/Archives/edgar/data/1631406/000188852426012144/msc15c21_10d-202606.htm).
 - `abs-15g-tesla-energy.htm.gz` — compressed primary ABS-15G from [accession 0001193125-26-219735](https://www.sec.gov/Archives/edgar/data/2037778/000119312526219735/d108502dabs15g.htm).
 - `abs-ee-deutsche.xml` — [EX-102 in ABS-EE accession 0001539497-25-000961](https://www.sec.gov/Archives/edgar/data/1013454/000153949725000961/exh_102.xml).
