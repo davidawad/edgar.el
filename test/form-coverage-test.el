@@ -433,6 +433,35 @@
           forms edgar-forms--registry "test index"))))
     (should (string-match-p "NETWORK-NEW" messages))))
 
+(ert-deftest
+    edgar-form-coverage-network-run-rejects-unknown-latest-form
+    ()
+  "The network gate checks the latest quarter and names unknown forms."
+  (let
+      ((requested-url nil)
+       (text
+        (concat
+         "Form Type        Company Name\n"
+         "------------------------------------------------------------\n"
+         (format "%-17s%s\n" "FUTURE-UNKNOWN" "New filer"))))
+    (let ((failure
+           (should-error
+            (cl-letf (((symbol-function
+                        'edgar-coverage-latest-completed-quarter)
+                       (lambda () '(2026 . 3))))
+              (edgar-coverage-network-run
+               :fetcher
+               (lambda (url)
+                 (setq requested-url url)
+                 text))))))
+      (should
+       (equal
+        requested-url
+        "https://www.sec.gov/Archives/edgar/full-index/2026/QTR3/form.idx"))
+      (should
+       (string-match-p
+        "FUTURE-UNKNOWN" (error-message-string failure))))))
+
 (ert-deftest edgar-form-coverage-latest-completed-quarter-rolls-year
     ()
   "The latest completed quarter rolls January into prior-year Q4."
