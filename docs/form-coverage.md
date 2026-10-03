@@ -258,7 +258,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `S-3D` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3D")` |
 | `S-3DPOS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3DPOS")` |
 | `S-3MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3MEF")` |
-| `S-4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-4")` |
+| `S-4` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-6` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `S-8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-8 POS` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |

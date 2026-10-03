@@ -129,6 +129,7 @@
     ("N-14" "nomura" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
+    ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
     ("F-1" "registration statement" nil)
     ("424B3" "prospectus" nil)

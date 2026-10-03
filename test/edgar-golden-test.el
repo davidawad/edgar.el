@@ -276,6 +276,18 @@
     (should section)
     (should (string-match-p "Exhibits" (edgar-fixtures-norm section)))))
 
+(ert-deftest edgar-golden-g7-s-4-generic-body-access ()
+  "S-4 business-combination filings expose generic HTML body access."
+  (dolist (slug '("s-4-comcast" "s-4-indivior" "s-4-olin"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should (> (length body) 1000))
+      (should (string-match-p "registration statement" (downcase body))))))
+
 (ert-deftest edgar-golden-g7-424b4-generic-body-access ()
   "424B4 prospectuses from distinct filers expose generic HTML body access."
   (dolist (slug '("424b4-rectitude" "424b4-impact-biomedical" "424b4-loar"))
