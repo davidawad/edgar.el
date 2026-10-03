@@ -142,6 +142,7 @@
     ("S-3" "form s-3" nil)
     ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
+    ("424B1" "prospectus" nil)
     ("F-1" "registration statement" nil)
     ("424B3" "prospectus" nil)
     ("424B4" "prospectus" nil)

@@ -30,6 +30,12 @@ Prospectus and registration samples used for generic named-section coverage:
 - `424b5-oneok.htm.gz` — 424B5, ONEOK Inc. ([accession 0001193125-26-332962](https://www.sec.gov/Archives/edgar/data/1039684/000119312526332962/d132069d424b5.htm); 2026-08-04).
 - `424b5-idaho-power.htm.gz` — 424B5, Idaho Power Co. ([accession 0001193125-26-331165](https://www.sec.gov/Archives/edgar/data/49648/000119312526331165/d171114d424b5.htm); 2026-08-04).
 
+Additional 424B1 prospectuses used for generic named-heading coverage:
+
+- `424b1-nyseg.htm.gz` — 424B1, New York State Electric & Gas Corp. ([accession 0001193125-25-021865](https://www.sec.gov/Archives/edgar/data/71675/000119312525021865/d928050d424b1.htm); 2025-02-06).
+- `424b1-millrose.htm.gz` — 424B1, Millrose Properties, Inc. ([accession 0001193125-25-008418](https://www.sec.gov/Archives/edgar/data/2017206/000119312525008418/d811267d424b1.htm); 2025-01-17).
+- `424b1-odyssey.htm.gz` — 424B1, Odyssey Marine Exploration, Inc. ([accession 0001193125-25-022760](https://www.sec.gov/Archives/edgar/data/798528/000119312525022760/d915473d424b1.htm); 2025-02-07).
+
 The S-3 samples have table-of-contents-linked `Risk Factors` headings and
 exercise the shared named-section accessor. The table-led 424B2 pricing
 supplements do not expose heading nodes in these captured primary documents;
