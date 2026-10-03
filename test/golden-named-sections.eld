@@ -26,4 +26,14 @@
  ("def-14a-venture-global"
   "Security Ownership of Certain Beneficial Owners and Management"
   "The following table sets forth information regarding beneficial ownership of our common stock")
+ ("11-k-ko" "SIGNATURES"
+  "Pursuant to the requirements of the Securities Exchange Act")
+ ("nt-10k-dbmm" "NOTIFICATION OF LATE FILING" "Form 10-K")
+ ("nt-10q-dbmm" "NOTIFICATION OF LATE FILING" "Form 10-Q")
+ ("nt-11k-oldrepublic" "Title: Member of the Administration Committee"
+  "The form may be signed by an executive officer")
+ ("nt-20f-telkom" "NOTIFICATION OF LATE FILING" "Form 20-F")
+ ("15-12g-apogee" "CERTIFICATION AND NOTICE OF TERMINATION OF REGISTRATION"
+  "CERTIFICATION AND NOTICE OF TERMINATION OF REGISTRATION")
+ ("form25-walmart" "FORM 25" "FORM 25")
  ("sd-apple" "1.01" "Apple designs"))
