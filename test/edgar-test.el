@@ -636,6 +636,29 @@
              (equal
               snapshot (plist-get record :document-snapshot)))))))))
 
+(ert-deftest edgar-sampled-filings-match-generic-structure-snapshots
+    ()
+  "Recorded sampled filings match their generic structure snapshots."
+  (let ((expected
+         (edgar-fixtures-read
+          (edgar-fixtures-path
+           "expect/sampled-filings-structures.eld"))))
+    (should expected)
+    (dolist (record expected)
+      (let* ((slug (plist-get record :slug))
+             (filing (edgar-fixtures-filing slug))
+             (info (edgar-form-info (plist-get filing :form)))
+             (primary (edgar-fixtures-primary slug)))
+        (should (memq (plist-get info :level) '(L1 L2)))
+        (cl-letf (((symbol-function 'edgar--fetch)
+                   (lambda (_) primary)))
+          (let* ((tree (edgar-document-structure filing))
+                 (snapshot
+                  (edgar-test--document-snapshot filing tree)))
+            (should
+             (equal
+              snapshot (plist-get record :document-snapshot)))))))))
+
 (defun edgar-test--g12-submission-filing (filing)
   "Return a copy of FILING pointing at its SEC complete-submission file."
   (plist-put

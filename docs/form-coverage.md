@@ -77,7 +77,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `253G1` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `253G2` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `3` | G1 Ownership | xml | L2 | `(edgar-form3-holdings filing)` |
-| `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
+| `305B2` | G13 Tail | html | L1 | `(edgar-text filing)` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-17F2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17F2")` |
@@ -333,13 +333,11 @@ sampled accession with a recorded primary cannot remain L0 or lack a generic
 structure snapshot. Source accessions are listed in
 [`structured-sources.md`](../test/fixtures/structured-sources.md).
 
-For G13, the sampled-index audit finds one row: POS 8C, accession
-`0001104659-26-040388`, already L1 with a fixture, per-filing expectation and
-golden, and generic structure snapshot. `305B2` is the only G13 L0 form, but
-its Q2 count is 42 and neither committed sampled index contains a 305B2 row.
-There is therefore no sampled accession to record for it; this is a limit of
-the committed sample set, not a claim that the SEC has no 305B2 filings. See
-the [G13 source audit](../test/fixtures/structured-sources.md#g13-sampled-source-audit).
+For G13, POS 8C (accession `0001104659-26-040388`) and 305B2 (accession
+`0001104659-26-097599`) are L1 with recorded primaries, per-filing expectations,
+and generic structure snapshots. The 305B2 filing was submitted in 2026 Q3;
+its Q2 registry volume is 42. See the
+[G13 source audit](../test/fixtures/structured-sources.md#g13-sampled-source-audit).
 
 ## Current implementation state
 
