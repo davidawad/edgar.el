@@ -582,8 +582,8 @@ PRIMARY, when non-nil, is the selected EDGAR submission document record."
               #'string-empty-p
               (mapcar
                #'string-trim
-               (split-string
-                text "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
+               (split-string text
+                             "\\(?:\r?\n\\)[ \t]*\\(?:\r?\n\\)+")))))
        (edgar--document-structure-result
         filing 'pdf
         (mapcar
