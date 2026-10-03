@@ -23,11 +23,13 @@
                        edgar-offerings-test--directory))
     (buffer-string)))
 
-(defun edgar-offerings-test--filing (slug _form)
+(defun edgar-offerings-test--filing (slug form)
   "Return source metadata for fixture SLUG."
-  (edgar-offerings-test--read
-   (expand-file-name (concat "fixtures/" slug ".eld")
-                     edgar-offerings-test--directory)))
+  (let ((filing
+         (edgar-offerings-test--read
+          (expand-file-name (concat "fixtures/" slug ".eld")
+                            edgar-offerings-test--directory))))
+    (plist-put filing :form form)))
 
 (defun edgar-offerings-test--golden (slug)
   "Read field golden values for SLUG."
