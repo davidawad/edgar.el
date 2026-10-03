@@ -1,0 +1,30 @@
+(:form "MA-A" :text-length 4734 :text-sha256
+       "628c8354861891ffbc1a2a52ca281e47848b7b3e4099e12471ca00a9d6c6780a"
+       :text-head
+       "MA-A0000786671XXXXXXXXJon Swanson918-595-3037jon.swanson@bokf.comjon.swanson@bokf.comrparrish@bokf.c"
+       :structure
+       (("headerdata" ("submissiontype" "filerinfo"))
+	("formdata"
+	 ("fiscalyearend" "haschanges" "firmname" "firmcrdnumber"
+	  "irsnum" "registrations" "principalofficeaddress"
+	  "additionaloffices" "mailingaddressdifferent"
+	  "mailingaddress" "primarywebaddress"
+	  "additionalwebaddresses" "cco" "contactperson"
+	  "booksandrecordslocations" "businessaffiliates"
+	  "formoforganization" "monthoffiscalyearend"
+	  "organizedjurisdiction" "dateoforganization"
+	  "isprcapplicant" "numberofemployees"
+	  "numberofadditionalwebsites" "employeesengagedinmaa"
+	  "maaemployeesregbd" "maaregia" "numberofsolicitingfirms"
+	  "clientsservedasma" "typesofclients" "numberofsolicitedme"
+	  "numberofsolicitedop" "totalnumberofsolicitedmeandop"
+	  "typesofsolicitedpersons" "meoropcompensationtypes"
+	  "solicitationcompensationtypes" "engagedactivities"
+	  "otheractivities" "isengagedinothernonmaabusiness"
+	  "fiaassociatedpersonstypes" "totalfiaassociatedpersons"
+	  "fiaassociatedpersons" "participationinterestmact"
+	  "section1215dpublicreportingcompanies" "disclosureanswers"
+	  "hasannualreceiptslessthan7million"
+	  "isaffiliatedwithreceiptsmorethan7million" "schedulea"
+	  "scheduleb" "schedulec" "drpinfo" "maexecutionpage"
+	  "controls"))))

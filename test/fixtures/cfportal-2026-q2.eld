@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 10180 :accn "0001803619-26-000003" :form "CFPORTAL/A" :company "Fursa Capital LLC" :filed "2026-06-17" :report "" :doc "primary_doc.xml" :cik 1803619 :url "https://www.sec.gov/Archives/edgar/data/1803619/000180361926000003/primary_doc.xml")

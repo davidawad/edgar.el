@@ -130,11 +130,11 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `APP WD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP WD")` |
 | `APP WDG` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP WDG")` |
 | `ARS` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "ARS")` |
-| `ATS-N` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N")` |
-| `ATS-N/CA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/CA")` |
-| `ATS-N/MA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/MA")` |
-| `ATS-N/OFA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/OFA")` |
-| `ATS-N/UA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ATS-N/UA")` |
+| `ATS-N` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `ATS-N/CA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `ATS-N/MA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `ATS-N/OFA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `ATS-N/UA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `AW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "AW")` |
 | `C` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
 | `C-AR` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
@@ -145,8 +145,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `C-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `CB` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "CB")` |
 | `CERT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "CERT")` |
-| `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL")` |
-| `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
+| `CFPORTAL` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `CT ORDER` | G10 Investment-company registration | html | L0 | `(edgar-form-info "CT ORDER")` |
 | `D` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "D")` |
@@ -185,10 +185,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `G-FIN` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "G-FIN")` |
 | `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
-| `MA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA")` |
-| `MA-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-A")` |
+| `MA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `MA-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-I` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
-| `MA-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-W")` |
+| `MA-W` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MSD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "MSD")` |
 | `N-14` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14")` |
 | `N-14 8C` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14 8C")` |
@@ -262,9 +262,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `S-8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-8 POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-8 POS")` |
 | `S-B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-B")` |
-| `SBSE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE")` |
-| `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE-A")` |
-| `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE-C")` |
+| `SBSE` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
+| `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SC 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13D")` |
 | `SC 13E3` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13E3")` |
 | `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
@@ -284,9 +284,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SF-3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SF-3")` |
 | `SP 15D2` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "SP 15D2")` |
 | `SUPPL` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SUPPL")` |
-| `TA-1` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "TA-1")` |
+| `TA-1` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `TA-2` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
-| `TA-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "TA-W")` |
+| `TA-W` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `UPLOAD` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `X-17A-5` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 <!-- END GENERATED FORM COVERAGE -->
@@ -317,9 +317,14 @@ support; fixture coverage is separately checked by `eask run script coverage`.
 Do not infer that all forms are parsed from the fact that all 245 appear in the
 catalog.
 
-G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
-and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot
-(87.7%). The remaining 21 forms are still L0.
+G12 currently has 20 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
+TA-2, ATS-N and its four variants, CFPORTAL and CFPORTAL-W, MA/MA-A/MA-W,
+SBSE/SBSE-A/SBSE-C, and TA-1/TA-W. They account for 2,496 of 2,577 G12
+filings in the Q2 snapshot (96.9%).
+
+The six remaining L0 forms are ADV-H-T, G-FIN, NRSRO-CE, NRSRO-UPD,
+SEC STAFF ACTIO, and SEC STAFF LETTE. They remain L0 because there is no
+recorded readable whole-text fixture and generic-structure snapshot for them.
 
 G10 currently has 13 of 40 base forms at L1: 24F-2NT, 40-17G, 40-APP,
 485APOS, 485BPOS, 485BXT, 497, 497J, 497K, 497VPI, 497VPU, N-1A, and S-6.

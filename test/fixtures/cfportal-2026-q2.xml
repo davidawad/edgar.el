@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/crowdfunding" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>CFPORTAL/A</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001803619</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <flags>
+        <returnCopyFlag>true</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <identifyingInformation>
+      <amendmentExplanation>Amendment to Direct Owners and Executive Officers and address.</amendmentExplanation>
+      <nameOfPortal>Fursa Capital LLC</nameOfPortal>
+      <otherNamesAndWebsiteUrls>
+        <otherNamesUsedPortal>FURSA</otherNamesUsedPortal>
+        <webSiteOfPortal>www.fursa.capital</webSiteOfPortal>
+      </otherNamesAndWebsiteUrls>
+      <otherNamesAndWebsiteUrls>
+        <otherNamesUsedPortal>Halal Franchise LLC</otherNamesUsedPortal>
+      </otherNamesAndWebsiteUrls>
+      <irsEmployerIdNumber>83-3992093</irsEmployerIdNumber>
+      <portalAddress>
+        <com:street1>UNIT 5 THIRD AVENUE</com:street1>
+        <com:city>LONDON</com:city>
+        <com:stateOrCountry>X0</com:stateOrCountry>
+        <com:zipCode>E12 6DX</com:zipCode>
+      </portalAddress>
+      <mailingAddressDifferent>true</mailingAddressDifferent>
+      <portalMailingAddress>
+        <com:street1>UNIT 5 THIRD AVENUE</com:street1>
+        <com:city>LONDON</com:city>
+        <com:stateOrCountry>X0</com:stateOrCountry>
+        <com:zipCode>E12 6DX</com:zipCode>
+      </portalMailingAddress>
+      <portalContact>
+        <portalContactPhone>07767581732</portalContactPhone>
+        <portalContactEmail>Rajarshi@adamcapital.com</portalContactEmail>
+      </portalContact>
+      <contactEmployeeName>
+        <com:firstName>Alina</com:firstName>
+        <com:middleName>Pargamanik</com:middleName>
+        <com:lastName>Cartner</com:lastName>
+      </contactEmployeeName>
+      <contactEmployeeTitle>Attorney</contactEmployeeTitle>
+      <fiscalYearEnd>December</fiscalYearEnd>
+      <anyPreviousRegistrations>Y</anyPreviousRegistrations>
+      <secFileNumbers>007-00225</secFileNumbers>
+      <anyForeignRegistrations>N</anyForeignRegistrations>
+    </identifyingInformation>
+    <formOfOrganization>
+      <legalStatusForm>Limited Liability Company</legalStatusForm>
+      <jurisdictionOrganization>TX</jurisdictionOrganization>
+      <dateIncorporation>10-21-2019</dateIncorporation>
+    </formOfOrganization>
+    <successions>
+      <isSucceedingBusiness>N</isSucceedingBusiness>
+    </successions>
+    <controlRelationships>
+      <fullLegalNames>
+        <fullLegalName>Arcturus Holdings LLC</fullLegalName>
+      </fullLegalNames>
+      <fullLegalNames>
+        <fullLegalName>Safvan Ayub Adam</fullLegalName>
+      </fullLegalNames>
+    </controlRelationships>
+    <disclosureAnswers>
+      <criminalDisclosure>
+        <isConvictedOfFelony>N</isConvictedOfFelony>
+        <isChargedWithFelony>N</isChargedWithFelony>
+        <isConvictedMisdemeanor>N</isConvictedMisdemeanor>
+        <isChargedMisdemeanor>N</isChargedMisdemeanor>
+      </criminalDisclosure>
+      <regulatoryActionDisclosure>
+        <isMadeFalseStatement>N</isMadeFalseStatement>
+        <isViolatedRegulation>N</isViolatedRegulation>
+        <isCauseOfDenial>N</isCauseOfDenial>
+        <isOrderAgainst>N</isOrderAgainst>
+        <isImposedPenalty>N</isImposedPenalty>
+        <isUnEthical>N</isUnEthical>
+        <isFoundInViolationOfRegulation>N</isFoundInViolationOfRegulation>
+        <isFoundInCauseOfDenial>N</isFoundInCauseOfDenial>
+        <isOrderAgainstActivity>N</isOrderAgainstActivity>
+        <isDeniedLicense>N</isDeniedLicense>
+        <isFoundMadeFalseStatement>N</isFoundMadeFalseStatement>
+        <isFoundInViolationOfRules>N</isFoundInViolationOfRules>
+        <isFoundInCauseOfSuspension>N</isFoundInCauseOfSuspension>
+        <isDisciplined>N</isDisciplined>
+        <isAuthorizedToActAttorney>N</isAuthorizedToActAttorney>
+        <isRegulatoryComplaint>N</isRegulatoryComplaint>
+      </regulatoryActionDisclosure>
+      <civilJudicialActionDisclosure>
+        <isEnjoined>N</isEnjoined>
+        <isFoundInViolationOfRegulation>N</isFoundInViolationOfRegulation>
+        <isDismissed>N</isDismissed>
+        <isNamedInCivilProceeding>N</isNamedInCivilProceeding>
+      </civilJudicialActionDisclosure>
+      <financialDisclosure>
+        <hasSubjectOfBankruptcy>N</hasSubjectOfBankruptcy>
+        <hasTrusteeAppointed>N</hasTrusteeAppointed>
+        <hasBondDenied>N</hasBondDenied>
+        <doesAppHaveLiens>N</doesAppHaveLiens>
+      </financialDisclosure>
+    </disclosureAnswers>
+    <nonSecuritiesRelatedBusiness>
+      <isEngagedInNonSecurities>N</isEngagedInNonSecurities>
+    </nonSecuritiesRelatedBusiness>
+    <escrowArrangements>
+      <investorFundsContacts>
+        <investorFundsContactName>North Capital Private Securities Corporation</investorFundsContactName>
+        <investorFundsAddress>
+          <com:street1>623 East Fort Union Blvd</com:street1>
+          <com:city>Salt Lake</com:city>
+          <com:stateOrCountry>UT</com:stateOrCountry>
+          <com:zipCode>84047</com:zipCode>
+        </investorFundsAddress>
+        <investorFundsContactPhone>1-415-315-9916</investorFundsContactPhone>
+      </investorFundsContacts>
+      <investorFundsContacts>
+        <investorFundsContactName>Enterprise Bank &amp; Trust</investorFundsContactName>
+        <investorFundsAddress>
+          <com:street1>1281 N. Warson</com:street1>
+          <com:city>St Louis</com:city>
+          <com:stateOrCountry>MO</com:stateOrCountry>
+          <com:zipCode>63132</com:zipCode>
+        </investorFundsAddress>
+        <investorFundsContactPhone>8338962850</investorFundsContactPhone>
+      </investorFundsContacts>
+      <compensationDesc>5% of amounts raised</compensationDesc>
+    </escrowArrangements>
+    <execution>
+      <executionDate>06-17-2026</executionDate>
+      <fullLegalNameFundingPortal>Fursa Capital LLC</fullLegalNameFundingPortal>
+      <personSignature>Safvan Ayub Adam</personSignature>
+      <personTitle>President, CEO</personTitle>
+    </execution>
+    <scheduleA>
+      <entityOrNaturalPerson>
+        <fullLegalName>Waheed, Usman</fullLegalName>
+        <entityType>NP</entityType>
+        <titleStatus>Founder, Managing Partner</titleStatus>
+        <dateOfTitleStatusAcquired>10/2019</dateOfTitleStatusAcquired>
+        <ownershipCode>D</ownershipCode>
+        <controlPerson>Y</controlPerson>
+      </entityOrNaturalPerson>
+      <entityOrNaturalPerson>
+        <fullLegalName>Arcturus Holdings LLC</fullLegalName>
+        <entityType>DE</entityType>
+        <titleStatus>Member</titleStatus>
+        <dateOfTitleStatusAcquired>02/2025</dateOfTitleStatusAcquired>
+        <ownershipCode>C</ownershipCode>
+        <controlPerson>Y</controlPerson>
+      </entityOrNaturalPerson>
+      <entityOrNaturalPerson>
+        <fullLegalName>Adam, Safwan Ayub</fullLegalName>
+        <entityType>NP</entityType>
+        <titleStatus>CEO</titleStatus>
+        <dateOfTitleStatusAcquired>02/2025</dateOfTitleStatusAcquired>
+        <ownershipCode>G</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNumber>000000000</crdNumber>
+      </entityOrNaturalPerson>
+    </scheduleA>
+    <scheduleB>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Waheed, Usman</fullLegalName>
+        <entityType>NP</entityType>
+        <typeOfAmendment>D</typeOfAmendment>
+        <titleStatus>Founder, Managing Partner</titleStatus>
+        <dateOfTitleStatusAcquired>10/2019</dateOfTitleStatusAcquired>
+        <ownershipCode>D</ownershipCode>
+        <controlPerson>Y</controlPerson>
+      </amendEntityOrNaturalPerson>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Arcturus Holdings LLC</fullLegalName>
+        <entityType>DE</entityType>
+        <typeOfAmendment>C</typeOfAmendment>
+        <titleStatus>Member</titleStatus>
+        <dateOfTitleStatusAcquired>02/2025</dateOfTitleStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+      </amendEntityOrNaturalPerson>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Adam, Safvan Ayub</fullLegalName>
+        <entityType>NP</entityType>
+        <typeOfAmendment>C</typeOfAmendment>
+        <titleStatus>President, CEO</titleStatus>
+        <dateOfTitleStatusAcquired>02/2025</dateOfTitleStatusAcquired>
+        <ownershipCode>G</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNumber>008237178</crdNumber>
+      </amendEntityOrNaturalPerson>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Dasgupta, Rajarshi</fullLegalName>
+        <entityType>NP</entityType>
+        <typeOfAmendment>A</typeOfAmendment>
+        <titleStatus>COO</titleStatus>
+        <dateOfTitleStatusAcquired>05/2026</dateOfTitleStatusAcquired>
+        <ownershipCode>G</ownershipCode>
+        <controlPerson>N</controlPerson>
+        <crdNumber>008216102</crdNumber>
+      </amendEntityOrNaturalPerson>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Batoff, Justin Alexander</fullLegalName>
+        <entityType>NP</entityType>
+        <typeOfAmendment>A</typeOfAmendment>
+        <titleStatus>Secretary</titleStatus>
+        <dateOfTitleStatusAcquired>05/2026</dateOfTitleStatusAcquired>
+        <ownershipCode>G</ownershipCode>
+        <controlPerson>N</controlPerson>
+        <crdNumber>008212506</crdNumber>
+      </amendEntityOrNaturalPerson>
+    </scheduleB>
+    <scheduleC>
+      <agentName>Justin Batoff</agentName>
+      <agentAddress>
+        <com:street1>909 Saint Paul Street</com:street1>
+        <com:city>Baltimore</com:city>
+        <com:stateOrCountry>MD</com:stateOrCountry>
+        <com:zipCode>21202</com:zipCode>
+      </agentAddress>
+      <personSignature>Safvan Ayub Adam</personSignature>
+      <printedName>Safvan Ayub Adam</printedName>
+      <personTitle>President, CEO</personTitle>
+      <signatureDate>06-17-2026</signatureDate>
+    </scheduleC>
+  </formData>
+</edgarSubmission>

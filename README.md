@@ -91,8 +91,9 @@ source nodes and text remain available through the generic tree API. No form
 codes select custom fields or heading catalogs.
 
 The same tree API has recorded G12 coverage for CORRESP and UPLOAD text,
-plus X-17A-5, MA-I, and TA-2 XML. These are generic structure fixtures, not
-form-specific typed accessors.
+plus X-17A-5, MA-I, TA-2, ATS-N and its amendments, CFPORTAL, MA, SBSE, and
+TA-1/TA-W XML. These are generic structure fixtures, not form-specific typed
+accessors.
 
 Recorded G10 layouts include 40-APP applications, 485BPOS registrations,
 497 supplements, 497J certification letters, 497K summary prospectuses, and

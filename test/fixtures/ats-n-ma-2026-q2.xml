@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cov:edgarSubmission xmlns:cov="http://www.sec.gov/edgar/atsn/cover" xmlns:ats="http://www.sec.gov/edgar/atsncommon">
+  <cov:submissionType>ATS-N/MA</cov:submissionType>
+  <cov:rbOperatesPursuantToFormATS>Y</cov:rbOperatesPursuantToFormATS>
+  <cov:accessionNumber>0001491895-26-000011</cov:accessionNumber>
+  <cov:filerCredentials>
+    <cov:filerCik>0001491895</cov:filerCik>
+    <cov:filerCcc>XXXXXXXX</cov:filerCcc>
+  </cov:filerCredentials>
+  <cov:fileNumber>013-00200</cov:fileNumber>
+  <cov:txNMSStockATSName>OTC Link</cov:txNMSStockATSName>
+  <cov:taStatementAboutAmendment>The purpose of this amendment is to add midpoint peg and primary peg order types that automatically adjust based on the CBBO and execute in accordance with subscriber instructions and limit prices. This Amendment applies to all Subscribers and the Broker-Dealer Operator. The changes reflected in this amendment relate to Part III, Item 7, 11, and 15.  </cov:taStatementAboutAmendment>
+  <cov:liveTestFlag>LIVE</cov:liveTestFlag>
+  <cov:flags>
+    <cov:overrideInternetFlag>false</cov:overrideInternetFlag>
+    <cov:confirmingCopyFlag>false</cov:confirmingCopyFlag>
+  </cov:flags>
+</cov:edgarSubmission>

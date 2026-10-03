@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ta/tawfiler" xmlns:com="http://www.sec.gov/edgar/common">
+  <schemaVersion>X0205</schemaVersion>
+  <headerData>
+    <submissionType>TA-W</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <cik>0001938417</cik>
+          <ccc>XXXXXXXX</ccc>
+        </filerCredentials>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <returnCopyFlag>false</returnCopyFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <registrant>
+      <fileNumber>084-06865</fileNumber>
+      <entityName>Dominion Stock Transfer, Inc.</entityName>
+      <activitiesConductedEntityName>Dominion Stock Transfer, Inc.</activitiesConductedEntityName>
+      <businessAddress>
+        <com:street1>1900 Gaines Road</com:street1>
+        <com:street2>4th Floor</com:street2>
+        <com:city>Boca Raton</com:city>
+        <com:stateOrCountry>FL</com:stateOrCountry>
+        <com:zipCode>33431</com:zipCode>
+      </businessAddress>
+    </registrant>
+    <withdrawal>
+      <withdrawalDescription>The proposed acquisition transaction was terminated</withdrawalDescription>
+      <lastActionDate>04/14/2026</lastActionDate>
+      <futureTransferAgentFunctions>N</futureTransferAgentFunctions>
+    </withdrawal>
+    <legalAction>
+      <involved>N</involved>
+      <unsatisfiedJudgmentsInvolved>N</unsatisfiedJudgmentsInvolved>
+    </legalAction>
+    <documentRetention>
+      <successorTransferAgents>N</successorTransferAgents>
+    </documentRetention>
+    <signatureData>
+      <signatureName>Frank J Hariton</signatureName>
+      <signaturePhoneNumber>914-649-7669</signaturePhoneNumber>
+      <signatureTitle>Corporate Secretary</signatureTitle>
+      <signatureDate>04/14/2026</signatureDate>
+    </signatureData>
+  </formData>
+</edgarSubmission>

@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 9771 :accn "0001774391-26-000002" :form "CFPORTAL-W" :company "EquityVest, LLC" :filed "2026-06-30" :report "" :doc "primary_doc.xml" :cik 1774391 :url "https://www.sec.gov/Archives/edgar/data/1774391/000177439126000002/primary_doc.xml")

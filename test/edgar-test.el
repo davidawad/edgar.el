@@ -514,12 +514,54 @@
                  (edgar-structure-text node)))
               nodes))))))))
 
+(defun edgar-test--g12-xml-snapshot (filing tree)
+  "Return FILING and TREE's whole-text and generic-shape snapshot."
+  (let* ((root (car (plist-get tree :children)))
+         (text (edgar-structure-text tree))
+         (normalized (edgar-fixtures-norm text))
+         (elements
+          (seq-filter
+           (lambda (node)
+             (eq (plist-get node :type) 'element))
+           (plist-get root :children))))
+    (list
+     :form (plist-get filing :form)
+     :text-length (length text)
+     :text-sha256 (secure-hash 'sha256 text)
+     :text-head (substring normalized 0 (min 100 (length normalized)))
+     :structure
+     (mapcar
+      (lambda (node)
+        (list
+         (plist-get node :name)
+         (mapcar
+          (lambda (child) (plist-get child :name))
+          (seq-filter
+           (lambda (child) (eq (plist-get child :type) 'element))
+           (plist-get node :children)))))
+      elements))))
+
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."
   (dolist (slug
            '("x-17a-5-m-stevens"
              "ma-i-ey-2026"
-             "ta-2-edward-jones-2026"))
+             "ta-2-edward-jones-2026"
+             "ats-n-2026-q2"
+             "ats-n-ca-2026-q2"
+             "ats-n-ma-2026-q2"
+             "ats-n-ofa-2026-q2"
+             "ats-n-ua-2026-q2"
+             "cfportal-2026-q2"
+             "cfportal-w-2026-q2"
+             "ma-2026-q2"
+             "ma-a-2026-q2"
+             "ma-w-2026-q2"
+             "sbse-2026-q2"
+             "sbse-a-2026-q2"
+             "sbse-c-2026-q2"
+             "ta-1-2026-q2"
+             "ta-w-2026-q2"))
     (let* ((filing (edgar-fixtures-filing slug))
            (xml
             (with-temp-buffer
@@ -532,13 +574,18 @@
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
         (let ((tree (edgar-document-structure filing)))
           (should (eq (plist-get tree :format) 'xml))
-          (dolist (entry (plist-get expected :sections))
+          (if (plist-get expected :sections)
+              (dolist (entry (plist-get expected :sections))
+                (should
+                 (equal
+                  (plist-get
+                   (edgar-structure-section tree (car entry))
+                   :body)
+                  (cadr entry))))
             (should
              (equal
-              (plist-get
-               (edgar-structure-section tree (car entry))
-               :body)
-              (cadr entry)))))))))
+              expected
+              (edgar-test--g12-xml-snapshot filing tree)))))))))
 
 (ert-deftest
     edgar-g12-corresp-text-fixture-is-readable-through-generic-api

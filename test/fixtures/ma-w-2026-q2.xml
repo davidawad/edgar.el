@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/mawfiler" xmlns:com="http://www.sec.gov/edgar/common_ma" xmlns:com1="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>MA-W</submissionType>
+    <filerInfo>
+      <com:filer>
+        <com1:filerId>0001783919</com1:filerId>
+        <com1:filerCcc>XXXXXXXX</com1:filerCcc>
+        <com1:filerFileNumber>867-02480</com1:filerFileNumber>
+      </com:filer>
+      <com:contact>
+        <com1:name>Irene Carroll</com1:name>
+        <com1:phoneNumber>602-684-3184</com1:phoneNumber>
+      </com:contact>
+      <com:contactEmail>icarroll@Ftgadvisorsllc.com</com:contactEmail>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <fullLegalName>FTG Advisors, LLC</fullLegalName>
+    <fileNumber>867-02480</fileNumber>
+    <contactPersonInfo>
+      <nameAddressPhone>
+        <individualName>
+          <com:firstName>Carroll</com:firstName>
+          <com:middleName>P</com:middleName>
+          <com:lastName>Irene</com:lastName>
+        </individualName>
+        <addressInfo>
+          <com:address>
+            <com1:street1>9830 E. Cosmos CCircle</com1:street1>
+            <com1:city>Scottsdale</com1:city>
+            <com1:stateOrCountry>AZ</com1:stateOrCountry>
+            <com1:zipCode>85260</com1:zipCode>
+          </com:address>
+        </addressInfo>
+        <phoneNumber>602-684-3184</phoneNumber>
+      </nameAddressPhone>
+      <title>Principal</title>
+      <email>icarroll@ftgadvisorsllc.com</email>
+    </contactPersonInfo>
+    <isAdvisoryContract>N</isAdvisoryContract>
+    <isUnsatisfiedJudgementsOrLiens>N</isUnsatisfiedJudgementsOrLiens>
+    <isReceivedAnyPrepaidFee>N</isReceivedAnyPrepaidFee>
+    <isBorrowedNotRepaid>N</isBorrowedNotRepaid>
+    <booksAndRecords>
+      <personLocation>
+        <personInfo>
+          <name>Irene Carroll</name>
+          <addressInfo>
+            <com:address>
+              <com1:street1>9830 E. Cosmos Circle</com1:street1>
+              <com1:city>Scottsdale</com1:city>
+              <com1:stateOrCountry>AZ</com1:stateOrCountry>
+              <com1:zipCode>85260</com1:zipCode>
+            </com:address>
+          </addressInfo>
+          <phoneNumber>602-684-3184</phoneNumber>
+        </personInfo>
+        <locationInfo>
+          <nameAddressPhone>
+            <name>Irene Carroll</name>
+            <addressInfo>
+              <com:address>
+                <com1:street1>10504 sussex sq </com1:street1>
+                <com1:city>Mint Hill</com1:city>
+                <com1:stateOrCountry>NC</com1:stateOrCountry>
+                <com1:zipCode>28227</com1:zipCode>
+              </com:address>
+            </addressInfo>
+            <phoneNumber>602-684-3184</phoneNumber>
+          </nameAddressPhone>
+          <description>all client files, all tax files</description>
+        </locationInfo>
+      </personLocation>
+    </booksAndRecords>
+    <execution>
+      <soleProprietor>
+        <com1:signature>Irene Carroll</com1:signature>
+        <com1:signerName>Irene Carroll</com1:signerName>
+        <com1:title>Principal</com1:title>
+        <com1:date>05-29-2026</com1:date>
+      </soleProprietor>
+    </execution>
+  </formData>
+</edgarSubmission>
