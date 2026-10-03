@@ -12,6 +12,8 @@ executables use other names.
     (edgar-filings "AAPL" "10-K" :since "2010-01-01")  ; bounded filing history
     (edgar-section (edgar-latest "AAPL" "10-K") "1A")   ; Risk Factors as a string
     (edgar-facts (edgar-latest "AAPL" "10-K"))          ; Inline XBRL facts + contexts
+    (edgar-section-facts (edgar-latest "AAPL" "10-K") "II.8") ; facts tagged to Item II.8
+    (edgar-section-facts filing "Risk Factors")           ; facts under a named heading
     (edgar-section (edgar-latest "GME" "10-Q") "II.1A") ; Part II Item 1A of a 10-Q
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
@@ -103,6 +105,9 @@ elements, and recognizable standalone headings in PDF/text output.
 fallback is heuristic; unmarked headings in tables or filing-specific markup
 remain available through the generic tree API. No form codes select custom
 fields or heading catalogs.
+
+edgar-section-facts also accepts generic heading names and full heading
+paths. It uses the shared section APIs without special cases per SEC form.
 
 The same tree API has recorded G12 coverage for CORRESP and UPLOAD text,
 plus X-17A-5, MA-I, TA-2, ATS-N and its amendments, CFPORTAL, MA, SBSE, and

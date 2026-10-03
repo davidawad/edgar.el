@@ -1195,6 +1195,92 @@ wins."
       (edgar--drop-residue
        (sort out (lambda (a b) (edgar--key< (car a) (car b))))))))
 
+(defun edgar--inline-fact-marked-dom (node markers)
+  "Return a copy of DOM NODE with fact markers from MARKERS inserted.
+MARKERS maps Inline XBRL fact ids to marker strings."
+  (if (not (and (consp node) (symbolp (car node))))
+      node
+    (let* ((tag (car node))
+           (children
+            (mapcar
+             (lambda (child)
+               (edgar--inline-fact-marked-dom child markers))
+             (cddr node)))
+           (marker
+            (and (memq tag '(nonfraction nonnumeric))
+                 (gethash (dom-attr node 'id) markers))))
+      (append
+       (list tag (cadr node)) children
+       (when marker
+         (list (list 'span nil marker)))))))
+
+(defun edgar-section-facts (filing section)
+  "Return FILING's Inline XBRL facts in SECTION.
+SECTION may be an exact key from edgar-sections, such as \"II.8\", a
+generic heading name, or a heading path accepted by
+edgar-structure-section.  Results include :section.  Facts without
+an Inline XBRL id or without a matching section are omitted."
+  (let* ((html (edgar-html filing))
+         (facts (xbrl-inline-facts html))
+         (markers (make-hash-table :test #'equal)))
+    (cl-loop
+     for
+     fact
+     in
+     facts
+     for
+     index
+     from
+     1
+     for
+     id
+     =
+     (plist-get fact :id)
+     when
+     id
+     do
+     (puthash id (format "EDGAR_XBRL_FACT_%06d" index) markers))
+    (when (> (hash-table-count markers) 0)
+      (with-temp-buffer
+        (insert html)
+        (let* ((tree
+                (libxml-parse-html-region (point-min) (point-max)))
+               (marked-tree
+                (edgar--inline-fact-marked-dom tree markers))
+               (structure
+                (edgar--document-structure-result
+                 filing
+                 'html
+                 (list (edgar--structure-node marked-tree)))))
+          (erase-buffer)
+          (let ((shr-inhibit-images t)
+                (shr-use-fonts nil)
+                (shr-width 100))
+            (shr-insert-document marked-tree))
+          (let* ((item-body
+                  (and (stringp section)
+                       (cdr
+                        (assoc
+                         section (edgar-sections (buffer-string))))))
+                 (named-section
+                  (unless item-body
+                    (edgar-structure-section structure section)))
+                 (section-body
+                  (or item-body (plist-get named-section :body))))
+            (when section-body
+              (delq
+               nil
+               (mapcar
+                (lambda (fact)
+                  (let* ((id (plist-get fact :id))
+                         (marker (gethash id markers)))
+                    (when (and marker
+                               (string-match-p
+                                (regexp-quote marker) section-body))
+                      (let ((linked-fact (copy-sequence fact)))
+                        (plist-put linked-fact :section section)))))
+                facts)))))))))
+
 (defun edgar--heading-only-p (body)
   "Non-nil if BODY contains only a possibly wrapped Item heading.
 Table-of-contents entries can wrap onto several lines and include a page

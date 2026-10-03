@@ -69,6 +69,81 @@
           (plist-get (plist-get revenue :context) :start)
           "2024-09-29"))))))
 
+(ert-deftest edgar-section-facts-link-inline-facts-to-items ()
+  (let*
+      ((fixture
+        (expand-file-name "fixtures/10-k-aapl.htm.gz"
+                          edgar-test--dir))
+       (filing
+        '(:form
+          "10-K"
+          :accn "0000320193-25-000079"
+          :url "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm")))
+    (cl-letf (((symbol-function 'edgar-html)
+               (lambda (_filing)
+                 (with-temp-buffer
+                   (let ((auto-compression-mode t))
+                     (insert-file-contents fixture))
+                   (buffer-string)))))
+      (let
+          ((revenue
+            (seq-find
+             (lambda (fact)
+               (and
+                (equal
+                 (plist-get fact :name)
+                 "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax")
+                (equal
+                 (plist-get
+                  (plist-get fact :context)
+                  :end)
+                 "2025-09-27")
+                (null
+                 (plist-get (plist-get fact :context) :dimensions))))
+             (edgar-section-facts filing "II.8"))))
+        (should revenue)
+        (should (= (plist-get revenue :value) 416161000000))
+        (should (equal (plist-get revenue :section) "II.8"))))))
+
+(ert-deftest edgar-section-facts-link-to-generic-heading-paths ()
+  (let*
+      ((html
+        (concat
+         "<html><body>"
+         "<h1>Operations</h1><h2>Risks</h2><p>"
+         "<ix:nonNumeric name='ex:RiskDisclosure' contextRef='c' id='risk'>"
+         "liquidity</ix:nonNumeric></p>"
+         "<h1>Finances</h1><h2>Risks</h2><p>"
+         "<ix:nonFraction name='us-gaap:Assets' contextRef='c' id='assets'>"
+         "12</ix:nonFraction></p>"
+         "</body></html>"))
+       (filing
+        '(:form
+          "S-1"
+          :url "https://www.sec.gov/Archives/example/s1.htm")))
+    (cl-letf (((symbol-function 'edgar-html) (lambda (_filing) html)))
+      (let ((risk
+             (edgar-section-facts filing '("Operations" "Risks")))
+            (assets
+             (edgar-section-facts filing '("Finances" "Risks"))))
+        (should
+         (equal
+          (mapcar
+           (lambda (fact) (plist-get fact :id)) risk)
+          '("risk")))
+        (should
+         (equal
+          (mapcar
+           (lambda (fact) (plist-get fact :id)) assets)
+          '("assets")))
+        (should
+         (equal
+          (plist-get (car risk) :section) '("Operations" "Risks")))
+        (should
+         (equal
+          (plist-get (car assets) :section)
+          '("Finances" "Risks")))))))
+
 (defconst edgar-test--submissions
   '(:filings
     (:recent
