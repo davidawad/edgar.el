@@ -82,6 +82,26 @@
         (should
          (string-search (plist-get expect :report-type) text))))))
 
+(ert-deftest edgar-text-renders-not-timely-fund-xml-primaries ()
+  "Render recorded NT N-CEN and NT NPORT-P XML through the L1 text API."
+  (dolist (case
+           '(("nt-n-cen-brown"
+              "N-CEN"
+              "BROWN CAPITAL MANAGEMENT MUTUAL FUNDS")
+             ("nt-nport-p-archer"
+              "NPORT-P"
+              "Archer Growth ETF")))
+    (let ((xml (edgar-xml-test--fixture (car case))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+        (let ((text
+               (replace-regexp-in-string
+                "[ \t\n\r]+"
+                " "
+                (edgar-text
+                 '(:url "https://example.test/primary_doc.xml")))))
+          (should (string-search (cadr case) text))
+          (should (string-search (caddr case) text)))))))
+
 (ert-deftest edgar-xml-project-normalizes-prefixed-namespaces ()
   "Project namespace-prefixed elements using their local names."
   (should

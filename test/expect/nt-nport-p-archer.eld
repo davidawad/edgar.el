@@ -1,0 +1,1 @@
+(:registrant-name "Archer Investment Series Trust" :cik "0001477491" :report-date "2026-02-28" :net-assets "11517558.720000000000" :holding-count 40 :first-holding-name "DuPont de Nemours Inc" :first-holding-cusip "26614N102" :first-holding-value "295836.480000000000")

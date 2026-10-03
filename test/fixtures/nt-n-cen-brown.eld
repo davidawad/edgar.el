@@ -1,0 +1,1 @@
+(:accn "0000869351-26-000048" :form "NT N-CEN" :company "BROWN CAPITAL MANAGEMENT MUTUAL FUNDS" :filed "2026-06-16" :report "2026-03-31" :doc "primary_doc.xml" :cik 869351 :url "https://www.sec.gov/Archives/edgar/data/869351/000086935126000048/primary_doc.xml")

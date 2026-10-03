@@ -1834,8 +1834,8 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(registrant-name cik report-date)
       :volume 12
       :notes nil)
      table)
@@ -1844,8 +1844,9 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields
+      '(registrant-name cik report-date net-assets holdings)
       :volume 9
       :notes nil)
      table)

@@ -8,6 +8,8 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `n-mfp3-northwestern-mutual.xml` — [N-MFP3 accession 0000742212-26-000029](https://www.sec.gov/Archives/edgar/data/742212/000074221226000029/primary_doc.xml).
 - `n-cen-alps.xml` — [N-CEN accession 0001049169-26-001803](https://www.sec.gov/Archives/edgar/data/915802/000104916926001803/primary_doc.xml).
 - `n-px-a4-wealth.xml` — [N-PX accession 0002033987-26-000005](https://www.sec.gov/Archives/edgar/data/2033987/000203398726000005/primary_doc.xml).
+- `nt-n-cen-brown.xml` — [NT N-CEN accession 0000869351-26-000048](https://www.sec.gov/Archives/edgar/data/869351/000086935126000048/primary_doc.xml); the primary's submission type is N-CEN.
+- `nt-nport-p-archer.xml` — [NT NPORT-P accession 0000894189-26-014328](https://www.sec.gov/Archives/edgar/data/1477491/000089418926014328/primary_doc.xml); the primary's submission type is NPORT-P.
 - `abs-ee-bank5-sample.xml` — [EX-102 in ABS-EE accession 0001539497-26-002177](https://www.sec.gov/Archives/edgar/data/1547361/000153949726002177/exh_102.xml); its XML namespace identifies the CMBS schema.
 - `n-csrs-360-funds.htm.gz` — compressed primary N-CSRS from [accession 0001999371-26-012055](https://www.sec.gov/Archives/edgar/data/1319067/000199937126012055/mcgxx-ncsrs_060426.htm).
 - `n-vp-american-separate-2.htm.gz` — compressed primary N-VP from [accession 0001193125-26-163027](https://www.sec.gov/Archives/edgar/data/909758/000119312526163027/d123038dnvp.htm).

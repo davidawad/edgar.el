@@ -112,6 +112,47 @@
                    (plist-get expected :report-date)))
     (should-not (edgar-fund-report-holdings report))))
 
+(ert-deftest edgar-fund-report-reads-not-timely-n-cen-primary ()
+  "Read useful fields from a recorded NT N-CEN XML primary."
+  (let* ((expected (edgar-funds-test--golden "nt-n-cen-brown"))
+         (report
+          (edgar-funds-test--report "NT N-CEN" "nt-n-cen-brown")))
+    (should (edgar-fund-report-p report))
+    (should (equal (edgar-fund-report-form report) "N-CEN"))
+    (should (equal (edgar-fund-report-registrant-name report)
+                   (plist-get expected :registrant-name)))
+    (should (equal (edgar-fund-report-cik report)
+                   (plist-get expected :cik)))
+    (should (equal (edgar-fund-report-report-date report)
+                   (plist-get expected :report-date)))
+    (should-not (edgar-fund-report-holdings report))))
+
+(ert-deftest edgar-fund-report-reads-not-timely-nport-primary ()
+  "Read useful fields and every holding from a recorded NT NPORT-P primary."
+  (let* ((expected (edgar-funds-test--golden "nt-nport-p-archer"))
+         (report
+          (edgar-funds-test--report
+           "NT NPORT-P" "nt-nport-p-archer"))
+         (first (car (edgar-fund-report-holdings report))))
+    (should (edgar-fund-report-p report))
+    (should (equal (edgar-fund-report-form report) "NPORT-P"))
+    (should (equal (edgar-fund-report-registrant-name report)
+                   (plist-get expected :registrant-name)))
+    (should (equal (edgar-fund-report-cik report)
+                   (plist-get expected :cik)))
+    (should (equal (edgar-fund-report-report-date report)
+                   (plist-get expected :report-date)))
+    (should (equal (edgar-fund-report-net-assets report)
+                   (plist-get expected :net-assets)))
+    (should (= (length (edgar-fund-report-holdings report))
+               (plist-get expected :holding-count)))
+    (should (equal (edgar-funds--value first '(name))
+                   (plist-get expected :first-holding-name)))
+    (should (equal (edgar-funds--value first '(cusip))
+                   (plist-get expected :first-holding-cusip)))
+    (should (equal (edgar-funds--value first '(valUSD))
+                   (plist-get expected :first-holding-value)))))
+
 (ert-deftest edgar-fund-report-rejects-unsupported-form ()
   "A parsed XML document with an unsupported submission type returns nil."
   (cl-letf (((symbol-function 'edgar--fetch)
