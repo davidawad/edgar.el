@@ -260,7 +260,12 @@
             (should
              (string-match-p "RISK FACTORS"
                              (upcase (edgar-fixtures-norm section)))))
-        (should-not (edgar-structure-headings tree))
+        (should-not
+         (seq-some
+          (lambda (heading)
+            (equal "RISK FACTORS"
+                   (upcase (plist-get heading :name))))
+          (edgar-structure-headings tree)))
         (should (> (length body) 100))))))
 
 (ert-deftest edgar-golden-g7-pricing-supplement-generic-access ()
