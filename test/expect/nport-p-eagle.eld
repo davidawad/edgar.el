@@ -1,0 +1,1 @@
+(:registrant-name "EAGLE CAPITAL GROWTH FUND, INC." :cik "0000850027" :report-date "2026-06-30" :net-assets "48326253.52" :holding-count 26 :first-holding-name "Alphabet, Inc. A" :first-holding-cusip "02079K305" :first-holding-value "4288440")

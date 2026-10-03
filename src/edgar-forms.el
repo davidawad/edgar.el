@@ -796,8 +796,8 @@
      (list
       :family "G6 Asset-backed"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(asset-class assets asset-number property-name)
       :volume 2381
       :notes nil)
      table)
@@ -1686,8 +1686,8 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(registrant-name cik report-date)
       :volume 489
       :notes nil)
      table)
@@ -1695,9 +1695,9 @@
      "N-CSR"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'html
+      :level 'L1
+      :sections-or-fields '(item-sections)
       :volume 573
       :notes nil)
      table)
@@ -1716,8 +1716,8 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(registrant-name cik report-date holdings)
       :volume 993
       :notes nil)
      table)
@@ -1756,8 +1756,8 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(registrant-name cik report-date net-assets holdings)
       :volume 14407
       :notes nil)
      table)

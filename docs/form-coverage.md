@@ -122,7 +122,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `8-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K")` |
 | `8-K12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K12B")` |
 | `ABS-15G` | G6 Asset-backed | xml | L0 | `(edgar-form-info "ABS-15G")` |
-| `ABS-EE` | G6 Asset-backed | xml | L0 | `(edgar-form-info "ABS-EE")` |
+| `ABS-EE` | G6 Asset-backed | xml | L2 | `(edgar-xml filing)` |
 | `ADV-H-T` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "ADV-H-T")` |
 | `ANNLRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "ANNLRPT")` |
 | `APP NTC` | G10 Investment-company registration | html | L0 | `(edgar-form-info "APP NTC")` |
@@ -211,14 +211,14 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-8F` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F")` |
 | `N-8F NTC` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F NTC")` |
 | `N-8F ORDR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F ORDR")` |
-| `N-CEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-CEN")` |
-| `N-CSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-CSR")` |
+| `N-CEN` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
+| `N-CSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-CSRS` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-CSRS")` |
-| `N-MFP3` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-MFP3")` |
+| `N-MFP3` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `N-PX` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-PX")` |
 | `N-VP` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-VP")` |
 | `N-VPFS` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-VPFS")` |
-| `NPORT-P` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NPORT-P")` |
+| `NPORT-P` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `NRSRO-CE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-CE")` |
 | `NRSRO-UPD` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-UPD")` |
 | `NT 10-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "NT 10-K")` |

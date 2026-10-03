@@ -18,11 +18,20 @@
 
 (defun edgar-asset-backed-test--golden ()
   "Read expected values for the recorded CMBS EX-102 fixture."
-  (with-temp-buffer
-    (insert-file-contents
-     (expand-file-name "golden/abs-ee-bank5-sample.eld"
-                       edgar-asset-backed-test--directory))
-    (read (current-buffer))))
+  (let ((expected
+         (with-temp-buffer
+           (insert-file-contents
+            (expand-file-name "expect/abs-ee-bank5-sample.eld"
+                              edgar-asset-backed-test--directory))
+           (read (current-buffer))))
+        (golden
+         (with-temp-buffer
+           (insert-file-contents
+            (expand-file-name "golden-fields/abs-ee-bank5-sample.eld"
+                              edgar-asset-backed-test--directory))
+           (read (current-buffer)))))
+    (should (equal expected golden))
+    expected))
 
 (ert-deftest edgar-abs-ee-parses-recorded-cmbs-exhibit ()
   "The actual SEC CMBS EX-102 yields common fields and all source records."

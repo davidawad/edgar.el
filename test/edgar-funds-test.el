@@ -16,13 +16,22 @@
                        edgar-funds-test--directory))
     (buffer-string)))
 
-(defun edgar-funds-test--golden (form)
-  "Return hand-checked golden fields for FORM."
-  (with-temp-buffer
-    (insert-file-contents
-     (expand-file-name "golden/fund-structured.eld"
-                       edgar-funds-test--directory))
-    (cdr (assoc form (read (current-buffer))))))
+(defun edgar-funds-test--golden (slug)
+  "Return typed field golden for SLUG after matching its expect snapshot."
+  (let ((expected
+         (with-temp-buffer
+           (insert-file-contents
+            (expand-file-name (concat "expect/" slug ".eld")
+                              edgar-funds-test--directory))
+           (read (current-buffer))))
+        (golden
+         (with-temp-buffer
+           (insert-file-contents
+            (expand-file-name (concat "golden-fields/" slug ".eld")
+                              edgar-funds-test--directory))
+           (read (current-buffer)))))
+    (should (equal expected golden))
+    golden))
 
 (defun edgar-funds-test--ncsr-html ()
   "Read the real, compressed N-CSR primary document fixture."
@@ -53,7 +62,7 @@
 
 (ert-deftest edgar-fund-report-nport-holdings-match-golden-data ()
   "N-PORT-P accessors expose registrant totals and ordered holdings."
-  (let* ((expected (edgar-funds-test--golden "NPORT-P"))
+  (let* ((expected (edgar-funds-test--golden "nport-p-eagle"))
          (report (edgar-funds-test--report "NPORT-P" "nport-p-eagle")))
     (should (edgar-fund-report-p report))
     (should (equal (edgar-fund-report-form report) "NPORT-P"))
@@ -76,7 +85,8 @@
 
 (ert-deftest edgar-fund-report-n-mfp3-preserves-large-holding-list ()
   "N-MFP3 exposes the full schedule without dropping repeated securities."
-  (let* ((expected (edgar-funds-test--golden "N-MFP3"))
+  (let* ((expected
+          (edgar-funds-test--golden "n-mfp3-northwestern-mutual"))
          (report
          (edgar-funds-test--report
           "N-MFP3" "n-mfp3-northwestern-mutual")))
@@ -92,7 +102,7 @@
 
 (ert-deftest edgar-fund-report-n-cen-reads-attribute-date ()
   "N-CEN accessors retain the report-period XML attribute."
-  (let* ((expected (edgar-funds-test--golden "N-CEN"))
+  (let* ((expected (edgar-funds-test--golden "n-cen-alps"))
          (report (edgar-funds-test--report "N-CEN" "n-cen-alps")))
     (should (edgar-fund-report-p report))
     (should (equal (edgar-fund-report-registrant-name report)
