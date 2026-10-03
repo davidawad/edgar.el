@@ -28,6 +28,8 @@
                 ((equal form "3") "`(edgar-form3-holdings filing)`")
                 ((equal form "4") "`(edgar-form4-transactions filing)`")
                 ((equal form "5") "`(edgar-form5-holdings filing)`")
+                ((member form '("SCHEDULE 13D" "SCHEDULE 13G"))
+                 "`(edgar-schedule-13d-g-cover-page filing)`")
                 ((eq (plist-get info :level) 'L0)
                  (format "`(edgar-form-info \"%s\")`" form))
                 ((eq (plist-get info :level) 'L1) "`(edgar-text filing)`")

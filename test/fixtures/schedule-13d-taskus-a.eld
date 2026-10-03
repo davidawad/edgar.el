@@ -1,0 +1,1 @@
+(:accn "0001635999-25-000007" :form "SCHEDULE 13D/A" :filed "2025-08-26" :report "2025-05-09" :doc "primary_doc.xml" :cik 1829864 :url "https://www.sec.gov/Archives/edgar/data/1829864/000163599925000007/primary_doc.xml" :ticker "TASK")

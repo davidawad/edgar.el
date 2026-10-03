@@ -1,0 +1,1 @@
+(:accn "0002063571-25-000002" :form "SCHEDULE 13G" :filed "2025-04-02" :report "" :doc "primary_doc.xml" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000206357125000002/primary_doc.xml" :ticker "GME")
