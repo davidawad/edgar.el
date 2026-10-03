@@ -107,6 +107,7 @@
     ("10-Q" "quarterly report" ("I.1" "I.2"))
     ("10-D" "asset backed issuer" nil)
     ("8-K" "current report" nil)
+    ("8-K/A" "current report" nil)
     ("ABS-15G" "asset-backed securitizer report" nil)
     ("20-F" "annual report" nil)
     ("40-F" "annual report" nil)
@@ -292,6 +293,13 @@
           slug)))
        (t
         (should (equal snap (edgar-expect--read file))))))))
+
+(ert-deftest edgar-expect-8ka-mdxg-2026-form-invariant ()
+  "Check the exact 8-K/A form against its recorded MDXG filing."
+  (let ((filing
+         (edgar-expect--read (edgar-expect--file "8ka-mdxg-2026" ".eld"))))
+    (should (equal (plist-get filing :form) "8-K/A"))
+    (edgar-expect--check "8ka-mdxg-2026")))
 
 (ert-deftest edgar-amendments-link-original-accession ()
   (let ((submissions
