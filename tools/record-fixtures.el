@@ -382,13 +382,23 @@ sampling period.  Return t on success, otherwise nil."
     (form vintage quarter index-filings)
   "Find and record FORM's best filing for VINTAGE and QUARTER.
 Return :recorded, :existing, :no-filing, or :no-suitable.
-INDEX-FILINGS is the cached result from `edgar-index-filings'."
+INDEX-FILINGS is the cached result from `edgar-index-filings'.  Prefer exact
+FORM rows, falling back to `/A' rows only when the quarter has no exact row."
   (let* ((slug (edgar-record--fixture-slug form quarter))
-         (matches
+         (exact-matches
           (seq-filter
            (lambda (filing)
              (equal (plist-get filing :form) form))
-           index-filings)))
+           index-filings))
+         (matches
+          (or exact-matches
+              (seq-filter
+               (lambda (filing)
+                 (equal
+                  (edgar--base-form
+                   (or (plist-get filing :form) ""))
+                  form))
+               index-filings))))
     (cond
      ((null matches)
       :no-filing)
