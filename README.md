@@ -78,7 +78,9 @@ access to the document structure, use the generic tree API:
            (tree (edgar-document-structure filing)))
       (edgar-structure-headings tree) ; names, levels, paths, and section bodies
       (edgar-structure-section tree '("Part I" "Risk Factors"))
-      (edgar-structure-paragraphs tree)
+      (edgar-structure-paragraphs tree) ; all document paragraphs
+      (edgar-structure-paragraphs
+       (edgar-structure-section tree "Risk Factors")) ; one section
       (edgar-structure-nodes tree "ix:nonfraction"))
 
 HTML, XML, PDF, and plain-text submissions use one tree representation. PDF
@@ -86,9 +88,13 @@ documents expose their extracted paragraphs; element
 names, attributes, child order, and text nodes are kept; individual form codes
 do not select custom fields. `edgar-structure-section` accepts a visible
 heading name or a full heading/tag path. Duplicate names signal an ambiguity
-error that a path resolves. `edgar-structure-nodes-at-path` addresses nested
-element paths, `edgar-structure-nodes` returns elements with a given tag, and
-`edgar-structure-paragraphs` returns `p` elements or plain-text paragraphs.
+error that a path resolves. Heading and section results include a `:body-node`
+that scopes paragraph queries. `edgar-structure-paragraph-nodes` returns the
+source nodes; `edgar-structure-paragraphs` returns their text. Both accept a
+whole tree, an element node, a heading result, or a section result.
+`edgar-structure-nodes-at-path` addresses nested element paths,
+`edgar-structure-nodes` returns elements with a given tag, and paragraph
+queries return HTML/XML `p` elements or text/PDF paragraph nodes.
 `edgar-primary-document` returns the SEC document's `:type`, `:sequence`,
 `:filename`, `:description`, `:format`, and raw `:content`; the tree keeps the
 metadata under `:primary-document`. For XSL-rendered XML URLs it reads the raw
@@ -97,8 +103,9 @@ XML source. `:format` is one of `xml`, `html`, `text`, `pdf`, or
 their text and paragraphs are exposed through the same structure and section
 APIs using `pdftotext`.
 
-`edgar-structure-headings` discovers HTML `h1`-`h6`, titled `section`
-elements, and recognizable standalone headings in PDF/text output.
+`edgar-structure-headings` discovers HTML `h1`-`h6`, visually emphasized
+standalone paragraph headings, titled `section` elements, fragment-linked
+HTML headings, and recognizable standalone headings in PDF/text output.
 `edgar-section` also resolves existing Item headings. The plain-text heading
 fallback is heuristic; unmarked headings in tables or filing-specific markup
 remain available through the generic tree API. No form codes select custom
