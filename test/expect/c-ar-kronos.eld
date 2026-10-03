@@ -1,0 +1,4 @@
+(:form "C-AR"
+ :accn "0001108248-25-000004"
+ :issuer "KRONOS ADVANCED TECHNOLOGIES INC"
+ :period "2025-06-30")

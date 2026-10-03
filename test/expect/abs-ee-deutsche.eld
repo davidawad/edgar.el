@@ -1,0 +1,1 @@
+(:asset-class "cmbs" :asset-count 69 :first-asset-number "1" :first-asset-type-number "Prospectus Loan ID" :first-property-name "Project Midway" :first-property-state nil :first-original-loan-amount "70000000.00" :first-current-balance "70000000.00")
