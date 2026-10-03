@@ -20,5 +20,5 @@
   :min-paragraphs 20
   :min-tables 1
   :paragraph-marker "Pursuant to Rule 497(j)"
-  :heading "Ladies and Gentlemen:"
-  :body-marker "Pursuant to Rule 497(j)"))
+  :heading nil
+  :body-marker nil))
