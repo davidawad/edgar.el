@@ -86,6 +86,11 @@
      (= (length (edgar-forms-by-family (car expected)))
         (cdr expected)))))
 
+(ert-deftest edgar-forms-g4-13f-variants-have-typed-coverage ()
+  "Both base Form 13F variants expose recorded typed data."
+  (dolist (form '("13F-HR" "13F-NT"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
+
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
   "G11 declares only the three forms with recorded coverage above L0."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))

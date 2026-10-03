@@ -1,0 +1,1 @@
+(:count 85 :sha256 "a3fb7adc0d109dec11a826aab65ebe7a4a92a583e1e0e8161cc17d862edc6a0f" :first (:issuer "AES CORP" :class "Equity" :cusip "00130H105" :value "2456576" :value-unit usd :value-usd 2456576 :shares "167570" :share-type "SH" :put-call nil :discretion "SOLE" :other-manager nil :voting (:sole "167570" :shared "0" :none "0")))

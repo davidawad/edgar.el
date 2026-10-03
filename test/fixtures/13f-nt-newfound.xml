@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xsi:schemaLocation="http://www.sec.gov/edgar/thirteenffiler eis_13F_Filer.xsd" xmlns="http://www.sec.gov/edgar/thirteenffiler" xmlns:ns1="http://www.sec.gov/edgar/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <schemaVersion>X0202</schemaVersion>
+  <headerData>
+    <submissionType>13F-NT</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+      <filer>
+        <credentials>
+          <cik>0001630806</cik>
+          <ccc>XXXXXXXX</ccc>
+        </credentials>
+      </filer>
+      <periodOfReport>06-30-2026</periodOfReport>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <coverPage>
+      <reportCalendarOrQuarter>06-30-2026</reportCalendarOrQuarter>
+      <isAmendment>false</isAmendment>
+      <filingManager>
+        <name>Newfound Research LLC</name>
+        <address>
+          <ns1:street1>200 Central Ave 4th Floor</ns1:street1>
+          <ns1:street2>Suite 324</ns1:street2>
+          <ns1:city>St. Petersburg</ns1:city>
+          <ns1:stateOrCountry>FL</ns1:stateOrCountry>
+          <ns1:zipCode>33701</ns1:zipCode>
+        </address>
+      </filingManager>
+      <reportType>13F NOTICE</reportType>
+      <form13FFileNumber>028-17093</form13FFileNumber>
+      <crdNumber>000159064</crdNumber>
+      <secFileNumber>801-73042</secFileNumber>
+      <otherManagersInfo>
+        <otherManager>
+          <cik>0001600064</cik>
+          <crdNumber>000164201</crdNumber>
+          <secFileNumber>801-76857</secFileNumber>
+          <name>Tidal Investments LLC</name>
+        </otherManager>
+        <otherManager>
+          <cik>0000810695</cik>
+          <secFileNumber>811-05010</secFileNumber>
+          <name>Mutual Fund &amp; Variable Insurance Trust</name>
+        </otherManager>
+        <otherManager>
+          <cik>0001143565</cik>
+          <crdNumber>000111452</crdNumber>
+          <secFileNumber>801-60176</secFileNumber>
+          <name>RATIONAL ADVISORS, INC.</name>
+        </otherManager>
+      </otherManagersInfo>
+      <provideInfoForInstruction5>N</provideInfoForInstruction5>
+    </coverPage>
+    <signatureBlock>
+      <name>Corey Hoffstein</name>
+      <title>Chief Executive Officer</title>
+      <phone>617-531-9773</phone>
+      <signature>/s/ Corey Hoffstein</signature>
+      <city>St. Petersburg</city>
+      <stateOrCountry>FL</stateOrCountry>
+      <signatureDate>07-22-2026</signatureDate>
+    </signatureBlock>
+    <summaryPage>
+      <otherIncludedManagersCount/>
+      <tableEntryTotal/>
+      <tableValueTotal/>
+    </summaryPage>
+  </formData>
+</edgarSubmission>

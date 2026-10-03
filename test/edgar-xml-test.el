@@ -89,44 +89,173 @@
 
 (defun edgar-xml-test--13f-snapshot (holdings)
   "Return a stable summary of all 13F HOLDINGS."
-  (list :count (length holdings)
-        :sha256 (secure-hash 'sha256 (prin1-to-string holdings))
-        :first (car holdings)))
+  (list
+   :count (length holdings)
+   :sha256 (secure-hash 'sha256 (prin1-to-string holdings))
+   :first (car holdings)))
 
-(ert-deftest edgar-13f-holdings-match-recorded-tables-and-value-vintages ()
-  "Match every recorded Berkshire holding across dollar-reporting vintages."
-  (dolist (case '(("13f-hr-brk-b" . "usd")
-                  ("13f-hr-brk-b-prior" . "thousands")))
+(defun edgar-xml-test--13f-recorded-holdings (slug)
+  "Return typed holdings from the recorded 13F fixture SLUG."
+  (let ((metadata (edgar-xml-test--13f-metadata slug))
+        (fixture (edgar-xml-test--13f-fixture slug)))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (url)
+                 (should (equal url (plist-get metadata :info-url)))
+                 fixture)))
+      (edgar-13f-holdings metadata))))
+
+(defun edgar-xml-test--13f-notice-snapshot (notice)
+  "Return all typed fields from 13F NOTICE as a stable plist."
+  (list
+   :submission-type (edgar-13f-notice-submission-type notice)
+   :report-period (edgar-13f-notice-report-period notice)
+   :amendment-p (edgar-13f-notice-amendment-p notice)
+   :manager-cik (edgar-13f-notice-manager-cik notice)
+   :manager-name (edgar-13f-notice-manager-name notice)
+   :manager-address (edgar-13f-notice-manager-address notice)
+   :report-type (edgar-13f-notice-report-type notice)
+   :form-13f-file-number (edgar-13f-notice-form-13f-file-number notice)
+   :crd-number (edgar-13f-notice-crd-number notice)
+   :sec-file-number (edgar-13f-notice-sec-file-number notice)
+   :other-managers (edgar-13f-notice-other-managers notice)
+   :signature (edgar-13f-notice-signature notice)))
+
+(ert-deftest
+    edgar-13f-holdings-match-recorded-tables-and-value-vintages
+    ()
+  "Match every recorded holding across filers and dollar-reporting vintages."
+  (dolist (case
+           '(("13f-hr-brk-b" . "usd")
+             ("13f-hr-brk-b-prior" . "thousands")
+             ("13f-hr-water-island" . "usd")))
     (let* ((slug (car case))
-           (metadata (edgar-xml-test--13f-metadata slug))
-           (fixture (edgar-xml-test--13f-fixture slug))
-           (holdings nil))
-      (cl-letf (((symbol-function 'edgar--fetch)
-                 (lambda (url)
-                   (should (equal url (plist-get metadata :info-url)))
-                   fixture)))
-        (setq holdings (edgar-13f-holdings metadata)))
-      (should (equal (edgar-xml-test--13f-snapshot holdings)
-                     (edgar-xml-test--13f-golden slug)))
-      (should (eq (plist-get (car holdings) :value-unit)
-                  (intern (cdr case)))))))
+           (holdings (edgar-xml-test--13f-recorded-holdings slug)))
+      (should
+       (equal
+        (edgar-xml-test--13f-snapshot holdings)
+        (edgar-xml-test--13f-golden slug)))
+      (should
+       (eq
+        (plist-get (car holdings) :value-unit)
+        (intern (cdr case)))))))
+
+(ert-deftest
+    edgar-13f-water-island-preserves-option-and-principal-rows
+    ()
+  "Preserve optional put/call values and principal-amount security rows."
+  (let ((holdings
+         (edgar-xml-test--13f-recorded-holdings
+          "13f-hr-water-island")))
+    (should
+     (equal
+      (seq-find
+       (lambda (holding) (plist-get holding :put-call)) holdings)
+      '(:issuer
+        "APOGEE THERAPEUTICS INC"
+        :class "Equity Put"
+        :cusip "03770N951"
+        :value "2322775"
+        :value-unit usd
+        :value-usd 2322775
+        :shares "17500"
+        :share-type "SH"
+        :put-call "Put"
+        :discretion "SOLE"
+        :other-manager nil
+        :voting (:sole "17500" :shared "0" :none "0"))))
+    (should
+     (equal
+      (seq-find
+       (lambda (holding)
+         (equal (plist-get holding :share-type) "PRN"))
+       holdings)
+      '(:issuer
+        "BENTLEY SYS INC"
+        :class "Convertible Bond"
+        :cusip "08265TAD1"
+        :value "4803323"
+        :value-unit usd
+        :value-usd 4803323
+        :shares "5000000"
+        :share-type "PRN"
+        :put-call nil
+        :discretion "SOLE"
+        :other-manager nil
+        :voting
+        (:sole "5000000" :shared "0" :none "0"))))))
+
+(ert-deftest edgar-13f-notice-matches-recorded-managers-and-signature
+    ()
+  "Match all typed fields from a recorded 13F-NT with three managers."
+  (let* ((slug "13f-nt-newfound")
+         (metadata (edgar-xml-test--13f-metadata slug))
+         (fixture (edgar-xml-test--13f-fixture slug))
+         notice)
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (url)
+                 (should
+                  (equal
+                   url
+                   (edgar-xml--raw-url (plist-get metadata :url))))
+                 fixture)))
+      (setq notice (edgar-13f-notice metadata)))
+    (should (edgar-13f-notice-p notice))
+    (should
+     (equal
+      (edgar-xml-test--13f-notice-snapshot notice)
+      (edgar-xml-test--13f-golden slug)))))
+
+(ert-deftest edgar-13f-fixtures-cover-three-distinct-filers ()
+  "Keep the recorded 13F regression corpus at three distinct filer CIKs."
+  (let ((ciks
+         (mapcar
+          (lambda (slug)
+            (plist-get (edgar-xml-test--13f-metadata slug) :cik))
+          '("13f-hr-brk-b" "13f-hr-water-island" "13f-nt-newfound"))))
+    (should (= (length (delete-dups ciks)) 3))))
+
+(ert-deftest edgar-13f-holdings-ignore-notice-filings-without-fetching
+    ()
+  "Do not seek a nonexistent information table for 13F-NT filings."
+  (cl-letf (((symbol-function 'edgar--fetch)
+             (lambda (&rest _)
+               (ert-fail "13F-NT holdings must not fetch"))))
+    (should-not
+     (edgar-13f-holdings
+      (edgar-xml-test--13f-metadata "13f-nt-newfound")))))
+
+(ert-deftest
+    edgar-13f-notice-ignores-holdings-filings-without-fetching
+    ()
+  "Do not fetch notice XML for 13F-HR filings."
+  (cl-letf (((symbol-function 'edgar--fetch)
+             (lambda (&rest _)
+               (ert-fail "13F-HR notice must not fetch"))))
+    (should-not
+     (edgar-13f-notice
+      (edgar-xml-test--13f-metadata "13f-hr-water-island")))))
 
 (ert-deftest edgar-13f-finds-information-table-in-accession-index ()
   "Resolve the separate table XML using the SEC accession index."
-  (let* ((metadata (edgar-xml-test--13f-metadata "13f-hr-brk-b"))
-         (index "{\"directory\":{\"item\":[{\"name\":\"primary_doc.xml\",\"type\":\"XML\"},{\"name\":\"56757.xml\",\"type\":\"INFORMATION TABLE\"}]}}")
-         (requests nil))
+  (let*
+      ((metadata (edgar-xml-test--13f-metadata "13f-hr-brk-b"))
+       (index
+        "{\"directory\":{\"item\":[{\"name\":\"primary_doc.xml\",\"type\":\"XML\"},{\"name\":\"56757.xml\",\"type\":\"INFORMATION TABLE\"}]}}")
+       (requests nil))
     (cl-letf (((symbol-function 'edgar--fetch)
                (lambda (url)
                  (push url requests)
                  (if (string-suffix-p "/index.json" url)
                      index
                    (edgar-xml-test--13f-fixture "13f-hr-brk-b")))))
-      (let ((filing (plist-put (copy-sequence metadata) :info-url nil)))
+      (let ((filing
+             (plist-put (copy-sequence metadata) :info-url nil)))
         (should (= (length (edgar-13f-holdings filing)) 89)))
-      (should (equal (nreverse requests)
-                     '("https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/index.json"
-                       "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"))))))
+      (should
+       (equal
+        (nreverse requests)
+        '("https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/index.json"
+          "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"))))))
 
 (provide 'edgar-xml-test)
 ;;; edgar-xml-test.el ends here

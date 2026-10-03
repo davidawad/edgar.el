@@ -174,8 +174,9 @@
      (list
       :family "G4 13F holdings"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields
+      '(report-period manager other-managers signature)
       :volume 2008
       :notes nil)
      table)

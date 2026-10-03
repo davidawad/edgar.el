@@ -25,6 +25,7 @@
               (example
                (cond
                 ((equal form "13F-HR") "`(edgar-13f-holdings filing)`")
+                ((equal form "13F-NT") "`(edgar-13f-notice filing)`")
                 ((eq (plist-get info :level) 'L0)
                  (format "`(edgar-form-info \"%s\")`" form))
                 ((eq (plist-get info :level) 'L1) "`(edgar-text filing)`")
