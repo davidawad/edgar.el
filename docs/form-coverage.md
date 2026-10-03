@@ -342,9 +342,11 @@ limiter.  Remaining gaps tracked as beads: history past the SEC's ~1000-filing
 
 The shared `edgar-documents` / `edgar-exhibit` API is also exercised on
 recorded foreign-issuer filings: 6-K directory enumeration and a 40-F EX-23.1
-exhibit text excerpt (Shopify, accession 0001594805-24-000007). These validate
-access to filing-level documents; they do not imply that every G9 form's
-narrative layout has a dedicated parser. Form SD is now L2 based on Apple's
+exhibit text excerpt (Shopify, accession 0001594805-24-000007), plus EX-99.1
+access on a distinct 6-K filer, Decent Holding Inc. (CIK 1958133, accession
+0001185185-26-003233). These validate access to filing-level documents; they
+do not imply that every G9 form's narrative layout has a dedicated parser.
+Form SD is now L2 based on Apple's
 2026-05-28 filing (accession 0001140361-26-023149), with generic item access
 goldened for Items 1.01, 1.02, 2.01, and 3.01. Form 18-K has L1 generic HTML
 structure and body-path coverage from the Republic of Chile filing (accession

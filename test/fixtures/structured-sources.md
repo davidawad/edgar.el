@@ -2,6 +2,10 @@
 
 These are unmodified documents published in SEC EDGAR's Archives:
 
+Foreign issuer exhibit access:
+
+- `6-k-dxst-ex99-1.html` — EX-99.1 attached to Decent Holding Inc.'s 6-K ([accession 0001185185-26-003233](https://www.sec.gov/Archives/edgar/data/1958133/000118518526003233/dxstex99-1.htm); 2026-08-03). The filing directory is recorded in `6-k-dxst-index.json`.
+
 Prospectus and registration samples used for generic named-section coverage:
 
 - `s-3-indaptus.htm.gz` — S-3, Indaptus Therapeutics ([accession 0001641172-25-023490](https://www.sec.gov/Archives/edgar/data/1857044/000164117225023490/forms-3.htm); 2025-08-13).
