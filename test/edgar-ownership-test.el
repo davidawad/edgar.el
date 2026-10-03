@@ -195,9 +195,26 @@
          :10b5-1 (edgar-ownership-10b5-1-p metadata)
          :signature (car (edgar-ownership-signatures metadata)))))))
 
+(defun edgar-ownership-test--form5-snapshot (slug)
+  "Return the typed ownership snapshot for Form 5 fixture SLUG."
+  (let* ((filing
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name (concat "fixtures/" slug ".eld")
+                               edgar-ownership-test--directory))
+            (read (current-buffer))))
+         (tree (edgar-ownership-test--fixture slug)))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
+      (list :issuer (edgar-ownership-issuer filing)
+            :owners (edgar-ownership-reporting-owners filing)
+            :holdings (edgar-form5-holdings filing)
+            :footnotes (edgar-ownership-footnotes filing)
+            :10b5-1 (edgar-ownership-10b5-1-p filing)
+            :signatures (edgar-ownership-signatures filing)))))
+
 (ert-deftest edgar-ownership-additional-filer-golden-values ()
-  "Parse Form 4 filings from additional issuers and schema vintages."
-  (dolist (slug '("4-meta" "4-tsla"))
+  "Parse Form 4 filings from distinct issuers and transaction layouts."
+  (dolist (slug '("4-meta" "4-tsla" "4-epd-buy" "4-fossil-a"))
     (should (equal (edgar-ownership-test--form4-snapshot slug)
                    (edgar-ownership-test--golden slug)))
     (should (equal (edgar-ownership-test--form4-expect-snapshot slug)
@@ -278,20 +295,43 @@
           (should (edgar-ownership-10b5-1-p filing)))))))
 
 (ert-deftest edgar-ownership-form4-amendment-and-x0306-vintage ()
-  "Accept Form 4/A and preserve support for the older X0306 schema."
-  (let* ((xml
-          (with-temp-buffer
-            (insert-file-contents
-             (expand-file-name "fixtures/4-aapl.xml"
-                               edgar-ownership-test--directory))
-            (replace-regexp-in-string "X0609" "X0306" (buffer-string))))
-         (tree (edgar-ownership-test--xml xml))
-         (filing '(:form "4/A")))
-    (cl-letf (((symbol-function 'edgar-xml) (lambda (_filing) tree)))
-      (should (= (length (edgar-form4-transactions filing)) 2))
-      (should (equal (edgar-ownership--text
-                      (edgar-ownership--child tree 'schemaVersion))
-                     "X0306")))))
+  "Parse actual Form 4/A and X0306 filings against their field goldens."
+  (let* ((amendment
+          (edgar-ownership-test--form4-snapshot "4-fossil-a"))
+         (old
+          (edgar-ownership-test--form4-snapshot "4-aapl-prior"))
+         (old-tree (edgar-ownership-test--fixture "4-aapl-prior")))
+    (should (equal amendment (edgar-ownership-test--golden "4-fossil-a")))
+    (should (equal (edgar-ownership-test--form4-expect-snapshot "4-fossil-a")
+                   (edgar-ownership-test--expect "4-fossil-a")))
+    (should (equal old (edgar-ownership-test--golden "4-aapl-prior")))
+    (should (equal (edgar-ownership--text
+                    (edgar-ownership--child old-tree 'schemaVersion))
+                   "X0306"))))
+
+(ert-deftest edgar-ownership-real-filings-cover-purchase-sale-and-exercise ()
+  "Exercise purchase, sale, and option transactions from three real filers."
+  (dolist (case '(("4-epd-buy" "P") ("4-meta" "S") ("4-tsla" "M")))
+    (let ((snapshot (edgar-ownership-test--form4-snapshot (car case))))
+      (should (member (cadr case)
+                      (mapcar (lambda (transaction)
+                                (plist-get transaction :code))
+                              (plist-get snapshot :transactions)))))))
+
+(ert-deftest edgar-ownership-form5-real-holdings-golden ()
+  "Parse the recorded SEC Form 5 holdings and match its typed field golden."
+  (let* ((filing (edgar-fixtures-filing "5-gaic"))
+         (tree (edgar-ownership-test--fixture "5-gaic")))
+    (should (equal (edgar-ownership-test--form5-snapshot "5-gaic")
+                   (edgar-ownership-test--golden "5-gaic")))
+    (cl-letf (((symbol-function 'edgar-xml) (lambda (_) tree)))
+      (should
+       (equal
+        (list :form "5"
+              :schema (edgar-ownership--text
+                       (edgar-ownership--child tree 'schemaVersion))
+              :issuer (plist-get (edgar-ownership-issuer filing) :name))
+        (edgar-ownership-test--expect "5-gaic"))))))
 
 (defun edgar-ownership-test--schedule-xml (form)
   "Return a compact Schedule 13D/G XML tree for FORM."

@@ -1,0 +1,1 @@
+(:accn "0001183251-26-000006" :form "4" :filed "2026-03-23" :report "2026-03-20" :doc "xslF345X06/form4-03232026_080326.xml" :cik 1061219 :url "https://www.sec.gov/Archives/edgar/data/1061219/000118325126000006/xslF345X06/form4-03232026_080326.xml" :ticker "EPD")

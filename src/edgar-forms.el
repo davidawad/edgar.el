@@ -706,8 +706,8 @@
      (list
       :family "G1 Ownership"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(issuer reporting-owners holdings footnotes signature)
       :volume 122
       :notes nil)
      table)

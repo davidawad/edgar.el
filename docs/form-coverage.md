@@ -75,9 +75,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `25-NSE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "25-NSE")` |
 | `253G1` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G1")` |
 | `253G2` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "253G2")` |
-| `3` | G1 Ownership | xml | L2 | `(edgar-xml filing)` |
+| `3` | G1 Ownership | xml | L2 | `(edgar-form3-holdings filing)` |
 | `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
-| `4` | G1 Ownership | xml | L2 | `(edgar-xml filing)` |
+| `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17F1")` |
 | `40-17F2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17F2")` |
 | `40-17G` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-17G")` |
@@ -113,7 +113,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `497VPI` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPI")` |
 | `497VPSUB` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPSUB")` |
 | `497VPU` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPU")` |
-| `5` | G1 Ownership | xml | L0 | `(edgar-form-info "5")` |
+| `5` | G1 Ownership | xml | L2 | `(edgar-form5-holdings filing)` |
 | `6-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `6B NTC` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "6B NTC")` |
 | `6B ORDR` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "6B ORDR")` |
