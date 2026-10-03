@@ -1,0 +1,1 @@
+(:accn "0001104659-26-020411" :form "40-F" :filed "2026-02-26" :report "2025-12-31" :doc "su-20251231x40f.htm" :cik 311337 :url "https://www.sec.gov/Archives/edgar/data/311337/000110465926020411/su-20251231x40f.htm" :ticker "SU")

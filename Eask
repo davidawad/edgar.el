@@ -15,7 +15,7 @@
 (files "src/*.el")
 
 (script "test"
-        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/form-coverage-test.el test/edgar-xml-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el")
+        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-l2-diversity-test.el test/edgar-forms-test.el test/form-coverage-test.el test/edgar-xml-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el")
 (script "record-fixtures"
         "eask emacs --batch -L tools -l tools/record-fixtures.el -f edgar-record-fixtures-run")
 (script "coverage"
@@ -25,7 +25,7 @@
 (script "docs"
         "eask emacs --batch -l tools/edgar-form-docs-update.el")
 (script "check"
-        "eask lint package && eask lint checkdoc && eask lint regexps && eask run script coverage && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-forms-test.el test/form-coverage-test.el test/edgar-xml-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el && eask compile src/edgar.el src/edgar-forms.el src/edgar-xml.el src/edgar-ownership.el src/edgar-offerings.el src/edgar-funds.el src/edgar-asset-backed.el src/edgar-docs.el src/edgar-http.el src/edgar-index.el src/edgar-13f.el")
+        "eask lint package && eask lint checkdoc && eask lint regexps && eask run script coverage && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-l2-diversity-test.el test/edgar-forms-test.el test/form-coverage-test.el test/edgar-xml-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el && eask compile src/edgar.el src/edgar-forms.el src/edgar-xml.el src/edgar-ownership.el src/edgar-offerings.el src/edgar-funds.el src/edgar-asset-backed.el src/edgar-docs.el src/edgar-http.el src/edgar-index.el src/edgar-13f.el")
 (script "expect-update"
         "EDGAR_EXPECT_UPDATE=1 eask test ert test/edgar-expect-test.el")
 (script "golden-update" "eask emacs --script tools/make-golden.el")

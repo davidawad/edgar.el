@@ -1,0 +1,1 @@
+(:accn "0001104659-26-074003" :form "11-K" :filed "2026-06-15" :report "2025-12-31" :doc "ball-20251231x11k.htm" :cik 9389 :url "https://www.sec.gov/Archives/edgar/data/9389/000110465926074003/ball-20251231x11k.htm" :ticker "BALL")
