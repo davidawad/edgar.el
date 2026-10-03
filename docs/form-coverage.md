@@ -124,7 +124,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `8-K12B` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `ABS-15G` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `ABS-EE` | G6 Asset-backed | xml | L2 | `(edgar-xml filing)` |
-| `ADV-H-T` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "ADV-H-T")` |
+| `ADV-H-T` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `ANNLRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "ANNLRPT")` |
 | `APP NTC` | G10 Investment-company registration | pdf | L1 | `(edgar-text filing)` |
 | `APP ORDR` | G10 Investment-company registration | pdf | L1 | `(edgar-text filing)` |
@@ -184,7 +184,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `F-N` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-N")` |
 | `F-X` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-X")` |
 | `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `G-FIN` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "G-FIN")` |
+| `G-FIN` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
 | `MA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
@@ -318,19 +318,19 @@ support; fixture coverage is separately checked by `eask run script coverage`.
 Do not infer that all forms are parsed from the fact that all 245 appear in the
 catalog.
 
-G12 has 24 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I, TA-2,
+G12 has all 26 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I, TA-2,
 ATS-N and its four variants, CFPORTAL and CFPORTAL-W, MA/MA-A/MA-W,
-SBSE/SBSE-A/SBSE-C, TA-1/TA-W, NRSRO-CE, NRSRO-UPD, SEC STAFF ACTIO, and
-SEC STAFF LETTE. They account for 2,566 of 2,577 G12 filings in the Q2
-snapshot (99.6%). Generic primary-document metadata and structure APIs cover
+SBSE/SBSE-A/SBSE-C, TA-1/TA-W, NRSRO-CE, NRSRO-UPD, SEC STAFF ACTIO,
+SEC STAFF LETTE, ADV-H-T, and G-FIN. They account for all 2,577 G12 filings
+in the Q2 snapshot. Generic primary-document metadata and structure APIs cover
 HTML, XML, text, and PDF sources. Complete-submission PDF bodies are decoded
 with `uudecode`; PDF text and paragraphs use `pdftotext`.
 
-The two remaining L0 forms are ADV-H-T and G-FIN (11 Q2 filings combined).
-Their public `.paper` controls and complete submissions contain only an
-auto-generated paper notice with a document control number; the original
-reports are absent from the SEC accession directories. The recorded files,
-accessions, and exact notices are listed in [the G12 source evidence](../test/fixtures/structured-sources.md#g12-source-limitations).
+ADV-H-T and G-FIN are L1 for their publicly accessible SEC paper notices; the
+recorded text and structure snapshots are checked through `edgar-text`. Their
+original report bodies are absent from the SEC accession directories. The
+recorded files, accessions, and document-control numbers are listed in [the
+G12 source evidence](../test/fixtures/structured-sources.md#g12-source-limitations).
 
 G10 currently has 27 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17G,
 40-6B, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS, 486BPOS, 486BXT, 487,
