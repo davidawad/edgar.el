@@ -1,0 +1,1 @@
+(:accn "0001580642-26-002799" :form "486BPOS" :filed "2026-04-30" :report "" :doc "arca-ust_486b.htm" :cik 1758583 :url "https://www.sec.gov/Archives/edgar/data/1758583/000158064226002799/arca-ust_486b.htm" :ticker "")

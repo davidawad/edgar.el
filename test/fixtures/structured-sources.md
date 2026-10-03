@@ -21,6 +21,13 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `497vpi-allianz.htm.gz` — compressed [497VPI accession 0000072499-26-000023](https://www.sec.gov/Archives/edgar/data/72499/000007249926000023/iaincomeadvsupplement.htm).
 - `497vpu-allianz-ny.htm.gz` — compressed [497VPU accession 0000080019-26-000008](https://www.sec.gov/Archives/edgar/data/80019/000008001926000008/iany497vpu.htm).
 - `s-6-ft12946.htm.gz` — compressed [S-6 accession 0001445546-26-002415](https://www.sec.gov/Archives/edgar/data/2111250/000144554626002415/s-6.htm).
+- `486apos-ark.htm.gz` — compressed [486APOS accession 0001213900-26-040156](https://www.sec.gov/Archives/edgar/data/1905088/000121390026040156/ea0285040-01_486apos.htm).
+- `486bpos-arca.htm.gz` — compressed [486BPOS accession 0001580642-26-002799](https://www.sec.gov/Archives/edgar/data/1758583/000158064226002799/arca-ust_486b.htm).
+- `486bxt-ark2.htm.gz` — compressed [486BXT accession 0001213900-26-065111](https://www.sec.gov/Archives/edgar/data/1905088/000121390026065111/ea0293358-01_486bxt.htm).
+- `487-adt2331.htm.gz` — compressed [487 accession 0001999371-26-009222](https://www.sec.gov/Archives/edgar/data/2098055/000199937126009222/adt2331-487.htm).
+- `497ad-aetos.htm.gz` — compressed [497AD accession 0001169578-26-000036](https://www.sec.gov/Archives/edgar/data/1169578/000116957826000036/distressed-495ad_02282026.htm).
+- `497vpsub-voya.htm.gz` — compressed [497VPSUB accession 0001133228-26-007876](https://www.sec.gov/Archives/edgar/data/103005/000113322826007876/vaab-efp24740_497vpsub.htm).
+- `del-am-ab.htm.gz` — compressed [DEL AM accession 0000919574-26-002487](https://www.sec.gov/Archives/edgar/data/825316/000091957426002487/d12151316_del-am.htm).
 
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.

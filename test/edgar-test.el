@@ -412,12 +412,10 @@
                (plist-get expected :body-marker))
               body))))))))
 
-(ert-deftest edgar-g10-second-batch-uses-generic-structure-api ()
-  "Real G10 XML and rendered layouts work without form-specific switches."
+(defun edgar-test--assert-structure-expectations (expect-file)
+  "Assert generic structure expectations read from EXPECT-FILE."
   (dolist (expected
-           (edgar-fixtures-read
-            (edgar-fixtures-path
-             "expect/g10-second-batch-structures.eld")))
+           (edgar-fixtures-read (edgar-fixtures-path expect-file)))
     (let* ((slug (plist-get expected :slug))
            (format (plist-get expected :format))
            (filing (edgar-fixtures-filing slug))
@@ -475,6 +473,18 @@
                  (regexp-quote (plist-get expected :node-marker))
                  (edgar-structure-text node)))
               nodes))))))))
+
+(ert-deftest edgar-g10-second-batch-uses-generic-structure-api ()
+  "Real G10 XML and rendered layouts work without form-specific switches."
+  (edgar-test--assert-structure-expectations
+   "expect/g10-second-batch-structures.eld"))
+
+(ert-deftest
+    edgar-g10-post-effective-layouts-use-generic-structure-api
+    ()
+  "Real G10 post-effective layouts use only generic structure access."
+  (edgar-test--assert-structure-expectations
+   "expect/g10-post-effective-structures.eld"))
 
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."

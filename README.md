@@ -93,6 +93,10 @@ Additional G10 fixtures cover raw 24F-2NT XML, 40-17G fidelity-bond notices,
 updates, and S-6 unit-investment-trust registrations through the same generic
 tree, element, paragraph, table, and Item-section interfaces.
 
+Post-effective G10 coverage also includes 486APOS/BPOS/BXT, 487, 497AD,
+497VPSUB, and DEL AM layouts, including Item 25–34 lookup where those filings
+expose conventional Item headings.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.
