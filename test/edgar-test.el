@@ -936,6 +936,7 @@
         (let* ((primary (edgar-primary-document submission-filing))
                (tree (edgar-document-structure submission-filing))
                (text (edgar-structure-text tree))
+               (rendered-text (edgar-text submission-filing))
                (info (edgar-form-info (plist-get filing :form))))
           (should (eq (plist-get info :level) 'L0))
           (should (eq (plist-get info :backend) 'text))
@@ -958,7 +959,14 @@
            (equal
             (plist-get expected :document-snapshot)
             (edgar-test--document-snapshot
-             submission-filing tree))))))))
+             submission-filing tree)))
+          (should
+           (equal
+            (plist-get expected :edgar-text-snapshot)
+            (list
+             :text-length (length rendered-text)
+             :text-sha256
+             (secure-hash 'sha256 rendered-text)))))))))
 
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
