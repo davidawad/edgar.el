@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<twe:edgarSubmission xmlns:com="http://www.sec.gov/edgar/common" xmlns:fee="http://www.sec.gov/edgar/feecommon" xmlns:sta="http://www.sec.gov/edgar/statecodes" xmlns:scc="http://www.sec.gov/edgar/sccommon" xmlns:twe="http://www.sec.gov/edgar/twentyfourf2filer">
+  <twe:schemaVersion>X0102</twe:schemaVersion>
+  <twe:headerData>
+    <twe:submissionType>24F-2NT</twe:submissionType>
+    <twe:filerInfo>
+      <twe:liveTestFlag>LIVE</twe:liveTestFlag>
+      <twe:filer>
+        <twe:issuerCredentials>
+          <twe:cik>81443</twe:cik>
+          <twe:ccc>XXXXXXXX</twe:ccc>
+        </twe:issuerCredentials>
+      </twe:filer>
+      <twe:flags>
+        <twe:confirmingCopyFlag>false</twe:confirmingCopyFlag>
+      </twe:flags>
+      <twe:investmentCompanyType>N-1A</twe:investmentCompanyType>
+    </twe:filerInfo>
+  </twe:headerData>
+  <twe:formData>
+    <twe:annualFilings>
+      <twe:annualFilingInfo>
+        <twe:item1>
+          <twe:nameOfIssuer>AB CAP FUND, INC.</twe:nameOfIssuer>
+          <twe:addressOfIssuer>
+            <twe:street1>1345 Avenue of the Americas</twe:street1>
+            <twe:city>New York</twe:city>
+            <twe:state>NY</twe:state>
+            <twe:country>X1</twe:country>
+            <twe:zipCode>10105</twe:zipCode>
+          </twe:addressOfIssuer>
+        </twe:item1>
+        <twe:item2>
+          <twe:reportSeriesClass>
+            <twe:rptSeriesClassInfo>
+              <twe:seriesName>AB EMERGING MARKETS MULTI-ASSET PORTFOLIO</twe:seriesName>
+              <twe:seriesId>S000033729</twe:seriesId>
+              <twe:classInfo>
+                <twe:className>Class A</twe:className>
+                <twe:classId>C000103967</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class C</twe:className>
+                <twe:classId>C000103968</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Advisor Class</twe:className>
+                <twe:classId>C000103969</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class R</twe:className>
+                <twe:classId>C000103970</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class K</twe:className>
+                <twe:classId>C000103971</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class I</twe:className>
+                <twe:classId>C000103972</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class 1</twe:className>
+                <twe:classId>C000103973</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class 2</twe:className>
+                <twe:classId>C000103974</twe:classId>
+              </twe:classInfo>
+              <twe:classInfo>
+                <twe:className>Class Z</twe:className>
+                <twe:classId>C000194530</twe:classId>
+              </twe:classInfo>
+            </twe:rptSeriesClassInfo>
+          </twe:reportSeriesClass>
+        </twe:item2>
+        <twe:item3>
+          <twe:investmentCompActFileNo>811-01716</twe:investmentCompActFileNo>
+          <twe:securitiesActFileNumbers>
+            <twe:securitiesActFileNo>
+              <twe:fileNumber>002-29901</twe:fileNumber>
+            </twe:securitiesActFileNo>
+          </twe:securitiesActFileNumbers>
+        </twe:item3>
+        <twe:item4>
+          <twe:lastDayOfFiscalYear>03/31/2026</twe:lastDayOfFiscalYear>
+          <twe:isThisFormBeingFiledLate>false</twe:isThisFormBeingFiledLate>
+          <twe:isThisTheLastTimeIssuerFilingThisForm>false</twe:isThisTheLastTimeIssuerFilingThisForm>
+        </twe:item4>
+        <twe:item5>
+          <twe:aggregateSalePriceOfSecuritiesSold>26553346.00</twe:aggregateSalePriceOfSecuritiesSold>
+          <twe:aggregatePriceOfSecuritiesRedeemedOrRepurchasedInFiscalYear>29932301.00</twe:aggregatePriceOfSecuritiesRedeemedOrRepurchasedInFiscalYear>
+          <twe:aggregatePriceOfSecuritiesRedeemedOrRepurchasedAnyPrior>31041854.00</twe:aggregatePriceOfSecuritiesRedeemedOrRepurchasedAnyPrior>
+          <twe:totalAvailableRedemptionCredits>60974155.00</twe:totalAvailableRedemptionCredits>
+          <twe:netSales>0.00</twe:netSales>
+          <twe:redemptionCreditsAvailableForUseInFutureYears>(34420809.00)</twe:redemptionCreditsAvailableForUseInFutureYears>
+          <twe:multiplierForDeterminingRegistrationFee>0.0001381</twe:multiplierForDeterminingRegistrationFee>
+          <twe:registrationFeeDue>0.00</twe:registrationFeeDue>
+        </twe:item5>
+        <twe:item6>
+          <twe:interestDue>0</twe:interestDue>
+        </twe:item6>
+        <twe:item7>
+          <twe:totalOfRegistrationFeePlusAnyInterestDue>0.00</twe:totalOfRegistrationFeePlusAnyInterestDue>
+        </twe:item7>
+        <twe:item8/>
+        <twe:signature>
+          <twe:signature>/s/ Phyllis J. Clarke</twe:signature>
+          <twe:nameAndTitle>Phyllis J. Clarke Controller</twe:nameAndTitle>
+          <twe:signatureDate>06/18/2026</twe:signatureDate>
+        </twe:signature>
+      </twe:annualFilingInfo>
+    </twe:annualFilings>
+  </twe:formData>
+</twe:edgarSubmission>

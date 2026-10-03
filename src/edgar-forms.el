@@ -281,8 +281,8 @@
      "24F-2NT"
      (list
       :family "G10 Investment-company registration"
-      :backend 'html
-      :level 'L0
+      :backend 'xml
+      :level 'L1
       :sections-or-fields nil
       :volume 839
       :notes nil)
@@ -382,7 +382,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 434
       :notes nil)
@@ -572,7 +572,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 511
       :notes nil)
@@ -592,7 +592,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1286
       :notes nil)
@@ -682,7 +682,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 912
       :notes nil)
@@ -702,7 +702,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1800
       :notes nil)
@@ -2163,7 +2163,7 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 333
       :notes nil)
