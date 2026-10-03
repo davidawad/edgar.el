@@ -24,3 +24,5 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `497j-360.htm.gz` — compressed [497J accession 0001999371-26-007585](https://www.sec.gov/Archives/edgar/data/1319067/000199937126007585/income-497j_040226.htm).
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
+Reviewed generic-structure expectations live in `test/expect/`; typed
+accessor goldens live in `test/golden/`.

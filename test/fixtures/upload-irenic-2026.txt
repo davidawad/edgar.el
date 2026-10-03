@@ -1,0 +1,48 @@
+<DOCUMENT>
+<TYPE>TEXT-EXTRACT
+<SEQUENCE>2
+<FILENAME>filename2.txt
+<TEXT>
+                                                            April 1, 2026
+
+Adam Katz
+Chief Executive Officer
+Irenic Acquisition Corp.
+767 Fifth Avenue, 15th Floor
+New York, New York 10153
+
+       Re: Irenic Acquisition Corp.
+           Draft Registration Statement on Form S-1
+           Submitted March 25, 2026
+           CIK No. 0002122505
+Dear Adam Katz:
+
+       This is to advise you that we do not intend to review your registration
+statement.
+
+        We request that you publicly file your registration statement and
+nonpublic draft
+submissions at least 15 days prior to any road show as that term is defined in
+Rule 433(h)(4) or,
+in the absence of a road show, at least 15 days prior to the requested
+effective date of the
+registration statement. Please refer to Rules 460 and 461 regarding requests
+for acceleration. We
+remind you that the company and its management are responsible for the accuracy
+and adequacy
+of their disclosures, notwithstanding any review, comments, action or absence
+of action by the
+staff.
+
+       Please contact Pam Howell at 202-551-3357 with any questions.
+
+
+
+                                                            Sincerely,
+
+                                                            Division of
+Corporation Finance
+                                                            Office of Real
+Estate & Construction
+</TEXT>
+</DOCUMENT>

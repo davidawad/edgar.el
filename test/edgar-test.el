@@ -3,8 +3,9 @@
 (require 'ert)
 (require 'json)
 
-(add-to-list 'load-path
-             (file-name-directory (or load-file-name buffer-file-name)))
+(add-to-list
+ 'load-path
+ (file-name-directory (or load-file-name buffer-file-name)))
 
 ;; Coverage (undercover.el, pack-mandated).  Must run before the source loads.
 (setq load-prefer-newer t)
@@ -325,18 +326,23 @@
         "risks galore" (edgar-section f "Risk Factors")))
       (should-not (edgar-section f "99")))))
 
-(ert-deftest edgar-named-sections-resolve-prospectus-and-proxy-fixtures ()
+(ert-deftest
+    edgar-named-sections-resolve-prospectus-and-proxy-fixtures
+    ()
   "Named sections resolve across recorded prospectus and proxy filings."
   (dolist (entry
            '(("s-1-rivn" "Prospectus Summary" "Rivian")
-             ("def-14a-gme" "Proxy Statement Summary" "PROXY STATEMENT")))
+             ("def-14a-gme"
+              "Proxy Statement Summary"
+              "PROXY STATEMENT")))
     (let* ((slug (nth 0 entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug)))
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
         (let ((body (edgar-section filing (nth 1 entry))))
           (should (stringp body))
-          (should (string-match-p (regexp-quote (nth 2 entry)) body)))))))
+          (should
+           (string-match-p (regexp-quote (nth 2 entry)) body)))))))
 
 (ert-deftest edgar-sd-exposes-numbered-items-through-section-api ()
   "A real Form SD supports generic item-number section lookup."
@@ -349,6 +355,7 @@
         (should (string-match-p "Apple designs" body)))
       (should (assoc "2.01" (edgar-sections (edgar-text filing)))))))
 
+(ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
   "Named section output stays pinned across distinct prospectus layouts."
   (let ((goldens
@@ -363,10 +370,11 @@
         (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
           (let ((body (edgar-section filing name)))
             (should (stringp body))
-            (should (string-match-p
-                     (regexp-quote fragment) body))))))))
+            (should
+             (string-match-p (regexp-quote fragment) body))))))))
 
-(ert-deftest edgar-g10-registration-fixtures-use-generic-section-api ()
+(ert-deftest edgar-g10-registration-fixtures-use-generic-section-api
+    ()
   "Real G10 filings are readable and expose generic Item sections."
   (let* ((summary (edgar-fixtures-filing "497k-hennessy"))
          (summary-html (edgar-fixtures-html "497k-hennessy"))
@@ -375,9 +383,10 @@
           (edgar-fixtures-html "n-1a-americandrive")))
     (cl-letf (((symbol-function 'edgar--fetch)
                (lambda (_) summary-html)))
-      (should (string-match-p
-               "long-term capital appreciation"
-               (downcase (edgar-text summary)))))
+      (should
+       (string-match-p
+        "long-term capital appreciation"
+        (downcase (edgar-text summary)))))
     (cl-letf (((symbol-function 'edgar--fetch)
                (lambda (_) registration-html)))
       (let ((body (edgar-section registration "28")))
@@ -448,7 +457,9 @@
                :body)
               (cadr entry)))))))))
 
-(ert-deftest edgar-g12-corresp-text-fixture-is-readable-through-generic-api ()
+(ert-deftest
+    edgar-g12-corresp-text-fixture-is-readable-through-generic-api
+    ()
   "A CORRESP complete submission works through the generic text API."
   (let* ((filing (edgar-fixtures-filing "corresp-sce-2025"))
          (text
@@ -467,6 +478,26 @@
           (should (string-match-p marker document-text)))
         (should (> (length (edgar-structure-paragraphs tree)) 1))
         (should (string-match-p "</HTML>" document-text))))))
+
+(ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
+  "A real SEC UPLOAD text extract works through the generic structure API."
+  (let* ((slug "upload-irenic-2026")
+         (filing (edgar-fixtures-filing slug))
+         (text
+          (with-temp-buffer
+            (insert-file-contents
+             (edgar-fixtures-path (format "fixtures/%s.txt" slug)))
+            (buffer-string)))
+         (expected
+          (edgar-fixtures-read
+           (edgar-fixtures-path (format "expect/%s.eld" slug)))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) text)))
+      (let* ((tree (edgar-document-structure filing))
+             (document-text (edgar-structure-text tree)))
+        (should (eq (plist-get tree :format) 'text))
+        (dolist (marker (plist-get expected :markers))
+          (should (string-match-p marker document-text)))
+        (should (> (length (edgar-structure-paragraphs tree)) 2))))))
 
 (ert-deftest
     edgar-document-structure-preserves-html-sections-and-paragraphs

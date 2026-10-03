@@ -165,7 +165,8 @@
       :family "G4 13F holdings"
       :backend 'xml
       :level 'L2
-      :sections-or-fields '(issuer class cusip value shares put-call discretion voting)
+      :sections-or-fields
+      '(issuer class cusip value shares put-call discretion voting)
       :volume 9625
       :notes nil)
      table)
@@ -187,8 +188,13 @@
       :backend 'xml
       :level 'L2
       :sections-or-fields
-      '(issuer-name seller-name securities-class-title units-to-be-sold
-        aggregate-market-value approximate-sale-date broker-name)
+      '(issuer-name
+        seller-name
+        securities-class-title
+        units-to-be-sold
+        aggregate-market-value
+        approximate-sale-date
+        broker-name)
       :volume 19526
       :notes nil)
      table)
@@ -1447,7 +1453,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 388
       :notes nil)
@@ -1758,7 +1764,8 @@
       :family "G5 Fund periodic reports"
       :backend 'xml
       :level 'L2
-      :sections-or-fields '(registrant-name cik report-date net-assets holdings)
+      :sections-or-fields
+      '(registrant-name cik report-date net-assets holdings)
       :volume 14407
       :notes nil)
      table)
@@ -2427,7 +2434,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 48
       :notes nil)
@@ -2447,7 +2454,7 @@
      (list
       :family "G12 Broker-dealer, market structure, staff"
       :backend 'text
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 464
       :notes nil)

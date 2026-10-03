@@ -187,7 +187,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
 | `MA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA")` |
 | `MA-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-A")` |
-| `MA-I` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-I")` |
+| `MA-I` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-W")` |
 | `MSD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "MSD")` |
 | `N-14` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14")` |
@@ -285,9 +285,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SP 15D2` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "SP 15D2")` |
 | `SUPPL` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "SUPPL")` |
 | `TA-1` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "TA-1")` |
-| `TA-2` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "TA-2")` |
+| `TA-2` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `TA-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "TA-W")` |
-| `UPLOAD` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "UPLOAD")` |
+| `UPLOAD` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `X-17A-5` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 <!-- END GENERATED FORM COVERAGE -->
 
