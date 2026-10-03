@@ -105,6 +105,10 @@ Application-process coverage includes APP NTC, APP ORDR, APP WD, APP WDG,
 and CT ORDER. PDF-only submissions use their exact SEC complete-submission
 text; APP WD supplies a rendered HTML letter with paragraph/table coverage.
 
+The remaining registration layouts—N-14, N-14 8C, N-2 variants, N-4, and
+N-6 amendments—have SEC HTML fixtures, structure expectations, and Item
+lookup checks where conventional Item headings are present.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.

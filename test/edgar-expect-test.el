@@ -115,6 +115,18 @@
     ("S-6" "form s-6" nil)
     ("DEL AM" "form n-1a" nil)
     ("MSD/A" "auto-generated paper document" nil)
+    ("N-14" "form n-14" ("15" "16" "17"))
+    ("N-14 8C" "form n-14" nil)
+    ("N-2"
+     "a&q long/short strategies fund"
+     ("25" "26" "27" "28" "29" "30" "31" "32" "33" "34"))
+    ("N-2 POSASR"
+     "eagle point credit company"
+     ("25" "26" "27" "28" "29" "30" "31" "32" "33" "34"))
+    ("N-2ASR" "blackrock capital allocation term trust" nil)
+    ("N-2MEF" "form n-2" nil)
+    ("N-4" "form n-4" nil)
+    ("N-6/A" "john hancock life insurance" ("30" "33" "34" "36"))
     ("S-3" "autonomix medical" nil)
     ("F-1" "fast track group" nil)
     ("424B2" "preliminary pricing supplement" nil)

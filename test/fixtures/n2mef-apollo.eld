@@ -1,0 +1,1 @@
+(:accn "0001193125-26-159064" :form "N-2MEF" :filed "2026-04-16" :report "" :doc "d572731dn2mef.htm" :cik 1837532 :url "https://www.sec.gov/Archives/edgar/data/1837532/000119312526159064/d572731dn2mef.htm" :ticker "")

@@ -1,0 +1,1 @@
+(:accn "0001104659-26-053167" :form "N-2" :filed "2026-04-30" :report "" :doc "tm2613043d1_n2.htm" :cik 1186641 :url "https://www.sec.gov/Archives/edgar/data/1186641/000110465926053167/tm2613043d1_n2.htm" :ticker "")

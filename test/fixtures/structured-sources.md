@@ -40,6 +40,14 @@ These are unmodified documents published in SEC EDGAR's Archives:
 - `app-wd-bilbao.htm.gz` — compressed [APP WD accession 0001821268-26-000067](https://www.sec.gov/Archives/edgar/data/2118701/000182126826000067/gug89737-appwd.htm).
 - `app-wdg-brinker.txt.gz` — compressed [APP WDG accession 9999999997-26-000758](https://www.sec.gov/Archives/edgar/data/1688680/999999999726000758/9999999997-26-000758.txt); its sole primary document is a PDF embedded in the complete submission.
 - `ct-order-argo.txt.gz` — compressed [CT ORDER accession 9999999997-26-001120](https://www.sec.gov/Archives/edgar/data/1841675/999999999726001120/9999999997-26-001120.txt); its sole primary document is a PDF embedded in the complete submission.
+- `n14-ab.htm.gz` — compressed [N-14 accession 0000919574-26-004138](https://www.sec.gov/Archives/edgar/data/1496608/000091957426004138/d12178183_n-14.htm).
+- `n14-8c-apollo.htm.gz` — compressed [N-14 8C accession 0001193125-26-217178](https://www.sec.gov/Archives/edgar/data/1837532/000119312526217178/d146219dn148c.htm).
+- `n2-aq.htm.gz` — compressed [N-2 accession 0001104659-26-053167](https://www.sec.gov/Archives/edgar/data/1186641/000110465926053167/tm2613043d1_n2.htm).
+- `n2-posasr-eagle.htm.gz` — compressed [N-2 POSASR accession 0001104659-26-065749](https://www.sec.gov/Archives/edgar/data/1604174/000110465926065749/tm2615164d1_n2posasr.htm).
+- `n2asr-blackrock.htm.gz` — compressed [N-2ASR accession 0001193125-26-269620](https://www.sec.gov/Archives/edgar/data/1809541/000119312526269620/d25607dn2asr.htm).
+- `n2mef-apollo.htm.gz` — compressed [N-2MEF accession 0001193125-26-159064](https://www.sec.gov/Archives/edgar/data/1837532/000119312526159064/d572731dn2mef.htm).
+- `n4-equitable.htm.gz` — compressed [N-4 accession 0001193125-26-275133](https://www.sec.gov/Archives/edgar/data/2039145/000119312526275133/d59590dn4.htm).
+- `n6a-jh.htm.gz` — compressed [N-6/A accession 0001193125-26-230935](https://www.sec.gov/Archives/edgar/data/801019/000119312526230935/d54846dn6a.htm).
 
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.

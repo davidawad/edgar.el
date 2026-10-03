@@ -506,6 +506,12 @@
   (edgar-test--assert-structure-expectations
    "expect/g10-application-order-structures.eld"))
 
+(ert-deftest edgar-g10-registration-layouts-use-generic-structure-api
+    ()
+  "Real G10 N-series registrations use generic structure access."
+  (edgar-test--assert-structure-expectations
+   "expect/g10-registration-structures.eld"))
+
 (ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
   "Real G12 XML filings work through the generic structure API."
   (dolist (slug

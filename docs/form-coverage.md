@@ -190,22 +190,22 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `MA-I` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-W")` |
 | `MSD` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-14` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14")` |
-| `N-14 8C` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-14 8C")` |
+| `N-14` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
+| `N-14 8C` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2")` |
-| `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
+| `N-2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
+| `N-2 POSASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-23C-2` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C-2")` |
 | `N-23C3A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C3A")` |
 | `N-23C3B` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C3B")` |
-| `N-2ASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2ASR")` |
-| `N-2MEF` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2MEF")` |
+| `N-2ASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
+| `N-2MEF` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-30B-2` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-30B-2")` |
 | `N-30D` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-30D")` |
-| `N-4` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-4")` |
+| `N-4` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-54A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-54A")` |
 | `N-54C` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-54C")` |
-| `N-6` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-6")` |
+| `N-6` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-6F` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-6F")` |
 | `N-8A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8A")` |
 | `N-8F` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F")` |
@@ -321,12 +321,13 @@ G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
 and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot
 (87.7%). The remaining 21 forms are still L0.
 
-G10 currently has 32 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
+G10 currently has all 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
 40-17G, 40-24B2, 40-33, 40-6B, 40-8F-2, 40-APP, 485APOS, 485BPOS, 485BXT,
 486APOS, 486BPOS, 486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB,
-497VPU, APP NTC, APP ORDR, APP WD, APP WDG, CT ORDER, DEL AM, MSD, N-1A,
-and S-6. They account for 24,202 of 24,427 G10 filings in the Q2 snapshot
-(99.1%). The remaining eight forms are still L0.
+497VPU, APP NTC, APP ORDR, APP WD, APP WDG, CT ORDER, DEL AM, MSD, N-14,
+N-14 8C, N-1A, N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. They
+account for all 24,427 G10 filings in the Q2 snapshot (100%). L2 acceptance
+for 497K and N-1A Part A remains separate from this L1 fixture baseline.
 
 ## Gaps that are not about a specific form
 
