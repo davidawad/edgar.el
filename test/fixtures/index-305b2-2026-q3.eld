@@ -1,0 +1,1 @@
+(:accn "0001104659-26-097599" :form "305B2" :company "Beacon Financial Corp" :filed "2026-08-17" :report "" :doc "tm2623171d1_305b2.htm" :cik 1108134 :url "https://www.sec.gov/Archives/edgar/data/1108134/000110465926097599/tm2623171d1_305b2.htm" :size 20436 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")
