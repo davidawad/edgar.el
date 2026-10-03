@@ -225,8 +225,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NT 10-Q` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `NT 11-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `NT 20-F` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT N-CEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT N-CEN")` |
-| `NT NPORT-P` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT NPORT-P")` |
+| `NT N-CEN` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
+| `NT NPORT-P` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
 | `NT-NCEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCEN")` |
 | `NT-NCSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `NTFNCSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NTFNCSR")` |
