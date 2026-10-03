@@ -155,6 +155,22 @@ The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed
 accessor goldens live in `test/golden/`.
 
+## G13 sampled source audit
+
+The committed sampled indexes contain one G13 row: POS 8C accession
+`0001104659-26-040388` (Monroe Capital, 2026-04-07), listed in
+`form-index-2026-q2.idx`. Its SEC primary is recorded as
+`pos-8c-monroe.htm.gz` with metadata, per-filing expectation and golden, and
+the generic structure snapshot in
+`test/expect/low-volume-sampled-structures.eld`.
+
+`305B2` is the remaining G13 L0 form (42 Q2 filings). It has no row in either
+committed sampled index (`form-index-2026-q2.idx` or
+`form-index-2026-09-30.idx`), so this sample set provides no accession or SEC
+primary document to record. This does not assert that the SEC has no 305B2
+filings; it records only the absence of a sampled source in the checked-in
+fixtures.
+
 ## G12 source limitations
 
 These Q2 2026 SEC sources were checked through their accession directories.

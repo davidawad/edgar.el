@@ -333,6 +333,14 @@ sampled accession with a recorded primary cannot remain L0 or lack a generic
 structure snapshot. Source accessions are listed in
 [`structured-sources.md`](../test/fixtures/structured-sources.md).
 
+For G13, the sampled-index audit finds one row: POS 8C, accession
+`0001104659-26-040388`, already L1 with a fixture, per-filing expectation and
+golden, and generic structure snapshot. `305B2` is the only G13 L0 form, but
+its Q2 count is 42 and neither committed sampled index contains a 305B2 row.
+There is therefore no sampled accession to record for it; this is a limit of
+the committed sample set, not a claim that the SEC has no 305B2 filings. See
+the [G13 source audit](../test/fixtures/structured-sources.md#g13-sampled-source-audit).
+
 ## Current implementation state
 
 The per-form table above is generated from the registry and is authoritative
