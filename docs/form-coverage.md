@@ -45,7 +45,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 <!-- BEGIN GENERATED FORM COVERAGE -->
 | Form | Family | Backend | Level | Example call |
 |---|---|---|---|---|
-| `1` | G11 Reg CF & Reg A | html | L0 | `(edgar-form-info "1")` |
+| `1` | G11 Reg CF & Reg A | pdf | L1 | `(edgar-text filing)` |
 | `1-A` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A POS` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A-W` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
