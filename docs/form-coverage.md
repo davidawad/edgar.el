@@ -91,9 +91,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12G")` |
 | `424B1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B1")` |
 | `424B2` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `424B3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B3")` |
+| `424B3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B4")` |
-| `424B5` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B5")` |
+| `424B5` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `424B7` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B7")` |
 | `424B8` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424B8")` |
 | `424H` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424H")` |
@@ -182,7 +182,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `F-6EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6EF")` |
 | `F-N` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-N")` |
 | `F-X` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-X")` |
-| `FWP` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "FWP")` |
+| `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `G-FIN` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "G-FIN")` |
 | `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
 | `MA` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA")` |

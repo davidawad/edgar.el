@@ -1,0 +1,1 @@
+(:accn "0001213900-26-092429" :form "424B5" :filed "2026-08-21" :report "" :doc "ea0302988-424b5_singularity.htm" :cik 1422892 :url "https://www.sec.gov/Archives/edgar/data/1422892/000121390026092429/ea0302988-424b5_singularity.htm" :ticker "SGLY")
