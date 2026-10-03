@@ -90,5 +90,28 @@
                  (edgar-fixtures-norm (edgar-fixtures-text slug)))
           (ert-fail (format "%s: fact %S missing" slug str)))))))
 
+(ert-deftest edgar-golden-g9-generic-named-signature-sections ()
+  "Named section extraction reaches real G9 filings without form rules."
+  (dolist
+      (entry
+       '(("11-k-ko" . "Pursuant to the requirements of the Securities Exchange Act")
+         ("11-k-ko-prior" . "Pursuant to the requirements of the Securities Exchange Act")
+         ("40-f-shop" . "the Registrant certifies that it")
+         ("40-f-shop-prior" . "the Registrant certifies that it")
+         ("6-k-tsm" . "Pursuant to the requirements of the Securities Exchange Act")
+         ("6-k-tsm-prior" . "Pursuant to the requirements of the Securities Exchange Act")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           section)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq section (edgar-section filing "SIGNATURES")))
+      (should section)
+      (should
+       (string-match-p
+        (regexp-quote (cdr entry))
+        (replace-regexp-in-string
+         "[ \t\n ]+" " " (edgar-fixtures-norm section)))))))
+
 (provide 'edgar-golden-test)
 ;;; edgar-golden-test.el ends here

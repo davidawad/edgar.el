@@ -154,8 +154,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(named-signatures)
       :volume 755
       :notes nil)
      table)
@@ -436,8 +436,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(named-signatures)
       :volume 23
       :notes nil)
      table)
@@ -716,8 +716,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(named-signatures)
       :volume 7640
       :notes nil)
      table)
@@ -946,8 +946,8 @@
      (list
       :family "G11 Reg CF & Reg A"
       :backend 'xml
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(issuer period annual-report signature)
       :volume 549
       :notes nil)
      table)
