@@ -355,12 +355,17 @@
 
 (ert-deftest edgar-ownership-real-filings-cover-purchase-sale-and-exercise ()
   "Exercise purchase, sale, and option transactions from three real filers."
-  (dolist (case '(("4-epd-buy" "P") ("4-meta" "S") ("4-tsla" "M")))
-    (let ((snapshot (edgar-ownership-test--form4-snapshot (car case))))
-      (should (member (cadr case)
-                      (mapcar (lambda (transaction)
-                                (plist-get transaction :code))
-                              (plist-get snapshot :transactions)))))))
+  (let ((ciks nil))
+    (dolist (case '(("4-epd-buy" "P") ("4-meta" "S") ("4-tsla" "M")))
+      (let* ((slug (car case))
+             (filing (edgar-fixtures-filing slug))
+             (snapshot (edgar-ownership-test--form4-snapshot slug)))
+        (push (plist-get filing :cik) ciks)
+        (should (member (cadr case)
+                        (mapcar (lambda (transaction)
+                                  (plist-get transaction :code))
+                                (plist-get snapshot :transactions))))))
+    (should (= (length (delete-dups ciks)) 3))))
 
 (ert-deftest edgar-ownership-form5-real-holdings-golden ()
   "Parse distinct SEC Form 5 holdings layouts against typed field goldens."
