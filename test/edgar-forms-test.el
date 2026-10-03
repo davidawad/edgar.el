@@ -24,9 +24,9 @@
     ("G6 Asset-backed" . 3)
     ("G7 Prospectuses & registration" . 58)
     ("G8 Proxy & M&A" . 31)
-    ("G9 Periodic & event narrative" . 34)
+    ("G9 Periodic & event narrative" . 30)
     ("G10 Investment-company registration" . 40)
-    ("G11 Reg CF & Reg A" . 14)
+    ("G11 Reg CF & Reg A" . 18)
     ("G12 Broker-dealer, market structure, staff" . 26)
     ("G13 Tail" . 2))
   "Expected family counts documented in `docs/form-coverage.md'.")
@@ -115,7 +115,7 @@
     (should (eq (plist-get (edgar-form-info "C") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-AR") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-U") :level) 'L1))
-    (should (equal counts '((L0 . 1) (L1 . 11) (L2 . 2))))))
+    (should (equal counts '((L0 . 1) (L1 . 15) (L2 . 2))))))
 
 (provide 'edgar-forms-test)
 
