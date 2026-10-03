@@ -17,6 +17,13 @@ still identify `Risk Factors`. All three expose the full HTML body through
 generic section access. The S-8
 Veralto sample exercises Part II Item access without a table of contents.
 
+Proxy, merger, and tender-offer samples:
+
+- `def-14c-pmgc.htm.gz` — PMGC Holdings definitive information statement ([DEF 14C accession 0001213900-25-080463](https://www.sec.gov/Archives/edgar/data/1840563/000121390025080463/0001213900-25-080463-index.htm); 2025-08-26).
+- `defm14a-matrixx.htm.gz` — Sotherly Hotels merger proxy ([DEFM14A accession 0001193125-25-316771](https://www.sec.gov/Archives/edgar/data/1301236/000119312525316771/0001193125-25-316771-index.htm); 2025-12-12).
+- `sc-to-i-pamt.htm.gz` — P.A.M. Transportation issuer tender offer ([SC TO-I accession 0001174947-25-000508](https://www.sec.gov/Archives/edgar/data/798287/000117494725000508/sctoi0425_pamt.htm); 2025-04-03).
+- `sc-to-c-cresco.htm.gz` — Cresco Labs tender-offer communication ([SC TO-C accession 0001832928-25-000020](https://www.sec.gov/Archives/edgar/data/1832928/000183292825000020/august2025_scheduleto-c.htm); 2025-08-20).
+
 The following Q2 2026 samples are listed in the [SEC quarterly master index](https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx):
 
 - `defa14c-graybar.htm.gz` — DEFA14C, Graybar Electric Co. ([accession 0000205402-26-000030](https://www.sec.gov/Archives/edgar/data/205402/000020540226000030/c402-20260428corresp.htm); 2026-04-28).

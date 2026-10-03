@@ -176,8 +176,7 @@
       :family "G4 13F holdings"
       :backend 'xml
       :level 'L2
-      :sections-or-fields
-      '(report-period manager other-managers signature)
+      :sections-or-fields '(report-period manager other-managers signature)
       :volume 2008
       :notes nil)
      table)
@@ -714,7 +713,8 @@
       :family "G1 Ownership"
       :backend 'xml
       :level 'L2
-      :sections-or-fields '(issuer reporting-owners holdings footnotes signature)
+      :sections-or-fields
+      '(issuer reporting-owners holdings footnotes signature)
       :volume 122
       :notes nil)
      table)
@@ -1093,7 +1093,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 89
       :notes nil)
@@ -1133,7 +1133,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 67
       :notes nil)
@@ -2284,7 +2284,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 50
       :notes nil)
@@ -2294,7 +2294,7 @@
      (list
       :family "G8 Proxy & M&A"
       :backend 'html
-      :level 'L0
+      :level 'L2
       :sections-or-fields nil
       :volume 336
       :notes nil)

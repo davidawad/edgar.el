@@ -122,7 +122,13 @@ coverage gate checks registry metadata and recorded fixture artifacts.
 | 20-F | Part-qualified items | heading-only table-of-contents residue is dropped |
 | S-1 | `II.13`-`II.17` | Part I is the prospectus, no Items |
 | Schedule 13G | `1`-`10` | legacy `SC 13G`/`SC 13G/A` text filings: little or no Item structure |
-| 40-F, 6-K, DEF 14A, 11-K, 4, 13F-HR, 144 | none | whole text via `edgar-text` |
+| 40-F, 6-K, 11-K, 4, 13F-HR, 144 | none | whole text via `edgar-text` |
+| DEF 14A | named proposals, compensation, and ownership headings | `edgar-section` |
+| DEFM14A | named merger headings | `edgar-section` |
+| DEF 14C | generic paragraphs and document paths | `edgar-document-structure` |
+| SC TO-I, SC TO-T | Schedule TO Items | `edgar-section` |
+| SC 14D9 | Schedule 14D-9 Items | `edgar-section` |
+| SC TO-C | available Schedule TO-C Items and generic document paths | `edgar-section`, `edgar-document-structure` |
 
 ## Tests
 

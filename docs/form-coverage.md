@@ -151,11 +151,11 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `CT ORDER` | G10 Investment-company registration | html | L0 | `(edgar-form-info "CT ORDER")` |
 | `D` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "D")` |
 | `DEF 14A` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `DEF 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14C")` |
+| `DEF 14C` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DEFA14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFA14A")` |
 | `DEFA14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFC14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFC14A")` |
-| `DEFM14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFM14A")` |
+| `DEFM14A` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DEFM14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `DEFR14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFR14A")` |
 | `DEFR14C` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
@@ -270,8 +270,8 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC 14F1` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 14F1")` |
 | `SC 14N` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
-| `SC TO-C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-C")` |
-| `SC TO-I` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC TO-I")` |
+| `SC TO-C` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `SC TO-I` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC TO-T` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC14D1F` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D1F")` |
 | `SC14D9C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "SC14D9C")` |

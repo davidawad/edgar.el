@@ -1,0 +1,1 @@
+(:accn "0001213900-25-080463" :form "DEF 14C" :filed "2025-08-26" :report "2025-08-26" :doc "ea0254325-def14c_pmgc.htm" :cik 1840563 :url "https://www.sec.gov/Archives/edgar/data/1840563/000121390025080463/ea0254325-def14c_pmgc.htm" :ticker "PMGC")

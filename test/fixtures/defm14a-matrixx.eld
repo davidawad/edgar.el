@@ -1,0 +1,1 @@
+(:accn "0001193125-25-316771" :form "DEFM14A" :filed "2025-12-12" :report "" :doc "d23662ddefm14a.htm" :cik 1301236 :url "https://www.sec.gov/Archives/edgar/data/1301236/000119312525316771/d23662ddefm14a.htm" :ticker "SOHO")
