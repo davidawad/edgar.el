@@ -1,0 +1,1 @@
+(:accn "0001104659-26-046892" :form "N-30B-2" :company "ADAMS DIVERSIFIED EQUITY FUND, INC." :filed "2026-04-22" :doc "tm268124-1_n30b2.htm" :cik 2230 :url "https://www.sec.gov/Archives/edgar/data/2230/000110465926046892/tm268124-1_n30b2.htm")

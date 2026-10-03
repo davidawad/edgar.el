@@ -195,20 +195,20 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2")` |
 | `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
-| `N-23C-2` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C-2")` |
-| `N-23C3A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C3A")` |
+| `N-23C-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
+| `N-23C3A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3B` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C3B")` |
 | `N-2ASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2ASR")` |
 | `N-2MEF` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2MEF")` |
-| `N-30B-2` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-30B-2")` |
+| `N-30B-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-30D` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-30D")` |
 | `N-4` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-4")` |
 | `N-54A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-54A")` |
 | `N-54C` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-54C")` |
 | `N-6` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-6")` |
 | `N-6F` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-6F")` |
-| `N-8A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8A")` |
-| `N-8F` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F")` |
+| `N-8A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
+| `N-8F` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-8F NTC` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F NTC")` |
 | `N-8F ORDR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F ORDR")` |
 | `N-CEN` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
@@ -228,7 +228,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NT N-CEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT N-CEN")` |
 | `NT NPORT-P` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT NPORT-P")` |
 | `NT-NCEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCEN")` |
-| `NT-NCSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCSR")` |
+| `NT-NCSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `NTFNCSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NTFNCSR")` |
 | `POS 8C` | G13 Tail | html | L1 | `(edgar-text filing)` |
 | `POS AM` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AM")` |
