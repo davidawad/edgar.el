@@ -136,7 +136,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `ATS-N/MA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `ATS-N/OFA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `ATS-N/UA` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
-| `AW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "AW")` |
+| `AW` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `C` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
 | `C-AR` | G11 Reg CF & Reg A | xml | L2 | `(edgar-xml filing)` |
 | `C-AR-W` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
@@ -168,21 +168,21 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `DRS` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DRSLTR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `DSTRBRPT` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "DSTRBRPT")` |
-| `EFFECT` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "EFFECT")` |
+| `EFFECT` | G7 Prospectuses & registration | xml | L1 | `(edgar-text filing)` |
 | `F-1` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `F-10` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10")` |
-| `F-10EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10EF")` |
-| `F-10POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-10POS")` |
+| `F-10` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `F-10EF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `F-10POS` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-1MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-3` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-3ASR` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-3MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-4` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `F-6` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6")` |
-| `F-6 POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6 POS")` |
-| `F-6EF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-6EF")` |
+| `F-6` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `F-6 POS` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
+| `F-6EF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `F-N` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `F-X` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "F-X")` |
+| `F-X` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `FWP` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `G-FIN` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `IRANNOTICE` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "IRANNOTICE")` |
@@ -249,7 +249,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `QRTLYRPT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `QUALIF` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
-| `RW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "RW")` |
+| `RW` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `S-11` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-1MEF` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |

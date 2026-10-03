@@ -19,6 +19,23 @@ Foreign issuer exhibit access:
 
 - `6-k-dxst-ex99-1.html` — EX-99.1 attached to Decent Holding Inc.'s 6-K ([accession 0001185185-26-003233](https://www.sec.gov/Archives/edgar/data/1958133/000118518526003233/dxstex99-1.htm); 2026-08-03). The filing directory is recorded in `6-k-dxst-index.json`.
 
+Additional G7 samples for generic filing-text and document-tree coverage
+(Q2 2026):
+
+- `index-aw-2026-q2.htm.gz` — AW, EA Series Trust ([accession 9999999995-26-001604](https://www.sec.gov/Archives/edgar/data/1592900/999999999526001604/raubbrocketfaw.htm); 2026-04-15).
+- `index-effect-2026-q2.xml` — EFFECT, Park Ha Biological Technology Co., Ltd. ([accession 9999999995-26-001916](https://www.sec.gov/Archives/edgar/data/1986247/999999999526001916/primary_doc.xml); 2026-06-08). The SEC primary is raw XML and is registered with the XML backend.
+- `index-f-10-2026-q2.htm.gz` — F-10, BCE Inc. ([accession 0001193125-26-140726](https://www.sec.gov/Archives/edgar/data/718940/000119312526140726/d131188df10.htm); 2026-04-03).
+- `index-f-10ef-2026-q2.htm.gz` — F-10EF, Sprott Physical Copper Trust ([accession 0001104659-26-055020](https://www.sec.gov/Archives/edgar/data/2108383/000110465926055020/tm2613142d1_f10ef.htm); 2026-05-04).
+- `index-f-10pos-2026-q2.htm.gz` — F-10POS, Oncolytics Biotech Inc. ([accession 0001104659-26-038098](https://www.sec.gov/Archives/edgar/data/1129928/000110465926038098/tm2610685d12_f10pos.htm); 2026-04-01).
+- `index-f-6-2026-q2.htm.gz` — F-6, JPMorgan Chase Bank, N.A., ADR Depositary ([accession 0001104659-26-041909](https://www.sec.gov/Archives/edgar/data/1474274/000110465926041909/tm2611532d1_f6.htm); 2026-04-10).
+- `index-f-6-pos-2026-q2.htm.gz` — F-6 POS, Deutsche Bank Trust Co. Americas ([accession 0000950127-26-000033](https://www.sec.gov/Archives/edgar/data/1471515/000095012726000033/registration_statement.htm); 2026-04-27).
+- `index-f-6ef-2026-q2.htm.gz` — F-6EF, Bank of New York / ADR Division ([accession 0001019155-26-000171](https://www.sec.gov/Archives/edgar/data/1201935/000101915526000171/sabespf6ef.htm); 2026-04-14).
+- `index-f-x-2026-q2.htm.gz` — F-X, Aya Gold & Silver Inc. ([accession 0001628280-26-024809](https://www.sec.gov/Archives/edgar/data/1826836/000162828026024809/ayagoldsilverinc-formfxx.htm); 2026-04-13).
+- `index-rw-2026-q2.htm.gz` — RW, Envoy Technologies, Inc. ([accession 0001493152-26-026379](https://www.sec.gov/Archives/edgar/data/1804468/000149315226026379/formrw.htm); 2026-05-29).
+
+Each fixture is replayed through the shared text and document-tree APIs; the
+reviewed text snapshots are in `test/expect/`.
+
 Prospectus and registration samples used for generic named-section coverage:
 
 - `s-4-comcast.htm.gz` — S-4, Comcast Corp. ([accession 0001193125-26-326101](https://www.sec.gov/Archives/edgar/data/1166691/000119312526326101/d44098ds4.htm); 2026-07-30).

@@ -1,0 +1,1 @@
+(:accn "0001592900-26-001604" :form "AW" :company "EA Series Trust" :filed "2026-04-15" :report "" :doc "raubbrocketfaw.htm" :cik 1592900 :url "https://www.sec.gov/Archives/edgar/data/1592900/000159290026001604/raubbrocketfaw.htm" :size 8066 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

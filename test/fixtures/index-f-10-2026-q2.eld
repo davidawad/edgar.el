@@ -1,0 +1,1 @@
+(:accn "0001193125-26-140726" :form "F-10" :company "BCE INC" :filed "2026-04-03" :report "" :doc "d131188df10.htm" :cik 718940 :url "https://www.sec.gov/Archives/edgar/data/718940/000119312526140726/d131188df10.htm" :size 248537 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

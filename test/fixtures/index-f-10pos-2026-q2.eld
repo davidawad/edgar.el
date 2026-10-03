@@ -1,0 +1,1 @@
+(:accn "0001104659-26-038098" :form "F-10POS" :company "ONCOLYTICS BIOTECH INC" :filed "2026-04-01" :report "" :doc "tm2610685d12_f10pos.htm" :cik 1129928 :url "https://www.sec.gov/Archives/edgar/data/1129928/000110465926038098/tm2610685d12_f10pos.htm" :size 29621 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

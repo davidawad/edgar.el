@@ -934,7 +934,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 48
       :notes nil)
@@ -1256,8 +1256,8 @@
      "EFFECT"
      (list
       :family "G7 Prospectuses & registration"
-      :backend 'html
-      :level 'L0
+      :backend 'xml
+      :level 'L1
       :sections-or-fields nil
       :volume 1165
       :notes nil)
@@ -1277,7 +1277,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 14
       :notes nil)
@@ -1287,7 +1287,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 1
       :notes nil)
@@ -1297,7 +1297,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 30
       :notes nil)
@@ -1357,7 +1357,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 44
       :notes nil)
@@ -1367,7 +1367,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 100
       :notes nil)
@@ -1377,7 +1377,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 246
       :notes nil)
@@ -1397,7 +1397,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 54
       :notes nil)
@@ -2070,7 +2070,7 @@
      (list
       :family "G7 Prospectuses & registration"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 95
       :notes nil)
