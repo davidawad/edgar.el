@@ -234,6 +234,19 @@
        (string-search (nth 2 entry)
                       (edgar-fixtures-norm section))))))
 
+(ert-deftest edgar-golden-g7-8-a12b-generic-item-access ()
+  "8-A12B registration documents expose generic numbered Item sections."
+  (let* ((slug "8-a12b-amazon")
+         (filing (edgar-fixtures-filing slug))
+         (html (edgar-fixtures-html slug))
+         section)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (setq section (edgar-section filing "1")))
+    (should section)
+    (should
+     (string-match-p "5.200% Notes due 2029"
+                     (edgar-fixtures-norm section)))))
+
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."
   (dolist

@@ -118,7 +118,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `6-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `6B NTC` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "6B NTC")` |
 | `6B ORDR` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "6B ORDR")` |
-| `8-A12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12B")` |
+| `8-A12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `8-A12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "8-A12G")` |
 | `8-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "8-K")` |
 | `8-K12B` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |

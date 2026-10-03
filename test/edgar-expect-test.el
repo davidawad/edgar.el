@@ -131,6 +131,7 @@
     ("424B5" "prospectus" nil)
     ("424B7" "watsco" nil)
     ("424B8" "nomura" nil)
+    ("8-A12B" "amazon.com, inc." ("1" "2"))
     ("F-3" "registration statement" nil)
     ("S-8" "veralto" nil)
     ("FWP" "hsbc" nil)

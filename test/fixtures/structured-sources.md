@@ -8,6 +8,8 @@ Foreign issuer exhibit access:
 
 Prospectus and registration samples used for generic named-section coverage:
 
+- `8-a12b-amazon.htm.gz` — 8-A12B, Amazon.com, Inc. ([accession 0001104659-26-110227](https://www.sec.gov/Archives/edgar/data/1018724/000110465926110227/tm2625860d1_8a12b.htm); 2026-09-24). Its generic Items 1 and 2 are accessible through `edgar-section`.
+
 - `s-3-indaptus.htm.gz` — S-3, Indaptus Therapeutics ([accession 0001641172-25-023490](https://www.sec.gov/Archives/edgar/data/1857044/000164117225023490/forms-3.htm); 2025-08-13).
 - `s-3-maxcyte.htm.gz` — S-3, MaxCyte ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
 - `424b2-barclays.htm.gz` — 424B2, Barclays Bank PLC ([accession 0001918704-25-014571](https://www.sec.gov/Archives/edgar/data/312070/000191870425014571/form424b2.htm); 2025-09-04).
