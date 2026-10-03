@@ -119,10 +119,10 @@ Additional G10 fixtures cover raw 24F-2NT XML, 40-17G fidelity-bond notices,
 updates, and S-6 unit-investment-trust registrations through the same generic
 tree, element, paragraph, table, and Item-section interfaces.
 
-Additional 40-series, application, order, and DEL AM filings have reviewed
-HTML/PDF fixtures and use the same generic text and paragraph structure API.
-Their SEC primary-document links and the APP NTC notice limitation are listed
-in [the fixture source record](test/fixtures/structured-sources.md).
+Additional 40-series, application, order, DEL AM, N-2 POSASR, and N-2MEF
+filings have reviewed HTML/PDF fixtures and use the same generic text and
+paragraph structure API. Their SEC primary-document links and the APP NTC and
+N-2MEF scope notes are listed in [the fixture source record](test/fixtures/structured-sources.md).
 
 ## Form coverage
 

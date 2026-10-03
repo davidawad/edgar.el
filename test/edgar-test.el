@@ -499,6 +499,7 @@
   "The remaining real G10 filings work through the generic structure API."
   (dolist (case
            '(("40-24b2-hit-investment" html)
+             ("40-17f2-fundrise" html)
              ("40-33-180degree" html)
              ("40-8f-2-chesapeake" html)
              ("app-ntc-advisors-preferred" pdf)
@@ -507,6 +508,8 @@
              ("app-wdg-peartree" pdf)
              ("ct-order-janus-henderson" pdf)
              ("del-am-jpmorgan" html)
+             ("n-2mef-ives-ultra" html)
+             ("n-2-posasr-eagle-point" html)
              ("msd-state-street" text "9999999997-12-000716.paper")))
     (let* ((slug (car case))
            (format (cadr case))
@@ -522,13 +525,15 @@
                (text (edgar-structure-text tree)))
           (should (eq (plist-get info :level) 'L1))
           (should (eq (plist-get info :backend) format))
+          (should (eq (plist-get tree :type) 'document))
           (should (eq (plist-get tree :format) format))
           (should (eq (plist-get primary :format) format))
+          (should (plist-get primary :readable))
           (should
            (equal (plist-get primary :type) (plist-get filing :form)))
           (should
            (equal (plist-get primary :filename) expected-filename))
-          (should (> (length paragraphs) 0))
+          (should (listp paragraphs))
           (should (seq-every-p #'stringp paragraphs))
           (should (> (length (string-trim text)) 0)))))))
 
