@@ -73,6 +73,14 @@
     (should (string-match-p "phones" (cdr (assoc "1" s))))
     (should (string-match-p "risks galore" (cdr (assoc "1A" s))))))
 
+(ert-deftest edgar-sections-normalize-unicode-heading-spaces ()
+  "Unicode spaces in Item headings do not make sections disappear."
+  (let ((sections
+         (edgar-sections
+          "Item\u20091. Summary of the Offer\nImportant terms follow.\n")))
+    (should (equal (mapcar #'car sections) '("1")))
+    (should (string-match-p "Important terms" (cdar sections)))))
+
 (defconst edgar-test--10q
   (concat
    "PART I\nFINANCIAL INFORMATION\nItem 1. Financial Statements\n"

@@ -510,12 +510,15 @@ Signal `user-error' if multiple matches exist; return nil if absent."
                 (lambda (part)
                   (downcase
                    (string-trim
-                    (if (symbolp part)
-                        (symbol-name part)
-                      part))))
+                    (edgar--normalize-section-whitespace
+                     (if (symbolp part)
+                         (symbol-name part)
+                       part)))))
                 name)))
          (wanted-name
-          (and (not path-p) (downcase (string-trim name))))
+          (and (not path-p)
+               (downcase
+                (string-trim (edgar--normalize-section-whitespace name)))))
          (headings (edgar-structure-headings tree))
          (heading-hits
           (seq-filter
@@ -529,7 +532,10 @@ Signal `user-error' if multiple matches exist; return nil if absent."
                    (plist-get heading :path)))
                (equal
                 wanted-name
-                (downcase (string-trim (plist-get heading :name))))))
+                (downcase
+                 (string-trim
+                  (edgar--normalize-section-whitespace
+                   (plist-get heading :name)))))))
            headings))
          (nodes
           (if path-p
@@ -562,6 +568,8 @@ Signal `user-error' if multiple matches exist; return nil if absent."
     (and
      (<= 3 (length line) 100)
      (not (string-match-p "[.!?;]" line))
+     ;; Table labels such as "Call Feature:" are not section headings.
+     (not (string-suffix-p ":" line))
      (seq-every-p
       (lambda (word)
         (cond
@@ -572,15 +580,47 @@ Signal `user-error' if multiple matches exist; return nil if absent."
       words)
      has-capitalized-word)))
 
+(defun edgar--normalize-section-whitespace (text)
+  "Normalize Unicode spacing characters in section names and headings."
+  (replace-regexp-in-string
+   "[\u00a0\u2000-\u200b\u202f\u205f\u3000]" " " text))
+
+(defun edgar--title-case-section (text name)
+  "Return exact title-case NAME in TEXT when it lacks blank-line spacing."
+  (let ((normalized (edgar--normalize-section-whitespace text))
+        positions)
+    (with-temp-buffer
+      (insert normalized)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (let ((line (string-trim
+                     (buffer-substring-no-properties
+                      (line-beginning-position) (line-end-position)))))
+          (when (and (string-equal (downcase line) (downcase name))
+                     (edgar--title-case-heading-p line))
+            (push (line-beginning-position) positions)))
+        (forward-line 1)))
+    (when positions
+      (when (cdr positions)
+        (user-error "Named section %s is ambiguous" name))
+      (let* ((start (car positions))
+             (next
+              (seq-some
+               (lambda (section)
+                 (and (> (plist-get section :position) start)
+                      (plist-get section :position)))
+               (edgar-named-sections normalized))))
+        (substring normalized (1- start) (1- (or next (1+ (length normalized)))))))))
+
 (defun edgar-named-sections (text)
   "Return generic named section headings found in TEXT.
 Each result is a plist with :name, :path, :body, and :position.  This
 form-agnostic fallback recognizes standalone uppercase or title-case headings;
 callers needing every source node should use `edgar-document-structure'."
   (let ((case-fold-search nil)
-        marks)
+    marks)
     (with-temp-buffer
-      (insert text)
+      (insert (edgar--normalize-section-whitespace text))
       (goto-char (point-min))
       (while (not (eobp))
         (let* ((start (line-beginning-position))
@@ -753,9 +793,10 @@ filing has Parts: \"I.2\" and \"II.2\" are different sections of a 10-Q.
 Forms without Item headings give nil.  The table of contents repeats every
 heading with no body, so for each key the occurrence with the longest body
 wins."
-  (let* ((parts
+  (let* ((parse-text (edgar--normalize-section-whitespace text))
+         (parts
           (edgar--runs
-           (edgar--matches edgar--part-re text "\\bItems?\\b")))
+           (edgar--matches edgar--part-re parse-text "\\bItems?\\b")))
          (items
           (edgar--runs
            (mapcar
@@ -763,7 +804,7 @@ wins."
               (cons
                (car it)
                (edgar--key (cdr it) (edgar--part-at parts (car it)))))
-            (edgar--matches edgar--item-re text))))
+            (edgar--matches edgar--item-re parse-text))))
          (bounds (sort (mapcar #'car (append parts items)) #'<))
          (best (make-hash-table :test 'equal)))
     (dolist (it items)
@@ -857,7 +898,7 @@ section.  For arbitrary data elements, use `edgar-document-structure' and
                     (named-hits
                      (seq-filter
                       (lambda (section)
-                        (string-equal
+                        (string-prefix-p
                          (downcase (string-trim item))
                          (downcase (plist-get section :name))))
                       (edgar-named-sections text))))
@@ -870,12 +911,12 @@ section.  For arbitrary data elements, use `edgar-document-structure' and
                   (cdr (car item-hits)))
                  (named-hits
                   (plist-get
-                   (car
-                    (sort named-hits
-                          (lambda (a b)
-                            (> (length (plist-get a :body))
-                               (length (plist-get b :body))))))
+                   (car (sort named-hits
+                              (lambda (a b)
+                                (> (length (plist-get a :body))
+                                   (length (plist-get b :body))))))
                    :body))
+                 ((edgar--title-case-section text item))
                  ((not (stringp (plist-get filing :url)))
                   nil)
                  (t

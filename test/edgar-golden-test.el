@@ -142,5 +142,21 @@
           (should (stringp body))
           (should (string-match-p (regexp-quote (cadr entry)) body)))))))
 
+(ert-deftest edgar-golden-g8-normalizes-thin-space-item-headings ()
+  "Real tender-offer Items separated by thin spaces remain addressable."
+  (should
+   (equal
+    (mapcar #'car (edgar-sections (edgar-fixtures-text "sc-to-t-biontech")))
+    (mapcar #'number-to-string (number-sequence 1 13)))))
+
+(ert-deftest edgar-golden-g8-finds-def14a-security-ownership ()
+  "Title-case filing headings without blank-line separators stay addressable."
+  (let* ((filing (edgar-fixtures-filing "def-14a-gme"))
+         (html (edgar-fixtures-html "def-14a-gme")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (let ((body (edgar-section filing "Security Ownership")))
+        (should (stringp body))
+        (should (string-match-p "beneficially owned" body))))))
+
 (provide 'edgar-golden-test)
 ;;; edgar-golden-test.el ends here
