@@ -86,6 +86,29 @@
      (= (length (edgar-forms-by-family (car expected)))
         (cdr expected)))))
 
+(ert-deftest edgar-forms-g10-family-has-l1-and-named-section-coverage ()
+  "Every G10 form is L1+ and the three reviewed forms retain L2 sections."
+  (let ((rows (edgar-forms-by-family "G10 Investment-company registration"))
+        l2-forms)
+    (should (= (length rows) 40))
+    (dolist (row rows)
+      (let ((form (car row))
+            (info (cdr row)))
+        (should (memq (plist-get info :level) '(L1 L2)))
+        (when (eq (plist-get info :level) 'L2)
+          (push form l2-forms))))
+    (should (equal (sort l2-forms #'string<)
+                   '("485BPOS" "497K" "N-1A")))
+    (should
+     (equal
+      (plist-get (edgar-form-info "497K") :sections-or-fields)
+      '(summary-prospectus-named-sections)))
+    (dolist (form '("485BPOS" "N-1A"))
+      (should
+       (equal
+        (plist-get (edgar-form-info form) :sections-or-fields)
+        '(investment-objective fees-and-expenses principal-risks))))))
+
 (ert-deftest edgar-forms-g4-13f-variants-have-typed-coverage ()
   "Both base Form 13F variants expose recorded typed data."
   (dolist (form '("13F-HR" "13F-NT"))

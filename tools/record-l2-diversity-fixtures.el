@@ -8,6 +8,7 @@
 
 (defconst edgar-record-l2-diversity-forms
   '("10-K" "10-KT" "10-Q" "15-12G" "18-K" "20-F" "25" "8-K"
+    "485BPOS" "497K" "N-1A"
     "NT 10-K" "NT 10-Q" "NT 11-K" "NT 20-F")
   "Forms whose current L2 fixture set needs more distinct filers.")
 

@@ -177,6 +177,46 @@
         (regexp-quote (downcase (cdr entry)))
         (downcase (edgar-fixtures-norm body)))))))
 
+(defun edgar-golden-test--check-named-section-fixtures (form heading slugs)
+  "Check FORM filings in SLUGS expose HEADING using its reviewed goldens."
+  (let ((goldens
+         (edgar-fixtures-read
+          (edgar-fixtures-path "golden-named-sections.eld"))))
+    (dolist (slug slugs)
+      (let* ((filing (edgar-fixtures-filing slug))
+             (html (edgar-fixtures-html slug))
+             (golden
+              (seq-find
+               (lambda (entry)
+                 (and (equal (car entry) slug)
+                      (equal (cadr entry) heading)))
+               goldens)))
+        (should (equal (plist-get filing :form) form))
+        (should golden)
+        (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+          (let ((body (edgar-section filing heading)))
+            (should (stringp body))
+            (should
+             (string-match-p
+              (regexp-quote (downcase (nth 2 golden)))
+              (downcase (edgar-fixtures-norm body))))))))))
+
+(ert-deftest edgar-golden-g10-497k-part-a-named-section-three-filers ()
+  "497K summary prospectuses expose the same named expense section."
+  (edgar-golden-test--check-named-section-fixtures
+   "497K" "Annual Fund Operating Expenses"
+   '("497k-hennessy"
+     "diversity-497k-1100663"
+     "diversity-497k-1174610")))
+
+(ert-deftest edgar-golden-g10-n-1a-part-a-named-section-three-filers ()
+  "N-1A Part A exposes Investment Objective across three registrants."
+  (edgar-golden-test--check-named-section-fixtures
+   "N-1A" "Investment Objective"
+   '("n-1a-americandrive"
+     "diversity-n-1a-2078265"
+     "diversity-n-1a-2083193")))
+
 (ert-deftest edgar-golden-g7-named-prospectus-sections ()
   "Major prospectus layouts expose named headings through the shared API."
   (dolist

@@ -1,6 +1,12 @@
 ;; Reviewed (FIXTURE SLUG HEADING BODY FRAGMENT) named-section goldens.
 (("497k-hennessy" "Investment Objective"
   "long-term capital appreciation.")
+ ("497k-hennessy" "Annual Fund Operating Expenses"
+  "Management Fees 0.74% 0.74%")
+ ("diversity-497k-1100663" "Annual Fund Operating Expenses"
+  "1 Management Distribution Other Total Annual Fees and Service")
+ ("diversity-497k-1174610" "Annual Fund Operating Expenses"
+  "Management Fees 0.95% Other Expenses1 0.09%")
  ("485bpos-geme" "Investment Objective"
   "Pacific NoS Global EM Equity Active ETF")
  ("485bpos-geme" "Fees and Expenses"
@@ -9,6 +15,10 @@
   "shareholder is subject to the risk")
  ("n-1a-americandrive" "Investment Objective"
   "no assurance that the Fund will achieve its objective")
+ ("diversity-n-1a-2078265" "Investment Objective"
+  "Founder-Led 2x Daily ETF")
+ ("diversity-n-1a-2083193" "Investment Objective"
+  "Each Fund’s investment objective may be changed by the Board")
  ("n-1a-americandrive" "Fees and Expenses"
   "table describes the fees and expenses")
  ("n-1a-americandrive" "Principal Risks"
