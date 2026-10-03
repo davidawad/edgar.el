@@ -1,0 +1,1 @@
+(:accn "0001193125-24-268950" :form "SC 13D" :filed "2024-12-02" :report "" :doc "d906818dsc13d.htm" :cik 1745201 :url "https://www.sec.gov/Archives/edgar/data/1745201/000119312524268950/d906818dsc13d.htm" :ticker "VIK")

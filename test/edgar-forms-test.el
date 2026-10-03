@@ -91,6 +91,15 @@
   (dolist (form '("13F-HR" "13F-NT"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g3-schedule-13d-g-forms-have-l2-coverage ()
+  "Structured and legacy Schedule 13D/G registry forms stay at L2."
+  (dolist (entry '(("SC 13D" html)
+                   ("SCHEDULE 13D" xml)
+                   ("SCHEDULE 13G" xml)))
+    (let ((info (edgar-form-info (car entry))))
+      (should (eq (plist-get info :backend) (cadr entry)))
+      (should (eq (plist-get info :level) 'L2)))))
+
 (ert-deftest edgar-forms-g8-proxy-and-tender-sections-have-golden-coverage ()
   "Proxy and tender sections with reviewed filing goldens are L2."
   (dolist (form '("DEF 14A" "SC TO-T" "SC 14D9"))

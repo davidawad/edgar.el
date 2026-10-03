@@ -38,7 +38,8 @@ rows include their kind, ownership codes, and resolved footnote text.
 Schedule 13D/G XML and `edgar-schedule-13d-purpose-of-transaction` for 13D Item
 4. Values retain their source strings. Legacy `SC 13D`/`SC 13G` filings remain
 available through `edgar-schedule-13d-g-legacy-sections` and the generic
-`edgar-section` API.
+`edgar-section` API. Recorded coverage spans distinct GameStop and TaskUs XML
+layouts plus legacy Viking `SC 13D` and GameStop `SC 13G/A` layouts.
 
 `edgar-offerings.el` provides `edgar-form-c` for typed Regulation Crowdfunding
 offering statements, including issuer, offering, deadline, financial, and
@@ -122,6 +123,7 @@ coverage gate checks registry metadata and recorded fixture artifacts.
 | 20-F | Part-qualified items | heading-only table-of-contents residue is dropped |
 | S-1 | `II.13`-`II.17` | Part I is the prospectus, no Items |
 | Schedule 13G | `1`-`10` | legacy `SC 13G`/`SC 13G/A` text filings: little or no Item structure |
+| SC 13D, SC 13D/A | `1`-`7` | legacy HTML; Item 4 is also available through `edgar-schedule-13d-purpose-of-transaction` |
 | 40-F, 6-K, DEF 14A, 11-K, 4, 13F-HR, 144 | none | whole text via `edgar-text` |
 
 ## Tests

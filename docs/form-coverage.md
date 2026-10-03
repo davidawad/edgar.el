@@ -265,7 +265,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SBSE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE")` |
 | `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE-A")` |
 | `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE-C")` |
-| `SC 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13D")` |
+| `SC 13D` | G3 Beneficial ownership 13D/13G | html | L2 | `(edgar-schedule-13d-g-legacy-sections filing)` |
 | `SC 13E3` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13E3")` |
 | `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC 14F1` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 14F1")` |
@@ -316,6 +316,12 @@ for the current declared level. Level labels are claims about implemented
 support; fixture coverage is separately checked by `eask run script coverage`.
 Do not infer that all forms are parsed from the fact that all 245 appear in the
 catalog.
+
+G3 Schedule 13D/G coverage includes structured XML cover-page fields for
+SCHEDULE 13D and SCHEDULE 13G plus legacy SC 13D Items 1–7 and Item 4 purpose
+text. These three base forms account for 18,715 of 18,768 G3 filings in the Q2
+snapshot (99.7%). SC 13E3 and SC 14F1 are distinct disclosure regimes outside
+the Schedule 13D/G scope and remain L0 (53 filings).
 
 G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
 and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot

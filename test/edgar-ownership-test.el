@@ -74,6 +74,30 @@
                      (length
                       "The Reporting Persons have acquired shares in the issuer for investment purposes")))))))
 
+(defun edgar-ownership-test--legacy-schedule-snapshot (slug)
+  "Return stable section values for legacy Schedule fixture SLUG."
+  (let* ((filing (edgar-fixtures-filing slug))
+         (text (edgar-fixtures-text slug))
+         sections
+         purpose)
+    (cl-letf (((symbol-function 'edgar-text) (lambda (_) text)))
+      (setq sections (edgar-schedule-13d-g-legacy-sections filing)
+            purpose (edgar-schedule-13d-purpose-of-transaction filing)))
+    (let ((item-4 (cdr (assoc "4" sections)))
+          (item-7 (cdr (assoc "7" sections))))
+      (should (equal purpose item-4))
+      (list
+       :form (plist-get filing :form)
+       :cik (plist-get filing :cik)
+       :section-keys (mapcar #'car sections)
+       :item-4-sha256 (secure-hash 'sha256 item-4)
+       :item-4-head
+       (substring (edgar-fixtures-norm item-4) 0
+                  (min 160 (length (edgar-fixtures-norm item-4))))
+       :item-7-head
+       (substring (edgar-fixtures-norm item-7) 0
+                  (min 120 (length (edgar-fixtures-norm item-7))))))))
+
 (defun edgar-ownership-test--transaction (form code)
   "Return a small offline ownership XML tree for FORM and transaction CODE."
   (edgar-ownership-test--xml
@@ -441,6 +465,24 @@
                    (edgar-ownership-test--golden slug)))
     (should (equal (edgar-ownership-test--schedule-expect-snapshot slug)
                    (edgar-ownership-test--expect slug)))))
+
+(ert-deftest edgar-schedule-fixtures-cover-three-distinct-filers-and-layouts ()
+  "Keep three filer CIKs across structured and legacy Schedule layouts."
+  (let* ((slugs '("schedule-13g-gme-xml"
+                  "schedule-13d-taskus-a"
+                  "sc-13d-viking"))
+         (filings (mapcar #'edgar-fixtures-filing slugs))
+         (ciks (mapcar (lambda (filing) (plist-get filing :cik)) filings)))
+    (should (= (length (delete-dups ciks)) 3))
+    (should
+     (equal (mapcar (lambda (filing) (plist-get filing :form)) filings)
+            '("SCHEDULE 13G" "SCHEDULE 13D/A" "SC 13D")))))
+
+(ert-deftest edgar-schedule-13d-legacy-sections-match-golden ()
+  "Parse a genuine legacy SC 13D into Items 1 through 7 and Item 4."
+  (should
+   (equal (edgar-ownership-test--legacy-schedule-snapshot "sc-13d-viking")
+          (edgar-ownership-test--golden "sc-13d-viking"))))
 
 (ert-deftest edgar-schedule-13g-legacy-sections-match-golden ()
   "Parse actual legacy SC 13G/A text into the recorded section golden."

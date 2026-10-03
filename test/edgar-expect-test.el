@@ -150,6 +150,7 @@
     ("N-VPFS" "financial statements" nil)
     ("NT-NCSR" "notification of late filing" nil)
     ("SCHEDULE 13G" "schedule 13g" nil)
+    ("SC 13D" "schedule 13d" ("1" "2" "3" "4" "5" "6" "7"))
     ("SC 13G" "schedule 13g" nil)
     ("SC 13G/A" "schedule 13g" nil)
     ("SC TO-T" "schedule to" nil)
