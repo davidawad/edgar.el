@@ -188,16 +188,17 @@
       (plist-get info :sections-or-fields)
       '(generic-named-sections)))))
 
-(ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
-  "G11 records all but the unavailable Form 1 primary document."
+(ert-deftest edgar-forms-g11-named-forms-meet-bead-acceptance ()
+  "The nine G11 forms in the coverage bead meet its stated levels."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
         (counts (list (cons 'L0 0) (cons 'L1 0) (cons 'L2 0))))
     (dolist (row rows)
       (let ((cell (assq (plist-get (cdr row) :level) counts)))
         (setcdr cell (1+ (cdr cell)))))
-    (should (eq (plist-get (edgar-form-info "C") :level) 'L2))
-    (should (eq (plist-get (edgar-form-info "C-AR") :level) 'L2))
-    (should (eq (plist-get (edgar-form-info "C-U") :level) 'L1))
+    (dolist (form '("C" "C-AR"))
+      (should (eq (plist-get (edgar-form-info form) :level) 'L2)))
+    (dolist (form '("C-U" "C-TR" "1-A" "1-K" "1-U" "1-SA" "1-Z"))
+      (should (eq (plist-get (edgar-form-info form) :level) 'L1)))
     (should (equal counts '((L0 . 1) (L1 . 15) (L2 . 2))))))
 
 (provide 'edgar-forms-test)

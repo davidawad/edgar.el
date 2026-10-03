@@ -381,6 +381,13 @@ the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
 binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
 payloads rather than an alternate readable document.
 
+G11 has 17 of 18 forms at L1 or higher: C and C-AR are L2 with typed fields,
+and 15 forms are L1. The nine forms named in the Reg CF/Reg A coverage increment
+(C, C-AR, C-U, C-TR, 1-A, 1-K, 1-U, 1-SA, 1-Z) all meet its acceptance. Form 1
+remains L0 because the Q3 2026 SEC filing for accession 9999999997-26-001567
+contains only an auto-generated paper-submission placeholder, not a parseable
+primary document ([SEC submission](https://www.sec.gov/Archives/edgar/data/2157991/999999999726001567/9999999997-26-001567.txt)).
+
 ## Gaps that are not about a specific form
 
 Implemented whole-library capabilities: raw-XML access, multi-document filings
@@ -418,8 +425,9 @@ Telekomunikasi Indonesia (0001001807-26-000016), respectively. These are
 Form 12b-25 notices; coverage means readable text and generic document paths,
 not a form-specific extension-deadline or reason parser.
 
-Forms 1-SA and 1-U have L2 HTML section goldens for current and older filings.
-Forms 1-K and 1-Z use structured XML primaries; their L1 fixtures verify the
-generic XML projection and readable text, without form-specific typed accessors.
+Reg A Forms 1-A, 1-K, 1-SA, 1-U, and 1-Z have fixture-backed L1 generic access.
+The 1-SA and 1-U fixtures include current and older HTML text snapshots; 1-K
+and 1-Z also verify generic XML projection. These forms do not have
+form-specific typed accessors.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).
