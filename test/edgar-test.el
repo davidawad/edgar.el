@@ -387,6 +387,37 @@
           (edgar-structure-text text)
           "First paragraph.\n\nSecond paragraph."))))))
 
+(ert-deftest edgar-complete-submission-selects-primary-legacy-text ()
+  (let* ((fixture-dir (expand-file-name "fixtures" edgar-test--dir))
+         (fixture (expand-file-name "10-k-bd-1998.txt" fixture-dir))
+         (filing
+          (with-temp-buffer
+            (insert-file-contents-literally
+             (expand-file-name "10-k-bd-1998.eld" fixture-dir))
+            (read (current-buffer))))
+         (submission
+          (with-temp-buffer
+            (insert-file-contents-literally fixture)
+            (buffer-string))))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (_) submission)))
+      (let ((text (edgar-text filing)))
+        (should (string-match-p "ITEM 1\\.  BUSINESS" text))
+        (should-not (string-match-p "SEC-DOCUMENT" text))
+        (should-not (string-match-p "EXHIBIT CONTENT" text))
+        (should
+         (string-match-p "manufacture and sale of a broad" text))
+        (should
+         (string-match-p "Franklin Lakes" (edgar-section filing "2")))
+        (should
+         (string-match-p
+          "natural[[:space:]]+rubber latex"
+          (edgar-section filing "3")))
+        (should
+         (equal
+          (mapcar #'car (edgar-sections text))
+          '("I.1" "I.2" "I.3")))))))
+
 (ert-deftest
     edgar-named-sections-recognizes-generic-uppercase-headings
     ()

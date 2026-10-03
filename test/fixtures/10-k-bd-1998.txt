@@ -1,0 +1,45 @@
+-----BEGIN PRIVACY-ENHANCED MESSAGE-----
+<SEC-DOCUMENT>0000950130-98-005912.txt : 19981217
+<SEC-HEADER>0000950130-98-005912.hdr.sgml : 19981217
+ACCESSION NUMBER: 0000950130-98-005912
+CONFORMED SUBMISSION TYPE: 10-K
+</SEC-HEADER>
+<DOCUMENT>
+<TYPE>EX-13
+<SEQUENCE>2
+<TEXT>EXHIBIT CONTENT MUST NOT BE USED</TEXT>
+</DOCUMENT>
+<DOCUMENT>
+<TYPE>10-K
+<SEQUENCE>1
+<DESCRIPTION>FORM 10-K
+<TEXT>
+                           PART I
+
+ITEM 1.  BUSINESS.
+
+GENERAL
+
+  Becton, Dickinson and Company was incorporated under the laws of the State
+of New Jersey in November 1906, as successor to a New York business started in
+1897. Its executive offices are located at 1 Becton Drive, Franklin Lakes, New
+Jersey 07417-1880 and its telephone number is (201) 847-6800.
+
+  The Company is engaged principally in the manufacture and sale of a broad
+line of medical supplies and devices and diagnostic systems used by health
+care professionals, medical research institutions and the general public.
+
+ITEM 2.  PROPERTIES.
+
+  The executive offices of the Company are located in Franklin Lakes, New
+Jersey. The Company owns and leases approximately 11,903,445 square feet of
+manufacturing, warehousing, administrative and research facilities throughout
+the world.
+
+ITEM 3. LEGAL PROCEEDINGS.
+
+  The Company, along with a number of other manufacturers, has been named as a
+defendant in approximately 196 products liability lawsuits related to natural
+rubber latex that have been filed in various state and Federal courts.
+</TEXT>
+</DOCUMENT>

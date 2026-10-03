@@ -197,18 +197,85 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
   "Raw HTML (iXBRL) of FILING's primary document."
   (edgar--fetch (plist-get filing :url)))
 
+(defun edgar--submission-primary-document (submission filing)
+  "Return FILING's primary document from an EDGAR SGML SUBMISSION.
+When SUBMISSION is a complete-submission file, select the DOCUMENT whose
+TYPE matches FILING's form and return its TEXT payload.  A plain .txt
+primary document is returned unchanged."
+  (let ((case-fold-search t)
+        (form (edgar--base-form (or (plist-get filing :form) "")))
+        documents)
+    (with-temp-buffer
+      (insert submission)
+      (goto-char (point-min))
+      (while (re-search-forward
+              "<DOCUMENT>[ \t\r\n]*\\(\\(?:.\\|\n\\)*?\\)</DOCUMENT>"
+              nil t)
+        (push (match-string-no-properties 1) documents)))
+    (if (null documents)
+        submission
+      (let* ((documents (nreverse documents))
+             (primary
+              (or (seq-find
+                   (lambda (document)
+                     (and (string-match
+                           "<TYPE>[ \t]*\\([^\r\n]+\\)" document)
+                          (equal
+                           (edgar--base-form
+                            (string-trim (match-string 1 document)))
+                           form)))
+                   documents)
+                  (car documents)))
+             (payload
+              (if (string-match
+                   "<TEXT>[ \t\r\n]*\\(\\(?:.\\|\n\\)*?\\)</TEXT>"
+                   primary)
+                  (match-string-no-properties 1 primary)
+                primary)))
+        (string-trim payload)))))
+
+(defun edgar--legacy-text (text)
+  "Render old SEC SGML TEXT to readable text, preserving line boundaries."
+  (if (string-match-p "<[Hh][Tt][Mm][Ll]\\_>" text)
+      (with-temp-buffer
+        (insert text)
+        (let ((dom
+               (libxml-parse-html-region (point-min) (point-max))))
+          (erase-buffer)
+          (let ((shr-inhibit-images t)
+                (shr-use-fonts nil)
+                (shr-width 100))
+            (shr-insert-document dom)))
+        (buffer-substring-no-properties (point-min) (point-max)))
+    (let ((plain
+           (replace-regexp-in-string
+            "</?\\(?:PAGE\\|TABLE\\|CAPTION\\|S\\|C\\)>" "\n" text
+            t)))
+      (replace-regexp-in-string
+       "\\n[ \t]*\\n[ \t]*\\n+" "\n\n" plain))))
+
 (defun edgar-text (filing)
   "FILING rendered to plain text (what `shr' would display)."
-  (let ((html (edgar-html filing)))
-    (with-temp-buffer
-      (insert html)
-      (let ((dom (libxml-parse-html-region (point-min) (point-max))))
-        (erase-buffer)
-        (let ((shr-inhibit-images t)
-              (shr-use-fonts nil)
-              (shr-width 100))
-          (shr-insert-document dom)))
-      (buffer-substring-no-properties (point-min) (point-max)))))
+  (let* ((url (plist-get filing :url))
+         (source (edgar-html filing))
+         (text
+          (if (and (stringp url)
+                   (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+              (edgar--submission-primary-document source filing)
+            source)))
+    (if (and (stringp url)
+             (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+        (edgar--legacy-text text)
+      (with-temp-buffer
+        (insert text)
+        (let ((dom
+               (libxml-parse-html-region (point-min) (point-max))))
+          (erase-buffer)
+          (let ((shr-inhibit-images t)
+                (shr-use-fonts nil)
+                (shr-width 100))
+            (shr-insert-document dom)))
+        (buffer-substring-no-properties (point-min) (point-max))))))
 
 (defun edgar--structure-node (node)
   "Convert libxml NODE to a uniform plist tree without discarding data."
@@ -248,7 +315,7 @@ any element or paragraph without form-specific projections."
          :children (and tree (list (edgar--structure-node tree))))))
      ((and (stringp url)
            (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
-      (let* ((text (edgar--fetch url))
+      (let* ((text (edgar-text filing))
              (paragraphs
               (seq-remove
                #'string-empty-p

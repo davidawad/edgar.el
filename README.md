@@ -20,7 +20,9 @@ one filing day's index.  Results are newest first and add `:company` to the
 usual filing plist.  A base-form filter includes its `/A` amendments, while an
 explicit `/A` filter selects amendments only.  Because form indexes identify
 complete submissions rather than primary documents, their `:doc` and `:url`
-point to the filing's `.txt` submission.
+point to the filing's `.txt` submission. `edgar-text` and `edgar-section`
+extract the matching primary document from those SGML wrappers and preserve
+section boundaries in legacy plain-text filings.
 
 `edgar-ownership.el` provides typed plists for Forms 3, 4, and 5:
 `edgar-ownership-issuer`, `edgar-ownership-reporting-owners`,
