@@ -194,6 +194,29 @@
                 uncovered))))
     (should-not uncovered)))
 
+(ert-deftest edgar-form-coverage-index-samples-use-registered-forms ()
+  "A future sampled index cannot silently introduce an unknown base form."
+  (let ((index-files
+         (directory-files edgar-coverage-fixture-directory
+                          t
+                          "\\`form-index-.*\\.idx\\'")))
+    (should index-files)
+    (dolist (file index-files)
+      (dolist (filing
+               (edgar-index--parse
+                (with-temp-buffer
+                  (insert-file-contents file)
+                  (buffer-string))))
+        (let ((form
+               (edgar-coverage--base-form (plist-get filing :form))))
+          (unless (gethash form edgar-forms--registry)
+            (ert-fail
+             (format
+              "Index sample %s contains unregistered form %s (%s)"
+              (file-name-nondirectory file)
+              form
+              (plist-get filing :accn)))))))))
+
 (ert-deftest edgar-form-coverage-sampled-primary-fixtures-are-not-l0
     ()
   "A sampled filing with a recorded primary is not left at L0."
@@ -245,6 +268,57 @@
                    (plist-get filing :accn))
                   uncovered)))))
     (should-not uncovered)))
+
+(ert-deftest
+    edgar-form-coverage-sampled-low-volume-primaries-have-structure-snapshots
+    ()
+  "Every recorded low-volume sample primary has a structure snapshot."
+  (let ((recorded (make-hash-table :test #'equal))
+        (structure-slugs
+         (mapcar
+          (lambda (entry) (plist-get entry :slug))
+          (edgar-coverage--read-object
+           (expand-file-name
+            "expect/low-volume-sampled-structures.eld"
+            edgar-form-coverage-test--directory))))
+        (index-files
+         (directory-files edgar-coverage-fixture-directory
+                          t
+                          "\\`form-index-.*\\.idx\\'"))
+        missing)
+    (dolist (metadata-file
+             (directory-files edgar-coverage-fixture-directory
+                              t "\\.eld\\'"))
+      (let* ((slug (file-name-base metadata-file))
+             (metadata (edgar-coverage--read-object metadata-file))
+             (accession (plist-get metadata :accn)))
+        (when accession
+          (puthash accession (cons slug metadata) recorded))))
+    (dolist (file index-files)
+      (dolist (filing
+               (edgar-index--parse
+                (with-temp-buffer
+                  (insert-file-contents file)
+                  (buffer-string))))
+        (let* ((form
+                (edgar-coverage--base-form (plist-get filing :form)))
+               (info (gethash form edgar-forms--registry))
+               (fixture (gethash (plist-get filing :accn) recorded))
+               (slug (car fixture)))
+          (when (and info
+                     (<= (plist-get info :volume) 5) fixture
+                     (edgar-coverage--primary-artifact-p
+                      slug
+                      (plist-get info :backend)
+                      edgar-coverage-fixture-directory)
+                     (not (member slug structure-slugs)))
+            (push (list
+                   (file-name-nondirectory file)
+                   form
+                   (plist-get filing :accn)
+                   slug)
+                  missing)))))
+    (should-not missing)))
 
 (ert-deftest edgar-form-coverage-registry-row-removal-names-form ()
   "Removing a registry row fails with that form name."
