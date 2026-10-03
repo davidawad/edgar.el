@@ -204,5 +204,31 @@
         (should (stringp body))
         (should (string-match-p "beneficially owned" body))))))
 
+(ert-deftest edgar-golden-g8-def14a-proposals-compensation-and-ownership ()
+  "Real DEF 14A filings expose proposals, compensation, and ownership sections."
+  (dolist
+      (entry
+       '(("def-14a-encore" "Election of Directors" "THE BOARD")
+         ("def-14a-encore" "Compensation Discussion and Analysis"
+          "provides an overview of our executive compensation")
+         ("def-14a-encore"
+          "Security Ownership of Certain Beneficial Holders and Management"
+          "beneficial ownership information of our Common Shares")
+         ("def-14a-venture-global" "Management Proposals" "PROPOSAL 1")
+         ("def-14a-venture-global" "COMPENSATION DISCUSSION AND ANALYSIS"
+          "section is to provide information")
+         ("def-14a-venture-global"
+          "Security Ownership of Certain Beneficial Owners and Management"
+          "beneficial ownership")))
+    (let* ((slug (nth 0 entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (let ((body (edgar-section filing (nth 1 entry))))
+          (should (stringp body))
+          (should (string-match-p
+                   (regexp-quote (downcase (nth 2 entry)))
+                   (downcase (edgar-fixtures-norm body)))))))))
+
 (provide 'edgar-golden-test)
 ;;; edgar-golden-test.el ends here

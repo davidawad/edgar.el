@@ -77,6 +77,16 @@
            '("sc-to-t-biontech" "sc-to-t-cidara" "sc-to-t-tubemogul")))))
     (should (= (length ciks) 3))))
 
+(ert-deftest edgar-l2-diversity-g8-def14a-has-three-distinct-filers ()
+  "The reviewed DEF 14A sections cover three distinct filing CIKs."
+  (let ((ciks
+         (delete-dups
+          (mapcar
+           (lambda (slug)
+             (plist-get (edgar-l2-diversity-test--metadata slug) :cik))
+           '("def-14a-gme" "def-14a-encore" "def-14a-venture-global")))))
+    (should (= (length ciks) 3))))
+
 (ert-deftest edgar-l2-diversity-abs-ee-accessors-match-filer-goldens ()
   "ABS-EE XML from three filers preserves common asset-data fields."
   (dolist (slug '("abs-ee-bank5-sample" "abs-ee-deutsche"
