@@ -373,24 +373,69 @@
         (should (stringp body))
         (should (string-match-p "exhibits" (downcase body)))))))
 
-(ert-deftest edgar-g12-xml-fixture-is-readable-through-generic-tree-api ()
-  "An X-17A-5 SEC XML filing works through the generic structure API."
-  (let* ((filing (edgar-fixtures-filing "x-17a-5-m-stevens"))
-         (xml
-          (with-temp-buffer
-            (insert-file-contents
-             (edgar-fixtures-path "fixtures/x-17a-5-m-stevens.xml"))
-            (buffer-string)))
-         (expected
-          (edgar-fixtures-read
-           (edgar-fixtures-path "expect/x-17a-5-m-stevens.eld"))))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
-      (let ((tree (edgar-document-structure filing)))
-        (should (eq (plist-get tree :format) 'xml))
-        (dolist (entry (plist-get expected :sections))
+(ert-deftest edgar-g10-additional-layouts-use-generic-structure-api ()
+  "Real G10 application, registration, supplement, and letter layouts work."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path
+             "expect/g10-additional-structures.eld")))
+    (let* ((slug (plist-get expected :slug))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (let* ((tree (edgar-document-structure filing))
+               (paragraphs (edgar-structure-paragraphs tree))
+               (tables (edgar-structure-nodes tree "table"))
+               (heading (plist-get expected :heading))
+               (body (and heading (edgar-section filing heading))))
+          (should (eq (plist-get tree :format) 'html))
           (should
-           (equal (plist-get (edgar-structure-section tree (car entry)) :body)
-                  (cadr entry))))))))
+           (>= (length paragraphs)
+               (plist-get expected :min-paragraphs)))
+          (should
+           (>= (length tables) (plist-get expected :min-tables)))
+          (should
+           (seq-some
+            (lambda (paragraph)
+              (string-match-p
+               (regexp-quote
+                (edgar-fixtures-norm
+                 (plist-get expected :paragraph-marker)))
+               (edgar-fixtures-norm paragraph)))
+            paragraphs))
+          (when heading
+            (should (stringp body))
+            (should
+             (string-match-p
+              (regexp-quote
+               (plist-get expected :body-marker))
+              body))))))))
+
+(ert-deftest edgar-g12-xml-fixtures-use-generic-tree-api ()
+  "Real G12 XML filings work through the generic structure API."
+  (dolist (slug
+           '("x-17a-5-m-stevens"
+             "ma-i-ey-2026"
+             "ta-2-edward-jones-2026"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (xml
+            (with-temp-buffer
+              (insert-file-contents
+               (edgar-fixtures-path (format "fixtures/%s.xml" slug)))
+              (buffer-string)))
+           (expected
+            (edgar-fixtures-read
+             (edgar-fixtures-path (format "expect/%s.eld" slug)))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+        (let ((tree (edgar-document-structure filing)))
+          (should (eq (plist-get tree :format) 'xml))
+          (dolist (entry (plist-get expected :sections))
+            (should
+             (equal
+              (plist-get
+               (edgar-structure-section tree (car entry))
+               :body)
+              (cadr entry)))))))))
 
 (ert-deftest edgar-g12-corresp-text-fixture-is-readable-through-generic-api ()
   "A CORRESP complete submission works through the generic text API."

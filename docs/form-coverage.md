@@ -85,7 +85,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `40-33` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-33")` |
 | `40-6B` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-6B")` |
 | `40-8F-2` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-8F-2")` |
-| `40-APP` | G10 Investment-company registration | html | L0 | `(edgar-form-info "40-APP")` |
+| `40-APP` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `40FR12B` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `40FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "40FR12G")` |
@@ -100,15 +100,15 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `424I` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "424I")` |
 | `425` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "425")` |
 | `485APOS` | G10 Investment-company registration | html | L0 | `(edgar-form-info "485APOS")` |
-| `485BPOS` | G10 Investment-company registration | html | L0 | `(edgar-form-info "485BPOS")` |
+| `485BPOS` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `485BXT` | G10 Investment-company registration | html | L0 | `(edgar-form-info "485BXT")` |
 | `486APOS` | G10 Investment-company registration | html | L0 | `(edgar-form-info "486APOS")` |
 | `486BPOS` | G10 Investment-company registration | html | L0 | `(edgar-form-info "486BPOS")` |
 | `486BXT` | G10 Investment-company registration | html | L0 | `(edgar-form-info "486BXT")` |
 | `487` | G10 Investment-company registration | html | L0 | `(edgar-form-info "487")` |
-| `497` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497")` |
+| `497` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497AD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497AD")` |
-| `497J` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497J")` |
+| `497J` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497K` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497VPI` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPI")` |
 | `497VPSUB` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPSUB")` |
@@ -316,6 +316,14 @@ for the current declared level. Level labels are claims about implemented
 support; fixture coverage is separately checked by `eask run script coverage`.
 Do not infer that all forms are parsed from the fact that all 245 appear in the
 catalog.
+
+G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
+and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot
+(87.7%). The remaining 21 forms are still L0.
+
+G10 currently has 6 of 40 base forms at L1: 40-APP, 485BPOS, 497, 497J,
+497K, and N-1A. They account for 17,231 of 24,427 G10 filings in the Q2
+snapshot (70.5%). The remaining 34 forms are still L0.
 
 ## Gaps that are not about a specific form
 

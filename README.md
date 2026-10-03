@@ -90,6 +90,15 @@ tables or other filing-specific markup are not inferred automatically; their
 source nodes and text remain available through the generic tree API. No form
 codes select custom fields or heading catalogs.
 
+The same tree API has recorded G12 coverage for CORRESP and UPLOAD text,
+plus X-17A-5, MA-I, and TA-2 XML. These are generic structure fixtures, not
+form-specific typed accessors.
+
+Recorded G10 layouts include 40-APP applications, 485BPOS registrations,
+497 supplements, 497J certification letters, 497K summary prospectuses, and
+N-1A registrations. They use the generic text, paragraph, table, and named
+section interfaces without form-specific projections.
+
 ## Form coverage
 
 `edgar-forms.el` catalogs the 245 base forms in the 2026 Q2 SEC index.
