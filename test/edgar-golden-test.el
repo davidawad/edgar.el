@@ -208,7 +208,11 @@
              "40-8f-2-chesapeake"
              "app-wd-guggenheim"
              "497k-hennessy"
-             "n-1a-americandrive"))
+             "497k-trowe-qaoswx-2026"
+             "497k-modern-capital-tactical-2026"
+             "n-1a-americandrive"
+             "n-1a-corgi-founder-led-2025"
+             "n-1a-bluerock-ai-future-leaders-2026"))
     (let* ((filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
            (golden
@@ -224,6 +228,28 @@
                (string-match-p
                 (regexp-quote string)
                 (edgar-fixtures-norm body))))))))))
+
+(ert-deftest edgar-golden-g10-investment-prospectus-diversity-is-l2 ()
+  "497K and N-1A expose strategy and risk sections across distinct filers."
+  (dolist
+      (entry
+       '(("497K" "497k-hennessy"
+          "497k-trowe-qaoswx-2026"
+          "497k-modern-capital-tactical-2026")
+         ("N-1A" "n-1a-americandrive"
+          "n-1a-corgi-founder-led-2025"
+          "n-1a-bluerock-ai-future-leaders-2026")))
+    (let* ((form (car entry))
+           (info (edgar-form-info form))
+           (slugs (cdr entry))
+           (ciks (mapcar (lambda (slug)
+                           (plist-get (edgar-fixtures-filing slug) :cik))
+                         slugs)))
+      (should (eq (plist-get info :level) 'L2))
+      (should
+       (equal (plist-get info :sections-or-fields)
+              '(generic-named-sections)))
+      (should (= (length ciks) (length (delete-dups (copy-sequence ciks))))))))
 
 (ert-deftest edgar-golden-g7-named-prospectus-sections ()
   "Major prospectus layouts expose named headings through the shared API."

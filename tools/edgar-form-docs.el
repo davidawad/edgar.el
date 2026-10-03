@@ -34,6 +34,9 @@
                 ((member form '("SCHEDULE 13D" "SCHEDULE 13G"))
                   "`(edgar-schedule-13d-g-cover-page filing)`")
                 ((equal form "S-3") "`(edgar-section filing \"Risk Factors\")`")
+                ((memq 'generic-named-sections
+                       (plist-get info :sections-or-fields))
+                 "`(edgar-section filing \"Principal Investment Strategies\")`")
                 ((eq (plist-get info :level) 'L0)
                  (format "`(edgar-form-info \"%s\")`" form))
                 ((eq (plist-get info :level) 'L1) "`(edgar-text filing)`")

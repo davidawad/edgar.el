@@ -1,0 +1,1 @@
+(:accn "0002071844-26-000643" :form "N-1A" :filed "2026-06-12" :report "" :cik 2139763 :doc "bluerockaifutldrs200n1a61126.htm" :url "https://www.sec.gov/Archives/edgar/data/2139763/000207184426000643/bluerockaifutldrs200n1a61126.htm" :size 713789 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001999371-26-009059" :form "497K" :filed "2026-04-27" :report "" :cik 918294 :doc "nap-497k_050126.htm" :url "https://www.sec.gov/Archives/edgar/data/918294/000199937126009059/nap-497k_050126.htm" :size 70944 :sample-vintage "L2" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

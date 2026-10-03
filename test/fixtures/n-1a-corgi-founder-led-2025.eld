@@ -1,0 +1,1 @@
+(:accn "0002078265-25-000002" :form "N-1A" :filed "2025-08-25" :report "" :cik 2078265 :doc "corgietftrustI-form-n1a.htm" :url "https://www.sec.gov/Archives/edgar/data/2078265/000207826525000002/corgietftrustI-form-n1a.htm" :size 381055 :sample-vintage "diversity" :sample-quarter "2025-Q3" :sample-seed "edgar-form-coverage-v1")

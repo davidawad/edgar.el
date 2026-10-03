@@ -672,8 +672,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(generic-named-sections)
       :volume 6592
       :notes nil)
      table)
@@ -1506,8 +1506,8 @@
      (list
       :family "G10 Investment-company registration"
       :backend 'html
-      :level 'L1
-      :sections-or-fields nil
+      :level 'L2
+      :sections-or-fields '(generic-named-sections)
       :volume 13
       :notes nil)
      table)

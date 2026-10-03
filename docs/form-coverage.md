@@ -116,7 +116,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `497` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497AD` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497J` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `497K` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
+| `497K` | G10 Investment-company registration | html | L2 | `(edgar-section filing "Principal Investment Strategies")` |
 | `497VPI` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497VPSUB` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497VPU` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -199,7 +199,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `MSD` | G10 Investment-company registration | text | L1 | `(edgar-text filing)` |
 | `N-14` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-14 8C` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
+| `N-1A` | G10 Investment-company registration | html | L2 | `(edgar-section filing "Principal Investment Strategies")` |
 | `N-2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-2 POSASR` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-23C-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
@@ -371,10 +371,10 @@ All 40 G10 base forms now have L1 coverage. The newly covered HTML, PDF, and
 text filings have SEC-backed fixture metadata, per-filing expectations, and
 generic document-structure assertions. The MSD fixture is an auto-generated
 paper control notice, not the original report. Generic named-section goldens
-cover 40-17F2, N-2 POSASR, N-2MEF, 40-8F-2, APP WD, 497K, and N-1A; each
-currently has one filer fixture, so more filer diversity is needed before L2
-promotion. The 497K and N-1A goldens pin prospectus strategy and risk sections
-through the shared named-section accessor.
+cover 40-17F2, N-2 POSASR, N-2MEF, 40-8F-2, APP WD, 497K, and N-1A. The
+497K and N-1A forms have L2 coverage: each has named-section goldens for three
+distinct filer CIKs, pinning prospectus strategy and risk sections through the
+shared named-section accessor.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the

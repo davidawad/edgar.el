@@ -1,0 +1,1 @@
+(:accn "0001398344-26-013982" :form "497K" :filed "2026-08-11" :report "" :cik 1815608 :doc "fp0100288-2_497k.htm" :url "https://www.sec.gov/Archives/edgar/data/1815608/000139834426013982/fp0100288-2_497k.htm" :size 80834 :sample-vintage "diversity" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")
