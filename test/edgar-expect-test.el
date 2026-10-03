@@ -115,6 +115,7 @@
     ("40-17F1" "northern lights fund trust" nil)
     ("40-17F2" "fundrise innovation fund" nil)
     ("40-8F-2" "chesapeake investors" nil)
+    ("DEL AM" "j.p. morgan exchange-traded fund trust" nil)
     ("40-6B" "robinhood" nil)
     ("486BXT" "ark venture fund" nil)
     ("485APOS"
@@ -138,6 +139,7 @@
     ("N-4" "form n-4" nil)
     ("N-14 8C" "alternative credit income fund" nil)
     ("N-2ASR" "blackrock enhanced large cap core fund" nil)
+    ("N-2 POSASR" "eagle point credit" nil)
     ("N-6" "form n-6" nil)
     ("APP WD" "guggenheim strategic opportunities fund" nil)
     ("S-6" "form s-6" nil)
