@@ -2249,8 +2249,8 @@
      "SC 13E3"
      (list
       :family "G3 Beneficial ownership 13D/13G"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 47
       :notes nil)
@@ -2269,8 +2269,8 @@
      "SC 14F1"
      (list
       :family "G3 Beneficial ownership 13D/13G"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 6
       :notes nil)

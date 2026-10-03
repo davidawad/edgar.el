@@ -114,6 +114,14 @@
   (dolist (form '("13F-HR" "13F-NT"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g3-remaining-proxy-filings-use-generic-html-l1 ()
+  "SC 13E3 and SC 14F1 use the shared HTML text path without typed fields."
+  (dolist (form '("SC 13E3" "SC 14F1"))
+    (let ((info (edgar-form-info form)))
+      (should (eq (plist-get info :backend) 'html))
+      (should (eq (plist-get info :level) 'L1))
+      (should-not (plist-get info :sections-or-fields)))))
+
 (ert-deftest edgar-forms-g2-offerings-have-typed-golden-coverage ()
   "Forms 144 and D expose their reviewed typed-field goldens."
   (dolist (form '("144" "D"))

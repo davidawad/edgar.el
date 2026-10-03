@@ -1,0 +1,1 @@
+(:accn "0001683168-26-003017" :form "SC 14F1" :company "Hawkeye Systems, Inc." :filed "2026-04-16" :report "" :cik 1750777 :ticker "" :doc "hawkeye_sc14f1.htm" :url "https://www.sec.gov/Archives/edgar/data/1750777/000168316826003017/hawkeye_sc14f1.htm" :size 194624 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

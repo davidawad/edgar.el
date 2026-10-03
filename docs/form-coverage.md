@@ -267,9 +267,9 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SBSE-C` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `SC 13D` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13D")` |
-| `SC 13E3` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 13E3")` |
+| `SC 13E3` | G3 Beneficial ownership 13D/13G | html | L1 | `(edgar-text filing)` |
 | `SC 14D9` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `SC 14F1` | G3 Beneficial ownership 13D/13G | xml | L0 | `(edgar-form-info "SC 14F1")` |
+| `SC 14F1` | G3 Beneficial ownership 13D/13G | html | L1 | `(edgar-text filing)` |
 | `SC 14N` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
 | `SC TO-C` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `SC TO-I` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
