@@ -1,0 +1,1 @@
+(:accn "0001354457-26-000493" :form "25-NSE" :filed "2026-05-22" :report nil :doc "primary_doc.xml" :cik 1719406 :url "https://www.sec.gov/Archives/edgar/data/1354457/000135445726000493/primary_doc.xml")

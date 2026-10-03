@@ -286,8 +286,8 @@
      (list
       :family "G9 Periodic & event narrative"
       :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 33
       :notes nil)
      table)
@@ -295,9 +295,9 @@
      "25-NSE"
      (list
       :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'xml
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 490
       :notes nil)
      table)

@@ -4,6 +4,7 @@
 
 (require 'ert)
 (require 'cl-lib)
+(require 'edgar-fixtures)
 (require 'edgar-xml)
 (require 'edgar-13f)
 
@@ -37,6 +38,22 @@
   (let ((tree (edgar-xml-test--parse "144-aapl")))
     (should (eq (car tree) 'edgarSubmission))
     (should (assoc 'headerData (edgar-xml-project tree)))))
+
+(ert-deftest edgar-25-nse-generic-xml-elements-match-expectation ()
+  "A real Form 25-NSE exposes its filing data through generic XML paths."
+  (let* ((filing (edgar-fixtures-filing "25-nse-nrx"))
+         (xml (edgar-xml-test--fixture "25-nse-nrx"))
+         (expect
+          (edgar-fixtures-read
+           (edgar-fixtures-path "expect/25-nse-nrx.eld"))))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((tree (edgar-document-structure filing)))
+        (should (eq (plist-get tree :format) (plist-get expect :format)))
+        (dolist (entry (plist-get expect :sections))
+          (should
+           (equal
+            (plist-get (edgar-structure-section tree (car entry)) :body)
+            (cadr entry))))))))
 
 (ert-deftest edgar-xml-project-normalizes-prefixed-namespaces ()
   "Project namespace-prefixed elements using their local names."
