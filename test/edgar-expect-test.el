@@ -114,6 +114,7 @@
     ("40-APP" "application for an order" nil)
     ("40-17F1" "northern lights fund trust" nil)
     ("40-6B" "robinhood" nil)
+    ("486BXT" "ark venture fund" nil)
     ("485APOS"
      "post-effective amendment"
      ("28" "29" "30" "31" "32" "33" "34" "35"))
@@ -133,6 +134,8 @@
     ("N-2" "form n-2" nil)
     ("487" "advisors disciplined trust 2360" nil)
     ("N-4" "form n-4" nil)
+    ("N-14 8C" "alternative credit income fund" nil)
+    ("N-2ASR" "blackrock enhanced large cap core fund" nil)
     ("N-6" "form n-6" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
