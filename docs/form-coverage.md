@@ -48,10 +48,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `1-A` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A POS` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `1-A-W` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
-| `1-K` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-K")` |
-| `1-SA` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-SA")` |
-| `1-U` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-U")` |
-| `1-Z` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "1-Z")` |
+| `1-K` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
+| `1-SA` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
+| `1-U` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
+| `1-Z` | G11 Reg CF & Reg A | xml | L1 | `(edgar-text filing)` |
 | `10-12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12B")` |
 | `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
 | `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
@@ -297,7 +297,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 |---|---:|---:|---:|---|---|
 | G1 Ownership | 116,225 | 32.9% | 3 | XML | 4 (104,601), 3, 5 |
 | G7 Prospectuses & registration | 66,922 | 18.9% | 58 | HTML | 424B2 (49,609), FWP, 424B3, EFFECT, 424B5, S-8 |
-| G9 Periodic & event narrative | 38,507 | 10.9% | 34 | HTML | 8-K, 6-K, 10-Q, SD, 10-K, 11-K |
+| G9 Periodic & event narrative | 37,105 | 10.5% | 30 | HTML | 8-K, 6-K, 10-Q, SD, 10-K, 11-K |
 | G2 Notice of sale / Reg D | 36,377 | 10.3% | 2 | XML | 144 (19,526), D (16,851) |
 | G10 Investment-company registration | 24,427 | 6.9% | 40 | HTML | 497K, 497, 485BPOS, 40-APP |
 | G5 Fund periodic reports | 19,096 | 5.4% | 25 | XML | NPORT-P (14,407), N-MFP3, N-CSRS, N-CSR |
@@ -306,7 +306,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | G8 Proxy & M&A | 11,244 | 3.2% | 31 | HTML | DEFA14A, DEF 14A, ARS, 425 |
 | G6 Asset-backed | 5,714 | 1.6% | 3 | mixed | 10-D, ABS-EE, ABS-15G |
 | G12 Broker-dealer, staff, market structure | 2,577 | 0.7% | 26 | mixed | CORRESP, X-17A-5, UPLOAD, MA-I |
-| G11 Reg CF & Reg A | 1,757 | 0.5% | 14 | XML/HTML | C-AR, C, C-U, 1-A |
+| G11 Reg CF & Reg A | 3,159 | 0.9% | 18 | XML/HTML | 1-U, C-AR, C, 1-K, C-U, C-TR |
 | G13 Tail | 46 | 0.0% | 2 | HTML | 305B2, POS 8C |
 
 ## Current implementation state

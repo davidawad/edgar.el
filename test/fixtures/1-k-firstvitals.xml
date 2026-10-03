@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/rega/onekfiler" xmlns:ns1="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>1-K</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0002053118</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+      </filer>
+      <flags>
+        <shellCompanyFlag>N</shellCompanyFlag>
+        <successorFilingFlag>N</successorFilingFlag>
+      </flags>
+      <reportingPeriod>12-31-2025</reportingPeriod>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <item1>
+      <formIndication>Annual Report</formIndication>
+      <fiscalYearEnd>12-31-2025</fiscalYearEnd>
+      <street1>2605 CAMINO TASSAJARA</street1>
+      <street2>UNIT 2500</street2>
+      <city>DANVILLE</city>
+      <stateOrCountry>CA</stateOrCountry>
+      <zipCode>94526</zipCode>
+      <phoneNumber>800-922-8844-8888</phoneNumber>
+      <issuedSecuritiesTitle>Common Stock, $0.0001 par</issuedSecuritiesTitle>
+    </item1>
+    <item1Info>
+      <issuerName>FirstVitals Inc.</issuerName>
+      <cik>0002053118</cik>
+      <jurisdictionOrganization>DE</jurisdictionOrganization>
+      <irsNum>99-4891274</irsNum>
+    </item1Info>
+    <item2>
+      <regArule257>true</regArule257>
+    </item2>
+  </formData>
+</edgarSubmission>

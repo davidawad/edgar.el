@@ -1,0 +1,9 @@
+(:accn "0001214659-26-007905"
+ :form "1-K"
+ :filed "2026-06-30"
+ :report "2025-12-31"
+ :doc "primary_doc.xml"
+ :narrative-doc "partii.htm"
+ :narrative-url "https://www.sec.gov/Archives/edgar/data/2053118/000121465926007905/partii.htm"
+ :cik 2053118
+ :url "https://www.sec.gov/Archives/edgar/data/2053118/000121465926007905/primary_doc.xml")

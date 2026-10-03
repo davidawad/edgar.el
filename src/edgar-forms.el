@@ -52,9 +52,9 @@
     (puthash
      "1-K"
      (list
-      :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
+      :family "G11 Reg CF & Reg A"
+      :backend 'xml
+      :level 'L1
       :sections-or-fields nil
       :volume 422
       :notes nil)
@@ -62,9 +62,9 @@
     (puthash
      "1-SA"
      (list
-      :family "G9 Periodic & event narrative"
+      :family "G11 Reg CF & Reg A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 18
       :notes nil)
@@ -72,9 +72,9 @@
     (puthash
      "1-U"
      (list
-      :family "G9 Periodic & event narrative"
+      :family "G11 Reg CF & Reg A"
       :backend 'html
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 676
       :notes nil)
@@ -82,9 +82,9 @@
     (puthash
      "1-Z"
      (list
-      :family "G9 Periodic & event narrative"
-      :backend 'html
-      :level 'L0
+      :family "G11 Reg CF & Reg A"
+      :backend 'xml
+      :level 'L1
       :sections-or-fields nil
       :volume 286
       :notes nil)
