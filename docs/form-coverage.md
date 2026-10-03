@@ -332,6 +332,11 @@ the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
 binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
 payloads rather than an alternate readable document.
 
+All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
+the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the
+binary-safe `pdftotext` path; their complete submissions contain uuencoded PDF
+payloads rather than an alternate readable document.
+
 ## Gaps that are not about a specific form
 
 Implemented whole-library capabilities: raw-XML access, multi-document filings

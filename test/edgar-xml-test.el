@@ -169,12 +169,15 @@
            '(("nt-n-cen-brown"
               "N-CEN"
               "BROWN CAPITAL MANAGEMENT MUTUAL FUNDS")
-             ("nt-nport-p-archer" "NPORT-P" "Archer Growth ETF")))
+             ("nt-nport-p-archer"
+              "NPORT-P"
+              "Archer Growth ETF")))
     (let ((xml (edgar-xml-test--fixture (car case))))
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
         (let ((text
                (replace-regexp-in-string
-                "[ \t\n\r]+" " "
+                "[ \t\n\r]+"
+                " "
                 (edgar-text
                  '(:url "https://example.test/primary_doc.xml")))))
           (should (string-search (cadr case) text))
