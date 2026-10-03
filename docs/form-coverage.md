@@ -190,7 +190,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `MA-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-A")` |
 | `MA-I` | G12 Broker-dealer, market structure, staff | xml | L1 | `(edgar-text filing)` |
 | `MA-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "MA-W")` |
-| `MSD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "MSD")` |
+| `MSD` | G10 Investment-company registration | text | L1 | `(edgar-text filing)` |
 | `N-14` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-14 8C` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `N-1A` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
@@ -322,16 +322,17 @@ G12 currently has 5 of 26 base forms at L1: CORRESP, UPLOAD, X-17A-5, MA-I,
 and TA-2. They account for 2,260 of 2,577 G12 filings in the Q2 snapshot
 (87.7%). The remaining 21 forms are still L0.
 
-G10 currently has 39 of 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
+G10 currently has all 40 base forms at L1: 24F-2NT, 40-17F1, 40-17F2,
 40-17G, 40-24B2, 40-33, 40-6B, 40-8F-2, 40-APP, 485APOS, 485BPOS, 485BXT, 486APOS,
 486BPOS, 486BXT, 487, 497, 497AD, 497J, 497K, 497VPI, 497VPSUB, 497VPU,
-APP NTC, APP ORDR, APP WD, APP WDG, CT ORDER, DEL AM, N-14, N-14 8C, N-1A,
-N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. MSD is the only
-remaining L0 form. The sampled MSD accession (9999999997-12-000716) contains
-only a 290-byte auto-generated `.paper` placeholder. Its complete submission
-text says to reference Document Control Number 12010226 to access the original
-document; it does not include that document, so the generic text result is not
-representative filing content.
+APP NTC, APP ORDR, APP WD, APP WDG, CT ORDER, DEL AM, MSD, N-14, N-14 8C,
+N-1A, N-2, N-2 POSASR, N-2ASR, N-2MEF, N-4, N-6, and S-6. MSD's sampled
+accession (9999999997-12-000716) is a paper submission whose only primary is a
+290-byte auto-generated `.paper` placeholder. The generic text path returns
+the SEC submission wrapper and its notice, which directs readers to Document
+Control Number 12010226 for the original paper report. This verifies readable
+structural support for the available SEC representation; the original report
+is not present in the archive.
 
 All 25 G5 base forms are now L1 or L2, accounting for all 19,096 G5 filings in
 the Q2 snapshot. N-8F NTC and N-8F ORDR use recorded PDF primaries and the

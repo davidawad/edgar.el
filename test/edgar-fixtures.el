@@ -27,7 +27,7 @@ XML-only fixtures are exercised by form-specific tests."
               (file-exists-p
                (edgar-fixtures-path
                 (concat "fixtures/" slug suffix))))
-            '(".htm.gz" ".pdf")))
+            '(".htm.gz" ".pdf" ".txt")))
          (mapcar
           #'file-name-sans-extension
           (directory-files (edgar-fixtures-path "fixtures")
@@ -42,7 +42,7 @@ XML-only fixtures are exercised by form-specific tests."
        (mapcar
         (lambda (suffix)
           (edgar-fixtures-path (concat "fixtures/" slug suffix)))
-        '(".htm.gz" ".pdf")))
+        '(".htm.gz" ".pdf" ".txt")))
       (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-fixtures-read (file)

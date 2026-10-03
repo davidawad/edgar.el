@@ -632,11 +632,7 @@
 (ert-deftest edgar-msd-paper-primary-only-exposes-generated-notice ()
   "An SEC MSD paper submission exposes only its generated placeholder notice."
   (let* ((filing (edgar-fixtures-filing "msd-state-street"))
-         (submission
-          (with-temp-buffer
-            (insert-file-contents
-             (edgar-fixtures-path "fixtures/msd-state-street.txt"))
-            (buffer-string))))
+         (submission (edgar-fixtures-primary "msd-state-street")))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
       (let* ((text (edgar-text filing))
              (tree (edgar-document-structure filing)))

@@ -28,7 +28,7 @@
        #'file-exists-p
        (mapcar
         (lambda (ext) (edgar-expect--file slug ext))
-        '(".htm.gz" ".pdf")))
+        '(".htm.gz" ".pdf" ".txt")))
       (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
@@ -41,7 +41,7 @@
    (lambda (slug)
      (seq-some
       (lambda (ext) (file-exists-p (edgar-expect--file slug ext)))
-      '(".htm.gz" ".pdf")))
+      '(".htm.gz" ".pdf" ".txt")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -152,6 +152,7 @@
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("424B2" "pricing supplement" nil)
+    ("MSD" "generated as part of a paper submission" nil)
     ("F-1" "registration statement" nil)
     ("424B3" "prospectus" nil)
     ("424B4" "prospectus" nil)
