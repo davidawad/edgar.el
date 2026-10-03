@@ -149,19 +149,34 @@
          ("s-3-indaptus" . "Indaptus")
          ("s-3-maxcyte" . "MaxCyte")
          ("f-1-fasttrack" . "Fast Track")
+         ("f-1-verdera" . "Verdera")
+         ("f-1-vision-marine" . "Vision Marine")
          ("f-3-ceragon" . "Ceragon")
-         ("424b5-singularity" . "Singularity")))
+         ("f-3-bit-mining" . "BIT Mining")
+         ("f-3-critical-metals" . "Critical Metals")
+         ("424b3-powerlaw" . "Powerlaw")
+         ("424b5-singularity" . "Singularity")
+         ("424b5-oneok" . "ONEOK")
+         ("424b5-idaho-power" . "Idaho Power")))
     (let* ((slug (car entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
-           section)
+           tree
+           section
+           body)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq section (edgar-section filing "Risk Factors")))
-      (should section)
-      (should (> (length section) 100))
-    (should
-       (string-match-p "RISK FACTORS"
-                       (upcase (edgar-fixtures-norm section)))))))
+        (setq tree (edgar-document-structure filing))
+        (setq section (edgar-section filing "Risk Factors"))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (if section
+          (progn
+            (should (> (length section) 100))
+            (should
+             (string-match-p "RISK FACTORS"
+                             (upcase (edgar-fixtures-norm section)))))
+        (should-not (edgar-structure-headings tree))
+        (should (> (length body) 100))))))
 
 (ert-deftest edgar-golden-g7-pricing-supplement-generic-access ()
   "Table-led 424B2 filings retain generic body access when heading nodes are absent."

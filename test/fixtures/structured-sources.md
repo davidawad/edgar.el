@@ -8,6 +8,14 @@ Prospectus and registration samples used for generic named-section coverage:
 - `s-3-maxcyte.htm.gz` — S-3, MaxCyte ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
 - `424b2-barclays.htm.gz` — 424B2, Barclays Bank PLC ([accession 0001918704-25-014571](https://www.sec.gov/Archives/edgar/data/312070/000191870425014571/form424b2.htm); 2025-09-04).
 - `424b2-hsbc.htm.gz` — 424B2, HSBC USA Inc. ([accession 0001104659-25-034612](https://www.sec.gov/Archives/edgar/data/83246/000110465925034612/tm2511073d92_424b2.htm); 2025-04-14).
+- `f-3-bit-mining.htm.gz` — F-3, BIT Mining Ltd. ([accession 0001104659-25-049758](https://www.sec.gov/Archives/edgar/data/1517496/000110465925049758/tm2515245d1_f3.htm); 2025-05-16).
+- `f-3-critical-metals.htm.gz` — F-3, Critical Metals Corp. ([accession 0001213900-25-027568](https://www.sec.gov/Archives/edgar/data/1951089/000121390025027568/ea0235868-f3_critical.htm); 2025-04-02).
+- `f-1-verdera.htm.gz` — F-1, Verdera Energy Corp. ([accession 0001104659-26-052783](https://www.sec.gov/Archives/edgar/data/2111453/000110465926052783/tm267430d5_f-1.htm); 2026-04-30).
+- `f-1-vision-marine.htm.gz` — F-1, Vision Marine Technologies Inc. ([accession 0001104659-25-118702](https://www.sec.gov/Archives/edgar/data/1813783/000110465925118702/tm2527757d2_f1.htm); 2025-12-05).
+- `424b3-powerlaw.htm.gz` — 424B3, Powerlaw Corp. ([accession 0001213900-26-059594](https://www.sec.gov/Archives/edgar/data/2052053/000121390026059594/ea0290638-02_424b3.htm); 2026-05-20).
+- `424b3-jpm.htm.gz` — 424B3, JPMorgan Chase Financial Co. LLC ([accession 0001213900-26-077845](https://www.sec.gov/Archives/edgar/data/1665650/000121390026077845/ea0297954-01_424b3.htm); 2026-07-14).
+- `424b5-oneok.htm.gz` — 424B5, ONEOK Inc. ([accession 0001193125-26-332962](https://www.sec.gov/Archives/edgar/data/1039684/000119312526332962/d132069d424b5.htm); 2026-08-04).
+- `424b5-idaho-power.htm.gz` — 424B5, Idaho Power Co. ([accession 0001193125-26-331165](https://www.sec.gov/Archives/edgar/data/49648/000119312526331165/d171114d424b5.htm); 2026-08-04).
 
 The S-3 samples have table-of-contents-linked `Risk Factors` headings and
 exercise the shared named-section accessor. The table-led 424B2 pricing

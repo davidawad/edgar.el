@@ -1,0 +1,1 @@
+(:accn "0001104659-25-118702" :form "F-1" :company "VISION MARINE TECHNOLOGIES INC" :filed "2025-12-05" :report "" :doc "tm2527757d2_f1.htm" :cik 1813783 :url "https://www.sec.gov/Archives/edgar/data/1813783/000110465925118702/tm2527757d2_f1.htm" :size 627488 :sha256 "6a92ee287ee6b97202880676b83f6e73a0d4689ebeeb6ce43c577028b11e95ce")

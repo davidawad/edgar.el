@@ -1,0 +1,1 @@
+(:accn "0001193125-26-332962" :form "424B5" :company "ONEOK INC" :filed "2026-08-04" :report "" :doc "d132069d424b5.htm" :cik 1039684 :url "https://www.sec.gov/Archives/edgar/data/1039684/000119312526332962/d132069d424b5.htm" :size 406123 :sha256 "d7c84ef1c83f823e999250c3290cf5e5c8d76a10ba9331aef35660ce0ead3717")
