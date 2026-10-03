@@ -1,0 +1,1 @@
+(:accn "0001193125-26-288697" :form "10-12B" :company "Vylor Inc." :filed "2026-06-29" :report "" :doc "ctva_form_10-12b.htm" :cik 2128626 :url "https://www.sec.gov/Archives/edgar/data/2128626/000119312526288697/ctva_form_10-12b.htm" :size 88484 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

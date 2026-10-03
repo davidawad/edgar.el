@@ -1,0 +1,1 @@
+(:accn "0001213900-26-058540" :form "10-12G" :company "Margaree Acquisition Corp." :filed "2026-05-18" :report "" :doc "ea0291152-1012g_margaree.htm" :cik 2129664 :url "https://www.sec.gov/Archives/edgar/data/2129664/000121390026058540/ea0291152-1012g_margaree.htm" :size 272483 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

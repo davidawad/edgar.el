@@ -1,0 +1,1 @@
+(:accn "0001493152-26-019982" :form "20FR12G" :company "ChdgAI Commodities Ltd" :filed "2026-04-30" :report "" :doc "form20-fr12g.htm" :cik 2130998 :url "https://www.sec.gov/Archives/edgar/data/2130998/000149315226019982/form20-fr12g.htm" :size 1490517 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
