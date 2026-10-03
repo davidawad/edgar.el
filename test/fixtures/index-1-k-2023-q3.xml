@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/rega/onekfiler" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>1-K</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0001812447</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+      </filer>
+      <flags>
+        <shellCompanyFlag>N</shellCompanyFlag>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <successorFilingFlag>N</successorFilingFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+      <reportingPeriod>12-31-2022</reportingPeriod>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <item1>
+      <formIndication>Annual Report</formIndication>
+      <fiscalYearEnd>12-31-2022</fiscalYearEnd>
+      <street1>136 E S TEMPLE</street1>
+      <street2>SUITE 1400</street2>
+      <city>SALT LAKE CITY</city>
+      <stateOrCountry>UT</stateOrCountry>
+      <zipCode>84111</zipCode>
+      <phoneNumber>4243941090</phoneNumber>
+      <issuedSecuritiesTitle>Common</issuedSecuritiesTitle>
+    </item1>
+    <item1Info>
+      <issuerName>Sky Quarry Inc.</issuerName>
+      <cik>0001812447</cik>
+      <jurisdictionOrganization>DE</jurisdictionOrganization>
+      <irsNum>84-1803091</irsNum>
+    </item1Info>
+    <item2>
+      <regArule257>false</regArule257>
+    </item2>
+    <summaryInfo>
+      <commissionFileNumber>024-11574</commissionFileNumber>
+      <offeringQualificationDate>09-29-2021</offeringQualificationDate>
+      <offeringCommenceDate>11-19-2021</offeringCommenceDate>
+      <qualifiedSecuritiesSold>15000000</qualifiedSecuritiesSold>
+      <offeringSecuritiesSold>14556670</offeringSecuritiesSold>
+      <pricePerSecurity>1.2500</pricePerSecurity>
+      <aggregrateOfferingPrice>18195837.75</aggregrateOfferingPrice>
+      <aggregrateOfferingPriceHolders>0.00</aggregrateOfferingPriceHolders>
+      <underwrittenSpName>Digital Offering LLC</underwrittenSpName>
+      <underwriterFees>181958.37</underwriterFees>
+      <salesCommissionsSpName>n/a</salesCommissionsSpName>
+      <salesCommissionsFee>0.00</salesCommissionsFee>
+      <findersSpName>n/a</findersSpName>
+      <findersFees>0.00</findersFees>
+      <auditorSpName>Indigospire Advisors LLC</auditorSpName>
+      <auditorFees>55375.00</auditorFees>
+      <legalSpName>Hart &amp; Hart LLC</legalSpName>
+      <legalFees>39125.00</legalFees>
+      <promoterSpName>n/a</promoterSpName>
+      <promotersFees>0.00</promotersFees>
+      <blueSkySpName>n/a</blueSkySpName>
+      <blueSkyFees>0.00</blueSkyFees>
+      <crdNumberBrokerDealer>166401</crdNumberBrokerDealer>
+      <issuerNetProceeds>17919379.00</issuerNetProceeds>
+    </summaryInfo>
+  </formData>
+</edgarSubmission>

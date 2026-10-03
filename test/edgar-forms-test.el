@@ -91,6 +91,36 @@
   (dolist (form '("13F-HR" "13F-NT"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g9-recorded-narratives-have-golden-coverage
+    ()
+  "G9 narrative fixtures with reviewed goldens are marked L2."
+  (dolist (form
+           '("10-K"
+             "10-KT"
+             "10-Q"
+             "20-F"
+             "8-K"
+             "11-K"
+             "15-12G"
+             "18-K"
+             "25"
+             "40-F"
+             "6-K"
+             "SD"
+             "NT 10-K"
+             "NT 10-Q"
+             "NT 11-K"
+             "NT 20-F"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L2)))
+  (dolist (form '("1-K" "1-Z"))
+    (should (eq (plist-get (edgar-form-info form) :backend) 'xml))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
+
+(ert-deftest edgar-forms-g11-reg-a-reports-remain-generic-l1 ()
+  "Reg A XML/HTML reports stay at L1 until typed/named section goldens exist."
+  (dolist (form '("1-K" "1-SA" "1-U" "1-Z"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
+
 (ert-deftest
     edgar-forms-g8-proxy-and-tender-sections-have-golden-coverage
     ()

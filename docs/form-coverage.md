@@ -57,22 +57,22 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `10-12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "10-12G")` |
 | `10-D` | G6 Asset-backed | html | L1 | `(edgar-text filing)` |
 | `10-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
-| `10-KT` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `10-KT` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `10-Q` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `11-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `13F-HR` | G4 13F holdings | xml | L2 | `(edgar-13f-holdings filing)` |
 | `13F-NT` | G4 13F holdings | xml | L2 | `(edgar-13f-notice filing)` |
 | `144` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
-| `15-12G` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `15-12G` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `15-15D` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15-15D")` |
 | `15F-12B` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12B")` |
 | `15F-12G` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "15F-12G")` |
-| `18-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `18-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `20-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `20FR12B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12B")` |
 | `20FR12G` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "20FR12G")` |
 | `24F-2NT` | G10 Investment-company registration | xml | L1 | `(edgar-text filing)` |
-| `25` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `25` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `25-NSE` | G9 Periodic & event narrative | xml | L1 | `(edgar-text filing)` |
 | `253G1` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `253G2` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
@@ -222,10 +222,10 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NPORT-P` | G5 Fund periodic reports | xml | L2 | `(edgar-xml filing)` |
 | `NRSRO-CE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-CE")` |
 | `NRSRO-UPD` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "NRSRO-UPD")` |
-| `NT 10-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT 10-Q` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT 11-K` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
-| `NT 20-F` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
+| `NT 10-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `NT 10-Q` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `NT 11-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
+| `NT 20-F` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `NT N-CEN` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
 | `NT NPORT-P` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
 | `NT-NCEN` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
@@ -348,24 +348,29 @@ access on a distinct 6-K filer, Decent Holding Inc. (CIK 1958133, accession
 do not imply that every G9 form's narrative layout has a dedicated parser.
 Form SD is now L2 based on Apple's
 2026-05-28 filing (accession 0001140361-26-023149), with generic item access
-goldened for Items 1.01, 1.02, 2.01, and 3.01. Form 18-K has L1 generic HTML
-structure and body-path coverage from the Republic of Chile filing (accession
-0001104659-25-094669, filed 2025-09-30); its numeric disclosure prompts do not
-currently appear as parser-level item sections.
+goldened for Items 1.01, 1.02, 2.01, and 3.01. Form 18-K has L2 generic HTML
+structure and golden body-path coverage from the Republic of Chile filing
+(accession 0001104659-25-094669, filed 2025-09-30); its numeric disclosure
+prompts do not currently appear as parser-level item sections.
 
-Form 25 has L1 generic HTML body access, recorded from Walmart (accession
+Form 25 has L2 generic HTML body access with golden strings, recorded from Walmart (accession
 0000104169-25-000201, filed 2025-12-08). Form 25-NSE has L1 generic XML
 structure access, recorded from NRX Pharmaceuticals (accession
 0001354457-26-000493, filed 2026-05-22). These short delisting notifications
-do not have form-specific item headings exposed by the section parser; L1
-means the recorded primary document is readable through generic document
-paths. Form 15-12G now has the same generic HTML body coverage, backed by
-Apogee Therapeutics (accession 0001140361-26-036410, filed 2026-09-14).
-NT 10-K, NT 10-Q, NT 11-K, and NT 20-F have L1 generic HTML body coverage
+do not have form-specific item headings exposed by the section parser; their
+L1/L2 levels measure generic primary-document readability and, for L2, golden
+strings. Form 15-12G has L2 generic HTML body coverage with golden strings,
+backed by Apogee Therapeutics (accession 0001140361-26-036410, filed
+2026-09-14). NT 10-K, NT 10-Q, NT 11-K, and NT 20-F have L2 generic HTML body
+coverage with golden strings
 from Digital Brand Media (accessions 0001185185-18-002101 and
 0001127475-17-000008), Old Republic (0000074260-26-000076), and PT
 Telekomunikasi Indonesia (0001001807-26-000016), respectively. These are
 Form 12b-25 notices; coverage means readable text and generic document paths,
 not a form-specific extension-deadline or reason parser.
+
+Forms 1-SA and 1-U have L2 HTML section goldens for current and older filings.
+Forms 1-K and 1-Z use structured XML primaries; their L1 fixtures verify the
+generic XML projection and readable text, without form-specific typed accessors.
 
 Work is tracked in `.beads/` (`br ready`, `br list`).

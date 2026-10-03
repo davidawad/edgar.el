@@ -154,6 +154,8 @@
     ("FWP" "hsbc" nil)
     ("S-1" "registration statement" nil)
     ("10-KT" "keemo fashion" ("I.1" "I.1A"))
+    ("1-SA" "form 1-sa" nil)
+    ("1-U" "form 1-u" nil)
     ("8-K12B" "nova minerals" nil)
     ("QRTLYRPT" "african development bank" nil)
     ("SD" "specialized disclosure report" nil)

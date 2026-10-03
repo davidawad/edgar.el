@@ -82,9 +82,10 @@
          (puthash form t low-volume-l0)))
      edgar-forms--registry)
     (should-not
-     (seq-some (lambda (filing)
-                 (gethash (plist-get filing :form) low-volume-l0))
-               (append q2 q3)))))
+     (seq-some
+      (lambda (filing)
+        (gethash (plist-get filing :form) low-volume-l0))
+      (append q2 q3)))))
 
 (ert-deftest edgar-form-coverage-registry-row-removal-names-form ()
   "Removing a registry row fails with that form name."
@@ -247,14 +248,18 @@
         (progn
           (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
           (edgar-form-coverage-test--write
-           (expand-file-name "test.eld" fixtures) "(:form \"TEST-FORM\")\n")
+           (expand-file-name "test.eld"
+                             fixtures)
+           "(:form \"TEST-FORM\")\n")
           (edgar-form-coverage-test--write primary "<fixture/>")
           (edgar-form-coverage-test--write
            (expand-file-name "test.eld" expects) "(:ok t)\n")
-          (edgar-form-coverage-test--write golden "(:fields (value))\n")
+          (edgar-form-coverage-test--write
+           golden "(:fields (value))\n")
           ;; Historical secondary fixtures may retain their rendered form.
           (edgar-form-coverage-test--write
-           (expand-file-name "test-prior.eld" fixtures)
+           (expand-file-name "test-prior.eld"
+                             fixtures)
            "(:form \"TEST-FORM\")\n")
           (edgar-form-coverage-test--write
            (expand-file-name "test-prior.htm.gz" fixtures) "rendered")
