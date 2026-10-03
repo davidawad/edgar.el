@@ -77,7 +77,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `253G1` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `253G2` | G11 Reg CF & Reg A | html | L1 | `(edgar-text filing)` |
 | `3` | G1 Ownership | xml | L2 | `(edgar-form3-holdings filing)` |
-| `305B2` | G13 Tail | html | L0 | `(edgar-form-info "305B2")` |
+| `305B2` | G13 Tail | html | L1 | `(edgar-text filing)` |
 | `4` | G1 Ownership | xml | L2 | `(edgar-form4-transactions filing)` |
 | `40-17F1` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `40-17F2` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |

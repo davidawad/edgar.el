@@ -253,6 +253,7 @@
     ("1-SA" "semiannual report pursuant to regulation a" nil)
     ("1-U" "current report" nil)
     ("1-A-W" "withdrawal of offering statement" nil)
+    ("305B2" "statement of eligibility under" nil)
     ("253G1" "offering circular" nil)
     ("253G2" "offering circular supplement" nil)
     ("144" "notice of proposed sale" nil)))
