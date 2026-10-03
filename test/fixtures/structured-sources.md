@@ -2,12 +2,33 @@
 
 These are unmodified documents published in SEC EDGAR's Archives:
 
+Foreign issuer exhibit access:
+
+- `6-k-dxst-ex99-1.html` — EX-99.1 attached to Decent Holding Inc.'s 6-K ([accession 0001185185-26-003233](https://www.sec.gov/Archives/edgar/data/1958133/000118518526003233/dxstex99-1.htm); 2026-08-03). The filing directory is recorded in `6-k-dxst-index.json`.
+
 Prospectus and registration samples used for generic named-section coverage:
+
+- `s-4-comcast.htm.gz` — S-4, Comcast Corp. ([accession 0001193125-26-326101](https://www.sec.gov/Archives/edgar/data/1166691/000119312526326101/d44098ds4.htm); 2026-07-30).
+- `s-4-indivior.htm.gz` — S-4, Indivior Pharmaceuticals Inc. ([accession 0001104659-26-103278](https://www.sec.gov/Archives/edgar/data/1625297/000110465926103278/tm2623753-1_s4.htm); 2026-08-28).
+- `s-4-olin.htm.gz` — S-4, Olin Corp. ([accession 0001193125-26-294465](https://www.sec.gov/Archives/edgar/data/74303/000119312526294465/d127943ds4.htm); 2026-07-02).
+- `424b4-rectitude.htm.gz` — 424B4, Rectitude Holdings Ltd. ([accession 0001213900-24-103728](https://www.sec.gov/Archives/edgar/data/1995116/000121390024103728/ea0222844-424b4_rectitude.htm); 2024-11-29).
+- `424b4-impact-biomedical.htm.gz` — 424B4, Impact Biomedical Inc. ([accession 0001493152-24-036520](https://www.sec.gov/Archives/edgar/data/1834105/000149315224036520/form424b4.htm); 2024-09-17).
+- `424b4-loar.htm.gz` — 424B4, Loar Holdings Inc. ([accession 0001193125-24-118106](https://www.sec.gov/Archives/edgar/data/2000178/000119312524118106/d551112d424b4.htm); 2024-04-26).
+- `8-a12b-amazon.htm.gz` — 8-A12B, Amazon.com, Inc. ([accession 0001104659-26-110227](https://www.sec.gov/Archives/edgar/data/1018724/000110465926110227/tm2625860d1_8a12b.htm); 2026-09-24). Its generic Items 1 and 2 are accessible through `edgar-section`.
+- `s-8-pos-exxonmobil.htm.gz` — S-8 POS, ExxonMobil Holdings Corp. ([accession 0001193125-26-292576](https://www.sec.gov/Archives/edgar/data/2115436/000119312526292576/d159056ds8pos.htm); 2026-07-01). Part II Items are accessible through `edgar-section`.
 
 - `s-3-indaptus.htm.gz` — S-3, Indaptus Therapeutics ([accession 0001641172-25-023490](https://www.sec.gov/Archives/edgar/data/1857044/000164117225023490/forms-3.htm); 2025-08-13).
 - `s-3-maxcyte.htm.gz` — S-3, MaxCyte ([accession 0001193125-25-115950](https://www.sec.gov/Archives/edgar/data/1785530/000119312525115950/d809595ds3.htm); 2025-05-08).
 - `424b2-barclays.htm.gz` — 424B2, Barclays Bank PLC ([accession 0001918704-25-014571](https://www.sec.gov/Archives/edgar/data/312070/000191870425014571/form424b2.htm); 2025-09-04).
 - `424b2-hsbc.htm.gz` — 424B2, HSBC USA Inc. ([accession 0001104659-25-034612](https://www.sec.gov/Archives/edgar/data/83246/000110465925034612/tm2511073d92_424b2.htm); 2025-04-14).
+- `f-3-bit-mining.htm.gz` — F-3, BIT Mining Ltd. ([accession 0001104659-25-049758](https://www.sec.gov/Archives/edgar/data/1517496/000110465925049758/tm2515245d1_f3.htm); 2025-05-16).
+- `f-3-critical-metals.htm.gz` — F-3, Critical Metals Corp. ([accession 0001213900-25-027568](https://www.sec.gov/Archives/edgar/data/1951089/000121390025027568/ea0235868-f3_critical.htm); 2025-04-02).
+- `f-1-verdera.htm.gz` — F-1, Verdera Energy Corp. ([accession 0001104659-26-052783](https://www.sec.gov/Archives/edgar/data/2111453/000110465926052783/tm267430d5_f-1.htm); 2026-04-30).
+- `f-1-vision-marine.htm.gz` — F-1, Vision Marine Technologies Inc. ([accession 0001104659-25-118702](https://www.sec.gov/Archives/edgar/data/1813783/000110465925118702/tm2527757d2_f1.htm); 2025-12-05).
+- `424b3-powerlaw.htm.gz` — 424B3, Powerlaw Corp. ([accession 0001213900-26-059594](https://www.sec.gov/Archives/edgar/data/2052053/000121390026059594/ea0290638-02_424b3.htm); 2026-05-20).
+- `424b3-jpm.htm.gz` — 424B3, JPMorgan Chase Financial Co. LLC ([accession 0001213900-26-077845](https://www.sec.gov/Archives/edgar/data/1665650/000121390026077845/ea0297954-01_424b3.htm); 2026-07-14).
+- `424b5-oneok.htm.gz` — 424B5, ONEOK Inc. ([accession 0001193125-26-332962](https://www.sec.gov/Archives/edgar/data/1039684/000119312526332962/d132069d424b5.htm); 2026-08-04).
+- `424b5-idaho-power.htm.gz` — 424B5, Idaho Power Co. ([accession 0001193125-26-331165](https://www.sec.gov/Archives/edgar/data/49648/000119312526331165/d171114d424b5.htm); 2026-08-04).
 
 The S-3 samples have table-of-contents-linked `Risk Factors` headings and
 exercise the shared named-section accessor. The table-led 424B2 pricing
@@ -19,7 +40,12 @@ Veralto sample exercises Part II Item access without a table of contents.
 
 Proxy, merger, and tender-offer samples:
 
+- `defa14a-pra.htm.gz` — PRA Group additional definitive proxy materials ([DEFA14A accession 0001185348-26-000015](https://www.sec.gov/Archives/edgar/data/1185348/000118534826000015/defa14a2026proxycard.htm); 2026-04-30).
 - `def-14c-pmgc.htm.gz` — PMGC Holdings definitive information statement ([DEF 14C accession 0001213900-25-080463](https://www.sec.gov/Archives/edgar/data/1840563/000121390025080463/0001213900-25-080463-index.htm); 2025-08-26).
+- `def-14a-encore.htm.gz` — Encore Capital Group definitive proxy ([DEF 14A accession 0001193125-25-093645](https://www.sec.gov/Archives/edgar/data/1500881/000119312525093645/d843005ddef14a.htm); 2025-04-24).
+- `def-14a-venture-global.htm.gz` — Venture Global definitive proxy ([DEF 14A accession 0001193125-25-071787](https://www.sec.gov/Archives/edgar/data/2007855/000119312525071787/d906341ddef14a.htm); 2025-04-03).
+- `sc-14d9-cidara.htm.gz` — Cidara tender-offer recommendation ([SC 14D9 accession 0001193125-25-309970](https://www.sec.gov/Archives/edgar/data/1610618/000119312525309970/d59361dsc14d9.htm); 2025-12-05).
+- `sc-to-t-biontech.htm.gz` — BioNTech tender offer for CureVac ([SC TO-T accession 0001193125-25-245191](https://www.sec.gov/Archives/edgar/data/1809122/000119312525245191/d38438dsctot.htm); 2025-10-21).
 - `defm14a-matrixx.htm.gz` — Sotherly Hotels merger proxy ([DEFM14A accession 0001193125-25-316771](https://www.sec.gov/Archives/edgar/data/1301236/000119312525316771/0001193125-25-316771-index.htm); 2025-12-12).
 - `sc-to-i-pamt.htm.gz` — P.A.M. Transportation issuer tender offer ([SC TO-I accession 0001174947-25-000508](https://www.sec.gov/Archives/edgar/data/798287/000117494725000508/sctoi0425_pamt.htm); 2025-04-03).
 - `sc-to-c-cresco.htm.gz` — Cresco Labs tender-offer communication ([SC TO-C accession 0001832928-25-000020](https://www.sec.gov/Archives/edgar/data/1832928/000183292825000020/august2025_scheduleto-c.htm); 2025-08-20).
@@ -54,12 +80,15 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `n-8f-aam-alternatives.htm.gz` — compressed primary N-8F from [accession 0001213900-26-070526](https://www.sec.gov/Archives/edgar/data/2065443/000121390026070526/ea0295460-01_n8f.htm).
 - `nt-ncsr-cpg-carlyle.htm.gz` — compressed primary NT-NCSR from [accession 0001398344-26-010691](https://www.sec.gov/Archives/edgar/data/1560916/000139834426010691/fp0098304-2_ntncsr.htm).
 - `n-30d-spdr.htm.gz` — compressed primary N-30D from [accession 0001193125-26-290785](https://www.sec.gov/Archives/edgar/data/1041130/000119312526290785/d163486dn30d.htm).
+- `n-14-nomura.htm.gz` — compressed primary [N-14 accession 0002071844-26-000593](https://www.sec.gov/Archives/edgar/data/809064/000207184426000593/n14.htm) (Nomura; 2026-05-26).
 - `nt-ncen-siren.htm.gz` — compressed primary NT-NCEN from [accession 0001398344-26-010849](https://www.sec.gov/Archives/edgar/data/1796383/000139834426010849/fp0099423-1_ntncen.htm).
 - `ntfncsr-siren.htm.gz` — compressed primary NTFNCSR from [accession 0001398344-26-010772](https://www.sec.gov/Archives/edgar/data/1796383/000139834426010772/fp0099394-1_ntcsr.htm); its primary document type is NT-NCSR.
 - `n-54a-third-point.htm.gz` — compressed primary N-54A from [accession 0001104659-26-040357](https://www.sec.gov/Archives/edgar/data/2025369/000110465926040357/tm2611086d1_n54a.htm).
 - `n-54c-nuveen.htm.gz` — compressed primary N-54C from [accession 0002071136-26-000023](https://www.sec.gov/Archives/edgar/data/2071136/000207113626000023/bdcv-formnx54cmay2026.htm).
 - `n-6f-robinhood.htm.gz` — compressed primary N-6F from [accession 0001628280-26-046265](https://www.sec.gov/Archives/edgar/data/2131040/000162828026046265/rviin-6f.htm).
 - `n-23c3b-axxes.htm.gz` — compressed primary N-23C3B from [accession 0001580642-26-003231](https://www.sec.gov/Archives/edgar/data/2003867/000158064226003231/axxesopportunistic23c3.htm); its filer-supplied description says N-23C3A, but the SEC filing type and document type are N-23C3B.
+- `n-8f-ntc-blackrock.pdf` — PDF primary N-8F NTC for BlackRock Collateral Trust from [accession 9999999997-26-000987](https://www.sec.gov/Archives/edgar/data/1671416/999999999726000987/filename1.pdf).
+- `n-8f-ordr-blackrock.pdf` — PDF primary N-8F ORDR for BlackRock Collateral Trust from [accession 9999999997-26-001103](https://www.sec.gov/Archives/edgar/data/1671416/999999999726001103/filename1.pdf).
 - `10-d-ms-c21.htm.gz` — compressed primary 10-D from [accession 0001888524-26-012144](https://www.sec.gov/Archives/edgar/data/1631406/000188852426012144/msc15c21_10d-202606.htm).
 - `abs-15g-tesla-energy.htm.gz` — compressed primary ABS-15G from [accession 0001193125-26-219735](https://www.sec.gov/Archives/edgar/data/2037778/000119312526219735/d108502dabs15g.htm).
 - `abs-ee-deutsche.xml` — [EX-102 in ABS-EE accession 0001539497-25-000961](https://www.sec.gov/Archives/edgar/data/1013454/000153949725000961/exh_102.xml).
@@ -93,9 +122,22 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `40-17g-1290.htm.gz` — compressed [40-17G accession 0001193125-26-265192](https://www.sec.gov/Archives/edgar/data/1605941/000119312526265192/d56800d4017g.htm).
 - `485apos-360.htm.gz` — compressed [485APOS accession 0001999371-26-013444](https://www.sec.gov/Archives/edgar/data/1319067/000199937126013444/m3sixty-485apos_062526.htm).
 - `485bxt-ark.htm.gz` — compressed [485BXT accession 0001213900-26-041967](https://www.sec.gov/Archives/edgar/data/1579982/000121390026041967/ea0285627-01_485bxt.htm).
+- `486bpos-coller.htm.gz` — compressed primary [486BPOS accession 0001213900-26-082754](https://www.sec.gov/Archives/edgar/data/1969180/000121390026082754/ea0299457-01_486bpos.htm) (Coller Secondaries Private Equity Opportunities Fund; 2026-07-29).
 - `497vpi-allianz.htm.gz` — compressed [497VPI accession 0000072499-26-000023](https://www.sec.gov/Archives/edgar/data/72499/000007249926000023/iaincomeadvsupplement.htm).
 - `497vpu-allianz-ny.htm.gz` — compressed [497VPU accession 0000080019-26-000008](https://www.sec.gov/Archives/edgar/data/80019/000008001926000008/iany497vpu.htm).
+- `497ad-powerlaw.htm.gz` — compressed primary [497AD accession 0001213900-26-062218](https://www.sec.gov/Archives/edgar/data/2052053/000121390026062218/ea0292491-03_497ad.htm) (Powerlaw Corp.; 2026-05-28).
+- `497vpsub-voya.htm.gz` — compressed primary [497VPSUB accession 0000917677-26-000048](https://www.sec.gov/Archives/edgar/data/103005/000091767726000048/0126vmp497vpsub.htm) (Voya; 2026-01-21).
 - `s-6-ft12946.htm.gz` — compressed [S-6 accession 0001445546-26-002415](https://www.sec.gov/Archives/edgar/data/2111250/000144554626002415/s-6.htm).
+- `40-6b-robinhood.htm.gz` — compressed primary [40-6B accession 0000950103-26-010727](https://www.sec.gov/Archives/edgar/data/1783879/000095010326010727/dp249846_406b.htm) (2026-07-16).
+- `40-17f1-northern-lights.htm.gz` — compressed primary [40-17F1 accession 0001580642-26-002258](https://www.sec.gov/Archives/edgar/data/1314414/000158064226002258/pfgfidinstlameqindstra4017f1.htm) (Northern Lights Fund Trust; 2026-04-02).
+- `n-4-2026.htm.gz` — compressed primary [N-4 accession 0001193125-26-352892](https://www.sec.gov/Archives/edgar/data/1007571/000119312526352892/d28800dn4.htm) (2026-08-17).
+- `n-6-pacific-select.htm.gz` — compressed primary [N-6 accession 0000726865-26-000669](https://www.sec.gov/Archives/edgar/data/1048607/000072686526000669/initialn6.htm) (2026-08-06).
+- `486bxt-ark-venture.htm.gz` — compressed primary [486BXT accession 0001213900-26-083105](https://www.sec.gov/Archives/edgar/data/1905088/000121390026083105/ea0299591-01_486bxt.htm) (ARK Venture Fund; 2026-07-30).
+- `n-14-8c-acif.htm.gz` — compressed primary [N-14 8C accession 0001193125-26-124285](https://www.sec.gov/Archives/edgar/data/1726548/000119312526124285/d115975dn148c.htm) (Alternative Credit Income Fund; 2026-03-25).
+- `n-2asr-blackrock.htm.gz` — compressed primary [N-2ASR accession 0001193125-26-304963](https://www.sec.gov/Archives/edgar/data/1278895/000119312526304963/d131446dn2asr.htm) (BlackRock Enhanced Large Cap Core Fund; 2026-07-15).
+- `486apos-flat-rock.htm.gz` — compressed primary [486APOS accession 0001213900-26-050259](https://www.sec.gov/Archives/edgar/data/1814390/000121390026050259/ea0288074-02_486apos.htm) (Flat Rock Core Income Fund; 2026-04-30).
+- `487-adt2360.htm.gz` — compressed primary [Form 487 accession 0001999371-26-021338](https://www.sec.gov/Archives/edgar/data/2118248/000199937126021338/adt2360-487.htm) (Advisors Disciplined Trust 2360; 2026-09-25).
+- `n-2-buttonwood.htm.gz` — compressed primary [N-2 accession 0001213900-26-023498](https://www.sec.gov/Archives/edgar/data/2104046/000121390026023498/ea0279503-01_n2.htm) (Buttonwood First Access Fund; 2026-03-04).
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
 Reviewed generic-structure expectations live in `test/expect/`; typed

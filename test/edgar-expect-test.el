@@ -19,8 +19,17 @@
   (file-name-directory (or load-file-name buffer-file-name)))
 
 (defun edgar-expect--file (slug ext)
-  "Path of SLUG's fixture (EXT \".eld\" / \".htm.gz\") or expectation."
+  "Path of SLUG's fixture with EXT or expectation."
   (expand-file-name (concat "fixtures/" slug ext) edgar-expect--dir))
+
+(defun edgar-expect--primary-file (slug)
+  "Path of SLUG's rendered primary fixture."
+  (or (seq-find
+       #'file-exists-p
+       (mapcar
+        (lambda (ext) (edgar-expect--file slug ext))
+        '(".htm.gz" ".pdf")))
+      (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-expect--expect-file (slug)
   "Path of SLUG's committed expectation."
@@ -29,7 +38,10 @@
 (defun edgar-expect--slugs ()
   "Slugs of every rendered filing fixture."
   (seq-filter
-   (lambda (slug) (file-exists-p (edgar-expect--file slug ".htm.gz")))
+   (lambda (slug)
+     (seq-some
+      (lambda (ext) (file-exists-p (edgar-expect--file slug ext)))
+      '(".htm.gz" ".htm")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -43,10 +55,19 @@
 
 (defun edgar-expect--html (slug)
   "Decompressed HTML of SLUG's fixture."
+  (edgar-expect--primary slug))
+
+(defun edgar-expect--primary (slug)
+  "Primary body of SLUG's fixture, preserving PDF bytes."
   (with-temp-buffer
-    (let ((coding-system-for-read 'utf-8)
-          (auto-compression-mode t))
-      (insert-file-contents (edgar-expect--file slug ".htm.gz")))
+    (let ((file (edgar-expect--primary-file slug)))
+      (if (string-suffix-p ".pdf" file t)
+          (progn
+            (set-buffer-multibyte nil)
+            (insert-file-contents-literally file))
+        (let ((coding-system-for-read 'utf-8)
+              (auto-compression-mode t))
+          (insert-file-contents file))))
     (buffer-string)))
 
 (defun edgar-expect--bucket (n)
@@ -91,41 +112,62 @@
     ("6-K" "report of foreign private issuer" nil)
     ("40-17G" "1290 funds 40-17g" nil)
     ("40-APP" "application for an order" nil)
+    ("40-17F1" "northern lights fund trust" nil)
+    ("40-6B" "robinhood" nil)
+    ("486BXT" "ark venture fund" nil)
     ("485APOS"
      "post-effective amendment"
      ("28" "29" "30" "31" "32" "33" "34" "35"))
+    ("486APOS" "post-effective amendment" nil)
+    ("486BPOS" "form n-2" nil)
     ("485BPOS" "form n-1a" nil)
     ("485BXT" "form n-1a" nil)
     ("497" "supplement" nil)
-    ("497J" "certification of no change" nil)
+    ("497AD" "powerlaw" nil)
+    ("497J" "pursuant to rule 497(j)" nil)
     ("497K" "summary prospectus" nil)
     ("497VPI" "income benefit supplement" nil)
     ("497VPU" "updating summary prospectus" nil)
+    ("497VPSUB" "voya" nil)
     ("N-1A" "registration statement" nil)
+    ("N-14" "nomura" nil)
+    ("N-2" "form n-2" nil)
+    ("487" "advisors disciplined trust 2360" nil)
+    ("N-4" "form n-4" nil)
+    ("N-14 8C" "alternative credit income fund" nil)
+    ("N-2ASR" "blackrock enhanced large cap core fund" nil)
+    ("N-6" "form n-6" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
+    ("S-4" "registration statement" nil)
     ("424B2" "pricing supplement" nil)
-    ("F-1" "fast track group" nil)
-    ("424B3" "goldman sachs" nil)
-    ("424B5" "singularity future technology" nil)
+    ("F-1" "registration statement" nil)
+    ("424B3" "prospectus" nil)
+    ("424B4" "prospectus" nil)
+    ("424B5" "prospectus" nil)
     ("424B7" "watsco" nil)
     ("424B8" "nomura" nil)
-    ("F-3" "ceragon" nil)
+    ("8-A12B" "amazon.com, inc." ("1" "2"))
+    ("F-3" "registration statement" nil)
     ("S-8" "veralto" nil)
+    ("S-8 POS" "exxonmobil holdings corp" ("II.3" "II.8"))
     ("FWP" "hsbc" nil)
     ("S-1" "registration statement" nil)
-    ("10-KT" "keemo fashion" ("I.1" "I.1A"))
+    ("10-KT" "transition report" ("I.1"))
+    ("1-SA" "form 1-sa" nil)
+    ("1-U" "form 1-u" nil)
     ("8-K12B" "nova minerals" nil)
     ("QRTLYRPT" "african development bank" nil)
     ("SD" "specialized disclosure report" nil)
-    ("15-12G" "apogee therapeutics" nil)
-    ("NT 10-K" "digital brand media" nil)
-    ("NT 10-Q" "digital brand media" nil)
-    ("NT 11-K" "ori 401" nil)
-    ("NT 20-F" "telekomunikasi" nil)
+    ("15-12G" "termination of registration" nil)
+    ("NT 10-K" "notification of late filing" nil)
+    ("NT 10-Q" "notification of late filing" nil)
+    ("NT 11-K" "notification of late filing" nil)
+    ("NT 20-F" "notification of late filing" nil)
     ("18-K" "form 18-k" nil)
-    ("25" "walmart inc" nil)
+    ("25" "notification of removal from listing" nil)
     ("40FR12B" "nuran wireless" nil)
+    ("DEFA14A" "pra group, inc." nil)
     ("DEFA14C" "notice of internet availability" nil)
     ("DEFM14C" "schedule 14c information" nil)
     ("DEFR14C" "amendment no. 1" nil)
@@ -136,7 +178,7 @@
     ("SC 14N" "schedule 14n" nil)
     ("DEF 14A" "proxy statement" nil)
     ("DEF 14C" "definitive information statement" nil)
-    ("DEFM14A" "defm14a" nil)
+    ("DEFM14A" "schedule 14a" nil)
     ("11-K" "annual report" nil)
     ("4" "statement of changes in beneficial ownership" nil)
     ("13F-HR" "form 13f" nil)
@@ -153,6 +195,8 @@
     ("N-6F" "robinhood ventures fund ii" nil)
     ("N-8A" "notification of registration" nil)
     ("N-8F" "application for deregistration" nil)
+    ("N-8F NTC" "notice of applications for deregistration" nil)
+    ("N-8F ORDR" "applicant has ceased to be an investment company" nil)
     ("N-VP" "annual notice" nil)
     ("N-VPFS" "financial statements" nil)
     ("NT-NCEN" "notification of late filing" nil)
@@ -165,6 +209,9 @@
     ("SC TO-C" "tender offer statement on schedule to" nil)
     ("SC TO-I" "tender offer statement" nil)
     ("SC 14D9" "schedule 14d-9" nil)
+    ("1-K" "form 1-k" nil)
+    ("1-SA" "semiannual report pursuant to regulation a" nil)
+    ("1-U" "current report" nil)
     ("1-A-W" "withdrawal of offering statement" nil)
     ("253G1" "offering circular" nil)
     ("253G2" "offering circular supplement" nil)
@@ -174,12 +221,12 @@
   "Replay fixture SLUG and compare against its expectation."
   (let* ((filing
           (edgar-expect--read (edgar-expect--file slug ".eld")))
-         (html (edgar-expect--html slug))
+         (primary (edgar-expect--primary slug))
          (inv
           (assoc (plist-get filing :form) edgar-expect--invariants))
          text
          snap)
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) primary)))
       (setq text (edgar-text filing)))
     (setq snap (edgar-expect--snapshot filing text))
     (should inv)

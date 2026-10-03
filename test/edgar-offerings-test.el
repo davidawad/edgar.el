@@ -287,6 +287,48 @@
                                             edgar-offerings-test--directory))
                          :fields))))))
 
+(ert-deftest edgar-form-1-k-header-and-narrative-are-readable-offline ()
+  "Read Form 1-K XML header and the filing's SEC narrative document."
+  (let* ((slug "1-k-firstvitals")
+         (filing (edgar-offerings-test--filing slug "1-K"))
+         (expected
+          (edgar-offerings-test--read
+           (expand-file-name "expect/1-k-firstvitals.eld"
+                             edgar-offerings-test--directory)))
+         (narrative (copy-sequence filing))
+         (html (with-temp-buffer
+                 (let ((auto-compression-mode t))
+                   (insert-file-contents
+                    (expand-file-name
+                     (concat "fixtures/" slug ".html.gz")
+                     edgar-offerings-test--directory)))
+                 (buffer-string))))
+    (should
+     (equal
+      (edgar-offerings-test--generic-fields
+       slug "1-K" '("submissionType" "issuerName" "reportingPeriod"))
+      (plist-get expected :fields)))
+    (setf (plist-get narrative :url) (plist-get filing :narrative-url))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (should
+       (string-match-p
+        (plist-get expected :narrative-marker)
+        (upcase (edgar-text narrative)))))))
+
+(ert-deftest edgar-form-1-z-primary-fields-match-expectation ()
+  "Generic XML accessors preserve Form 1-Z termination fields."
+  (should
+   (equal
+    (edgar-offerings-test--generic-fields
+     "1-z-masterworks-289" "1-Z"
+     '("submissionType" "issuerName" "date"))
+    (plist-get
+     (edgar-offerings-test--read
+      (expand-file-name
+       "expect/1-z-masterworks-289.eld"
+       edgar-offerings-test--directory))
+     :fields))))
+
 (ert-deftest edgar-form-c-generic-text-and-tree-access ()
   "Generic APIs retain Form C text and nested XML values offline."
   (let* ((slug "c-airthium")

@@ -71,6 +71,29 @@
           (should (= calls 3)))
       (delete-directory edgar-http-cache-directory t))))
 
+(ert-deftest edgar-http-preserves-and-caches-pdf-bytes ()
+  "PDF archive responses remain byte-identical through the cache."
+  (let ((edgar-http-cache-directory
+         (make-temp-file "edgar-http-pdf-cache" t))
+        (edgar-http--last-request-time nil)
+        (calls 0)
+        (payload (unibyte-string ?% ?P ?D ?F ?- #xff #xfe 0 1)))
+    (unwind-protect
+        (cl-letf (((symbol-function 'url-retrieve-synchronously)
+                   (lambda (&rest _)
+                     (setq calls (1+ calls))
+                     (edgar-http-test--response
+                      200 payload '(("Content-Type" . "application/pdf"))))))
+          (let* ((url
+                  "https://www.sec.gov/Archives/edgar/data/1/report.pdf")
+                 (first (edgar-http-get url))
+                 (second (edgar-http-get url)))
+            (should-not (multibyte-string-p first))
+            (should (equal first payload))
+            (should (equal second payload))
+            (should (= calls 1))))
+      (delete-directory edgar-http-cache-directory t))))
+
 (ert-deftest edgar-http-retries-and-honours-retry-after ()
   (let ((calls 0)
         (delays nil)

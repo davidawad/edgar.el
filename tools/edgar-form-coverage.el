@@ -145,7 +145,8 @@ same filer count once."
 
 (defun edgar-coverage--fixture-records (registry fixture-directory)
   "Return (RECORDS . PROBLEMS) from FIXTURE-DIRECTORY for REGISTRY.
-Each record is a (BASE-FORM . SLUG) pair."
+Each record is a (BASE-FORM . SLUG) pair.  Metadata with `:fixture-kind'
+marks supplemental excerpts, not complete primary-document fixtures."
   (let (records
         problems)
     (if (not (file-directory-p fixture-directory))
@@ -164,6 +165,11 @@ Each record is a (BASE-FORM . SLUG) pair."
                ((not base)
                 (push (format "%s: fixture has no form name" slug)
                       problems))
+               ((equal (plist-get filing :fixture-kind)
+                       "SEC complete-submission excerpt")
+                ;; Partial source excerpts exercise parser regressions, not
+                ;; full filing-render coverage.
+                nil)
                ((gethash base registry)
                 (push (cons base slug) records))))
           (error
@@ -178,7 +184,8 @@ Each record is a (BASE-FORM . SLUG) pair."
   (pcase backend
     ('html '(".htm.gz" ".htm"))
     ('xml '(".xml" ".xml.gz"))
-    ('text '(".txt" ".txt.gz"))))
+    ('text '(".txt" ".txt.gz"))
+    ('pdf '(".pdf"))))
 
 (defun edgar-coverage--primary-artifact-p
     (slug backend fixture-directory)
@@ -190,12 +197,12 @@ Each record is a (BASE-FORM . SLUG) pair."
    (edgar-coverage--primary-suffixes backend)))
 
 (defun edgar-coverage--any-primary-artifact-p (slug fixture-directory)
-  "Return non-nil when SLUG has an XML, HTML, or text primary."
+  "Return non-nil when SLUG has an XML, HTML, text, or PDF primary."
   (seq-some
    (lambda (backend)
      (edgar-coverage--primary-artifact-p
       slug backend fixture-directory))
-   '(xml html text)))
+   '(xml html text pdf)))
 
 (defun edgar-coverage--xml-field-golden-p
     (slug fixture-directory field-golden-directory)
@@ -203,11 +210,15 @@ Each record is a (BASE-FORM . SLUG) pair."
   (and (edgar-coverage--primary-artifact-p
         slug 'xml fixture-directory)
        (file-exists-p
-        (expand-file-name (concat slug ".eld") field-golden-directory))))
+        (expand-file-name (concat slug ".eld")
+                          field-golden-directory))))
 
 (defun edgar-coverage--artifact-problems
     (registry
-     records fixture-directory expect-directory golden-directory
+     records
+     fixture-directory
+     expect-directory
+     golden-directory
      field-golden-directory)
   "Return missing-artifact problems for REGISTRY and fixture RECORDS.
 FIXTURE-DIRECTORY, EXPECT-DIRECTORY, and GOLDEN-DIRECTORY contain the
@@ -223,9 +234,7 @@ three artifact classes checked for L1 and L2 forms."
               (mapcar
                #'cdr
                (seq-filter
-                (lambda (record)
-                  (equal form (car record)))
-                records)))
+                (lambda (record) (equal form (car record))) records)))
              (has-xml-field-golden
               (and xml-l2-p
                    (seq-some
@@ -248,14 +257,15 @@ three artifact classes checked for L1 and L2 forms."
                          slug fixture-directory)
                       (edgar-coverage--primary-artifact-p
                        slug backend fixture-directory))
-              (push (if xml-l2-p
-                        (format
-                         "%s: fixture %s lacks an accepted primary document"
-                         form slug)
-                      (format
-                       "%s: fixture %s lacks its %s primary document"
-                       form slug (upcase (format "%s" backend))))
-                    problems))
+              (push
+               (if xml-l2-p
+                   (format
+                    "%s: fixture %s lacks an accepted primary document"
+                    form slug)
+                 (format
+                  "%s: fixture %s lacks its %s primary document"
+                  form slug (upcase (format "%s" backend))))
+               problems))
             (unless (file-exists-p
                      (expand-file-name (concat slug ".eld")
                                        expect-directory))
@@ -263,19 +273,22 @@ three artifact classes checked for L1 and L2 forms."
                             form
                             slug)
                     problems))
-            (when (and (eq level 'L2) (not xml-l2-p)
+            (when (and (eq level 'L2)
+                       (not xml-l2-p)
                        (not
                         (file-exists-p
                          (expand-file-name (concat slug ".eld")
                                            golden-directory))))
               (push (format "%s: L2 fixture %s lacks golden values"
-                            form slug)
+                            form
+                            slug)
                     problems)))
           (when (and xml-l2-p (not has-xml-field-golden))
-            (push (format
-                   "%s: L2 XML form needs an XML primary with field golden values"
-                   form)
-                  problems)))))
+            (push
+             (format
+              "%s: L2 XML form needs an XML primary with field golden values"
+              form)
+             problems)))))
     (nreverse problems)))
 
 (cl-defun
@@ -284,7 +297,7 @@ three artifact classes checked for L1 and L2 forms."
   (registry edgar-forms--registry)
   (snapshot-file edgar-coverage-snapshot-file)
   (fixture-directory edgar-coverage-fixture-directory)
- (expect-directory edgar-coverage-expect-directory)
+  (expect-directory edgar-coverage-expect-directory)
   (golden-directory edgar-coverage-golden-directory)
   (field-golden-directory edgar-coverage-field-golden-directory))
  "Return all offline coverage problems for the supplied data paths.

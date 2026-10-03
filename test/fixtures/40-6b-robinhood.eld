@@ -1,0 +1,1 @@
+(:accn "0000950103-26-010727" :form "40-6B" :filed "2026-07-16" :report "" :doc "dp249846_406b.htm" :cik 1783879 :url "https://www.sec.gov/Archives/edgar/data/1783879/000095010326010727/dp249846_406b.htm" :ticker "")

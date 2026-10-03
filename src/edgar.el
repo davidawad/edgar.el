@@ -34,6 +34,15 @@
 (defvar edgar--part-re)
 (defvar edgar--item-re)
 
+(defgroup edgar nil
+  "Read and navigate SEC EDGAR filings."
+  :group 'applications)
+
+(defcustom edgar-pdftotext-program "pdftotext"
+  "Program used to render PDF primary documents as plain text."
+  :type 'string
+  :group 'edgar)
+
 ;;;; Transport
 
 (defun edgar--fetch (url)
@@ -194,7 +203,8 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
 ;;;; Content
 
 (defun edgar-html (filing)
-  "Raw HTML (iXBRL) of FILING's primary document."
+  "Raw body of FILING's primary document.
+PDF bodies are returned as unibyte strings."
   (edgar--fetch (plist-get filing :url)))
 
 (defun edgar--submission-documents (submission)
@@ -276,9 +286,14 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
   "Return FILING's primary content from EDGAR SGML SUBMISSION."
   (plist-get (edgar--submission-primary-info submission filing) :content))
 
+(defun edgar--sgml-submission-p (content)
+  "Return non-nil when CONTENT begins with an EDGAR SGML document wrapper."
+  (and (stringp content)
+       (string-match-p "\\`[ \t\r\n]*<DOCUMENT>" content)))
+
 (defun edgar--legacy-text (text)
   "Render old SEC SGML TEXT to readable text, preserving line boundaries."
-  (if (string-match-p "<[Hh][Tt][Mm][Ll]\\_>" text)
+  (if (string-match-p "<[Hh][Tt][Mm][Ll]\\(?:[ \t\r\n/>]\\)" text)
       (with-temp-buffer
         (insert text)
         (let ((dom
@@ -301,13 +316,14 @@ bound, return the SEC's recent filings only.  Exact `/A' form queries add
 Signal `user-error' for a PDF primary document; PDF text extraction is not
 supported."
   (let* ((url (plist-get filing :url))
-         (submission-p
-          (and (stringp url)
-               (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url)))
          (pdf-url-p
           (and (stringp url)
                (string-match-p "\\.pdf\\(?:\\?\\|\\'\\)" url)))
          (source (unless pdf-url-p (edgar-html filing)))
+         (submission-p
+          (or (and (stringp url)
+                   (string-match-p "\\.txt\\(?:\\?\\|\\'\\)" url))
+              (edgar--sgml-submission-p source)))
          (primary
           (and submission-p
                (edgar--submission-primary-info source filing)))
@@ -453,15 +469,24 @@ representation.  PDF sources return metadata without extracted text."
          (plist-get primary :content)
          primary)))
      (t
-      (let ((html (edgar-html filing)))
-        (with-temp-buffer
-          (insert html)
-          (edgar--document-structure-result
-           filing 'html
-           (list
-            (edgar--structure-node
-             (libxml-parse-html-region
-              (point-min) (point-max)))))))))))
+      (let* ((html (edgar-html filing))
+             (primary
+              (and (edgar--sgml-submission-p html)
+                   (edgar--submission-primary-info html filing))))
+        (if primary
+            (edgar--document-structure-from-content
+             filing
+             (plist-get primary :format)
+             (plist-get primary :content)
+             primary)
+          (with-temp-buffer
+            (insert html)
+            (edgar--document-structure-result
+             filing 'html
+             (list
+              (edgar--structure-node
+               (libxml-parse-html-region
+                (point-min) (point-max))))))))))))
 
 (defun edgar-structure-text (node)
   "Return all text below NODE in document order."
@@ -499,7 +524,19 @@ NAME is a tag or XML element name, compared without regard to case."
 (defun edgar-structure-nodes-at-path (tree path)
   "Return elements at PATH in TREE.
 PATH is a list of tag names from an element below the document root."
-  (let (out)
+  (let* ((children (plist-get tree :children))
+         (root-name (and (= (length children) 1)
+                         (plist-get (car children) :name)))
+         (first-name (and path
+                          (if (symbolp (car path))
+                              (symbol-name (car path))
+                            (car path))))
+         (roots
+          (if (and (equal (downcase (or root-name "")) "top")
+                   (not (equal (downcase (or first-name "")) "top")))
+              (plist-get (car children) :children)
+            children))
+         out)
     (cl-labels
      ((walk
        (nodes rest)
@@ -515,7 +552,7 @@ PATH is a list of tag names from an element below the document root."
              (if (cdr rest)
                  (walk (plist-get node :children) (cdr rest))
                (push node out)))))))
-     (walk (plist-get tree :children) path))
+     (walk roots path))
     (nreverse out)))
 
 (defun edgar-structure-paragraphs (tree)
@@ -680,7 +717,8 @@ Signal `user-error' if multiple matches exist; return nil if absent."
 
 (defun edgar--title-case-heading-p (line)
   "Return non-nil if LINE resembles a standalone title-case heading."
-  (let ((words (split-string line "[ \t]+" t))
+  (let ((case-fold-search nil)
+        (words (split-string line "[ \t]+" t))
         (small-words
          '("a" "an" "and" "as" "at" "by" "due" "for" "from"
            "in" "into" "of" "on" "or" "the" "to" "with"))
@@ -943,18 +981,31 @@ wins."
        (sort out (lambda (a b) (edgar--key< (car a) (car b))))))))
 
 (defun edgar--heading-only-p (body)
-  "Non-nil if BODY is a lone heading line with no sentence after it.
-That is what a table-of-contents entry leaves behind."
-  (let
-      ((rest
-        (replace-regexp-in-string
-         "\\`[ \t\n\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?"
-         ""
-         body)))
-    (and (= 1
-            (length
-             (seq-remove #'string-blank-p (split-string body "\n"))))
-         (not (string-match-p "[.!?]" rest)))))
+  "Non-nil if BODY contains only a possibly wrapped Item heading.
+Table-of-contents entries can wrap onto several lines and include a page
+number at the end of any line."
+  (let* ((lines (seq-remove #'string-blank-p (split-string body "\n")))
+         (first (car lines))
+         (rest
+          (and first
+               (string-match
+                "\\`[ \t\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?[ \t\u00a0]*\\(.*\\)"
+                first)
+               (cons (match-string 1 first) (cdr lines))))
+         (title-lines
+          (mapcar
+           (lambda (line)
+             (string-trim
+              (replace-regexp-in-string "[ \t\u00a0]+[0-9]+[ \t\u00a0]*\\'"
+                                        "" line)))
+           rest)))
+    (and title-lines
+         (<= (length (mapconcat #'identity title-lines " ")) 250)
+         (seq-every-p
+          (lambda (line)
+            (let ((line (string-remove-suffix "." line)))
+              (edgar--title-case-heading-p line)))
+          title-lines))))
 
 (defun edgar--drop-residue (secs)
   "Remove from SECS the heading-only entries that duplicate another Part's item.

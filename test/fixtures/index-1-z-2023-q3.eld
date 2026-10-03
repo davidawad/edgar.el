@@ -1,0 +1,1 @@
+(:accn "0001193125-23-224720" :form "1-Z" :company "OCONEE FINANCIAL CORP" :filed "2023-08-30" :report "" :doc "primary_doc.xml" :cik 1076691 :url "https://www.sec.gov/Archives/edgar/data/1076691/000119312523224720/primary_doc.xml" :size 3285 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

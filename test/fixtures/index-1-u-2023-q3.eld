@@ -1,0 +1,1 @@
+(:accn "0001493152-23-023756" :form "1-U" :company "Masterworks 121, LLC" :filed "2023-07-06" :report "" :doc "form1-u.htm" :cik 1914625 :url "https://www.sec.gov/Archives/edgar/data/1914625/000149315223023756/form1-u.htm" :size 29291 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

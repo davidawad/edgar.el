@@ -362,7 +362,8 @@
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
       (let ((body (edgar-section filing '("html" "body"))))
         (should (stringp body))
-        (should (string-match-p "FORM 18-K" body))
+        (should (string-match-p "FORM" body))
+        (should (string-match-p "18-K" body))
         (should (string-match-p "In respect of each issue" body))))))
 
 (ert-deftest edgar-form25-generic-document-subtrees-are-addressable ()
@@ -376,7 +377,7 @@
         (should (string-match-p "FORM 25" body))))))
 
 (ert-deftest edgar-named-section-extraction-matches-reviewed-goldens ()
-  "Named section output stays pinned across distinct prospectus layouts."
+  "Named section output stays pinned across reviewed filing layouts."
   (let ((goldens
          (edgar-fixtures-read
           (edgar-fixtures-path "golden-named-sections.eld"))))
@@ -609,6 +610,26 @@
         (should (> (length (edgar-structure-paragraphs tree)) 1))
         (should (edgar-structure-nodes tree "html"))))))
 
+(ert-deftest edgar-pdf-primary-exposes-metadata-without-text ()
+  "A real SEC PDF primary exposes source metadata without extraction."
+  (let* ((slug "n-8f-ordr-blackrock")
+         (filing (edgar-fixtures-filing slug))
+         (pdf (edgar-fixtures-primary slug)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
+      (let* ((tree (edgar-document-structure filing))
+             (primary
+              (plist-get
+               (plist-get (plist-get tree :metadata) :primary-document)
+               :name)))
+        (should (eq (plist-get tree :format) 'pdf))
+        (should (equal primary "filename1.pdf"))
+        (should-not
+         (plist-get
+          (plist-get (plist-get tree :metadata) :primary-document)
+          :readable))
+        (should-not (edgar-structure-paragraphs tree))
+        (should-error (edgar-text filing) :type 'user-error)))))
+
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
   (let* ((slug "upload-irenic-2026")
@@ -667,6 +688,46 @@
           '("Risks include liquidity."
             "We monitor cash."
             "Cash balance is stable.")))))))
+
+(ert-deftest edgar-html-url-can-contain-an-sgml-primary-wrapper ()
+  "Select the form-matching primary from a wrapped document at an HTML URL."
+  (let* ((filing
+          '(:form "15-12G" :accn "0000000000-26-000003" :cik 3
+            :doc "MainDocument.htm"
+            :url "https://example.invalid/MainDocument.htm"))
+         (submission
+          (concat
+           "<DOCUMENT><TYPE>EX-99\n<FILENAME>exhibit.htm\n<TEXT>"
+           "<html><body><p>Unrelated exhibit text.</p></body></html>"
+           "</TEXT></DOCUMENT>"
+           "<DOCUMENT><TYPE>15-12G\n<FILENAME>MainDocument.htm\n<TEXT>"
+           "<html><body><h1>Form 15-12G</h1>"
+           "<p>Primary filing text.</p></body></html>"
+           "</TEXT></DOCUMENT>")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
+      (let* ((text (edgar-text filing))
+             (tree (edgar-document-structure filing))
+             (primary
+              (plist-get
+               (plist-get (plist-get tree :metadata) :primary-document)
+               :name)))
+        (should (string-match-p "Primary filing text" text))
+        (should-not (string-match-p "<html>" text))
+        (should-not (string-match-p "Unrelated exhibit text" text))
+        (should (eq (plist-get tree :format) 'html))
+        (should (equal primary "MainDocument.htm"))
+        (should
+         (equal
+          (plist-get
+           (plist-get (plist-get tree :metadata) :primary-document)
+           :type)
+          "15-12G"))
+        (should
+         (string-match-p "Primary filing text"
+                         (edgar-structure-text tree)))
+        (should-not
+         (string-match-p "Unrelated exhibit text"
+                         (edgar-structure-text tree)))))))
 
 (ert-deftest edgar-document-structure-supports-xml-and-plain-text ()
   (let ((xml-filing

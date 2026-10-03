@@ -24,9 +24,9 @@
     ("G6 Asset-backed" . 3)
     ("G7 Prospectuses & registration" . 58)
     ("G8 Proxy & M&A" . 31)
-    ("G9 Periodic & event narrative" . 34)
+    ("G9 Periodic & event narrative" . 30)
     ("G10 Investment-company registration" . 40)
-    ("G11 Reg CF & Reg A" . 14)
+    ("G11 Reg CF & Reg A" . 18)
     ("G12 Broker-dealer, market structure, staff" . 26)
     ("G13 Tail" . 2))
   "Expected family counts documented in `docs/form-coverage.md'.")
@@ -74,7 +74,7 @@
   "Every registry row has a valid backend, level, and Q2 volume."
   (maphash
    (lambda (_form info)
-     (should (memq (plist-get info :backend) '(html xml text)))
+     (should (memq (plist-get info :backend) '(html xml text pdf)))
      (should (memq (plist-get info :level) '(L0 L1 L2)))
      (should (numberp (plist-get info :volume))))
    edgar-forms--registry))
@@ -91,6 +91,36 @@
   (dolist (form '("13F-HR" "13F-NT"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g9-recorded-narratives-have-golden-coverage
+    ()
+  "G9 narrative fixtures with reviewed goldens are marked L2."
+  (dolist (form
+           '("10-K"
+             "10-KT"
+             "10-Q"
+             "20-F"
+             "8-K"
+             "11-K"
+             "15-12G"
+             "18-K"
+             "25"
+             "40-F"
+             "6-K"
+             "SD"
+             "NT 10-K"
+             "NT 10-Q"
+             "NT 11-K"
+             "NT 20-F"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L2)))
+  (dolist (form '("1-K" "1-Z"))
+    (should (eq (plist-get (edgar-form-info form) :backend) 'xml))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
+
+(ert-deftest edgar-forms-g11-reg-a-reports-remain-generic-l1 ()
+  "Reg A XML/HTML reports stay at L1 until typed/named section goldens exist."
+  (dolist (form '("1-K" "1-SA" "1-U" "1-Z"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L1))))
+
 (ert-deftest
     edgar-forms-g8-proxy-and-tender-sections-have-golden-coverage
     ()
@@ -105,6 +135,15 @@
              "SC 14D9"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g8-additional-proxy-materials-have-generic-coverage ()
+  "Recorded DEFA14A material is available through the generic text API."
+  (should (eq (plist-get (edgar-form-info "DEFA14A") :level) 'L1)))
+
+(ert-deftest edgar-forms-g9-high-volume-narratives-have-item-coverage ()
+  "Core periodic and event reports expose generic Item sections."
+  (dolist (form '("8-K" "10-K" "10-Q" "20-F"))
+    (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
+
 (ert-deftest edgar-forms-g11-increment-levels-are-explicit ()
   "G11 records all but the unavailable Form 1 primary document."
   (let ((rows (edgar-forms-by-family "G11 Reg CF & Reg A"))
@@ -115,7 +154,7 @@
     (should (eq (plist-get (edgar-form-info "C") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-AR") :level) 'L2))
     (should (eq (plist-get (edgar-form-info "C-U") :level) 'L1))
-    (should (equal counts '((L0 . 1) (L1 . 11) (L2 . 2))))))
+    (should (equal counts '((L0 . 1) (L1 . 15) (L2 . 2))))))
 
 (provide 'edgar-forms-test)
 

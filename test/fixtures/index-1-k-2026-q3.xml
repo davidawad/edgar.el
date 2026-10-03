@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/rega/onekfiler" xmlns:ns1="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>1-K</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0001971864</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+      </filer>
+      <flags>
+        <shellCompanyFlag>N</shellCompanyFlag>
+        <successorFilingFlag>N</successorFilingFlag>
+        <returnCopyFlag>true</returnCopyFlag>
+      </flags>
+      <reportingPeriod>03-31-2026</reportingPeriod>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <item1>
+      <formIndication>Annual Report</formIndication>
+      <fiscalYearEnd>03-31-2026</fiscalYearEnd>
+      <street1>11175 Cicero Dr</street1>
+      <street2>Suite 100</street2>
+      <city>Alpharetta</city>
+      <stateOrCountry>GA</stateOrCountry>
+      <zipCode>30022</zipCode>
+      <phoneNumber>678-646-6791</phoneNumber>
+      <issuedSecuritiesTitle>Worthy Property 2 Bonds</issuedSecuritiesTitle>
+    </item1>
+    <item1Info>
+      <issuerName>Worthy Property Bonds 2, Inc.</issuerName>
+      <cik>0001971864</cik>
+      <jurisdictionOrganization>FL</jurisdictionOrganization>
+      <irsNum>92-2292464</irsNum>
+    </item1Info>
+    <item2>
+      <regArule257>true</regArule257>
+    </item2>
+  </formData>
+</edgarSubmission>

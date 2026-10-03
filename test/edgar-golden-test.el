@@ -140,6 +140,35 @@
        (string-match-p
         (regexp-quote (cdr entry)) (edgar-fixtures-norm body))))))
 
+(ert-deftest edgar-golden-g10-generic-html-body-access ()
+  "New investment-company registration forms expose their HTML body."
+  (dolist (entry
+           '(("486apos-flat-rock" . "Flat Rock")
+             ("486bpos-coller" . "Coller")
+             ("487-adt2360" . "Advisors Disciplined Trust 2360")
+             ("40-6b-robinhood" . "Robinhood")
+             ("40-17f1-northern-lights" . "Northern Lights")
+             ("486bxt-ark-venture" . "ARK Venture Fund")
+             ("497ad-powerlaw" . "Powerlaw")
+             ("n-4-2026" . "Form N-4")
+             ("n-14-8c-acif" . "Alternative Credit Income Fund")
+             ("n-2asr-blackrock" . "BlackRock Enhanced Large Cap Core Fund")
+             ("n-6-pacific-select" . "Form N-6")
+             ("n-2-buttonwood" . "Buttonwood")
+             ("n-14-nomura" . "Nomura")
+             ("497vpsub-voya" . "Voya")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should
+       (string-match-p
+        (regexp-quote (downcase (cdr entry)))
+        (downcase (edgar-fixtures-norm body)))))))
+
 (ert-deftest edgar-golden-g7-named-prospectus-sections ()
   "Major prospectus layouts expose named headings through the shared API."
   (dolist
@@ -149,19 +178,34 @@
          ("s-3-indaptus" . "Indaptus")
          ("s-3-maxcyte" . "MaxCyte")
          ("f-1-fasttrack" . "Fast Track")
+         ("f-1-verdera" . "Verdera")
+         ("f-1-vision-marine" . "Vision Marine")
          ("f-3-ceragon" . "Ceragon")
-         ("424b5-singularity" . "Singularity")))
+         ("f-3-bit-mining" . "BIT Mining")
+         ("f-3-critical-metals" . "Critical Metals")
+         ("424b3-powerlaw" . "Powerlaw")
+         ("424b5-singularity" . "Singularity")
+         ("424b5-oneok" . "ONEOK")
+         ("424b5-idaho-power" . "Idaho Power")))
     (let* ((slug (car entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
-           section)
+           tree
+           section
+           body)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq section (edgar-section filing "Risk Factors")))
-      (should section)
-      (should (> (length section) 100))
-    (should
-       (string-match-p "RISK FACTORS"
-                       (upcase (edgar-fixtures-norm section)))))))
+        (setq tree (edgar-document-structure filing))
+        (setq section (edgar-section filing "Risk Factors"))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (if section
+          (progn
+            (should (> (length section) 100))
+            (should
+             (string-match-p "RISK FACTORS"
+                             (upcase (edgar-fixtures-norm section)))))
+        (should-not (edgar-structure-headings tree))
+        (should (> (length body) 100))))))
 
 (ert-deftest edgar-golden-g7-pricing-supplement-generic-access ()
   "Table-led 424B2 filings retain generic body access when heading nodes are absent."
@@ -218,6 +262,54 @@
       (should
        (string-search (nth 2 entry)
                       (edgar-fixtures-norm section))))))
+
+(ert-deftest edgar-golden-g7-8-a12b-generic-item-access ()
+  "8-A12B registration documents expose generic numbered Item sections."
+  (let* ((slug "8-a12b-amazon")
+         (filing (edgar-fixtures-filing slug))
+         (html (edgar-fixtures-html slug))
+         section)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (setq section (edgar-section filing "1")))
+    (should section)
+    (should
+     (string-match-p "5.200% Notes due 2029"
+                     (edgar-fixtures-norm section)))))
+
+(ert-deftest edgar-golden-g7-s-8-pos-generic-item-access ()
+  "S-8 POS post-effective amendments expose their Part II Items."
+  (let* ((slug "s-8-pos-exxonmobil")
+         (filing (edgar-fixtures-filing slug))
+         (html (edgar-fixtures-html slug))
+         section)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (setq section (edgar-section filing "II.8")))
+    (should section)
+    (should (string-match-p "Exhibits" (edgar-fixtures-norm section)))))
+
+(ert-deftest edgar-golden-g7-s-4-generic-body-access ()
+  "S-4 business-combination filings expose generic HTML body access."
+  (dolist (slug '("s-4-comcast" "s-4-indivior" "s-4-olin"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should (> (length body) 1000))
+      (should (string-match-p "registration statement" (downcase body))))))
+
+(ert-deftest edgar-golden-g7-424b4-generic-body-access ()
+  "424B4 prospectuses from distinct filers expose generic HTML body access."
+  (dolist (slug '("424b4-rectitude" "424b4-impact-biomedical" "424b4-loar"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should (> (length body) 1000))
+      (should (string-match-p "prospectus" (downcase body))))))
 
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."

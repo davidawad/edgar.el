@@ -113,6 +113,53 @@
               :golden-directory goldens))))
       (delete-directory root t))))
 
+(ert-deftest edgar-form-coverage-reports-every-l2-diversity-gap ()
+  "Report every L2 form below the distinct-filer minimum in one pass."
+  (let* ((root (make-temp-file "edgar-coverage-all-gaps-" t))
+         (registry (make-hash-table :test #'equal))
+         (records nil))
+    (unwind-protect
+        (progn
+          (dolist (form '("TEST-FORM-A" "TEST-FORM-B"))
+            (puthash
+             form
+             (list :family "Test"
+                   :backend 'html
+                   :level 'L2
+                   :sections-or-fields nil
+                   :volume 1
+                   :notes nil)
+             registry)
+            (let ((slug (downcase form)))
+              (edgar-form-coverage-test--write
+               (expand-file-name (concat slug ".eld") root)
+               (format "(:form %S :cik %d)\n"
+                       form (if (equal form "TEST-FORM-A") 1001 2001)))
+              (push (cons form slug) records)))
+          (let ((problems
+                 (edgar-coverage--l2-diversity-problems
+                  registry records root)))
+            (should (= (length problems) 2))
+            (should
+             (member
+              "TEST-FORM-A: L2 diversity has 1 distinct filer CIKs; 3 required"
+              problems))
+            (should
+             (member
+              "TEST-FORM-B: L2 diversity has 1 distinct filer CIKs; 3 required"
+              problems))))
+      (delete-directory root t))))
+
+(ert-deftest edgar-form-coverage-excludes-partial-submission-excerpts ()
+  "Partial SEC excerpts remain parser tests, not complete-form fixtures."
+  (let* ((records-and-problems
+          (edgar-coverage--fixture-records
+           edgar-forms--registry edgar-coverage-fixture-directory))
+         (records (car records-and-problems)))
+    (should-not (member '("10-K" . "10-k-bd-1998") records))
+    (should-not (cdr records-and-problems))
+    (should-not (edgar-coverage-problems))))
+
 (ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
   "Do not promote low-volume L0 forms absent from the recorded index samples."
   (let ((low-volume-l0 (make-hash-table :test #'equal))
@@ -137,9 +184,10 @@
          (puthash form t low-volume-l0)))
      edgar-forms--registry)
     (should-not
-     (seq-some (lambda (filing)
-                 (gethash (plist-get filing :form) low-volume-l0))
-               (append q2 q3)))))
+     (seq-some
+      (lambda (filing)
+        (gethash (plist-get filing :form) low-volume-l0))
+      (append q2 q3)))))
 
 (ert-deftest edgar-form-coverage-registry-row-removal-names-form ()
   "Removing a registry row fails with that form name."
@@ -246,6 +294,46 @@
             (should (string-match-p "TEST-FORM" messages))
             (should
              (string-match-p "XML primary document" messages))))
+      (delete-directory root t))))
+
+(ert-deftest edgar-form-coverage-pdf-fixture-removal-names-l1-form ()
+  "A PDF L1 fixture passes, and removing it fails with the form name."
+  (let* ((root (make-temp-file "edgar-coverage-pdf-fixture-" t))
+         (fixtures (expand-file-name "fixtures" root))
+         (expects (expand-file-name "expect" root))
+         (goldens (expand-file-name "golden" root))
+         (snapshot (expand-file-name "snapshot.txt" root))
+         (primary (expand-file-name "test.pdf" fixtures)))
+    (unwind-protect
+        (progn
+          (edgar-form-coverage-test--write snapshot "1 TEST-FORM\n")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test.eld" fixtures)
+           "(:form \"TEST-FORM\")\n")
+          (edgar-form-coverage-test--write primary "%PDF fixture")
+          (edgar-form-coverage-test--write
+           (expand-file-name "test.eld" expects) "(:ok t)\n")
+          (make-directory goldens t)
+          (should-not
+           (edgar-coverage-problems
+            :registry
+            (edgar-form-coverage-test--registry 'L1 'pdf)
+            :snapshot-file snapshot
+            :fixture-directory fixtures
+            :expect-directory expects
+            :golden-directory goldens))
+          (delete-file primary)
+          (let ((messages
+                 (edgar-form-coverage-test--messages
+                  (edgar-coverage-problems
+                   :registry
+                   (edgar-form-coverage-test--registry 'L1 'pdf)
+                   :snapshot-file snapshot
+                   :fixture-directory fixtures
+                   :expect-directory expects
+                   :golden-directory goldens))))
+            (should (string-match-p "TEST-FORM" messages))
+            (should (string-match-p "PDF primary document" messages))))
       (delete-directory root t))))
 
 (ert-deftest edgar-form-coverage-xml-l2-requires-field-golden ()

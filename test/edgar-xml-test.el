@@ -35,6 +35,16 @@
                        edgar-xml-test--directory))
     (read (current-buffer))))
 
+(defun edgar-xml-test--projected-value (projected path)
+  "Return the projected XML value at element-name PATH."
+  (let ((node projected))
+    (dolist (key path)
+      (setq node
+            (if (eq key (car-safe node))
+                (cdr node)
+              (cdr (assq key node)))))
+    node))
+
 (ert-deftest edgar-xml-parses-form-4-fixture ()
   "Parse the recorded Form 4 ownership document."
   (let ((tree (edgar-xml-test--parse "4-aapl")))
@@ -69,8 +79,7 @@
 
 (ert-deftest edgar-text-renders-n-px-xml-primary ()
   "Render the recorded N-PX XML primary through the L1 text API."
-  (let ((expect
-         (edgar-xml-test--expect "n-px-a4-wealth"))
+  (let ((expect (edgar-xml-test--expect "n-px-a4-wealth"))
         (xml (edgar-xml-test--fixture "n-px-a4-wealth")))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
       (let ((text
@@ -92,27 +101,80 @@
            (edgar-fixtures-path "expect/25-nse-nrx.eld"))))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
       (let ((tree (edgar-document-structure filing)))
-        (should (eq (plist-get tree :format) (plist-get expect :format)))
+        (should
+         (eq (plist-get tree :format) (plist-get expect :format)))
         (dolist (entry (plist-get expect :sections))
           (should
            (equal
-             (plist-get (edgar-structure-section tree (car entry)) :body)
-             (cadr entry))))))))
+            (plist-get
+             (edgar-structure-section tree (car entry))
+             :body)
+            (cadr entry))))))))
+
+(ert-deftest edgar-xml-g9-reg-a-fixtures-match-reviewed-snapshots ()
+  "Read current and older structured Form 1-K and 1-Z primary documents."
+  (dolist (slug
+           '("index-1-k-2026-q3"
+             "index-1-k-2023-q3"
+             "index-1-z-2026-q3"
+             "index-1-z-2023-q3"))
+    (let* ((filing (edgar-fixtures-filing slug))
+           (xml (edgar-xml-test--fixture slug))
+           (expected (edgar-xml-test--expect slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+        (let*
+            ((tree (edgar-xml filing))
+             (projected (edgar-xml-project tree))
+             (form-type (plist-get expected :submission-type))
+             (issuer-path
+              (if (equal form-type "1-K")
+                  '(edgarSubmission formData item1Info issuerName)
+                '(edgarSubmission formData item1 issuerName)))
+             (summary-path
+              (if (equal form-type "1-K")
+                  '(edgarSubmission formData summaryInfo)
+                '(edgarSubmission formData summaryInfoOffering)))
+             (actual
+              (list
+               :submission-type
+               (edgar-xml-test--projected-value
+                projected
+                '(edgarSubmission headerData submissionType))
+               :issuer-name
+               (edgar-xml-test--projected-value projected issuer-path)
+               :reporting-period
+               (edgar-xml-test--projected-value
+                projected
+                '(edgarSubmission
+                  headerData filerInfo reportingPeriod))
+               :offering-qualification-date
+               (edgar-xml-test--projected-value
+                projected
+                (append summary-path '(offeringQualificationDate)))
+               :offering-securities-sold
+               (edgar-xml-test--projected-value
+                projected
+                (append summary-path '(offeringSecuritiesSold))))))
+          (should (eq (car tree) 'edgarSubmission))
+          (should (equal actual expected))
+          (should
+           (string-search
+            (plist-get expected :issuer-name)
+            (replace-regexp-in-string
+             "[ \t\n\r]+" " " (edgar-text filing)))))))))
+
 (ert-deftest edgar-text-renders-not-timely-fund-xml-primaries ()
   "Render recorded NT N-CEN and NT NPORT-P XML through the L1 text API."
   (dolist (case
            '(("nt-n-cen-brown"
               "N-CEN"
               "BROWN CAPITAL MANAGEMENT MUTUAL FUNDS")
-             ("nt-nport-p-archer"
-              "NPORT-P"
-              "Archer Growth ETF")))
+             ("nt-nport-p-archer" "NPORT-P" "Archer Growth ETF")))
     (let ((xml (edgar-xml-test--fixture (car case))))
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
         (let ((text
                (replace-regexp-in-string
-                "[ \t\n\r]+"
-                " "
+                "[ \t\n\r]+" " "
                 (edgar-text
                  '(:url "https://example.test/primary_doc.xml")))))
           (should (string-search (cadr case) text))

@@ -90,5 +90,29 @@
                  "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000660/tsm-monthend6kx20260924.htm"
                  (plist-get doc :url)))))))
 
+(ert-deftest edgar-6k-documents-and-exhibit-are-addressable-for-another-filer ()
+  "A second foreign issuer's 6-K directory exposes and fetches an exhibit."
+  (let* ((filing
+          '(:accn "0001185185-26-003233" :form "6-K" :cik 1958133
+            :url "https://www.sec.gov/Archives/edgar/data/1958133/000118518526003233/dxst6k072726.htm"))
+         (index (edgar-docs-test--fixture "6-k-dxst-index.json"))
+         (html (edgar-docs-test--fixture "6-k-dxst-ex99-1.html")))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (url)
+                 (if (string-suffix-p "/index.json" url) index html))))
+      (let ((doc (cl-find-if
+                  (lambda (item)
+                    (and (equal "EX-99.1" (plist-get item :type))
+                         (equal "dxstex99-1.htm" (plist-get item :name))))
+                  (edgar-documents filing))))
+        (should doc)
+        (should (equal "108409" (number-to-string (plist-get doc :size)))))
+      (let ((text (edgar-exhibit filing "EX-99.1")))
+        (should (string-match-p
+                 "DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS"
+                 text))
+        (should (string-match-p
+                 "six months ended April 30,[[:space:]]+2026" text))))))
+
 (provide 'edgar-docs-test)
 ;;; edgar-docs-test.el ends here
