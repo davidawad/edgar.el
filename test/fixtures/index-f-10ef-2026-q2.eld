@@ -1,0 +1,1 @@
+(:accn "0001104659-26-055020" :form "F-10EF" :company "Sprott Physical Copper Trust" :filed "2026-05-04" :report "" :doc "tm2613142d1_f10ef.htm" :cik 2108383 :url "https://www.sec.gov/Archives/edgar/data/2108383/000110465926055020/tm2613142d1_f10ef.htm" :size 576751 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

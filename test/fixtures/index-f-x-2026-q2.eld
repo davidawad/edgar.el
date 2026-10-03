@@ -1,0 +1,1 @@
+(:accn "0001628280-26-024809" :form "F-X" :company "Aya Gold & Silver Inc." :filed "2026-04-13" :report "" :doc "ayagoldsilverinc-formfxx.htm" :cik 1826836 :url "https://www.sec.gov/Archives/edgar/data/1826836/000162828026024809/ayagoldsilverinc-formfxx.htm" :size 30002 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
