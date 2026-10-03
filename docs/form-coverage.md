@@ -197,16 +197,16 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `N-2 POSASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2 POSASR")` |
 | `N-23C-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-23C3A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
-| `N-23C3B` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-23C3B")` |
+| `N-23C3B` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-2ASR` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2ASR")` |
 | `N-2MEF` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-2MEF")` |
 | `N-30B-2` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
-| `N-30D` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-30D")` |
+| `N-30D` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-4` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-4")` |
-| `N-54A` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-54A")` |
-| `N-54C` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-54C")` |
+| `N-54A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
+| `N-54C` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-6` | G10 Investment-company registration | html | L0 | `(edgar-form-info "N-6")` |
-| `N-6F` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-6F")` |
+| `N-6F` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-8A` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-8F` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `N-8F NTC` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "N-8F NTC")` |
@@ -227,10 +227,11 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `NT 20-F` | G9 Periodic & event narrative | html | L1 | `(edgar-text filing)` |
 | `NT N-CEN` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
 | `NT NPORT-P` | G5 Fund periodic reports | xml | L1 | `(edgar-text filing)` |
-| `NT-NCEN` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NT-NCEN")` |
+| `NT-NCEN` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `NT-NCSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `NTFNCSR` | G5 Fund periodic reports | xml | L0 | `(edgar-form-info "NTFNCSR")` |
 | `POS 8C` | G13 Tail | html | L1 | `(edgar-text filing)` |
+| `NTFNCSR` | G5 Fund periodic reports | html | L1 | `(edgar-text filing)` |
 | `POS AM` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AM")` |
 | `POS AMI` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS AMI")` |
 | `POS EX` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "POS EX")` |
@@ -325,6 +326,12 @@ G10 currently has 13 of 40 base forms at L1: 24F-2NT, 40-17G, 40-APP,
 485APOS, 485BPOS, 485BXT, 497, 497J, 497K, 497VPI, 497VPU, N-1A, and S-6.
 They account for 23,346 of 24,427 G10 filings in the Q2 snapshot (95.6%).
 The remaining 27 forms are still L0.
+
+G5 currently has 23 of 25 base forms at L1 or L2, accounting for 19,068 of
+19,096 G5 filings in the Q2 snapshot (99.9%). The remaining N-8F NTC and
+N-8F ORDR filings are PDF-only: all 28 Q2 primaries are PDFs and their complete
+submissions contain uuencoded PDF payloads rather than a readable text
+ alternative. They remain L0 until `edgar-text` has a real PDF text backend.
 
 ## Gaps that are not about a specific form
 

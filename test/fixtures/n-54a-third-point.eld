@@ -1,0 +1,1 @@
+(:accn "0001104659-26-040357" :form "N-54A" :company "Third Point Private Capital Partners" :filed "2026-04-07" :doc "tm2611086d1_n54a.htm" :cik 2025369 :url "https://www.sec.gov/Archives/edgar/data/2025369/000110465926040357/tm2611086d1_n54a.htm")

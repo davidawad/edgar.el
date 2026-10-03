@@ -1,0 +1,1 @@
+(:accn "0001398344-26-010772" :form "NTFNCSR" :company "Siren ETF Trust" :filed "2026-06-12" :report "2026-03-31" :doc "fp0099394-1_ntcsr.htm" :cik 1796383 :url "https://www.sec.gov/Archives/edgar/data/1796383/000139834426010772/fp0099394-1_ntcsr.htm")
