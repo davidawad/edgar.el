@@ -27,8 +27,9 @@ is exactly `SC 13D`; amendments fold into the 19-volume base-form row. These
 rows are indexed by file number and do not establish that every associated
 primary filing is an SC 13D/A. A historical primary does establish the legacy
 body shape: AmBase Corp's 2024-03-08 SC 13D/A (CIK 20639, accession
-`0001140361-24-012291`) has a primary HTML document that explicitly identifies
-itself as Amendment No. 1 to Schedule 13D and contains Items 1–7 ([filing
+`0001140361-24-012291`) has a primary HTML document that identifies itself as
+Amendment No. 1 to Schedule 13D and includes amended sections for Items 1–3
+and 5–7 ([filing
 index](https://www.sec.gov/Archives/edgar/data/20639/000114036124012291/0001140361-24-012291-index.html),
 [primary document](https://www.sec.gov/Archives/edgar/data/20639/000114036124012291/ef20023015_13da.htm)).
 Because `/A` amendments fold to their base form, this recorded body supplies a

@@ -5,8 +5,10 @@
 		      :format html)
 	       :text-length 3576 :text-sha256
 	       "c65eeb4197e1e08146f6f0f39a3d542eb162abeae40a4c96128fec33599ac714"
-	       :paragraph-count 92 :named-section-count 0
-	       :named-section-head nil
+	       :paragraph-count 92 :named-section-count 5
+	       :named-section-head
+	       ("FORM T-1" "BEACON FINANCIAL CORPORATION"
+		"Subordinated Debt Securities")
 	       :tag-counts
 	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 92)
 		("table" . 13) ("h1" . 0) ("h2" . 0))))
@@ -16,9 +18,11 @@
 		      "d98890d1515d.htm" :description nil :format html)
 	       :text-length 1671 :text-sha256
 	       "6023c46b1a99e4e62e4a9ddd25c6d5c2dbdee1a5efd35560107170c6fdd25357"
-	       :paragraph-count 40 :named-section-count 3
+	       :paragraph-count 40 :named-section-count 6
 	       :named-section-head
-	       ("UNITED STATES" "FORM 15" "SIGNATURE") :tag-counts
+	       ("UNITED STATES" "SECURITIES AND EXCHANGE COMMISSION"
+		"FORM 15")
+	       :tag-counts
 	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 40)
 		("table" . 2) ("h1" . 0) ("h2" . 0))))
  (:slug "index-cert-2026-q2" :document-snapshot
@@ -41,10 +45,9 @@
 		      html)
 	       :text-length 66702 :text-sha256
 	       "6a4ccd944f33a95a85bb46062a11621c5e461275e5180a0564f03778efee5ef8"
-	       :paragraph-count 478 :named-section-count 20
+	       :paragraph-count 478 :named-section-count 28
 	       :named-section-head
-	       ("PRICING\nSUPPLEMENT" "PRICING SUPPLEMENT"
-		"PRICING SUPPLEMENT")
+	       ("Exhibit A" "Exhibit B" "PRICING\nSUPPLEMENT")
 	       :tag-counts
 	       (("html" . 1) ("head" . 1) ("body" . 1) ("p" . 478)
 		("table" . 46) ("h1" . 0) ("h2" . 0))))

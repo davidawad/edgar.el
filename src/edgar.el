@@ -1408,7 +1408,10 @@ wins."
               (or (seq-find (lambda (b) (> b start)) bounds)
                   (1+ (length text))))
              (key (cdr it))
-             (body (substring text (1- start) (1- end)))
+             (body
+              (string-trim-right
+               (substring text (1- start) (1- end))
+               "[\r\n]+"))
              (old (gethash key best)))
         (when (or (null old) (> (length body) (length old)))
           (puthash key body best))))

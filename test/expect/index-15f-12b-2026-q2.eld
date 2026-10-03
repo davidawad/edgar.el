@@ -4,7 +4,7 @@
        (("I.1" 9 "Item 1. Exchange Act Reporting History A. Westpac ")
 	("I.2" 8 "Item 2. Recent United States Market Activity A. Th")
 	("I.3" 6 "Item 3. Foreign Listing and Primary Trading Market")
-	("I.4" 6 "Item 4. Comparative Trading Volume Data Not applic")
+	("I.4" 5 "Item 4. Comparative Trading Volume Data Not applic")
 	("I.5" 6 "Item 5. Alternative Record Holder Information Not ")
 	("I.6" 10 "Item 6. Debt Securities The number of record holde")
 	("I.7" 8 "Item 7. Notice Requirement A. As required by Rule ")

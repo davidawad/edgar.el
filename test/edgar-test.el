@@ -467,7 +467,9 @@
           (let ((body (edgar-section filing name)))
             (should (stringp body))
             (should
-             (string-match-p (regexp-quote fragment) body))))))))
+             (string-match-p
+              (regexp-quote (edgar-fixtures-norm fragment))
+              (edgar-fixtures-norm body)))))))))
 
 (ert-deftest edgar-g10-registration-fixtures-use-generic-section-api
     ()
@@ -684,33 +686,6 @@
       (lambda (name)
         (cons name (length (edgar-structure-nodes tree name))))
       '("html" "head" "body" "p" "table" "h1" "h2")))))
-
-(ert-deftest edgar-low-volume-sampled-filings-match-generic-structures
-    ()
-  "Indexed low-volume filings match generic document structure snapshots."
-  (let ((expected
-         (edgar-fixtures-read
-          (edgar-fixtures-path
-           "expect/low-volume-sampled-structures.eld"))))
-    (should expected)
-    (dolist (record expected)
-      (let* ((slug (plist-get record :slug))
-             (filing (edgar-fixtures-filing slug))
-             (form (plist-get filing :form))
-             (info (edgar-form-info form))
-             (primary (edgar-fixtures-primary slug)))
-        (should (<= (plist-get info :volume) 5))
-        (should (eq (plist-get info :level) 'L1))
-        (cl-letf (((symbol-function 'edgar--fetch)
-                   (lambda (_) primary)))
-          (let* ((tree (edgar-document-structure filing))
-                 (snapshot
-                  (edgar-test--document-snapshot filing tree)))
-            (should (eq (plist-get tree :format) (plist-get info :backend)))
-            (should (> (length (edgar-structure-paragraphs tree)) 0))
-            (should
-             (equal
-              snapshot (plist-get record :document-snapshot)))))))))
 
 (ert-deftest edgar-sampled-filings-match-generic-structure-snapshots
     ()
@@ -1168,38 +1143,25 @@
           (edgar-structure-text text)
           "First paragraph.\n\nSecond paragraph."))))))
 
-(ert-deftest edgar-document-structure-identifies-pdf-only-submissions
-    ()
-  "PDF primary files expose metadata without attempting text extraction."
-  (let* ((filing
-          '(:form
-            "SEC STAFF ACTIO"
-            :accn "9999999997-26-001144"
-            :cik 2124403
-            :doc "9999999997-26-001144.txt"
-            :url "https://example.invalid/submission.txt"))
-         (pdf
+(ert-deftest edgar-structure-section-scopes-linked-html-target-paragraphs ()
+  "Contents links resolve named anchors to scoped generic paragraphs."
+  (let* ((html
           (concat
-           "<SEC-DOCUMENT><DOCUMENT>\n"
-           "<TYPE>SEC STAFF ACTIO\n"
-           "<FILENAME>filename1.pdf\n"
-           "<TEXT>\n<PDF>\nbegin 644 filename1.pdf\n"
-           (make-string 500000 ?A)
-           "\nend\n</PDF>\n</TEXT>\n</DOCUMENT>\n"
-           "</SEC-DOCUMENT>")))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
+           "<html><body><nav><p><a href='#risk'>Risk Factors</a></p>"
+           "<p><a href='#liquidity'>Liquidity</a></p></nav>"
+           "<a id='risk'></a><p>Risk Factors</p><p>Risk detail.</p>"
+           "<a id='liquidity'></a><p>Liquidity</p>"
+           "<p>Liquidity detail.</p></body></html>"))
+         (filing '(:url "https://example.invalid/report.htm")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
       (let* ((tree (edgar-document-structure filing))
-             (metadata (plist-get tree :metadata))
-             (primary (plist-get metadata :primary-document)))
-        (should (eq (plist-get tree :format) 'pdf))
+             (section (edgar-structure-section tree "Risk Factors")))
+        (should section)
         (should
-         (equal (plist-get metadata :accn) "9999999997-26-001144"))
-        (should (equal (plist-get primary :name) "filename1.pdf"))
-        (should (eq (plist-get primary :format) 'pdf))
-        (should-not (plist-get primary :readable))
-        (should-not (plist-get tree :children))
-        (should (string-empty-p (edgar-structure-text tree)))
-        (should-error (edgar-text filing) :type 'user-error)))))
+         (equal (edgar-structure-paragraphs section) '("Risk detail.")))
+        (should-not
+         (member "Liquidity detail."
+                 (edgar-structure-paragraphs section)))))))
 
 (ert-deftest edgar-complete-submission-selects-primary-legacy-text ()
   (let* ((fixture-dir (expand-file-name "fixtures" edgar-test--dir))

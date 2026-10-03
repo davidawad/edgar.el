@@ -21,7 +21,7 @@
 	("23" 8 "Item 23. Purchase, Redemption, and Pricing (a) and")
 	("24" 16 "Item 24. Taxation of the Fund The following is a s")
 	("25" 6 "Item 25. Underwriters Not applicable because Regis")
-	("26" 6 "Item 26. Calculation of Performance Data Not appli")
+	("26" 5 "Item 26. Calculation of Performance Data Not appli")
 	("27" 8 "Item 27. Financial Statements Information concerni")
 	("28" 12 "Item 28. Exhibits (with inapplicable items omitted")
 	("29" 7 "Item 29. Persons Controlled by or under Common Con")
