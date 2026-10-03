@@ -101,6 +101,8 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `485bxt-ark.htm.gz` — compressed [485BXT accession 0001213900-26-041967](https://www.sec.gov/Archives/edgar/data/1579982/000121390026041967/ea0285627-01_485bxt.htm).
 - `497vpi-allianz.htm.gz` — compressed [497VPI accession 0000072499-26-000023](https://www.sec.gov/Archives/edgar/data/72499/000007249926000023/iaincomeadvsupplement.htm).
 - `497vpu-allianz-ny.htm.gz` — compressed [497VPU accession 0000080019-26-000008](https://www.sec.gov/Archives/edgar/data/80019/000008001926000008/iany497vpu.htm).
+- `497ad-powerlaw.htm.gz` — compressed primary [497AD accession 0001213900-26-062218](https://www.sec.gov/Archives/edgar/data/2052053/000121390026062218/ea0292491-03_497ad.htm) (Powerlaw Corp.; 2026-05-28).
+- `497vpsub-voya.htm.gz` — compressed primary [497VPSUB accession 0000917677-26-000048](https://www.sec.gov/Archives/edgar/data/103005/000091767726000048/0126vmp497vpsub.htm) (Voya; 2026-01-21).
 - `s-6-ft12946.htm.gz` — compressed [S-6 accession 0001445546-26-002415](https://www.sec.gov/Archives/edgar/data/2111250/000144554626002415/s-6.htm).
 
 The corresponding reviewed golden values and strings live in `test/golden/`.
