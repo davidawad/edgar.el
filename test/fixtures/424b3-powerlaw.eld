@@ -1,0 +1,1 @@
+(:accn "0001213900-26-059594" :form "424B3" :company "POWERLAW CORP" :filed "2026-05-20" :report "" :doc "ea0290638-02_424b3.htm" :cik 2052053 :url "https://www.sec.gov/Archives/edgar/data/2052053/000121390026059594/ea0290638-02_424b3.htm" :size 2433391 :sha256 "8445d008c71965571edc4a0cf6a9760a152046350da61e0e8bae96d077a5545e")

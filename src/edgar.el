@@ -379,7 +379,19 @@ NAME is a tag or XML element name, compared without regard to case."
 (defun edgar-structure-nodes-at-path (tree path)
   "Return elements at PATH in TREE.
 PATH is a list of tag names from an element below the document root."
-  (let (out)
+  (let* ((children (plist-get tree :children))
+         (root-name (and (= (length children) 1)
+                         (plist-get (car children) :name)))
+         (first-name (and path
+                          (if (symbolp (car path))
+                              (symbol-name (car path))
+                            (car path))))
+         (roots
+          (if (and (equal (downcase (or root-name "")) "top")
+                   (not (equal (downcase (or first-name "")) "top")))
+              (plist-get (car children) :children)
+            children))
+         out)
     (cl-labels
      ((walk
        (nodes rest)
@@ -395,7 +407,7 @@ PATH is a list of tag names from an element below the document root."
              (if (cdr rest)
                  (walk (plist-get node :children) (cdr rest))
                (push node out)))))))
-     (walk (plist-get tree :children) path))
+     (walk roots path))
     (nreverse out)))
 
 (defun edgar-structure-paragraphs (tree)

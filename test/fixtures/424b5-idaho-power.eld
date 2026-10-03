@@ -1,0 +1,1 @@
+(:accn "0001193125-26-331165" :form "424B5" :company "IDAHO POWER CO" :filed "2026-08-04" :report "" :doc "d171114d424b5.htm" :cik 49648 :url "https://www.sec.gov/Archives/edgar/data/49648/000119312526331165/d171114d424b5.htm" :size 34094 :sha256 "94fd0e9cc0a00524f34e4d6387b0cfd63f52d4576df5f2ecca8a7372aad3004e")

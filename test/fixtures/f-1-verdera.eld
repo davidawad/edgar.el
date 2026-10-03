@@ -1,0 +1,1 @@
+(:accn "0001104659-26-052783" :form "F-1" :company "VERDERA ENERGY CORP" :filed "2026-04-30" :report "" :doc "tm267430d5_f-1.htm" :cik 2111453 :url "https://www.sec.gov/Archives/edgar/data/2111453/000110465926052783/tm267430d5_f-1.htm" :size 2556551 :sha256 "6fe1fb48660dc5661042c2b4c3c0cf005098a7dd6ae706c7592df0d1e948b816")

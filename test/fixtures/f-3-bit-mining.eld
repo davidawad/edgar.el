@@ -1,0 +1,1 @@
+(:accn "0001104659-25-049758" :form "F-3" :company "BIT MINING LTD" :filed "2025-05-16" :report "" :doc "tm2515245d1_f3.htm" :cik 1517496 :url "https://www.sec.gov/Archives/edgar/data/1517496/000110465925049758/tm2515245d1_f3.htm" :size 564633 :sha256 "379b3e0046e79c0266885eca36eccb7c1a04f065cee271a0a8212fc0c056d02f")

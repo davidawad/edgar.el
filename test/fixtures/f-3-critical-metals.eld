@@ -1,0 +1,1 @@
+(:accn "0001213900-25-027568" :form "F-3" :company "CRITICAL METALS CORP" :filed "2025-04-02" :report "" :doc "ea0235868-f3_critical.htm" :cik 1951089 :url "https://www.sec.gov/Archives/edgar/data/1951089/000121390025027568/ea0235868-f3_critical.htm" :size 340021 :sha256 "8add5a9f10f4329d515cf5f45cad217257f9ada9fef5bdbcabbb4d3b40388e43")
