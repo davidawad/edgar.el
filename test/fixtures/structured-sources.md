@@ -57,6 +57,8 @@ Proxy, merger, and tender-offer samples:
 - `def-14a-encore.htm.gz` — Encore Capital Group definitive proxy ([DEF 14A accession 0001193125-25-093645](https://www.sec.gov/Archives/edgar/data/1500881/000119312525093645/d843005ddef14a.htm); 2025-04-24).
 - `def-14a-venture-global.htm.gz` — Venture Global definitive proxy ([DEF 14A accession 0001193125-25-071787](https://www.sec.gov/Archives/edgar/data/2007855/000119312525071787/d906341ddef14a.htm); 2025-04-03).
 - `sc-14d9-cidara.htm.gz` — Cidara tender-offer recommendation ([SC 14D9 accession 0001193125-25-309970](https://www.sec.gov/Archives/edgar/data/1610618/000119312525309970/d59361dsc14d9.htm); 2025-12-05).
+- `sc-14d9-verve.htm.gz` — Verve Therapeutics tender-offer recommendation ([SC 14D9 accession 0001193125-25-146127](https://www.sec.gov/Archives/edgar/data/1840574/000119312525146127/d917975dsc14d9.htm); 2025-06-25).
+- `sc-14d9-g1-therapeutics.htm.gz` — G1 Therapeutics tender-offer recommendation ([SC 14D9 accession 0001193125-24-203615](https://www.sec.gov/Archives/edgar/data/1560241/000119312524203615/d856692dsc14d9.htm); 2024-08-20).
 - `sc-to-t-biontech.htm.gz` — BioNTech tender offer for CureVac ([SC TO-T accession 0001193125-25-245191](https://www.sec.gov/Archives/edgar/data/1809122/000119312525245191/d38438dsctot.htm); 2025-10-21).
 - `defm14a-matrixx.htm.gz` — Sotherly Hotels merger proxy ([DEFM14A accession 0001193125-25-316771](https://www.sec.gov/Archives/edgar/data/1301236/000119312525316771/0001193125-25-316771-index.htm); 2025-12-12).
 - `sc-to-i-pamt.htm.gz` — P.A.M. Transportation issuer tender offer ([SC TO-I accession 0001174947-25-000508](https://www.sec.gov/Archives/edgar/data/798287/000117494725000508/sctoi0425_pamt.htm); 2025-04-03).

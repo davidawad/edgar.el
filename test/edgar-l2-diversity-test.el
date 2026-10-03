@@ -114,6 +114,25 @@
              "def-14a-venture-global")))))
     (should (= (length ciks) 3))))
 
+(ert-deftest edgar-l2-diversity-g8-sc-14d9-has-five-distinct-filers ()
+  "The reviewed SC 14D9 sections cover five distinct filing CIKs."
+  (let ((filings
+         (mapcar
+          #'edgar-l2-diversity-test--metadata
+          '("sc-14d9-cidara"
+            "sc-14d9-nuvalent"
+            "sc-14d9-open-lending"
+            "sc-14d9-verve"
+            "sc-14d9-g1-therapeutics"))))
+    (should
+     (equal (mapcar (lambda (filing) (plist-get filing :form)) filings)
+            (make-list 5 "SC 14D9")))
+    (should
+     (= (length
+         (delete-dups
+          (mapcar (lambda (filing) (plist-get filing :cik)) filings)))
+        5))))
+
 (ert-deftest
     edgar-l2-diversity-g8-additional-proxy-forms-use-distinct-filers
     ()
