@@ -325,4 +325,10 @@ limiter.  Remaining gaps tracked as beads: history past the SEC's ~1000-filing
 `recent` window, amendment handling, legacy text-only filings, inline-XBRL facts
 (in xbrl.el), and testing each form on more than one filer.
 
+The shared `edgar-documents` / `edgar-exhibit` API is also exercised on
+recorded foreign-issuer filings: 6-K directory enumeration and a 40-F EX-23.1
+exhibit text excerpt (Shopify, accession 0001594805-24-000007). These validate
+access to filing-level documents; they do not imply that every G9 form's
+narrative layout has a dedicated parser.
+
 Work is tracked in `.beads/` (`br ready`, `br list`).
