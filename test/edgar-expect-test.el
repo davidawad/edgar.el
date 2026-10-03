@@ -115,6 +115,7 @@
     ("485APOS"
      "post-effective amendment"
      ("28" "29" "30" "31" "32" "33" "34" "35"))
+    ("486BPOS" "form n-2" nil)
     ("485BPOS" "form n-1a" nil)
     ("485BXT" "form n-1a" nil)
     ("497" "supplement" nil)
@@ -125,6 +126,7 @@
     ("497VPU" "updating summary prospectus" nil)
     ("497VPSUB" "voya" nil)
     ("N-1A" "registration statement" nil)
+    ("N-14" "nomura" nil)
     ("S-6" "form s-6" nil)
     ("S-3" "form s-3" nil)
     ("424B2" "pricing supplement" nil)

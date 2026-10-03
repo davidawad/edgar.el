@@ -143,7 +143,9 @@
 (ert-deftest edgar-golden-g10-generic-html-body-access ()
   "New investment-company registration forms expose their HTML body."
   (dolist (entry
-           '(("497ad-powerlaw" . "Powerlaw")
+           '(("486bpos-coller" . "Coller")
+             ("497ad-powerlaw" . "Powerlaw")
+             ("n-14-nomura" . "Nomura")
              ("497vpsub-voya" . "Voya")))
     (let* ((slug (car entry))
            (filing (edgar-fixtures-filing slug))

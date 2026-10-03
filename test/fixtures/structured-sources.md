@@ -76,6 +76,7 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `n-8f-aam-alternatives.htm.gz` — compressed primary N-8F from [accession 0001213900-26-070526](https://www.sec.gov/Archives/edgar/data/2065443/000121390026070526/ea0295460-01_n8f.htm).
 - `nt-ncsr-cpg-carlyle.htm.gz` — compressed primary NT-NCSR from [accession 0001398344-26-010691](https://www.sec.gov/Archives/edgar/data/1560916/000139834426010691/fp0098304-2_ntncsr.htm).
 - `n-30d-spdr.htm.gz` — compressed primary N-30D from [accession 0001193125-26-290785](https://www.sec.gov/Archives/edgar/data/1041130/000119312526290785/d163486dn30d.htm).
+- `n-14-nomura.htm.gz` — compressed primary [N-14 accession 0002071844-26-000593](https://www.sec.gov/Archives/edgar/data/809064/000207184426000593/n14.htm) (Nomura; 2026-05-26).
 - `nt-ncen-siren.htm.gz` — compressed primary NT-NCEN from [accession 0001398344-26-010849](https://www.sec.gov/Archives/edgar/data/1796383/000139834426010849/fp0099423-1_ntncen.htm).
 - `ntfncsr-siren.htm.gz` — compressed primary NTFNCSR from [accession 0001398344-26-010772](https://www.sec.gov/Archives/edgar/data/1796383/000139834426010772/fp0099394-1_ntcsr.htm); its primary document type is NT-NCSR.
 - `n-54a-third-point.htm.gz` — compressed primary N-54A from [accession 0001104659-26-040357](https://www.sec.gov/Archives/edgar/data/2025369/000110465926040357/tm2611086d1_n54a.htm).
@@ -102,6 +103,7 @@ The following Q2 2026 samples are listed in the [SEC quarterly master index](htt
 - `40-17g-1290.htm.gz` — compressed [40-17G accession 0001193125-26-265192](https://www.sec.gov/Archives/edgar/data/1605941/000119312526265192/d56800d4017g.htm).
 - `485apos-360.htm.gz` — compressed [485APOS accession 0001999371-26-013444](https://www.sec.gov/Archives/edgar/data/1319067/000199937126013444/m3sixty-485apos_062526.htm).
 - `485bxt-ark.htm.gz` — compressed [485BXT accession 0001213900-26-041967](https://www.sec.gov/Archives/edgar/data/1579982/000121390026041967/ea0285627-01_485bxt.htm).
+- `486bpos-coller.htm.gz` — compressed primary [486BPOS accession 0001213900-26-082754](https://www.sec.gov/Archives/edgar/data/1969180/000121390026082754/ea0299457-01_486bpos.htm) (Coller Secondaries Private Equity Opportunities Fund; 2026-07-29).
 - `497vpi-allianz.htm.gz` — compressed [497VPI accession 0000072499-26-000023](https://www.sec.gov/Archives/edgar/data/72499/000007249926000023/iaincomeadvsupplement.htm).
 - `497vpu-allianz-ny.htm.gz` — compressed [497VPU accession 0000080019-26-000008](https://www.sec.gov/Archives/edgar/data/80019/000008001926000008/iany497vpu.htm).
 - `497ad-powerlaw.htm.gz` — compressed primary [497AD accession 0001213900-26-062218](https://www.sec.gov/Archives/edgar/data/2052053/000121390026062218/ea0292491-03_497ad.htm) (Powerlaw Corp.; 2026-05-28).
