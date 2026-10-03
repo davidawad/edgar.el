@@ -391,6 +391,38 @@
             (regexp-quote (cadr entry))
             (edgar-fixtures-norm body))))))))
 
+(ert-deftest edgar-golden-g8-sc-14d9-items-have-per-filer-goldens ()
+  "Three Schedule 14D-9 filers expose the same named Items."
+  (dolist
+      (entry
+       '(("sc-14d9-cidara"
+          ("1" "subject company information")
+          ("4" "solicitation or recommendation")
+          ("8" "additional information"))
+         ("sc-14d9-nuvalent"
+          ("1" "subject company information")
+          ("4" "solicitation or recommendation")
+          ("8" "additional information"))
+         ("sc-14d9-open-lending"
+          ("1" "subject company information")
+          ("4" "solicitation or recommendation")
+          ("8" "additional information"))))
+    (let* ((slug (nth 0 entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug)))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (should
+         (equal
+          (mapcar #'car (edgar-sections (edgar-text filing)))
+          (mapcar #'number-to-string (number-sequence 1 9))))
+        (dolist (item (cdr entry))
+          (let ((body (edgar-section filing (car item))))
+            (should (stringp body))
+            (should
+             (string-match-p
+              (regexp-quote (cadr item))
+              (downcase (edgar-fixtures-norm body))))))))))
+
 (ert-deftest edgar-golden-g8-finds-def14a-security-ownership ()
   "Title-case filing headings without blank-line separators stay addressable."
   (let* ((filing (edgar-fixtures-filing "def-14a-gme"))
