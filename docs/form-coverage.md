@@ -149,7 +149,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L0 | `(edgar-form-info "CORRESP")` |
 | `CT ORDER` | G10 Investment-company registration | html | L0 | `(edgar-form-info "CT ORDER")` |
-| `D` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
+| `D` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "D")` |
 | `DEF 14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14A")` |
 | `DEF 14C` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEF 14C")` |
 | `DEFA14A` | G8 Proxy & M&A | html | L0 | `(edgar-form-info "DEFA14A")` |
@@ -249,7 +249,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `QUALIF` | G11 Reg CF & Reg A | xml | L0 | `(edgar-form-info "QUALIF")` |
 | `REVOKED` | G9 Periodic & event narrative | html | L0 | `(edgar-form-info "REVOKED")` |
 | `RW` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "RW")` |
-| `S-1` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-1")` |
+| `S-1` | G7 Prospectuses & registration | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `S-11` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-11")` |
 | `S-1MEF` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-1MEF")` |
 | `S-3` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-3")` |
