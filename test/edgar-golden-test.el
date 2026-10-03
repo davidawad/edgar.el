@@ -132,9 +132,16 @@
     (let* ((slug (car entry))
            (filing (edgar-fixtures-filing slug))
            (html (edgar-fixtures-html slug))
+           tree
+           body-section
            body)
       (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
-        (setq body (edgar-section filing '("html" "body"))))
+        (setq tree (edgar-document-structure filing)
+              body-section
+              (edgar-structure-section tree '("html" "body"))
+              body (plist-get body-section :body)))
+      (should (eq 'html (plist-get tree :format)))
+      (should body-section)
       (should body)
       (should
        (string-match-p
