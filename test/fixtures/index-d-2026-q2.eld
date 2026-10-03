@@ -1,0 +1,1 @@
+(:accn "0002124638-26-000001" :form "D" :company "&Affiliates Capital LLC" :filed "2026-05-08" :report "" :doc "primary_doc.xml" :cik 2124638 :url "https://www.sec.gov/Archives/edgar/data/2124638/000212463826000001/primary_doc.xml" :size 8460 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
