@@ -67,6 +67,25 @@
    :sales-commissions (edgar-form-d-sales-commissions value)
    :finders-fees (edgar-form-d-finders-fees value)))
 
+(defun edgar-offerings-test--form-c-ar-fields (value)
+  "Return VALUE's typed Form C-AR fields as a plist."
+  (list
+   :issuer-cik (edgar-form-c-ar-issuer-cik value)
+   :period (edgar-form-c-ar-period value)
+   :issuer-name (edgar-form-c-ar-issuer-name value)
+   :issuer-website (edgar-form-c-ar-issuer-website value)
+   :co-issuer-name (edgar-form-c-ar-co-issuer-name value)
+   :current-employees (edgar-form-c-ar-current-employees value)
+   :total-assets-current (edgar-form-c-ar-total-assets-current value)
+   :total-assets-prior (edgar-form-c-ar-total-assets-prior value)
+   :cash-current (edgar-form-c-ar-cash-current value)
+   :cash-prior (edgar-form-c-ar-cash-prior value)
+   :revenue-current (edgar-form-c-ar-revenue-current value)
+   :revenue-prior (edgar-form-c-ar-revenue-prior value)
+   :net-income-current (edgar-form-c-ar-net-income-current value)
+   :net-income-prior (edgar-form-c-ar-net-income-prior value)
+   :signatures (edgar-form-c-ar-signatures value)))
+
 (ert-deftest edgar-form-144-accessors-match-golden-values ()
   "Typed accessors expose key Form 144 fields from recorded XML."
   (let ((value
@@ -151,6 +170,23 @@
          (edgar-offerings-test--read-fields
           "form-d-sample" "D" #'edgar-form-144)))
     (should-not value)))
+
+(ert-deftest edgar-form-c-ar-accessors-match-golden-values ()
+  "Typed Form C-AR accessors match values from a genuine SEC XML filing."
+  (let ((value
+         (edgar-offerings-test--read-fields
+          "c-ar-qnetic" "C-AR" #'edgar-form-c-ar)))
+    (should (edgar-form-c-ar-p value))
+    (should
+     (equal
+      (edgar-offerings-test--form-c-ar-fields value)
+      (edgar-offerings-test--golden "c-ar-qnetic")))))
+
+(ert-deftest edgar-form-c-ar-is-nil-for-other-forms ()
+  "Form C-AR projection does not accept a different form code."
+  (should-not
+   (edgar-offerings-test--read-fields
+    "c-ar-qnetic" "C" #'edgar-form-c-ar)))
 
 (provide 'edgar-offerings-test)
 ;;; edgar-offerings-test.el ends here

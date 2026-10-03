@@ -7,7 +7,7 @@
 
 ;;; Commentary:
 
-;; Form-specific projections for Form 144 and Forms D/D-A.  Monetary fields
+;; Form-specific projections for Form 144, Forms D/D-A, and Form C-AR.  Monetary fields
 ;; remain strings so decimal precision and values such as "Indefinite" are
 ;; preserved; count fields are integers.  Missing optional XML fields are nil.
 
@@ -41,6 +41,13 @@
   non-accredited-investor-count
   sales-commissions
   finders-fees)
+
+(cl-defstruct edgar-form-c-ar
+  "Typed values from a Regulation Crowdfunding annual report."
+  issuer-cik period issuer-name issuer-website co-issuer-name
+  current-employees total-assets-current total-assets-prior
+  cash-current cash-prior revenue-current revenue-prior
+  net-income-current net-income-prior signatures)
 
 (defun edgar-offerings--children-named (node name)
   "Return element children of NODE with local name NAME."
@@ -164,6 +171,73 @@ are integers when the XML contains valid integer text."
          (edgar-offerings--value
           tree '(offeringData salesCommissionsFindersFees
                  findersFees dollarAmount)))))))
+
+(defun edgar-form-c-ar (filing)
+  "Return typed Form C-AR values from FILING, or nil for another form.
+Numeric and date values remain strings to preserve source formatting.
+Repeated signature records are returned in filing order."
+  (when (equal (plist-get filing :form) "C-AR")
+    (let ((tree (edgar-offerings--xml-root
+                 filing '(headerData submissionType) '("C-AR"))))
+      (when tree
+        (make-edgar-form-c-ar
+       :issuer-cik
+       (edgar-offerings--value
+        tree '(headerData filerInfo filer filerCredentials filerCik))
+       :period (edgar-offerings--value tree '(headerData filerInfo period))
+       :issuer-name
+       (edgar-offerings--value
+        tree '(formData issuerInformation issuerInfo nameOfIssuer))
+       :issuer-website
+       (edgar-offerings--value
+        tree '(formData issuerInformation issuerInfo issuerWebsite))
+       :co-issuer-name
+       (edgar-offerings--value
+        tree '(formData issuerInformation coIssuers coIssuerInfo nameOfCoIssuer))
+       :current-employees
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements currentEmployees))
+       :total-assets-current
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements
+               totalAssetMostRecentFiscalYear))
+       :total-assets-prior
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements
+               totalAssetPriorFiscalYear))
+       :cash-current
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements
+               cashEquiMostRecentFiscalYear))
+       :cash-prior
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements cashEquiPriorFiscalYear))
+       :revenue-current
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements
+               revenueMostRecentFiscalYear))
+       :revenue-prior
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements revenuePriorFiscalYear))
+       :net-income-current
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements
+               netIncomeMostRecentFiscalYear))
+       :net-income-prior
+       (edgar-offerings--value
+        tree '(formData annualReportDisclosureRequirements
+               netIncomePriorFiscalYear))
+       :signatures
+       (let ((people
+              (edgar-offerings--path-node
+               tree '(formData signatureInfo signaturePersons))))
+         (mapcar
+          (lambda (person)
+            (list
+             :name (edgar-offerings--value person '(personSignature))
+             :title (edgar-offerings--value person '(personTitle))
+             :date (edgar-offerings--value person '(signatureDate))))
+          (edgar-offerings--children-named people 'signaturePerson))))))))
 
 (provide 'edgar-offerings)
 ;;; edgar-offerings.el ends here

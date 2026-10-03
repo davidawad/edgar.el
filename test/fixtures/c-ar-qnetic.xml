@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/formc" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>C-AR</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001959002</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <period>12-31-2025</period>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <issuerInformation>
+      <issuerInfo>
+        <nameOfIssuer>Qnetic Corp</nameOfIssuer>
+        <legalStatus>
+          <legalStatusForm>Corporation</legalStatusForm>
+          <jurisdictionOrganization>DE</jurisdictionOrganization>
+          <dateIncorporation>09-20-2022</dateIncorporation>
+        </legalStatus>
+        <issuerAddress>
+          <com:street1>276 5TH AVENUE</com:street1>
+          <com:street2>SUITE 704 - 3137</com:street2>
+          <com:city>NEW YORK</com:city>
+          <com:stateOrCountry>NY</com:stateOrCountry>
+          <com:zipCode>10001</com:zipCode>
+        </issuerAddress>
+        <issuerWebsite>https://qnetic.energy</issuerWebsite>
+      </issuerInfo>
+      <isCoIssuer>Y</isCoIssuer>
+      <coIssuers>
+        <coIssuerInfo>
+          <nameOfCoIssuer>Qnetic II, a series of WeFunder SPV, LLC</nameOfCoIssuer>
+          <coIssuerLegalStatus>
+            <legalStatusForm>Limited Liability Company</legalStatusForm>
+            <jurisdictionOrganization>DE</jurisdictionOrganization>
+            <dateIncorporation>11-10-2024</dateIncorporation>
+          </coIssuerLegalStatus>
+          <coIssuerAddress>
+            <com:street1>4104 24th Street</com:street1>
+            <com:street2>PMB 8113</com:street2>
+            <com:city>San Francisco</com:city>
+            <com:stateOrCountry>CA</com:stateOrCountry>
+            <com:zipCode>94114</com:zipCode>
+          </coIssuerAddress>
+        </coIssuerInfo>
+      </coIssuers>
+    </issuerInformation>
+    <annualReportDisclosureRequirements>
+      <currentEmployees>16.00</currentEmployees>
+      <totalAssetMostRecentFiscalYear>4322940.00</totalAssetMostRecentFiscalYear>
+      <totalAssetPriorFiscalYear>250179.00</totalAssetPriorFiscalYear>
+      <cashEquiMostRecentFiscalYear>3790836.00</cashEquiMostRecentFiscalYear>
+      <cashEquiPriorFiscalYear>204469.00</cashEquiPriorFiscalYear>
+      <actReceivedMostRecentFiscalYear>0.00</actReceivedMostRecentFiscalYear>
+      <actReceivedPriorFiscalYear>0.00</actReceivedPriorFiscalYear>
+      <shortTermDebtMostRecentFiscalYear>803467.00</shortTermDebtMostRecentFiscalYear>
+      <shortTermDebtPriorFiscalYear>108824.00</shortTermDebtPriorFiscalYear>
+      <longTermDebtMostRecentFiscalYear>269319.00</longTermDebtMostRecentFiscalYear>
+      <longTermDebtPriorFiscalYear>109500.00</longTermDebtPriorFiscalYear>
+      <revenueMostRecentFiscalYear>0.00</revenueMostRecentFiscalYear>
+      <revenuePriorFiscalYear>0.00</revenuePriorFiscalYear>
+      <costGoodsSoldMostRecentFiscalYear>0.00</costGoodsSoldMostRecentFiscalYear>
+      <costGoodsSoldPriorFiscalYear>0.00</costGoodsSoldPriorFiscalYear>
+      <taxPaidMostRecentFiscalYear>0.00</taxPaidMostRecentFiscalYear>
+      <taxPaidPriorFiscalYear>0.00</taxPaidPriorFiscalYear>
+      <netIncomeMostRecentFiscalYear>-3793103.00</netIncomeMostRecentFiscalYear>
+      <netIncomePriorFiscalYear>-1250875.00</netIncomePriorFiscalYear>
+    </annualReportDisclosureRequirements>
+    <signatureInfo>
+      <issuerSignature>
+        <issuer>Qnetic Corp</issuer>
+        <issuerSignature>Michael Alexander Pratt</issuerSignature>
+        <issuerTitle>Chief Executive Officer</issuerTitle>
+      </issuerSignature>
+      <signaturePersons>
+        <signaturePerson>
+          <personSignature>Michael Alexander Pratt</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>09-18-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Loic Bastard</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>09-18-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Malcolm Mathews</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>09-18-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Mohammed Abdulaziz A. Al Tuwaijri</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>09-18-2026</signatureDate>
+        </signaturePerson>
+      </signaturePersons>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>
