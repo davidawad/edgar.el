@@ -1,0 +1,1 @@
+(:accn "0001193125-26-259608" :form "PREM14C" :company "Emerald Holding, Inc." :filed "2026-06-05" :report "" :cik 1579214 :ticker "" :doc "d144230dprem14c.htm" :url "https://www.sec.gov/Archives/edgar/data/1579214/000119312526259608/d144230dprem14c.htm" :size 1435844 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

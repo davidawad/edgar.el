@@ -2,6 +2,17 @@
 
 These are unmodified documents published in SEC EDGAR's Archives:
 
+The following Q2 2026 samples are listed in the [SEC quarterly master index](https://www.sec.gov/Archives/edgar/full-index/2026/QTR2/master.idx):
+
+- `defa14c-graybar.htm.gz` — DEFA14C, Graybar Electric Co. ([accession 0000205402-26-000030](https://www.sec.gov/Archives/edgar/data/205402/000020540226000030/c402-20260428corresp.htm); 2026-04-28).
+- `defm14c-olaplex.htm.gz` — DEFM14C, Olaplex Holdings ([accession 0001193125-26-202411](https://www.sec.gov/Archives/edgar/data/1868726/000119312526202411/d544500ddefm14c.htm); 2026-05-04).
+- `defr14c-srx.htm.gz` — DEFR14C, SRX Global ([accession 0001493152-26-029896](https://www.sec.gov/Archives/edgar/data/1471727/000149315226029896/formdefr14c.htm); 2026-06-24).
+- `pos-8c-monroe.htm.gz` — POS 8C, Monroe Capital ([accession 0001104659-26-040388](https://www.sec.gov/Archives/edgar/data/1512931/000110465926040388/tm2611196d1_pos8c.htm); 2026-04-07).
+- `prem14c-emerald.htm.gz` — PREM14C, Emerald Holding ([accession 0001193125-26-259608](https://www.sec.gov/Archives/edgar/data/1579214/000119312526259608/d144230dprem14c.htm); 2026-06-05).
+- `pren14a-fermi.htm.gz` — PREN14A, Fermi ([accession 0001213900-26-051939](https://www.sec.gov/Archives/edgar/data/2071778/000121390026051939/ea028836002-pren14a_fermi.htm); 2026-05-05).
+- `prer14c-esg.htm.gz` — PRER14C, ESG Inc. ([accession 0001520138-26-000133](https://www.sec.gov/Archives/edgar/data/1883835/000152013826000133/esg-20260424_pre14c.htm); 2026-04-24).
+- `sc-14n-first-trinity.htm.gz` — SC 14N, First Trinity Financial ([accession 0001437749-26-011911](https://www.sec.gov/Archives/edgar/data/1395585/000143774926011911/zge20260318_sc14n.htm); 2026-04-09).
+
 - `schedule-13g-gme-xml.xml` — [Schedule 13G accession 0002063571-25-000002](https://www.sec.gov/Archives/edgar/data/1326380/000206357125000002/primary_doc.xml) (GameStop; 2025-04-02).
 - `schedule-13d-taskus-a.xml` — [Schedule 13D/A accession 0001635999-25-000007](https://www.sec.gov/Archives/edgar/data/1829864/000163599925000007/primary_doc.xml) (TaskUs; 2025-08-26).
 - `nport-p-eagle.xml` — [NPORT-P accession 0000850027-26-000015](https://www.sec.gov/Archives/edgar/data/850027/000085002726000015/primary_doc.xml).

@@ -1,0 +1,1 @@
+(:accn "0001104659-26-040388" :form "POS 8C" :company "MONROE CAPITAL Corp" :filed "2026-04-07" :report "" :cik 1512931 :ticker "" :doc "tm2611196d1_pos8c.htm" :url "https://www.sec.gov/Archives/edgar/data/1512931/000110465926040388/tm2611196d1_pos8c.htm" :size 28672 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

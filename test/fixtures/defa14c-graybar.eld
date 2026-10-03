@@ -1,0 +1,1 @@
+(:accn "0000205402-26-000030" :form "DEFA14C" :company "GRAYBAR ELECTRIC CO INC" :filed "2026-04-28" :report "" :cik 205402 :ticker "" :doc "c402-20260428corresp.htm" :url "https://www.sec.gov/Archives/edgar/data/205402/000020540226000030/c402-20260428corresp.htm" :size 33051 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

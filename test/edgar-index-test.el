@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'ert)
+(require 'seq)
 (require 'edgar-index)
 
 (defconst edgar-index-test--directory
@@ -22,7 +23,7 @@
           (edgar-index--parse
            (edgar-index-test--fixture "form-index-2026-q2.idx")))
          (first (car rows)))
-    (should (= (length rows) 6))
+    (should (= (length rows) 14))
     (should (equal (plist-get first :form) "10-K"))
     (should
      (equal (plist-get first :company) "21Shares Polkadot ETF"))
@@ -36,6 +37,45 @@
       (concat
        "https://www.sec.gov/Archives/edgar/data/2054247/"
        "0001213900-26-073214.txt")))))
+
+(ert-deftest edgar-index-q2-tail-rows-match-recorded-fixtures ()
+  "Index rows for the low-volume batch agree with fixture metadata."
+  (let ((rows
+         (edgar-index--parse
+          (edgar-index-test--fixture "form-index-2026-q2.idx"))))
+    (dolist
+        (slug
+         '("defa14c-graybar" "defm14c-olaplex" "defr14c-srx"
+           "pos-8c-monroe" "prem14c-emerald" "pren14a-fermi"
+           "prer14c-esg" "sc-14n-first-trinity"))
+      (let* ((metadata
+              (with-temp-buffer
+                (insert-file-contents
+                 (expand-file-name
+                  (concat "fixtures/" slug ".eld")
+                  edgar-index-test--directory))
+                (read (current-buffer))))
+             (row
+              (seq-find
+               (lambda (filing)
+                 (equal (plist-get filing :accn)
+                        (plist-get metadata :accn)))
+               rows)))
+        (should row)
+        (should (equal (plist-get row :form) (plist-get metadata :form)))
+        (should
+         (equal (plist-get row :company)
+                (plist-get metadata :company)))
+        (should (equal (plist-get row :filed) (plist-get metadata :filed)))
+        (should
+         (equal
+          (plist-get metadata :url)
+          (concat
+           (format
+            "https://www.sec.gov/Archives/edgar/data/%d/%s/"
+            (plist-get row :cik)
+            (replace-regexp-in-string "-" "" (plist-get row :accn)))
+           (plist-get metadata :doc))))))))
 
 (ert-deftest edgar-index-base-form-includes-amendments ()
   (let ((text (edgar-index-test--fixture "form-index-2026-q2.idx")))

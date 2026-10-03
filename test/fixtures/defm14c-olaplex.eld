@@ -1,0 +1,1 @@
+(:accn "0001193125-26-202411" :form "DEFM14C" :company "OLAPLEX HOLDINGS, INC." :filed "2026-05-04" :report "" :cik 1868726 :ticker "" :doc "d544500ddefm14c.htm" :url "https://www.sec.gov/Archives/edgar/data/1868726/000119312526202411/d544500ddefm14c.htm" :size 1365167 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
