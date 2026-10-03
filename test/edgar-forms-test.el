@@ -91,6 +91,13 @@
   (dolist (form '("13F-HR" "13F-NT"))
     (should (eq (plist-get (edgar-form-info form) :level) 'L2))))
 
+(ert-deftest edgar-forms-g2-offerings-have-typed-golden-coverage ()
+  "Forms 144 and D expose their reviewed typed-field goldens."
+  (dolist (form '("144" "D"))
+    (let ((info (edgar-form-info form)))
+      (should (eq (plist-get info :level) 'L2))
+      (should (plist-get info :sections-or-fields)))))
+
 (ert-deftest edgar-forms-g9-recorded-narratives-have-golden-coverage
     ()
   "G9 narrative fixtures with reviewed goldens are marked L2."

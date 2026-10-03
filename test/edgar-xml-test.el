@@ -57,6 +57,26 @@
     (should (eq (car tree) 'edgarSubmission))
     (should (assoc 'headerData (edgar-xml-project tree)))))
 
+(ert-deftest edgar-generic-structure-parses-offering-xml-vintages ()
+  "Parse real Form 144 and D-family vintages through the generic API."
+  (dolist (case
+           '(("144-aapl" "144")
+             ("144-aapl-prior" "144")
+             ("form-d-sample" "D")
+             ("form-d-506b" "D")
+             ("form-d-a-sample" "D/A")
+             ("form-d-2008" "D")))
+    (let* ((filing (edgar-fixtures-filing (car case)))
+           (xml (edgar-xml-test--fixture (car case))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+        (let* ((tree (edgar-document-structure filing))
+               (submission-types
+                (mapcar
+                 #'edgar-structure-text
+                 (edgar-structure-nodes tree "submissionType"))))
+          (should (eq (plist-get tree :format) 'xml))
+          (should (equal submission-types (list (cadr case)))))))))
+
 (ert-deftest edgar-xml-projects-n-px-notice-report ()
   "Project identifying fields from a recorded N-PX notice filing."
   (let* ((tree (edgar-xml-test--parse "n-px-a4-wealth"))

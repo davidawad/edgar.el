@@ -195,6 +195,19 @@
       (edgar-offerings-test--form-d-fields value)
       (edgar-offerings-test--golden "form-d-sample")))))
 
+(ert-deftest edgar-form-d-506b-exemption-matches-real-filing-golden ()
+  "Form D preserves the SEC's Rule 506(b) exemption code."
+  (let ((value
+         (edgar-offerings-test--read-fields
+          "form-d-506b" "D" #'edgar-form-d)))
+    (should (edgar-form-d-p value))
+    (should
+     (equal
+      (edgar-offerings-test--form-d-fields value)
+      (edgar-offerings-test--golden "form-d-506b")))
+    (should
+     (equal (edgar-form-d-federal-exemptions value) '("06b")))))
+
 (ert-deftest edgar-form-d-a-is-parsed-as-an-amendment ()
   "D/A is accepted and retains the filing's D/A submission type."
   (let ((value

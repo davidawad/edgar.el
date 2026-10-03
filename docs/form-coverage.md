@@ -150,7 +150,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `CFPORTAL-W` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "CFPORTAL-W")` |
 | `CORRESP` | G12 Broker-dealer, market structure, staff | text | L1 | `(edgar-text filing)` |
 | `CT ORDER` | G10 Investment-company registration | pdf | L1 | `(edgar-text filing)` |
-| `D` | G2 Notice of sale / Reg D | xml | L0 | `(edgar-form-info "D")` |
+| `D` | G2 Notice of sale / Reg D | xml | L2 | `(edgar-xml filing)` |
 | `DEF 14A` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DEF 14C` | G8 Proxy & M&A | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
 | `DEFA14A` | G8 Proxy & M&A | html | L1 | `(edgar-text filing)` |
