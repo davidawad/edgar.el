@@ -261,7 +261,7 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `S-4` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-4")` |
 | `S-6` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `S-8` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
-| `S-8 POS` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-8 POS")` |
+| `S-8 POS` | G7 Prospectuses & registration | html | L1 | `(edgar-text filing)` |
 | `S-B` | G7 Prospectuses & registration | html | L0 | `(edgar-form-info "S-B")` |
 | `SBSE` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE")` |
 | `SBSE-A` | G12 Broker-dealer, market structure, staff | xml | L0 | `(edgar-form-info "SBSE-A")` |

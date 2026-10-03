@@ -247,6 +247,17 @@
      (string-match-p "5.200% Notes due 2029"
                      (edgar-fixtures-norm section)))))
 
+(ert-deftest edgar-golden-g7-s-8-pos-generic-item-access ()
+  "S-8 POS post-effective amendments expose their Part II Items."
+  (let* ((slug "s-8-pos-exxonmobil")
+         (filing (edgar-fixtures-filing slug))
+         (html (edgar-fixtures-html slug))
+         section)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+      (setq section (edgar-section filing "II.8")))
+    (should section)
+    (should (string-match-p "Exhibits" (edgar-fixtures-norm section)))))
+
 (ert-deftest edgar-golden-g8-proxy-and-tender-sections ()
   "Proxy proposals and tender-offer Items resolve in real SEC filings."
   (dolist

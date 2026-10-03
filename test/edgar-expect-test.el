@@ -134,6 +134,7 @@
     ("8-A12B" "amazon.com, inc." ("1" "2"))
     ("F-3" "registration statement" nil)
     ("S-8" "veralto" nil)
+    ("S-8 POS" "exxonmobil holdings corp" ("II.3" "II.8"))
     ("FWP" "hsbc" nil)
     ("S-1" "registration statement" nil)
     ("10-KT" "keemo fashion" ("I.1" "I.1A"))
