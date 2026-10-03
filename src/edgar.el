@@ -1302,6 +1302,11 @@ wins."
                   (1+ (length text))))
              (key (cdr it))
              (body (substring text (1- start) (1- end)))
+             (body
+              (if (= end (1+ (length text)))
+                  (string-trim-right
+                   body (concat "[" (string ?\r ?\n) "]+"))
+                body))
              (old (gethash key best)))
         (when (or (null old) (> (length body) (length old)))
           (puthash key body best))))

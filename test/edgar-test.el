@@ -116,6 +116,14 @@
     (should (string-match-p "phones" (cdr (assoc "1" s))))
     (should (string-match-p "risks galore" (cdr (assoc "1A" s))))))
 
+(ert-deftest edgar-sections-trim-terminal-line-breaks ()
+  "Section bodies omit line breaks after the final filing text."
+  (let* ((text
+          (concat
+           "Item 10. Certification\nBody text" (make-string 8 ?\n)))
+         (body (cdr (assoc "10" (edgar-sections text)))))
+    (should (equal body "Item 10. Certification\nBody text"))))
+
 (ert-deftest edgar-sections-normalize-unicode-heading-spaces ()
   "Unicode spaces in Item headings do not make sections disappear."
   (let
