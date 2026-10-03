@@ -140,6 +140,22 @@
        (string-match-p
         (regexp-quote (cdr entry)) (edgar-fixtures-norm body))))))
 
+(ert-deftest edgar-golden-g10-generic-html-body-access ()
+  "New investment-company registration forms expose their HTML body."
+  (dolist (entry
+           '(("497ad-powerlaw" . "Powerlaw")
+             ("497vpsub-voya" . "Voya")))
+    (let* ((slug (car entry))
+           (filing (edgar-fixtures-filing slug))
+           (html (edgar-fixtures-html slug))
+           body)
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+        (setq body (edgar-section filing '("html" "body"))))
+      (should body)
+      (should
+       (string-match-p
+        (regexp-quote (cdr entry)) (edgar-fixtures-norm body))))))
+
 (ert-deftest edgar-golden-g7-named-prospectus-sections ()
   "Major prospectus layouts expose named headings through the shared API."
   (dolist

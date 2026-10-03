@@ -1,0 +1,1 @@
+(:accn "0000917677-26-000048" :form "497VPSUB" :filed "2026-01-21" :report "" :doc "0126vmp497vpsub.htm" :cik 103005 :url "https://www.sec.gov/Archives/edgar/data/103005/000091767726000048/0126vmp497vpsub.htm" :ticker "")

@@ -108,11 +108,11 @@ This table is generated from `src/edgar-forms.el`. Regenerate with
 | `486BXT` | G10 Investment-company registration | html | L0 | `(edgar-form-info "486BXT")` |
 | `487` | G10 Investment-company registration | html | L0 | `(edgar-form-info "487")` |
 | `497` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `497AD` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497AD")` |
+| `497AD` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497J` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497K` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497VPI` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
-| `497VPSUB` | G10 Investment-company registration | html | L0 | `(edgar-form-info "497VPSUB")` |
+| `497VPSUB` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `497VPU` | G10 Investment-company registration | html | L1 | `(edgar-text filing)` |
 | `5` | G1 Ownership | xml | L2 | `(edgar-form5-holdings filing)` |
 | `6-K` | G9 Periodic & event narrative | html | L2 | `(edgar-structure-headings (edgar-document-structure filing))` |
