@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Local older-schema example; not a downloaded SEC filing. -->
 <edgarSubmission>
   <schemaVersion>X0708</schemaVersion>
   <submissionType>D</submissionType>
