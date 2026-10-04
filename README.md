@@ -2,6 +2,16 @@
 
 Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](https://github.com/davidawad/xbrl.el) for facts.
 
+![Management's operating margin from Item 7 next to the margin computed from XBRL facts](docs/img/margins.png)
+
+Features, each with a worked example and screenshot in the [showcase](docs/showcase.md):
+
+- [Browse filings and Items](docs/showcase.md#1-list-the-annual-filings-then-look-at-their-items): `M-x edgar-list`, then open any section
+- [Text next to numbers](docs/showcase.md#2-managements-margin-next-to-the-margin-from-tagged-numbers): check a margin in Item 7 against facts from xbrl.el
+- [Trends and risk-factor changes](docs/showcase.md#3-trend-from-the-api-plus-how-the-risk-factors-changed): four years of facts, plus what Item 1A added or dropped
+- [Frames across filers](docs/showcase.md#4-a-frame-across-filers-next-to-a-section): rank a company against every filer, beside its own text
+- [Form coverage](docs/form-coverage.md): which of the 245 base EDGAR forms parse today
+
 ## Install
 
 Emacs 29.1 or newer. Until both are on MELPA, install `xbrl` first, then `edgar`:
