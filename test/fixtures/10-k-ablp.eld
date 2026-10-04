@@ -1,0 +1,1 @@
+(:accn "0001109448-26-000017" :form "10-K" :filed "2026-02-12" :report "2025-12-31" :doc "ablp-20251231.htm" :cik 1109448 :url "https://www.sec.gov/Archives/edgar/data/1109448/000110944826000017/ablp-20251231.htm" :ticker "1109448")
