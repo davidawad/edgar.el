@@ -18,7 +18,9 @@
    "Approximately 48,000 square feet is under a lease expiring in 2032 with the remaining 108,000 square feet under a lease expiring in 2033."
    "In London we currently lease approximately 68,000 square feet of space of which 28,000 is sublet to our unconsolidated joint venture.")
   ("I.3"
-   "Legal Proceedings Legal Proceedings For significant litigation matters, we assess the likelihood of a negative outcome.")
+   "Legal Proceedings Legal Proceedings For significant litigation matters, we assess the likelihood of a negative outcome."
+   "If a negative outcome is probable and the loss can be reasonably estimated, we record an estimated loss."
+   "While it is possible we could incur losses from these matters, we cannot currently estimate such losses or their range.")
   ("I.4"
    "Item 4. Mine Safety Disclosures Not applicable. 2025 Annual Report 25 ")
   ("II.5"
@@ -29,57 +31,32 @@
   ("II.7"
    "Gross sales increased $13.7 billion, from $13.0 billion in 2024 to $26.7 billion in 2025."
    "Base fees 1,127,086 1,047,606 942,302 7.6 11.2 Performance-based fees 117,690 172,128 91,012 (31.6) 89.1 1,244,776 1,219,734 1,033,314 2.1 18.0 Total:"
-   "•Our initiative to replace our investment management technology:")
+   "AB agreed to indemnify SG Canada for 66.7% of any amounts paid by SG Canada under the Canadian Regulatory Guarantee.")
   ("II.7A"
-   "Treasury Bills, mutual funds, exchange-traded options and various separately-managed portfolios consisting of equity securities."
-   "See Note 7 Derivative Instruments to our consolidated financial statements in Item 8."
-   "Other investments include alternative investments and hedge funds we sponsor and other investment vehicles.")
-  ("II.8"
-   "federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB."
-   "United States $ 881,162 $ 1,075,305 $ 714,732 Foreign 169,313 183,323 102,938 Total $ 1,050,475 $ 1,258,628 $ 817,670 Income tax expense:"
-   "See Note 14 Commitments and Contingencies for further discussion of the BIS credit facility and Canadian Regulatory Guarantee.")
+   "Item 7A. Quantitative and Qualitative 54 Disclosures about Market Risk")
+  ("II.8" "Item 8. Financial Statements and 55 Supplementary Data")
   ("II.9"
-   "Item 9. Changes in and Disagreements with Accountants on Accounting an")
-  ("II.9A"
-   "Based on this evaluation, the CEO and the CFO concluded that the disclosure controls and procedures are effective."
-   "Management assessed the effectiveness of AB Holding’s and AB’s internal control over financial reporting as of December 31, 2025."
-   "The reports pertaining to AB Holding and AB each can be found in Item 8 of this Form 10-K.")
-  ("II.9B"
-   "Other Information Both AB and AB Holding reported all information required to be disclosed on Form 8-K during the fourth quarter of 2025."
-   "Seth Bernstein, Chief Executive Officer of AB adopted a Rule 10b5-1 trading arrangement, as defined in Regulation S-K, (the \" Plan\"), Item 408.")
+   "Item 9. Changes in and Disagreements with 106 Accountants on Accountin")
+  ("II.9A" "Item 9A. Controls and Procedures 106")
+  ("II.9B" "Item 9B. Other Information 107")
   ("II.9C"
-   "Disclosure Regarding Foreign Jurisdictions that Prevent Inspections Not applicable.")
+   "Item 9C. Disclosure Regarding Foreign 107 Jurisdictions that Prevent I")
   ("III.10"
-   "General Partner The Partnerships’ activities are managed and controlled by the General Partner."
-   "6 02_438515-1_icon_executive .jpg 02_438515-1_icon_audit and risk.jpg Responsibilities:"
-   "The Compliance Committee meets on a quarterly basis and at such other times as circumstances warrant.")
-  ("III.11"
-   "This CD&A should be read together with the compensation tables that follow this section."
-   "(i) 159,937 restricted AB Holding Units in December 2025 that are scheduled to vest in equal increments on each December 1, 2026, 2027 and 2028;"
-   "As of December 31, 2025, each Independent Director then serving either complied with this policy or was on track to do so within the allotted time.")
+   "Item 10. Directors, Executive Officers and 108 Corporate Governance")
+  ("III.11" "Item 11. Executive Compensation 122")
   ("III.12"
-   "There are no AB Units to be issued pursuant to an equity compensation plan."
-   "Pearson has the right to exercise within 60 days and (ii) 126,389 restricted stock units that will vest within 60 days and settle in EQH shares."
-   "AB and AB Holding have obtained directors and officers/errors and omissions liability insurance.")
+   "Item 12. Security Ownership of Certain 149 Beneficial Owners and Manag")
   ("III.13"
-   "Other transactions with EQH Affiliates are submitted to the Audit Committee for their review and approval."
-   "Equitable Holdings We provide investment management 12,279 services and ancillary accounting services."
-   "(2)We provide investment management services unless otherwise indicated.")
-  ("III.14"
-   "(3)Tax fees consist of fees for tax consultation and tax compliance services."
-   "(4)All other fees consist primarily of miscellaneous non-audit services in 2025 and due diligence tax and audit services in 2024."
-   "The Audit Committee then affirmatively indicates its approval of the listed engagements.")
-  ("IV.15"
-   "Exhibits, Financial Statement Schedules (a)There is no document filed as part of this Form 10-K."
-   "(incorporated by reference to Exhibit 10.09 to Form 10-K for the fiscal year ended December 31, 2023, as filed February 10, 2024)."
-   "101.DEF XBRL Taxonomy Extension Definition Linkbase.")
+   "Item 13. Certain Relationships and Related 153 Transactions, and Direc")
+  ("III.14" "Item 14. Principal Accounting Fees and 154 Services")
+  ("IV.15" "Item 15. Exhibits, Financial Statement 155 Schedules")
   ("IV.16" "AB Holding AllianceBernstein Holding L.P."
    "Bernstein Inc., and the related assumption of the liabilities of that business, completed on October 2, 2000."
    "Securities Act the Securities Act of 1933, as amended."))
  :text
- ("Learning and continued development are central to our talent strategy."
-  "For 2025 overall, the Bloomberg Global Aggregate Index returned 8.2% (USD, unhedged), and the Bloomberg U.S."
-  "We recorded an initial investment in the JVs at fair value as of April 1, 2024 of $283.9 million."
-  "The valuation of our Retirement Plan assets by pricing observability levels as of December 31, 2025 and 2024 was as follows (in thousands):"
-  "In 2025, we experienced $11.3 billion in total net outflows, compared to $2.2 billion in net outflows in 2024."
-  "As a result, she was ineligible for any potential payment or benefit upon a change in control of AB as of December 31, 2025."))
+ ("27,562 29,669 32,165 (7.1) (7.8) Total Fixed Income 120,465 118,389 127,973 1.8 (7.5) Alternatives/Multi-Asset Solutions(2):"
+  "Information about our Executive Officers Please refer to \"Item 10."
+  "Financial difficulties or operational challenges may require us to impair the investment's value in our financial statements."
+  "A transferee must withhold 10% of the amount realized on the transfer unless an exception applies."
+  "(15.11) (10.33) (7.10) MSCI ACWI Index) International Strategic Core Equity Absolute return 28.21 17.98 9.41 Relative return (vs."
+  "The current carrying value of the liability as of December 31, 2025 of $123.8 million will accrete up to $134.0 million through December 31, 2027."))

@@ -1,8 +1,8 @@
 ;;; edgar-showcase-test.el --- AllianceBernstein 10-K: edgar.el composed with xbrl.el -*- lexical-binding: t; -*-
 
 ;; Offline tests behind docs/showcase.md.  The filing is the recorded real
-;; AllianceBernstein L.P. (CIK 1109448) annual report for FY2025:
-;; test/fixtures/10-k-ablp.{eld,htm.gz}.  The xbrl stub payloads are the
+;; AllianceBernstein L.P. (CIK 1109448) annual report for FY2025, trimmed to its first 1.8 MB (through Item 7; see
+;; test/fixtures/NOTES.md): test/fixtures/10-k-ablp.{eld,htm.gz}.  The xbrl stub payloads are the
 ;; byte-for-byte SEC companyconcept responses
 ;; https://data.sec.gov/api/xbrl/companyconcept/CIK0001109448/us-gaap/<Concept>.json
 ;; recorded 2026-10-03 as test/fixtures/xbrl-ablp-<Concept>.json.
@@ -16,7 +16,7 @@
 (require 'edgar-fixtures)
 
 (defvar edgar-showcase-test--memo nil
-  "Plist cache of the expensive derivations (a 4.7 MB filing renders slowly).")
+  "Plist cache of the expensive derivations (a 1.8 MB excerpt still renders slowly).")
 
 (defun edgar-showcase-test--get (key)
   "Value for KEY (:text or :sections) of the AB fixture, computed once."
