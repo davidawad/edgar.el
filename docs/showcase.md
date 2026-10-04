@@ -17,8 +17,11 @@ that is the one used here (it has no ticker, hence `1109448` below).
 Every number and string on this page is real output from SEC responses
 (fetched 2026-10-03). The same filing is recorded in `test/fixtures/10-k-ablp.*`,
 and `test/edgar-showcase-test.el` asserts the margins and Item text offline
-against real recorded SEC payloads. Screenshots are a GUI Emacs window (Emacs
-30.2, macOS) captured with `screencapture`.
+against real recorded SEC payloads (the fixture is the first 1.8 MB of the
+filing, through Item 7, to keep the repository light; see
+`test/fixtures/NOTES.md`). The examples below run against the full live filing.
+Screenshots are a GUI Emacs window (Emacs 30.2, macOS) captured with
+`screencapture`.
 
 ## Setup
 
