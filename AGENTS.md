@@ -19,10 +19,10 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   (install once: `eask install-deps --dev`; needs `eask-cli` from brew).
   One command runs every gate: `eask run script check` (package-lint,
   checkdoc, relint, ERT with undercover coverage, byte-compile). Format with
-  `eask format elisp-autofmt src/edgar.el test/edgar-test.el` BEFORE
+  `eask format elisp-autofmt edgar.el test/edgar-test.el` BEFORE
   committing. Also installed, run by hand: propcheck (property tests),
   ecukes (e2e), codemetrics + cognitive-complexity (warn-only metrics).
-- Source is `src/edgar.el`; tests are ERT in `test/edgar-test.el`. Almost all
+- Source is `edgar.el` at the repo root (standard layout; `package-vc-install` and MELPA need no config); tests are ERT in `test/edgar-test.el`. Almost all
   tests are hermetic (SEC transport stubbed, a fake filing in HTML); the one
   network test needs `XBRL_LIVE=1`. Set `xbrl-user-agent` to a real name +
   email first (SEC requires it; stay under 10 req/s). Coverage is ~85%.

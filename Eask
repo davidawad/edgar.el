@@ -11,13 +11,13 @@
 (website-url "https://github.com/davidawad/edgar.el")
 (keywords "finance" "tools" "hypermedia")
 
-(package-file "src/edgar.el")
-(files "src/*.el")
+(package-file "edgar.el")
+(files "edgar.el")
 
 (script "test"
         "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el")
 (script "check"
-        "eask lint package && eask lint checkdoc && eask lint regexps && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el && eask compile src/edgar.el")
+        "eask lint package && eask lint checkdoc && eask lint regexps && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el && eask compile edgar.el")
 (script "expect-update"
         "EDGAR_EXPECT_UPDATE=1 eask test ert test/edgar-expect-test.el")
 (script "golden-update" "eask emacs --script tools/make-golden.el")

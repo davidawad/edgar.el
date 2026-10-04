@@ -44,5 +44,5 @@ other, and every parsed section must have some), and hand-checked facts
     eask run script check                 # lint + all tests + coverage + compile
     eask run script expect-update         # re-snapshot after an INTENDED change; review `git diff test/expect/`
     eask run script golden-update         # regenerate golden strings; review `git diff test/golden/`
-    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-fixtures.el   # record missing latest fixtures (network)
-    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-prior.el      # record the older twin of each (network)
+    emacs -Q --batch -L ../xbrl.el -L . -l tools/record-fixtures.el   # record missing latest fixtures (network)
+    emacs -Q --batch -L ../xbrl.el -L . -l tools/record-prior.el      # record the older twin of each (network)

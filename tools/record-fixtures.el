@@ -1,7 +1,7 @@
 ;;; record-fixtures.el --- record real SEC filings as offline test fixtures -*- lexical-binding: t; -*-
 
 ;; Run manually (network):
-;;   emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-fixtures.el
+;;   emacs -Q --batch -L ../xbrl.el -L . -l tools/record-fixtures.el
 ;; Writes test/fixtures/<slug>.htm.gz (the filing's primary document) and
 ;; <slug>.eld (the filing plist) for each form in `edgar-record-forms', using
 ;; the first candidate ticker whose latest filing of that form is under

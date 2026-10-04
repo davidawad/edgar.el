@@ -1,7 +1,7 @@
 ;;; record-prior.el --- record an OLDER filing per fixture -*- lexical-binding: t; -*-
 
 ;; Run manually (network), after tools/record-fixtures.el:
-;;   emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-prior.el
+;;   emacs -Q --batch -L ../xbrl.el -L . -l tools/record-prior.el
 ;; For every test/fixtures/<slug>.eld (latest filing) without a <slug>-prior
 ;; twin, records the OLDEST filing of the same form and ticker still inside
 ;; the SEC's `recent' window (and under the size cap).  Layouts drift across

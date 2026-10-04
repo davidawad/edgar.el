@@ -5,7 +5,7 @@
 ;; Coverage (undercover.el, pack-mandated).  Must run before the source loads.
 (setq load-prefer-newer t)
 (when (require 'undercover nil t)
-  (undercover "src/*.el" (:report-format 'text) (:send-report nil)))
+  (undercover "edgar.el" (:report-format 'text) (:send-report nil)))
 
 (require 'edgar)
 
