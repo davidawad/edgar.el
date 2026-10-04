@@ -26,11 +26,11 @@
 (source 'melpa)
 
 (depends-on "emacs" "29.1")
-;; Sibling package (private repo, not on any archive yet).
+;; Sibling package (public repo, not on any archive yet).
 (depends-on "xbrl"
             :url "https://github.com/davidawad/xbrl.el"
             :fetcher 'git
-            :files '("src/*.el"))
+            :files '("xbrl.el"))
 
 (development
  (depends-on "package-lint")
