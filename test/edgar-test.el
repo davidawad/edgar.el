@@ -98,6 +98,32 @@
   (should-not
    (edgar-sections "SCHEDULE 13G\nNo item headings here at all.\n")))
 
+(ert-deftest edgar-sections-thin-space-headings ()
+  "A 20-F may write ITEM, a U+2009 thin space, then the number."
+  (let
+      ((s
+        (edgar-sections
+         (concat
+          "PART I\nITEM\u20091.IDENTITY OF DIRECTORS\nNot applicable.\n"
+          "ITEM\u20093.KEY INFORMATION\nrisks galore here and there\n"))))
+    (should (equal (mapcar #'car s) '("I.1" "I.3")))
+    (should (string-match-p "risks galore" (cdr (assoc "I.3" s))))))
+
+(ert-deftest edgar-sections-drop-wrapped-toc-without-part ()
+  "A wrapped table-of-contents entry before the first Part is not a section."
+  (let
+      ((s
+        (edgar-sections
+         (concat
+          "ITEM 7. MAJOR SHAREHOLDERS AND RELATED PARTY 55\nTRANSACTIONS\n"
+          "ITEM 8. FINANCIAL INFORMATION 56\n"
+          "PART I\n"
+          "ITEM 7. MAJOR SHAREHOLDERS\nThe largest holder owns a lot.\n"
+          "ITEM 8. FINANCIAL INFORMATION\nStatements are in Item 18.\n"))))
+    (should (equal (mapcar #'car s) '("I.7" "I.8")))
+    (should (string-match-p "largest holder" (cdr (assoc "I.7" s))))
+    (should-not (assoc "7" s))))
+
 (ert-deftest edgar-section-resolves-bare-and-ambiguous ()
   (cl-letf (((symbol-function 'edgar-text)
              (lambda (_) edgar-test--10q)))
