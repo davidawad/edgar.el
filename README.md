@@ -1,6 +1,15 @@
 # edgar.el
 
-Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
+Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](https://github.com/davidawad/xbrl.el) for facts.
+
+## Install
+
+Emacs 29.1 or newer. Until both are on MELPA, install `xbrl` first, then `edgar`:
+
+    (package-vc-install "https://github.com/davidawad/xbrl.el")
+    (package-vc-install "https://github.com/davidawad/edgar.el")
+
+## Use
 
     (setq xbrl-user-agent "Your Name you@example.com") ; SEC requires this
     (edgar-filings "AAPL" "10-K")                       ; filing plists, newest first
