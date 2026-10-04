@@ -18,6 +18,9 @@ Emacs 29.1 or newer. Until both are on MELPA, install `xbrl` first, then `edgar`
     M-x edgar-list    ; browse a ticker's filings, RET opens one
     M-x edgar-read    ; open the latest 10-K / 10-Q / 8-K
 
+See [docs/showcase.md](docs/showcase.md) for worked examples that combine
+filing text from edgar.el with facts from xbrl.el, on AllianceBernstein's 10-K.
+
 ## Sections
 
 `edgar-sections` splits a filing at its `Item` headings. Keys are the item
