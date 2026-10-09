@@ -1,7 +1,7 @@
 ;;; make-golden.el --- pick verbatim golden strings from recorded filings -*- lexical-binding: t; -*-
 
 ;; Run manually:
-;;   emacs -Q --batch -L ../xbrl.el/src -L src -L test -l tools/make-golden.el
+;;   emacs -Q --batch -L ../xbrl.el -L . -L test -l tools/make-golden.el
 ;; Writes test/golden/<slug>.eld for every fixture: for each section key a few
 ;; verbatim sentences that occur in THAT section and in no other, and for
 ;; the whole text a few more spread through the filing.  They are stored as

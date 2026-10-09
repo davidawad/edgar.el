@@ -1,9 +1,7 @@
 (:form "20FR12G" :text-bucket 18 :text-head
        "UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON,"
        :sections
-       (("12" 6 "Item 12. Description of Securities Other than Equi")
-	("19" 12 "Item 19. Exhibits 45 i Table of Contents INTRODUCT")
-	("I.1" 9 "ITEM 1. IDENTITY OF DIRECTORS, SENIOR MANAGEMENT A")
+       (("I.1" 9 "ITEM 1. IDENTITY OF DIRECTORS, SENIOR MANAGEMENT A")
 	("I.2" 6 "ITEM 2. OFFER STATISTICS AND EXPECTED TIMETABLE No")
 	("I.3" 15 "ITEM 3. KEY INFORMATION A. [Reserved] B. Capitaliz")
 	("I.4" 15 "ITEM 4. INFORMATION ON THE COMPANY A. History and ")

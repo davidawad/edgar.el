@@ -1,10 +1,7 @@
 (:form "10-KT" :text-bucket 16 :text-head
        "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,"
        :sections
-       (("9" 7 "Item 9. Changes in and Disagreements with Accounta")
-	("9C" 6 "ITEM 9C. Disclosure regarding foreign jurisdiction")
-	("15" 11 "Item 15. Exhibits, Financial Statement Schedules 2")
-	("I.1" 10 "Item 1. Business. General Non-Invasive Monitoring ")
+       (("I.1" 10 "Item 1. Business. General Non-Invasive Monitoring ")
 	("I.1A" 13
 	 "Item 1A. Risk Factors. Our future operating result")
 	("I.1B" 5 "Item 1B. Other Information None")

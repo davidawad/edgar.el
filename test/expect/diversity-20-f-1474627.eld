@@ -1,10 +1,7 @@
 (:form "20-F" :text-bucket 19 :text-head
        "UNITED STATES SECURITIES AND EXCHANGE COMMISSION WASHINGTON,"
        :sections
-       (("16" 4 "ITEM 16. [RESERVED] 84")
-	("16C" 9 "ITEM 16C. PRINCIPAL ACCOUNTANT FEES AND SERVICES 8")
-	("19" 11 "ITEM 19. EXHIBITS 87 SIGNATURES 89 i DISCLOSURE RE")
-	("I.1" 6 "Item 1. Identity of Directors, Senior Management a")
+       (("I.1" 6 "Item 1. Identity of Directors, Senior Management a")
 	("I.2" 6 "Item 2. Offer Statistics and Expected Timetable No")
 	("I.3" 17 "Item 3. Key Information A. [Reserved] B. Capitaliz")
 	("I.4" 15 "Item 4. Information on the Company A. History and ")

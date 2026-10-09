@@ -10,7 +10,7 @@
        (expand-file-name ".."
                          (file-name-directory
                           (or load-file-name buffer-file-name)))))
-  (add-to-list 'load-path (expand-file-name "src" root))
+  (add-to-list 'load-path root)
   (add-to-list 'load-path (expand-file-name "tools" root))
   (require 'edgar-form-coverage)
   (require 'edgar-form-docs)

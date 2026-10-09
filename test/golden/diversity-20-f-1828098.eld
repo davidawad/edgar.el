@@ -1,28 +1,5 @@
 (:sections
- (("3" "Reasons for the Offer and Use of Proceeds 1 3.D.")
-  ("4" "History and Development of the Company 31 4.B.")
-  ("5" "Operating and Financial Review and Prospects 45 5.A."
-   "Research and Development, Patents and Licenses, etc.")
-  ("6" "Directors, Senior Management and Employees 52 6.A.")
-  ("7" "Major Shareholders and Related Party Transactions 67 7.A.")
-  ("8"
-   "Consolidated Statements and Other Financial Information 70 8.B.")
-  ("9"
-   "ITEM 9. The Offer and Listing 71 9.A. Offer and Listing Details 71 9.B")
-  ("10" "Memorandum and Articles of Association 71 10.C.")
-  ("11"
-   "ITEM 11. Quantitative and Qualitative Disclosure about 80 Market Risk")
-  ("12"
-   "ITEM 12. Description of Securities other than Equity 80 Securities PAR")
-  ("16" "ITEM 16. [Reserved] 83")
-  ("16C" "Principal Accountant Fees and Services 83 ITEM 16D."
-   "Exemptions from the Listing Standards For Audit 84 Committees ITEM 16E."
-   "Change in Registrant’s Certifying Accountant 84 ITEM 16G.")
-  ("19"
-   "Exhibits 86 SIGNATURES 88 Index F-1 ii INTRODUCTION Certain Definitions In this Annual Report on Form 20-F, unless the context otherwise requires:"
-   "● references to the “Companies Law” are to Israel’s Companies Law, 5759-1999, as amended;"
-   "Our forward-looking statements do not reflect the potential impact of any future acquisitions, mergers, dispositions, joint ventures or investments.")
-  ("I.1"
+ (("I.1"
    "ITEM 1. Identity Of Directors, Senior Management And Advisers Not appl")
   ("I.2"
    "ITEM 2. Offer Statistics And Expected Timetable Not applicable.")

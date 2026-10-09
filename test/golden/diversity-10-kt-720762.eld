@@ -1,13 +1,5 @@
 (:sections
- (("9"
-   "Changes in and Disagreements with Accountants on Accounting and Financial 22 Disclosure.")
-  ("9C"
-   "ITEM 9C. Disclosure regarding foreign jurisdictions that prevent inspe")
-  ("15"
-   "● Our quarterly results of operations will fluctuate, and these fluctuations could cause our stock price to decline."
-   "Risks and uncertainties, the occurrence of which could adversely affect our business, include the following:"
-   "● Because Gravitics and the Company may not meet closing conditions we may not be successful in consummating the Merger.")
-  ("I.1" "General Non-Invasive Monitoring Systems, Inc."
+ (("I.1" "General Non-Invasive Monitoring Systems, Inc."
    "The Company’s offices are located at 4400 Biscayne Boulevard, Miami, Florida, 33137 and its telephone number is (305) 575-4200."
    "The Company is a shell company as defined in Rule 12b-2 of the Exchange Act.")
   ("I.1A"

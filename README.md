@@ -1,6 +1,25 @@
 # edgar.el
 
-Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](../xbrl.el) for facts.
+Read SEC EDGAR filings in Emacs. Depends on [xbrl.el](https://github.com/davidawad/xbrl.el) for facts.
+
+![Management's operating margin from Item 7 next to the margin computed from XBRL facts](docs/img/margins.png)
+
+Features, each with a worked example and screenshot in the [showcase](docs/showcase.md):
+
+- [Browse filings and Items](docs/showcase.md#1-list-the-annual-filings-then-look-at-their-items): `M-x edgar-list`, then open any section
+- [Text next to numbers](docs/showcase.md#2-managements-margin-next-to-the-margin-from-tagged-numbers): check a margin in Item 7 against facts from xbrl.el
+- [Trends and risk-factor changes](docs/showcase.md#3-trend-from-the-api-plus-how-the-risk-factors-changed): four years of facts, plus what Item 1A added or dropped
+- [Frames across filers](docs/showcase.md#4-a-frame-across-filers-next-to-a-section): rank a company against every filer, beside its own text
+- [Form coverage](docs/form-coverage.md): which of the 245 base EDGAR forms parse today
+
+## Install
+
+Emacs 29.1 or newer. Until both are on MELPA, install `xbrl` first, then `edgar`:
+
+    (package-vc-install "https://github.com/davidawad/xbrl.el")
+    (package-vc-install "https://github.com/davidawad/edgar.el")
+
+## Use
 
 PDF primaries are rendered through Poppler's `pdftotext` executable. PDF
 payloads embedded in complete submissions also require `uudecode`.
@@ -60,6 +79,9 @@ normalized dollar value across the January 2023 reporting-unit change.
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history
 pages whose date range overlaps the request.
+
+See [docs/showcase.md](docs/showcase.md) for worked examples that combine
+filing text from edgar.el with facts from xbrl.el, on AllianceBernstein's 10-K.
 
 ## Sections
 
@@ -158,5 +180,5 @@ coverage gate checks registry metadata and recorded fixture artifacts.
     eask run script check                 # lint + all tests + coverage + compile
     eask run script expect-update         # re-snapshot after an INTENDED change; review `git diff test/expect/`
     eask run script golden-update         # regenerate golden strings; review `git diff test/golden/`
-    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-fixtures.el   # record missing latest fixtures (network)
-    emacs -Q --batch -L ../xbrl.el/src -L src -l tools/record-prior.el      # record the older twin of each (network)
+    emacs -Q --batch -L ../xbrl.el -L . -l tools/record-fixtures.el   # record missing latest fixtures (network)
+    emacs -Q --batch -L ../xbrl.el -L . -l tools/record-prior.el      # record the older twin of each (network)

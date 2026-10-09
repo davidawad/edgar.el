@@ -1,10 +1,7 @@
 (:form "10-KT" :text-bucket 16 :text-head
        "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,"
        :sections
-       (("3" 4 "Item 3. Legal proceedings. 10")
-	("6" 4 "Item 6. [Reserved]")
-	("9C" 6 "Item 9C. Disclosure Regarding Foreign Jurisdiction")
-	("16" 6 "Item 16. Form 10-K Summary. 23 Signatures 24 2")
+       (("6" 4 "Item 6. [Reserved]")
 	("I.1" 14 "Item 1. Business Unless otherwise stated or the co")
 	("I.1A" 6 "Item 1A. Risk Factors Not required for smaller rep")
 	("I.1B" 6 "Item 1B. Unresolved Staff Comments Not required fo")

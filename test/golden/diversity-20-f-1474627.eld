@@ -1,13 +1,5 @@
 (:sections
- (("16" "ITEM 16. [RESERVED] 84")
-  ("16C" "PRINCIPAL ACCOUNTANT FEES AND SERVICES 84 ITEM 16D."
-   "EXEMPTIONS FROM THE LISTING STANDARDS 85 FOR AUDIT COMMITTEES ITEM 16E."
-   "DISCLOSURE REGARDING FOREIGN 86 JURISDICTIONS THAT PREVENT INSPECTIONS ITEM 16J.")
-  ("19"
-   "Forward-looking statements give our current expectations or forecasts of future events."
-   "You can identify these statements by the fact that they do not relate strictly to historical or current facts."
-   "Accordingly, you should be careful about relying on any forward-looking statements.")
-  ("I.1"
+ (("I.1"
    "Item 1. Identity of Directors, Senior Management and Advisers Not appl")
   ("I.2"
    "Item 2. Offer Statistics and Expected Timetable Not applicable.")

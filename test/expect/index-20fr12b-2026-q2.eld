@@ -1,11 +1,7 @@
 (:form "20FR12B" :text-bucket 19 :text-head
        "20FR12B Table of Contents As filed with the Securities and E"
        :sections
-       (("12" 6 "Item 12. Description of Securities Other than Equi")
-	("16" 5 "Item 16. [Reserved] 124")
-	("16C" 9 "Item 16C. Principal Accountant Fees and Services 1")
-	("19" 13 "Item 19. Exhibits 125 Index to Consolidated Financ")
-	("I.1" 11 "Item 1. Identity of Directors, Senior Management a")
+       (("I.1" 11 "Item 1. Identity of Directors, Senior Management a")
 	("I.2" 7 "Item 2. Offer Statistics and Expected Timetable No")
 	("I.3" 17 "Item 3. Key Information A. [Reserved] B. Capitaliz")
 	("I.4" 16 "Item 4. Information on the Company A. History and ")

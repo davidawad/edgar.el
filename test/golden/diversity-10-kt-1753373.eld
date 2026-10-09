@@ -1,8 +1,5 @@
 (:sections
- (("3" "Item 3. Legal proceedings. 10") ("6" "Item 6. [Reserved]")
-  ("9C"
-   "Disclosure Regarding Foreign Jurisdictions that Prevent 14 Inspections.")
-  ("16" "Item 16. Form 10-K Summary. 23 Signatures 24 2")
+ (("6" "Item 6. [Reserved]")
   ("I.1"
    "OUR BUSINESS Our Vision Our vision is to secure reliable access to critical minerals and metals for the U.S., its allies, and partners."
    "The growth rate for projected demand in 2050 is presented using 2020 as the base of comparison (Source:"

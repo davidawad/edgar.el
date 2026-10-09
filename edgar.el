@@ -1298,7 +1298,7 @@ callers needing every source node should use `edgar-document-structure'."
 
 (defconst edgar--part-re
   (concat
-   "^[ \t ]*\\(?:PART\\|Part\\)[ \t ]+\\(IV\\|I\\{1,3\\}\\)"
+   "^[ \t\u00a0\u2000-\u200a]*\\(?:PART\\|Part\\)[ \t\u00a0\u2000-\u200a]+\\(IV\\|I\\{1,3\\}\\)"
    "\\(?:[ \t ]*$"
    "\\|[ \t ]*[.:—–\u0096\u0097-].\\{0,60\\}$"
    "\\|[ \t ]+[A-Z][A-Za-z ,&'’ -]\\{0,60\\}$\\)")
@@ -1308,7 +1308,7 @@ cross-references like \"Part I, Item 1A\" do not.")
 
 (defconst edgar--item-re
   (concat
-   "^[ \t ]*\\(?:Item\\|ITEM\\)[ \t ]+"
+   "^[ \t\u00a0\u2000-\u200a]*\\(?:Item\\|ITEM\\)[ \t\u00a0\u2000-\u200a]+"
    "\\([0-9]+\\(?:\\.[0-9]+\\)?[A-C]?\\)"
    "\\(?:[.:]\\|[ \t ]*[—–\u0096\u0097-]\\|[ \t ]+[A-Z]\\|[ \t ]*$\\)")
   "Match an Item heading line; group 1 is the item number, e.g. 1A or 2.02.
@@ -1432,7 +1432,7 @@ number at the end of any line."
         (and
          first
          (string-match
-          "\\`[ \t\u00a0]*\\(?:Item\\|ITEM\\)[ \t\u00a0]+[0-9.]+[A-C]?[.:]?[ \t\u00a0]*\\(.*\\)"
+          "\\`[ \t\u00a0\u2000-\u200a]*\\(?:Item\\|ITEM\\)[ \t\u00a0\u2000-\u200a]+[0-9.]+[A-C]?[.:]?[ \t\u00a0\u2000-\u200a]*\\(.*\\)"
           first)
          (cons (match-string 1 first) (cdr lines))))
        (title-lines
@@ -1453,10 +1453,14 @@ number at the end of any line."
 (defun edgar--drop-residue (secs)
   "Remove from SECS the heading-only entries that duplicate another Part's item.
 A 20-F table of contents without Part headings, for instance, leaves a
-bare \"I.13\" next to the real \"II.13\"."
+bare \"I.13\" next to the real \"II.13\".  An entry with no Part at all is
+residue too when the same item exists under a Part: the table of contents
+precedes the first Part heading, even when a wrapped line makes an entry
+longer than a lone heading."
   (seq-remove
    (lambda (e)
-     (and (edgar--heading-only-p (cdr e))
+     (and (or (edgar--heading-only-p (cdr e))
+              (= 0 (car (edgar--split-key (car e)))))
           (seq-some
            (lambda (o)
              (and (not (eq o e))
