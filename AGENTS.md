@@ -22,6 +22,7 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   `eask format elisp-autofmt edgar.el test/edgar-test.el` BEFORE
   committing. Also installed, run by hand: propcheck (property tests),
   ecukes (e2e), codemetrics + cognitive-complexity (warn-only metrics).
+- Layout: every .el file stays under 500 lines. `edgar.el` requires `edgar-core` (options, transport, filing lists), `edgar-content`, `edgar-structure`, `edgar-headings`, `edgar-named`, `edgar-sections`; the form registry rows live in `edgar-forms-{filers,registration,periodic}.el` and are assembled by `edgar-forms.el`. Split test files `require` their base file for shared helpers.
 - Source is `edgar.el` at the repo root (standard layout; `package-vc-install` and MELPA need no config); tests are ERT in `test/edgar-test.el`. Almost all
   tests are hermetic (SEC transport stubbed, a fake filing in HTML); the one
   network test needs `XBRL_LIVE=1`. Set `xbrl-user-agent` to a real name +
