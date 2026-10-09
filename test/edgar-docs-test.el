@@ -2,6 +2,10 @@
 
 (require 'ert)
 (require 'edgar-docs)
+(add-to-list 'load-path
+             (expand-file-name "../tools"
+                               (file-name-directory
+                                (or load-file-name buffer-file-name))))
 (require 'edgar-form-docs)
 
 (ert-deftest edgar-form-docs-table-matches-registry ()
