@@ -1,0 +1,1 @@
+(:accn "0001193125-26-114246" :form "NT 10-Q" :company "IMMERSION CORP" :filed "2026-03-18" :report "" :doc "q3_2026_immr_nt-10q_0318.htm" :cik 1058811 :url "https://www.sec.gov/Archives/edgar/data/1058811/000119312526114246/q3_2026_immr_nt-10q_0318.htm" :size 64348 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

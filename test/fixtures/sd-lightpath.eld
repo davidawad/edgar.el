@@ -1,0 +1,1 @@
+(:accn "0001437749-26-021997" :form "SD" :filed "2026-06-29" :cik 889971 :doc "lpth20260626_sd.htm" :url "https://www.sec.gov/Archives/edgar/data/889971/000143774926021997/lpth20260626_sd.htm" :company "LightPath Technologies, Inc.")

@@ -1,0 +1,1 @@
+(:accn "0001923622-26-000014" :form "SC TO-I" :filed "2026-06-29" :cik 1923622 :doc "f45598d1.htm" :url "https://www.sec.gov/Archives/edgar/data/1923622/000192362226000014/f45598d1.htm" :company "PGIM Private Credit Fund")

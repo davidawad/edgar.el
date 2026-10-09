@@ -1,0 +1,279 @@
+;;; record-fixtures-test.el --- offline tests for the fixture recorder -*- lexical-binding: t; -*-
+
+;;; Code:
+
+(require 'ert)
+(require 'edgar)
+(load (expand-file-name "../tools/record-fixtures.el"
+                        (file-name-directory
+                         (or load-file-name buffer-file-name)))
+      nil t)
+
+(ert-deftest edgar-record-quarter-pairs-use-last-completed-quarter ()
+  "Choose the same completed quarter three years earlier."
+  (should
+   (equal
+    (edgar-record-quarter-pairs
+     (encode-time 0 0 12 2 10 2026 t))
+    '((2026 . 3) (2023 . 3))))
+  (should
+   (equal
+    (edgar-record-quarter-pairs
+     (encode-time 0 0 12 2 2 2026 t))
+    '((2025 . 4) (2022 . 4))))
+  (should
+   (equal
+    (edgar-record-quarter-pairs
+     (encode-time 0 0 12 1 1 2026 t))
+    '((2025 . 4) (2022 . 4)))))
+
+(ert-deftest edgar-record-ranking-is-deterministic ()
+  "Seeded ranking is stable regardless of index row order."
+  (let* ((edgar-record-seed "offline-test")
+         (filings
+          (list
+           '(:form "10-K" :accn "a")
+           '(:form "10-K" :accn "b")
+           '(:form "10-K" :accn "c")))
+         (left
+          (mapcar
+           (lambda (filing) (plist-get filing :accn))
+           (edgar-record--rank "10-K" "recent" filings)))
+         (right
+          (mapcar
+           (lambda (filing) (plist-get filing :accn))
+           (edgar-record--rank "10-K" "recent" (reverse filings)))))
+    (should (equal left right))))
+
+(ert-deftest edgar-record-prefers-mid-sized-capped-documents ()
+  "Inspect a bounded candidate sample, skip oversized docs, prefer target size."
+  (let* ((edgar-record-target-bytes 250)
+         (edgar-record-max-bytes 800)
+         (candidates
+          (list
+           (list '(:accn "a") nil 900)
+           (list '(:accn "b") nil 240)
+           (list '(:accn "c") nil 500)))
+         (bounded
+          (seq-filter
+           (lambda (candidate)
+             (edgar-record--suitable-item-p
+              `((size . ,(number-to-string (nth 2 candidate))))))
+           candidates))
+         (ranked
+          (edgar-record--prefer-candidates "10-K" "recent" bounded)))
+    (should (= (length ranked) 2))
+    (should (equal (plist-get (caar ranked) :accn) "b"))))
+
+(ert-deftest
+    edgar-record-primary-item-falls-back-to-submission-filename
+    ()
+  "Use the submission TYPE/FILENAME when directory item types are icons."
+  (let* ((url "https://www.sec.gov/Archives/example/submission.txt")
+         (filing (list :form "1-SA" :url url))
+         (primary
+          '((name . "port4_1sa.htm")
+            (type . "text.gif")
+            (size . "858822")))
+         (items
+          (list
+           '((name . "submission.txt")
+             (type . "text.gif")
+             (size . "900000"))
+           primary
+           '((name . "primary_doc.xml")
+             (type . "text.gif")
+             (size . "1466")))))
+    (cl-letf (((symbol-function 'edgar--fetch)
+               (lambda (requested-url)
+                 (should (equal requested-url url))
+                 (concat
+                  "<DOCUMENT>\n<TYPE>EX-99.1\n"
+                  "<FILENAME>exhibit.htm\n</DOCUMENT>\n"
+                  "<DOCUMENT>\n<TYPE>1-SA\n"
+                  "<FILENAME>port4_1sa.htm\n</DOCUMENT>"))))
+      (should
+       (equal (edgar-record--primary-item filing items) primary)))))
+
+(ert-deftest edgar-record-gzip-writer-produces-valid-stream ()
+  "Write a non-empty, valid gzip fixture with deterministic metadata."
+  (let ((raw (make-temp-file "edgar-record-raw-"))
+        (compressed (make-temp-file "edgar-record-gzip-")))
+    (unwind-protect
+        (progn
+          (with-temp-file raw
+            (insert "<html><body>recorded filing</body></html>"))
+          (edgar-record--gzip-file raw compressed)
+          (should
+           (> (file-attribute-size (file-attributes compressed)) 0))
+          (should
+           (zerop (call-process "gzip" nil nil nil "-t" compressed))))
+      (delete-file raw)
+      (delete-file compressed))))
+
+(ert-deftest edgar-record-write-pair-stores-xml-and-primary-url ()
+  "Store the XML primary URL and preserve sampling provenance metadata."
+  (let*
+      ((directory (make-temp-file "edgar-record-fixture-" t))
+       (edgar-record-seed "offline-provenance-seed")
+       (edgar-record-request-delay 0)
+       (filing
+        '(:accn
+          "0000000001-26-000001"
+          :form "1-K"
+          :cik 1
+          :company "Sample Corporation"
+          :filed "2026-06-30"
+          :report "2026-03-31"
+          :doc "submission.txt"
+          :url "https://www.sec.gov/submission.txt"))
+       (item '((name . "primary_doc.xml") (size . "55")))
+       (primary-url
+        "https://www.sec.gov/Archives/edgar/data/1/000000000126000001/primary_doc.xml"))
+    (unwind-protect
+        (cl-letf (((symbol-function 'edgar-record--dir)
+                   (lambda () directory))
+                  ((symbol-function 'edgar--fetch)
+                   (lambda (url)
+                     (should (equal url primary-url))
+                     "<edgarSubmission/>")))
+          (should
+           (edgar-record--write-pair
+            "sample" filing item '(2026 . 3) "recent"))
+          (should
+           (file-exists-p (expand-file-name "sample.xml" directory)))
+          (should-not
+           (file-exists-p
+            (expand-file-name "sample.htm.gz" directory)))
+          (with-temp-buffer
+            (insert-file-contents
+             (expand-file-name "sample.eld" directory))
+            (let ((metadata (read (current-buffer))))
+              (should
+               (equal (plist-get metadata :accn)
+                      "0000000001-26-000001"))
+              (should (equal (plist-get metadata :form) "1-K"))
+              (should (equal (plist-get metadata :cik) 1))
+              (should
+               (equal (plist-get metadata :company)
+                      "Sample Corporation"))
+              (should (equal (plist-get metadata :filed) "2026-06-30"))
+              (should (equal (plist-get metadata :report) "2026-03-31"))
+              (should
+               (equal (plist-get metadata :doc) "primary_doc.xml"))
+              (should
+               (equal (plist-get metadata :url) primary-url))
+              (should (equal (plist-get metadata :size) 55))
+              (should
+               (equal (plist-get metadata :sample-vintage) "recent"))
+              (should
+               (equal (plist-get metadata :sample-quarter) "2026-Q3"))
+              (should
+               (equal
+                (plist-get metadata :sample-seed)
+                "offline-provenance-seed")))))
+      (delete-directory directory t))))
+
+(ert-deftest edgar-record-sampler-falls-back-to-amended-base-form ()
+  "Use `/A' filings only when no exact base-form filing is indexed."
+  (let ((directory (make-temp-file "edgar-record-sampler-" t))
+        seen)
+    (unwind-protect
+        (cl-letf (((symbol-function 'edgar-record--dir)
+                   (lambda () directory))
+                  ((symbol-function 'edgar-record--candidate-docs)
+                   (lambda (_form _vintage filings)
+                     (setq seen filings)
+                     nil)))
+          (should
+           (eq
+            (edgar-record--sample-quarter
+             "10-K" "recent" '(2099 . 4)
+             '((:form "10-K/A" :accn "amendment")
+               (:form "10-K" :accn "base")))
+            :no-suitable))
+          (should
+           (equal (mapcar (lambda (filing) (plist-get filing :accn)) seen)
+                  '("base")))
+          (should
+           (eq
+            (edgar-record--sample-quarter
+             "10-K" "older" '(2096 . 4)
+             '((:form "10-K/A" :accn "amendment")))
+            :no-suitable))
+          (should
+           (equal (mapcar (lambda (filing) (plist-get filing :accn)) seen)
+                  '("amendment"))))
+      (delete-directory directory t))))
+
+(ert-deftest edgar-record-write-pair-preserves-pdf-bytes ()
+  "Store a PDF primary byte-for-byte with a PDF fixture extension."
+  (let*
+      ((directory (make-temp-file "edgar-record-pdf-fixture-" t))
+       (filing
+        '(:accn
+          "0000000001-26-000002"
+          :form "TEST-PDF"
+          :cik 1
+          :doc "submission.txt"))
+       (item '((name . "primary.pdf") (size . "7")))
+       (primary-url
+        "https://www.sec.gov/Archives/edgar/data/1/000000000126000002/primary.pdf")
+       (content (unibyte-string 37 80 68 70 45 0 255)))
+    (unwind-protect
+        (let ((edgar-record-request-delay 0))
+          (cl-letf
+              (((symbol-function 'edgar-record--dir)
+                (lambda () directory))
+               ((symbol-function 'edgar-record--index-url)
+                (lambda (_)
+                  "https://www.sec.gov/Archives/edgar/data/1/000000000126000002/index.json"))
+               ((symbol-function 'edgar-form-info)
+                (lambda (_) '(:backend pdf)))
+               ((symbol-function 'edgar--fetch)
+                (lambda (url)
+                  (should (equal url primary-url))
+                  content)))
+            (should
+             (edgar-record--write-pair
+              "pdf-sample" filing item '(2026 . 3) "recent"))
+            (should
+             (edgar-record--backend-file-p "TEST-PDF" "primary.PDF"))
+            (should
+             (equal
+              (with-temp-buffer
+                (set-buffer-multibyte nil)
+                (insert-file-contents-literally
+                 (expand-file-name "pdf-sample.pdf" directory))
+                (buffer-string))
+              content)))
+          (delete-directory directory t)))))
+
+(ert-deftest edgar-record-sample-reports-no-filing-offline ()
+  "An empty sampled index is reported without any network request."
+  (should
+   (eq
+    (edgar-record--sample-quarter
+     "NEVER-FILED" "recent" '(2026 . 3) nil)
+    :no-filing)))
+
+(ert-deftest
+    edgar-record-run-only-reports-forms-absent-from-both-quarters
+    ()
+  "A form present in either sampled quarter is not reported as absent."
+  (cl-letf (((symbol-function 'edgar-index-filings)
+             (lambda (&rest _) nil))
+            ((symbol-function 'edgar-record--sample-quarter)
+             (lambda (form vintage _quarter _filings)
+               (if (and (equal form "10-K") (equal vintage "older"))
+                   :existing
+                 :no-filing))))
+    (let* ((inhibit-message t)
+           (result
+            (edgar-record-fixtures-run '((2026 . 3) (2023 . 3))))
+           (missing (plist-get result :no-filing)))
+      (should-not (member "10-K" missing))
+      (should (member "10-Q" missing)))))
+
+(provide 'record-fixtures-test)
+;;; record-fixtures-test.el ends here

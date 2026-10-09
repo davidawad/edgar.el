@@ -1,0 +1,1 @@
+(:accn "0000074260-26-000076" :form "NT 11-K" :filed "2026-06-29" :report "2025-12-31" :doc "ori-form12bx2511xkforori40.htm" :cik 74260 :url "https://www.sec.gov/Archives/edgar/data/74260/000007426026000076/ori-form12bx2511xkforori40.htm")

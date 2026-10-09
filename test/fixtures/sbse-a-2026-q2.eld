@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 19934 :accn "0001012467-26-000008" :form "SBSE-A/A" :company "Citigroup Global Markets Ltd" :filed "2026-06-25" :report "" :doc "primary_doc.xml" :cik 1012467 :url "https://www.sec.gov/Archives/edgar/data/1012467/000101246726000008/primary_doc.xml")

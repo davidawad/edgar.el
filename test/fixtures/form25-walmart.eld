@@ -1,0 +1,1 @@
+(:accn "0000104169-25-000201" :form "25" :filed "2025-12-08" :report nil :doc "form25-december2025.htm" :cik 104169 :url "https://www.sec.gov/Archives/edgar/data/104169/000010416925000201/form25-december2025.htm")

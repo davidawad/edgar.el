@@ -1,0 +1,1 @@
+(:accn "0000918541-26-000079" :form "PRER14A" :company "NN INC" :filed "2026-08-25" :report "" :doc "nn-specialmeetingprelimina.htm" :cik 918541 :url "https://www.sec.gov/Archives/edgar/data/918541/000091854126000079/nn-specialmeetingprelimina.htm" :size 270440 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

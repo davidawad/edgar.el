@@ -1,0 +1,1 @@
+(:accn "0001140361-26-026456" :form "DEFM14A" :filed "2026-06-26" :cik 351789 :doc "ny20072844x2_defm14a.htm" :url "https://www.sec.gov/Archives/edgar/data/351789/000114036126026456/ny20072844x2_defm14a.htm" :company "Electro Sensors Inc.")

@@ -1,0 +1,1 @@
+(:accn "0000906304-13-000091" :form "SC 13G" :filed "2013-01-11" :report "" :cik 1326380 :url "https://www.sec.gov/Archives/edgar/data/1326380/000090630413000091/gme.txt" :ticker "GME" :doc "gme.txt" :size 5846 :sample-vintage "older" :sample-quarter "2013-Q1" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001193125-26-203334" :form "S-3D" :company "BCB BANCORP INC" :filed "2026-05-04" :report "" :doc "d117750ds3d.htm" :cik 1228454 :url "https://www.sec.gov/Archives/edgar/data/1228454/000119312526203334/d117750ds3d.htm" :size 162652 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

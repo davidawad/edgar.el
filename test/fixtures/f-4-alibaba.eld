@@ -1,0 +1,1 @@
+(:accn "0001104659-25-069178" :form "F-4" :company "ALIBABA GROUP HOLDING LTD" :filed "2025-07-21" :report "" :cik 1577552 :doc "tm2520871-1_f4.htm" :url "https://www.sec.gov/Archives/edgar/data/1577552/000110465925069178/tm2520871-1_f4.htm" :size 818532 :sha256 "94b547ed5d9ab95f623e1311e1774e7c9bc4b5640b93e9ffb81536a002df7b32")

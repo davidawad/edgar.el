@@ -1,0 +1,1 @@
+(:accn "0001771340-23-000009" :form "4" :filed "2023-10-11" :report "2023-10-06" :doc "edgardoc.xml" :cik 1318605 :url "https://www.sec.gov/Archives/edgar/data/1318605/000177134023000009/edgardoc.xml" :ticker "TSLA")

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/sbse/sbseafiler" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>SBSE-A/A</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001012467</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <flags>
+        <returnCopyFlag>true</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <applicant>
+      <applicantOne>
+        <applicantNFANumber>291281</applicantNFANumber>
+        <fullApplicantName>Citigroup Global Markets Ltd</fullApplicantName>
+        <irsEmplIdentNo>00-0000000</irsEmplIdentNo>
+        <applicantNFAId>291281</applicantNFAId>
+        <applicantCik>0001012467</applicantCik>
+        <applicantUic>XKZZ2JZF41MRHTR1V493</applicantUic>
+        <mainAddress>
+          <com:street1>CITIGROUP CENTRE, CANADA SQUARE</com:street1>
+          <com:street2>CANARY WHARF</com:street2>
+          <com:city>LONDON</com:city>
+          <com:stateOrCountry>X0</com:stateOrCountry>
+          <com:zipCode>E145LB</com:zipCode>
+        </mainAddress>
+        <businessTelephoneNumber>44-20-7500-5500</businessTelephoneNumber>
+        <websiteUrl>N/A</websiteUrl>
+        <contactEmployee>
+          <contactEmployeeName>
+            <com:prefix>Mr</com:prefix>
+            <com:firstName>Michael</com:firstName>
+            <com:lastName>McClain</com:lastName>
+          </contactEmployeeName>
+          <title>Compliance Product Director</title>
+          <phone>447167306178</phone>
+          <emailAddress>michael.mcclain@citi.com</emailAddress>
+        </contactEmployee>
+        <chiefComplianceOfficer>
+          <officerName>
+            <com:prefix>Mr</com:prefix>
+            <com:firstName>David</com:firstName>
+            <com:lastName>Flowerday</com:lastName>
+          </officerName>
+          <title>Chief Compliance Officer</title>
+          <phone>442075086939</phone>
+          <emailAddress>david.flowerday@citi.com</emailAddress>
+        </chiefComplianceOfficer>
+      </applicantOne>
+      <applicantTwo>
+        <applicantName>Citigroup Global Markets Ltd</applicantName>
+        <applicantNFANo>291281</applicantNFANo>
+        <isSwapDealer>Y</isSwapDealer>
+        <isSwapParticipant>N</isSwapParticipant>
+        <isCommissionDetermine>N</isCommissionDetermine>
+        <isSelfDetermine>Y</isSelfDetermine>
+        <foreignFinancialRegulatory>Financial Conduct Authority</foreignFinancialRegulatory>
+        <description3C>The applicant maintains policies and procedures in respect of Commission rules, including as it relates to substituted compliance.</description3C>
+        <isMathematicalModels>Y</isMathematicalModels>
+        <registeredAs>Swap Dealer</registeredAs>
+        <isNonResidentEntity>N</isNonResidentEntity>
+        <descriptionBusiness>Citigroup Global Markets Limited CGML is a direct, wholly owned direct subsidiary of Citigroup Inc. CGML is incorporated in England and Wales, and is authorized by the Prudential Regulatory Authority and regulated by both the Financial Conduct Authority and Prudential Regulatory Authority as its primary regulators. CGMLs activities in respect of security-based swaps entails CGMLs Global Markets business within the Institutional Clients Group ICG segment of Citigroups operations. The Sales and Trading activity supporting Citis clients in respect of security-based swaps primarily sits in the Equities, Rates and Global Spread Products business lines.</descriptionBusiness>
+        <isSubjectToRegulator>N</isSubjectToRegulator>
+        <isInvestmentAdvisor>N</isInvestmentAdvisor>
+        <isRegisteredAsOther>N</isRegisteredAsOther>
+        <isEngageInOtherBusiness>Y</isEngageInOtherBusiness>
+        <isHoldFunds>Y</isHoldFunds>
+      </applicantTwo>
+      <applicantThree>
+        <applicantName>Citigroup Global Markets Ltd</applicantName>
+        <applicantNFANo>291281</applicantNFANo>
+        <isRecordsKept>Y</isRecordsKept>
+        <isOnBehalf>Y</isOnBehalf>
+        <isControlThroughAgreement>Y</isControlThroughAgreement>
+        <isWhollyOrPartiallyFinance>Y</isWhollyOrPartiallyFinance>
+        <isSucceeding>N</isSucceeding>
+        <isForeignRegulatory>Y</isForeignRegulatory>
+        <numberOfPrincipals>14</numberOfPrincipals>
+        <isNotIdentified>N</isNotIdentified>
+      </applicantThree>
+    </applicant>
+    <scheduleA>
+      <applicantName>Citigroup Global Markets Ltd</applicantName>
+      <applicantNfaNo>291281</applicantNfaNo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>Andrew</com:firstName>
+          <com:middleName>John</com:middleName>
+          <com:lastName>Morton</com:lastName>
+        </individualName>
+        <titleOrStatus>Head of Business Unit</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2020</dateTitleOrStatusAcquired>
+        <dateBeganWorking>04/2020</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>522954</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>David</com:firstName>
+          <com:middleName>Leonard</com:middleName>
+          <com:lastName>Flowerday</com:lastName>
+        </individualName>
+        <titleOrStatus>Chief Compliance Officer</titleOrStatus>
+        <dateTitleOrStatusAcquired>03/2019</dateTitleOrStatusAcquired>
+        <dateBeganWorking>09/2006</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>519823</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mrs</com:prefix>
+          <com:firstName>Sally</com:firstName>
+          <com:lastName>Clark</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>02/2021</dateTitleOrStatusAcquired>
+        <dateBeganWorking>02/2021</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>538968</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>William</com:firstName>
+          <com:lastName>Fall</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>02/2021</dateTitleOrStatusAcquired>
+        <dateBeganWorking>02/2021</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>484489</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>Jonathan</com:firstName>
+          <com:lastName>Moulds</com:lastName>
+        </individualName>
+        <titleOrStatus>Director(Application for association as Principal is pending</titleOrStatus>
+        <dateTitleOrStatusAcquired>02/2021</dateTitleOrStatusAcquired>
+        <dateBeganWorking>02/2021</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>485735</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>Amit</com:firstName>
+          <com:middleName>Anil</com:middleName>
+          <com:lastName>Raja</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>09/2022</dateTitleOrStatusAcquired>
+        <dateBeganWorking>06/1998</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>551559</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>Iain</com:firstName>
+          <com:lastName>Plunkett</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>10/2022</dateTitleOrStatusAcquired>
+        <dateBeganWorking>10/2022</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <ownershipCode>NA</ownershipCode>
+        <nfaIdentificationNo>553314</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:firstName>Manjira</com:firstName>
+          <com:lastName>Sen Gosain</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>05/2024</dateTitleOrStatusAcquired>
+        <dateBeganWorking>06/2023</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>556290</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:firstName>Tiina</com:firstName>
+          <com:middleName>Le Seong</com:middleName>
+          <com:lastName>Lee</com:lastName>
+        </individualName>
+        <titleOrStatus>Chief Executive Officer</titleOrStatus>
+        <dateTitleOrStatusAcquired>02/2024</dateTitleOrStatusAcquired>
+        <dateBeganWorking>10/2023</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>559796</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:firstName>Casper</com:firstName>
+          <com:middleName>Wilhelm</com:middleName>
+          <com:lastName>Von Koskull</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>01/2024</dateTitleOrStatusAcquired>
+        <dateBeganWorking>09/2023</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <ownershipCode>NA</ownershipCode>
+        <nfaIdentificationNo>520000</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:firstName>Nicola</com:firstName>
+          <com:lastName>Kane</com:lastName>
+        </individualName>
+        <titleOrStatus>Head of a Business Unit, Division or Function</titleOrStatus>
+        <dateTitleOrStatusAcquired>10/2024</dateTitleOrStatusAcquired>
+        <dateBeganWorking>10/2024</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>515303</nfaIdentificationNo>
+        <crdNo>007992793</crdNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:firstName>Nikhil</com:firstName>
+          <com:lastName>Joshi</com:lastName>
+        </individualName>
+        <titleOrStatus>Head of Business Unit, Division or Function</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2026</dateTitleOrStatusAcquired>
+        <dateBeganWorking>04/2026</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>577739</nfaIdentificationNo>
+        <crdNo>004972440</crdNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:firstName>Gagandeep</com:firstName>
+          <com:lastName>Singh</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2026</dateTitleOrStatusAcquired>
+        <dateBeganWorking>03/2026</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>577102</nfaIdentificationNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <individualName>
+          <com:prefix>Mr</com:prefix>
+          <com:firstName>Silas</com:firstName>
+          <com:middleName>John</com:middleName>
+          <com:lastName>Findley</com:lastName>
+        </individualName>
+        <titleOrStatus>Director</titleOrStatus>
+        <dateTitleOrStatusAcquired>05/2026</dateTitleOrStatusAcquired>
+        <dateBeganWorking>05/2026</dateBeganWorking>
+        <haveOwnershipInterest>N</haveOwnershipInterest>
+        <nfaIdentificationNo>578461</nfaIdentificationNo>
+        <crdNo>004773410</crdNo>
+      </scheduleAInfo>
+    </scheduleA>
+    <scheduleB>
+      <applicantName>Citigroup Global Markets Ltd</applicantName>
+      <applicantNFANo>291281</applicantNFANo>
+      <initialOrAmended>AMENDED</initialOrAmended>
+      <sectionOne>
+        <uicNumber>2138003EUVPJRRBEPW94</uicNumber>
+        <assigningRegulators>Financial Conduct Authority</assigningRegulators>
+        <description>CGMLs Global Markets sits within the Institutional Clients Group ICG segment of Citigroups operations. CGML acts as Citis international broker dealer serving its institutional and corporate clients. CGML has a major presence as a dealer, market maker and underwriter in fixed income, equities, and commodities markets. The company also provides advisory services to a wide range of corporate, institutional and government clients. CGMLs trading activities encompass cash, exchange traded and OTC derivative markets. CGMLs business is almost entirely wholesale in nature - its major counterparties are banks, investment firms, investment managers, insurers and hedge funds and it also has moderate trading exposure to corporates.</description>
+      </sectionOne>
+      <sectionTwo>
+        <recordsKeptDetails>
+          <recordsKept>
+            <responseType>Item 13A</responseType>
+            <firmOrOrganizationName>KPMG LLP</firmOrOrganizationName>
+            <firmAddress>
+              <com:street1>15 Canada Square</com:street1>
+              <com:city>London,</com:city>
+              <com:stateOrCountry>X0</com:stateOrCountry>
+              <com:zipCode>E14 5GL</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>02-12-2013</firmEffectiveDate>
+            <descriptionArrangement>Relationship in respect of books or records - auditors</descriptionArrangement>
+          </recordsKept>
+          <recordsKept>
+            <responseType>Item 13A</responseType>
+            <firmOrOrganizationName>ZL Technologies Inc.</firmOrOrganizationName>
+            <firmAddress>
+              <com:street1>860 N. McCarthy Blvd, Milpita</com:street1>
+              <com:street2>Suite 100</com:street2>
+              <com:city>Milpitas</com:city>
+              <com:stateOrCountry>CA</com:stateOrCountry>
+              <com:zipCode>CA 95035</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>02-15-2018</firmEffectiveDate>
+            <descriptionArrangement>Electronic communication records are transmitted by CGML to ZL Tech for storage</descriptionArrangement>
+          </recordsKept>
+        </recordsKeptDetails>
+        <onBehalfDetails>
+          <onBehalf>
+            <responseType>Item 13B</responseType>
+            <firmOrOrganizationName>Euroclear Bank SA/NV</firmOrOrganizationName>
+            <firmAddress>
+              <com:street1>1 Boulevard du Roi Albert II</com:street1>
+              <com:city>Brussels</com:city>
+              <com:stateOrCountry>C9</com:stateOrCountry>
+              <com:zipCode>B-1210</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>08-01-2016</firmEffectiveDate>
+            <descriptionArrangement>The organization provides margin custody services.</descriptionArrangement>
+          </onBehalf>
+          <onBehalf>
+            <responseType>Item 13B</responseType>
+            <firmOrOrganizationName>The Bank of New York Mellon, London Branch</firmOrOrganizationName>
+            <firmAddress>
+              <com:street1>1 Canada Square</com:street1>
+              <com:city>London</com:city>
+              <com:stateOrCountry>X0</com:stateOrCountry>
+              <com:zipCode>E14 5AL</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>11-24-2008</firmEffectiveDate>
+            <descriptionArrangement>The organization provides margin custody services.</descriptionArrangement>
+          </onBehalf>
+        </onBehalfDetails>
+        <controlThroughAgreementDetails>
+          <controlThroughAgreement>
+            <responseType>Item 14</responseType>
+            <firmOrOrganizationName>Citigroup Inc.</firmOrOrganizationName>
+            <firmCikNumber>0000831001</firmCikNumber>
+            <firmAddress>
+              <com:street1>388 Greenwich Street,</com:street1>
+              <com:city>New York,</com:city>
+              <com:stateOrCountry>NY</com:stateOrCountry>
+              <com:zipCode>NY 1001</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>10-08-1998</firmEffectiveDate>
+            <descriptionArrangement>CGML is an indirect wholly owned subsidiary of Citigroup, Inc</descriptionArrangement>
+          </controlThroughAgreement>
+        </controlThroughAgreementDetails>
+        <whollyOrPartiallyFinanceDetails>
+          <whollyOrPartiallyFinance>
+            <responseType>Item 15</responseType>
+            <firmOrOrganizationName>Pipestone Investments LLC</firmOrOrganizationName>
+            <firmAddress>
+              <com:street1>Ugland House</com:street1>
+              <com:street2>South Church Street</com:street2>
+              <com:city>Georgetown</com:city>
+              <com:stateOrCountry>E9</com:stateOrCountry>
+              <com:zipCode>KY1-1104</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>06-19-2018</firmEffectiveDate>
+            <descriptionArrangement>Primarily long and short term debt from affiliates</descriptionArrangement>
+          </whollyOrPartiallyFinance>
+          <whollyOrPartiallyFinance>
+            <responseType>Item 15</responseType>
+            <firmOrOrganizationName>Citicorp LLC</firmOrOrganizationName>
+            <firmCikNumber>0001336397</firmCikNumber>
+            <firmAddress>
+              <com:street1>388 Greenwich Street</com:street1>
+              <com:city>New York</com:city>
+              <com:stateOrCountry>NY</com:stateOrCountry>
+              <com:zipCode>NY10013</com:zipCode>
+            </firmAddress>
+            <firmEffectiveDate>01-15-2018</firmEffectiveDate>
+            <descriptionArrangement>Primarily long and short term debt from affiliates</descriptionArrangement>
+          </whollyOrPartiallyFinance>
+        </whollyOrPartiallyFinanceDetails>
+      </sectionTwo>
+    </scheduleB>
+    <scheduleF>
+      <name>Citigroup Global Markets Ltd</name>
+      <applicantNFANo>291281</applicantNFANo>
+      <serviceOfProcess>
+        <firmOrIndividual>Firm</firmOrIndividual>
+        <firmName>Citigroup Global Markets Inc</firmName>
+        <serviceAddress>
+          <com:street1>388 Greenwich Street</com:street1>
+          <com:city>New York</com:city>
+          <com:stateOrCountry>NY</com:stateOrCountry>
+          <com:zipCode>NY 10013</com:zipCode>
+        </serviceAddress>
+      </serviceOfProcess>
+      <signature>Andrew Love</signature>
+      <signerName>Andrew love</signerName>
+      <signerTitle>Legal Counsel</signerTitle>
+      <signatureDate>10-04-2023</signatureDate>
+      <foreignFinancialReg>
+        <nameOfRegulatory>Financial Conduct Authority</nameOfRegulatory>
+        <foreignBusinessNo>N/A</foreignBusinessNo>
+        <nameOfCountry>X0</nameOfCountry>
+      </foreignFinancialReg>
+      <foreignFinancialReg>
+        <nameOfRegulatory>Prudential Regulation Authority</nameOfRegulatory>
+        <foreignBusinessNo>N/A</foreignBusinessNo>
+        <nameOfCountry>X0</nameOfCountry>
+      </foreignFinancialReg>
+    </scheduleF>
+    <execution>
+      <date>06-25-2026</date>
+      <nameOfApplicant>Citigroup Global Markets Ltd</nameOfApplicant>
+      <signature>David Flowerday</signature>
+      <nameOfPersonSigning>David Flowerday</nameOfPersonSigning>
+      <titleOfPersonSigning>Chief Compliance Officer</titleOfPersonSigning>
+    </execution>
+  </formData>
+</edgarSubmission>

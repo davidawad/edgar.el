@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 17462 :accn "0000027048-26-000003" :form "TA-1/A" :company "SS&C GIDS, Inc." :filed "2026-06-30" :report "" :doc "primary_doc.xml" :cik 27048 :url "https://www.sec.gov/Archives/edgar/data/27048/000002704826000003/primary_doc.xml")

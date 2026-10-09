@@ -1,0 +1,1 @@
+(:accn "0001193125-26-265991" :form "SC TO-C" :filed "2026-06-10" :cik 1131399 :doc "d24228dsctoc.htm" :url "https://www.sec.gov/Archives/edgar/data/1131399/000119312526265991/d24228dsctoc.htm" :company "GSK plc")

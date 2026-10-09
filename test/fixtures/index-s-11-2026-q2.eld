@@ -1,0 +1,1 @@
+(:accn "0001213900-26-070630" :form "S-11" :company "Wheeler Real Estate Investment Trust, Inc." :filed "2026-06-22" :report "" :doc "ea0294994-s11_wheeler.htm" :cik 1527541 :url "https://www.sec.gov/Archives/edgar/data/1527541/000121390026070630/ea0294994-s11_wheeler.htm" :size 849687 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

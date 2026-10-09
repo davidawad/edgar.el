@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/formc">
+  <headerData>
+    <submissionType>C-W</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001657493</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+        <fileNumber>020-37021</fileNumber>
+      </filer>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <flags>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+        <returnCopyFlag>false</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <issuerInformation>
+      <issuerInfo>
+        <nameOfIssuer>Rentberry Inc.</nameOfIssuer>
+      </issuerInfo>
+    </issuerInformation>
+    <signatureInfo>
+      <issuerSignature>
+        <issuer>Rentberry Inc.</issuer>
+        <issuerSignature>Oleksiy Lubinsky</issuerSignature>
+        <issuerTitle>Chief Executive Officer</issuerTitle>
+      </issuerSignature>
+      <signaturePersons>
+        <signaturePerson>
+          <personSignature>Oleksiy Lubinsky</personSignature>
+          <personTitle>Director </personTitle>
+          <signatureDate>04-23-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Aleksander Kotovskov</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>04-23-2026</signatureDate>
+        </signaturePerson>
+        <signaturePerson>
+          <personSignature>Kate Barneveld</personSignature>
+          <personTitle>Director</personTitle>
+          <signatureDate>04-23-2026</signatureDate>
+        </signaturePerson>
+      </signaturePersons>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>

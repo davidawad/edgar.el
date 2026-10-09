@@ -1,0 +1,1 @@
+(:accn "0001193125-26-288707" :form "NT 11-K" :company "UWHARRIE CAPITAL CORP" :filed "2026-06-29" :report "" :doc "nt_11-k_12312025.htm" :cik 898171 :url "https://www.sec.gov/Archives/edgar/data/898171/000119312526288707/nt_11-k_12312025.htm" :size 69928 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

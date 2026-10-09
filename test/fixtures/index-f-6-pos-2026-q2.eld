@@ -1,0 +1,1 @@
+(:accn "0000950127-26-000033" :form "F-6 POS" :company "Deutsche Bank Trust Co Americas/ ADR Group" :filed "2026-04-27" :report "" :doc "registration_statement.htm" :cik 1471515 :url "https://www.sec.gov/Archives/edgar/data/1471515/000095012726000033/registration_statement.htm" :size 64131 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

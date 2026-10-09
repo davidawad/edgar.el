@@ -1,0 +1,1 @@
+(:accn "0001104659-26-041909" :form "F-6" :company "JPMorgan Chase Bank, N.A. - ADR Depositary" :filed "2026-04-10" :report "" :doc "tm2611532d1_f6.htm" :cik 1474274 :url "https://www.sec.gov/Archives/edgar/data/1474274/000110465926041909/tm2611532d1_f6.htm" :size 67897 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

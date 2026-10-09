@@ -1,0 +1,1 @@
+(:accn "0001193125-25-071787" :form "DEF 14A" :filed "2025-04-03" :report "" :doc "d906341ddef14a.htm" :cik 2007855 :url "https://www.sec.gov/Archives/edgar/data/2007855/000119312525071787/d906341ddef14a.htm" :ticker "VG")

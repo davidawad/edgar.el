@@ -1,0 +1,1 @@
+(:accn "0001047469-16-016817" :form "SC TO-T" :filed "2016-11-18" :report "" :doc "a2230333zscto-t.htm" :cik 796343 :url "https://www.sec.gov/Archives/edgar/data/796343/000104746916016817/a2230333zscto-t.htm" :ticker "ADBE")

@@ -1,0 +1,1 @@
+(:accn "0001193125-26-151439" :form "20FR12B" :company "Wise Group plc" :filed "2026-04-10" :report "" :doc "d19735d20fr12b.htm" :cik 2099039 :url "https://www.sec.gov/Archives/edgar/data/2099039/000119312526151439/d19735d20fr12b.htm" :size 2073656 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

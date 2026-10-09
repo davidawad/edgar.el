@@ -48,8 +48,6 @@
    "American DEpositary shares Novo Nordisk’s ADR program is administered by J.P."
    "Morgan Depositary Receipts Group as Depositary, JPMorgan Chase Bank, N.A., 4 New York Plaza, New York, United States."
    "dollars and distributes the dividends to the holders of the ADRs.")
-  ("II.13"
-   "ITEM 13 DEFAULTS, DIVIDEND ARREARAGES AND 33 DELINQUENCIES")
   ("II.14"
    "ITEM 14 MATERIAL MODIFICATIONS TO THE RIGHTS OF 33 SECURITY HOLDERS AN")
   ("II.15"

@@ -1,0 +1,1 @@
+(:accn "0001193125-25-008418" :form "424B1" :company "MILLROSE PROPERTIES, INC." :filed "2025-01-17" :report "" :cik 2017206 :doc "d811267d424b1.htm" :url "https://www.sec.gov/Archives/edgar/data/2017206/000119312525008418/d811267d424b1.htm" :size 2704284 :sha256 "6b191d23c247ede0cf0561dcfb85017d7425000f5c2c516e9154b1397f6d9766")

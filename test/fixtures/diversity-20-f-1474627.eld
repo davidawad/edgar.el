@@ -1,0 +1,1 @@
+(:accn "0001213900-26-048633" :form "20-F" :company "Newegg Commerce, Inc." :filed "2026-04-28" :report "" :doc "ea0286017-20f_newegg.htm" :cik 1474627 :url "https://www.sec.gov/Archives/edgar/data/1474627/000121390026048633/ea0286017-20f_newegg.htm" :size 1835315 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

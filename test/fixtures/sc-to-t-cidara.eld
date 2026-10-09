@@ -1,0 +1,1 @@
+(:accn "0001193125-25-309877" :form "SC TO-T" :filed "2025-12-05" :report "" :doc "d78449dsctot.htm" :cik 310158 :url "https://www.sec.gov/Archives/edgar/data/310158/000119312525309877/d78449dsctot.htm" :ticker "MRK")

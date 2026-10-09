@@ -1,0 +1,1 @@
+(:accn "0001213900-26-091372" :form "424B2" :filed "2026-08-19" :report "" :doc "ea0302653-01_424b2.htm" :cik 19617 :url "https://www.sec.gov/Archives/edgar/data/19617/000121390026091372/ea0302653-01_424b2.htm" :ticker "JPM")

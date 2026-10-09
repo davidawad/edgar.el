@@ -1,0 +1,1 @@
+(:accn "0000950103-26-012085" :form "424B3" :filed "2026-08-10" :report "" :doc "dp251385_424b3-spar35v6.htm" :cik 1419828 :url "https://www.sec.gov/Archives/edgar/data/1419828/000095010326012085/dp251385_424b3-spar35v6.htm" :ticker "")

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/rega/onezfiler" xmlns:ns1="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>1-Z</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0002048539</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+      </filer>
+      <flags>
+        <successorFilingFlag>N</successorFilingFlag>
+        <returnCopyFlag>true</returnCopyFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <item1>
+      <issuerName>Musicow US Vol. 1 LLC</issuerName>
+      <street1>345 N Maple Dr. Suite 210</street1>
+      <city>Beverly Hills</city>
+      <stateOrCountry>CA</stateOrCountry>
+      <zipCode>90210</zipCode>
+      <phone>213-566-2525</phone>
+      <commissionFileNumber>024-12581</commissionFileNumber>
+    </item1>
+    <summaryInfoOffering>
+      <offeringQualificationDate>05-30-2025</offeringQualificationDate>
+      <offeringCommenceDate>06-02-2025</offeringCommenceDate>
+      <offeringSecuritiesQualifiedSold>3702</offeringSecuritiesQualifiedSold>
+      <offeringSecuritiesSold>533</offeringSecuritiesSold>
+      <pricePerSecurity>20.0000</pricePerSecurity>
+      <portionSecuritiesSoldIssuer>10660.00</portionSecuritiesSoldIssuer>
+      <portionSecuritiesSoldSecurityholders>0.00</portionSecuritiesSoldSecurityholders>
+      <underwrittenSpName>Rialto Markets LLC</underwrittenSpName>
+      <underwriterFees>106.60</underwriterFees>
+      <salesCommissionsSpName>Rialto Markets LLC</salesCommissionsSpName>
+      <salesCommissionsFee>0.00</salesCommissionsFee>
+      <findersSpName>N/A</findersSpName>
+      <findersFees>0.00</findersFees>
+      <auditorSpName>Artesian CPA</auditorSpName>
+      <auditorFees>8000.00</auditorFees>
+      <legalSpName>Anthony, Linder &amp; Cacomanolis, PLLC</legalSpName>
+      <legalFees>125000.00</legalFees>
+      <promoterSpName>N/A</promoterSpName>
+      <promotersFees>0.00</promotersFees>
+      <blueSkySpName>Anthony, Linder &amp; Cacomanolis, PLLC</blueSkySpName>
+      <blueSkyFees>0.00</blueSkyFees>
+      <crdNumberBrokerDealer>000283477</crdNumberBrokerDealer>
+      <issuerNetProceeds>10660.00</issuerNetProceeds>
+      <clarificationResponses>The above amounts do not include $100 in fees paid to the Escrow Agent. All fees in connection with the series offerings were paid by Musicow Asset US, LLC, the company's Manager.</clarificationResponses>
+    </summaryInfoOffering>
+    <certificationSuspension>
+      <securitiesClassTitle>Royalty Shares</securitiesClassTitle>
+      <certificationFileNumber>024-12581</certificationFileNumber>
+      <approxRecordHolders>24</approxRecordHolders>
+    </certificationSuspension>
+    <signatureTab>
+      <cik>0002048539</cik>
+      <regulationIssuerName1>Musicow US Vol. 1 LLC</regulationIssuerName1>
+      <regulationIssuerName2>Musicow US Vol. 1 LLC</regulationIssuerName2>
+      <signatureBy>/s/ Paul Baik</signatureBy>
+      <date>09-01-2026</date>
+      <title>Manager</title>
+    </signatureTab>
+  </formData>
+</edgarSubmission>

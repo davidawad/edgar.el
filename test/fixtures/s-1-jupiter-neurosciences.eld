@@ -1,0 +1,1 @@
+(:accn "0001493152-26-030312" :form "S-1" :filed "2026-06-26" :cik 1679628 :doc "forms-1.htm" :url "https://www.sec.gov/Archives/edgar/data/1679628/000149315226030312/forms-1.htm" :company "Jupiter Neurosciences, Inc.")

@@ -1,0 +1,1 @@
+(:accn "0001104659-26-053163" :form "POS AM" :company "GRID DYNAMICS HOLDINGS, INC." :filed "2026-04-30" :report "" :doc "tm2612724-1_posam.htm" :cik 1743725 :url "https://www.sec.gov/Archives/edgar/data/1743725/000110465926053163/tm2612724-1_posam.htm" :size 249875 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001829126-26-009970" :form "CB" :company "Ambea AB (publ)" :filed "2026-09-10" :report "" :doc "ambeaab_form-cb.htm" :cik 2151906 :url "https://www.sec.gov/Archives/edgar/data/2151906/000182912626009970/ambeaab_form-cb.htm" :size 25063 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

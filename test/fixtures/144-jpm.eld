@@ -1,0 +1,1 @@
+(:accn "0000019617-24-000242" :form "144" :filed "2024-02-22" :report "" :doc "primary_doc.xml" :cik 19617 :url "https://www.sec.gov/Archives/edgar/data/19617/000001961724000242/primary_doc.xml" :ticker "JPM")

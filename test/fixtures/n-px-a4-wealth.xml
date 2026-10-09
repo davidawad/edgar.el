@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/npx" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>N-PX</submissionType>
+    <filerInfo>
+      <registrantType>IM</registrantType>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0002033987</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+      </filer>
+      <flags>
+        <overrideInternetFlag>false</overrideInternetFlag>
+        <confirmingCopyFlag>false</confirmingCopyFlag>
+      </flags>
+      <investmentCompanyType/>
+      <periodOfReport>06/30/2026</periodOfReport>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <coverPage>
+      <yearOrQuarter>YEAR</yearOrQuarter>
+      <reportCalendarYear>2026</reportCalendarYear>
+      <reportingPerson>
+        <name>A4 Wealth Advisors LLC</name>
+        <phoneNumber>7045091141</phoneNumber>
+        <address>
+          <com:street1>16140 NORTHCROSS DRIVE</com:street1>
+          <com:city>HUNTERSVILLE</com:city>
+          <com:stateOrCountry>NC</com:stateOrCountry>
+          <com:zipCode>28078</com:zipCode>
+        </address>
+      </reportingPerson>
+      <agentForService>
+        <name>Heather Fowler</name>
+        <address>
+          <com:street1>16140 NORTHCROSS DR</com:street1>
+          <com:city>Huntersville</com:city>
+          <com:stateOrCountry>NC</com:stateOrCountry>
+          <com:zipCode>28078</com:zipCode>
+        </address>
+      </agentForService>
+      <reportInfo>
+        <reportType>INSTITUTIONAL MANAGER NOTICE REPORT</reportType>
+        <noticeExplanation>REPORTING PERSON HAS POLICY TO NOT VOTE</noticeExplanation>
+        <confidentialTreatment>N</confidentialTreatment>
+      </reportInfo>
+      <fileNumber>028-25814</fileNumber>
+      <reportingCrdNumber>152397</reportingCrdNumber>
+      <explanatoryInformation>
+        <explanatoryChoice>N</explanatoryChoice>
+      </explanatoryInformation>
+    </coverPage>
+    <signaturePage>
+      <reportingPerson>A4 Wealth Advisors LLC</reportingPerson>
+      <txSignature>Heather Fowler</txSignature>
+      <txPrintedSignature>Heather Fowler</txPrintedSignature>
+      <txTitle>CCO</txTitle>
+      <txAsOfDate>06/30/2026</txAsOfDate>
+    </signaturePage>
+  </formData>
+</edgarSubmission>

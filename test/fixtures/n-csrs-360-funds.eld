@@ -1,0 +1,1 @@
+(:accn "0001999371-26-012055" :form "N-CSRS" :company "360 Funds" :filed "2026-06-04" :report "2026-03-31" :doc "mcgxx-ncsrs_060426.htm" :cik 1319067 :url "https://www.sec.gov/Archives/edgar/data/1319067/000199937126012055/mcgxx-ncsrs_060426.htm")

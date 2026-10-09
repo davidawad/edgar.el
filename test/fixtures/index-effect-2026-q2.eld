@@ -1,0 +1,1 @@
+(:accn "9999999995-26-001916" :form "EFFECT" :company "Park Ha Biological Technology Co., Ltd." :filed "2026-06-08" :report "" :doc "primary_doc.xml" :cik 1986247 :url "https://www.sec.gov/Archives/edgar/data/1986247/999999999526001916/primary_doc.xml" :size 609 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

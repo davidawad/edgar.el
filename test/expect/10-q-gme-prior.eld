@@ -1,5 +1,5 @@
 (:form "10-Q" :text-bucket 17 :text-head
-       "10-Q 1 d569889d10q.htm FORM 10-Q Form 10-Q Table of Contents"
+       "Form 10-Q Table of Contents UNITED STATES SECURITIES AND EXC"
        :sections
        (("I.1" 15 "ITEM 1. Financial Statements GAMESTOP CORP. CONDEN")
 	("I.2" 15

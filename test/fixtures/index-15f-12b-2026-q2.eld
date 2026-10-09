@@ -1,0 +1,1 @@
+(:form "15F-12B" :cik 719245 :accn "0001104659-26-053346" :filed "2026-05-01" :company "WESTPAC BANKING CORP" :report "" :url "https://www.sec.gov/Archives/edgar/data/719245/000110465926053346/tm2612452d1_15f12b.htm" :doc "tm2612452d1_15f12b.htm" :size 42066 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

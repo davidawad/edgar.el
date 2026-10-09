@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ta/taonefiler">
+  <schemaVersion>X0405</schemaVersion>
+  <headerData>
+    <submissionType>TA-1/A</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <cik>0000027048</cik>
+          <ccc>XXXXXXXX</ccc>
+        </filerCredentials>
+        <fileNumber>084-00448</fileNumber>
+      </filer>
+      <flags>
+        <returnCopyFlag>true</returnCopyFlag>
+      </flags>
+      <liveTestFlag>LIVE</liveTestFlag>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <registrant>
+      <regulatoryAgency>SEC</regulatoryAgency>
+      <entityName>SS&amp;C GIDS, Inc.</entityName>
+      <previousEntityName>DST SYSTEMS INC /TA</previousEntityName>
+      <finsNumber>401588</finsNumber>
+      <principalOfficeAddress>
+        <street1>1055 Broadway St</street1>
+        <city>Kansas City</city>
+        <stateOrCountry>MO</stateOrCountry>
+        <zipCode>64105</zipCode>
+      </principalOfficeAddress>
+      <differentMailingAddress>Y</differentMailingAddress>
+      <mailingAddress>
+        <street1>1055 Broadway St, 7th FL</street1>
+        <street2>ATTN LEGAL DEPT</street2>
+        <city>KANSAS CITY</city>
+        <stateOrCountry>MO</stateOrCountry>
+        <zipCode>64105</zipCode>
+      </mailingAddress>
+      <telephoneNumber>816-435-1000</telephoneNumber>
+      <conductBusinessInOtherLocations>Y</conductBusinessInOtherLocations>
+      <otherBusinessLocation>
+        <street1>7201 E 64th Ct</street1>
+        <city>Kansas City</city>
+        <stateOrCountry>MO</stateOrCountry>
+        <zipCode>64133</zipCode>
+      </otherBusinessLocation>
+      <otherBusinessLocation>
+        <street1>801 Pennsylvania Ave</street1>
+        <city>Kansas City</city>
+        <stateOrCountry>MO</stateOrCountry>
+        <zipCode>64105-1307</zipCode>
+      </otherBusinessLocation>
+      <otherBusinessLocation>
+        <street1>30 Braintree Hill Office Park</street1>
+        <street2>Ste 400</street2>
+        <city>Braintree</city>
+        <stateOrCountry>MA</stateOrCountry>
+        <zipCode>02184</zipCode>
+      </otherBusinessLocation>
+      <otherBusinessLocation>
+        <street1>1290 Broadway</street1>
+        <street2>Suite 1000</street2>
+        <city>Denver</city>
+        <stateOrCountry>CO</stateOrCountry>
+        <zipCode>80203</zipCode>
+      </otherBusinessLocation>
+      <selfTransferAgent>N</selfTransferAgent>
+      <engagedServiceCompany>Y</engagedServiceCompany>
+      <serviceCompany>
+        <entityName>SS&amp;C Fintech Services India Private Limited</entityName>
+        <fileNumber>084-06342</fileNumber>
+        <serviceCompanyAddress>
+          <street1>5th Floor, Block B, Q City</street1>
+          <street2>Nanakramguda, Gachibowli</street2>
+          <city>Hyderabad</city>
+          <stateOrCountry>K7</stateOrCountry>
+          <zipCode>500032</zipCode>
+        </serviceCompanyAddress>
+      </serviceCompany>
+      <engagedAsServiceCompany>Y</engagedAsServiceCompany>
+      <asServiceCompany>
+        <entityName>Thrivent Financial Investor Services, Inc.</entityName>
+        <fileNumber>084-01547</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>4321 N Ballard Rd</street1>
+          <city>Appleton</city>
+          <stateOrCountry>WI</stateOrCountry>
+          <zipCode>54919</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>State Street Bank &amp; Trust Company</entityName>
+        <fileNumber>085-05003</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>One Lincoln Street</street1>
+          <city>Boston</city>
+          <stateOrCountry>MA</stateOrCountry>
+          <zipCode>02111-2900</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>DWS Service Co.</entityName>
+        <fileNumber>084-01713</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>222 South Riverside Plaza</street1>
+          <city>Chicago</city>
+          <stateOrCountry>IL</stateOrCountry>
+          <zipCode>60606</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Transamerica Fund Services, Inc.</entityName>
+        <fileNumber>084-06130</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>1801 California St</street1>
+          <street2>Suite 5200</street2>
+          <city>Denver</city>
+          <stateOrCountry>CO</stateOrCountry>
+          <zipCode>80202</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>American Century Services, LLC</entityName>
+        <fileNumber>084-01406</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>4500 Main Street</street1>
+          <city>Kansas City</city>
+          <stateOrCountry>MO</stateOrCountry>
+          <zipCode>64111</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Goldman Sachs &amp; Co. LLC</entityName>
+        <fileNumber>084-01100</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>71 South Wacker Drive</street1>
+          <street2>Suite 1200</street2>
+          <city>Chicago</city>
+          <stateOrCountry>IL</stateOrCountry>
+          <zipCode>60606</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Fidelity Investments Institutional Operations Co., LLC</entityName>
+        <fileNumber>084-01839</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>245 Summer St</street1>
+          <city>Boston</city>
+          <stateOrCountry>MA</stateOrCountry>
+          <zipCode>02210</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>NYLIM Service Company LLC</entityName>
+        <fileNumber>084-05844</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>30 Hudson Street</street1>
+          <city>Jersey City</city>
+          <stateOrCountry>NJ</stateOrCountry>
+          <zipCode>07302</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Columbia Management Investment Services Corp.</entityName>
+        <fileNumber>084-05685</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>290 Congress Street</street1>
+          <city>Boston</city>
+          <stateOrCountry>MA</stateOrCountry>
+          <zipCode>02110</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Principal Shareholder Services, Inc.</entityName>
+        <fileNumber>084-05657</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>801 Grand Ave</street1>
+          <city>Des Moines</city>
+          <stateOrCountry>IA</stateOrCountry>
+          <zipCode>50392</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>MFS Service Center, Inc.</entityName>
+        <fileNumber>084-01316</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>111 Huntington Ave</street1>
+          <city>Boston</city>
+          <stateOrCountry>MA</stateOrCountry>
+          <zipCode>02199</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>John Hancock Signature Services, Inc.</entityName>
+        <fileNumber>084-01885</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>200 Berkeley St</street1>
+          <city>Boston</city>
+          <stateOrCountry>MA</stateOrCountry>
+          <zipCode>02116</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Hartford Administrative Services Company</entityName>
+        <fileNumber>084-00353</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>690 Lee Road</street1>
+          <city>Wayne</city>
+          <stateOrCountry>PA</stateOrCountry>
+          <zipCode>19087</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Russell Investments Fund Services, LLC</entityName>
+        <fileNumber>084-06276</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>1301 Second Avenue</street1>
+          <street2>18th Floor</street2>
+          <city>Seattle</city>
+          <stateOrCountry>WA</stateOrCountry>
+          <zipCode>98101</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>Prudential Mutual Fund Services, LLC.</entityName>
+        <fileNumber>084-05681</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>655 Broad Street</street1>
+          <street2>Prudential Tower, 17th Floor</street2>
+          <city>Newark</city>
+          <stateOrCountry>NJ</stateOrCountry>
+          <zipCode>07102</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>T. Rowe Price Retirement Plan Services, Inc.</entityName>
+        <fileNumber>084-01917</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>4515 Painters Mills Road</street1>
+          <city>Owings Mills</city>
+          <stateOrCountry>MD</stateOrCountry>
+          <zipCode>21117</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>T. Rowe Price Services Inc.</entityName>
+        <fileNumber>084-01079</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>4515 Painters Mill Road</street1>
+          <city>Owings Mills</city>
+          <stateOrCountry>MD</stateOrCountry>
+          <zipCode>21117</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+      <asServiceCompany>
+        <entityName>US Bancorp Fund Services, LLC</entityName>
+        <fileNumber>085-11357</fileNumber>
+        <asServiceCompanyAddress>
+          <street1>615 E Michigan St</street1>
+          <city>Milwaukee</city>
+          <stateOrCountry>WI</stateOrCountry>
+          <zipCode>53202</zipCode>
+        </asServiceCompanyAddress>
+      </asServiceCompany>
+    </registrant>
+    <independentRegistrant>
+      <registrantType>Corporation</registrantType>
+      <corporationPartnershipData>
+        <entityName>SS&amp;C Technologies Holdings, Inc.</entityName>
+        <relationshipStartDate>04/16/2018</relationshipStartDate>
+        <titleOrStatus>Indirect Owner</titleOrStatus>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>true</controlPerson>
+      </corporationPartnershipData>
+      <corporationPartnershipData>
+        <entityName>Adam Girard</entityName>
+        <relationshipStartDate>04/16/2018</relationshipStartDate>
+        <titleOrStatus>Tax Officer</titleOrStatus>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>true</controlPerson>
+      </corporationPartnershipData>
+      <corporationPartnershipData>
+        <entityName>William C. Stone</entityName>
+        <relationshipStartDate>04/16/2018</relationshipStartDate>
+        <titleOrStatus>Director</titleOrStatus>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>true</controlPerson>
+      </corporationPartnershipData>
+      <corporationPartnershipData>
+        <entityName>SS&amp;C Technologies, Inc.</entityName>
+        <relationshipStartDate>04/16/2018</relationshipStartDate>
+        <titleOrStatus>Direct Owner</titleOrStatus>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>true</controlPerson>
+      </corporationPartnershipData>
+      <corporationPartnershipData>
+        <entityName>Nick Wright</entityName>
+        <relationshipStartDate>12/23/2021</relationshipStartDate>
+        <titleOrStatus>President</titleOrStatus>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>true</controlPerson>
+      </corporationPartnershipData>
+      <corporationPartnershipData>
+        <entityName>Nicole Greene</entityName>
+        <relationshipStartDate>09/05/2022</relationshipStartDate>
+        <titleOrStatus>Head of Global Investor &amp; Dist. Solution</titleOrStatus>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>true</controlPerson>
+        <relationshipEndDate>05/06/2026</relationshipEndDate>
+      </corporationPartnershipData>
+      <corporationPartnershipData>
+        <entityName>Brian Schell</entityName>
+        <relationshipStartDate>12/04/2023</relationshipStartDate>
+        <titleOrStatus>Executive VP, Treasurer</titleOrStatus>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>true</controlPerson>
+      </corporationPartnershipData>
+      <otherControlManagement>
+        <otherEntity>N</otherEntity>
+      </otherControlManagement>
+      <otherControlFinance>
+        <otherEntity>N</otherEntity>
+      </otherControlFinance>
+    </independentRegistrant>
+    <disciplinaryHistory>
+      <felonyOrMisdemeanor>
+        <involved>N</involved>
+      </felonyOrMisdemeanor>
+      <otherFelony>
+        <involved>N</involved>
+      </otherFelony>
+      <enjoinedInvestmentRelatedActivity>
+        <involved>N</involved>
+      </enjoinedInvestmentRelatedActivity>
+      <violationOfInvestmentRelatedRegulation>
+        <involved>N</involved>
+      </violationOfInvestmentRelatedRegulation>
+      <falseStatementOrOmission>
+        <involved>N</involved>
+      </falseStatementOrOmission>
+      <violationOfRegulations>
+        <involved>Y</involved>
+        <violationOfRegulationsDetails>
+          <entityName>DST Asset Manager Solutions, Inc.</entityName>
+          <actionTitle>Order Instituting Administrative and Cease and Desist Proceedings File No. 3-21565 Release No. 98153</actionTitle>
+          <actionDate>08/17/2023</actionDate>
+          <courtOrBodyNameAndLocation>United States Securities and Exchange Commission</courtOrBodyNameAndLocation>
+          <actionDescription>The SEC alleged that DST Asset Manager Solutions, Inc. ("DST AMS"), who is an SEC registered transfer agent, violated Exchange Act Rule 17Ad-17 related to searching for lost securityholders, by requiring a database search match to the lost securityholders name in addition to social security number as a condition to sending outreach letters to potentially better mailing addresses in an attempt to locate lost securityholders.</actionDescription>
+          <dispositionOfProceeding>Pursuant to the Order, in addition to a $500,000 civil monetary penalty and a censure, DST AMS agreed to undertake to (a) take reasonable steps to locate lost securityholders to whom it did not send outreach letters after receiving an SSN match after database searches and who experienced escheatment during the period covered by the investigation, (b) request its mutual fund clients to periodically send out notifications to their shareholders informing them of the risk of escheatment, and (c) provide written certification annually for five years that its written policies and procedures have complied with the requirements of Rule 17Ad-17 and that it has followed those written policies and procedures in practice.</dispositionOfProceeding>
+        </violationOfRegulationsDetails>
+      </violationOfRegulations>
+      <authorizationDeniedOrSuspended>
+        <involved>N</involved>
+      </authorizationDeniedOrSuspended>
+      <registrationDeniedOrSuspended>
+        <involved>N</involved>
+      </registrationDeniedOrSuspended>
+      <federalOrStateRegulatoryAgency>
+        <fsrFalseStatementOrOmission>
+          <involved>N</involved>
+        </fsrFalseStatementOrOmission>
+        <fsrViolationOfInvestmentRelatedRegulation>
+          <involved>N</involved>
+        </fsrViolationOfInvestmentRelatedRegulation>
+        <fsrAuthorizationDeniedOrSuspended>
+          <involved>N</involved>
+        </fsrAuthorizationDeniedOrSuspended>
+        <fsrFoundOrderAgainstApplicant>
+          <involved>N</involved>
+        </fsrFoundOrderAgainstApplicant>
+        <fsrRegistrationDeniedOrSuspended>
+          <involved>N</involved>
+        </fsrRegistrationDeniedOrSuspended>
+        <fsrRevokedSuspendedLicense>
+          <involved>N</involved>
+        </fsrRevokedSuspendedLicense>
+      </federalOrStateRegulatoryAgency>
+      <selfRegulatoryAgency>
+        <sraFalseStatementOrOmission>
+          <involved>N</involved>
+        </sraFalseStatementOrOmission>
+        <sraViolationOfRules>
+          <involved>N</involved>
+        </sraViolationOfRules>
+        <sraAuthorizationDeniedOrSuspended>
+          <involved>N</involved>
+        </sraAuthorizationDeniedOrSuspended>
+        <sraRevokedSuspendedLicense>
+          <involved>N</involved>
+        </sraRevokedSuspendedLicense>
+      </selfRegulatoryAgency>
+      <foreignAgency>
+        <involved>N</involved>
+      </foreignAgency>
+      <subjectOfProceedings>
+        <involved>N</involved>
+      </subjectOfProceedings>
+      <revokedBond>
+        <involved>N</involved>
+      </revokedBond>
+      <unsatisfiedJudgementsOrLiens>
+        <involved>N</involved>
+      </unsatisfiedJudgementsOrLiens>
+    </disciplinaryHistory>
+    <signature>
+      <signatureName>Nick Wright</signatureName>
+      <signaturePhoneNumber>442039752891</signaturePhoneNumber>
+      <signatureTitle>President, GIDS and Retirement Solutions</signatureTitle>
+      <signatureDate>06/29/2026</signatureDate>
+    </signature>
+  </formData>
+</edgarSubmission>

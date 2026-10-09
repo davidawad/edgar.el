@@ -1,0 +1,1 @@
+(:accn "0001213900-26-050174" :form "20-F" :company "Steakholder Foods Ltd." :filed "2026-04-30" :report "" :doc "ea0287480-20f_steakholder.htm" :cik 1828098 :url "https://www.sec.gov/Archives/edgar/data/1828098/000121390026050174/ea0287480-20f_steakholder.htm" :size 2305752 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

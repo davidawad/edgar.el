@@ -1,0 +1,1 @@
+(:accn "9999999997-26-001103" :form "N-8F ORDR" :company "BlackRock Collateral Trust" :filed "2026-06-25" :doc "filename1.pdf" :cik 1671416 :url "https://www.sec.gov/Archives/edgar/data/1671416/999999999726001103/filename1.pdf")

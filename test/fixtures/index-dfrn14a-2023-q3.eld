@@ -1,0 +1,1 @@
+(:accn "0001213900-23-064120" :form "DFRN14A" :company "Ocean Capital LLC" :filed "2023-08-07" :report "" :doc "ea182948-dfrn14a_oceancap1.htm" :cik 1838395 :url "https://www.sec.gov/Archives/edgar/data/1838395/000121390023064120/ea182948-dfrn14a_oceancap1.htm" :size 24018 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

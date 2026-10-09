@@ -1,0 +1,1 @@
+(:accn "0001193125-26-300877" :form "PREC14A" :company "Central Plains Bancshares, Inc." :filed "2026-07-10" :report "" :doc "d53280dprec14a.htm" :cik 1979332 :url "https://www.sec.gov/Archives/edgar/data/1979332/000119312526300877/d53280dprec14a.htm" :size 229352 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

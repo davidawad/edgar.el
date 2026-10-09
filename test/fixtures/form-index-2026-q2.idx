@@ -1,0 +1,30 @@
+Description:           Master Index of EDGAR Dissemination Feed by Form Type
+Last Data Received:    June 30, 2026
+Comments:              webmaster@sec.gov
+Anonymous FTP:         ftp://ftp.sec.gov/edgar/
+
+
+
+
+Form Type   Company Name                                                  CIK         Date Filed  File Name
+---------------------------------------------------------------------------------------------------------------------------------------------
+10-K             21Shares Polkadot ETF                                         2054247     2026-06-29  edgar/data/2054247/0001213900-26-073214.txt
+10-K             8X8 INC /DE/                                                  1023731     2026-05-22  edgar/data/1023731/0001023731-26-000041.txt
+10-K/A           374Water Inc.                                                 933972      2026-04-30  edgar/data/933972/0001654954-26-004179.txt
+10-K/A           ABUNDIA GLOBAL IMPACT GROUP, INC.                             1156041     2026-05-13  edgar/data/1156041/0001493152-26-022630.txt
+4                't Hart Cees                                                  1983327     2026-05-21  edgar/data/1983327/0001628280-26-037475.txt
+D                &Affiliates Capital LLC                                       2124638     2026-05-08  edgar/data/2124638/0002124638-26-000001.txt
+DEFA14C          GRAYBAR ELECTRIC CO INC                                        205402      2026-04-28  edgar/data/205402/0000205402-26-000030.txt
+DEFM14C          OLAPLEX HOLDINGS, INC.                                        1868726     2026-05-04  edgar/data/1868726/0001193125-26-202411.txt
+DEFR14C          SRX Global Inc.                                               1471727     2026-06-24  edgar/data/1471727/0001493152-26-029896.txt
+POS 8C           MONROE CAPITAL Corp                                           1512931     2026-04-07  edgar/data/1512931/0001104659-26-040388.txt
+PREM14C          Emerald Holding, Inc.                                         1579214     2026-06-05  edgar/data/1579214/0001193125-26-259608.txt
+PREN14A          Fermi Inc.                                                    2071778     2026-05-05  edgar/data/2071778/0001213900-26-051939.txt
+PRER14C          ESG Inc.                                                      1883835     2026-04-24  edgar/data/1883835/0001520138-26-000133.txt
+SC 14N           First Trinity Financial CORP                                  1395585     2026-04-09  edgar/data/1395585/0001437749-26-011911.txt
+15F-12B          WESTPAC BANKING CORP                                          719245      2026-05-01  edgar/data/719245/0001104659-26-053346.txt
+15F-12G          RED METAL RESOURCES, LTD.                                     1358654     2026-05-14  edgar/data/1358654/0001062993-26-002596.txt
+6B NTC           GOLDMAN SACHS GROUP INC                                       886982      2026-05-19  edgar/data/886982/9999999997-26-000877.txt
+6B ORDR          GOLDMAN SACHS GROUP INC                                       886982      2026-06-15  edgar/data/886982/9999999997-26-001047.txt
+ANNLRPT/A        ASIAN DEVELOPMENT BANK                                        311669      2026-05-11  edgar/data/311669/0001140361-26-020379.txt
+SP 15D2          Suncrete, Inc.                                                2094433     2026-04-14  edgar/data/2094433/0001104659-26-043247.txt

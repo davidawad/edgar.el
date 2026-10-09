@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 1223 :accn "0001491895-26-000012" :form "ATS-N/MA" :company "OTC LINK LLC" :filed "2026-06-30" :report "" :doc "coverpage.xml" :cik 1491895 :url "https://www.sec.gov/Archives/edgar/data/1491895/000149189526000012/coverpage.xml")

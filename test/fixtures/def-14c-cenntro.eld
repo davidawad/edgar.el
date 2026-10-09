@@ -1,0 +1,1 @@
+(:accn "0001140361-26-026945" :form "DEF 14C" :filed "2026-06-30" :cik 1707919 :doc "ny20076268x2_def14c.htm" :url "https://www.sec.gov/Archives/edgar/data/1707919/000114036126026945/ny20076268x2_def14c.htm" :company "Cenntro Inc.")

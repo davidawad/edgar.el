@@ -1,0 +1,1 @@
+(:accn "0001104659-26-075193" :form "SC TO-C" :filed "2026-06-17" :cik 2113612 :doc "tm2617977d2_sctoc.htm" :url "https://www.sec.gov/Archives/edgar/data/2113612/000110465926075193/tm2617977d2_sctoc.htm" :company "ANV Group Holdings Ltd.")

@@ -1,0 +1,1 @@
+(:accn "0001213900-23-072575" :form "425" :company "Thunder Bridge Capital Partners IV, Inc." :filed "2023-08-31" :report "" :doc "ea184517-425_coincheck.htm" :cik 1843993 :url "https://www.sec.gov/Archives/edgar/data/1843993/000121390023072575/ea184517-425_coincheck.htm" :size 71110 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

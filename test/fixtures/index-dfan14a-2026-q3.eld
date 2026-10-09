@@ -1,0 +1,1 @@
+(:accn "0001493152-26-042718" :form "DFAN14A" :company "ANAVEX LIFE SCIENCES CORP." :filed "2026-09-15" :report "" :doc "formdfan14a.htm" :cik 1314052 :url "https://www.sec.gov/Archives/edgar/data/1314052/000149315226042718/formdfan14a.htm" :size 51697 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

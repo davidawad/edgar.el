@@ -1,0 +1,1 @@
+(:accn "0001174947-25-000508" :form "SC TO-I" :filed "2025-04-03" :report "" :doc "sctoi0425_pamt.htm" :cik 798287 :url "https://www.sec.gov/Archives/edgar/data/798287/000117494725000508/sctoi0425_pamt.htm" :ticker "PTSI")

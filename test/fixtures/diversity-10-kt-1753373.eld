@@ -1,0 +1,1 @@
+(:accn "0001493152-26-016632" :form "10-KT" :company "M2i Global, Inc." :filed "2026-04-15" :report "" :doc "form10-kt.htm" :cik 1753373 :url "https://www.sec.gov/Archives/edgar/data/1753373/000149315226016632/form10-kt.htm" :size 799742 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

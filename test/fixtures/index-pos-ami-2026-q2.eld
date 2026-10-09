@@ -1,0 +1,1 @@
+(:accn "0001133228-26-007099" :form "POS AMI" :company "Eaton Vance Series Trust" :filed "2026-04-29" :report "" :doc "stp-efp24297_posami.htm" :cik 102818 :url "https://www.sec.gov/Archives/edgar/data/102818/000113322826007099/stp-efp24297_posami.htm" :size 243471 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0000950130-98-005912" :form "10-K" :filed "1998-12-16" :report "1998-09-30" :doc "0000950130-98-005912.txt" :cik 10795 :url "https://www.sec.gov/Archives/edgar/data/10795/0000950130-98-005912.txt" :ticker "BDX" :fixture-kind "SEC complete-submission excerpt" :source "https://www.sec.gov/Archives/edgar/data/10795/0000950130-98-005912.txt")

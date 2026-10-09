@@ -1,0 +1,1 @@
+(:accn "0001193125-26-211208" :form "18-K" :company "KfW" :filed "2026-05-07" :report "" :doc "d109115d18k.htm" :cik 821533 :url "https://www.sec.gov/Archives/edgar/data/821533/000119312526211208/d109115d18k.htm" :size 70316 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

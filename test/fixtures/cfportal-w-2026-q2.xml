@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/crowdfunding" xmlns:com="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>CFPORTAL-W</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001774391</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <flags>
+        <returnCopyFlag>true</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <identifyingInformation>
+      <nameOfPortal>EquityVest, LLC</nameOfPortal>
+      <otherNamesAndWebsiteUrls>
+        <otherNamesUsedPortal>EquityVest</otherNamesUsedPortal>
+        <webSiteOfPortal>www.equityvest.org</webSiteOfPortal>
+      </otherNamesAndWebsiteUrls>
+      <irsEmployerIdNumber>88-0763523</irsEmployerIdNumber>
+      <portalAddress>
+        <com:street1>11315 CRAIG ST</com:street1>
+        <com:city>OVERLAND PARK</com:city>
+        <com:stateOrCountry>KS</com:stateOrCountry>
+        <com:zipCode>66210</com:zipCode>
+      </portalAddress>
+      <mailingAddressDifferent>true</mailingAddressDifferent>
+      <portalMailingAddress>
+        <com:street1>11315 CRAIG ST</com:street1>
+        <com:city>OVERLAND PARK</com:city>
+        <com:stateOrCountry>KS</com:stateOrCountry>
+        <com:zipCode>66210</com:zipCode>
+      </portalMailingAddress>
+      <portalContact>
+        <portalContactPhone>816-419-2191</portalContactPhone>
+        <portalContactEmail>tom@equityvest.org</portalContactEmail>
+      </portalContact>
+      <contactEmployeeName>
+        <com:firstName>Tom</com:firstName>
+        <com:middleName>Albert</com:middleName>
+        <com:lastName>Bassford</com:lastName>
+      </contactEmployeeName>
+      <contactEmployeeTitle>CEO and CCO</contactEmployeeTitle>
+      <fiscalYearEnd>December</fiscalYearEnd>
+      <anyPreviousRegistrations>Y</anyPreviousRegistrations>
+      <secFileNumbers>007-00215</secFileNumbers>
+      <anyForeignRegistrations>N</anyForeignRegistrations>
+    </identifyingInformation>
+    <formOfOrganization>
+      <legalStatusForm>Limited Liability Company</legalStatusForm>
+      <jurisdictionOrganization>CO</jurisdictionOrganization>
+      <dateIncorporation>04-16-2019</dateIncorporation>
+    </formOfOrganization>
+    <successions>
+      <isSucceedingBusiness>N</isSucceedingBusiness>
+    </successions>
+    <controlRelationships>
+      <fullLegalNames>
+        <fullLegalName>Tom Bassford</fullLegalName>
+      </fullLegalNames>
+      <fullLegalNames>
+        <fullLegalName>Significant Matters, Inc.</fullLegalName>
+      </fullLegalNames>
+      <fullLegalNames>
+        <fullLegalName>David Geenens</fullLegalName>
+      </fullLegalNames>
+    </controlRelationships>
+    <disclosureAnswers>
+      <criminalDisclosure>
+        <isConvictedOfFelony>N</isConvictedOfFelony>
+        <isChargedWithFelony>N</isChargedWithFelony>
+        <isConvictedMisdemeanor>N</isConvictedMisdemeanor>
+        <isChargedMisdemeanor>N</isChargedMisdemeanor>
+      </criminalDisclosure>
+      <regulatoryActionDisclosure>
+        <isMadeFalseStatement>N</isMadeFalseStatement>
+        <isViolatedRegulation>N</isViolatedRegulation>
+        <isCauseOfDenial>N</isCauseOfDenial>
+        <isOrderAgainst>N</isOrderAgainst>
+        <isImposedPenalty>N</isImposedPenalty>
+        <isUnEthical>N</isUnEthical>
+        <isFoundInViolationOfRegulation>N</isFoundInViolationOfRegulation>
+        <isFoundInCauseOfDenial>N</isFoundInCauseOfDenial>
+        <isOrderAgainstActivity>N</isOrderAgainstActivity>
+        <isDeniedLicense>N</isDeniedLicense>
+        <isFoundMadeFalseStatement>N</isFoundMadeFalseStatement>
+        <isFoundInViolationOfRules>N</isFoundInViolationOfRules>
+        <isFoundInCauseOfSuspension>N</isFoundInCauseOfSuspension>
+        <isDisciplined>N</isDisciplined>
+        <isAuthorizedToActAttorney>N</isAuthorizedToActAttorney>
+        <isRegulatoryComplaint>N</isRegulatoryComplaint>
+      </regulatoryActionDisclosure>
+      <civilJudicialActionDisclosure>
+        <isEnjoined>N</isEnjoined>
+        <isFoundInViolationOfRegulation>N</isFoundInViolationOfRegulation>
+        <isDismissed>N</isDismissed>
+        <isNamedInCivilProceeding>N</isNamedInCivilProceeding>
+      </civilJudicialActionDisclosure>
+      <financialDisclosure>
+        <hasSubjectOfBankruptcy>N</hasSubjectOfBankruptcy>
+        <hasTrusteeAppointed>N</hasTrusteeAppointed>
+        <hasBondDenied>N</hasBondDenied>
+        <doesAppHaveLiens>N</doesAppHaveLiens>
+      </financialDisclosure>
+    </disclosureAnswers>
+    <nonSecuritiesRelatedBusiness>
+      <isEngagedInNonSecurities>N</isEngagedInNonSecurities>
+    </nonSecuritiesRelatedBusiness>
+    <escrowArrangements>
+      <investorFundsContacts>
+        <investorFundsContactName>North Capital Private Securities Corporation</investorFundsContactName>
+        <investorFundsAddress>
+          <com:street1>623 E Fort Union Blvd</com:street1>
+          <com:street2>Suite 101</com:street2>
+          <com:city>Salt Lake City</com:city>
+          <com:stateOrCountry>UT</com:stateOrCountry>
+          <com:zipCode>84047</com:zipCode>
+        </investorFundsAddress>
+        <investorFundsContactPhone>80-317-8438</investorFundsContactPhone>
+      </investorFundsContacts>
+      <compensationDesc>The Funding Portal may charge issuers commissions and other fees payable in cash and/or securities of the issuer based upon the securities offered.</compensationDesc>
+    </escrowArrangements>
+    <execution>
+      <executionDate>01-22-2025</executionDate>
+      <fullLegalNameFundingPortal>EquityVest, LLC</fullLegalNameFundingPortal>
+      <personSignature>Tom Bassford</personSignature>
+      <personTitle>CEO</personTitle>
+    </execution>
+    <scheduleA>
+      <entityOrNaturalPerson>
+        <fullLegalName>Significant Matters, Inc</fullLegalName>
+        <entityType>DE</entityType>
+        <titleStatus>EquityVest, LLC is a single-member LLC with the single member being Significant Matters, a registered 501(c)3 non-profit corporation</titleStatus>
+        <dateOfTitleStatusAcquired>06/2021</dateOfTitleStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+      </entityOrNaturalPerson>
+      <entityOrNaturalPerson>
+        <fullLegalName>Tom Bassford</fullLegalName>
+        <entityType>NP</entityType>
+        <titleStatus>Chief Executive Officer and Chief Compliance Officer</titleStatus>
+        <dateOfTitleStatusAcquired>06/2021</dateOfTitleStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNumber>007426713</crdNumber>
+      </entityOrNaturalPerson>
+      <entityOrNaturalPerson>
+        <fullLegalName>David Geenens</fullLegalName>
+        <entityType>NP</entityType>
+        <titleStatus>Chief Financial Officer</titleStatus>
+        <dateOfTitleStatusAcquired>12/2021</dateOfTitleStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNumber>006442768</crdNumber>
+      </entityOrNaturalPerson>
+    </scheduleA>
+    <scheduleB>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Significant Matters, Inc</fullLegalName>
+        <entityType>DE</entityType>
+        <typeOfAmendment>A</typeOfAmendment>
+        <titleStatus>EquityVest, LLC is a single-member LLC with the single member being Significant Matters, a registered 501(c)3 non-profit corporation</titleStatus>
+        <dateOfTitleStatusAcquired>06/2021</dateOfTitleStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+      </amendEntityOrNaturalPerson>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>Tom Bassford</fullLegalName>
+        <entityType>NP</entityType>
+        <typeOfAmendment>A</typeOfAmendment>
+        <titleStatus>Chief Executive Officer and Chief Compliance Officer</titleStatus>
+        <dateOfTitleStatusAcquired>06/2021</dateOfTitleStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNumber>007426713</crdNumber>
+      </amendEntityOrNaturalPerson>
+      <amendEntityOrNaturalPerson>
+        <fullLegalName>David Geenens</fullLegalName>
+        <entityType>NP</entityType>
+        <typeOfAmendment>A</typeOfAmendment>
+        <titleStatus>Chief Financial Officer</titleStatus>
+        <dateOfTitleStatusAcquired>12/2021</dateOfTitleStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNumber>006442768</crdNumber>
+      </amendEntityOrNaturalPerson>
+    </scheduleB>
+    <scheduleC>
+      <personSignature>Thomas A Bassford</personSignature>
+      <printedName>Thomas A Bassford</printedName>
+      <personTitle>CEO</personTitle>
+      <signatureDate>06-30-2026</signatureDate>
+    </scheduleC>
+    <scheduleD>
+      <dateBusinessCeasedWithdrawn>06-30-2026</dateBusinessCeasedWithdrawn>
+      <bookKeepingDetails>
+        <bookKeepingEntityName>Tom Bassford</bookKeepingEntityName>
+        <bookKeepingEntityType>O</bookKeepingEntityType>
+        <isAddressPrivateResidence>Y</isAddressPrivateResidence>
+        <bookKeepingLocationDesc>All records pursuant to SEC Rule 404 of RegCF and FINRA FP Rule 300(f), including but not limited to: investor platform communications, issuer offering materials, transaction ledgers, escrow records, associated person registration and corporate org. docs. </bookKeepingLocationDesc>
+      </bookKeepingDetails>
+      <isInvestigated>N</isInvestigated>
+      <investorInitiatedComplaint>N</investorInitiatedComplaint>
+      <privateCivilLitigation>N</privateCivilLitigation>
+    </scheduleD>
+  </formData>
+</edgarSubmission>

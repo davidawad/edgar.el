@@ -1,0 +1,1 @@
+(:form "SP 15D2" :cik 2094433 :accn "0001104659-26-043247" :filed "2026-04-14" :company "Suncrete, Inc." :report "" :url "https://www.sec.gov/Archives/edgar/data/2094433/000110465926043247/tm2611679d1_sp15d2.htm" :doc "tm2611679d1_sp15d2.htm" :size 115667 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

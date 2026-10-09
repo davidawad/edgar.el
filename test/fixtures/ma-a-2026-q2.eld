@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 51394 :accn "0000786671-26-000005" :form "MA-A" :company "BOK FINANCIAL SECURITIES, INC." :filed "2026-06-29" :report "" :doc "primary_doc.xml" :cik 786671 :url "https://www.sec.gov/Archives/edgar/data/786671/000078667126000005/primary_doc.xml")

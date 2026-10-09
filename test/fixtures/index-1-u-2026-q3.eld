@@ -1,0 +1,1 @@
+(:accn "0001815103-26-000008" :form "1-U" :company "Landa App LLC" :filed "2026-07-23" :report "" :doc "oneuloanappllc.htm" :cik 1815103 :url "https://www.sec.gov/Archives/edgar/data/1815103/000181510326000008/oneuloanappllc.htm" :size 60332 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

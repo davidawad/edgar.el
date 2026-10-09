@@ -1,0 +1,1 @@
+(:accn "0001683168-23-006762" :form "PRER14A" :company "Fortune Rise Acquisition Corp" :filed "2023-09-27" :report "" :doc "fortune_prer14a.htm" :cik 1849294 :url "https://www.sec.gov/Archives/edgar/data/1849294/000168316823006762/fortune_prer14a.htm" :size 444714 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

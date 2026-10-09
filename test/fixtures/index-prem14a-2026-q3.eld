@@ -1,0 +1,1 @@
+(:accn "0001104659-26-105505" :form "PREM14A" :company "LXP Industrial Trust" :filed "2026-09-04" :report "" :doc "tm2624432d1_prem14a.htm" :cik 910108 :url "https://www.sec.gov/Archives/edgar/data/910108/000110465926105505/tm2624432d1_prem14a.htm" :size 1762446 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

@@ -1,0 +1,1 @@
+(:accn "0001451086-26-000003" :form "13F-NT" :filed "2026-09-02" :cik 1451086 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/1451086/000145108626000003/primary_doc.xml" :company "Attucks Asset Management, LLC")

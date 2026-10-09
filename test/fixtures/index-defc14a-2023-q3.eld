@@ -1,0 +1,1 @@
+(:accn "0000921895-23-002248" :form "DEFC14A" :company "Anson Funds Management LP" :filed "2023-09-26" :report "" :doc "defc14a13392004_09262023.htm" :cik 1491072 :url "https://www.sec.gov/Archives/edgar/data/1491072/000092189523002248/defc14a13392004_09262023.htm" :size 281299 :sample-vintage "older" :sample-quarter "2023-Q3" :sample-seed "edgar-form-coverage-v1")

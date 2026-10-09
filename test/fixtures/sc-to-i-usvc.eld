@@ -1,0 +1,1 @@
+(:accn "0001104659-26-079384" :form "SC TO-I" :filed "2026-06-30" :cik 1858660 :doc "tm2619065d1_sctoi.htm" :url "https://www.sec.gov/Archives/edgar/data/1858660/000110465926079384/tm2619065d1_sctoi.htm" :company "USVC Venture Capital Access Fund")

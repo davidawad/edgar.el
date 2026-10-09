@@ -1,0 +1,1 @@
+(:accn "0001437749-26-011911" :form "SC 14N" :company "First Trinity Financial CORP" :filed "2026-04-09" :report "" :cik 1395585 :ticker "" :doc "zge20260318_sc14n.htm" :url "https://www.sec.gov/Archives/edgar/data/1395585/000143774926011911/zge20260318_sc14n.htm" :size 91420 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

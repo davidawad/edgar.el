@@ -1,0 +1,1 @@
+(:accn "0001493152-26-029896" :form "DEFR14C" :company "SRX Global Inc." :filed "2026-06-24" :report "" :cik 1471727 :ticker "" :doc "formdefr14c.htm" :url "https://www.sec.gov/Archives/edgar/data/1471727/000149315226029896/formdefr14c.htm" :size 40819 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

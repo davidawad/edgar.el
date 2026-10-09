@@ -1,0 +1,1 @@
+(:accn "0001401835-26-000002" :form "DOS" :company "Star Gold Corp." :filed "2026-06-10" :report "" :doc "filename1.xml" :cik 1401835 :url "https://www.sec.gov/Archives/edgar/data/1401835/000140183526000002/filename1.xml" :size 15958 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

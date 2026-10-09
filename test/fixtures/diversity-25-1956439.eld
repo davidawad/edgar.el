@@ -1,0 +1,1 @@
+(:accn "0001628280-26-031825" :form "25" :company "Enhanced Group Inc." :filed "2026-05-07" :report "" :doc "enhanced-form25.htm" :cik 1956439 :url "https://www.sec.gov/Archives/edgar/data/1956439/000162828026031825/enhanced-form25.htm" :size 41064 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

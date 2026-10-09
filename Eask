@@ -12,12 +12,20 @@
 (keywords "finance" "tools" "hypermedia")
 
 (package-file "edgar.el")
-(files "edgar.el")
+(files "edgar*.el")
 
 (script "test"
-        "eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-showcase-test.el")
+        "eask test ert test/edgar-test.el test/edgar-structure-test.el test/edgar-primary-test.el test/edgar-live-test.el test/edgar-expect-test.el test/edgar-amendment-test.el test/edgar-golden-test.el test/edgar-golden-prospectus-test.el test/edgar-l2-diversity-test.el test/edgar-forms-test.el test/form-coverage-test.el test/form-coverage-artifact-test.el test/edgar-xml-test.el test/edgar-13f-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el test/edgar-showcase-test.el")
+(script "record-fixtures"
+        "eask emacs --batch -L tools -l tools/record-fixtures.el -f edgar-record-fixtures-run")
+(script "coverage"
+        "eask emacs --batch -l tools/form-coverage-check.el")
+(script "coverage-network"
+        "eask emacs --batch -l tools/form-coverage-network.el")
+(script "docs"
+        "eask emacs --batch -l tools/edgar-form-docs-update.el")
 (script "check"
-        "eask lint package && eask lint checkdoc && eask lint regexps && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-expect-test.el test/edgar-golden-test.el test/edgar-showcase-test.el && eask compile edgar.el")
+        "eask lint package && eask lint checkdoc && eask lint regexps && eask run script coverage && UNDERCOVER_FORCE=true eask test ert test/edgar-test.el test/edgar-structure-test.el test/edgar-primary-test.el test/edgar-live-test.el test/edgar-expect-test.el test/edgar-amendment-test.el test/edgar-golden-test.el test/edgar-golden-prospectus-test.el test/edgar-l2-diversity-test.el test/edgar-forms-test.el test/form-coverage-test.el test/form-coverage-artifact-test.el test/edgar-xml-test.el test/edgar-13f-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el && eask compile edgar.el edgar-core.el edgar-content.el edgar-structure.el edgar-headings.el edgar-named.el edgar-sections.el edgar-forms.el edgar-forms-filers.el edgar-forms-registration.el edgar-forms-periodic.el edgar-xml.el edgar-ownership.el edgar-offerings.el edgar-funds.el edgar-asset-backed.el edgar-docs.el edgar-http.el edgar-index.el edgar-13f.el edgar-schedules.el")
 (script "expect-update"
         "EDGAR_EXPECT_UPDATE=1 eask test ert test/edgar-expect-test.el")
 (script "golden-update" "eask emacs --script tools/make-golden.el")

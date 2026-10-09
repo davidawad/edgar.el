@@ -1,0 +1,1 @@
+(:accn "0001213900-26-051939" :form "PREN14A" :company "Fermi Inc." :filed "2026-05-05" :report "" :cik 2071778 :ticker "" :doc "ea028836002-pren14a_fermi.htm" :url "https://www.sec.gov/Archives/edgar/data/2071778/000121390026051939/ea028836002-pren14a_fermi.htm" :size 226392 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

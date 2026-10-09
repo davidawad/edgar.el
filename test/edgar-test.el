@@ -1,48 +1,48 @@
 ;;; edgar-test.el --- tests for edgar.el -*- lexical-binding: t; -*-
 
-(require 'ert)
+(require 'edgar-test-support)
 
-;; Coverage (undercover.el, pack-mandated).  Must run before the source loads.
-(setq load-prefer-newer t)
-(when (require 'undercover nil t)
-  (undercover "edgar.el" (:report-format 'text) (:send-report nil)))
-
-(require 'edgar)
-
-(defconst edgar-test--submissions
-  '(:filings
-    (:recent
-     (:accessionNumber
-      ("0000320193-25-000079"
-       "0000320193-25-000050"
-       "0000320193-24-000123")
-      :form ("10-K" "8-K" "10-K")
-      :filingDate
-      ("2025-10-31" "2025-08-01" "2024-11-01")
-      :reportDate
-      ("2025-09-27" "2025-07-30" "2024-09-28")
-      :primaryDocument
-      ("aapl-20250927.htm" "x8k.htm" "aapl-20240928.htm")))))
-
-(defconst edgar-test--html
-  (concat
-   "<html><body>"
-   "<p>Item 1. Business</p><p>Item 1A. Risk Factors</p><p>Item 2. Properties</p>"
-   "<p>Item 1. Business</p><p>We sell phones and many other things.</p>"
-   "<p>Item 1A. Risk Factors</p><p>There are risks galore here and there.</p>"
-   "<p>Item 2. Properties</p><p>Buildings.</p>"
-   "</body></html>"))
-
-(defmacro edgar-test--with-sec (&rest body)
-  "Run BODY with the SEC transport stubbed with canned data."
-  (declare (indent 0))
-  `(cl-letf (((symbol-function 'xbrl-cik)
-              (lambda (_) "CIK0000320193"))
-             ((symbol-function 'xbrl--get)
-              (lambda (_) edgar-test--submissions))
-             ((symbol-function 'edgar--fetch)
-              (lambda (_) edgar-test--html)))
-     ,@body))
+(ert-deftest
+    edgar-facts-exposes-inline-facts-from-the-primary-document
+    ()
+  (let*
+      ((fixture
+        (expand-file-name "fixtures/10-k-aapl.htm.gz"
+                          edgar-test--dir))
+       (filing
+        '(:form
+          "10-K"
+          :accn "0000320193-25-000079"
+          :url "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm")))
+    (cl-letf (((symbol-function 'edgar-html)
+               (lambda (_filing)
+                 (with-temp-buffer
+                   (let ((auto-compression-mode t))
+                     (insert-file-contents fixture))
+                   (buffer-string)))))
+      (let
+          ((revenue
+            (seq-find
+             (lambda (fact)
+               (and
+                (equal
+                 (plist-get fact :name)
+                 "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax")
+                (equal
+                 (plist-get
+                  (plist-get fact :context)
+                  :end)
+                 "2025-09-27")
+                (null
+                 (plist-get (plist-get fact :context) :dimensions))))
+             (edgar-facts filing))))
+        (should revenue)
+        (should (= (plist-get revenue :value) 416161000000))
+        (should (equal (plist-get revenue :unit) "USD"))
+        (should
+         (equal
+          (plist-get (plist-get revenue :context) :start)
+          "2024-09-29"))))))
 
 (ert-deftest edgar-sections-picks-longest ()
   (let* ((text
@@ -56,14 +56,22 @@
     (should (string-match-p "phones" (cdr (assoc "1" s))))
     (should (string-match-p "risks galore" (cdr (assoc "1A" s))))))
 
-(defconst edgar-test--10q
-  (concat
-   "PART I\nFINANCIAL INFORMATION\nItem 1. Financial Statements\n"
-   "balance sheet and many other statements here\n"
-   "Item 2. Management's Discussion\nsales rose a lot this quarter\n"
-   "see Item 1A of this report for risks\n"
-   "PART II\nOTHER INFORMATION\nItem 1. Legal Proceedings\nnone\n"
-   "Item 2. Unregistered Sales\nnone sold\n"))
+(ert-deftest edgar-sections-trim-terminal-line-breaks ()
+  "Section bodies omit line breaks after the final filing text."
+  (let* ((text
+          (concat
+           "Item 10. Certification\nBody text" (make-string 8 ?\n)))
+         (body (cdr (assoc "10" (edgar-sections text)))))
+    (should (equal body "Item 10. Certification\nBody text"))))
+
+(ert-deftest edgar-sections-normalize-unicode-heading-spaces ()
+  "Unicode spaces in Item headings do not make sections disappear."
+  (let
+      ((sections
+        (edgar-sections
+         "Item\u20091. Summary of the Offer\nImportant terms follow.\n")))
+    (should (equal (mapcar #'car sections) '("1")))
+    (should (string-match-p "Important terms" (cdar sections)))))
 
 (ert-deftest edgar-sections-qualify-by-part ()
   (let ((s (edgar-sections edgar-test--10q)))
@@ -166,6 +174,149 @@
         (plist-get (car k) :url)
         "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm")))))
 
+(ert-deftest edgar-filings-loads-recorded-history ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        (history
+         (edgar-test--fixture-json "submissions-aapl-001.json.gz"))
+        requests)
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (cond
+                  ((string-suffix-p "/CIK0000320193.json" url)
+                   recent)
+                  ((string-suffix-p
+                    "/CIK0000320193-submissions-001.json" url)
+                   history)
+                  (t
+                   (error "Unexpected URL: %s" url))))))
+      (let ((filings
+             (edgar-filings "AAPL" "10-K" :since "2014-01-01")))
+        (should (= (length requests) 2))
+        (should (equal (plist-get (car filings) :filed) "2025-10-31"))
+        (should
+         (equal
+          (plist-get
+           (cl-find-if
+            (lambda (filing)
+              (equal (plist-get filing :filed) "2014-10-27"))
+            filings)
+           :form)
+          "10-K"))))))
+
+(ert-deftest edgar-filings-unbounded-stays-recent-only ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        requests)
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (if (string-suffix-p "/CIK0000320193.json" url)
+                     recent
+                   (error
+                    "Unbounded call fetched history: %s" url)))))
+      (let ((filings (edgar-filings "AAPL" "10-K")))
+        (should (= (length requests) 1))
+        (should-not
+         (cl-find-if
+          (lambda (filing)
+            (equal (plist-get filing :filed) "2014-10-27"))
+          filings))))))
+
+(ert-deftest edgar-filings-date-bounds-are-inclusive ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        (history
+         (edgar-test--fixture-json "submissions-aapl-001.json.gz")))
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (if (string-suffix-p "-submissions-001.json" url)
+                     history
+                   recent))))
+      (let ((filings
+             (edgar-filings
+              "AAPL"
+              "10-K"
+              :since "2013-10-30"
+              :until "2014-10-27")))
+        (should
+         (equal
+          (mapcar
+           (lambda (filing) (plist-get filing :filed)) filings)
+          '("2014-10-27" "2013-10-30")))))))
+
+(ert-deftest edgar-filings-skips-history-before-since ()
+  (let ((recent (edgar-test--fixture-json "submissions-aapl.json.gz"))
+        requests)
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (if (string-suffix-p "/CIK0000320193.json" url)
+                     recent
+                   (error "History page should not be fetched")))))
+      (edgar-filings "AAPL" "10-K" :since "2016-01-01")
+      (should (= (length requests) 1)))))
+
+(ert-deftest edgar-filings-fetches-only-overlapping-history-pages ()
+  (let* ((submissions (copy-tree edgar-test--submissions))
+         (history
+          '(:accessionNumber
+            ("0000320193-14-000001")
+            :form ("10-K")
+            :filingDate ("2014-10-27")
+            :reportDate ("2014-09-27")
+            :primaryDocument ("aapl-20140927.htm")))
+         requests)
+    (plist-put
+     (plist-get submissions :filings)
+     :files
+     '((:name
+        "older.json"
+        :filingFrom "1994-01-01"
+        :filingTo "2009-12-31")
+       (:name
+        "matching.json"
+        :filingFrom "2010-01-01"
+        :filingTo "2015-12-31")))
+    (cl-letf (((symbol-function 'xbrl-cik)
+               (lambda (_) "CIK0000320193"))
+              ((symbol-function 'xbrl--get)
+               (lambda (url)
+                 (push url requests)
+                 (cond
+                  ((string-suffix-p "/CIK0000320193.json" url)
+                   submissions)
+                  ((string-suffix-p "/matching.json" url)
+                   history)
+                  (t
+                   (error "Non-overlapping page fetched: %s" url))))))
+      (let ((filings
+             (edgar-filings
+              "AAPL"
+              "10-K"
+              :since "2014-01-01"
+              :until "2014-12-31")))
+        (should (= (length requests) 2))
+        (should
+         (equal
+          (mapcar
+           (lambda (filing) (plist-get filing :filed)) filings)
+          '("2014-10-27")))))))
+
+(ert-deftest edgar-unique-filings-deduplicates-accessions ()
+  (let ((a '(:accn "a" :filed "2025-01-01"))
+        (b '(:accn "b" :filed "2024-01-01"))
+        (duplicate '(:accn "a" :filed "2023-01-01")))
+    (should
+     (equal
+      (edgar--unique-filings (list a b duplicate)) (list a b)))))
+
 (ert-deftest edgar-latest-is-newest ()
   (edgar-test--with-sec
     (should
@@ -178,57 +329,10 @@
     (let ((f (edgar-latest "AAPL" "10-K")))
       (should (string-match-p "phones" (edgar-text f)))
       (should (string-match-p "risks galore" (edgar-section f "1a")))
+      (should
+       (string-match-p
+        "risks galore" (edgar-section f "Risk Factors")))
       (should-not (edgar-section f "99")))))
-
-(ert-deftest edgar-open-renders-buffer ()
-  (edgar-test--with-sec
-    (edgar-open (edgar-latest "AAPL" "10-K"))
-    (with-current-buffer "*edgar: 0000320193-25-000079*"
-      (should (string-match-p "Risk Factors" (buffer-string)))
-      (should buffer-read-only))
-    (kill-buffer "*edgar: 0000320193-25-000079*")))
-
-(ert-deftest edgar-read-signals-when-none ()
-  (edgar-test--with-sec
-    (should-error (edgar-read "AAPL" "S-1") :type 'user-error)))
-
-(ert-deftest edgar-list-renders-rows ()
-  (edgar-test--with-sec
-    (edgar-list "AAPL" "10-K")
-    (with-current-buffer "*edgar: AAPL*"
-      (should (string-match-p "2025-10-31" (buffer-string)))
-      (should (string-match-p "2024-11-01" (buffer-string))))
-    (kill-buffer "*edgar: AAPL*")))
-
-(ert-deftest edgar-fetch-rejects-non-200 ()
-  (cl-letf (((symbol-function 'url-retrieve-synchronously)
-             (lambda (&rest _)
-               (let ((b (generate-new-buffer " *edgar-fake*")))
-                 (with-current-buffer b
-                   (insert "HTTP/1.1 404 Not Found\r\n\r\n"))
-                 b))))
-    (should-error (edgar--fetch "https://example.invalid/x"))))
-
-(ert-deftest edgar-fetch-decodes-body ()
-  (cl-letf (((symbol-function 'url-retrieve-synchronously)
-             (lambda (&rest _)
-               (let ((b (generate-new-buffer " *edgar-fake*")))
-                 (with-current-buffer b
-                   (set-buffer-multibyte nil)
-                   (insert
-                    "HTTP/1.1 200 OK\r\nX: y\r\n\r\ncaf\303\251"))
-                 b))))
-    (should
-     (equal (edgar--fetch "https://example.invalid/x") "café"))))
-
-(ert-deftest edgar-live-10k ()
-  :tags
-  '(network)
-  (skip-unless (getenv "XBRL_LIVE"))
-  (let* ((f (edgar-latest "AAPL" "10-K"))
-         (s (edgar-section f "1A")))
-    (should (equal (plist-get f :form) "10-K"))
-    (should (> (length s) 5000))))
 
 (provide 'edgar-test)
 ;;; edgar-test.el ends here

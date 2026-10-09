@@ -1,0 +1,1 @@
+(:accn "0001477932-26-004121" :form "DEF 14C" :filed "2026-06-30" :cik 1429393 :doc "tkls_def14c.htm" :url "https://www.sec.gov/Archives/edgar/data/1429393/000147793226004121/tkls_def14c.htm" :company "Trutankless, Inc.")

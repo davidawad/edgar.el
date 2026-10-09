@@ -1,0 +1,1 @@
+(:accn "0001999371-26-013444" :form "485APOS" :filed "2026-06-25" :report "" :doc "m3sixty-485apos_062526.htm" :cik 1319067 :url "https://www.sec.gov/Archives/edgar/data/1319067/000199937126013444/m3sixty-485apos_062526.htm" :ticker "")

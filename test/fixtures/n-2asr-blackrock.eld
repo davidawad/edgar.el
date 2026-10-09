@@ -1,0 +1,1 @@
+(:accn "0001193125-26-304963" :form "N-2ASR" :filed "2026-07-15" :report "" :doc "d131446dn2asr.htm" :cik 1278895 :url "https://www.sec.gov/Archives/edgar/data/1278895/000119312526304963/d131446dn2asr.htm" :ticker "")

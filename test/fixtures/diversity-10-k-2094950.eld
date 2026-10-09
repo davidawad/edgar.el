@@ -1,0 +1,1 @@
+(:accn "0002094950-26-000022" :form "10-K" :company "CarMax Auto Owner Trust 2026-1" :filed "2026-05-27" :report "" :doc "a2026-110xk052726.htm" :cik 2094950 :url "https://www.sec.gov/Archives/edgar/data/2094950/000209495026000022/a2026-110xk052726.htm" :size 64565 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

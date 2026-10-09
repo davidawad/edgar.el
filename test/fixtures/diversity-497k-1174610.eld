@@ -1,0 +1,1 @@
+(:accn "0001193125-25-220601" :form "497K" :filed "2025-09-26" :report "" :doc "f42906d1.htm" :cik 1174610 :url "https://www.sec.gov/Archives/edgar/data/1174610/000119312525220601/f42906d1.htm" :ticker "" :sample-vintage "older" :sample-quarter "2025-Q3" :sample-seed "edgar-form-coverage-v1" :size 189948 :sha256 "7f1a3ce739bde205421fad3ed0826c4bf10e1c7368a61a52cb4843618c983cc6")

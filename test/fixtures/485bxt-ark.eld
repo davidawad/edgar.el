@@ -1,0 +1,1 @@
+(:accn "0001213900-26-041967" :form "485BXT" :filed "2026-04-09" :report "" :doc "ea0285627-01_485bxt.htm" :cik 1579982 :url "https://www.sec.gov/Archives/edgar/data/1579982/000121390026041967/ea0285627-01_485bxt.htm" :ticker "")

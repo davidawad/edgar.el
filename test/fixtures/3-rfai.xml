@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ownershipDocument>
+  <schemaVersion>X0206</schemaVersion>
+  <documentType>3</documentType>
+  <periodOfReport>2024-05-21</periodOfReport>
+  <noSecuritiesOwned>0</noSecuritiesOwned>
+  <issuer><issuerCik>0002012807</issuerCik><issuerName>RF Acquisition Corp II</issuerName><issuerTradingSymbol>RFAI</issuerTradingSymbol></issuer>
+  <reportingOwner>
+    <reportingOwnerId><rptOwnerCik>0002013019</rptOwnerCik><rptOwnerName>Alfa 24 Ltd</rptOwnerName></reportingOwnerId>
+    <reportingOwnerAddress><rptOwnerStreet1>111 SOMERSET, #05-07</rptOwnerStreet1><rptOwnerStreet2></rptOwnerStreet2><rptOwnerCity>SINGAPORE</rptOwnerCity><rptOwnerState></rptOwnerState><rptOwnerZipCode>238164</rptOwnerZipCode><rptOwnerStateDescription></rptOwnerStateDescription></reportingOwnerAddress>
+    <reportingOwnerRelationship><isDirector>0</isDirector><isOfficer>0</isOfficer><isTenPercentOwner>1</isTenPercentOwner><isOther>0</isOther><officerTitle></officerTitle><otherText></otherText></reportingOwnerRelationship>
+  </reportingOwner>
+  <nonDerivativeTable>
+    <nonDerivativeHolding>
+      <securityTitle><value>Ordinary Shares, par value $0.0001 per share</value></securityTitle>
+      <postTransactionAmounts><sharesOwnedFollowingTransaction><value>3230000</value></sharesOwnedFollowingTransaction></postTransactionAmounts>
+      <ownershipNature><directOrIndirectOwnership><value>D</value><footnoteId id="F1"/></directOrIndirectOwnership></ownershipNature>
+    </nonDerivativeHolding>
+  </nonDerivativeTable>
+  <derivativeTable>
+    <derivativeHolding>
+      <securityTitle><value>Rights</value></securityTitle>
+      <conversionOrExercisePrice><footnoteId id="F2"/></conversionOrExercisePrice>
+      <exerciseDate><footnoteId id="F2"/></exerciseDate>
+      <expirationDate><footnoteId id="F2"/></expirationDate>
+      <underlyingSecurity><underlyingSecurityTitle><value>Ordinary Shares</value></underlyingSecurityTitle><underlyingSecurityShares><value>17750</value></underlyingSecurityShares></underlyingSecurity>
+      <ownershipNature><directOrIndirectOwnership><value>D</value></directOrIndirectOwnership></ownershipNature>
+    </derivativeHolding>
+  </derivativeTable>
+  <footnotes>
+    <footnote id="F1">Includes 2,875,000 ordinary shares (of which 375,000 ordinary shares are subject to forfeiture based on the underwriters' exercise of their overallotment option) and 355,000 ordinary shares underlying the private placement units, which were sold in a private placement taking place simultaneously with the RF Acquisition Corp II's initial public offering.</footnote>
+    <footnote id="F2">Includes 355,000 rights underlying the private placement units, which were sold in a private placement taking place simultaneously with the RF Acquisition Corp II's initial public offering. Each right is exchangeable for one twentieth of one ordinary share upon the completion of RF Acquisition Corp II's initial business combination.</footnote>
+  </footnotes>
+  <ownerSignature><signatureName>/s/ Tse Meng Ng, as managing member</signatureName><signatureDate>2024-05-23</signatureDate></ownerSignature>
+</ownershipDocument>

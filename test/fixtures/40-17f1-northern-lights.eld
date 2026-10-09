@@ -1,0 +1,1 @@
+(:accn "0001580642-26-002258" :form "40-17F1" :filed "2026-04-02" :report "" :doc "pfgfidinstlameqindstra4017f1.htm" :cik 1314414 :url "https://www.sec.gov/Archives/edgar/data/1314414/000158064226002258/pfgfidinstlameqindstra4017f1.htm" :ticker "")

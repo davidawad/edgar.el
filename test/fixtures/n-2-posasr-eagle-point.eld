@@ -1,0 +1,1 @@
+(:accn "0001104659-26-065749" :form "N-2 POSASR" :filed "2026-05-22" :report "" :doc "tm2615164d1_n2posasr.htm" :cik 1604174 :url "https://www.sec.gov/Archives/edgar/data/1604174/000110465926065749/tm2615164d1_n2posasr.htm" :ticker "")

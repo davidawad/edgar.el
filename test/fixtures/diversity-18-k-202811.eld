@@ -1,0 +1,1 @@
+(:accn "0001193125-26-213335" :form "18-K" :company "OESTERREICHISCHE KONTROLLBANK AKTIENGESELLSCHAFT" :filed "2026-05-08" :report "" :doc "d105628d18k.htm" :cik 202811 :url "https://www.sec.gov/Archives/edgar/data/202811/000119312526213335/d105628d18k.htm" :size 61341 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

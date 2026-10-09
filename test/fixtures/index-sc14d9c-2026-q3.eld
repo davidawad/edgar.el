@@ -1,0 +1,1 @@
+(:accn "0001493152-26-039578" :form "SC14D9C" :company "Yatra Online, Inc." :filed "2026-08-21" :report "" :doc "formsc14d9c.htm" :cik 1516899 :url "https://www.sec.gov/Archives/edgar/data/1516899/000149315226039578/formsc14d9c.htm" :size 25067 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

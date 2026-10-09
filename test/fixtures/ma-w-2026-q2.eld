@@ -1,0 +1,1 @@
+(:sample-seed "edgar-form-coverage-g12" :sample-quarter "2026-Q2" :sample-vintage "recent" :size 3220 :accn "0001783919-26-000003" :form "MA-W" :company "FTG Advisors, LLC" :filed "2026-05-29" :report "" :doc "primary_doc.xml" :cik 1783919 :url "https://www.sec.gov/Archives/edgar/data/1783919/000178391926000003/primary_doc.xml")

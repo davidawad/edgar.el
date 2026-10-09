@@ -1,0 +1,22 @@
+(:form "N-CSR" :text-bucket 16 :text-head
+       "9db952ae-c8a6-4b1f-bf20-a7fe611ac610 UNITED STATES SECURITIE"
+       :sections
+       (("1" 14 "ITEM 1 - Reports to Stockholders BNY Mellon Active")
+	("2" 8 "Item 2. Code of Ethics. The Registrant has adopted")
+	("3" 8 "Item 3. Audit Committee Financial Expert. The Regi")
+	("4" 12 "Item 4. Principal Accountant Fees and Services. (a")
+	("5" 6 "Item 5. Audit Committee of Listed Registrants. Not")
+	("6" 10 "Item 6. Investments. Not applicable.   BNY Mellon ")
+	("7" 15 "Item 7. Financial Statements and Financial Highlig")
+	("8" 7 "Item 8. Changes in and Disagreements with Accounta")
+	("9" 9 "Item 9. Proxy Disclosures for Open-End Management ")
+	("10" 9 "Item 10. Remuneration Paid to Directors, Officers,")
+	("11" 13 "Item 11. Statement Regarding Basis for Approval of")
+	("12" 7 "Item 12. Disclosure of Proxy Voting Policies and P")
+	("13" 6 "Item 13. Portfolio Managers for Closed-End Managem")
+	("14" 7 "Item 14. Purchases of Equity Securities By Closed-")
+	("15" 7 "Item 15. Submission of Matters to a Vote of Securi")
+	("16" 10 "Item 16. Controls and Procedures. (a) The Registra")
+	("17" 7 "Item 17. Disclosure of Securities Lending Activiti")
+	("18" 6 "Item 18. Recovery of Erroneously Awarded Compensat")
+	("19" 10 "Item 19. Exhibits. (a)(1) Code of ethics referred ")))

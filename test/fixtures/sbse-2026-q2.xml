@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/sbse/sbsefiler" xmlns:com="http://www.sec.gov/edgar/common" xmlns:sbse="http://www.sec.gov/edgar/sbse_drp">
+  <headerData>
+    <submissionType>SBSE/A</submissionType>
+    <filerInfo>
+      <filer>
+        <filerCredentials>
+          <filerCik>0001910878</filerCik>
+          <filerCcc>XXXXXXXX</filerCcc>
+        </filerCredentials>
+      </filer>
+      <flags>
+        <returnCopyFlag>true</returnCopyFlag>
+        <overrideInternetFlag>false</overrideInternetFlag>
+      </flags>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <applicant>
+      <applicantDataPageOne>
+        <fullApplicantName>GIFMS Capital Company, LLC</fullApplicantName>
+        <taxIdentificationNo>98-1374616</taxIdentificationNo>
+        <applicantCik>0001910878</applicantCik>
+        <businessName>GIFMS CAPITAL COMPANY, LLC</businessName>
+        <mainAddress>
+          <com:street1>227 W MONROE</com:street1>
+          <com:street2>SUITE 4900</com:street2>
+          <com:city>CHICAGO</com:city>
+          <com:stateOrCountry>IL</com:stateOrCountry>
+          <com:zipCode>60606</com:zipCode>
+        </mainAddress>
+        <businessTelephoneNumber>3128270100</businessTelephoneNumber>
+        <contactEmployee>
+          <contactEmployeeName>
+            <com:firstName>Carey</com:firstName>
+            <com:middleName>D.</com:middleName>
+            <com:lastName>Fear</com:lastName>
+          </contactEmployeeName>
+          <title>Chief Compliance Officer</title>
+          <phone>312-977-4595</phone>
+          <emailAddress>GIFMS-CCO@guggenheimpartners.com</emailAddress>
+        </contactEmployee>
+        <chiefComplianceOfficer>
+          <officerName>
+            <com:firstName>Carey</com:firstName>
+            <com:middleName>D.</com:middleName>
+            <com:lastName>Fear</com:lastName>
+          </officerName>
+          <title>Chief Compliance Officer</title>
+          <phone>312-977-4595</phone>
+          <emailAddress>GIFMS-CCO@guggenheimpartners.com</emailAddress>
+        </chiefComplianceOfficer>
+      </applicantDataPageOne>
+      <applicantDataPageTwo>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <isSwapDealer>Y</isSwapDealer>
+        <isSwapParticipant>N</isSwapParticipant>
+        <swapOptions>
+          <swapOption>maintains a substantial security-based swap position</swapOption>
+          <swapOption>has substantial counterparty exposure</swapOption>
+          <swapOption>is highly leveraged to its capital position</swapOption>
+        </swapOptions>
+        <isCommissionDetermine>N</isCommissionDetermine>
+        <isSelfDetermine>N</isSelfDetermine>
+        <isUseMathModels>N</isUseMathModels>
+        <isSubjectToRegulator>N</isSubjectToRegulator>
+        <prudentialRegulators>
+          <prudentialRegulator>The Federal Reserve Board</prudentialRegulator>
+          <prudentialRegulator>The Office of the Comptroller of the Currency</prudentialRegulator>
+          <prudentialRegulator>The Federal Deposit Insurance Corporation</prudentialRegulator>
+          <prudentialRegulator>The Farm Credit Administration</prudentialRegulator>
+          <prudentialRegulator>The Federal Housing Finance Agency</prudentialRegulator>
+        </prudentialRegulators>
+        <isNonResidentEntity>N</isNonResidentEntity>
+        <descriptionBusiness>Applicant's business consists of providing secured funding to banks via security-based swaps.</descriptionBusiness>
+        <legalStatus>Limited Liability Company</legalStatus>
+        <monthApplicantFiscalEnds>December</monthApplicantFiscalEnds>
+        <stateOfFormation>DE</stateOfFormation>
+        <countryOfFormation>X1</countryOfFormation>
+        <dateOfFormation>04-12-2024</dateOfFormation>
+        <isSucceeding>N</isSucceeding>
+        <isHoldFunds>N</isHoldFunds>
+      </applicantDataPageTwo>
+      <applicantDataPageThree>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <isRecordsKept>Y</isRecordsKept>
+        <isOnBehalf>N</isOnBehalf>
+        <isControlThroughAgreement>Y</isControlThroughAgreement>
+        <isWhollyOrPartiallyFinance>N</isWhollyOrPartiallyFinance>
+        <isEngagedInSecurities>Y</isEngagedInSecurities>
+        <isControlWithBank>N</isControlWithBank>
+        <criminalDisclosure>
+          <isConvictedOfFelony>N</isConvictedOfFelony>
+          <isChargedWithFelony>N</isChargedWithFelony>
+          <isConvictedMisdemeanor>N</isConvictedMisdemeanor>
+          <isChargedMisdemeanor>N</isChargedMisdemeanor>
+        </criminalDisclosure>
+      </applicantDataPageThree>
+      <applicantDataPageFour>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <regulatoryActionDisclosure>
+          <isMadeFalseStatement>N</isMadeFalseStatement>
+          <isViolatedRegulation>Y</isViolatedRegulation>
+          <isCauseOfDenial>N</isCauseOfDenial>
+          <isOrderAgainst>Y</isOrderAgainst>
+          <isImposedPenalty>Y</isImposedPenalty>
+          <isUnethical>N</isUnethical>
+          <isFoundInViolationOfRegulation>Y</isFoundInViolationOfRegulation>
+          <isFoundInCauseOfDenial>N</isFoundInCauseOfDenial>
+          <isOrderAgainstActivity>N</isOrderAgainstActivity>
+          <isDeniedLicense>N</isDeniedLicense>
+          <isFoundMadeFalseStatement>N</isFoundMadeFalseStatement>
+          <isFoundInViolationOfRules>Y</isFoundInViolationOfRules>
+          <isFoundInCauseOfSuspension>N</isFoundInCauseOfSuspension>
+          <isDisciplined>N</isDisciplined>
+          <isAuthorizedToActAttorney>N</isAuthorizedToActAttorney>
+          <isNamedInRegulatoryProceeding>N</isNamedInRegulatoryProceeding>
+        </regulatoryActionDisclosure>
+        <civilJudicialActionDisclosure>
+          <isEnjoined>N</isEnjoined>
+          <isFoundInViolationOfRegulation>N</isFoundInViolationOfRegulation>
+          <isDismissed>N</isDismissed>
+          <isNamedInCivilProceeding>N</isNamedInCivilProceeding>
+        </civilJudicialActionDisclosure>
+      </applicantDataPageFour>
+      <applicantDataPageFive>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <financialDisclosure>
+          <hasSubjectOfBankruptcy>N</hasSubjectOfBankruptcy>
+          <hasTrusteeAppointed>N</hasTrusteeAppointed>
+        </financialDisclosure>
+        <isRegisteredWithCommission>N</isRegisteredWithCommission>
+        <isEffectTransactions>N</isEffectTransactions>
+        <isEngagedInNonSecurity>N</isEngagedInNonSecurity>
+        <isForeignRegulatory>N</isForeignRegulatory>
+      </applicantDataPageFive>
+    </applicant>
+    <scheduleA>
+      <applicantName>GIFMS Capital Company, LLC</applicantName>
+      <isAnyIndirectOwners>Y</isAnyIndirectOwners>
+      <scheduleAInfo>
+        <fullLegalName>The Liberty Hampshire Company, LLC</fullLegalName>
+        <entityType>DE</entityType>
+        <titleOrStatus>Owner</titleOrStatus>
+        <dateTitleOrStatusAcquired>02/2019</dateTitleOrStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <irsTaxNo>36-4068485</irsTaxNo>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Manager, CEO</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNo>004151793</crdNo>
+        <description>Senior Managing Director of Guggenheim Treasury Services since 2018. Prior to Guggenheim, Mr. Spencer was an Executive Director at UBS where he was head of structuring for the US structured financing business. Prior to UBS, Mr. Spencer was a Vice President at BNP Paribas in fixed income structuring.</description>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Manager</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <description>Chief Legal Officer and Managing Partner of Guggenheim Partners since 2019. Prior to that Mr. Khuzami held several senior-level positions in both, the public and private sectors. 2018-2019 Mr. Khuzami served as Deputy United States Attorney in the United States Attorney's Office for the Southern District of New York. 2009-2013 he served as Director of Division of Enforcement of the United States Securities and Exchange Commission.</description>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Manager</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <crdNo>007473678</crdNo>
+        <description>Head of Corporate Accounting and Senior Managing Director of Guggenheim Partners since 2005.</description>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Chief Compliance Officer</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <description>Senior Managing Director of Guggenheim Treasury Services, LLC since 2001.</description>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Chief Financial Officer</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <description>Senior Managing Director of Guggenheim Treasury Services since 1997.</description>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Chief Risk Officer</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <description>Director of Guggenheim Treasury Services (GTS) since 2018. Prior to joining GTS, Mr. Lewis was an Assistant Vice President at Nuveen working in the Investment Risk group. Mr. Lewis joined Nuveen out of business school prior to which he worked at Eldorado Trading Group as a proprietary trader focused on interest rates futures.</description>
+      </scheduleAInfo>
+      <scheduleAInfo>
+        <entityType>I</entityType>
+        <titleOrStatus>Chief Legal Officer</titleOrStatus>
+        <dateTitleOrStatusAcquired>04/2024</dateTitleOrStatusAcquired>
+        <ownershipCode>NA</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <description>Managing Director of Guggenheim Treasury Services, LLC since 2003.</description>
+      </scheduleAInfo>
+    </scheduleA>
+    <scheduleB>
+      <applicantName>GIFMS Capital Company, LLC</applicantName>
+      <scheduleBInfo>
+        <fullLegalName>Guggenheim Treasury Services, LLC</fullLegalName>
+        <interestOwnedEntity>The Liberty Hampshire Company, LLC</interestOwnedEntity>
+        <entityType>DE</entityType>
+        <status>Membership interest holder</status>
+        <dateTitleOrStatusAcquired>10/2014</dateTitleOrStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <irsTaxNo>45-3935220</irsTaxNo>
+      </scheduleBInfo>
+      <scheduleBInfo>
+        <fullLegalName>Liberty Hampshire Holdings, LLC</fullLegalName>
+        <interestOwnedEntity>Guggenheim Treasury Services, LLC</interestOwnedEntity>
+        <entityType>DE</entityType>
+        <status>Membership interest holder</status>
+        <dateTitleOrStatusAcquired>02/2011</dateTitleOrStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <irsTaxNo>77-0709769</irsTaxNo>
+      </scheduleBInfo>
+      <scheduleBInfo>
+        <fullLegalName>Guggenheim Capital, LLC</fullLegalName>
+        <interestOwnedEntity>Liberty Hampshire Holdings, LLC</interestOwnedEntity>
+        <entityType>DE</entityType>
+        <status>Membership interest holder</status>
+        <dateTitleOrStatusAcquired>12/2007</dateTitleOrStatusAcquired>
+        <ownershipCode>E</ownershipCode>
+        <controlPerson>Y</controlPerson>
+        <irsTaxNo>36-4358656</irsTaxNo>
+      </scheduleBInfo>
+    </scheduleB>
+    <scheduleD>
+      <scheduleDOne>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <initialOrAmended>AMENDED</initialOrAmended>
+        <sectionFour>
+          <recordsKeptDetails>
+            <recordsKept>
+              <responseType>Item 11A</responseType>
+              <firmOrOrganizationName>KPMG LLP</firmOrOrganizationName>
+              <firmAddress>
+                <com:street1>Two Manhattan West 375 Ninth Avenue</com:street1>
+                <com:city>New York</com:city>
+                <com:stateOrCountry>NY</com:stateOrCountry>
+                <com:zipCode>10001-1875</com:zipCode>
+              </firmAddress>
+              <firmEffectiveDate>04-02-2024</firmEffectiveDate>
+              <descriptionArrangement>External Auditor</descriptionArrangement>
+            </recordsKept>
+          </recordsKeptDetails>
+          <controlThroughAgreementDetails>
+            <controlThroughAgreement>
+              <responseType>Item 12A</responseType>
+              <firmOrOrganizationName>Guggenheim Treasury Services, LLC</firmOrOrganizationName>
+              <firmAddress>
+                <com:street1>227 West Monroe Street</com:street1>
+                <com:city>Chicago</com:city>
+                <com:stateOrCountry>IL</com:stateOrCountry>
+                <com:zipCode>60606</com:zipCode>
+              </firmAddress>
+              <firmEffectiveDate>06-20-2017</firmEffectiveDate>
+              <descriptionArrangement>Guggenheim Treasury Services, LLC is the Manager of the Applicant pursuant to a Management Agreement dated June 20, 2017.</descriptionArrangement>
+            </controlThroughAgreement>
+            <controlThroughAgreement>
+              <responseType>Item 12A</responseType>
+              <firmOrOrganizationName>SAGE Assets, Inc.</firmOrOrganizationName>
+              <firmAddress>
+                <com:street1>5949 Sherry Lane</com:street1>
+                <com:street2>Suite 1880</com:street2>
+                <com:city>Dallas</com:city>
+                <com:stateOrCountry>TX</com:stateOrCountry>
+                <com:zipCode>75225</com:zipCode>
+              </firmAddress>
+              <firmEffectiveDate>04-15-2025</firmEffectiveDate>
+              <descriptionArrangement>SAGE Assets, Inc. has authority to appoint representatives to the Executive Committee of Guggenheim Capital, LLC ("GC"), an indirect parent of the Applicant. The Executive Committee influences high-level policies on business strategy for GC and its indirect subsidiaries, including the Applicant.</descriptionArrangement>
+            </controlThroughAgreement>
+          </controlThroughAgreementDetails>
+        </sectionFour>
+      </scheduleDOne>
+      <scheduleDTwo>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <initialOrAmended>AMENDED</initialOrAmended>
+        <engagedInSecurities>13A</engagedInSecurities>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM SECURITIES, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000040638</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE</com:street1>
+            <com:city>NEW YORK</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>12-31-2001</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>N</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Securities, LLC Is wholly owned by Links Holding LLC which is indirectly owned by Guggenheim Capital, LLC. Guggenheim Securities, LLC is a registered Broker Dealer.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>ASSET CONSULTING GROUP, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000107574</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>231 SOUTH BEMISTON AVENUE, 14th FLOOR</com:street1>
+            <com:city>ST. LOUIS</com:city>
+            <com:stateOrCountry>MO</com:stateOrCountry>
+            <com:zipCode>63105</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>12-31-2001</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Asset Consulting Group, LLC is wholly-owned by GWM Holdco, LLC which is a majority-owned subsidiary of Guggenheim Capital, LLC and is an investment adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GS GAMMA ADVISORS, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000135424</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE, 10TH FLOOR</com:street1>
+            <com:city>NEW YORK</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>07-01-2005</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>GS Gamma Advisors, LLC is partially-owned by Guggenheim Partners Investment Management Holdings, LLC, which is indirectly majority-owned by Guggenheim Capital, LLC. GS Gamma Advisors, LLC is an investment adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM CORPORATE FUNDING, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000300895</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE, 10TH FLOOR</com:street1>
+            <com:city>New York</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>04-25-2019</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Corporate Funding, LLC is wholly owned by Guggenheim Private Investments Holdings, LLC, which is indirectly majority-owned by Guggenheim Capital, LLC. Guggenheim Corporate Funding, LLC is an investment adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM FUNDS DISTRIBUTORS, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000039805</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>227 WEST MONROE STREET, 7TH FLOOR</com:street1>
+            <com:city>CHICAGO</com:city>
+            <com:stateOrCountry>IL</com:stateOrCountry>
+            <com:zipCode>60606</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>09-21-2009</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Funds Distributors, LLC is wholly-owned by Guggenheim Funds Services, LLC which is indirectly majority-owned by Guggenheim Capital, LLC. The LLC is a dually registered Broker Dealer and Investment Adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM GNP, LLC</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>227 W. MONROE STREET, 7TH FLOOR</com:street1>
+            <com:city>CHICAGO</com:city>
+            <com:stateOrCountry>IL</com:stateOrCountry>
+            <com:zipCode>60606</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>06-23-2005</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim GNP, LLC (f/k/a Guggenheim Nicklaus Partners, LLC) is majority-owned by GC Parent Holdings, LLC which is wholly owned by Guggenheim Capital, LLC and is an unregistered Investment Adviser.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM INVESTMENT ADVISORS (EUROPE) LIMITED</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>86 JERMYN STREET, 2ND FLOOR</com:street1>
+            <com:street2>ST. JAMES'S</com:street2>
+            <com:city>LONDON</com:city>
+            <com:stateOrCountry>X0</com:stateOrCountry>
+            <com:zipCode>SW1Y 6JD</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>01-27-2010</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>X0</countryOfDomicile>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Investment Advisors (Europe) is indirectly wholly-owned by GIA Europe Holdings, Ltd which is a majority-owned subsidiary of Guggenheim Capital, LLC and is an Investment Adviser authorized by the FCA.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM INVESTMENT ADVISORS, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000108263</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE</com:street1>
+            <com:city>NEW YORK</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>10-01-2001</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Investment Advisors, LLC is wholly-owned by GWM Holdco, LLC, which is a majority-owned subsidiary of Guggenheim Capital, LLC and is an Investment Adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM INVESTMENTS</partnerCorpOrgName>
+          <partnerCrdNumber>000105477</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>9401 INDIAN CREEK PARKWAY, SUITE 950</com:street1>
+            <com:city>OVERLAND PARK</com:city>
+            <com:stateOrCountry>KS</com:stateOrCountry>
+            <com:zipCode>66210</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>07-30-2010</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Security Investors, LLC (d/b/a Guggenheim Investments) is wholly-owned by Rydex Holdings, LLC, which is indirectly majority-owned by Guggenheim Capital, LLC and is an Investment Adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM INVESTMENTS</partnerCorpOrgName>
+          <partnerCrdNumber>000129288</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>227 WEST MONROE STREET, 49TH FLOOR</com:street1>
+            <com:city>CHICAGO</com:city>
+            <com:stateOrCountry>IL</com:stateOrCountry>
+            <com:zipCode>60606</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>09-21-2009</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Funds Investment Advisors, LLC (D/b/a Guggenheim Investments) is wholly-owned by Guggenheim Funds Services, LLC which is indirectly majority-owned by Guggenheim Capital, LLC. The LLC is an Investment Adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM INVESTOR SERVICES, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000030096</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE, 10TH FLOOR</com:street1>
+            <com:city>NEW YORK</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>12-31-2001</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>N</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Investor Services, LLC is wholly-owned by Guggenheim Fund Services, LLC which is indirectly majority-owned by Guggenheim Capital, LLC. Guggenheim Investor Services, LLC is a registered Broker Dealer.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM WEALTH SOLUTIONS, LLC (F/K/A GUGGENHEIM PARTNERS ADVISORS, LLC)</partnerCorpOrgName>
+          <partnerCrdNumber>000283238</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>100 WILSHIRE BLVD., SUITE 500</com:street1>
+            <com:city>SANTA MONICA</com:city>
+            <com:stateOrCountry>CA</com:stateOrCountry>
+            <com:zipCode>90401</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>04-08-2016</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Wealth Solutions, LLC is wholly-owned by Guggenheim Partners Investment Management Holding, LLC which is indirectly majority-owned by Guggenheim Capital, LLC and is an Investment Adviser registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM PARTNERS EUROPE LIMITED</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>SOUTH DOCK HOUSE, HANOVER QUAY</com:street1>
+            <com:street2>1ST FLOOR</com:street2>
+            <com:city>DUBLIN</com:city>
+            <com:stateOrCountry>L2</com:stateOrCountry>
+            <com:zipCode>2</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>08-22-2007</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>L2</countryOfDomicile>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Partners Europe Limited is wholly-owned by GPIMH Sub Holdco, Inc. which is indirectly majority owned by Guggenheim Capital, LLC and authorized as an Investment Firm with the Central Bank of Ireland Commission.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM PARTNERS INDIA MANAGEMENT, LLC</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>227 WEST MONROE STREET, SUITE 4900</com:street1>
+            <com:city>CHICAGO</com:city>
+            <com:stateOrCountry>IL</com:stateOrCountry>
+            <com:zipCode>60606</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>12-08-2008</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Partners India Management, LLC is wholly owned by Guggenheim Partners India Holdings, LLC, which is indirectly majority-owned by Guggenheim Capital, LLC and an Investment Adviser.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>BEACON CAPITAL MANAGEMENT, INC.</partnerCorpOrgName>
+          <partnerCrdNumber>000120641</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>7777 WASHINGTON VILLAGE DR.</com:street1>
+            <com:street2>SUITE 208</com:street2>
+            <com:city>DAYTON</com:city>
+            <com:stateOrCountry>OH</com:stateOrCountry>
+            <com:zipCode>45459</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>04-01-2021</effectiveDate>
+          <terminationDate>04-15-2025</terminationDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Beacon Capital Management Inc. is wholly owned by Sammons Financial Group, Inc. which is indirectly wholly owned by Consolidated Investment Services, Inc., which indirectly partially owns Guggenheim Capital, LLC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM INVESTMENTS LOAN ADVISORS, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000339528</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>300 First Stamford Place</com:street1>
+            <com:city>Stamford</com:city>
+            <com:stateOrCountry>CT</com:stateOrCountry>
+            <com:zipCode>06902</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>01-06-2026</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Investments Loan Advisors, LLC is wholly-owned by Guggenheim Private Investments Holdings, LLC which is indirectly majority owned by Guggenheim Capital, LLC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM ASSET-BACKED FINANCE COMPANY, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000340242</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 Madison Avenue</com:street1>
+            <com:city>New York</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>04-21-2026</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Asset-Backed Finance Company, LLC is wholly owned by Links Holding LLC which Is directly owned By Guggenheim Partners, LLC. (99.5%) and Guggenheim Manager, LLC (0.5%). It is a registered SEC Investment Advisor.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM PRIVATE INVESTMENTS, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000331479</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE, 10TH FLOOR</com:street1>
+            <com:city>NEW YORK</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>09-11-2024</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Private Investments, LLC is wholly owned by Guggenheim Private Investments Holdings, LLC, which is indirectly wholly owned by Guggenheim Capital, LLC and is an Investment Advisor registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM PARTNERS INVESTMENT MANAGEMENT, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000137432</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>100 WILSHIRE BLVD., SUITE 500 90401</com:street1>
+            <com:city>SANTA MONICA</com:city>
+            <com:stateOrCountry>CA</com:stateOrCountry>
+            <com:zipCode>90401</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>11-04-2005</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Partners Investment Management, LLC Is majority owned by Guggenheim Partners Investment Management Holdings, LLC, which is indirectly majority owned by Guggenheim Capital, LLC and is an Investment Adviser Registered with the SEC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM PARTNERS JAPAN, LTD.</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>OTEMACHI FIRST SQUARE, WEST TOWER 1-5-1</com:street1>
+            <com:street2>OTEMACHI 13-F</com:street2>
+            <com:city>TOKYO</com:city>
+            <com:stateOrCountry>M0</com:stateOrCountry>
+            <com:zipCode>100-0004</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>02-17-2015</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>M0</countryOfDomicile>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Partners Japan, Ltd. is wholly owned by Links GPJL Holdco, LLC and indirectly majority owned by Guggenheim Capital, LLC and is registered with Kanto Financial Bureau.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM PARTNERS MIDDLE EAST LIMITED</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>OFFICE 602, LEVEL 6, BURJ DAMAN DIFC</com:street1>
+            <com:city>DUBAI</com:city>
+            <com:stateOrCountry>C0</com:stateOrCountry>
+            <com:zipCode>000000</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>09-14-2015</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>C0</countryOfDomicile>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Partners Middle East Limited (Fka Guggenheim KBBO Partners Limited) is wholly owned by Links GKPL Holdco, LLC which is indirectly majority owned by Guggenheim Capital, LLC and Is authorized by the DFSA.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM SECURITIES INTERNATIONAL LTD</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>11 Hanover Street, 2nd Floor</com:street1>
+            <com:city>London</com:city>
+            <com:stateOrCountry>X0</com:stateOrCountry>
+            <com:zipCode>W1S 1YQ</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>02-02-2015</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>X0</countryOfDomicile>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>N</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Securities International, Ltd is wholly owned by Links Holding, LLC which is indirectly majority owned by Guggenheim Capital, LLC and is authorized dealer with the FCA.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM SECURITIES RESEARCH SERVICES, LLC</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>330 MADISON AVENUE</com:street1>
+            <com:city>New York</com:city>
+            <com:stateOrCountry>NY</com:stateOrCountry>
+            <com:zipCode>10017</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>07-17-2023</effectiveDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Securities Research Services LLC is wholly owned by Links Holding LLC which is indirectly owned by Guggenheim Capital, LLC. Guggenheim Securities Research Services LLC provides equity research and related services to institutional clients.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>SAMMONS FINANCIAL GROUP ASSET MANAGEMENT, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000321109</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>8300 Mills Civic Parkway</com:street1>
+            <com:city>West Des Moines</com:city>
+            <com:stateOrCountry>IA</com:stateOrCountry>
+            <com:zipCode>50266</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>06-13-2022</effectiveDate>
+          <terminationDate>04-15-2025</terminationDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Sammons Financial Group Asset Management, LLC is wholly-owned by Sammons Financial Group, Inc., which is indirectly wholly-owned by Consolidated Investments Services, Inc., which indirectly partially owns Guggenheim Capital, LLC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>SAMMONS FINANCIAL NETWORK, LLC</partnerCorpOrgName>
+          <partnerCrdNumber>000158538</partnerCrdNumber>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>8300 Mills Civic Parkway</com:street1>
+            <com:city>West Des Moines</com:city>
+            <com:stateOrCountry>IA</com:stateOrCountry>
+            <com:zipCode>50266</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>06-01-2011</effectiveDate>
+          <terminationDate>04-15-2025</terminationDate>
+          <isForeignEntity>N</isForeignEntity>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>N</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Sammons Financial Network, LLC is wholly-owned by Sammons Securities, Inc., which is indirectly wholly-owned by Consolidated Investment Services, Inc. which indirectly partially owns Guggenheim Capital, LLC.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>TRANSPARENT VALUE PRIVATE LIMITED</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>R Square Road, 12 Floor</com:street1>
+            <com:street2>Andheri Kurla Road, Near Chakala Metro Station</com:street2>
+            <com:city>Mumbai</com:city>
+            <com:stateOrCountry>K7</com:stateOrCountry>
+            <com:zipCode>400059</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>08-15-2018</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>K7</countryOfDomicile>
+          <isSecurityAct>N</isSecurityAct>
+          <isInvestmentAdvisoryAct>Y</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Transparent Value Private Limited is directly majority owned by Transparent Value, LLC which is indirectly majority owned by Guggenheim Capital, LLC and is an unregistered Investment Advisor.</descriptionRelationship>
+        </sectionFive>
+        <sectionFive>
+          <partnerCorpOrgName>GUGGENHEIM SECURITIES EUROPE LIMITED</partnerCorpOrgName>
+          <partnerCorpOrgType>under common control with applicant</partnerCorpOrgType>
+          <partnerAddress>
+            <com:street1>7/8 MOUNT STREET UPPER, OFFICE NR 1</com:street1>
+            <com:city>DUBLIN 2</com:city>
+            <com:stateOrCountry>L2</com:stateOrCountry>
+            <com:zipCode>D02YY71</com:zipCode>
+          </partnerAddress>
+          <effectiveDate>03-22-2024</effectiveDate>
+          <isForeignEntity>Y</isForeignEntity>
+          <countryOfDomicile>L2</countryOfDomicile>
+          <isSecurityAct>Y</isSecurityAct>
+          <isInvestmentAdvisoryAct>N</isInvestmentAdvisoryAct>
+          <descriptionRelationship>Guggenheim Securities Europe Limited is wholly owned by Guggenheim Securities Ireland Holdings, LLC which is indirectly majority owned by Guggenheim Capital, LLC and authorized as a broker dealer with The Central Bank Of Ireland Commission.</descriptionRelationship>
+        </sectionFive>
+      </scheduleDTwo>
+      <scheduleDThree>
+        <applicantName>GIFMS Capital Company, LLC</applicantName>
+        <initialOrAmended>INITIAL</initialOrAmended>
+      </scheduleDThree>
+    </scheduleD>
+    <scheduleE>
+      <applicantName>GIFMS Capital Company, LLC</applicantName>
+    </scheduleE>
+    <scheduleF>
+      <applicantName>GIFMS Capital Company, LLC</applicantName>
+    </scheduleF>
+    <regulatoryDrpInfo>
+      <sbse:regulatoryDrp>
+        <sbse:initialOrAmended>INITIAL</sbse:initialOrAmended>
+        <sbse:respondingTo>
+          <sbse:responseQuestion>14C(2)</sbse:responseQuestion>
+        </sbse:respondingTo>
+        <sbse:drpFiledFor>One or more control affiliate(s)</sbse:drpFiledFor>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000129288</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM FUND INVESTMENT ADVISORS, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000137432</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM PARTNERS INVESTMENT MANAGEMENT, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000040638</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM SECURITIES, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+      </sbse:regulatoryDrp>
+      <sbse:regulatoryDrp>
+        <sbse:initialOrAmended>INITIAL</sbse:initialOrAmended>
+        <sbse:respondingTo>
+          <sbse:responseQuestion>14C(4)</sbse:responseQuestion>
+        </sbse:respondingTo>
+        <sbse:drpFiledFor>One or more control affiliate(s)</sbse:drpFiledFor>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000040638</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM SECURITIES, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000129288</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM FUND INVESTMENT ADVISORS, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000137432</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM PARTNERS INVESTMENT MANAGEMENT, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+      </sbse:regulatoryDrp>
+      <sbse:regulatoryDrp>
+        <sbse:initialOrAmended>INITIAL</sbse:initialOrAmended>
+        <sbse:respondingTo>
+          <sbse:responseQuestion>14C(5)</sbse:responseQuestion>
+        </sbse:respondingTo>
+        <sbse:drpFiledFor>One or more control affiliate(s)</sbse:drpFiledFor>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000137432</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM PARTNERS INVESTMENT MANAGEMENT, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000040638</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM SECURITIES, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+      </sbse:regulatoryDrp>
+      <sbse:regulatoryDrp>
+        <sbse:initialOrAmended>INITIAL</sbse:initialOrAmended>
+        <sbse:respondingTo>
+          <sbse:responseQuestion>14D(2)</sbse:responseQuestion>
+        </sbse:respondingTo>
+        <sbse:drpFiledFor>One or more control affiliate(s)</sbse:drpFiledFor>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000105477</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>SECURITY INVESTORS, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+      </sbse:regulatoryDrp>
+      <sbse:regulatoryDrp>
+        <sbse:initialOrAmended>INITIAL</sbse:initialOrAmended>
+        <sbse:respondingTo>
+          <sbse:responseQuestion>14E(2)</sbse:responseQuestion>
+        </sbse:respondingTo>
+        <sbse:drpFiledFor>One or more control affiliate(s)</sbse:drpFiledFor>
+        <sbse:controlAffiliate>
+          <sbse:controlAffiliateDetails>
+            <sbse:crdNumber>000040638</sbse:crdNumber>
+            <sbse:personType>Firm</sbse:personType>
+            <sbse:isPersonRegistered>Y</sbse:isPersonRegistered>
+            <sbse:nameOfFirm>GUGGENHEIM SECURITIES, LLC</sbse:nameOfFirm>
+            <sbse:isSubmittedToCRD>Y</sbse:isSubmittedToCRD>
+          </sbse:controlAffiliateDetails>
+          <sbse:regulatoryDrpDetails/>
+        </sbse:controlAffiliate>
+      </sbse:regulatoryDrp>
+    </regulatoryDrpInfo>
+    <execution>
+      <executionDate>06-24-2026</executionDate>
+      <nameOfApplicant>GIFMS Capital Company, LLC</nameOfApplicant>
+      <signature>CAREY D. FEAR</signature>
+      <nameOfPersonSigning>CAREY D. FEAR</nameOfPersonSigning>
+      <titleOfPersonSigning>CHIEF COMPLIANCE OFFICER</titleOfPersonSigning>
+    </execution>
+  </formData>
+</edgarSubmission>

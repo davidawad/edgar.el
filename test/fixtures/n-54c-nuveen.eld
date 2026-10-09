@@ -1,0 +1,1 @@
+(:accn "0002071136-26-000023" :form "N-54C" :company "Nuveen Churchill BDC V" :filed "2026-05-12" :doc "bdcv-formnx54cmay2026.htm" :cik 2071136 :url "https://www.sec.gov/Archives/edgar/data/2071136/000207113626000023/bdcv-formnx54cmay2026.htm")

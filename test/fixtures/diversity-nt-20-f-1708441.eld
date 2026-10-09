@@ -1,0 +1,1 @@
+(:accn "0001708441-26-000049" :form "NT 20-F" :company "Mynd.ai, Inc." :filed "2026-04-30" :report "" :doc "mynd2025nt-20xf.htm" :cik 1708441 :url "https://www.sec.gov/Archives/edgar/data/1708441/000170844126000049/mynd2025nt-20xf.htm" :size 30002 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

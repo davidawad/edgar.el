@@ -1,0 +1,1 @@
+(:accn "0001753926-26-001008" :form "40FR12B" :filed "2026-06-12" :report "" :doc "g085054_40f.htm" :cik 1680637 :url "https://www.sec.gov/Archives/edgar/data/1680637/000175392626001008/g085054_40f.htm" :ticker "")

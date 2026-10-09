@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/maifiler" xmlns:com="http://www.sec.gov/edgar/common_ma" xmlns:com1="http://www.sec.gov/edgar/common">
+  <headerData>
+    <submissionType>MA-I</submissionType>
+    <filerInfo>
+      <com:filer>
+        <com1:filerId>0001617793</com1:filerId>
+        <com1:filerCcc>XXXXXXXX</com1:filerCcc>
+      </com:filer>
+      <com:contact>
+        <com1:name>Sergio Costa</com1:name>
+        <com1:phoneNumber>2127735219</com1:phoneNumber>
+      </com:contact>
+      <com:contactEmail>Sergio.Costa@ey.com</com:contactEmail>
+      <com:notifications>
+        <com1:internetNotificationAddress>jared.nijoka@ey.com</com1:internetNotificationAddress>
+      </com:notifications>
+    </filerInfo>
+  </headerData>
+  <formData>
+    <isAmendment>N</isAmendment>
+    <isIndividual>N</isIndividual>
+    <applicantName>
+      <com:firstName>Elisa</com:firstName>
+      <com:middleName>KEVIN</com:middleName>
+      <com:lastName>Martinez</com:lastName>
+      <com:suffix>MISS</com:suffix>
+    </applicantName>
+    <hasMoreThanOneAdvisoryFirms>N</hasMoreThanOneAdvisoryFirms>
+    <noOfAdvisoryFirms>1</noOfAdvisoryFirms>
+    <municipalAdvisorOffices>
+      <municipalAdvisorOffice>
+        <municipalFirm>
+          <municipalFiler>
+            <filerId>0001617793</filerId>
+          </municipalFiler>
+          <municipalFirmName>Ernst &amp; Young Infrastructure Advisors, LLC</municipalFirmName>
+          <municipalDbaName>Ernst &amp; Young Infrastructure Advisors, LLC</municipalDbaName>
+          <recentEmploymentCommencedDate>09-12-2025</recentEmploymentCommencedDate>
+          <isIndependentRelatioship>N</isIndependentRelatioship>
+        </municipalFirm>
+        <maRegistration>
+          <secRegistration>
+            <com:fileNumber>867-00788</com:fileNumber>
+          </secRegistration>
+        </maRegistration>
+        <advisorOffices>
+          <advisorOffice>
+            <locationInfo>LOCATED</locationInfo>
+            <startDate>09-12-2025</startDate>
+            <addressInfo>
+              <com:address>
+                <com1:street1>1101 NEW YORK AVE NW</com1:street1>
+                <com1:city>WASHINGTON</com1:city>
+                <com1:stateOrCountry>DC</com1:stateOrCountry>
+                <com1:zipCode>20005</com1:zipCode>
+              </com:address>
+            </addressInfo>
+          </advisorOffice>
+        </advisorOffices>
+      </municipalAdvisorOffice>
+    </municipalAdvisorOffices>
+    <residentialHistory>
+
+
+    </residentialHistory>
+    <employmentHistory>
+      <currentEmployer>
+        <startDate>09-2025</startDate>
+        <name>Ernst &amp; Young Infrastructure Advisors, LLC</name>
+        <addressInfo>
+          <city>WASHINGTON</city>
+          <stateOrCountry>
+            <com1:stateOrCountry>DC</com1:stateOrCountry>
+          </stateOrCountry>
+          <zipCode>20005</zipCode>
+        </addressInfo>
+        <isRelatedToMunicipalAdvisor>Y</isRelatedToMunicipalAdvisor>
+        <isRelatedToInvestment>N</isRelatedToInvestment>
+        <positionDescription>Senior Associate</positionDescription>
+      </currentEmployer>
+      <priorEmployers>
+        <priorEmployer>
+          <startDate>05-2025</startDate>
+          <endDate>09-2025</endDate>
+          <name>Extended travel</name>
+          <addressInfo>
+            <city>WASHINGTON</city>
+            <stateOrCountry>
+              <com1:stateOrCountry>DC</com1:stateOrCountry>
+            </stateOrCountry>
+            <zipCode>20002</zipCode>
+          </addressInfo>
+          <isRelatedToMunicipalAdvisor>N</isRelatedToMunicipalAdvisor>
+          <isRelatedToInvestment>N</isRelatedToInvestment>
+          <positionDescription>UNEMPLOYED</positionDescription>
+        </priorEmployer>
+        <priorEmployer>
+          <startDate>09-2022</startDate>
+          <endDate>05-2025</endDate>
+          <name>COLUMBIA UNIVERSITY</name>
+          <addressInfo>
+            <city>NEW YORK</city>
+            <stateOrCountry>
+              <com1:stateOrCountry>NY</com1:stateOrCountry>
+            </stateOrCountry>
+            <zipCode>10027</zipCode>
+          </addressInfo>
+          <isRelatedToMunicipalAdvisor>N</isRelatedToMunicipalAdvisor>
+          <isRelatedToInvestment>N</isRelatedToInvestment>
+          <positionDescription>FULL-TIME STUDENT</positionDescription>
+        </priorEmployer>
+        <priorEmployer>
+          <startDate>05-2022</startDate>
+          <endDate>09-2022</endDate>
+          <name>EXTENDED TRAVEL</name>
+          <addressInfo>
+            <city>CHICAGO</city>
+            <stateOrCountry>
+              <com1:stateOrCountry>IL</com1:stateOrCountry>
+            </stateOrCountry>
+            <zipCode>60601</zipCode>
+          </addressInfo>
+          <isRelatedToMunicipalAdvisor>N</isRelatedToMunicipalAdvisor>
+          <isRelatedToInvestment>N</isRelatedToInvestment>
+          <positionDescription>EXTENDED TRAVEL</positionDescription>
+        </priorEmployer>
+        <priorEmployer>
+          <startDate>08-2019</startDate>
+          <endDate>05-2022</endDate>
+          <name>ILLINOIS DEPARTMENT OF CENTRAL MANAGEMENT SERVICES</name>
+          <addressInfo>
+            <city>CHICAGO</city>
+            <stateOrCountry>
+              <com1:stateOrCountry>IL</com1:stateOrCountry>
+            </stateOrCountry>
+            <zipCode>60601</zipCode>
+          </addressInfo>
+          <isRelatedToMunicipalAdvisor>N</isRelatedToMunicipalAdvisor>
+          <isRelatedToInvestment>N</isRelatedToInvestment>
+          <positionDescription>DATA ANALYTICS MANAGER</positionDescription>
+        </priorEmployer>
+        <priorEmployer>
+          <startDate>08-2018</startDate>
+          <endDate>08-2019</endDate>
+          <name>ILLINOIS GOVERNOR'S OFFICE</name>
+          <addressInfo>
+            <city>CHICAGO</city>
+            <stateOrCountry>
+              <com1:stateOrCountry>IL</com1:stateOrCountry>
+            </stateOrCountry>
+            <zipCode>60601</zipCode>
+          </addressInfo>
+          <isRelatedToMunicipalAdvisor>N</isRelatedToMunicipalAdvisor>
+          <isRelatedToInvestment>N</isRelatedToInvestment>
+          <positionDescription>DUNN FELLOW</positionDescription>
+        </priorEmployer>
+        <priorEmployer>
+          <startDate>08-2014</startDate>
+          <endDate>06-2018</endDate>
+          <name>YALE UNIVERSITY</name>
+          <addressInfo>
+            <city>HARTFORD</city>
+            <stateOrCountry>
+              <com1:stateOrCountry>CT</com1:stateOrCountry>
+            </stateOrCountry>
+            <zipCode>06511</zipCode>
+          </addressInfo>
+          <isRelatedToMunicipalAdvisor>N</isRelatedToMunicipalAdvisor>
+          <isRelatedToInvestment>N</isRelatedToInvestment>
+          <positionDescription>FULL-TIME STUDENT</positionDescription>
+        </priorEmployer>
+      </priorEmployers>
+    </employmentHistory>
+    <isEngagedInOtherBusiness>N</isEngagedInOtherBusiness>
+    <disclosureQuestions>
+      <criminalDisclosure>
+        <criminalDisclosureCommonQuestion>
+          <com:isConvictedOfFelony>N</com:isConvictedOfFelony>
+          <com:isChargedWithFelony>N</com:isChargedWithFelony>
+          <com:isOrgConvictedOfFelony>N</com:isOrgConvictedOfFelony>
+          <com:isOrgChargedWithFelony>N</com:isOrgChargedWithFelony>
+        </criminalDisclosureCommonQuestion>
+        <isConvictedOfMisdemeanor>N</isConvictedOfMisdemeanor>
+        <isChargedWithMisdemeanor>N</isChargedWithMisdemeanor>
+        <isOrgConvictedOfMisdemeanor>N</isOrgConvictedOfMisdemeanor>
+        <isOrgChargedWithMisdemeanor>N</isOrgChargedWithMisdemeanor>
+      </criminalDisclosure>
+      <regulatoryDisclosure>
+        <regulatoryDisclosureCommonQuestion>
+          <com:isMadeFalseStatement>N</com:isMadeFalseStatement>
+          <com:isViolatedRegulation>N</com:isViolatedRegulation>
+          <com:isCauseOfDenial>N</com:isCauseOfDenial>
+          <com:isOrderAgainst>N</com:isOrderAgainst>
+          <com:isImposedPenalty>N</com:isImposedPenalty>
+          <com:isUnEthical>N</com:isUnEthical>
+          <com:isFoundInViolationOfRegulation>N</com:isFoundInViolationOfRegulation>
+          <com:isFoundInCauseOfDenial>N</com:isFoundInCauseOfDenial>
+          <com:isOrderAgainstActivity>N</com:isOrderAgainstActivity>
+          <com:isDeniedLicense>N</com:isDeniedLicense>
+          <com:isFoundMadeFalseStatement>N</com:isFoundMadeFalseStatement>
+          <com:isFoundInViolationOfRules>N</com:isFoundInViolationOfRules>
+          <com:isFoundInCauseOfSuspension>N</com:isFoundInCauseOfSuspension>
+          <com:isDiscipliend>N</com:isDiscipliend>
+          <com:isAuthorizedToActAttorney>N</com:isAuthorizedToActAttorney>
+          <com:isRegulatoryComplaint>N</com:isRegulatoryComplaint>
+        </regulatoryDisclosureCommonQuestion>
+        <isViolatedSecurityAct>N</isViolatedSecurityAct>
+        <isWillFullyAided>N</isWillFullyAided>
+        <isFailedToSupervise>N</isFailedToSupervise>
+        <isFoundWillFullyAided>N</isFoundWillFullyAided>
+        <isAssociationBared>N</isAssociationBared>
+        <isFinalOrder>N</isFinalOrder>
+        <isWillFullyViolatedSecurityAct>N</isWillFullyViolatedSecurityAct>
+        <isFailedResonably>N</isFailedResonably>
+      </regulatoryDisclosure>
+      <investigationDisclosure>
+        <isInvestigated>N</isInvestigated>
+      </investigationDisclosure>
+      <civilDisclosure>
+        <com:isEnjoined>N</com:isEnjoined>
+        <com:isFoundInViolationOfRegulation>N</com:isFoundInViolationOfRegulation>
+        <com:isDismissed>N</com:isDismissed>
+        <com:isNamedInCivilProceeding>N</com:isNamedInCivilProceeding>
+      </civilDisclosure>
+      <complaintDisclosure>
+        <isComplaintPending>N</isComplaintPending>
+        <isComplaintSettled>N</isComplaintSettled>
+        <isFraudCasePending>N</isFraudCasePending>
+        <isFraudCaseResultedAward>N</isFraudCaseResultedAward>
+        <isFraudCaseSettled>N</isFraudCaseSettled>
+      </complaintDisclosure>
+      <terminationDisclosure>
+        <isViloatedIndustryStandard>N</isViloatedIndustryStandard>
+        <isInvolvedInFraud>N</isInvolvedInFraud>
+        <isFailedToSupervise>N</isFailedToSupervise>
+      </terminationDisclosure>
+      <financialDisclosure>
+        <isCompromised>N</isCompromised>
+        <isBankruptcyPetition>N</isBankruptcyPetition>
+        <isTrusteeApointed>N</isTrusteeApointed>
+        <isBondRevoked>N</isBondRevoked>
+      </financialDisclosure>
+      <judgmentLienDisclosure>
+        <isLienAgainst>N</isLienAgainst>
+      </judgmentLienDisclosure>
+    </disclosureQuestions>
+    <signatureInfo>
+      <com:signature>
+        <com:dateSigned>04-20-2026</com:dateSigned>
+        <com:signature>Sergio Costa</com:signature>
+        <com:title>Chief Compliance Officer</com:title>
+      </com:signature>
+    </signatureInfo>
+  </formData>
+</edgarSubmission>

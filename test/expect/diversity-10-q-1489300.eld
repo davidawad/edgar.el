@@ -1,0 +1,13 @@
+(:form "10-Q" :text-bucket 15 :text-head
+       "UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington,"
+       :sections
+       (("I.1" 14 "ITEM 1. CONDENSED FINANCIAL STATEMENTS. ZHANLING I")
+	("I.2" 12 "ITEM 2. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FI")
+	("I.3" 7 "ITEM 3. QUANTITATIVE AND QUALITATIVE DISCLOSURES A")
+	("I.4" 10 "ITEM 4. CONTROLS AND PROCEDURES. DISCLOSURE CONTRO")
+	("II.1" 8 "ITEM 1. LEGAL PROCEEDINGS. The Company is not curr")
+	("II.1A" 7
+	 "ITEM 1A. RISK FACTORS As a smaller reporting compa")
+	("II.5" 5 "ITEM 5. OTHER INFORMATION. None. 16")
+	("II.6" 11
+	 "ITEM 6. EXHIBITS. (a) Exhibits required by Item 60")))

@@ -1,0 +1,1 @@
+(:accn "0001554855-26-000204" :form "15-12G" :company "Lavoro Ltd" :filed "2026-03-06" :report "" :doc "MainDocument.htm" :cik 1945711 :url "https://www.sec.gov/Archives/edgar/data/1945711/000155485526000204/MainDocument.htm" :size 18104 :sample-vintage "diversity" :sample-quarter "2026-Q1" :sample-seed "edgar-form-coverage-v1")

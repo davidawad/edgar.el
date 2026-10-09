@@ -1,0 +1,1 @@
+(:accn "0001193125-26-286952" :form "SC 14D9" :filed "2026-06-29" :cik 1806201 :doc "d140679dsc14d9.htm" :url "https://www.sec.gov/Archives/edgar/data/1806201/000119312526286952/d140679dsc14d9.htm" :company "Open Lending Corp.")

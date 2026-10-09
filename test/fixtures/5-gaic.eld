@@ -1,0 +1,1 @@
+(:accn "0000040417-26-000021" :form "5" :filed "2026-02-03" :report "2025-12-15" :doc "primary_doc.xml" :cik 40417 :url "https://www.sec.gov/Archives/edgar/data/40417/000004041726000021/primary_doc.xml")

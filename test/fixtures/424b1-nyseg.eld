@@ -1,0 +1,1 @@
+(:accn "0001193125-25-021865" :form "424B1" :company "NEW YORK STATE ELECTRIC & GAS CORP" :filed "2025-02-06" :report "" :cik 71675 :doc "d928050d424b1.htm" :url "https://www.sec.gov/Archives/edgar/data/71675/000119312525021865/d928050d424b1.htm" :size 1103463 :sha256 "319727d3ab2485e5779aed4156868540ede70b2cd7ad8b89288681a0014be586")

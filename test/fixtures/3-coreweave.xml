@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ownershipDocument>
+  <schemaVersion>X0206</schemaVersion>
+  <documentType>3</documentType>
+  <periodOfReport>2026-01-23</periodOfReport>
+  <noSecuritiesOwned>0</noSecuritiesOwned>
+  <issuer><issuerCik>0001769628</issuerCik><issuerName>CoreWeave, Inc.</issuerName><issuerTradingSymbol>CRWV</issuerTradingSymbol></issuer>
+  <reportingOwner>
+    <reportingOwnerId><rptOwnerCik>0001045810</rptOwnerCik><rptOwnerName>NVIDIA CORP</rptOwnerName></reportingOwnerId>
+    <reportingOwnerAddress><rptOwnerStreet1>2788 SAN TOMAS EXPRESSWAY</rptOwnerStreet1><rptOwnerStreet2></rptOwnerStreet2><rptOwnerCity>SANTA CLARA</rptOwnerCity><rptOwnerState>CA</rptOwnerState><rptOwnerZipCode>95051</rptOwnerZipCode><rptOwnerStateDescription></rptOwnerStateDescription></reportingOwnerAddress>
+    <reportingOwnerRelationship><isDirector>0</isDirector><isOfficer>0</isOfficer><isTenPercentOwner>1</isTenPercentOwner><isOther>0</isOther></reportingOwnerRelationship>
+  </reportingOwner>
+  <nonDerivativeTable>
+    <nonDerivativeHolding>
+      <securityTitle><value>Class A common stock</value></securityTitle>
+      <postTransactionAmounts><sharesOwnedFollowingTransaction><value>47213353</value></sharesOwnedFollowingTransaction></postTransactionAmounts>
+      <ownershipNature><directOrIndirectOwnership><value>D</value></directOrIndirectOwnership></ownershipNature>
+    </nonDerivativeHolding>
+  </nonDerivativeTable>
+  <derivativeTable></derivativeTable>
+  <footnotes></footnotes>
+  <remarks></remarks>
+  <ownerSignature><signatureName>Rebecca Peters, Vice President, Deputy General Counsel and Assistant Secretary</signatureName><signatureDate>2026-01-26</signatureDate></ownerSignature>
+</ownershipDocument>

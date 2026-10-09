@@ -1,0 +1,1 @@
+(:accn "0001193125-26-384693" :form "N-MFP3" :filed "2026-09-08" :cik 933691 :doc "primary_doc.xml" :url "https://www.sec.gov/Archives/edgar/data/933691/000119312526384693/primary_doc.xml" :company "JNL Series Trust")

@@ -1,0 +1,1 @@
+(:accn "0001213900-26-071396" :form "15-12G" :company "LakeShore Biopharma Co., Ltd." :filed "2026-06-24" :report "" :doc "ea0295620-1512g_lakeshore.htm" :cik 1946399 :url "https://www.sec.gov/Archives/edgar/data/1946399/000121390026071396/ea0295620-1512g_lakeshore.htm" :size 13358 :sample-vintage "diversity" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

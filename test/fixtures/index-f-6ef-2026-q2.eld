@@ -1,0 +1,1 @@
+(:accn "0001019155-26-000171" :form "F-6EF" :company "BANK OF NEW YORK / ADR DIVISION" :filed "2026-04-14" :report "" :doc "sabespf6ef.htm" :cik 1201935 :url "https://www.sec.gov/Archives/edgar/data/1201935/000101915526000171/sabespf6ef.htm" :size 59519 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

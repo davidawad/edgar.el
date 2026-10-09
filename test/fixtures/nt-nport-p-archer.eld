@@ -1,0 +1,1 @@
+(:accn "0000894189-26-014328" :form "NT NPORT-P" :company "ARCHER INVESTMENT SERIES TRUST" :filed "2026-05-04" :report "2026-02-28" :doc "primary_doc.xml" :cik 1477491 :url "https://www.sec.gov/Archives/edgar/data/1477491/000089418926014328/primary_doc.xml")

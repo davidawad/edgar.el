@@ -1,0 +1,1 @@
+(:accn "0001321558-26-000002" :form "4/A" :filed "2026-03-23" :report "2026-03-16" :doc "xslF345X06/wk-form4a_1774282420.xml" :cik 883569 :url "https://www.sec.gov/Archives/edgar/data/883569/000132155826000002/xslF345X06/wk-form4a_1774282420.xml" :ticker "FOSL")

@@ -2,8 +2,8 @@
 
 ;; Shared by test/edgar-expect-test.el, test/edgar-golden-test.el and
 ;; tools/make-golden.el.  A fixture is a recorded real filing:
-;; test/fixtures/<slug>.eld (the filing plist) + <slug>.htm.gz (its primary
-;; document).  Everything here is offline.
+;; test/fixtures/<slug>.eld (the filing plist) plus a recorded primary document.
+;; Everything here is offline.
 
 (require 'cl-lib)
 (require 'subr-x)
@@ -18,13 +18,31 @@
   (expand-file-name rel edgar-fixtures--test-dir))
 
 (defun edgar-fixtures-slugs ()
-  "Slugs of every recorded fixture, sorted."
-  (sort (mapcar
-         #'file-name-sans-extension
-         (directory-files (edgar-fixtures-path "fixtures")
-                          nil
-                          "\\.eld\\'"))
+  "Slugs of every HTML filing fixture, sorted.
+XML-only and PDF-only fixtures are exercised by dedicated tests."
+  (sort (seq-filter
+         (lambda (slug)
+           (seq-some
+            (lambda (suffix)
+              (file-exists-p
+               (edgar-fixtures-path
+                (concat "fixtures/" slug suffix))))
+            '(".htm.gz" ".pdf" ".txt" ".htm")))
+         (mapcar
+          #'file-name-sans-extension
+          (directory-files (edgar-fixtures-path "fixtures")
+                           nil "\\.eld\\'")))
         #'string<))
+
+(defun edgar-fixtures--primary-file (slug)
+  "Absolute path of SLUG's rendered primary fixture."
+  (or (seq-find
+       #'file-exists-p
+       (mapcar
+        (lambda (suffix)
+          (edgar-fixtures-path (concat "fixtures/" slug suffix)))
+        '(".htm.gz" ".pdf" ".txt")))
+      (error "No rendered primary fixture for %s" slug)))
 
 (defun edgar-fixtures-read (file)
   "Read the Lisp object in FILE."
@@ -39,17 +57,49 @@
 
 (defun edgar-fixtures-html (slug)
   "Decompressed primary document of SLUG."
+  (edgar-fixtures-primary slug))
+
+(defun edgar-fixtures-primary (slug)
+  "Primary document body of SLUG, preserving PDF bytes."
   (with-temp-buffer
-    (let ((coding-system-for-read 'utf-8)
-          (auto-compression-mode t))
-      (insert-file-contents
-       (edgar-fixtures-path (concat "fixtures/" slug ".htm.gz"))))
+    (let ((file (edgar-fixtures--primary-file slug)))
+      (if (string-suffix-p ".pdf" file t)
+          (progn
+            (set-buffer-multibyte nil)
+            (insert-file-contents-literally file))
+        (let ((coding-system-for-read 'utf-8)
+              (auto-compression-mode t))
+          (insert-file-contents file))))
+    (buffer-string)))
+
+(defun edgar-fixtures-submission (slug)
+  "Decompressed complete-submission source recorded for SLUG."
+  (let ((file
+         (or (seq-find
+              #'file-exists-p
+              (mapcar
+               (lambda (suffix)
+                 (edgar-fixtures-path
+                  (concat "fixtures/" slug suffix)))
+               '(".txt.gz" ".txt")))
+             (error "No complete-submission fixture for %s" slug))))
+    (with-temp-buffer
+      (let ((auto-compression-mode t)
+            (coding-system-for-read 'utf-8))
+        (insert-file-contents file))
+      (buffer-string))))
+
+(defun edgar-fixtures-paper (slug)
+  "Raw `.paper' control document recorded for SLUG."
+  (with-temp-buffer
+    (insert-file-contents-literally
+     (edgar-fixtures-path (concat "fixtures/" slug ".paper")))
     (buffer-string)))
 
 (defun edgar-fixtures-text (slug)
   "SLUG's filing rendered by `edgar-text', fully offline."
-  (let ((html (edgar-fixtures-html slug)))
-    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) html)))
+  (let ((primary (edgar-fixtures-primary slug)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) primary)))
       (edgar-text (edgar-fixtures-filing slug)))))
 
 (defun edgar-fixtures-norm (s)

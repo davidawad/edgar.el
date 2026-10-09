@@ -1,0 +1,1 @@
+(:accn "0001376339-26-000082" :form "8-K/A" :filed "2026-08-11" :report "2026-07-29" :cik 1376339 :url "https://www.sec.gov/Archives/edgar/data/1376339/000137633926000082/mdxg-20260729.htm" :ticker "MDXG" :doc "mdxg-20260729.htm" :size 75054 :sample-vintage "recent" :sample-quarter "2026-Q3" :sample-seed "edgar-form-coverage-v1")

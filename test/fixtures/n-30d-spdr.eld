@@ -1,0 +1,1 @@
+(:accn "0001193125-26-290785" :form "N-30D" :company "SPDR DOW JONES INDUSTRIAL AVERAGE ETF TRUST" :filed "2026-06-30" :report "2026-04-30" :doc "d163486dn30d.htm" :cik 1041130 :url "https://www.sec.gov/Archives/edgar/data/1041130/000119312526290785/d163486dn30d.htm")

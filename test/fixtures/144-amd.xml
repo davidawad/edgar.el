@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ownership" xmlns:ns2="http://www.sec.gov/edgar/common">
+  <headerData><submissionType>144</submissionType><filerInfo><filer><filerCredentials><cik>0001405109</cik><ccc>XXXXXXXX</ccc></filerCredentials></filer><liveTestFlag>LIVE</liveTestFlag></filerInfo></headerData>
+  <formData>
+    <issuerInfo>
+      <issuerCik>0000002488</issuerCik><issuerName>ADVANCED MICRO DEVICES, INC</issuerName><secFileNumber>001-07882</secFileNumber>
+      <issuerAddress><ns2:street1>2485 Augustine Drive</ns2:street1><ns2:city>Santa Clara</ns2:city><ns2:stateOrCountry>CA</ns2:stateOrCountry><ns2:zipCode>95054</ns2:zipCode></issuerAddress>
+      <issuerContactPhone>4087494000</issuerContactPhone><nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold>LISA SU</nameOfPersonForWhoseAccountTheSecuritiesAreToBeSold>
+      <relationshipsToIssuer><relationshipToIssuer>Director</relationshipToIssuer><relationshipToIssuer>Officer</relationshipToIssuer></relationshipsToIssuer>
+    </issuerInfo>
+    <securitiesInformation>
+      <securitiesClassTitle>Common</securitiesClassTitle>
+      <brokerOrMarketmakerDetails><name>Morgan Stanley Smith Barney LLC Executive Financial Services</name><address><ns2:street1>1 New York Plaza</ns2:street1><ns2:street2>8th Floor</ns2:street2><ns2:city>New York</ns2:city><ns2:stateOrCountry>NY</ns2:stateOrCountry><ns2:zipCode>10004</ns2:zipCode></address></brokerOrMarketmakerDetails>
+      <noOfUnitsSold>76496</noOfUnitsSold><aggregateMarketValue>10860902.08</aggregateMarketValue><noOfUnitsOutstanding>1622807346</noOfUnitsOutstanding>
+      <approxSaleDate>12/04/2024</approxSaleDate><securitiesExchangeName>NASDAQ</securitiesExchangeName>
+    </securitiesInformation>
+    <securitiesToBeSold><securitiesClassTitle>Common</securitiesClassTitle><acquiredDate>12/04/2024</acquiredDate><natureOfAcquisitionTransaction>Exercise of Stock Options</natureOfAcquisitionTransaction><nameOfPersonfromWhomAcquired>Issuer</nameOfPersonfromWhomAcquired><isGiftTransaction>N</isGiftTransaction><amountOfSecuritiesAcquired>76496</amountOfSecuritiesAcquired><paymentDate>12/04/2024</paymentDate><natureOfPayment>Cash</natureOfPayment></securitiesToBeSold>
+    <nothingToReportFlagOnSecuritiesSoldInPast3Months>N</nothingToReportFlagOnSecuritiesSoldInPast3Months>
+    <securitiesSoldInPast3Months><sellerDetails><name>10b5-1 Sales for LISA SU</name><address><ns2:street1>2485 Augustine Drive</ns2:street1><ns2:city>Santa Clara</ns2:city><ns2:stateOrCountry>CA</ns2:stateOrCountry><ns2:zipCode>95054</ns2:zipCode></address></sellerDetails><securitiesClassTitle>Common</securitiesClassTitle><saleDate>11/06/2024</saleDate><amountOfSecuritiesSold>80000</amountOfSecuritiesSold><grossProceeds>11509560.00</grossProceeds></securitiesSoldInPast3Months>
+    <securitiesSoldInPast3Months><sellerDetails><name>10b5-1 Sales for LISA SU</name><address><ns2:street1>2485 Augustine Drive</ns2:street1><ns2:city>Santa Clara</ns2:city><ns2:stateOrCountry>CA</ns2:stateOrCountry><ns2:zipCode>95054</ns2:zipCode></address></sellerDetails><securitiesClassTitle>Common</securitiesClassTitle><saleDate>09/11/2024</saleDate><amountOfSecuritiesSold>80000</amountOfSecuritiesSold><grossProceeds>11577472.00</grossProceeds></securitiesSoldInPast3Months>
+    <noticeSignature><noticeDate>12/04/2024</noticeDate><planAdoptionDates><planAdoptionDate>11/20/2023</planAdoptionDate></planAdoptionDates><signature>/s/ Lisa Su</signature></noticeSignature>
+  </formData>
+</edgarSubmission>
