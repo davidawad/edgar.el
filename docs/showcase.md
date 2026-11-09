@@ -279,6 +279,107 @@ At this threshold all of the 100 most widely held securities are still flagged,
 because T. Rowe Price alone moves 56 of them by more than 1%. At 5% it would be
 29 of them.
 
+## 6. Which funds hold a bond, and what a fund holds
+
+13F covers managers and US-listed equities. `edgar-nport-dataset` covers
+registered funds (mutual funds, ETFs, closed-end funds; not money market funds,
+which file Form N-MFP) and every asset class they report: bonds, munis, loans,
+asset-backed securities and derivatives as well as stocks. It reads the SEC's
+quarterly [Form N-PORT data
+sets](https://www.sec.gov/data-research/sec-markets-data/form-n-port-data-sets)
+(about 450 MB zipped each, 1.6 GB of tables unzipped) and builds its index the
+same way, in a batch Emacs subprocess:
+
+```elisp
+(edgar-nport-index-async
+ (lambda (index err)
+   (message "N-PORT index: %s vs %s" (plist-get index :period) (plist-get index :prior-period))))
+```
+
+Funds report every month, but only the last month of each fiscal quarter is
+made public, so the data set filed July to September 2026 holds reports dated
+May, June and July. The current period is the most common report date
+(2026-06-30); each fund's current report is its latest one dated May through
+July, and its prior report the one three months before that. The figures below
+are from the 2026 Q3 and Q2 data sets (run 2026-11-09): 14,116 funds, 9.7
+million holding rows and 1.2 million distinct securities.
+
+Apple's most widely held bond, and who holds it:
+
+```elisp
+(mapcar (lambda (row) (list (plist-get row :cusip) (plist-get row :title)
+                            (plist-get row :funds) (plist-get row :prior-funds)))
+        (plist-get (edgar-nport-securities :query "APPLE INC" :asset-category "DBT" :top 3) :rows))
+```
+
+```elisp
+(("037833AL4" "AAPL 3.85 05/04/43" 84 78)
+ ("037833EF3" "Apple, Inc. 2.65%, Due 02/08/2051" 80 80)
+ ("037833EE6" "Apple Inc" 76 64))
+```
+
+```elisp
+(let ((note (edgar-nport-holders "037833AL4")))
+  (list :funds (plist-get note :funds) :counts (plist-get note :counts)
+        :largest (mapcar (lambda (row) (list (plist-get row :fund-name) (plist-get row :balance)
+                                             (plist-get row :units) (plist-get row :status)))
+                         (seq-take (plist-get note :rows) 2))))
+```
+
+```elisp
+(:funds 84 :counts (:new 7 :added 16 :reduced 13 :unchanged 48 :exited 0 :not-reported 1)
+ :largest (("VANGUARD WELLINGTON FUND" 48000000 "PA" unchanged)
+           ("VANGUARD TOTAL BOND MARKET II INDEX FUND" 34463000 "PA" unchanged)))
+```
+
+`:units` `"PA"` means the balance is principal; shares are `"NS"` and
+contracts `"NC"`. `:issuer-category` filters by issuer type, so the most widely
+held municipal bonds are one call away. `holders` accepts a CUSIP, an ISIN or a
+ticker from the data set's IDENTIFIERS table:
+
+```elisp
+(mapcar (lambda (row) (list (plist-get row :cusip) (plist-get row :issuer) (plist-get row :funds)))
+        (plist-get (edgar-nport-securities :issuer-category "MUN" :top 2) :rows))
+```
+
+```elisp
+(("74529JPX7" "Puerto Rico Sales Tax Financing Corp Sales Tax Revenue" 265)
+ ("74529JQG3" "Puerto Rico Sales Tax Financing Corp Sales Tax Revenue" 199))
+```
+
+```elisp
+(let ((nvda (edgar-nport-holders "NVDA")))
+  (list (plist-get nvda :cusip) (plist-get nvda :funds) (plist-get nvda :counts)))
+```
+
+```elisp
+("67066G104" 2363 (:new 186 :added 845 :reduced 1092 :unchanged 240 :exited 27 :not-reported 27))
+```
+
+Going the other way, `edgar-nport-funds` searches series and registrant names
+and `edgar-nport-portfolio` takes a series id. Its counts reconcile as in 13F:
+138 + 1460 + 1334 + 613 = 3545 current holdings, and 1460 + 1334 + 613 + 116 +
+0 = 3523 prior ones.
+
+```elisp
+(let ((vtsm (edgar-nport-portfolio
+             (plist-get (car (edgar-nport-funds "total stock market index")) :series-id))))
+  (list (plist-get vtsm :fund-name) (plist-get vtsm :series-id) (plist-get vtsm :report-date)
+        (plist-get vtsm :holdings) (plist-get vtsm :prior-holdings) (plist-get vtsm :counts)
+        (plist-get vtsm :accession)))
+```
+
+```elisp
+("VANGUARD TOTAL STOCK MARKET INDEX FUND" "S000002848" "2026-06-30" 3545 3523
+ (:new 138 :added 1460 :reduced 1334 :unchanged 613 :exited 116 :not-reported 0)
+ "0000036405-26-000480")
+```
+
+`:filing` is a filing plist for the same report, so `(edgar-fund-report
+(plist-get vtsm :filing))` reads its N-PORT XML; for a small fund (Catholic
+Responsible Investments Ultra Short Bond Fund) that gave the same 156 holdings
+as the index.
+
 ## Limits seen while writing this
 
 - The frame mixes every kind of filer and fiscal year end; neighbours by revenue
@@ -291,3 +392,13 @@ because T. Rowe Price alone moves 56 of them by more than 1%. At 5% it would be
 - A cold 13F build took about 90 s of CPU time but 14 minutes of wall time on a
   laptop at load average 50. It runs in a subprocess (the calling Emacs stayed
   responsive), and later queries take 0.02 to 0.6 s.
+- A cold N-PORT build (both data sets downloaded, 9.7 million rows) took 241 s
+  of CPU time and 304 s of wall time, peaking at 6.6 GB of memory in the
+  subprocess; the calling Emacs kept running its event loop throughout. Loading
+  the cached index took 2.5 s (0.3 s of CPU) and each query above took under
+  0.1 s.
+- N-PORT has no issuer-level grouping: each bond issue is its own CUSIP, and
+  holdings with neither CUSIP nor ISIN (forwards, swaps, many loans) are
+  grouped by issuer name plus title as filed, so differently worded titles are
+  different securities. 1,624 holding rows were in a foreign currency without an
+  exchange rate and are marked `:value-unconverted`.

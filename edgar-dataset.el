@@ -15,16 +15,19 @@
 ;;   `edgar-dataset-read-integer', ...), which allocate nothing for
 ;;   numeric and code fields.  `edgar-dataset-map-rows' is the convenient
 ;;   variant that hands each row over as a vector of strings.
-;; - `edgar-dataset-index-directory', `edgar-dataset-write-object',
-;;   `edgar-dataset-write-slices' and `edgar-dataset-read-object' persist
-;;   a built index keyed by its source URLs and read back single slices.
-;; - `edgar-dataset-batch' runs a builder in a batch Emacs subprocess and
-;;   calls back with its result, so the caller never blocks.
+;; - `edgar-dataset-latest-urls' picks the newest data sets on a page by
+;;   the coverage dates in their file names.
+;; - edgar-dataset-store.el (loaded with this file) persists built indexes
+;;   keyed by their source URLs, reads back single slices, and runs builds
+;;   in a batch Emacs subprocess (`edgar-dataset-batch',
+;;   `edgar-dataset-index-async'), so the caller never blocks.
 
 ;;; Code:
 
 (require 'cl-lib)
+(require 'edgar-dataset-store)
 (require 'edgar-http)
+(require 'seq)
 (require 'subr-x)
 (require 'url)
 (require 'xbrl)
@@ -55,8 +58,6 @@
 (defvar edgar-dataset--header-index nil
   "Hash table from column name to index for `edgar-dataset-header'.")
 
-(defconst edgar-dataset--result-marker "\n;;edgar-dataset-result\n"
-  "Line that precedes the printed result of a batch subprocess.")
 
 ;;;; Data-set pages and downloads
 
@@ -118,6 +119,72 @@ fetched once with `xbrl-user-agent' and kept in
             (kill-buffer buffer))
           (rename-file partial file t)))
       file)))
+
+;;;; Dates and data-set names
+
+(defconst edgar-dataset--months
+  '("JAN"
+    "FEB"
+    "MAR"
+    "APR"
+    "MAY"
+    "JUN"
+    "JUL"
+    "AUG"
+    "SEP"
+    "OCT"
+    "NOV"
+    "DEC")
+  "Month abbreviations used by SEC data-set dates.")
+
+(defun edgar-dataset-iso-date (text)
+  "Convert an SEC data-set date such as 31-JUL-2026 in TEXT to ISO form."
+  (when
+      (and
+       text
+       (string-match
+        "\\`\\([0-9]\\{1,2\\}\\)-\\([A-Za-z]\\{3\\}\\)-\\([0-9]\\{4\\}\\)\\'"
+        text))
+    (let ((month
+           (cl-position
+            (upcase (match-string 2 text))
+            edgar-dataset--months
+            :test #'equal)))
+      (and month
+           (format "%s-%02d-%02d"
+                   (match-string 3 text)
+                   (1+ month)
+                   (string-to-number (match-string 1 text)))))))
+
+(defun edgar-dataset-end-date (url)
+  "Return the last date covered by the data set named in URL, or nil.
+Names end in a range such as 01jun2026-31aug2026_form13f.zip or a
+quarter such as 2026q3_nport.zip."
+  (let ((name (file-name-nondirectory url)))
+    (cond
+     ((string-match
+       "-\\([0-9]\\{2\\}[a-z]\\{3\\}[0-9]\\{4\\}\\)_" name)
+      (let ((text (match-string 1 name)))
+        (edgar-dataset-iso-date
+         (format "%s-%s-%s"
+                 (substring text 0 2)
+                 (substring text 2 5)
+                 (substring text 5)))))
+     ((string-match "\\([0-9]\\{4\\}\\)q\\([1-4]\\)_" name)
+      (format "%s-%s"
+              (match-string 1 name)
+              (nth
+               (1- (string-to-number (match-string 2 name)))
+               '("03-31" "06-30" "09-30" "12-31")))))))
+
+(defun edgar-dataset-latest-urls (page-url &optional count)
+  "Return the newest COUNT (default 2) data-set URLs on PAGE-URL.
+URLs are ordered newest first by `edgar-dataset-end-date'."
+  (seq-take (seq-sort-by
+             (lambda (url) (or (edgar-dataset-end-date url) ""))
+             (lambda (a b) (string< b a))
+             (edgar-dataset-zip-urls page-url))
+            (or count 2)))
 
 ;;;; Reading TSV members
 
@@ -310,15 +377,17 @@ Point moves past the field."
     (edgar-dataset--next-field)
     (and digits n)))
 
-(defun edgar-dataset-read-code ()
+(defun edgar-dataset-read-code (&optional limit)
   "Return an integer code for the alphanumeric field at point, or nil.
 Letters are case-folded and other characters skipped, so equal codes mean
-equal identifiers; nine-character CUSIPs stay fixnums.  Point moves past
-the field."
+equal identifiers; nine-character CUSIPs stay fixnums.  With LIMIT, only
+the first LIMIT alphanumerics count (eleven keep an ISIN a fixnum).
+Point moves past the field."
   (let ((n 0)
         (seen nil)
+        (left (or limit most-positive-fixnum))
         (c (char-after)))
-    (while (and c (/= c ?\t) (/= c ?\n))
+    (while (and c (/= c ?\t) (/= c ?\n) (> left 0))
       (let ((digit
              (cond
               ((<= ?0 c ?9)
@@ -330,11 +399,64 @@ the field."
         (when digit
           (setq
            n (+ (* n 37) digit)
-           seen t)))
+           seen t
+           left (1- left))))
       (forward-char 1)
       (setq c (char-after)))
+    (skip-chars-forward "^\t\n")
     (edgar-dataset--next-field)
     (and seen n)))
+
+(defun edgar-dataset-read-identifier (length &optional limit)
+  "Return the code of an identifier field at point, or nil.
+The field must be exactly LENGTH letters and digits and not all zeros,
+so placeholders such as N/A or 000000000 read as nil.  LIMIT is passed
+to `edgar-dataset-read-code'.  Point moves past the field."
+  (let* ((beg (point))
+         (end
+          (progn
+            (skip-chars-forward "0-9A-Za-z")
+            (point)))
+         (valid
+          (and (= (- end beg) length)
+               (memq (char-after) '(?\t ?\n ?\r nil))
+               (progn
+                 (goto-char beg)
+                 (skip-chars-forward "0")
+                 (< (point) end)))))
+    (goto-char beg)
+    (if valid
+        (edgar-dataset-read-code limit)
+      (edgar-dataset-skip-fields 1)
+      nil)))
+
+(defun edgar-dataset-code-string (code)
+  "Return the upper-case text that `edgar-dataset-read-code' read as CODE.
+Characters it skipped, such as punctuation, are not restored."
+  (let (chars)
+    (while (> code 0)
+      (let ((digit (% code 37)))
+        (push (if (<= digit 10)
+                  (+ digit 47)
+                (+ digit 54))
+              chars)
+        (setq code (/ code 37))))
+    (concat chars)))
+
+(defun edgar-dataset-read-interned (table)
+  "Return the field at point as a string shared through TABLE, or nil.
+TABLE maps field codes to strings, so a repeated value such as a
+category allocates once.  Point moves past the field."
+  (let* ((beg (point))
+         (code (edgar-dataset-read-code)))
+    (and code
+         (or (gethash code table)
+             (puthash
+              code
+              (save-excursion
+                (goto-char beg)
+                (edgar-dataset-read-string))
+              table)))))
 
 (defun edgar-dataset-read-char ()
   "Return the first character of the field at point, or nil when empty.
@@ -343,153 +465,6 @@ Point moves past the field."
     (skip-chars-forward "^\t\n")
     (edgar-dataset--next-field)
     (and c (/= c ?\t) (/= c ?\n) (/= c ?\r) c)))
-
-;;;; Persisted indexes
-
-(defun edgar-dataset-index-directory (name urls &optional version)
-  "Return the index directory for NAME built from source URLS.
-VERSION distinguishes incompatible index layouts."
-  (expand-file-name (format "index/%s-%s/"
-                            name
-                            (substring (secure-hash
-                                        'sha1
-                                        (prin1-to-string
-                                         (cons version urls)))
-                                       0 16))
-                    edgar-dataset-cache-directory))
-
-(defmacro edgar-dataset--with-print-settings (&rest body)
-  "Run BODY with printer settings that make output readable."
-  (declare (indent 0) (debug t))
-  `(let ((print-length nil)
-         (print-level nil)
-         (print-circle nil)
-         (print-escape-newlines t)
-         (float-output-format nil))
-     ,@body))
-
-(defun edgar-dataset--write-buffer (file)
-  "Write the current buffer atomically to FILE."
-  (make-directory (file-name-directory file) t)
-  (let ((partial (concat file ".part"))
-        (coding-system-for-write 'utf-8-emacs-unix))
-    (write-region (point-min) (point-max) partial nil 'silent)
-    (rename-file partial file t)))
-
-(defun edgar-dataset-write-object (file object)
-  "Write OBJECT readably to FILE, replacing it atomically."
-  (with-temp-buffer
-    (edgar-dataset--with-print-settings
-      (prin1 object (current-buffer)))
-    (edgar-dataset--write-buffer file)))
-
-(defun edgar-dataset-write-slices (file generator)
-  "Write objects to FILE as separately readable slices.
-GENERATOR is called with one argument, EMIT; calling (EMIT KEY OBJECT)
-appends OBJECT.  Return a hash table from KEY to the (BEG . END) byte
-range for `edgar-dataset-read-object'."
-  (let ((bounds (make-hash-table :test #'equal)))
-    (with-temp-buffer
-      (edgar-dataset--with-print-settings
-        (funcall generator
-                 (lambda (key object)
-                   (let ((beg (1- (position-bytes (point)))))
-                     (prin1 object (current-buffer))
-                     (insert "\n")
-                     (puthash
-                      key
-                      (cons beg (1- (position-bytes (point))))
-                      bounds)))))
-      (edgar-dataset--write-buffer file))
-    bounds))
-
-(defun edgar-dataset-read-object (file &optional bounds)
-  "Read the object stored in FILE, or only the slice BOUNDS of FILE.
-BOUNDS is a (BEG . END) range from `edgar-dataset-write-slices'."
-  (with-temp-buffer
-    (let ((coding-system-for-read 'utf-8-emacs-unix))
-      (insert-file-contents file nil (car bounds) (cdr bounds)))
-    (goto-char (point-min))
-    (read (current-buffer))))
-
-;;;; Subprocess builds
-
-(defun edgar-dataset-batch-run (function &rest args)
-  "Print the result of FUNCTION applied to ARGS for `edgar-dataset-batch'.
-Meant for `--eval' in a batch Emacs; exits with status 1 on error."
-  (condition-case err
-      (let ((result (apply function args)))
-        (princ edgar-dataset--result-marker)
-        (edgar-dataset--with-print-settings
-          (prin1 result))
-        (terpri)
-        (kill-emacs 0))
-    (error
-     (princ
-      (format "EDGAR dataset batch error: %s\n"
-              (error-message-string err)))
-     (kill-emacs 1))))
-
-(defun edgar-dataset--batch-result (buffer)
-  "Return the printed result in subprocess output BUFFER, or nil."
-  (with-current-buffer buffer
-    (goto-char (point-max))
-    (when (search-backward edgar-dataset--result-marker nil t)
-      (goto-char (match-end 0))
-      (read (current-buffer)))))
-
-(cl-defun
- edgar-dataset-batch
- (function args callback &key features variables name)
- "Call FUNCTION with ARGS in a batch Emacs and pass the result to CALLBACK.
-FEATURES are required first; VARIABLES are symbols whose current values
-are copied into the subprocess, along with `load-path'.  CALLBACK
-receives (RESULT nil) on success and (nil ERROR-MESSAGE) on failure.
-NAME names the process.  Return the process."
- (let* ((setup
-         `(progn
-            (setq load-path ',load-path)
-            (require 'edgar-dataset)
-            ,@
-            (mapcar
-             (lambda (var) `(setq ,var ',(symbol-value var)))
-             (cons 'xbrl-user-agent variables))
-            ,@
-            (mapcar (lambda (feature) `(require ',feature)) features)
-            (edgar-dataset-batch-run ',function
-                                     ,@
-                                     (mapcar
-                                      (lambda (arg) `',arg) args))))
-        (buffer
-         (generate-new-buffer
-          (format " *%s*" (or name "edgar-dataset-batch"))))
-        (program
-         (expand-file-name invocation-name invocation-directory)))
-   (make-process
-    :name (or name "edgar-dataset-batch")
-    :buffer buffer
-    :command
-    (list
-     program "-Q" "--batch" "--eval"
-     (edgar-dataset--with-print-settings
-       (prin1-to-string setup)))
-    :connection-type 'pipe
-    :noquery t
-    :sentinel
-    (lambda (process _event)
-      (unless (process-live-p process)
-        (let ((result
-               (and (eq (process-exit-status process) 0)
-                    (ignore-errors
-                      (edgar-dataset--batch-result buffer)))))
-          (if (and (eq (process-exit-status process) 0) result)
-              (progn
-                (kill-buffer buffer)
-                (funcall callback result nil))
-            (funcall callback
-                     nil
-                     (with-current-buffer buffer
-                       (string-trim (buffer-string)))))))))))
 
 (provide 'edgar-dataset)
 ;;; edgar-dataset.el ends here

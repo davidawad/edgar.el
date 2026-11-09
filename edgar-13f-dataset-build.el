@@ -31,21 +31,6 @@
 (defconst edgar-13f-dataset-index-version 1
   "Layout version of the persisted Form 13F index.")
 
-(defconst edgar-13f-dataset--months
-  '("JAN"
-    "FEB"
-    "MAR"
-    "APR"
-    "MAY"
-    "JUN"
-    "JUL"
-    "AUG"
-    "SEP"
-    "OCT"
-    "NOV"
-    "DEC")
-  "Month abbreviations used by SEC data-set dates.")
-
 (defconst edgar-13f-dataset--suspect-band '(0.0003 . 0.003)
   "Range of price-to-median ratios read as values reported in thousands.")
 
@@ -71,24 +56,8 @@
  cusips
  (rows 0))
 
-(defun edgar-13f-dataset-iso-date (text)
-  "Convert an SEC data-set date such as 31-JUL-2026 in TEXT to ISO form."
-  (when
-      (and
-       text
-       (string-match
-        "\\`\\([0-9]\\{1,2\\}\\)-\\([A-Za-z]\\{3\\}\\)-\\([0-9]\\{4\\}\\)\\'"
-        text))
-    (let ((month
-           (cl-position
-            (upcase (match-string 2 text))
-            edgar-13f-dataset--months
-            :test #'equal)))
-      (and month
-           (format "%s-%02d-%02d"
-                   (match-string 3 text)
-                   (1+ month)
-                   (string-to-number (match-string 1 text)))))))
+(defalias 'edgar-13f-dataset-iso-date #'edgar-dataset-iso-date
+  "Convert an SEC data-set date such as 31-JUL-2026 to ISO form.")
 
 (defun edgar-13f-dataset-prior-period (period)
   "Return the calendar quarter end before the quarter-end PERIOD."

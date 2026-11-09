@@ -57,7 +57,7 @@ PATH is a list of local element-name symbols."
 (defun edgar-funds--report-fields (form)
   "Return schema-specific paths for FORM."
   (pcase form
-    ("NPORT-P"
+    ((or "NPORT-P" "NPORT-P/A")
      (list :name '(genInfo regName)
            :cik '(genInfo regCik)
            :date '(genInfo repPdDate)
@@ -78,16 +78,16 @@ PATH is a list of local element-name symbols."
 
 (defun edgar-fund-report (filing)
   "Return typed fund-report data for FILING, or nil for unsupported XML.
-Supported forms are NPORT-P, N-MFP3, and N-CEN.  `data' retains the full
-namespace-insensitive projected form data; `holdings' contains each repeated
-holding record in source order where the form has such records.  The XML is
-parsed once, so cost is linear in document size (N-MFP3 documents can be
-large)."
+Supported forms are NPORT-P (and NPORT-P/A), N-MFP3, and N-CEN.  `data'
+retains the full namespace-insensitive projected form data; `holdings'
+contains each repeated holding record in source order where the form has
+such records.  The XML is parsed once, so cost is linear in document size
+\(N-MFP3 documents can be large)."
   (let* ((tree (edgar-xml filing))
          (projected (and tree (edgar-xml-project tree)))
          (root-data (cdr projected))
          (form (edgar-funds--value root-data '(headerData submissionType)))
-         (spec (and (member form '("NPORT-P" "N-MFP3" "N-CEN"))
+         (spec (and (member form '("NPORT-P" "NPORT-P/A" "N-MFP3" "N-CEN"))
                     (edgar-funds--report-fields form))))
     (when spec
       (let* ((data (edgar-funds--value root-data '(formData)))

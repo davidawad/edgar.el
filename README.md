@@ -11,6 +11,7 @@ Features, each with a worked example and screenshot in the [showcase](docs/showc
 - [Trends and risk-factor changes](docs/showcase.md#3-trend-from-the-api-plus-how-the-risk-factors-changed): four years of facts, plus what Item 1A added or dropped
 - [Frames across filers](docs/showcase.md#4-a-frame-across-filers-next-to-a-section): rank a company against every filer, beside its own text
 - [13F holders and portfolios](docs/showcase.md#5-who-holds-a-security-and-what-a-manager-holds): every 13F filer holding a CUSIP, any manager's portfolio with quarter-over-quarter status
+- [N-PORT fund holders and portfolios](docs/showcase.md#6-which-funds-hold-a-bond-and-what-a-fund-holds): every registered fund holding a bond, loan, equity or derivative, any fund's portfolio with quarter-over-quarter status
 - [Form coverage](docs/form-coverage.md): which of the 245 base EDGAR forms parse today
 
 ## Install
@@ -104,6 +105,43 @@ from such filers as `:value-suspect-usd` and is itself `:value-suspect` only
 when rescaling them moves it by more than 1%. `edgar-dataset.el` is the generic layer
 (page links, cached downloads, streamed TSV rows, on-disk indexes,
 subprocess builds) that other SEC data sets can reuse.
+
+`edgar-nport-dataset.el` does the same for registered funds and every asset
+class (equities, corporate, municipal and government bonds, asset-backed
+securities, loans, derivatives), from the SEC's quarterly [Form N-PORT data
+sets](https://www.sec.gov/data-research/sec-markets-data/form-n-port-data-sets).
+Money market funds file Form N-MFP, not N-PORT, and are not included.
+
+    (edgar-nport-index-async (lambda (index err) (message "N-PORT %s ready" (plist-get index :period))))
+    (edgar-nport-holders "037833DX5")    ; CUSIP, ISIN or ticker: every fund holding it
+    (edgar-nport-securities :query "APPLE" :asset-category "DBT" :top 10)
+    (edgar-nport-securities :issuer-category "MUN" :sort 'holders :top 10)
+    (edgar-nport-funds "total stock market")
+    (edgar-nport-portfolio "S000002848") ; series id, or CIK of a single-fund registrant
+
+Funds file N-PORT monthly, but only the report for the last month of each
+fiscal quarter becomes public, about 60 days after the month ends, so one
+data set mixes report months. The current period is the newest data set's
+most common report date; a fund's current report is its latest one dated
+from the month before that through the month after, and its prior report is
+its latest one three months earlier. A fund is a series (`:series-id`), or
+the registrant CIK when a filing has no series. Per fund and report month
+the latest filing wins, so an NPORT-P/A replaces its NPORT-P, and filings
+from the newest two data sets are merged so late filers count. A security
+is its CUSIP, else its ISIN (US and Canadian ISINs embed the CUSIP), else
+its issuer name plus title; rows for one security in one report are summed.
+A cold build of the newest two data sets (9.7 million holding rows) takes
+about four minutes of CPU and peaks near 7 GB in the subprocess; the cached
+index loads in a few seconds and queries take well under a second.
+Tables read: SUBMISSION, REGISTRANT, FUND_REPORTED_INFO,
+FUND_REPORTED_HOLDING and IDENTIFIERS (definitions in the data set's
+`nport_readme.pdf`). Values are the filed `CURRENCY_VALUE`, which Form
+N-PORT Item C.2.c requires in US dollars; rows in a foreign currency
+without an exchange rate are marked `:value-unconverted`. `:pct-of-nav` is
+value over the fund's net assets. Statuses and their reconciliation match
+the 13F layer. The index keeps one text line per security
+(`securities.tsv`) that lookups search in a buffer, so loading it never
+builds a Lisp object per security.
 
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history

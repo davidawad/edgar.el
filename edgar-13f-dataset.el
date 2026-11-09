@@ -49,33 +49,12 @@ used."
 
 ;;;; Choosing and loading the index
 
-(defun edgar-13f-dataset--end-date (url)
-  "Return the last filing date covered by data-set URL, or nil."
-  (let ((name (file-name-nondirectory url)))
-    (cond
-     ((string-match
-       "-\\([0-9]\\{2\\}[a-z]\\{3\\}[0-9]\\{4\\}\\)_" name)
-      (let ((text (match-string 1 name)))
-        (edgar-13f-dataset-iso-date
-         (format "%s-%s-%s"
-                 (substring text 0 2)
-                 (substring text 2 5)
-                 (substring text 5)))))
-     ((string-match "\\([0-9]\\{4\\}\\)q\\([1-4]\\)_" name)
-      (format "%s-%s"
-              (match-string 1 name)
-              (nth
-               (1- (string-to-number (match-string 2 name)))
-               '("03-31" "06-30" "09-30" "12-31")))))))
+(defalias 'edgar-13f-dataset--end-date #'edgar-dataset-end-date
+  "Return the last filing date covered by a data-set URL, or nil.")
 
 (defun edgar-13f-dataset-latest-sources (&optional count)
   "Return the newest COUNT (default 2) data-set URLs, newest first."
-  (let ((urls (edgar-dataset-zip-urls edgar-13f-dataset-page-url)))
-    (seq-take (seq-sort-by
-               (lambda (url)
-                 (or (edgar-13f-dataset--end-date url) ""))
-               (lambda (a b) (string< b a)) urls)
-              (or count 2))))
+  (edgar-dataset-latest-urls edgar-13f-dataset-page-url count))
 
 (defun edgar-13f-dataset--sources ()
   "Return the data-set sources to index."
@@ -121,31 +100,19 @@ CALLBACK receives (INDEX nil) on success and (nil ERROR-MESSAGE) on
 failure.  The build runs in a batch Emacs subprocess; a cached index for
 explicit SOURCES (or `edgar-13f-dataset-sources') loads directly.
 Return the subprocess, or nil when no subprocess was needed."
-  (let* ((sources (or sources edgar-13f-dataset-sources))
-         (directory
-          (and sources (edgar-13f-dataset-index-directory sources))))
-    (if (and directory
-             (file-exists-p
-              (expand-file-name "summary.eld" directory)))
-        (progn
-          (run-at-time
-           0 nil
-           (lambda ()
-             (funcall callback
-                      (edgar-13f-dataset--load directory)
-                      nil)))
-          nil)
-      (edgar-dataset-batch
-       'edgar-13f-dataset-build-latest (list sources)
-       (lambda (result error)
-         (if error
-             (funcall callback nil error)
-           (funcall callback (edgar-13f-dataset--load result) nil)))
-       :features '(edgar-13f-dataset)
-       :variables
-       '(edgar-dataset-cache-directory
-         edgar-unzip-program edgar-13f-dataset-page-url)
-       :name "edgar-13f-index"))))
+  (let ((sources (or sources edgar-13f-dataset-sources)))
+    (edgar-dataset-index-async
+     callback
+     :directory
+     (and sources (edgar-13f-dataset-index-directory sources))
+     :build 'edgar-13f-dataset-build-latest
+     :sources sources
+     :load #'edgar-13f-dataset--load
+     :features '(edgar-13f-dataset)
+     :variables
+     '(edgar-dataset-cache-directory
+       edgar-unzip-program edgar-13f-dataset-page-url)
+     :name "edgar-13f-index")))
 
 (defun edgar-13f-dataset--current ()
   "Return the loaded index, loading or building it synchronously if needed."
