@@ -170,6 +170,10 @@ PRIOR-SHARES PRIOR-VALUE]; option rows are not counted."
                (if (gethash (1+ (* 2 cik)) suspects)
                    (* 1000 dollars)
                  dollars)))))))
+    (setq suspect
+          (and suspect
+               (> adjusted 0)
+               (> (/ (float (- adjusted value)) adjusted) 0.01)))
     (vector
      (aref security 0)
      (aref security 1)

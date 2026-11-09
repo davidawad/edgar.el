@@ -94,11 +94,14 @@ so late filings count for their period. Per filer and period it uses the
 latest 13F-HR/A restatement, else the latest 13F-HR, plus later NEW HOLDINGS
 amendments. Holder counts are distinct filer CIKs and leave out put/call rows,
 which are returned under `:options`. Each position carries a status (`new`,
-`added`, `reduced`, `unchanged`, `exited`) and the status counts reconcile with
-the current and prior position totals. Values are dollars; a filer whose
+`added`, `reduced`, `unchanged`, `exited`, or `not-reported` when the filer
+has no filing for the current period yet) and the status counts reconcile
+with the current and prior position totals. Values are dollars; a filer whose
 implied prices sit near 1/1000 of the market's is marked `:value-suspect`
 (it reported thousands), and `:value-usd-adjusted` gives the rescaled figure
-without changing `:value-usd`. `edgar-dataset.el` is the generic layer
+without changing `:value-usd`. A security total reports the filed value
+from such filers as `:value-suspect-usd` and is itself `:value-suspect` only
+when rescaling them moves it by more than 1%. `edgar-dataset.el` is the generic layer
 (page links, cached downloads, streamed TSV rows, on-disk indexes,
 subprocess builds) that other SEC data sets can reuse.
 

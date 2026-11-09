@@ -44,7 +44,7 @@ used."
   "The loaded index summary plist, or nil.")
 
 (defconst edgar-13f-dataset--statuses
-  '(new added reduced unchanged exited)
+  '(new added reduced unchanged exited not-reported)
   "Position statuses, in display order.")
 
 ;;;; Choosing and loading the index
@@ -168,13 +168,21 @@ Return the subprocess, or nil when no subprocess was needed."
 
 ;;;; Rows
 
-(defun edgar-13f-dataset--status (shares prior-shares)
-  "Return the status of a position with SHARES now and PRIOR-SHARES before."
+(defconst edgar-13f-dataset--suspect-share 0.01
+  "Share of a security's adjusted value that suspect filers may move.
+Above it, the security total is flagged :value-suspect.")
+
+(defun edgar-13f-dataset--status (shares prior-shares filed-current)
+  "Return the status of a position with SHARES now and PRIOR-SHARES before.
+FILED-CURRENT is non-nil when the filer filed for the current period; a
+prior position without one is `not-reported' rather than `exited'."
   (cond
    ((null prior-shares)
     'new)
    ((null shares)
-    'exited)
+    (if filed-current
+        'exited
+      'not-reported))
    ((> shares prior-shares)
     'added)
    ((< shares prior-shares)
@@ -182,9 +190,11 @@ Return the subprocess, or nil when no subprocess was needed."
    (t
     'unchanged)))
 
-(defun edgar-13f-dataset--position (record filer)
-  "Return the plist for holder RECORD of FILER's filer plist."
-  (let* ((shares (aref record 2))
+(defun edgar-13f-dataset--position (record filer period)
+  "Return the plist for holder RECORD of FILER's filer plist.
+PERIOD is the index's current period."
+  (let* ((filed-current (equal (plist-get filer :period) period))
+         (shares (aref record 2))
          (value (aref record 3))
          (prior-shares (aref record 4))
          (suspect (plist-get filer :value-suspect)))
@@ -198,7 +208,8 @@ Return the subprocess, or nil when no subprocess was needed."
             value))
      :prior-shares prior-shares
      :prior-value-usd (aref record 5)
-     :status (edgar-13f-dataset--status shares prior-shares)
+     :status (edgar-13f-dataset--status shares prior-shares filed-current)
+     :filed-current filed-current
      :value-suspect
      (and (or (and shares suspect)
               (and prior-shares
@@ -221,7 +232,14 @@ Return the subprocess, or nil when no subprocess was needed."
    :shares (aref security 5)
    :value-usd (aref security 6)
    :value-usd-adjusted (aref security 7)
-   :value-suspect (aref security 8)
+   :value-suspect
+   (let ((value (aref security 6))
+         (adjusted (aref security 7)))
+     (and (> adjusted 0)
+          (> (/ (float (abs (- adjusted value))) adjusted)
+             edgar-13f-dataset--suspect-share)))
+   ;; Adjusted values multiply suspect filers' values by 1000.
+   :value-suspect-usd (/ (- (aref security 7) (aref security 6)) 999)
    :prior-shares (aref security 9)
    :prior-value-usd (aref security 10)))
 
@@ -274,7 +292,10 @@ QUERY matches a CUSIP prefix or an issuer substring, case-insensitively.
 SORT is `holders' (default), `change', `drop' or `value'; TOP limits rows.
 Return (:period P :prior-period P :rows ROWS); each row has :cusip
 :issuer :class :holders :prior-holders :change :shares :value-usd
-:value-usd-adjusted :value-suspect :prior-shares :prior-value-usd."
+:value-usd-adjusted :value-suspect :value-suspect-usd :prior-shares
+:prior-value-usd.  :value-suspect-usd is the filed value from filers
+that appear to report thousands; :value-suspect is set when rescaling
+them moves the total by more than `edgar-13f-dataset--suspect-share'."
  (let* ((index (edgar-13f-dataset--current))
         (needle (and query (upcase query)))
         (rows nil))
@@ -308,11 +329,12 @@ Return (:period P :prior-period P :rows ROWS); each row has :cusip
   "Return every 13F filer holding CUSIP now or in the prior period.
 Return a plist with :cusip :issuer :class :period :prior-period
 :holders :prior-holders :shares :value-usd :value-usd-adjusted
-:value-suspect :counts :rows :options, or nil for an unknown CUSIP.
-Each row has :cik :name :shares :value-usd :value-usd-adjusted
-:prior-shares :prior-value-usd :status :value-suspect :filed-current
-:put-call; :filed-current is nil for an exited holder that has not
-filed for the current period yet."
+:value-suspect :value-suspect-usd :counts :rows :options, or nil for
+an unknown CUSIP.  Each row has :cik :name :shares :value-usd
+:value-usd-adjusted :prior-shares :prior-value-usd :status
+:filed-current :value-suspect :put-call.  Status is new, added,
+reduced, unchanged, exited, or not-reported (held before, and the filer
+has not filed for the current period)."
   (let* ((index (edgar-13f-dataset--current))
          (id (gethash (upcase cusip) (plist-get index :cusip-ids))))
     (when id
@@ -326,10 +348,8 @@ filed for the current period yet."
                     (list
                      :cik (aref record 0)
                      :name (plist-get filer :name))
-                    (edgar-13f-dataset--position record filer)
-                    (list
-                     :filed-current
-                     (equal (plist-get filer :period) period)))))
+                    (edgar-13f-dataset--position
+                     record filer period))))
                (edgar-13f-dataset--slice index 'cusip id)))
              (split (edgar-13f-dataset--split-options rows))
              (summary
@@ -389,8 +409,9 @@ The plist has :cik :name :period :prior-period :accession :filing
 :value-suspect.  Each position has :cusip :issuer :class plus the
 holder fields of `edgar-13f-holders'.  :filing is a filing plist for
 `edgar-13f-holdings'.  Counts reconcile: new+added+reduced+unchanged
-equals :current-positions and added+reduced+unchanged+exited equals
-:prior-positions."
+equals :current-positions and added+reduced+unchanged+exited+not-reported
+equals :prior-positions; `not-reported' means the filer has no filing for
+the current period."
   (let* ((index (edgar-13f-dataset--current))
          (cik
           (if (stringp cik)
@@ -408,7 +429,8 @@ equals :current-positions and added+reduced+unchanged+exited equals
                      :cusip (aref security 0)
                      :issuer (aref security 1)
                      :class (aref security 2))
-                    (edgar-13f-dataset--position (cdr entry) filer))))
+                    (edgar-13f-dataset--position
+                     (cdr entry) filer (plist-get index :period)))))
                (edgar-13f-dataset--slice index 'cik cik)))
              (split (edgar-13f-dataset--split-options rows))
              (filings (plist-get filer :filings)))

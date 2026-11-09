@@ -6,7 +6,8 @@
 ;; test/fixtures/13f-dataset/{new,old}.  Filers: 1 Alpha (original,
 ;; restatement and NEW HOLDINGS amendments), 2 Beta (two originals, a call
 ;; option), 3 Gamma (late prior-period filing), 4 Delta (values in
-;; thousands), 5 Epsilon (13F-NT only), 6 Zeta (an older period).
+;; thousands), 5 Epsilon (13F-NT only), 6 Zeta (an older period), 7 Eta
+;; (prior period only, so its position is not-reported).
 
 ;;; Code:
 
@@ -163,7 +164,16 @@
       (should (= 4 (plist-get delta :value-usd)))
       (should (= 4000 (plist-get delta :value-usd-adjusted)))
       (should-not (plist-get alpha :value-suspect))
+      ;; Delta moves the total by 3,996 of 22,000 adjusted: over 1%.
       (should (plist-get holders :value-suspect))
+      (should (= 4 (plist-get holders :value-suspect-usd)))
+      (should-not
+       (plist-get (edgar-13f-holders "333333333") :value-suspect))
+      (should
+       (= 0
+          (plist-get
+           (edgar-13f-holders "333333333")
+           :value-suspect-usd)))
       (should (= 18004 (plist-get holders :value-usd)))
       (should (= 22000 (plist-get holders :value-usd-adjusted)))
       (should (plist-get filer :value-suspect))
@@ -174,7 +184,7 @@
 
 (ert-deftest edgar-13f-dataset-status-counts-reconcile ()
   (edgar-13f-dataset-test--with-index
-    (dolist (cik '(1 2 3 4))
+    (dolist (cik '(1 2 3 4 7))
       (let* ((portfolio (edgar-13f-portfolio cik))
              (counts (plist-get portfolio :counts)))
         (should
@@ -187,19 +197,71 @@
          (= (+ (plist-get counts :added)
                (plist-get counts :reduced)
                (plist-get counts :unchanged)
-               (plist-get counts :exited))
+               (plist-get counts :exited)
+               (plist-get counts :not-reported))
             (plist-get portfolio :prior-positions)))))
     (let ((alpha (edgar-13f-portfolio 1)))
       (should
        (equal
         (plist-get alpha :counts)
-        '(:new 1 :added 1 :reduced 1 :unchanged 1 :exited 1)))
+        '(:new
+          1
+          :added 1
+          :reduced 1
+          :unchanged 1
+          :exited 1
+          :not-reported 0)))
       (should
        (eq
         'exited
         (plist-get
          (car (last (plist-get alpha :positions)))
          :status))))))
+
+(ert-deftest edgar-13f-dataset-not-reported-is-not-exited ()
+  "A prior holder with no current-period filing is `not-reported'."
+  (edgar-13f-dataset-test--with-index
+    (let* ((holders (edgar-13f-holders "555555555"))
+           (rows (plist-get holders :rows))
+           (eta (edgar-13f-dataset-test--row rows :cik 7))
+           (alpha (edgar-13f-dataset-test--row rows :cik 1))
+           (portfolio (edgar-13f-portfolio 7)))
+      (should (= 2 (plist-get holders :prior-holders)))
+      (should (eq 'not-reported (plist-get eta :status)))
+      (should-not (plist-get eta :filed-current))
+      (should (eq 'exited (plist-get alpha :status)))
+      (should (plist-get alpha :filed-current))
+      (should
+       (equal
+        (plist-get holders :counts)
+        '(:new
+          0
+          :added 0
+          :reduced 0
+          :unchanged 0
+          :exited 1
+          :not-reported 1)))
+      (should (= 0 (plist-get portfolio :current-positions)))
+      (should
+       (equal
+        (plist-get (plist-get portfolio :counts) :not-reported) 1)))))
+
+(ert-deftest edgar-13f-dataset-security-suspect-threshold ()
+  "Suspect filers flag a security only when they move it over 1%."
+  (let ((row
+         (lambda (value adjusted)
+           (edgar-13f-dataset--security-row
+            (vector "1" "I" "C" 1 1 1 value adjusted nil 1 1)))))
+    (should-not
+     (plist-get (funcall row 1000000 1000999) :value-suspect))
+    (should
+     (= 1
+        (plist-get (funcall row 1000000 1000999) :value-suspect-usd)))
+    (should (plist-get (funcall row 1000000 1100899) :value-suspect))
+    (should
+     (= 101
+        (plist-get (funcall row 1000000 1100899) :value-suspect-usd)))
+    (should-not (plist-get (funcall row 0 0) :value-suspect))))
 
 (ert-deftest edgar-13f-dataset-securities-sort-and-query ()
   (edgar-13f-dataset-test--with-index
@@ -323,7 +385,8 @@
      (= (+ (plist-get counts :added)
            (plist-get counts :reduced)
            (plist-get counts :unchanged)
-           (plist-get counts :exited))
+           (plist-get counts :exited)
+           (plist-get counts :not-reported))
         (plist-get bridgewater :prior-positions)))))
 
 (provide 'edgar-13f-dataset-test)

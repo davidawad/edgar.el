@@ -227,7 +227,9 @@ against 2026-03-31, with 8,857 managers filing for the current quarter.
 
 Each count is the number of distinct filer CIKs holding shares, leaving out put
 and call rows. `edgar-13f-holders` lists those filers, each with this quarter's
-and last quarter's position and a status:
+and last quarter's position and a status. `exited` means the filer filed for
+this quarter without the position; `not-reported` means it has not filed for
+this quarter at all:
 
 ```elisp
 (let ((nvda (edgar-13f-holders "67066G104")))
@@ -239,14 +241,15 @@ and last quarter's position and a status:
 ```
 
 ```elisp
-(:holders 5962 :counts (:new 303 :added 2991 :reduced 2347 :unchanged 321 :exited 210)
+(:holders 5962 :counts (:new 303 :added 2991 :reduced 2347 :unchanged 321
+                        :exited 117 :not-reported 93)
  :option-rows 574 :largest ("BlackRock, Inc."))
 ```
 
 Going the other way, `edgar-13f-filers` searches filer names and
 `edgar-13f-portfolio` gives one manager's positions. Its status counts reconcile
 with both quarters: 214 + 400 + 377 + 6 = 997 current positions, and
-400 + 377 + 6 + 210 = 993 prior ones.
+400 + 377 + 6 + 210 + 0 = 993 prior ones (exited plus not-reported).
 
 ```elisp
 (let ((bw (edgar-13f-portfolio
@@ -258,7 +261,7 @@ with both quarters: 214 + 400 + 377 + 6 = 997 current positions, and
 
 ```elisp
 ("Bridgewater Associates, LP" "0001350694-26-000003" 997 993
- (:new 214 :added 400 :reduced 377 :unchanged 6 :exited 210))
+ (:new 214 :added 400 :reduced 377 :unchanged 6 :exited 210 :not-reported 0))
 ```
 
 `:filing` is a filing plist, so `(edgar-13f-holdings (plist-get bw :filing))`
@@ -266,10 +269,15 @@ reads the same filing's XML information table.
 
 Values need care. Since 2023 filers report dollars, but 339 managers in this
 quarter still report thousands. T. Rowe Price Associates, for example, reports
-$74.0 million for 369.8 million NVIDIA shares. Such a filer is marked
-`:value-suspect`, and so is every security total that includes it, which covers
-all five securities above. `:value-usd` keeps the filed number and
-`:value-usd-adjusted` multiplies it by 1000.
+$74.0 million for 369.8 million NVIDIA shares. Such a filer and its
+positions are marked `:value-suspect`. `:value-usd` keeps the filed number and
+`:value-usd-adjusted` multiplies it by 1000. A security total carries
+`:value-suspect-usd`, the filed value from suspect filers, and is flagged only
+when rescaling them moves the total by more than 1%. For NVIDIA that is
+$144.5 million filed, which becomes 4.3% of the $3.36 trillion adjusted total.
+At this threshold all of the 100 most widely held securities are still flagged,
+because T. Rowe Price alone moves 56 of them by more than 1%. At 5% it would be
+29 of them.
 
 ## Limits seen while writing this
 
