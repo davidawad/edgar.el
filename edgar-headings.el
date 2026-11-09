@@ -1,7 +1,5 @@
 ;;; edgar-headings.el --- Heading detection and structure sections for edgar.el -*- lexical-binding: t; -*-
 
-;; Package-Requires: ((emacs "29.1") (xbrl "0.1.0"))
-
 ;;; Commentary:
 
 ;; Heading detection and structure sections for edgar.el.

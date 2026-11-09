@@ -1,7 +1,5 @@
 ;;; edgar-content.el --- Filing content access for edgar.el -*- lexical-binding: t; -*-
 
-;; Package-Requires: ((emacs "29.1") (xbrl "0.1.0"))
-
 ;;; Commentary:
 
 ;; Filing content access for edgar.el.

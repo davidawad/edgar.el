@@ -13,6 +13,8 @@
 
 (package-file "edgar.el")
 (files "edgar*.el")
+;; Test files `require' shared helpers (edgar-test-support, ...) from test/.
+(load-paths "test")
 
 (script "test"
         "eask test ert test/edgar-test.el test/edgar-structure-test.el test/edgar-primary-test.el test/edgar-live-test.el test/edgar-expect-test.el test/edgar-amendment-test.el test/edgar-golden-test.el test/edgar-golden-prospectus-test.el test/edgar-l2-diversity-test.el test/edgar-forms-test.el test/form-coverage-test.el test/form-coverage-artifact-test.el test/edgar-xml-test.el test/edgar-13f-test.el test/edgar-ownership-test.el test/edgar-offerings-test.el test/edgar-funds-test.el test/edgar-asset-backed-test.el test/edgar-docs-test.el test/edgar-http-test.el test/edgar-index-test.el test/record-fixtures-test.el test/edgar-showcase-test.el")

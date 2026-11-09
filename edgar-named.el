@@ -1,7 +1,5 @@
 ;;; edgar-named.el --- Named-section extraction for edgar.el -*- lexical-binding: t; -*-
 
-;; Package-Requires: ((emacs "29.1") (xbrl "0.1.0"))
-
 ;;; Commentary:
 
 ;; Named-section extraction for edgar.el.
