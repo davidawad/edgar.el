@@ -79,6 +79,16 @@ never knows what a us-gaap concept is. Planned: iXBRL tag extraction goes in
   `edgar-http-cache-directory`. Metadata/index endpoints are never cached.
   `edgar--fetch` delegates to `edgar-http-get`; `xbrl--get` can adopt the same
   function later by calling `(edgar-http-get url xbrl-user-agent)`.
+- `edgar-dataset.el` is the generic SEC bulk data-set layer (13F now, N-PORT
+  next): ZIP links from a data-set page, cached downloads, TSV members
+  extracted with `edgar-unzip-program` to a temp file and visited in
+  `edgar-dataset-chunk-size` chunks (a process pipe was 4x slower), cursor
+  helpers that parse numbers/CUSIPs without allocating, slice files read by
+  byte range, and `edgar-dataset-batch` for subprocess builds.
+  `edgar-13f-dataset.el` (API) sits on `-build.el` (selection, INFOTABLE scan)
+  and `-index.el` (merge, suspect flag, write). Hermetic fixtures are TSVs in
+  `test/fixtures/13f-dataset/`, zipped at test time (needs `zip`/`unzip`).
+  The cold build is ~90 s of CPU; a loaded laptop stretches the wall time.
 - Golden tests (`test/edgar-golden-test.el`, data in `test/golden/*.eld` and
   hand-written `test/golden-facts.eld`): verbatim strings pinned to sections,
   each must occur in its section only, and every parsed section must have

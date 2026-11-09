@@ -10,6 +10,7 @@ Features, each with a worked example and screenshot in the [showcase](docs/showc
 - [Text next to numbers](docs/showcase.md#2-managements-margin-next-to-the-margin-from-tagged-numbers): check a margin in Item 7 against facts from xbrl.el
 - [Trends and risk-factor changes](docs/showcase.md#3-trend-from-the-api-plus-how-the-risk-factors-changed): four years of facts, plus what Item 1A added or dropped
 - [Frames across filers](docs/showcase.md#4-a-frame-across-filers-next-to-a-section): rank a company against every filer, beside its own text
+- [13F holders and portfolios](docs/showcase.md#5-who-holds-a-security-and-what-a-manager-holds): every 13F filer holding a CUSIP, any manager's portfolio with quarter-over-quarter status
 - [Form coverage](docs/form-coverage.md): which of the 245 base EDGAR forms parse today
 
 ## Install
@@ -75,6 +76,31 @@ API.
 table rows and `edgar-13f-notice` for typed 13F-NT manager, other-manager, and
 signature data. Reported holding values retain their source unit and include a
 normalized dollar value across the January 2023 reporting-unit change.
+
+`edgar-13f-dataset.el` answers "who holds security X" and "what does manager
+Y hold" across every 13F filer, from the SEC's quarterly [Form 13F data
+sets](https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets).
+It needs an `unzip` executable (`edgar-unzip-program`).
+
+    (edgar-13f-index-async (lambda (index err) (message "13F %s ready" (plist-get index :period))))
+    (edgar-13f-securities :query "NVIDIA" :sort 'holders :top 10)
+    (edgar-13f-holders "67066G104")      ; every filer holding the CUSIP
+    (edgar-13f-filers "bridgewater")     ; name search over all filers
+    (edgar-13f-portfolio 1350694)        ; positions, statuses, :accession
+
+The index is built from the newest two data sets in a batch Emacs subprocess
+(a few minutes cold, cached under `edgar-dataset-cache-directory` afterwards),
+so late filings count for their period. Per filer and period it uses the
+latest 13F-HR/A restatement, else the latest 13F-HR, plus later NEW HOLDINGS
+amendments. Holder counts are distinct filer CIKs and leave out put/call rows,
+which are returned under `:options`. Each position carries a status (`new`,
+`added`, `reduced`, `unchanged`, `exited`) and the status counts reconcile with
+the current and prior position totals. Values are dollars; a filer whose
+implied prices sit near 1/1000 of the market's is marked `:value-suspect`
+(it reported thousands), and `:value-usd-adjusted` gives the rescaled figure
+without changing `:value-usd`. `edgar-dataset.el` is the generic layer
+(page links, cached downloads, streamed TSV rows, on-disk indexes,
+subprocess builds) that other SEC data sets can reuse.
 
 With no date bounds, `edgar-filings` returns only the SEC's recent filings.
 Supplying an inclusive `:since` or `:until` bound lazily merges only history

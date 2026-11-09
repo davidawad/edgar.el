@@ -195,6 +195,82 @@ next to Item 7's own assets-under-management sentence:
 
 ![frame output](img/frame.png)
 
+## 5. Who holds a security, and what a manager holds
+
+This one leaves AllianceBernstein for every 13F filer at once. `edgar-13f-dataset`
+reads the SEC's quarterly [Form 13F data
+sets](https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets)
+(the newest two are ZIPs of about 100 MB each, with 6.7 million information-table rows between them).
+It builds an index once, in a batch Emacs subprocess, and caches it on disk:
+
+```elisp
+(edgar-13f-index-async
+ (lambda (index err)
+   (message "13F index: %s vs %s" (plist-get index :period) (plist-get index :prior-period))))
+```
+
+The figures below are from the data sets for filings made 2026-06-01 to 2026-08-31
+and 2026-03-01 to 2026-05-31 (run 2026-11-09). That gives period 2026-06-30
+against 2026-03-31, with 8,857 managers filing for the current quarter.
+
+```elisp
+(mapcar (lambda (row) (list (plist-get row :issuer) (plist-get row :holders)
+                            (plist-get row :prior-holders)))
+        (plist-get (edgar-13f-securities :top 5) :rows))
+```
+
+```elisp
+(("MICROSOFT CORP" 6216 6220) ("AMAZON COM INC" 6131 6022)
+ ("APPLE INC" 6116 6117) ("NVIDIA CORPORATION" 5962 5869)
+ ("ALPHABET INC" 5784 5656))
+```
+
+Each count is the number of distinct filer CIKs holding shares, leaving out put
+and call rows. `edgar-13f-holders` lists those filers, each with this quarter's
+and last quarter's position and a status:
+
+```elisp
+(let ((nvda (edgar-13f-holders "67066G104")))
+  (list :holders (plist-get nvda :holders) :counts (plist-get nvda :counts)
+        :option-rows (length (plist-get nvda :options))
+        :largest (seq-take (mapcar (lambda (row) (plist-get row :name))
+                                   (plist-get nvda :rows))
+                           1)))
+```
+
+```elisp
+(:holders 5962 :counts (:new 303 :added 2991 :reduced 2347 :unchanged 321 :exited 210)
+ :option-rows 574 :largest ("BlackRock, Inc."))
+```
+
+Going the other way, `edgar-13f-filers` searches filer names and
+`edgar-13f-portfolio` gives one manager's positions. Its status counts reconcile
+with both quarters: 214 + 400 + 377 + 6 = 997 current positions, and
+400 + 377 + 6 + 210 = 993 prior ones.
+
+```elisp
+(let ((bw (edgar-13f-portfolio
+           (plist-get (car (edgar-13f-filers "bridgewater")) :cik))))
+  (list (plist-get bw :name) (plist-get bw :accession)
+        (plist-get bw :current-positions) (plist-get bw :prior-positions)
+        (plist-get bw :counts)))
+```
+
+```elisp
+("Bridgewater Associates, LP" "0001350694-26-000003" 997 993
+ (:new 214 :added 400 :reduced 377 :unchanged 6 :exited 210))
+```
+
+`:filing` is a filing plist, so `(edgar-13f-holdings (plist-get bw :filing))`
+reads the same filing's XML information table.
+
+Values need care. Since 2023 filers report dollars, but 339 managers in this
+quarter still report thousands. T. Rowe Price Associates, for example, reports
+$74.0 million for 369.8 million NVIDIA shares. Such a filer is marked
+`:value-suspect`, and so is every security total that includes it, which covers
+all five securities above. `:value-usd` keeps the filed number and
+`:value-usd-adjusted` multiplies it by 1000.
+
 ## Limits seen while writing this
 
 - The frame mixes every kind of filer and fiscal year end; neighbours by revenue
@@ -204,3 +280,6 @@ next to Item 7's own assets-under-management sentence:
   Holding under `AB`; the operating partnership needs its CIK.
 - Item bodies are rendered HTML, running text and page numbers included, not
   cleaned prose.
+- A cold 13F build took about 90 s of CPU time but 14 minutes of wall time on a
+  laptop at load average 50. It runs in a subprocess (the calling Emacs stayed
+  responsive), and later queries take 0.02 to 0.6 s.
