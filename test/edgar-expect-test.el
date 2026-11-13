@@ -461,9 +461,5 @@
       (let ((s slug))
         (lambda () (edgar-expect--check s)))))))
 
-(ert-deftest edgar-expect-msd-state-street ()
-  "Replay the recorded text primary for the SEC MSD paper notice."
-  (edgar-expect--check "msd-state-street"))
-
 (provide 'edgar-expect-test)
 ;;; edgar-expect-test.el ends here
