@@ -1256,9 +1256,9 @@
      "EFFECT"
      (list
       :family "G7 Prospectuses & registration"
-      :backend 'html
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'xml
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 1165
       :notes nil)
      table)

@@ -145,6 +145,18 @@
     (should-not
      (string-match-p "OTHER INFORMATION" (cdr (assoc "I.2" s))))))
 
+(ert-deftest edgar-sections-drop-heading-only-toc-residue ()
+  (let ((sections
+         (edgar-sections
+          (concat
+           "Item 1. Business. 1\n"
+           "PART I FINANCIAL INFORMATION\n"
+           "Item 1. Business\nActual business content follows.\n"))))
+    (should-not (assoc "1" sections))
+    (should (string-match-p
+             "Actual business content"
+             (cdr (assoc "I.1" sections))))))
+
 (ert-deftest edgar-sections-ignore-repeated-page-headers ()
   (let ((s
          (edgar-sections

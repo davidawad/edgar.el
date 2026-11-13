@@ -1,0 +1,1 @@
+(:accn "9999999995-26-002697" :form "EFFECT" :company "Neighborhood Intelligence, Inc." :filed "2026-08-19" :report "2026-08-18" :doc "primary_doc.xml" :cik 1130713 :url "https://www.sec.gov/Archives/edgar/data/1130713/999999999526002697/primary_doc.xml")

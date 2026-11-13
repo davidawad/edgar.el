@@ -218,3 +218,10 @@ returns `pdftotext` output, and `edgar-document-structure` exposes the text as
 ordered paragraphs. Recognizable standalone headings are available through
 `edgar-structure-headings` and `edgar-structure-section`; this generic text
 heuristic only returns headings present in the extracted output.
+
+The `EFFECT` fixture `effect-neighborhood` is the raw XML primary from
+Neighborhood Intelligence, Inc.'s Notice of Effectiveness, accession
+9999999995-26-002697, filed 2026-08-19:
+<https://www.sec.gov/Archives/edgar/data/1130713/999999999526002697/primary_doc.xml>.
+It exercises generic XML document-element access for the effectiveness date,
+time, related registration form, filer name, and file number.

@@ -131,6 +131,34 @@
              :body)
             (cadr entry))))))))
 
+(ert-deftest edgar-effect-generic-xml-elements-match-expectation ()
+  "Expose EFFECT values through arbitrary generic XML section paths."
+  (let* ((filing (edgar-fixtures-filing "effect-neighborhood"))
+         (xml (edgar-xml-test--fixture "effect-neighborhood"))
+         (expected (edgar-xml-test--expect "effect-neighborhood"))
+         tree)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (setq tree (edgar-document-structure filing)))
+    (should (eq (plist-get tree :format) 'xml))
+    (should
+     (equal
+      (mapcar
+       (lambda (path)
+         (plist-get (edgar-structure-section tree path) :body))
+       '(("edgarSubmission" "submissionType")
+         ("edgarSubmission" "effectiveData" "finalEffectivenessDispDate")
+         ("edgarSubmission" "effectiveData" "finalEffectivenessDispTime")
+         ("edgarSubmission" "effectiveData" "form")
+         ("edgarSubmission" "effectiveData" "filer" "entityName")
+         ("edgarSubmission" "effectiveData" "filer" "fileNumber")))
+      (list
+       (plist-get expected :submission-type)
+       (plist-get expected :effective-date)
+       (plist-get expected :effect-time)
+       (plist-get expected :related-form)
+       (plist-get expected :entity-name)
+       (plist-get expected :file-number))))))
+
 (ert-deftest edgar-xml-g9-reg-a-fixtures-match-reviewed-snapshots ()
   "Read current and older structured Form 1-K and 1-Z primary documents."
   (dolist (slug
