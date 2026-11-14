@@ -169,6 +169,7 @@
     ("NT 20-F" "telekomunikasi" nil)
     ("NRSRO-CE/A" "moody's ratings" nil)
     ("NRSRO-UPD" "hr ratings llc" nil)
+    ("G-FIN/A" "fhn financial capital markets" nil)
     ("SC14D9C" "securities and exchange commission" nil)
     ("N-2 POSASR" "eagle point" nil)
     ("N-2MEF" "securities and exchange commission" nil)
@@ -259,7 +260,7 @@
     (should inv)
     (should
      (string-match-p
-      "\\`https://www.sec.gov/Archives/edgar/data/[0-9]+/[0-9]+/"
+      "\\`https://www.sec.gov/Archives/edgar/\\(?:data/[0-9]+/[0-9]+/\\|vprr/[0-9]+/[0-9]+\\.pdf\\)"
       (plist-get filing :url)))
     (should
      (string-match-p

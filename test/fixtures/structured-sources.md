@@ -157,33 +157,19 @@ accessor goldens live in `test/golden/`.
 
 ## G12 source limitations
 
-These Q2 2026 SEC sources were checked through their accession directories.
-The four PDF primaries are recorded as direct `.pdf` files and complete
-`.txt.gz` submissions. Their whole-text and primary-document snapshots are in
-`test/expect/g12-pdf-structures.eld`. Tests decode each submission payload,
-compare the bytes with the direct SEC PDF, and check generic text and paragraph
-structure.
+The Q2 2026 full SEC form index has three `ADV-H-T` and eight `G-FIN/A`
+submissions. Every corresponding accession directory contains only a
+294-byte `.paper` notice and the complete-submission `.txt`; there is no
+original form body in the Q2 directories. Their paper-notice structure and
+rendered text are pinned in `test/expect/g12-paper-structures.eld`.
 
-- `ADV-H-T`, accession `9999999997-26-000671`: the directory contains a
-  294-byte `9999999997-26-000671.paper` control and the complete submission.
-  Both contain only the auto-generated paper notice; it names Document Control
-  Number `26007812` and says the original document must be accessed by that
-  number. The files are recorded as `adv-h-t-2026-q2.paper` and
-  `adv-h-t-2026-q2.txt.gz`
-  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/index.json),
-  [complete submission](https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/9999999997-26-000671.txt)).
-- `G-FIN/A` (base form `G-FIN`), accession `9999999997-26-001447`: the
-  directory likewise contains only the 294-byte `.paper` control and complete
-  submission. Its notice names Document Control Number `26007830`; no original
-  report body is present. The files are recorded as `g-fin-a-2026-q2.paper`
-  and `g-fin-a-2026-q2.txt.gz`
-  ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/index.json),
-  [complete submission](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.txt)).
-
-The paper notice structures and exact `.paper` hashes are pinned in
-`test/expect/g12-paper-structures.eld`. These two forms remain L0 because the
-public files contain no report body; the cited document-control numbers do not
-lead to publicly available report files in the accession directories.
+- The three Q2 `ADV-H-T` accessions are `9999999997-26-000670`,
+  `9999999997-26-000671`, and `9999999997-26-000672` ([first](https://www.sec.gov/Archives/edgar/data/2082184/999999999726000670/index.json),
+  [second](https://www.sec.gov/Archives/edgar/data/2130471/999999999726000671/index.json),
+  [third](https://www.sec.gov/Archives/edgar/data/2130456/999999999726000672/index.json)). The earlier recorded accession `9999999997-21-002053` also lists only an auto-generated paper control and complete submission ([SEC filing detail](https://www.sec.gov/Archives/edgar/data/1858687/999999999721002053/9999999997-21-002053-index.htm)). The SEC EDGAR form-type catalog marks `ADV-H-T` as `Paper Only` ([SEC catalog](https://www.sec.gov/files/nb/fttdreport.pdf), p. 56). No sampled filing exposes its report body, so `ADV-H-T` remains L0.
+- The Q2 `G-FIN/A` accessions likewise expose generated notices; the recorded example is `9999999997-26-001447` ([SEC accession directory](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/index.json),
+  [complete submission](https://www.sec.gov/Archives/edgar/data/823722/999999999726001447/9999999997-26-001447.txt)). A readable older filing exists: `G-FIN/A` filed by FHN Financial Capital Markets, accession `9999999997-25-002762`, filed 2025-05-22. Its SEC filing detail page lists `scanned.pdf` as the scanned paper document and links to the VPRR PDF ([filing detail](https://www.sec.gov/Archives/edgar/data/823412/999999999725002762/9999999997-25-002762-index.htm),
+  [scanned PDF](https://www.sec.gov/Archives/edgar/vprr/2500/25007214.pdf)). The source is recorded as `g-fin-a-fhn-2025-q2.pdf` and tested through generic PDF text and structure APIs, promoting base form `G-FIN` to L1.
 
 The four publicly available primary PDFs are now L1:
 

@@ -1415,11 +1415,11 @@
      "G-FIN"
      (list
       :family "G12 Broker-dealer, market structure, staff"
-      :backend 'text
-      :level 'L0
-      :sections-or-fields nil
+      :backend 'pdf
+      :level 'L1
+      :sections-or-fields '(generic-document-elements)
       :volume 8
-      :notes "Q2 2026 .paper notice cites DCPN 26007830; original report body is absent.")
+      :notes "The SEC's 2025 FHN G-FIN/A scanned paper PDF is readable through the generic text and structure APIs.")
      table)
     (puthash
      "IRANNOTICE"

@@ -817,10 +817,7 @@
                  (lambda (_) submission)))
         (let* ((primary (edgar-primary-document submission-filing))
                (tree (edgar-document-structure submission-filing))
-               (text (edgar-structure-text tree))
-               (info (edgar-form-info (plist-get filing :form))))
-          (should (eq (plist-get info :level) 'L0))
-          (should (eq (plist-get info :backend) 'text))
+               (text (edgar-structure-text tree)))
           (should (equal (plist-get primary :sequence) "1"))
           (should
            (equal
@@ -841,6 +838,41 @@
             (plist-get expected :document-snapshot)
             (edgar-test--g12-document-snapshot
              submission-filing tree))))))))
+
+(ert-deftest edgar-g12-paper-controls-rendered-text-matches-snapshots ()
+  "Rendered paper-control text stays pinned separately from tree output."
+  (dolist (expected
+           (edgar-fixtures-read
+            (edgar-fixtures-path "expect/g12-paper-structures.eld")))
+    (let* ((filing (edgar-fixtures-filing (plist-get expected :slug)))
+           (submission-filing (edgar-test--g12-submission-filing filing))
+           (submission (edgar-fixtures-submission (plist-get expected :slug))))
+      (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
+        (let ((text (edgar-text submission-filing)))
+          (should
+           (equal
+            (plist-get expected :edgar-text-snapshot)
+            (list
+             :text-length (length text)
+             :text-sha256 (secure-hash 'sha256 text)))))))))
+
+(ert-deftest edgar-g12-gfin-scanned-paper-body-uses-generic-pdf-api ()
+  "A real SEC G-FIN/A paper scan is readable through generic PDF APIs."
+  (let* ((slug "g-fin-a-fhn-2025-q2")
+         (filing (edgar-fixtures-filing slug))
+         (pdf (edgar-fixtures-primary slug)))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) pdf)))
+      (let* ((text (edgar-text filing))
+             (tree (edgar-document-structure filing))
+             (info (edgar-form-info (plist-get filing :form)))
+             (normalized (downcase text)))
+        (should (eq (plist-get info :level) 'L1))
+        (should (eq (plist-get info :backend) 'pdf))
+        (should (eq (plist-get tree :format) 'pdf))
+        (should (string-match-p "fhn financial capital markets" normalized))
+        (should (string-match-p "additional locations" normalized))
+        (should (string-match-p "penny elaine michael" normalized))
+        (should (> (length (edgar-structure-paragraphs tree)) 10))))))
 
 (ert-deftest edgar-g12-upload-fixture-uses-generic-text-api ()
   "A real SEC UPLOAD text extract works through the generic structure API."
@@ -873,8 +905,8 @@
           (edgar-test--g12-document-snapshot filing tree)))))))
 
 (ert-deftest edgar-g12-paper-source-limits-remain-l0 ()
-  "G12 paper notices stay L0 while their original report bodies are absent."
-  (dolist (form '("ADV-H-T" "G-FIN"))
+  "ADV-H-T stays L0 because its paper-only report body is unavailable."
+  (dolist (form '("ADV-H-T"))
     (let ((info (edgar-form-info form)))
       (should (eq (plist-get info :level) 'L0))
       (should (stringp (plist-get info :notes)))
