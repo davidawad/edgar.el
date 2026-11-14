@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edgarSubmission xmlns="http://www.sec.gov/edgar/ncen" xmlns:com="http://www.sec.gov/edgar/common">
+  <schemaVersion>X0505</schemaVersion>
+  <headerData>
+    <submissionType>N-CEN</submissionType>
+    <filerInfo>
+      <liveTestFlag>LIVE</liveTestFlag>
+      <filer>
+        <issuerCredentials>
+          <cik>0000869351</cik>
+          <ccc>XXXXXXXX</ccc>
+        </issuerCredentials>
+        <fileNumber>811-06199</fileNumber>
+      </filer>
+      <investmentCompanyType>N-1A</investmentCompanyType>
+    </filerInfo>
+    <seriesClass>
+      <reportSeriesClass>
+        <rptIncludeAllSeriesFlag>true</rptIncludeAllSeriesFlag>
+      </reportSeriesClass>
+    </seriesClass>
+  </headerData>
+  <formData>
+    <generalInfo reportEndingPeriod="2026-03-31" isReportPeriodLt12="N"/>
+    <registrantInfo>
+      <registrantFullName>BROWN CAPITAL MANAGEMENT MUTUAL FUNDS</registrantFullName>
+      <investmentCompFileNo>811-06199</investmentCompFileNo>
+      <registrantCik>0000869351</registrantCik>
+      <registrantLei>549300CCIM9MVH3XK623</registrantLei>
+      <registrantstreet1> 1201 N. Calvert Street </registrantstreet1>
+      <registrantcity> Baltimore </registrantcity>
+      <registrantzipCode>21202</registrantzipCode>
+      <registrantstate>US-MD</registrantstate>
+      <registrantcountry>US</registrantcountry>
+      <registrantphoneNumber>410-837-3234</registrantphoneNumber>
+      <websites>
+        <website webpage="www.browncapital.com "/>
+      </websites>
+      <locationBooksRecords>
+        <locationBooksRecord>
+          <officeName>ALPS Distributors, Inc. </officeName>
+          <officeAddress1>1290 Broadway, Suite 1000</officeAddress1>
+          <officeCity>Denver</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-CO"/>
+          <officeRecordsZipCode>80203</officeRecordsZipCode>
+          <officePhone>303-623-2577</officePhone>
+          <booksRecordsDesc>Records as distributor</booksRecordsDesc>
+        </locationBooksRecord>
+        <locationBooksRecord>
+          <officeName>Brown Capital Management</officeName>
+          <officeAddress1>1201 North Calvert St.</officeAddress1>
+          <officeCity>Baltimore</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-MD"/>
+          <officeRecordsZipCode>21202</officeRecordsZipCode>
+          <officePhone>410-837-3234</officePhone>
+          <booksRecordsDesc>Records as advisor</booksRecordsDesc>
+        </locationBooksRecord>
+        <locationBooksRecord>
+          <officeName>Commonwealth Fund Services, Inc.</officeName>
+          <officeAddress1>8730 Stony Point Parkway</officeAddress1>
+          <officeAddress2>Suite 205</officeAddress2>
+          <officeCity>Richmond</officeCity>
+          <officeStateCountry officeCountry="US" officeState="US-VA"/>
+          <officeRecordsZipCode>23235</officeRecordsZipCode>
+          <officePhone>804-267-7400</officePhone>
+          <booksRecordsDesc>Records as administrator and transfer agent </booksRecordsDesc>
+        </locationBooksRecord>
+      </locationBooksRecords>
+      <isRegistrantFirstFiling>N</isRegistrantFirstFiling>
+      <isRegistrantLastFiling>N</isRegistrantLastFiling>
+      <isRegistrantFamilyInvComp>N</isRegistrantFamilyInvComp>
+      <registrantClassificationType>N-1A</registrantClassificationType>
+      <totalSeries>3</totalSeries>
+      <isSecuritiesActRegistration>Y</isSecuritiesActRegistration>
+      <directors>
+        <director>
+          <directorName> Claude Z. Demby </directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName> James H. Speed, Jr. </directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="811-07324"/>
+            <fileNumberInfo fileNumber="811-21606"/>
+            <fileNumberInfo fileNumber="811-22298"/>
+            <fileNumberInfo fileNumber="811-22858"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName> Louis G. Hutt, Jr. </directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>N</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="811-06526"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>Amy Perez Jackson</directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>Y</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+        <director>
+          <directorName>Robert Young</directorName>
+          <crdNumber>N/A</crdNumber>
+          <isDirectorInterestedPerson>Y</isDirectorInterestedPerson>
+          <fileNumbers>
+            <fileNumberInfo fileNumber="N/A"/>
+          </fileNumbers>
+        </director>
+      </directors>
+      <chiefComplianceOfficers>
+        <chiefComplianceOfficer>
+          <ccoName>Julian G Winters</ccoName>
+          <crdNumber>N/A</crdNumber>
+          <ccoStreet1>3993 Sunset Avenue</ccoStreet1>
+          <ccoCity>Rocky Mount</ccoCity>
+          <ccoStateCountry ccoCountry="US" ccoState="US-NC"/>
+          <ccoZipCode>27804</ccoZipCode>
+          <ccoPhone>XXXXXX</ccoPhone>
+          <isCcoChangedSinceLastFiling>N</isCcoChangedSinceLastFiling>
+          <ccoEmployers>
+            <ccoEmployer ccoEmployerName="N/A" ccoEmployerId="N/A"/>
+          </ccoEmployers>
+        </chiefComplianceOfficer>
+      </chiefComplianceOfficers>
+      <isRegistrantSubmittedMatter>N</isRegistrantSubmittedMatter>
+      <isPreviousLegalProceeding>N</isPreviousLegalProceeding>
+      <isPreviousProceedingTerminated>N</isPreviousProceedingTerminated>
+      <isClaimFiled>N</isClaimFiled>
+      <coveredByInsurancePolicy isCoveredByInsurancePolicy="Y" isClaimFiledDuringPeriod="N"/>
+      <isFinancialSupportDuringPeriod>N</isFinancialSupportDuringPeriod>
+      <isExemptionFromAct>N</isExemptionFromAct>
+      <principalUnderwriters>
+        <principalUnderwriter>
+          <principalUnderwriterName>ALPS DISTRIBUTORS, INC</principalUnderwriterName>
+          <principalUnderwriterFileNumber>008-34626</principalUnderwriterFileNumber>
+          <principalUnderwriterCrdNumber>000016853</principalUnderwriterCrdNumber>
+          <principalUnderwriterLei>N/A</principalUnderwriterLei>
+          <principalUnderwriterRssdId>N/A</principalUnderwriterRssdId>
+          <principalUnderWriterStateCountry principalUnderWriterCountry="US" principalUnderWriterState="US-CO"/>
+          <isPrincipalUnderwriterAffiliatedWithRegistrant>N</isPrincipalUnderwriterAffiliatedWithRegistrant>
+        </principalUnderwriter>
+      </principalUnderwriters>
+      <isUnderwriterHiredOrTerminated>N</isUnderwriterHiredOrTerminated>
+      <publicAccountants>
+        <publicAccountant>
+          <publicAccountantName>Cohen &amp; Company, Ltd.</publicAccountantName>
+          <pcaobNumber>925</pcaobNumber>
+          <publicAccountantLei>N/A</publicAccountantLei>
+          <publicAccountantRssdId>N/A</publicAccountantRssdId>
+          <publicAccountantStateCountry publicAccountantCountry="US" publicAccountantState="US-OH"/>
+        </publicAccountant>
+      </publicAccountants>
+      <isPublicAccountantChanged>N</isPublicAccountantChanged>
+      <isMaterialWeakness>N</isMaterialWeakness>
+      <isOpinionOffered>N</isOpinionOffered>
+      <isMaterialChange>N</isMaterialChange>
+      <isAccountingPrincipleChange>N</isAccountingPrincipleChange>
+      <isPaymentErrorInNetAssetValue>N</isPaymentErrorInNetAssetValue>
+      <isPaymentDividend>N</isPaymentDividend>
+    </registrantInfo>
+    <managementInvestmentQuestionSeriesInfo>
+      <managementInvestmentQuestion>
+        <mgmtInvFundName> Brown Capital Management International All Company Fund </mgmtInvFundName>
+        <mgmtInvSeriesId>S000010419</mgmtInvSeriesId>
+        <mgmtInvLei>549300UQ37FXHTDDX095</mgmtInvLei>
+        <isFirstFilingByFund>N</isFirstFilingByFund>
+        <numAuthorizedClass>2</numAuthorizedClass>
+        <numAddedClass>0</numAddedClass>
+        <numTerminatedClass>0</numTerminatedClass>
+        <sharesOutstandings>
+          <sharesOutstanding sharesOutstandingClassName="Brown Capital Management International All Company Fund - Institutional Class" sharesOutstandingClassId="C000105413" sharesOutstandingTickerSymbol="BCISX"/>
+          <sharesOutstanding sharesOutstandingClassName="Brown Capital Management International All Company Fund - Investor Class" sharesOutstandingClassId="C000028794" sharesOutstandingTickerSymbol="BCIIX"/>
+        </sharesOutstandings>
+        <fundType>N/A</fundType>
+        <isNonDiversifiedCompany>N</isNonDiversifiedCompany>
+        <isForeignSubsidiary>N</isForeignSubsidiary>
+        <isFundSecuritiesLending>N</isFundSecuritiesLending>
+        <didFundLendSecurities>N</didFundLendSecurities>
+        <paymentToAgentManagerType>N/A</paymentToAgentManagerType>
+        <avgPortfolioSecuritiesValue>N/A</avgPortfolioSecuritiesValue>
+        <netIncomeSecuritiesLending>N/A</netIncomeSecuritiesLending>
+        <relyOnRuleTypes>
+          <relyOnRuleType>Rule 32a-4 (17 CFR 270.32a-4)</relyOnRuleType>
+        </relyOnRuleTypes>
+        <isExpenseLimitationInPlace>Y</isExpenseLimitationInPlace>
+        <isExpenseReducedOrWaived>N</isExpenseReducedOrWaived>
+        <isFeesWaivedRecoupable>Y</isFeesWaivedRecoupable>
+        <isExpenseWaivedRecoupable>N</isExpenseWaivedRecoupable>
+        <investmentAdvisers>
+          <investmentAdviser>
+            <investmentAdviserName> Brown Capital Management, LLC </investmentAdviserName>
+            <investmentAdviserFileNo>801-19287</investmentAdviserFileNo>
+            <investmentAdviserCrdNo>000105633</investmentAdviserCrdNo>
+            <investmentAdviserLei>8945006AHP2K2VXJ0144</investmentAdviserLei>
+            <investmentAdviserStateCountry investmentAdviserState="US-MD" investmentAdviserCountry="US"/>
+            <isInvestmentAdviserHired>N</isInvestmentAdviserHired>
+          </investmentAdviser>
+        </investmentAdvisers>
+        <transferAgents>
+          <transferAgent>
+            <transferAgentName>Commonwealth Fund Services, Inc.</transferAgentName>
+            <transferAgentFileNo>084-01553</transferAgentFileNo>
+            <transferAgentLei>N/A</transferAgentLei>
+            <transferAgentRssdId>N/A</transferAgentRssdId>
+            <transferAgentStateCountry transferAgentState="US-VA" transferAgentCountry="US"/>
+            <isTransferAgentAffiliated>Y</isTransferAgentAffiliated>
+            <isTransferAgentSubAgent>N</isTransferAgentSubAgent>
+          </transferAgent>
+        </transferAgents>
+        <isTransferAgentHiredOrTerminated>N</isTransferAgentHiredOrTerminated>
+        <pricingServices>
+          <pricingService>
+            <pricingServiceName>Bloomberg Global Markets Services LLC</pricingServiceName>
+            <pricingServiceLei>254900X21QX3H0T4HC32</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>ICE Data Pricing &amp; Reference Data, LLC</pricingServiceName>
+            <pricingServiceLei>5493000NQ9LYLDBCTL34</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+        </pricingServices>
+        <isPricingServiceHiredOrTerminated>N</isPricingServiceHiredOrTerminated>
+        <custodians>
+          <custodian>
+            <custodianName>BONY London</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>GB</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>CIBC Mellon</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>CA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>CITIBANAMEX Mexico</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>MX</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Clearstream Banking Frankfurt</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>DE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>ESES France Bearer</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>FR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>EUROCLEAR Netherlands</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>NL</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>HKK Shanghai Bank</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>KY</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>HSBC Sydney Branch</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>AS</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>SEB Copenhagen</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>DK</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>Santander Sec Svc</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>ES</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UBS AG Zurich</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>CH</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>US Bancorp</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianStateCountry custodianState="US-MN" custodianCountry="US"/>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>N</isSubCustodian>
+            <custodyType>Bank - section 17(f)(1) (15 U.S.C. 80a-17(f)(1))</custodyType>
+          </custodian>
+        </custodians>
+        <isCustodianHiredOrTerminated>N</isCustodianHiredOrTerminated>
+        <shareholderServicingAgents>
+          <shareholderServicingAgent>
+            <shareholderServiceAgentName>Commonwealth Fund Services, Inc.</shareholderServiceAgentName>
+            <shareholderServiceAgentLei>N/A</shareholderServiceAgentLei>
+            <shareholderServiceAgentRssdId>N/A</shareholderServiceAgentRssdId>
+            <shareholderServiceAgentOther>084-01553</shareholderServiceAgentOther>
+            <shareholderServiceIdNumberDesc>SEC File Number</shareholderServiceIdNumberDesc>
+            <shareholderServiceAgentStateCountry shareholderServiceAgentState="US-VA" shareholderServiceAgentCountry="US"/>
+            <isShareholderServiceAgentAffiliated>Y</isShareholderServiceAgentAffiliated>
+            <isShareholderServiceAgentSubshare>N</isShareholderServiceAgentSubshare>
+          </shareholderServicingAgent>
+        </shareholderServicingAgents>
+        <isShareholderServiceHiredTerminated>N</isShareholderServiceHiredTerminated>
+        <admins>
+          <admin>
+            <adminName>Commonwealth Fund Services, Inc.</adminName>
+            <adminLei>N/A</adminLei>
+            <adminRssdId>N/A</adminRssdId>
+            <adminOther>084-01553</adminOther>
+            <idNumberDesc>SEC File Number</idNumberDesc>
+            <adminStateCountry adminState="US-VA" adminCountry="US"/>
+            <isAdminAffiliated>Y</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+        </admins>
+        <isAdminHiredOrTerminated>N</isAdminHiredOrTerminated>
+        <brokers>
+          <broker>
+            <brokerName>Goldman Sachs</brokerName>
+            <brokerFileNo>008-129</brokerFileNo>
+            <brokerCrdNo>000000361</brokerCrdNo>
+            <brokerLei>FOR8UP27PHTHYVLBNG30</brokerLei>
+            <brokerStateCountry brokerState="US-UT" brokerCountry="US"/>
+            <grossCommission>11568.14</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Daiwa Capital Markets America Inc.</brokerName>
+            <brokerFileNo>008-12242</brokerFileNo>
+            <brokerCrdNo>000001576</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>1822.14</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Robert W. Baird &amp; Co</brokerName>
+            <brokerFileNo>008-497</brokerFileNo>
+            <brokerCrdNo>000008158</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-WI" brokerCountry="US"/>
+            <grossCommission>355.74</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Barclays Capital, Inc.</brokerName>
+            <brokerFileNo>008-41342</brokerFileNo>
+            <brokerCrdNo>000019714</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>8831.48</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Macquire Capital (USA) Inc.</brokerName>
+            <brokerFileNo>008-47198</brokerFileNo>
+            <brokerCrdNo>000036368</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>338.13</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>ITG Derivatives, LLC.</brokerName>
+            <brokerFileNo>008-48255</brokerFileNo>
+            <brokerCrdNo>000038455</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-IL" brokerCountry="US"/>
+            <grossCommission>952.06</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Loop Capital Markets</brokerName>
+            <brokerFileNo>008-50140</brokerFileNo>
+            <brokerCrdNo>000043098</brokerCrdNo>
+            <brokerLei>254900FPPM2WN90D4786</brokerLei>
+            <brokerStateCountry brokerState="US-IL" brokerCountry="US"/>
+            <grossCommission>1893</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>DNB Carnegie, Inc.</brokerName>
+            <brokerFileNo>008-66024</brokerFileNo>
+            <brokerCrdNo>000127605</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>790.87</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Morgan Stanley</brokerName>
+            <brokerFileNo>008-68191</brokerFileNo>
+            <brokerCrdNo>000149777</brokerCrdNo>
+            <brokerLei>IGJSJL3JD5P30I6NJZ34</brokerLei>
+            <brokerStateCountry brokerState="US-MD" brokerCountry="US"/>
+            <grossCommission>3951.23</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>BERENBERG CAPITAL MARKETS LLC</brokerName>
+            <brokerFileNo>008-68821</brokerFileNo>
+            <brokerCrdNo>000156757</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>1686.33</grossCommission>
+          </broker>
+        </brokers>
+        <aggregateCommission>32448.87</aggregateCommission>
+        <principalAggregatePurchase>0</principalAggregatePurchase>
+        <isBrokerageResearchPayment>Y</isBrokerageResearchPayment>
+        <mnthlyAvgNetAssets>70053309.27</mnthlyAvgNetAssets>
+        <hasLineOfCredit>N</hasLineOfCredit>
+        <isInterfundLending>N</isInterfundLending>
+        <isInterfundBorrowing>N</isInterfundBorrowing>
+        <isSwingPricing>N</isSwingPricing>
+        <liquidityClassifications>
+          <liquidityClassificationService>
+            <liquidityName>Brown Capital Managment</liquidityName>
+            <liquidityLei>8945006AHP2K2VXJ0144</liquidityLei>
+            <liquidityRssdId>N/A</liquidityRssdId>
+            <liquidityStateCountry liquidityCountry="US" liquidityState="US-MD"/>
+            <isAffiliatedPerson>Y</isAffiliatedPerson>
+            <assetClassType>Equity-common</assetClassType>
+            <assetClassType>Short-term investment vehicle</assetClassType>
+          </liquidityClassificationService>
+        </liquidityClassifications>
+        <isLiquidityHiredTerminated>N</isLiquidityHiredTerminated>
+      </managementInvestmentQuestion>
+      <managementInvestmentQuestion>
+        <mgmtInvFundName> Brown Capital Management International Small Company Fund </mgmtInvFundName>
+        <mgmtInvSeriesId>S000049041</mgmtInvSeriesId>
+        <mgmtInvLei>549300TLQKLHDTIF7V05</mgmtInvLei>
+        <isFirstFilingByFund>N</isFirstFilingByFund>
+        <numAuthorizedClass>2</numAuthorizedClass>
+        <numAddedClass>0</numAddedClass>
+        <numTerminatedClass>0</numTerminatedClass>
+        <sharesOutstandings>
+          <sharesOutstanding sharesOutstandingClassName="Brown Capital Management International Small Company Fund - Institutional Class" sharesOutstandingClassId="C000154624" sharesOutstandingTickerSymbol="BCSFX"/>
+          <sharesOutstanding sharesOutstandingClassName="Brown Capital Management International Small Company Fund - Investor Class" sharesOutstandingClassId="C000154625" sharesOutstandingTickerSymbol="BCSVX"/>
+        </sharesOutstandings>
+        <fundType>N/A</fundType>
+        <isNonDiversifiedCompany>N</isNonDiversifiedCompany>
+        <isForeignSubsidiary>N</isForeignSubsidiary>
+        <isFundSecuritiesLending>N</isFundSecuritiesLending>
+        <didFundLendSecurities>N</didFundLendSecurities>
+        <paymentToAgentManagerType>N/A</paymentToAgentManagerType>
+        <avgPortfolioSecuritiesValue>N/A</avgPortfolioSecuritiesValue>
+        <netIncomeSecuritiesLending>N/A</netIncomeSecuritiesLending>
+        <relyOnRuleTypes>
+          <relyOnRuleType>Rule 32a-4 (17 CFR 270.32a-4)</relyOnRuleType>
+        </relyOnRuleTypes>
+        <isExpenseLimitationInPlace>Y</isExpenseLimitationInPlace>
+        <isExpenseReducedOrWaived>N</isExpenseReducedOrWaived>
+        <isFeesWaivedRecoupable>Y</isFeesWaivedRecoupable>
+        <isExpenseWaivedRecoupable>N</isExpenseWaivedRecoupable>
+        <investmentAdvisers>
+          <investmentAdviser>
+            <investmentAdviserName> Brown Capital Management, LLC </investmentAdviserName>
+            <investmentAdviserFileNo>801-19287</investmentAdviserFileNo>
+            <investmentAdviserCrdNo>000105633</investmentAdviserCrdNo>
+            <investmentAdviserLei>8945006AHP2K2VXJ0144</investmentAdviserLei>
+            <investmentAdviserStateCountry investmentAdviserState="US-MD" investmentAdviserCountry="US"/>
+            <isInvestmentAdviserHired>N</isInvestmentAdviserHired>
+          </investmentAdviser>
+        </investmentAdvisers>
+        <transferAgents>
+          <transferAgent>
+            <transferAgentName>Commonwealth, Fund Services, Inc.</transferAgentName>
+            <transferAgentFileNo>084-01553</transferAgentFileNo>
+            <transferAgentLei>N/A</transferAgentLei>
+            <transferAgentRssdId>N/A</transferAgentRssdId>
+            <transferAgentStateCountry transferAgentState="US-VA" transferAgentCountry="US"/>
+            <isTransferAgentAffiliated>Y</isTransferAgentAffiliated>
+            <isTransferAgentSubAgent>N</isTransferAgentSubAgent>
+          </transferAgent>
+        </transferAgents>
+        <isTransferAgentHiredOrTerminated>N</isTransferAgentHiredOrTerminated>
+        <pricingServices>
+          <pricingService>
+            <pricingServiceName>Bloomberg Global Markets Services LLC</pricingServiceName>
+            <pricingServiceLei>254900X21QX3H0T4HC32</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>ICE Data Pricing &amp; Reference Data, LLC</pricingServiceName>
+            <pricingServiceLei>5493000NQ9LYLDBCTL34</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+        </pricingServices>
+        <isPricingServiceHiredOrTerminated>N</isPricingServiceHiredOrTerminated>
+        <custodians>
+          <custodian>
+            <custodianName>BONY London</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>GB</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>CIBC MELLON TRUST COMPANY</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>CA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>CLEARSTREAM BANKING FRANKFURT</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>DE</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>DEUTSCHE BANK AG INDIA</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>IN</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>ESES FRANCE BEARER</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>FR</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>HKK SHANGHAI BANK</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>KY</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>HSBC NEW ZEALAND</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>NZ</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>HSBC SYDNEY BRANCH</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>AS</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>MONTE TITOLI</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>IT</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>SEB COPENHAGEN</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>DK</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>STANDARD BANK SA</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>ZA</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UBS AG ZURICH</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>CH</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UBS AG, ZURICH</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>SZ</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>UNICREDIT BANK AUSTRIA AG</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianCountry>AT</custodianCountry>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>Y</isSubCustodian>
+            <custodyType>Foreign custodian - rule 17f-5 (17 CFR 270.17f-5)</custodyType>
+          </custodian>
+          <custodian>
+            <custodianName>US Bancorp</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianStateCountry custodianState="US-MN" custodianCountry="US"/>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>N</isSubCustodian>
+            <custodyType>Bank - section 17(f)(1) (15 U.S.C. 80a-17(f)(1))</custodyType>
+          </custodian>
+        </custodians>
+        <isCustodianHiredOrTerminated>N</isCustodianHiredOrTerminated>
+        <shareholderServicingAgents>
+          <shareholderServicingAgent>
+            <shareholderServiceAgentName>Commonwealth Fund Services, Inc.</shareholderServiceAgentName>
+            <shareholderServiceAgentLei>N/A</shareholderServiceAgentLei>
+            <shareholderServiceAgentRssdId>N/A</shareholderServiceAgentRssdId>
+            <shareholderServiceAgentOther>084-01553</shareholderServiceAgentOther>
+            <shareholderServiceIdNumberDesc>SEC File Number</shareholderServiceIdNumberDesc>
+            <shareholderServiceAgentStateCountry shareholderServiceAgentState="US-VA" shareholderServiceAgentCountry="US"/>
+            <isShareholderServiceAgentAffiliated>Y</isShareholderServiceAgentAffiliated>
+            <isShareholderServiceAgentSubshare>N</isShareholderServiceAgentSubshare>
+          </shareholderServicingAgent>
+        </shareholderServicingAgents>
+        <isShareholderServiceHiredTerminated>N</isShareholderServiceHiredTerminated>
+        <admins>
+          <admin>
+            <adminName>Commonwealth Fund Services, Inc.</adminName>
+            <adminLei>N/A</adminLei>
+            <adminRssdId>N/A</adminRssdId>
+            <adminOther>084-01553</adminOther>
+            <idNumberDesc>SEC File Number</idNumberDesc>
+            <adminStateCountry adminState="US-VA" adminCountry="US"/>
+            <isAdminAffiliated>Y</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+        </admins>
+        <isAdminHiredOrTerminated>N</isAdminHiredOrTerminated>
+        <brokers>
+          <broker>
+            <brokerName>Goldman Sachs</brokerName>
+            <brokerFileNo>008-129</brokerFileNo>
+            <brokerCrdNo>000000361</brokerCrdNo>
+            <brokerLei>FOR8UP27PHTHYVLBNG30</brokerLei>
+            <brokerStateCountry brokerState="US-UT" brokerCountry="US"/>
+            <grossCommission>171806.87</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Daiwa Capital Markets</brokerName>
+            <brokerFileNo>008-12242</brokerFileNo>
+            <brokerCrdNo>000001576</brokerCrdNo>
+            <brokerLei>M67H5PRC0NQKM73ZAS82</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>41033.21</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>JEFFERIES LLC</brokerName>
+            <brokerFileNo>008-15074</brokerFileNo>
+            <brokerCrdNo>000002347</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>18673.41</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Barclays Capital, Inc.</brokerName>
+            <brokerFileNo>008-41342</brokerFileNo>
+            <brokerCrdNo>000019714</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>220258.92</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Carnegie</brokerName>
+            <brokerFileNo>008-45389</brokerFileNo>
+            <brokerCrdNo>000031184</brokerCrdNo>
+            <brokerLei>549300TV0TOBI3QUPX65</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>46604.29</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Macquarie Equities</brokerName>
+            <brokerFileNo>008-47198</brokerFileNo>
+            <brokerCrdNo>000036368</brokerCrdNo>
+            <brokerLei>549300670K07JRB5UQ40</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>21990.75</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>ITG Der</brokerName>
+            <brokerFileNo>008-48255</brokerFileNo>
+            <brokerCrdNo>000038455</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerStateCountry brokerState="US-IL" brokerCountry="US"/>
+            <grossCommission>148721.08</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Loop Capital Markets</brokerName>
+            <brokerFileNo>008-50140</brokerFileNo>
+            <brokerCrdNo>000043098</brokerCrdNo>
+            <brokerLei>254900FPPM2WN90D4786</brokerLei>
+            <brokerStateCountry brokerState="US-IL" brokerCountry="US"/>
+            <grossCommission>116203.73</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Morgan Stanley</brokerName>
+            <brokerFileNo>008-68191</brokerFileNo>
+            <brokerCrdNo>000149777</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-MD" brokerCountry="US"/>
+            <grossCommission>108771.08</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>BERENBERG CAPITAL MARKETS LLC</brokerName>
+            <brokerFileNo>008-68821</brokerFileNo>
+            <brokerCrdNo>000156757</brokerCrdNo>
+            <brokerLei>5493007EG0CYRKKG9L11</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>51586.30</grossCommission>
+          </broker>
+        </brokers>
+        <aggregateCommission>1010869.79</aggregateCommission>
+        <principalAggregatePurchase>0</principalAggregatePurchase>
+        <isBrokerageResearchPayment>Y</isBrokerageResearchPayment>
+        <mnthlyAvgNetAssets>2044751559.93</mnthlyAvgNetAssets>
+        <hasLineOfCredit>N</hasLineOfCredit>
+        <isInterfundLending>N</isInterfundLending>
+        <isInterfundBorrowing>N</isInterfundBorrowing>
+        <isSwingPricing>N</isSwingPricing>
+        <liquidityClassifications>
+          <liquidityClassificationService>
+            <liquidityName>Brown Capital Managment</liquidityName>
+            <liquidityLei>8945006AHP2K2VXJ0144</liquidityLei>
+            <liquidityRssdId>N/A</liquidityRssdId>
+            <liquidityStateCountry liquidityCountry="US" liquidityState="US-MD"/>
+            <isAffiliatedPerson>Y</isAffiliatedPerson>
+            <assetClassType>Equity-common</assetClassType>
+            <assetClassType>Short-term investment vehicle</assetClassType>
+          </liquidityClassificationService>
+        </liquidityClassifications>
+        <isLiquidityHiredTerminated>N</isLiquidityHiredTerminated>
+      </managementInvestmentQuestion>
+      <managementInvestmentQuestion>
+        <mgmtInvFundName>Brown Capital Management Small Company Fund</mgmtInvFundName>
+        <mgmtInvSeriesId>S000010418</mgmtInvSeriesId>
+        <mgmtInvLei>549300J0Q4WH1MYBBN64</mgmtInvLei>
+        <isFirstFilingByFund>N</isFirstFilingByFund>
+        <numAuthorizedClass>2</numAuthorizedClass>
+        <numAddedClass>0</numAddedClass>
+        <numTerminatedClass>0</numTerminatedClass>
+        <sharesOutstandings>
+          <sharesOutstanding sharesOutstandingClassName="Brown Capital Management Small Company Fund - Institutional Class" sharesOutstandingClassId="C000105412" sharesOutstandingTickerSymbol="BCSSX"/>
+          <sharesOutstanding sharesOutstandingClassName="Brown Capital Management Small Company Fund - Investor Class" sharesOutstandingClassId="C000028793" sharesOutstandingTickerSymbol="BCSIX"/>
+        </sharesOutstandings>
+        <fundType>N/A</fundType>
+        <isNonDiversifiedCompany>N</isNonDiversifiedCompany>
+        <isForeignSubsidiary>N</isForeignSubsidiary>
+        <isFundSecuritiesLending>N</isFundSecuritiesLending>
+        <didFundLendSecurities>N</didFundLendSecurities>
+        <paymentToAgentManagerType>N/A</paymentToAgentManagerType>
+        <avgPortfolioSecuritiesValue>N/A</avgPortfolioSecuritiesValue>
+        <netIncomeSecuritiesLending>N/A</netIncomeSecuritiesLending>
+        <relyOnRuleTypes>
+          <relyOnRuleType>Rule 32a-4 (17 CFR 270.32a-4)</relyOnRuleType>
+        </relyOnRuleTypes>
+        <isExpenseLimitationInPlace>Y</isExpenseLimitationInPlace>
+        <isExpenseReducedOrWaived>N</isExpenseReducedOrWaived>
+        <isFeesWaivedRecoupable>Y</isFeesWaivedRecoupable>
+        <isExpenseWaivedRecoupable>N</isExpenseWaivedRecoupable>
+        <investmentAdvisers>
+          <investmentAdviser>
+            <investmentAdviserName>Brown Capital Management, LLC</investmentAdviserName>
+            <investmentAdviserFileNo>801-19287</investmentAdviserFileNo>
+            <investmentAdviserCrdNo>000105633</investmentAdviserCrdNo>
+            <investmentAdviserLei>8945006AHP2K2VXJ0144</investmentAdviserLei>
+            <investmentAdviserStateCountry investmentAdviserState="US-MD" investmentAdviserCountry="US"/>
+            <isInvestmentAdviserHired>N</isInvestmentAdviserHired>
+          </investmentAdviser>
+        </investmentAdvisers>
+        <transferAgents>
+          <transferAgent>
+            <transferAgentName>Commonwealth Fund Services, Inc.</transferAgentName>
+            <transferAgentFileNo>084-01553</transferAgentFileNo>
+            <transferAgentLei>N/A</transferAgentLei>
+            <transferAgentRssdId>N/A</transferAgentRssdId>
+            <transferAgentStateCountry transferAgentState="US-VA" transferAgentCountry="US"/>
+            <isTransferAgentAffiliated>Y</isTransferAgentAffiliated>
+            <isTransferAgentSubAgent>N</isTransferAgentSubAgent>
+          </transferAgent>
+        </transferAgents>
+        <isTransferAgentHiredOrTerminated>N</isTransferAgentHiredOrTerminated>
+        <pricingServices>
+          <pricingService>
+            <pricingServiceName>Bloomberg Global Markets Services LLC</pricingServiceName>
+            <pricingServiceLei>254900X21QX3H0T4HC32</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+          <pricingService>
+            <pricingServiceName>ICE Data Pricing &amp; Reference Data, LLC</pricingServiceName>
+            <pricingServiceLei>5493000NQ9LYLDBCTL34</pricingServiceLei>
+            <pricingServiceStateCountry pricingServiceState="US-DE" pricingServiceCountry="US"/>
+            <isPricingServiceAffiliated>N</isPricingServiceAffiliated>
+          </pricingService>
+        </pricingServices>
+        <isPricingServiceHiredOrTerminated>N</isPricingServiceHiredOrTerminated>
+        <custodians>
+          <custodian>
+            <custodianName>US Bancorp</custodianName>
+            <custodianLei>N/A</custodianLei>
+            <custodianRssdId>N/A</custodianRssdId>
+            <custodianStateCountry custodianState="US-MN" custodianCountry="US"/>
+            <isCustodianAffiliated>N</isCustodianAffiliated>
+            <isSubCustodian>N</isSubCustodian>
+            <custodyType>Bank - section 17(f)(1) (15 U.S.C. 80a-17(f)(1))</custodyType>
+          </custodian>
+        </custodians>
+        <isCustodianHiredOrTerminated>N</isCustodianHiredOrTerminated>
+        <shareholderServicingAgents>
+          <shareholderServicingAgent>
+            <shareholderServiceAgentName>Commonwealth Fund Services, Inc.</shareholderServiceAgentName>
+            <shareholderServiceAgentLei>N/A</shareholderServiceAgentLei>
+            <shareholderServiceAgentRssdId>N/A</shareholderServiceAgentRssdId>
+            <shareholderServiceAgentOther>084-01553</shareholderServiceAgentOther>
+            <shareholderServiceIdNumberDesc>SEC File Number</shareholderServiceIdNumberDesc>
+            <shareholderServiceAgentStateCountry shareholderServiceAgentState="US-VA" shareholderServiceAgentCountry="US"/>
+            <isShareholderServiceAgentAffiliated>Y</isShareholderServiceAgentAffiliated>
+            <isShareholderServiceAgentSubshare>N</isShareholderServiceAgentSubshare>
+          </shareholderServicingAgent>
+        </shareholderServicingAgents>
+        <isShareholderServiceHiredTerminated>N</isShareholderServiceHiredTerminated>
+        <admins>
+          <admin>
+            <adminName>Commonwealth Fund Services, Inc.</adminName>
+            <adminLei>N/A</adminLei>
+            <adminRssdId>N/A</adminRssdId>
+            <adminOther>084-01553</adminOther>
+            <idNumberDesc>SEC File Number</idNumberDesc>
+            <adminStateCountry adminState="US-VA" adminCountry="US"/>
+            <isAdminAffiliated>Y</isAdminAffiliated>
+            <isAdminSubAdmin>N</isAdminSubAdmin>
+          </admin>
+        </admins>
+        <isAdminHiredOrTerminated>N</isAdminHiredOrTerminated>
+        <brokers>
+          <broker>
+            <brokerName>Goldman Sachs</brokerName>
+            <brokerFileNo>008-129</brokerFileNo>
+            <brokerCrdNo>000000361</brokerCrdNo>
+            <brokerLei>FOR8UP27PHTHYVLBNG30</brokerLei>
+            <brokerStateCountry brokerState="US-UT" brokerCountry="US"/>
+            <grossCommission>192263.4</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>STIFEL, NICOLAUS &amp; COMPANY, INCORPORATED</brokerName>
+            <brokerFileNo>008-1447</brokerFileNo>
+            <brokerCrdNo>000000793</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-MO" brokerCountry="US"/>
+            <grossCommission>25202.72</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>CANACCORD GENUITY LLC</brokerName>
+            <brokerFileNo>008-32710</brokerFileNo>
+            <brokerCrdNo>000001020</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>12471.08</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>William Blair</brokerName>
+            <brokerFileNo>008-26980</brokerFileNo>
+            <brokerCrdNo>000001252</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-IL" brokerCountry="US"/>
+            <grossCommission>21749.56</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Robert W Baird (Rwb)</brokerName>
+            <brokerFileNo>008-497</brokerFileNo>
+            <brokerCrdNo>000008158</brokerCrdNo>
+            <brokerLei>549300772UJAHRD6LO53</brokerLei>
+            <brokerStateCountry brokerState="US-WI" brokerCountry="US"/>
+            <grossCommission>7573.88</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Barclays</brokerName>
+            <brokerFileNo>008-41342</brokerFileNo>
+            <brokerCrdNo>000019714</brokerCrdNo>
+            <brokerLei>AC28XWWI3WIBK2824319</brokerLei>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>157927.84</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>RAYMOND JAMES (USA) LTD.</brokerName>
+            <brokerFileNo>008-42071</brokerFileNo>
+            <brokerCrdNo>000025853</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerCountry>CA</brokerCountry>
+            <grossCommission>17248.2</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>ITG Derivatives LLC</brokerName>
+            <brokerFileNo>008-48255</brokerFileNo>
+            <brokerCrdNo>000038455</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-IL" brokerCountry="US"/>
+            <grossCommission>40251.88</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Morgan Stanley</brokerName>
+            <brokerFileNo>008-68191</brokerFileNo>
+            <brokerCrdNo>000149777</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-NY" brokerCountry="US"/>
+            <grossCommission>6905.32</grossCommission>
+          </broker>
+          <broker>
+            <brokerName>Lake Street Capital Markets, LLC</brokerName>
+            <brokerFileNo>008-69101</brokerFileNo>
+            <brokerCrdNo>000164447</brokerCrdNo>
+            <brokerLei>N/A</brokerLei>
+            <brokerRssdId>N/A</brokerRssdId>
+            <brokerStateCountry brokerState="US-MN" brokerCountry="US"/>
+            <grossCommission>5747.20</grossCommission>
+          </broker>
+        </brokers>
+        <aggregateCommission>492301.95</aggregateCommission>
+        <principalAggregatePurchase>0</principalAggregatePurchase>
+        <isBrokerageResearchPayment>Y</isBrokerageResearchPayment>
+        <mnthlyAvgNetAssets>666545986.95</mnthlyAvgNetAssets>
+        <hasLineOfCredit>N</hasLineOfCredit>
+        <isInterfundLending>N</isInterfundLending>
+        <isInterfundBorrowing>N</isInterfundBorrowing>
+        <isSwingPricing>N</isSwingPricing>
+        <liquidityClassifications>
+          <liquidityClassificationService>
+            <liquidityName>Brown Capital Managment</liquidityName>
+            <liquidityLei>8945006AHP2K2VXJ0144</liquidityLei>
+            <liquidityRssdId>N/A</liquidityRssdId>
+            <liquidityStateCountry liquidityCountry="US" liquidityState="US-MD"/>
+            <isAffiliatedPerson>Y</isAffiliatedPerson>
+            <assetClassType>Equity-common</assetClassType>
+            <assetClassType>Short-term investment vehicle</assetClassType>
+          </liquidityClassificationService>
+        </liquidityClassifications>
+        <isLiquidityHiredTerminated>N</isLiquidityHiredTerminated>
+      </managementInvestmentQuestion>
+    </managementInvestmentQuestionSeriesInfo>
+    <attachmentsTab>
+      <isIPAReportInternalControl>true</isIPAReportInternalControl>
+    </attachmentsTab>
+    <signature registrantSignedName="BROWN CAPITAL MANAGEMENT MUTUAL FUNDS" signedDate="2026-06-15" signature="Michael Forster" title="Principal Financial Officer"/>
+  </formData>
+</edgarSubmission>

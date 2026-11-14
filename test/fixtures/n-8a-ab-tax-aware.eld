@@ -1,0 +1,1 @@
+(:accn "0001193125-26-228561" :form "N-8A" :company "AB Tax-Aware Credit Opportunities Fund" :filed "2026-05-18" :doc "d78843dn8a.htm" :cik 2132363 :url "https://www.sec.gov/Archives/edgar/data/2132363/000119312526228561/d78843dn8a.htm")

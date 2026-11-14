@@ -165,7 +165,8 @@
       :family "G4 13F holdings"
       :backend 'xml
       :level 'L2
-      :sections-or-fields '(issuer class cusip value shares put-call discretion voting)
+      :sections-or-fields
+      '(issuer class cusip value shares put-call discretion voting)
       :volume 9625
       :notes nil)
      table)
@@ -186,8 +187,13 @@
       :backend 'xml
       :level 'L2
       :sections-or-fields
-      '(issuer-name seller-name securities-class-title units-to-be-sold
-        aggregate-market-value approximate-sale-date broker-name)
+      '(issuer-name
+        seller-name
+        securities-class-title
+        units-to-be-sold
+        aggregate-market-value
+        approximate-sale-date
+        broker-name)
       :volume 19526
       :notes nil)
      table)
@@ -1525,8 +1531,8 @@
      "N-23C-2"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 31
       :notes nil)
@@ -1535,8 +1541,8 @@
      "N-23C3A"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 168
       :notes nil)
@@ -1575,8 +1581,8 @@
      "N-30B-2"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 27
       :notes nil)
@@ -1645,8 +1651,8 @@
      "N-8A"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 28
       :notes nil)
@@ -1655,8 +1661,8 @@
      "N-8F"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 20
       :notes nil)
@@ -1757,7 +1763,8 @@
       :family "G5 Fund periodic reports"
       :backend 'xml
       :level 'L2
-      :sections-or-fields '(registrant-name cik report-date net-assets holdings)
+      :sections-or-fields
+      '(registrant-name cik report-date net-assets holdings)
       :volume 14407
       :notes nil)
      table)
@@ -1826,7 +1833,7 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 12
       :notes nil)
@@ -1836,7 +1843,7 @@
      (list
       :family "G5 Fund periodic reports"
       :backend 'xml
-      :level 'L0
+      :level 'L1
       :sections-or-fields nil
       :volume 9
       :notes nil)
@@ -1855,8 +1862,8 @@
      "NT-NCSR"
      (list
       :family "G5 Fund periodic reports"
-      :backend 'xml
-      :level 'L0
+      :backend 'html
+      :level 'L1
       :sections-or-fields nil
       :volume 11
       :notes nil)

@@ -1,0 +1,1 @@
+(:accn "0001398344-26-010907" :form "N-23C3A" :company "1WS Credit Income Fund" :filed "2026-06-16" :doc "fp0099402-1_n23c3a.htm" :cik 1748680 :url "https://www.sec.gov/Archives/edgar/data/1748680/000139834426010907/fp0099402-1_n23c3a.htm")

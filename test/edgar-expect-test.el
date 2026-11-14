@@ -29,8 +29,7 @@
 (defun edgar-expect--slugs ()
   "Slugs of every rendered filing fixture."
   (seq-filter
-   (lambda (slug)
-     (file-exists-p (edgar-expect--file slug ".htm.gz")))
+   (lambda (slug) (file-exists-p (edgar-expect--file slug ".htm.gz")))
    (mapcar
     #'file-name-sans-extension
     (directory-files (expand-file-name "fixtures" edgar-expect--dir)
@@ -102,8 +101,14 @@
     ("13F-HR" "form 13f" nil)
     ("N-CSR" "separate N-CSR" ("2"))
     ("N-CSRS" "certified shareholder report" ("1" "7" "19"))
+    ("N-23C-2" "notice of intention to redeem securities" nil)
+    ("N-23C3A" "notification of repurchase offer" nil)
+    ("N-30B-2" "first quarter report" nil)
+    ("N-8A" "notification of registration" nil)
+    ("N-8F" "application for deregistration" nil)
     ("N-VP" "annual notice" nil)
     ("N-VPFS" "financial statements" nil)
+    ("NT-NCSR" "notification of late filing" nil)
     ("SCHEDULE 13G" "schedule 13g" nil)
     ("SC 13G" "schedule 13g" nil)
     ("SC 13G/A" "schedule 13g" nil)
@@ -154,36 +159,42 @@
   (let ((submissions
          '(:filings
            (:recent
-            (:accessionNumber ("0001318605-26-053166" "0001318605-26-010001")
+            (:accessionNumber
+             ("0001318605-26-053166" "0001318605-26-010001")
              :form ("10-K/A" "10-K")
              :filingDate ("2026-04-30" "2026-02-01")
              :reportDate ("2025-12-31" "2025-12-31")
              :primaryDocument ("amendment.htm" "original.htm"))))))
     (cl-letf (((symbol-function 'xbrl-cik)
                (lambda (_) "CIK0001318605"))
-              ((symbol-function 'xbrl--get)
-               (lambda (_) submissions)))
+              ((symbol-function 'xbrl--get) (lambda (_) submissions)))
       (let ((amendment (car (edgar-filings "TSLA" "10-K/A"))))
-        (should (equal (plist-get amendment :amends)
-                       "0001318605-26-010001"))))))
+        (should
+         (equal
+          (plist-get amendment :amends) "0001318605-26-010001"))))))
 
 (ert-deftest edgar-effective-section-uses-amendment-then-original ()
-  (let* ((original
-          '(:accn "0001318605-26-010001" :form "10-K"
-            :filed "2026-02-01" :report "2025-12-31" :cik 1318605
-            :url "https://example.test/original"))
-         (amendment
-          (edgar-expect--read (edgar-expect--file "10-ka-tsla" ".eld")))
-         (newer-amendment
-          (copy-sequence amendment))
-         (amendment-html (edgar-expect--html "10-ka-tsla"))
-         (original-html
-          "<html><body><p>Item 1. Business</p><p>Original business text.</p></body></html>"))
+  (let*
+      ((original
+        '(:accn
+          "0001318605-26-010001"
+          :form "10-K"
+          :filed "2026-02-01"
+          :report "2025-12-31"
+          :cik 1318605
+          :url "https://example.test/original"))
+       (amendment
+        (edgar-expect--read (edgar-expect--file "10-ka-tsla" ".eld")))
+       (newer-amendment (copy-sequence amendment))
+       (amendment-html (edgar-expect--html "10-ka-tsla"))
+       (original-html
+        "<html><body><p>Item 1. Business</p><p>Original business text.</p></body></html>"))
     (setf (plist-get amendment :amends) (plist-get original :accn))
-    (setf (plist-get newer-amendment :accn) "0001318605-26-060001"
-          (plist-get newer-amendment :filed) "2026-05-30"
-          (plist-get newer-amendment :amends) (plist-get original :accn)
-          (plist-get newer-amendment :url) "https://example.test/newer-amendment")
+    (setf
+     (plist-get newer-amendment :accn) "0001318605-26-060001"
+     (plist-get newer-amendment :filed) "2026-05-30"
+     (plist-get newer-amendment :amends) (plist-get original :accn)
+     (plist-get newer-amendment :url) "https://example.test/newer-amendment")
     (cl-letf (((symbol-function 'edgar-filings)
                (lambda (_ticker form &rest _bounds)
                  (if (equal form "10-K/A")
@@ -192,17 +203,22 @@
               ((symbol-function 'edgar--fetch)
                (lambda (url)
                  (cond
-                  ((equal url (plist-get amendment :url)) amendment-html)
+                  ((equal url (plist-get amendment :url))
+                   amendment-html)
                   ((equal url (plist-get newer-amendment :url))
                    "<html><body>Cover page only.</body></html>")
-                  (t original-html))))
+                  (t
+                   original-html))))
               ((symbol-function 'edgar--fetch-xml)
                (lambda (&rest _) (error "Unexpected XML fetch"))))
-      (should (string-match-p
-               "Tesla" (or (edgar-effective-section "TSLA" "10-K" "III.10") "")))
-      (should (string-match-p
-               "Original business text"
-               (or (edgar-effective-section "TSLA" "10-K" "1") ""))))))
+      (should
+       (string-match-p
+        "Tesla"
+        (or (edgar-effective-section "TSLA" "10-K" "III.10") "")))
+      (should
+       (string-match-p
+        "Original business text"
+        (or (edgar-effective-section "TSLA" "10-K" "1") ""))))))
 
 (ert-deftest edgar-text-diff-returns-unified-diff ()
   (let ((diff (edgar-text-diff "before text\n" "after text\n")))

@@ -1,0 +1,1 @@
+(:accn "0001213900-26-070526" :form "N-8F" :company "AAM Alternatives Trust" :filed "2026-06-22" :doc "ea0295460-01_n8f.htm" :cik 2065443 :url "https://www.sec.gov/Archives/edgar/data/2065443/000121390026070526/ea0295460-01_n8f.htm")

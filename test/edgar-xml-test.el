@@ -68,8 +68,7 @@
 
 (ert-deftest edgar-text-renders-n-px-xml-primary ()
   "Render the recorded N-PX XML primary through the L1 text API."
-  (let ((expect
-         (edgar-xml-test--expect "n-px-a4-wealth"))
+  (let ((expect (edgar-xml-test--expect "n-px-a4-wealth"))
         (xml (edgar-xml-test--fixture "n-px-a4-wealth")))
     (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
       (let ((text
@@ -81,6 +80,72 @@
          (string-search (plist-get expect :reporting-person) text))
         (should
          (string-search (plist-get expect :report-type) text))))))
+
+(ert-deftest edgar-xml-projects-nt-n-cen-notice ()
+  "Project identifying fields from a recorded NT N-CEN filing."
+  (let* ((tree (edgar-xml-test--parse "nt-n-cen-brown"))
+         (projected (edgar-xml-project tree))
+         (header (cdr (assq 'headerData (cdr projected))))
+         (form-data (cdr (assq 'formData (cdr projected))))
+         (registrant (cdr (assq 'registrantInfo form-data))))
+    (should
+     (equal
+      (list
+       :root (car tree)
+       :submission-type (cdr (assq 'submissionType header))
+       :registrant (cdr (assq 'registrantFullName registrant))
+       :classification
+       (cdr (assq 'registrantClassificationType registrant)))
+      (edgar-xml-test--expect "nt-n-cen-brown")))))
+
+(ert-deftest edgar-text-renders-nt-n-cen-xml-primary ()
+  "Render the recorded NT N-CEN XML primary through the L1 text API."
+  (let ((expect (edgar-xml-test--expect "nt-n-cen-brown"))
+        (xml (edgar-xml-test--fixture "nt-n-cen-brown")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((text
+             (replace-regexp-in-string
+              "[ \t\n\r]+" " "
+              (edgar-text
+               '(:url "https://example.test/primary_doc.xml")))))
+        (should
+         (string-search (plist-get expect :submission-type) text))
+        (should (string-search (plist-get expect :registrant) text))
+        (should
+         (string-search (plist-get expect :classification) text))))))
+
+(ert-deftest edgar-xml-projects-nt-nport-p-notice ()
+  "Project identifying fields from a recorded NT NPORT-P filing."
+  (let* ((tree (edgar-xml-test--parse "nt-nport-p-archer"))
+         (projected (edgar-xml-project tree))
+         (header (cdr (assq 'headerData (cdr projected))))
+         (form-data (cdr (assq 'formData (cdr projected))))
+         (general (cdr (assq 'genInfo form-data))))
+    (should
+     (equal
+      (list
+       :root (car tree)
+       :submission-type (cdr (assq 'submissionType header))
+       :registrant (cdr (assq 'regName general))
+       :series (cdr (assq 'seriesName general))
+       :period (cdr (assq 'repPdDate general)))
+      (edgar-xml-test--expect "nt-nport-p-archer")))))
+
+(ert-deftest edgar-text-renders-nt-nport-p-xml-primary ()
+  "Render the recorded NT NPORT-P XML primary through the L1 text API."
+  (let ((expect (edgar-xml-test--expect "nt-nport-p-archer"))
+        (xml (edgar-xml-test--fixture "nt-nport-p-archer")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (let ((text
+             (replace-regexp-in-string
+              "[ \t\n\r]+" " "
+              (edgar-text
+               '(:url "https://example.test/primary_doc.xml")))))
+        (should
+         (string-search (plist-get expect :submission-type) text))
+        (should (string-search (plist-get expect :registrant) text))
+        (should (string-search (plist-get expect :series) text))
+        (should (string-search (plist-get expect :period) text))))))
 
 (ert-deftest edgar-xml-project-normalizes-prefixed-namespaces ()
   "Project namespace-prefixed elements using their local names."
@@ -133,14 +198,18 @@
 
 (defun edgar-xml-test--13f-snapshot (holdings)
   "Return a stable summary of all 13F HOLDINGS."
-  (list :count (length holdings)
-        :sha256 (secure-hash 'sha256 (prin1-to-string holdings))
-        :first (car holdings)))
+  (list
+   :count (length holdings)
+   :sha256 (secure-hash 'sha256 (prin1-to-string holdings))
+   :first (car holdings)))
 
-(ert-deftest edgar-13f-holdings-match-recorded-tables-and-value-vintages ()
+(ert-deftest
+    edgar-13f-holdings-match-recorded-tables-and-value-vintages
+    ()
   "Match every recorded Berkshire holding across dollar-reporting vintages."
-  (dolist (case '(("13f-hr-brk-b" . "usd")
-                  ("13f-hr-brk-b-prior" . "thousands")))
+  (dolist (case
+           '(("13f-hr-brk-b" . "usd")
+             ("13f-hr-brk-b-prior" . "thousands")))
     (let* ((slug (car case))
            (metadata (edgar-xml-test--13f-metadata slug))
            (fixture (edgar-xml-test--13f-fixture slug))
@@ -150,27 +219,36 @@
                    (should (equal url (plist-get metadata :info-url)))
                    fixture)))
         (setq holdings (edgar-13f-holdings metadata)))
-      (should (equal (edgar-xml-test--13f-snapshot holdings)
-                     (edgar-xml-test--13f-golden slug)))
-      (should (eq (plist-get (car holdings) :value-unit)
-                  (intern (cdr case)))))))
+      (should
+       (equal
+        (edgar-xml-test--13f-snapshot holdings)
+        (edgar-xml-test--13f-golden slug)))
+      (should
+       (eq
+        (plist-get (car holdings) :value-unit)
+        (intern (cdr case)))))))
 
 (ert-deftest edgar-13f-finds-information-table-in-accession-index ()
   "Resolve the separate table XML using the SEC accession index."
-  (let* ((metadata (edgar-xml-test--13f-metadata "13f-hr-brk-b"))
-         (index "{\"directory\":{\"item\":[{\"name\":\"primary_doc.xml\",\"type\":\"XML\"},{\"name\":\"56757.xml\",\"type\":\"INFORMATION TABLE\"}]}}")
-         (requests nil))
+  (let*
+      ((metadata (edgar-xml-test--13f-metadata "13f-hr-brk-b"))
+       (index
+        "{\"directory\":{\"item\":[{\"name\":\"primary_doc.xml\",\"type\":\"XML\"},{\"name\":\"56757.xml\",\"type\":\"INFORMATION TABLE\"}]}}")
+       (requests nil))
     (cl-letf (((symbol-function 'edgar--fetch)
                (lambda (url)
                  (push url requests)
                  (if (string-suffix-p "/index.json" url)
                      index
                    (edgar-xml-test--13f-fixture "13f-hr-brk-b")))))
-      (let ((filing (plist-put (copy-sequence metadata) :info-url nil)))
+      (let ((filing
+             (plist-put (copy-sequence metadata) :info-url nil)))
         (should (= (length (edgar-13f-holdings filing)) 89)))
-      (should (equal (nreverse requests)
-                     '("https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/index.json"
-                       "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"))))))
+      (should
+       (equal
+        (nreverse requests)
+        '("https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/index.json"
+          "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/56757.xml"))))))
 
 (provide 'edgar-xml-test)
 ;;; edgar-xml-test.el ends here
