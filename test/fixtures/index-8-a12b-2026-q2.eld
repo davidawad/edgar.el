@@ -1,0 +1,1 @@
+(:accn "0001628280-26-036716" :form "8-A12B" :company "Lincoln International, Inc." :filed "2026-05-20" :report "" :doc "lincolninternational-form8.htm" :cik 1925283 :url "https://www.sec.gov/Archives/edgar/data/1925283/000162828026036716/lincolninternational-form8.htm" :size 18729 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

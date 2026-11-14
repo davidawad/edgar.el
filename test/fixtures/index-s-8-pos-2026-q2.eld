@@ -1,0 +1,1 @@
+(:accn "0000045876-26-000246" :form "S-8 POS" :company "ENVIRI Corp" :filed "2026-06-01" :report "" :doc "s-8posjune2026xenviri.htm" :cik 45876 :url "https://www.sec.gov/Archives/edgar/data/45876/000004587626000246/s-8posjune2026xenviri.htm" :size 43508 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")

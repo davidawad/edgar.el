@@ -51,6 +51,21 @@
     (should (= (length ranked) 2))
     (should (equal (plist-get (caar ranked) :accn) "b"))))
 
+(ert-deftest edgar-record-selects-primary-from-submission-headers ()
+  "Use SEC <TYPE>/<FILENAME> headers when directory types are file icons."
+  (let ((filing '(:form "8-A12B" :url "https://example.test/submission.txt"))
+        (items '(((name . "ex99.htm") (type . "text.gif") (size . "40"))
+                 ((name . "form8-a.htm") (type . "text.gif") (size . "80"))))
+        (submission
+         (concat
+          "<DOCUMENT>\n<TYPE>EX-99.1\n<FILENAME>ex99.htm\n"
+          "<TEXT>Exhibit</TEXT>\n</DOCUMENT>\n"
+          "<DOCUMENT>\n<TYPE>8-A12B\n<FILENAME>form8-a.htm\n"
+          "<TEXT>Registration statement</TEXT>\n</DOCUMENT>")))
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) submission)))
+      (should (equal (edgar-record--primary-item filing items)
+                     (cadr items))))))
+
 (ert-deftest edgar-record-sample-reports-no-filing-offline ()
   "An empty sampled index is reported without any network request."
   (should (eq (edgar-record--sample-quarter "NEVER-FILED" "recent"

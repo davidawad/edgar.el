@@ -112,19 +112,61 @@ completed quarter; OLDER is the same quarter three years earlier."
     (sleep-for edgar-record-request-delay)
     (alist-get 'item (alist-get 'directory data))))
 
+(defun edgar-record--submission-primary-filename (submission form)
+  "Return the primary document filename for FORM in SUBMISSION."
+  (let ((case-fold-search t))
+    (catch 'edgar-record-primary
+      (with-temp-buffer
+        (insert submission)
+        (goto-char (point-min))
+        (while (search-forward "<DOCUMENT>" nil t)
+          (let* ((start (point))
+                 (text-position
+                  (and (search-forward "<TEXT>" nil t)
+                       (match-beginning 0)))
+                 (header
+                  (and text-position
+                       (buffer-substring-no-properties start text-position))))
+            (when header
+              (let* ((document-type
+                      (and (string-match
+                            "<TYPE>[ \t]*\\([^\r\n]+\\)" header)
+                           (string-trim (match-string 1 header))))
+                     (filename
+                      (and (string-match
+                            "<FILENAME>[ \t]*\\([^\r\n]+\\)" header)
+                           (string-trim (match-string 1 header)))))
+                (when (and filename
+                           (equal (edgar--base-form document-type)
+                                  (edgar--base-form form)))
+                  (throw 'edgar-record-primary filename))))
+            (when text-position
+              (search-forward "</DOCUMENT>" nil t))))
+        nil))))
+
 (defun edgar-record--primary-item (filing items)
   "Return the primary document item matching FILING in directory ITEMS."
   (let* ((form (plist-get filing :form))
-         (matching
-          (seq-filter
-           (lambda (item)
-             (and (equal (alist-get 'type item) form)
-                  (let ((name (alist-get 'name item)))
-                    (and (stringp name)
-                         (string-match-p "\\.\\(htm\\|html\\|xml\\)\\'"
-                                         (downcase name))))))
-           items)))
-    (car matching)))
+         (filename
+          (edgar-record--submission-primary-filename
+           (edgar--fetch (plist-get filing :url)) form)))
+    ;; SEC directory JSON's type field is a file icon (usually \"text.gif\"),
+    ;; not the filing's <TYPE>.  Resolve the filename from the complete
+    ;; submission, then use the directory entry only for its size.
+    (or (and filename
+             (seq-find (lambda (item)
+                         (equal (alist-get 'name item) filename))
+                       items))
+        ;; Retain support for older/fake directory listings that include the
+        ;; form name in type.
+        (seq-find
+         (lambda (item)
+           (and (equal (alist-get 'type item) form)
+                (let ((name (alist-get 'name item)))
+                  (and (stringp name)
+                       (string-match-p "\\.\\(htm\\|html\\|xml\\)\\'"
+                                       (downcase name))))))
+         items))))
 
 (defun edgar-record--item-size (item)
   "Return ITEM's SEC-reported size as an integer."
@@ -193,12 +235,17 @@ sampling period.  Return t on success, otherwise nil."
          (gzip-temp (make-temp-file "edgar-fixture-gzip-"))
          (metadata-temp (make-temp-file "edgar-fixture-meta-"))
          (metadata
-          (append (copy-sequence filing)
-                  (list :doc doc-name :url url
-                        :size (edgar-record--item-size item)
-                        :sample-vintage vintage
-                        :sample-quarter (edgar-record--quarter-label quarter)
-                        :sample-seed edgar-record-seed)))
+          (let ((data (copy-sequence filing)))
+            (dolist (entry
+                     (list (cons :doc doc-name)
+                           (cons :url url)
+                           (cons :size (edgar-record--item-size item))
+                           (cons :sample-vintage vintage)
+                           (cons :sample-quarter
+                                 (edgar-record--quarter-label quarter))
+                           (cons :sample-seed edgar-record-seed)))
+              (setq data (plist-put data (car entry) (cdr entry))))
+            data))
          ok)
     (unwind-protect
         (progn
@@ -214,9 +261,15 @@ sampling period.  Return t on success, otherwise nil."
               (let ((print-length nil) (print-level nil))
                 (prin1 metadata (current-buffer))
                 (insert "\n")))
-            (unless (= 0 (call-process "gzip" nil gzip-temp nil
-                                       "-n" "-9" "-c" raw-temp))
-              (error "Gzip failed for %s" slug))
+            (with-temp-buffer
+              (set-buffer-multibyte nil)
+              (let ((coding-system-for-read 'no-conversion))
+                (unless (= 0 (call-process "gzip" nil t nil
+                                           "-n" "-9" "-c" raw-temp))
+                  (error "Gzip failed for %s" slug)))
+              (let ((coding-system-for-write 'no-conversion))
+                (write-region (point-min) (point-max) gzip-temp
+                              nil 'silent)))
             (let ((gzip-size (file-attribute-size (file-attributes gzip-temp)))
                   (metadata-size
                    (file-attribute-size (file-attributes metadata-temp))))
