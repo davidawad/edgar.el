@@ -1,0 +1,7 @@
+(add-to-list 'load-path "src")
+(add-to-list 'load-path "test")
+(add-to-list 'load-path "../xbrl.el/src")
+(require 'edgar-fixtures)
+(load "edgar-test")
+(load "edgar-http-test")
+(ert-run-tests-batch-and-exit "edgar-.*pdf.*")
