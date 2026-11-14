@@ -47,7 +47,7 @@
         (slug
          '("defa14c-graybar" "defm14c-olaplex" "defr14c-srx"
            "pos-8c-monroe" "prem14c-emerald" "pren14a-fermi"
-           "prer14c-esg" "sc-14n-first-trinity"))
+           "prer14c-esg" "sc-14n-first-trinity" "index-d-2026-q2"))
       (let* ((metadata
               (with-temp-buffer
                 (insert-file-contents

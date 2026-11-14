@@ -161,33 +161,79 @@
     (should-not (edgar-coverage-problems))))
 
 (ert-deftest edgar-form-coverage-index-samples-have-no-low-volume-l0-rows ()
-  "Do not promote low-volume L0 forms absent from the recorded index samples."
+  "Do not leave sampled low-volume forms at L0."
   (let ((low-volume-l0 (make-hash-table :test #'equal))
-        (q2
-         (edgar-index--parse
-          (with-temp-buffer
-            (insert-file-contents
-             (expand-file-name "fixtures/form-index-2026-q2.idx"
-                               edgar-form-coverage-test--directory))
-            (buffer-string))))
-        (q3
-         (edgar-index--parse
-          (with-temp-buffer
-            (insert-file-contents
-             (expand-file-name "fixtures/form-index-2026-09-30.idx"
-                               edgar-form-coverage-test--directory))
-            (buffer-string)))))
+        (index-files
+         (directory-files
+          (expand-file-name "fixtures" edgar-form-coverage-test--directory)
+          t "\\`form-index-.*\\.idx\\'"))
+        uncovered)
+    (should index-files)
     (maphash
      (lambda (form info)
        (when (and (eq (plist-get info :level) 'L0)
                   (<= (plist-get info :volume) 5))
          (puthash form t low-volume-l0)))
      edgar-forms--registry)
-    (should-not
-     (seq-some
-      (lambda (filing)
-        (gethash (plist-get filing :form) low-volume-l0))
-      (append q2 q3)))))
+    (dolist (file index-files)
+      (dolist (filing
+               (edgar-index--parse
+                (with-temp-buffer
+                  (insert-file-contents file)
+                  (buffer-string))))
+        (let ((form (edgar-coverage--base-form
+                     (plist-get filing :form))))
+          (when (gethash form low-volume-l0)
+                  (push (list (file-name-nondirectory file)
+                        (plist-get filing :form)
+                        (plist-get filing :accn))
+                  uncovered)))))
+    (should-not uncovered)))
+
+(ert-deftest edgar-form-coverage-sampled-primary-fixtures-are-not-l0 ()
+  "A sampled filing with a recorded primary is not left at L0."
+  (let ((recorded-accessions (make-hash-table :test #'equal))
+        (index-files
+         (directory-files
+          (expand-file-name "fixtures" edgar-form-coverage-test--directory)
+          t "\\`form-index-.*\\.idx\\'"))
+        uncovered)
+    (dolist (record
+             (car
+              (edgar-coverage--fixture-records
+               edgar-forms--registry
+               edgar-coverage-fixture-directory)))
+      (let* ((form (car record))
+             (slug (cdr record))
+             (info (gethash form edgar-forms--registry))
+             (metadata
+              (edgar-coverage--read-object
+               (expand-file-name (concat slug ".eld")
+                                 edgar-coverage-fixture-directory)))
+             (accession (plist-get metadata :accn)))
+        (when (and accession
+                   (edgar-coverage--primary-artifact-p
+                    slug (plist-get info :backend)
+                    edgar-coverage-fixture-directory))
+          (puthash accession form recorded-accessions))))
+    (dolist (file index-files)
+      (dolist (filing
+               (edgar-index--parse
+                (with-temp-buffer
+                  (insert-file-contents file)
+                  (buffer-string))))
+        (let* ((form (edgar-coverage--base-form
+                      (plist-get filing :form)))
+               (info (gethash form edgar-forms--registry)))
+          (when (and info
+                     (eq (plist-get info :level) 'L0)
+                     (equal form
+                            (gethash (plist-get filing :accn)
+                                     recorded-accessions)))
+            (push (list (file-name-nondirectory file)
+                        form (plist-get filing :accn))
+                  uncovered)))))
+    (should-not uncovered)))
 
 (ert-deftest edgar-form-coverage-registry-row-removal-names-form ()
   "Removing a registry row fails with that form name."

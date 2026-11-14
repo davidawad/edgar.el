@@ -57,6 +57,37 @@
     (should (eq (car tree) 'edgarSubmission))
     (should (assoc 'headerData (edgar-xml-project tree)))))
 
+(ert-deftest edgar-xml-sampled-form-d-matches-golden ()
+  "A sampled Form D exposes the recorded generic XML values."
+  (let* ((slug "index-d-2026-q2")
+         (filing (edgar-fixtures-filing slug))
+         (xml (edgar-xml-test--fixture slug))
+         (snapshot (edgar-xml-test--expect slug))
+         (golden
+          (edgar-fixtures-read
+           (edgar-fixtures-path
+            (concat "golden-fields/" slug ".eld"))))
+         tree)
+    (cl-letf (((symbol-function 'edgar--fetch) (lambda (_) xml)))
+      (setq tree (edgar-xml filing)))
+    (should
+     (equal snapshot
+            (list :form (plist-get filing :form) :root (car tree))))
+    (let ((projected (edgar-xml-project tree)))
+      (should
+       (equal
+        golden
+        (list
+         :submission-type
+         (edgar-xml-test--projected-value
+          projected '(edgarSubmission submissionType))
+         :issuer-name
+         (edgar-xml-test--projected-value
+          projected '(edgarSubmission primaryIssuer entityName))
+         :jurisdiction
+         (edgar-xml-test--projected-value
+          projected '(edgarSubmission primaryIssuer jurisdictionOfInc))))))))
+
 (ert-deftest edgar-generic-structure-parses-offering-xml-vintages ()
   "Parse real Form 144 and D-family vintages through the generic API."
   (dolist (case
