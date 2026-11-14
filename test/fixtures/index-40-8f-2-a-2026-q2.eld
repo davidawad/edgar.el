@@ -1,0 +1,1 @@
+(:accn "0000897069-26-001429" :form "40-8F-2/A" :company "DAXOR CORP" :filed "2026-06-17" :report "" :doc "daxor408f2a.htm" :cik 27367 :url "https://www.sec.gov/Archives/edgar/data/27367/000089706926001429/daxor408f2a.htm" :size 60692 :sample-vintage "recent" :sample-quarter "2026-Q2" :sample-seed "edgar-form-coverage-v1")
