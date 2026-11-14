@@ -1,0 +1,313 @@
+                      SECURITIES AND EXCHANGE COMMISSION
+                                  Washington, D.C.
+
+
+SECURITIES EXCHANGE ACT OF 1934
+Release No. 105737 / June 22, 2026
+
+Admin. Proc. File No. 3-22575
+
+
+
+                      In the Matter of
+
+             THE HEALING COMPANY INC.
+
+
+
+OPINION OF THE COMMISSION
+
+      SECTION 12(j) PROCEEDING
+
+             Grounds for Remedial Action
+
+             Failure to Comply with Periodic Filing Requirements
+
+      Company failed to file periodic reports in violation of Section 13(a) of the Securities
+      Exchange Act of 1934 and Exchange Act Rules 13a-1 and 13a-13. Held, it is in the
+      public interest to revoke the registration of each class of the company’s securities
+      registered under Exchange Act Section 12.
+
+APPEARANCES:
+
+      Samantha Williams and Sandhya C. Harris, for the Division of Enforcement.
+                                                 2
+
+
+        Respondent The Healing Company Inc. (CIK No. 1441082; ticker: HLCO)
+(“Respondent”), an issuer with a class of securities registered with the Commission, failed to file
+an answer in response to an order instituting proceedings (“OIP”) alleging that it did not file
+required periodic reports. 1 Respondent again failed to respond to an order to show cause why it
+should not be deemed to be in default. 2 We now deem Respondent to be in default, deem the
+allegations of the OIP to be true, and revoke the registration of each class of Respondent’s
+securities registered under Section 12 of the Securities Exchange Act of 1934.
+
+                                       I.      Background
+
+A.     The Commission issued an OIP against Respondent alleging that it violated the
+       Exchange Act and the rules thereunder by failing to file required periodic reports.
+
+         On January 6, 2026, the Commission issued the OIP against Respondent under Exchange
+Act Section 12(j). The OIP alleged that, by failing to file required periodic reports, Respondent
+violated Exchange Act Section 13(a) and Exchange Act Rules 13a-1 (requiring annual reports)
+and 13a-13 (requiring quarterly reports). According to the OIP, Respondent is a defaulted
+Nevada corporation located in New York, New York, with a class of securities registered with
+the Commission under Exchange Act Section 12. The OIP further alleges that Respondent is
+delinquent in its periodic filings with the Commission, having not filed any periodic reports since
+it filed a Form 10-Q for the period ended September 30, 2023. Respondent’s EDGAR filing
+history reflects that Respondent made that filing on November 20, 2023, and confirms the OIP’s
+allegations regarding Respondent’s delinquency. 3
+
+        The OIP alleges that Respondent either failed to heed a delinquency letter from the
+Division of Corporation Finance requesting compliance with its periodic filing obligations or did
+not receive such letter because it failed to maintain a valid address on file with the Commission.
+The OIP further alleges that unsolicited quotations for Respondent’s common stock are
+submitted on the Expert Market of OTC Link ATS, whose parent company is OTC Markets
+Group Inc.
+
+        Through the OIP, the Commission instituted these proceedings to determine if the OIP’s
+allegations are true and whether it is necessary and appropriate for the protection of investors to
+suspend or revoke the registration of each class of Respondent’s securities registered under
+Exchange Act Section 12. The OIP directed Respondent to file an answer to the OIP’s
+allegations within ten days after service, as provided by Rule 220(b) of the Commission’s Rules
+of Practice. 4 The OIP informed Respondent that if it failed to answer, it could be deemed to be
+
+
+
+1
+       Healing Co., Exchange Act Release No. 104551, 2026 WL 63608 (Jan. 6, 2026).
+2
+       Healing Co., Exchange Act Release No. 104827, 2026 WL 414806 (Feb. 12, 2026).
+3
+        See Rule of Practice 323, 17 C.F.R. § 201.323 (“Official notice may be taken of . . . any
+matter in the public official records of the Commission . . . .”).
+4
+       17 C.F.R. § 201.220(b).
+                                                 3
+
+
+in default, the allegations of the OIP could be deemed true as provided in the Rules of Practice, 5
+and the proceeding could be determined against Respondent upon consideration of the OIP.
+
+B.     Respondent failed to answer the OIP or respond to a show cause order.
+
+         Respondent was properly served with the OIP but did not answer it. On February 12,
+2026, more than ten days after service on Respondent, the Commission ordered Respondent to
+show cause by February 26, 2026, why the Commission should not deem Respondent to be in
+default due to its failure to file an answer or otherwise to defend this proceeding and revoke the
+registration of each class of its registered securities. The Commission warned Respondent that if
+it failed to respond to the order to show cause, the Commission could deem Respondent to be in
+default and the allegations of the OIP to be true, determine the proceeding against Respondent
+without a public hearing, and revoke the registration of its securities. Respondent did not answer
+the OIP or respond to the show cause order.
+
+                                         II.     Analysis
+
+A.     We deem Respondent to be in default and deem the OIP’s allegations to be true.
+
+        Rule of Practice 220(f) provides that if a respondent fails to file an answer required by the
+OIP within the time provided, we may deem the respondent to be in default under Rule 155(a). 6
+Rule 155(a) permits us to deem such a respondent to be in default and to “determine the
+proceeding against [it] upon consideration of the record, including the order instituting
+proceedings, the allegations of which may be deemed to be true.” 7 Because Respondent has
+failed to answer and has not responded to the order to show cause, we find it appropriate to deem
+Respondent to be in default and to deem the allegations of the OIP to be true.
+
+B.     Relief is warranted under Exchange Act Section 12(j).
+
+        Exchange Act Section 12(j) authorizes us, as we deem necessary or appropriate for the
+protection of investors, to revoke the registration of a security if we find, on the record after
+notice and opportunity for hearing, that the security’s issuer has failed to comply with any
+provision of the Exchange Act or the rules and regulations thereunder. 8 For the reasons
+explained below, we find it appropriate to revoke the registration of Respondent’s securities.
+
+       1.      We find that Respondent violated the Exchange Act by failing to file required
+               periodic reports.
+
+        Exchange Act Section 13(a) and the rules promulgated thereunder require issuers of
+securities registered under Exchange Act Section 12 to file with the Commission current and
+
+5
+       See Rule of Practice 155(a), 17 C.F.R. § 201.155(a).
+6
+       17 C.F.R. § 201.220(f).
+7
+       Id. § 201.155(a) (specifically authorizing such action where a respondent fails “[t]o
+answer . . . or otherwise to defend the proceeding”).
+8
+       15 U.S.C. § 78l(j).
+                                                  4
+
+
+accurate information in periodic reports. 9 The periodic reports must be filed even if the
+registration is voluntary. 10 Specifically, Rule 13a-1 requires issuers to file annual reports, and
+Rule 13a-13 generally requires domestic issuers to file quarterly reports. 11 These requirements
+are imposed “for the proper protection of investors and to insure fair dealing” in an issuer’s
+securities. 12 A violation of these provisions does not require scienter. 13
+
+        The allegations of the OIP, deemed true, and Respondent’s EDGAR filing history,
+establish that Respondent had a class of securities registered with the Commission under
+Exchange Act Section 12, and that it has failed to file required periodic reports as described
+above. The record thus shows that Respondent violated Exchange Act Section 13(a) and the
+rules thereunder.
+
+       2.      We deem it necessary and appropriate to revoke the registration of each class
+               of Respondent’s securities that is registered under Exchange Act Section 12.
+
+        Because Respondent failed to make filings required by the Exchange Act and the
+regulations thereunder, Section 12(j) authorizes us, as we deem “necessary or appropriate for the
+protection of investors,” to revoke the registration of Respondent’s securities. 14 We apply a
+multifactor test to determine an appropriate sanction, considering, among other things:
+
+       [T]he seriousness of the issuer’s violations, the isolated or recurrent nature of the
+       violations, the degree of culpability involved, the extent of the issuer’s efforts to
+       remedy its past violations and ensure future compliance, and the credibility of its
+       assurances, if any, against further violations. 15
+
+        Although these factors are nonexclusive, and no single factor is dispositive, 16 “[w]e have
+held that a respondent’s repeated failure to file its periodic reports on time is ‘so serious’ a
+9
+       See id. §§ 78m(a), 78l.
+10
+        See Exchange Act Section 12(g)(1), 15 U.S.C. § 78l(g)(1) (permitting voluntary
+registration); Exchange Act Section 13(a), 15 U.S.C. § 78m(a) (requiring filing of periodic
+reports, in accordance with Commission rules and regulations, by every issuer of a security
+registered under Section 12).
+11
+       17 C.F.R. §§ 240.13a-1, .13a-13.
+12
+       15 U.S.C. § 78m(a).
+13
+       Advanced Life Scis. Holdings, Inc., Exchange Act Release No. 81253, 2017 WL
+3214455, at *2 (July 28, 2017) (citing Citizens Cap. Corp., Exchange Act Release No. 67313,
+2012 WL 2499350, at *5 (June 29, 2012)); accord SEC v. McNulty, 137 F.3d 732, 740–41 (2d
+Cir. 1998).
+14
+       15 U.S.C. § 78l(j); see also id. § 78m(a); 17 C.F.R. §§ 240.13a-1, .13a-13.
+15
+      Gateway Int’l Holdings, Inc., Exchange Act Release No. 53907, 2006 WL 1506286, at *4
+(May 31, 2006).
+16
+       China-Biotics, Inc., Exchange Act Release No. 70800, 2013 WL 5883342, at *12
+(Nov. 4, 2013).
+                                                 5
+
+
+violation of the Exchange Act that only a ‘strongly compelling showing’ regarding the other . . .
+factors would justify a sanction less than revocation.” 17
+
+        Respondent’s violations were recurrent in that it has failed to file required annual and
+quarterly reports over multiple years. 18 Indeed, Respondent remains delinquent and has filed no
+periodic reports since the issuance of the OIP. 19 These violations are serious because “reporting
+requirements are ‘the primary tool[s] [that] Congress has fashioned for the protection of
+investors from negligent, careless, and deliberate misrepresentations in the sale of stock and
+securities.’” 20 An issuer’s failure to file periodic reports violates “a central provision of the
+Exchange Act . . . [,] depriv[ing] both existing and prospective holders of its registered stock of
+the ability to make informed investment decisions based on current and reliable information.” 21
+That Respondent repeatedly ignored its reporting obligations evinces “a ‘high degree of
+culpability.’” 22 And because Respondent failed to answer the OIP or respond to the show cause
+order, it has submitted no evidence of any efforts to remedy its past violations and ensure future
+compliance. Nor has it made any assurances against further violations.
+
+       The Commission has recognized that, “in any deregistration[,] current shareholders could
+be harmed by a diminution in the liquidity and value of their stock by virtue of the
+
+
+
+
+17
+       Calais Res. Inc., Exchange Act Release No. 67312, 2012 WL 2499349, at *4 (June 29,
+2012) (quoting Nature’s Sunshine Prods., Inc., Exchange Act Release No. 59268, 2009 WL
+137145, at *7 (Jan. 21, 2009)); accord Am. Stellar Energy, Inc. (n/k/a Tara Gold Res. Corp.),
+Exchange Act Release No. 64897, 2011 WL 2783483, at *4 (July 18, 2011); Cobalis Corp.,
+Exchange Act Release No. 64813, 2011 WL 2644158, at *5 (July 6, 2011).
+18
+        See, e.g., Accredited Bus. Consolidators Corp., Exchange Act Release No. 75840,
+2015 WL 5172970, at *2 (Sept. 4, 2015) (failure to file “any periodic reports for over two years”
+was recurrent); China-Biotics, 2013 WL 5883342, at *10 (failure to “file a single periodic report
+for more than a year and a half” was recurrent); Nature’s Sunshine Prods., 2009 WL 137145,
+at *5 (failure to file “required filings over the course of the two-year period in the OIP” was
+recurrent).
+19
+        See Nature’s Sunshine Prods., 2009 WL 137145, at *5 & n.23, *6 n.27 (finding that we
+may consider “matters that fall outside the OIP[] in assessing appropriate sanctions,” such as an
+issuer’s failure to file additional required reports with the Commission).
+20
+       Am.’s Sports Voice, Inc. (n/k/a Milagro Holdings, Inc.), Exchange Act Release
+No. 55511, 2007 WL 858747, at *4 n.17 (Mar. 22, 2007) (first alteration in original) (quoting
+SEC v. Beisinger Indus. Corp., 552 F.2d 15, 18 (1st Cir. 1977)).
+21
+        Accredited Bus. Consolidators, 2015 WL 5172970, at *2; see also United States v. Arthur
+Young & Co., 465 U.S. 805, 810 (1984) (observing that “[c]orporate financial statements are one
+of the primary sources of information available to guide the decisions of the investing public”).
+22
+      See, e.g., Citizens Cap., 2012 WL 2499350, at *5 (quoting Am.’s Sports Voice, 2007 WL
+858747, at *3).
+                                                6
+
+
+deregistration.” 23 But Respondent’s failure to timely file periodic reports has harmed, and
+continues to harm, both current and prospective shareholders because they must make
+investment decisions without the current and comprehensive financial information that those
+reports would provide. 24 Respondent, which has defaulted, has failed to make any showing to
+justify another sanction (let alone a strongly compelling one). We accordingly find it necessary
+and appropriate for the protection of investors to revoke the registration of each class of
+Respondent’s securities registered under Exchange Act Section 12.
+
+       An appropriate order will issue.
+
+       By the Commission (Chairman ATKINS and Commissioners PEIRCE and UYEDA).
+
+
+
+
+                                                    Vanessa A. Countryman
+                                                    Secretary
+
+
+
+
+23
+        Eagletech Commc’ns, Inc., Exchange Act Release No. 54095, 2006 WL 1835958, at *4
+(July 5, 2006).
+24
+        See LegacyXChange, Inc., Exchange Act Release No. 96401, 2022 WL 17345980, at *7
+(Nov. 29, 2022) (finding that respondent’s failure to timely file periodic reports harmed both
+current and prospective investors); China-Biotics, 2013 WL 5883342, at *14 (finding that “[a]ll
+investors in the marketplace, both current and prospective, have been deprived of timely reports
+that accurately reflect the company’s financial situation and material business developments”).
+                           UNITED STATES OF AMERICA
+                                     before the
+                      SECURITIES AND EXCHANGE COMMISSION
+
+SECURITIES EXCHANGE ACT OF 1934
+Release No. 105737 / June 22, 2026
+
+Admin. Proc. File No. 3-22575
+
+
+
+                       In the Matter of
+
+             THE HEALING COMPANY INC.
+
+
+
+ORDER IMPOSING REMEDIAL SANCTIONS
+
+       On the basis of the Commission’s opinion issued this day, it is
+
+        ORDERED that the registration of each class of the securities of The Healing Company
+Inc. (CIK No. 1441082; ticker: HLCO) registered under Section 12 of the Securities Exchange
+Act of 1934 is hereby revoked under Exchange Act Section 12(j).
+
+       The revocation is effective as of June 23, 2026.
+
+       By the Commission.
+
+
+
+
+                                                    Vanessa A. Countryman
+                                                    Secretary
+

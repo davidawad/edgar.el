@@ -1,0 +1,7 @@
+(add-to-list 'load-path "/Users/david/projects/Personal/emacs/xbrl.el/src")
+(add-to-list 'load-path "src")
+(add-to-list 'load-path "test")
+(require 'edgar-fixtures)
+(cl-letf (((symbol-function 'edgar-fixtures-slugs)
+           (lambda () '("15-15d-plus-automation" "irannotice-intel"))))
+  (load (expand-file-name "tools/make-golden.el" default-directory) nil t t))
